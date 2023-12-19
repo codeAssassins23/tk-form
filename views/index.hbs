@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>App</title>
+</head>
+
+<body>
+  {{message}}
+    {{#if data.roles}}
+        <ul>
+            {{#each data.roles}}
+                <li>{{this.name}} - {{this.description}}</li>
+            {{/each}}
+        </ul>
+    {{else}}
+        <p>No se encontraron roles.</p>
+    {{/if}}
+</body>
+
+</html>
