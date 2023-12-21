@@ -7,6 +7,7 @@ import { UserModule } from './user/user.module';
 import { RolesModule } from './roles/roles.module';
 import { AuthModule } from './auth/auth.module';
 import { AdminModule } from './admin/admin.module';
+import { HoldingModule } from './holding_accounts/holding.module';
 
 /* Group different functionalities into one */
 @Module({
@@ -26,6 +27,7 @@ import { AdminModule } from './admin/admin.module';
     RolesModule,
     AuthModule,
     AdminModule,
+    HoldingModule,
   ],
   controllers: [AppController], //Routes that can have this module
   providers: [AppService], //Service that can have this module
