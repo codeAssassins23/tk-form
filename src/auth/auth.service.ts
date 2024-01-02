@@ -3,7 +3,6 @@ import { CreateAuthDto } from './dto/create-auth.dto';
 import { UserService } from '../user/user.service';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcrypt';
-import { response } from 'express';
 
 @Injectable()
 export class AuthService {
@@ -15,11 +14,10 @@ export class AuthService {
   async signIn(createAuthDto: CreateAuthDto): Promise<any> {
     const user = await this.userService.finOneUserByEmail(createAuthDto.email);
     if (!user || user.status === '0') {
-      throw new UnauthorizedException(`Credenciales invalidas uwu`);
+      throw new UnauthorizedException(`Credenciales invalidas`);
     }
-
-    if (await bcrypt.compare(user?.password, createAuthDto.password)) {
-      throw new UnauthorizedException(`Credenciales invalidas uwu2`);
+    if (!(await bcrypt.compare(createAuthDto.password, user.password))) {
+      throw new UnauthorizedException(`Credenciales invalidas`);
     }
     const payload = {
       sub: user.idUser,

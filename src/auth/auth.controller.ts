@@ -21,10 +21,9 @@ export class AuthController {
   @Get('/login')
   @Render('auth/login')
   login() {
-    return { message: 'Renderiza el login' };
+    return;
   }
 
-  @Public()
   @Get('/logout')
   async logout(@Res({ passthrough: true }) response: Response) {
     response.clearCookie('jwt');
@@ -38,8 +37,15 @@ export class AuthController {
     @Body() createAuthDto: CreateAuthDto,
     @Res() response: Response,
   ) {
-    const authResult = await this.authService.signIn(createAuthDto);
-    response.cookie('jwt', authResult.jwt, { httpOnly: true });
-    response.redirect('/admin/dashboard');
+    try {
+      const authResult = await this.authService.signIn(createAuthDto);
+      response.cookie('jwt', authResult.jwt, { httpOnly: true });
+      response.redirect('/admin/dashboard');
+    } catch (error) {
+      console.log(error);
+      response.render('auth/login', {
+        message: error,
+      });
+    }
   }
 }

@@ -1,0 +1,169 @@
+
+{{#> admin}}
+    {{#* inline "content"}}
+    <!--begin::Main-->
+    <div class="app-main d-flex flex-column flex-row-fluid" id="kt_app_main">
+        <!--begin::Content wrapper-->
+        <div class="d-flex flex-column flex-column-fluid">
+            <!--begin::Toolbar-->
+            <div id="kt_app_toolbar" class="app-toolbar pt-6 pb-2">
+                <!--begin::Toolbar container-->
+                <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex align-items-stretch">
+                    <!--begin::Toolbar wrapper-->
+                    <div class="app-toolbar-wrapper d-flex flex-stack flex-wrap gap-4 w-100">
+                        <!--begin::Page title-->
+                        <div class="page-title align-items-center d-flex justify-content-center gap-1 me-3">
+                            <!--begin::Title-->
+                            <div class="symbol symbol-35px symbol-circle h-50 fs-1">
+                                <img src="/assets/media/flags/{{flagname}}.svg" alt="">
+                            </div>
+                            <h1 class="page-heading d-flex justify-content-center text-gray-900 fw-bold fs-3 m-0">Balance</h1>
+                            
+                            <!--end::Title-->
+                            <a href="/admin/getHoldingAccounts/detail/{{currencyCode}}" class="btn btn-sm btn-icon btn-light btn-active-light-primary" data-bs-toggle="tooltip" data-bs-dismiss="click" data-bs-placement="top" title="Reload">
+                                <i class="ki-outline ki-arrows-circle fs-2"></i>
+                            </a>
+                        </div>
+                        
+                    </div>
+                
+                    <!--end::Page title-->
+                </div>
+                    <!--end::Toolbar wrapper-->
+            </div>
+            <!--end::Toolbar-->
+            <input type="hidden" name="" value="{{currencyCode}}" id="currencyDetails">
+
+            <div id="kt_app_content" class="app-content flex-column-fluid" >
+                <!--begin::Content container-->
+                <div id="kt_app_content_container" class="app-container container-fluid" >
+
+                    <div class="d-flex flex-wrap flex-stack">
+                        
+                        <!--begin::Number-->
+                        <div class="d-flex align-items-center">
+                            <span class="svg-icon fs-3x text-success me-2">
+                            </span>
+                            <div class="text-primary fs-3x fw-bold" data-kt-countup="true" data-kt-countup-duration	="2" data-kt-countup-decimal-places="2" data-kt-countup-value="{{balanceCurrency}}" data-kt-countup-suffix=" {{flagname}}">0</div>
+                        </div>
+                        <!--end::Number-->
+
+                         <!--begin::Actions-->
+                        <div class="d-flex align-items-center gap-2 gap-lg-3">
+                            <!-- Primer par de botón y texto -->
+                            <div class="d-flex flex-column align-items-center mx-6">
+                                <a href="#" class="btn-icon btn btn-warning btn-sm rounded hover-scale" data-bs-toggle="modal" data-bs-target="#kt_modal_create_campaign">
+                                    <i class="ki-outline ki-send fs-0 text-primary fs-2"></i>
+                                </a>
+                                <div class="">Send Payment</div>
+                            </div>
+
+                            <!-- Segundo par de botón y texto -->
+                            <div class="d-flex flex-column align-items-center mx-6">
+                                <a href="#" class="btn-icon btn btn-bg-light btn-color-primary btn-sm rounded hover-scale" data-bs-toggle="modal" data-bs-target="#kt_modal_create_campaign">
+                                    <i class="ki-outline ki-arrows-loop fs-0 text-primary fs-2"></i>
+                                </a>
+                                <div class="">Transfer</div>
+                            </div>
+
+                            <!-- Tercer par de botón y texto -->
+                            <div class="d-flex flex-column align-items-center mx-6">
+                                <a href="#" class="btn-icon btn btn-bg-light btn-color-primary btn-sm rounded hover-scale" data-bs-toggle="modal" data-bs-target="#kt_modal_create_campaign">
+                                    <i class="ki-outline ki-dollar fs-0 text-primary fs-2"></i>
+                                </a>
+                                <div class="">Buy/sell</div>
+                            </div>
+
+                            <!-- Cuarto par de botón y texto -->
+                            <div class="d-flex flex-column align-items-center mx-6">
+                                <a href="#" class="btn-icon btn btn-bg-light btn-color-primary btn-sm rounded hover-scale" data-bs-toggle="modal" data-bs-target="#kt_modal_create_campaign">
+                                    <i class="ki-outline ki-wallet fs-0 text-primary fs-2"></i>
+                                </a>
+                                <div class="">Recharge</div>
+                            </div>
+                        </div>
+                        <!--end::Actions-->
+                    </div>
+
+                    <div class="d-flex flex-wrap flex-stack my-5"></div>
+
+                    <!--begin::Card-->
+                    <div class="">
+                        
+                        <div class="d-flex flex-column flex-sm-row">
+                            <!--begin::Search Deal-->
+                            <div class="d-flex align-items-center position-relative mx-2 mb-2 mb-sm-0">
+                                <i class="ki-outline ki-magnifier fs-1 position-absolute ms-5"><span class="path1"></span><span class="path2"></span></i>
+                                <input type="text" data-kt-docs-table-filter="searchDeal" class="form-control form-control-solid w-200px ps-15" placeholder="Search Deal"/>
+                            </div>
+                            <!--end::Search Deal-->
+                            <!--begin::Search dateRange-->
+                            <div class= " d-flex position-relative mx-2 mb-2 mb-sm-0">
+                                <input data-kt-docs-table-filter="search" class="form-control form-control-solid w-200px" placeholder="Pick date rage" id="kt_daterangepicker_4"/>
+                            </div>
+                            <!--end::Search dateRange-->
+                            <!--begin::Search currencyFlag-->
+                            <div class="d-flex align-items-center mx-2">
+                                <select class="form-select form-select-solid w-200px ps-5" id="searchCurrencyDetail" data-control="select2" data-hide-search="true" data-placeholder="Search Currency" data-kt-docs-table-filter="search">
+                                    <option></option>
+                                    <option value="1">USD</option>
+                                    <option value="90">MXN</option>
+                                    <option value="42">EUR</option>
+                                    <option value="137">CAD</option>
+                                    <option value="9">AUD</option>
+                                    <option value="64">JPY</option>
+                                    <option value="44">GBP</option>
+                                    <option value="125">THB</option>
+                                    <option value="36">DKK</option>
+                                </select>
+                            </div>
+                            <!--end::Search currencyFlag-->
+                        </div>
+                        <!--end::Wrapper-->
+    
+                        <!--begin::Datatable-->
+                            <table id="kt_datatable_holddingDetail" class="table align-middle table-row-dashed fs-6 gy-5">
+                                <thead>
+                                <tr class="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0">
+                                    <th>Deal#</th>
+                                    <th>Entry date</th>
+                                    <th>Value date</th>
+                                    <th>Funds in/out</th>
+                                </tr>
+                                </thead>
+                                <tbody class="text-gray-600 fw-semibold">
+                                </tbody>
+                            </table>
+                            
+                        <!--end::Datatable-->
+                    </div>
+                    <!--end::Card-->
+                </div>
+                <!--end::Content container-->
+            </div>
+
+        </div>
+        <!--end::Toolbar-->
+        <!--begin::Content-->
+            <!--end::Content-->
+        </div>
+        <!--end::Content wrapper-->
+        <!--begin::Footer-->
+        <div id="kt_app_footer" class="app-footer">
+            <!--begin::Footer container-->
+            <div class="app-container container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3">
+                <!--begin::Copyright-->
+                <div class="text-gray-900 order-2 order-md-1">
+                    <span class="text-muted fw-semibold me-1">2023&copy;</span>
+                    <a href="https://tkambio.com/" target="_blank" class="text-gray-800 text-hover-primary">Tkambio</a>
+                </div>
+                <!--end::Copyright-->
+            </div>
+            <!--end::Footer container-->
+        </div>
+        <!--end::Footer-->
+    </div>
+    <!--end:::Main-->
+    
+{{/inline}}
+{{/admin}}

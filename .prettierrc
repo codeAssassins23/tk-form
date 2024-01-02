@@ -1,4 +1,14 @@
 {
   "singleQuote": true,
-  "trailingComma": "all"
+  "trailingComma": "all",
+  "overrides": [
+    {
+      "files": ["*.hbs"],
+      "options": {
+        "parser": "glimmer",
+        "singleQuote": true,  
+        "trailingComma": "all"  
+      }
+    }
+  ]
 }

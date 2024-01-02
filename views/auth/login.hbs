@@ -21,7 +21,17 @@
 									<h1 class="text-gray-900 fw-bolder mb-3">Sign In</h1>
 									<!--end::Title-->
 									<!--begin::Subtitle-->
-									<div class="text-gray-500 fw-semibold fs-6">Your Social Campaigns</div>
+									<div class="text-gray-500 fw-semibold fs-6"> 
+										{{#if message}}
+										<div class="card-toolbar">
+											<span class="badge badge-light-danger fw-bold me-auto px-4 py-3">
+												{{message}}
+											</span>
+										</div>															
+										{{^}}
+										TKambio
+										{{/if}}
+									</div>
 									<!--end::Subtitle=-->
 								</div>
 								<!--begin::Heading-->

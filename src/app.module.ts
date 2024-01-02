@@ -7,18 +7,23 @@ import { UserModule } from './user/user.module';
 import { RolesModule } from './roles/roles.module';
 import { AuthModule } from './auth/auth.module';
 import { AdminModule } from './admin/admin.module';
+import { HoldingModule } from './holding_accounts/holding.module';
+import { ConfigModule } from '@nestjs/config';
 
 /* Group different functionalities into one */
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',
       port: 5432,
-      password: 'n0deJS0704',
-      username: 'postgres',
+      password: process.env.DATA_BASE_PASSWORD,
+      username: process.env.DATA_BASE_USER,
       autoLoadEntities: true,
-      database: 'bd_tkambio',
+      database: process.env.DATA_BASE_NAME,
       synchronize: true,
       logging: true,
     }),
@@ -26,6 +31,7 @@ import { AdminModule } from './admin/admin.module';
     RolesModule,
     AuthModule,
     AdminModule,
+    HoldingModule,
   ],
   controllers: [AppController], //Routes that can have this module
   providers: [AppService], //Service that can have this module
