@@ -7,6 +7,10 @@ import { join } from 'path';
 import * as hbs from 'hbs';
 import * as hbsUtils from 'hbs-utils';
 import * as cookieParser from 'cookie-parser';
+import {
+  HttpExceptionFilter,
+  UnauthorizedExceptionFilter,
+} from './errors/http-exception.filter';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -28,6 +32,13 @@ async function bootstrap() {
     origin: 'http://localhost:3200',
     credentials: true,
   });
+
+  //Exception filters
+  app.useGlobalFilters(
+    new HttpExceptionFilter(),
+    new UnauthorizedExceptionFilter(),
+  );
+
   await app.listen(3200);
   console.log(`Application is running on: ${await app.getUrl()}`);
 }

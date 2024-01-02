@@ -45,7 +45,7 @@ export class UserService {
     });
 
     if (!user || user === undefined || user === null) {
-      throw new NotFoundException(`Usuario no encontrado`);
+      throw new NotFoundException(`Credenciales invalidas`);
     }
 
     return user;

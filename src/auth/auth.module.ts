@@ -7,7 +7,6 @@ import { jwtConstants } from './constants';
 import { APP_GUARD } from '@nestjs/core';
 import { AuthGuard } from './auth.guard';
 import { PassportModule } from '@nestjs/passport';
-
 @Module({
   imports: [
     UserModule,
