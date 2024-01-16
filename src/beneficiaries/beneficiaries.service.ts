@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import axios from 'axios';
-import { Console, info } from 'console';
+
 @Injectable()
 export class BeneficiariesService {
   private apiUrl = process.env.URL_LOGIN_API;
@@ -335,6 +335,7 @@ export class BeneficiariesService {
       });
 
       let infoBank = responseBank.data;
+
       if (infoBank.err !== undefined) {
         return 'error';
       }
@@ -382,6 +383,7 @@ export class BeneficiariesService {
         },
         data: requestBodyBene,
       });
+
       if (response.data.err !== undefined) {
         return 'error';
       }
