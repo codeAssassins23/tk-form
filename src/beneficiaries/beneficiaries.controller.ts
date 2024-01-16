@@ -86,6 +86,37 @@ export class BeneficiariesController {
     return 'success';
   }
 
+  @Post('/editBeneficiaries')
+  async putBeneficiaries(@Body() body: any) {
+    const { step1Data, step2Data, beneId } = body;
+    const cookies = await this.beneficiariesService.loginAPI();
+    const countries = await this.beneficiariesService.getCountries(cookies);
+    const currencies = await this.beneficiariesService.getCurrency(cookies);
+    const purpose = await this.beneficiariesService.getPurpose(cookies);
+    const data = {
+      step1Data,
+      step2Data,
+      countries,
+      currencies,
+      purpose,
+    };
+    const beneficiarie = await this.beneficiariesService.getViewEditBeneficiary(
+      cookies,
+      beneId,
+      currencies,
+      countries,
+    );
+    const beneficiarieId = await this.beneficiariesService.putBeneficiaries(
+      cookies,
+      data,
+      beneficiarie.bene,
+    );
+    if (beneficiarieId === 'error') {
+      return 'error';
+    }
+    return 'success';
+  }
+
   @Get('/beneficiaries/success')
   @Render('beneficiaries/message/successCreate')
   async createBeneficiarySuccess(@Req() request: Request) {
@@ -97,9 +128,13 @@ export class BeneficiariesController {
   async getBeneficiariesById(@Body() body: { beneId: number }) {
     const beneId = body.beneId;
     const cookies = await this.beneficiariesService.loginAPI();
+    const currencies = await this.beneficiariesService.getCurrency(cookies);
+    const countries = await this.beneficiariesService.getCountries(cookies);
     const beneficiarie = await this.beneficiariesService.getViewBeneficiary(
       cookies,
       beneId,
+      currencies,
+      countries,
     );
     return beneficiarie;
   }

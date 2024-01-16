@@ -48,7 +48,7 @@
                                             </a>
                                         </div>
                                         <div class="d-flex align-items-center gap-2 gap-lg-3">
-                                            <a href="#" class="text-primary btn btn-warning btn-sm rounded hover-scale" data-bs-toggle="modal" data-bs-target="#kt_create_beneficiaries">
+                                            <a href="#" id="create" class="text-primary btn btn-warning btn-sm rounded hover-scale" data-bs-toggle="modal" >
                                                 <i class="ki-outline ki-plus fs-0 text-primary fs-2"></i> Add beneficiary
                                             </a>
                                         </div>
@@ -88,6 +88,50 @@
                                     </div>
                                     <!--end::Wrapper-->
                                     <!--begin::Datatable-->
+									<div id="customEmptyMessage" class="mt-9" style="display:none;">
+										<!--begin::Card-->
+										<div class="d-flex flex-column flex-sm-row">
+											<!--begin::Card body-->
+											<div class="card-body pt-3">
+												<div class="mt-5 text-center">
+													
+													<div class="mt-5 text-center">
+													<!--begin::Card title-->
+														<div class="card-title">
+															<i class="ki-outline ki-plus-square fs-3x text-success"></i>
+														</div>
+														<!--begin::Card title-->
+													</div>
+													<!--begin::Card title-->
+													<div class="card-title">
+														<p class="fs-1">No beneficiaries yet</p>
+													</div>
+													<!--begin::Card title-->
+												</div>
+												<div class="mt-5 mb-10 text-center">
+													<!--begin::Card title-->
+													<div class="card-title">
+														<p class="fs-5">Start adding people's account details so you're ready to send money.</p>
+													</div>
+													<!--begin::Card title-->
+												</div>
+												<!--begin::Actions-->
+												<div class="d-flex flex-stack align-items-center justify-content-center">
+													<!--begin::Wrapper-->
+													<div>
+														<div class="d-flex align-items-center gap-2 gap-lg-3">
+															<a href="#" id="createSecond" class="text-primary btn btn-warning btn-sm rounded hover-scale" data-bs-toggle="modal">
+																<i class="ki-outline ki-plus fs-0 text-primary fs-2"></i> Add beneficiary
+															</a>
+														</div>
+													</div>
+													<!--end::Wrapper-->
+												</div>
+											</div>
+											<!--end::Card body-->
+										</div>
+										<!--end::Card-->
+									</div>
                                         <table id="kt_datatable_holddingDetail" class="table align-middle table-row-dashed fs-6 gy-5">
                                             <thead>
                                             <tr class="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0">
@@ -264,14 +308,14 @@
 												<!--begin::Input group-->
 												<div class="mb-5 col-md-6">
 													<div class="fv-row">
-														<input type="text" name="text_name" class="form-control" placeholder="Beneficiary name"/>
+														<input id="nameBeneficiary" type="text" name="text_name" class="form-control" placeholder="Beneficiary name"/>
 													</div>
 												</div>
 												<!--end::Input group-->
 												<!--begin::Input group-->
 												<div class="mb-5 col-md-6">
 													<div class="fv-row">
-														<input type="text" name="text_nickname" class="form-control" placeholder="Beneficiary Nickname"/>
+														<input id="nicknameBeneficiary" type="text" name="text_nickname" class="form-control" placeholder="Beneficiary Nickname"/>
 													</div>
 												</div>
 												<!--end::Input group-->
@@ -282,7 +326,7 @@
 												<!--begin::Input group-->
 												<div class="rounded mb-5 col-md-6">
 													<div class="fv-row">
-														<select class="form-select " name="select2_country" data-placeholder="Select a country" id="kt_docs_select2_country">
+														<select class="form-select select2-field" name="select2_country" data-placeholder="Select a country" id="kt_docs_select2_country">
 															<option></option>
 															{{#each countries}}
 																<option value="{{this.nameFormat}}" data-kt-select2-country="/assets/media/flags/countries/{{this.nameFormat}}.svg">{{this.name}}</option>
@@ -295,7 +339,7 @@
 												<!--begin::Input group-->
 												<div class="mb-5 col-md-6">
 													<div class="fv-row">
-														<input type="text" name="text_address" class="form-control" placeholder="Address line"/>
+														<input id="addressBeneficiary" type="text" name="text_address" class="form-control" placeholder="Address line"/>
 													</div>
 												</div>
 												<!--end::Input group-->
@@ -306,14 +350,14 @@
 												<!--begin::Input group-->
 												<div class="mb-5 col-md-6">
 													<div class="fv-row">
-														<input type="text" name="text_city" class="form-control" placeholder="City"/>
+														<input id="cityBeneficiary" type="text" name="text_city" class="form-control" placeholder="City"/>
 													</div>
 												</div>
 												<!--end::Input group-->
 												<!--begin::Input group-->
 												<div class="mb-5 col-md-6">
 													<div class="fv-row">
-														<input type="text" name="text_state" class="form-control" placeholder="State/Province"/>
+														<input id="stateBeneficiary" type="text" name="text_state" class="form-control" placeholder="State/Province"/>
 													</div>
 												</div>
 												<!--end::Input group-->
@@ -323,13 +367,13 @@
 											<div class="row">
 												<!--begin::Input group-->
 												<div class="mb-5 col-md-6">
-													<input type="text" name="text_postal" class="form-control" placeholder="Postal code (optional)"/>
+													<input id="postalCodeBeneficiary" type="text" name="text_postal" class="form-control" placeholder="Postal code (optional)"/>
 												</div>
 												<!--end::Input group-->
 												<!--begin::Input group-->
 												<div class="mb-5 col-md-6 fv-row">
 													<!--begin::Input-->
-													<input type="email" name="text_email" class="form-control mb-3 mb-lg-0" placeholder="Email address(optional)" />
+													<input id="emailBeneficiary" type="email" name="text_email" class="form-control mb-3 mb-lg-0" placeholder="Email address(optional)" />
 													<!--end::Input-->
 												</div>
 												<!--end::Input group-->
@@ -438,14 +482,14 @@
 												<!--begin::Input group-->
 												<div class="mb-5 col-md-6">
 													<div class="fv-row">
-														<input type="text" name="bankName" class="form-control" placeholder="Bank name"/>
+														<input id="nameBank" type="text" name="bankName" class="form-control" placeholder="Bank name"/>
 													</div>
 												</div>
 												<!--end::Input group-->
 												<!--begin::Input group-->
 												<div class="mb-5 col-md-6">
 													<div class="fv-row">
-														<input type="text" name="bankAdressLine" class="form-control" placeholder="Adress line"/>
+														<input id="addressBank" type="text" name="bankAdressLine" class="form-control" placeholder="Adress line"/>
 													</div>
 												</div>
 												<!--end::Input group-->
@@ -471,10 +515,10 @@
 												<div id="othersSelectOne" style="display:none;">
 													<div class="row">
 														<div class="mb-5 col-md-6 fv-row">
-															<input type="text" name="othersSwiftOne" class="form-control" placeholder="SWIFT"/>
+															<input id="swiftOtherOne" type="text" name="othersSwiftOne" class="form-control" placeholder="SWIFT"/>
 														</div>
 														<div class="mb-5 col-md-6 fv-row">
-															<input type="text" name="othersAccountOne" class="form-control" placeholder="Account number/IBAN"/>
+															<input id="accountOthersOne" type="text" name="othersAccountOne" class="form-control" placeholder="Account number/IBAN"/>
 														</div>
 													</div>
 													<div class="row align-items-center">
@@ -497,10 +541,10 @@
 												<div id="othersSelectTwo" style="display: none;">
 													<div class="row">
 														<div class="mb-5 col-md-6 fv-row">
-															<input type="text" name="othersTransitTwo" class="form-control" placeholder="Transit code"/>
+															<input id="transitOthersTwo" type="text" name="othersTransitTwo" class="form-control" placeholder="Transit code"/>
 														</div>
 														<div class="mb-5 col-md-6 fv-row">
-															<input type="text" name="othersAccountTwo" class="form-control" placeholder="Account number"/>
+															<input id="accountOthersTwo" type="text" name="othersAccountTwo" class="form-control" placeholder="Account number"/>
 														</div>
 													</div>
 													<div class="row align-items-center">
@@ -542,10 +586,10 @@
 												<div id="unitedSelectOne" style="display: none;">
 													<div class="row">
 														<div class="mb-5 col-md-6 fv-row">
-															<input type="text" class="form-control" name="ABAunitedOne" placeholder="ABA number"/>
+															<input id="abaUsdOne" type="text" class="form-control" name="ABAunitedOne" placeholder="ABA number"/>
 														</div>
 														<div class="mb-5 col-md-6 fv-row">
-															<input type="text" class="form-control" name="accountUnitedOne" placeholder="Account number"/>
+															<input id="accountUsdOne" type="text" class="form-control" name="accountUnitedOne" placeholder="Account number"/>
 														</div>
 													</div>
 													<!--end::Input group-->
@@ -570,10 +614,10 @@
 												<div id="unitedSelectTwo" style="display: none;">
 													<div class="row">
 														<div class="mb-5 col-md-6 fv-row">
-															<input type="text" name="SWIFTunitedOne" class="form-control" placeholder="SWIFT"/>
+															<input id="abaUsdTwo" type="text" name="SWIFTunitedOne" class="form-control" placeholder="SWIFT"/>
 														</div>
 														<div class="mb-5 col-md-6 fv-row">
-															<input type="text" name="accountUnitedTwo" class="form-control" placeholder="Account number/IBAN"/>
+															<input id="accountUsdTwo" type="text" name="accountUnitedTwo" class="form-control" placeholder="Account number/IBAN"/>
 														</div>
 													</div>
 													<!--end::Input group-->
@@ -603,633 +647,12 @@
 												<!--begin::Input group-->
 												<div class="row">
 													<div class="mb-5 col-md-6 fv-row">
-														<input type="text" name="inputMexico_clabe" class="form-control" placeholder="Clabe"/>
+														<input id="mexicoClabe" type="text" name="inputMexico_clabe" class="form-control" placeholder="Clabe"/>
 													</div>
 													<!--end::Input group-->
 													<!--begin::Input group-->
 													<div class="mb-5 col-md-6 fv-row">
-														<input type="text" name="inputMexico_SWIFT" class="form-control" placeholder="SWIFT"/>
-													</div>
-													<!--end::Input group-->
-													<!--begin::Input group-->
-													<div class="row align-items-center">
-														<div class="mb-2 d-flex justify-content-between w-100">
-															<h5 class="text-truncate text-sm mb-0">Sending bank instructions (optional)</h5>
-															<div class="form-check form-switch form-check-custom form-check-solid">
-																<input class="form-check-input" type="checkbox" name="checkbox" id="checkBoxMexico" checked="checked"/>
-																<label class="form-check-label" for="checkBoxMexico"></label>
-															</div>
-														</div>
-													</div>
-													<div class="mb-5" id="instructions" style="display: block;">
-														<textarea  class="form-control" name="instructionsMXN" placeholder="Write Instructions" id="textAreaInstructions" style="height: 100px;"></textarea>
-														<span class="fs-8 badge badge-light-primary"><i class="ki-outline ki-information-5 text-primary"></i>
-															Please be specific, eg. “This company is a supplier of leather goods. 
-															Each month we pay this company for wallets and belts”
-														</span>
-													</div>
-												</div>
-												<!--end::Input group-->
-											</div>
-											<!--end::Input group MEXICO-->
-										</div>
-										<!--begin::Step 2-->
-										<!--begin::Step 3-->
-										<div class="flex-column" data-kt-stepper-element="content">
-											<div class="text-center mb-5 ">
-												<h3>Review </h3>
-											</div>
-											<!--begin::Content-->
-											<div class="d-flex mb-2 mb-lg-0 align-items-center justify-content-center">
-												<!--begin::Card-->
-												<div class="card card-flush pt-3 mb-5 mb-xl-10" style="width: 650px;">
-													<!--begin::Card header-->
-													<div class="card-header">
-														<!--begin::Card title-->
-														<div class="card-title">
-															<h5 class="fw-bold">BENEFICIARY INFORMATION</h5>
-														</div>
-														<!--begin::Card title-->
-														<!--begin::Card toolbar-->
-														<div class="card-toolbar">
-															<!--begin::Underline-->
-															<span class="d-inline-block position-relative ms-2 me-4">
-																<!--begin::Label-->
-																<span class="d-inline-block mb-2 fs-6 fw-bold ">
-																	<a href="#" class="">Edit</a>
-																</span>
-																<!--end::Label-->
-																<!--begin::Line-->
-																<span class="d-inline-block position-absolute h-2px bottom-0 end-0 start-0 bg-primary translate rounded"></span>
-																<!--end::Line-->
-															</span>
-															<!--end::Underline-->
-														</div>
-														<!--end::Card toolbar-->
-													</div>
-													<!--end::Card header-->
-													<!--begin::Card body-->
-													<div class="card-body pt-3">
-														<!--begin::Section-->
-														<div class="mb-5">
-															<!--begin::Details BENEFICIARY INFORMATION-->
-															<div class="d-flex flex-wrap py-0">
-																<!--begin::Row-->
-																<div class="flex-equal me-5" id="tableBeneficiary">
-																	<!--generate::table-->
-																</div>
-																<!--end::Row-->
-															</div>
-															<!--end::Row-->
-															<!--end::Details HEADER BANK-->
-															<div class="separator my-1"></div>
-															<div class="container">
-																<div class="row">
-																	<div class="col-6 text-start my-6">
-																		<h5>BANK INFORMATION</h5>
-																	</div>
-																	<div class="col-6 text-end my-6">
-																		<!--begin::Underline-->
-																		<span class="d-inline-block position-relative ms-2 me-4">
-																			<!--begin::Label-->
-																			<span class="d-inline-block mb-2 fs-6 fw-bold ">
-																				<a href="#" class="">Edit</a>
-																			</span>
-																			<!--end::Label-->
-																			<!--begin::Line-->
-																			<span class="d-inline-block position-absolute h-2px bottom-0 end-0 start-0 bg-primary translate rounded"></span>
-																			<!--end::Line-->
-																		</span>
-																		<!--end::Underline-->
-																	</div>
-																</div>
-															</div>
-															<!--begin::Details BANK-->
-															<div class="d-flex flex-wrap py-0 mb-5">
-																<!--begin::Row-->
-																<div class="flex-equal me-5" id="tableBank">
-																	<!--begin::Details-->
-																	
-																	<!--end::Details-->
-																</div>
-																<!--end::Row-->
-															</div>
-															<!--end::Row-->
-															<div class="d-flex flex-stack align-items-center justify-content-center">
-																<!--begin::Wrapper-->
-																<div class="d-flex" id="buttonCreate">
-																	{{!-- <button type="submit" id="formSubmit"  class="text-primary btn btn-warning w-200px rounded hover-scale">
-																	Create beneficiary
-																	</button> --}}
-																</div>
-																<!--end::Wrapper-->
-															</div>
-														</div>
-														<!--end::Section-->
-													</div>
-													<!--end::Card body-->
-												</div>
-												<!--end::Card-->
-											</div>
-											<!--end::Content-->
-										</div>
-										<!--begin::Step 3-->
-									</div>
-									<!--end::Group-->
-									<!--begin::Actions-->
-									<div class="d-flex flex-stack align-items-center justify-content-center">
-										<!--begin::Wrapper-->
-										<div>
-											<div class="d-flex ">
-												<button type="button" id="kt_docs_formvalidation_text_submit"  class="text-primary btn btn-warning w-200px rounded hover-scale" data-kt-stepper-action="next">
-												Next
-												</button>
-											</div>
-										</div>
-										<!--end::Wrapper-->
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<div class="modal fade" id="kt_edit_beneficiaries">
-				<div class="modal-dialog mw-900px">
-					<div class="modal-content">
-						<div class="stepper stepper-pills" id="kt_stepper_example_basic">
-							<div class="modal-header">
-								<div class="d-flex align-items-center justify-content-center w-100">
-									<!--begin::Nav-->
-									<div class="stepper-nav flex-center flex-wrap mx-auto">
-										<!--begin::Step 1-->
-										<div class="stepper-item mx-8 my-4 current" data-kt-stepper-element="nav">
-											<!--begin::Wrapper-->
-											<div class="stepper-wrapper d-flex align-items-center">
-												<!--begin::Icon-->
-												<div class="stepper-icon w-40px h-40px">
-													<i class="stepper-check fas fa-check"></i>
-													<span class="stepper-number">1</span>
-												</div>
-												<!--end::Icon-->
-
-												<!--begin::Label-->
-												<div class="stepper-label">
-													<h3 class="stepper-title">
-														Beneficiary
-													</h3>
-
-													<div class="stepper-desc">
-														Description
-													</div>
-												</div>
-												<!--end::Label-->
-											</div>
-											<!--end::Wrapper-->
-
-											<!--begin::Line-->
-											<div class="stepper-line h-40px"></div>
-											<!--end::Line-->
-										</div>
-										<!--end::Step 1-->
-
-										<!--begin::Step 2-->
-										<div class="stepper-item mx-8 my-4" data-kt-stepper-element="nav">
-											<!--begin::Wrapper-->
-											<div class="stepper-wrapper d-flex align-items-center">
-												<!--begin::Icon-->
-												<div class="stepper-icon w-40px h-40px">
-													<i class="stepper-check fas fa-check"></i>
-													<span class="stepper-number">2</span>
-												</div>
-												<!--begin::Icon-->
-
-												<!--begin::Label-->
-												<div class="stepper-label">
-													<h3 class="stepper-title">
-														Bank information
-													</h3>
-
-													<div class="stepper-desc">
-													</div>
-												</div>
-												<!--end::Label-->
-											</div>
-											<!--end::Wrapper-->
-
-											<!--begin::Line-->
-											<div class="stepper-line h-40px"></div>
-											<!--end::Line-->
-										</div>
-										<!--end::Step 2-->
-
-										<!--begin::Step 3-->
-										<div class="stepper-item mx-8 my-4" data-kt-stepper-element="nav">
-											<!--begin::Wrapper-->
-											<div class="stepper-wrapper d-flex align-items-center">
-												<!--begin::Icon-->
-												<div class="stepper-icon w-40px h-40px">
-													<i class="stepper-check fas fa-check"></i>
-													<span class="stepper-number">3</span>
-												</div>
-												<!--begin::Icon-->
-
-												<!--begin::Label-->
-												<div class="stepper-label">
-													<h3 class="stepper-title">
-														Review
-													</h3>
-
-													<div class="stepper-desc">
-													</div>
-												</div>
-												<!--end::Label-->
-											</div>
-											<!--end::Wrapper-->
-
-											<!--begin::Line-->
-											<div class="stepper-line h-40px"></div>
-											<!--end::Line-->
-										</div>
-										<!--end::Step 3-->
-									</div>
-									<!--end::Nav-->
-									<!--begin::Close-->
-									<div class="btn btn-icon btn-sm btn-active-light-primary p-5" data-bs-dismiss="modal" aria-label="Close">
-										<i class="ki-outline ki-cross-square fs-1"></i>
-									</div>
-									<!--end::Close-->
-								</div>
-							</div>
-							<div class="modal-body">
-								<div class="d-flex text-start mb-0 w-25">
-									<button type="button" class="btn btn-icon btn-active-light" data-kt-stepper-action="previous" id="previousButton">
-										<i class="ki-outline ki-left fs-2qx"></i>
-									</button>
-								</div>
-								<!--begin::Form-->
-								<form class="form w-lg-700px mx-auto" action="#" autocomplete="off" id="kt_docs_formvalidation_text">
-									<!--begin::Group-->
-									<div class="mb-0">
-										<!--begin::Step 1-->
-										<div class="flex-column current" data-kt-stepper-element="content">
-											<div class="d-flex text-start mb-0 w-25">
-												<a href="#" class="disabled btn btn-flush btn-icon"></a>
-											</div>
-											<div class="text-center mb-5 ">
-												<h3>Beneficiary Information</h3>
-											</div>
-											<!--begin::Input group-->
-											<div class="row">
-												<!--begin::Input group-->
-												<div class="mb-5 col-md-6">
-													<div class="fv-row">
-														<input id="nameBeneficiary" type="text" name="text_name" class="form-control" placeholder="Beneficiary name"/>
-													</div>
-												</div>
-												<!--end::Input group-->
-												<!--begin::Input group-->
-												<div class="mb-5 col-md-6">
-													<div class="fv-row">
-														<input id="nicknameBeneficiary" type="text" name="text_nickname" class="form-control" placeholder="Beneficiary Nickname"/>
-													</div>
-												</div>
-												<!--end::Input group-->
-											</div>
-											<!--end::Input group-->
-											<!--begin::Input group-->
-											<div class="row">
-												<!--begin::Input group-->
-												<div class="rounded mb-5 col-md-6">
-													<div class="fv-row">
-														<select class="form-select " name="select2_country" data-placeholder="Select a country" id="kt_docs_select2_countryTwo">
-															<option></option>
-															{{#each countries}}
-																<option value="{{this.nameFormat}}" data-kt-select2-country="/assets/media/flags/countries/{{this.nameFormat}}.svg">{{this.name}}</option>
-															{{/each}}
-														</select>
-													</div>
-													
-												</div>
-												<!--end::Input group-->
-												<!--begin::Input group-->
-												<div class="mb-5 col-md-6">
-													<div class="fv-row">
-														<input id="addressBeneficiary" type="text" name="text_address" class="form-control" placeholder="Address line"/>
-													</div>
-												</div>
-												<!--end::Input group-->
-											</div>
-											<!--end::Input group-->
-											<!--begin::Input group-->
-											<div class="row">
-												<!--begin::Input group-->
-												<div class="mb-5 col-md-6">
-													<div class="fv-row">
-														<input id="cityBeneficiary" type="text" name="text_city" class="form-control" placeholder="City"/>
-													</div>
-												</div>
-												<!--end::Input group-->
-												<!--begin::Input group-->
-												<div class="mb-5 col-md-6">
-													<div class="fv-row">
-														<input id="stateBeneficiary" type="text" name="text_state" class="form-control" placeholder="State/Province"/>
-													</div>
-												</div>
-												<!--end::Input group-->
-											</div>
-											<!--end::Input group-->
-											<!--begin::Input group-->
-											<div class="row">
-												<!--begin::Input group-->
-												<div class="mb-5 col-md-6">
-													<input id="postalCodeBeneficiary" type="text" name="text_postal" class="form-control" placeholder="Postal code (optional)"/>
-												</div>
-												<!--end::Input group-->
-												<!--begin::Input group-->
-												<div class="mb-5 col-md-6 fv-row">
-													<!--begin::Input-->
-													<input id="emailBeneficiary" type="email" name="text_email" class="form-control mb-3 mb-lg-0" placeholder="Email address(optional)" />
-													<!--end::Input-->
-												</div>
-												<!--end::Input group-->
-											</div>
-											<!--end::Input group-->
-											<!--begin::Input group-->
-											<div class="row">
-												<div class=" rounded mb-5">
-													<div class="fv-row">
-														<select class="form-select" name="select2Purpose" data-placeholder="Select Purpose of payment" id="kt_docs_select2_purposeTwo">
-															<option></option>
-															{{#each purpose}}
-																<option value="{{this.name}}">{{this.name}}</option>
-															{{/each}}
-														</select>
-													</div>
-												</div>
-											</div>
-											<div class="row">
-												<h5 class="mb-5">Purpose of payment description</h5>
-												<div class="fv-row">
-													<div class="mb-5">
-														<input class="form-check-input" type="radio" name="purpose" value="Payment for logistics services" id="flexRadioLg1"/>
-														<label class="form-check-label" for="flexRadioLg1">
-															Payment for logistics services
-														</label>
-													</div>
-													<div class="mb-5">
-														<input class="form-check-input" type="radio" name="purpose" value="Purchase of household goods" id="flexRadioLg2"/>
-														<label class="form-check-label" for="flexRadioLg2">
-															Purchase of household goods
-														</label>
-													</div>
-													<div class="mb-5">
-														<input class="form-check-input" type="radio" name="purpose" value="Payment for accounting services" id="flexRadioLg3"/>
-														<label class="form-check-label" for="flexRadioLg3">
-															Payment for accounting services
-														</label>
-													</div>
-													<div class="mb-5">
-														<input class="form-check-input" type="radio" name="purpose" value="Tourism and travel service" id="flexRadioLg5"/>
-														<label class="form-check-label" for="flexRadioLg5">
-															Tourism and travel service
-														</label>
-													</div>
-													<div class="mb-5">
-														<input class="form-check-input" type="radio" name="purpose" value="Others" id="flexRadioLg6"/>
-														<label class="form-check-label" for="flexRadioLg6">
-															Others
-														</label>
-													</div>
-													</div>
-											</div>
-											<div class="row">
-												<!--begin::Input group-->
-												<div class="mb-5" id="specificTextarea" style="display:none">
-													<div class="fv-row">
-														<textarea  class="form-control" name="input_textArea" placeholder="Specific" id="floatingSpecific" style="height: 100px;"></textarea>
-														<span class="fs-8 badge badge-light-primary"><i class="ki-outline ki-information-5 text-primary"></i>
-															Please be specific, eg. “This company is a supplier of leather goods. 
-															Each month we pay this company for wallets and belts”
-														</span>
-													</div>
-													
-												</div>
-												<!--end::Input group-->
-											</div>
-											<!--end::Input group-->
-										</div>
-										<!--begin::Step 1-->
-										<!--begin::Step 2-->
-										<div class="flex-column " data-kt-stepper-element="content">
-											<div class="text-center mb-5 ">
-												<h3>Bank Information</h3>
-											</div>
-											<!--begin::Input group-->
-											<div class="row">
-												<!--begin::Input group-->
-												<div class="rounded mb-5 fv-row">
-													<select class="form-select" name="select2Bank_currency" data-placeholder="Select currency" id="kt_docs_select2_currency">
-														<option></option>
-														{{#each currencies}}
-															<option value="{{this.code}}"  data-kt-select2-country="/assets/media/flags/{{this.code}}.svg">{{this.code}}</option>
-														{{/each}}
-													</select>
-												</div>
-												<!--end::Input group-->
-											</div>
-											<!--end::Input group-->
-											<!--begin::Input group-->
-											<div class="row">
-												<!--begin::Input group-->
-												<div class="rounded mb-5 fv-row">
-													<select class="form-select" name="select2Bank_countries" data-placeholder="Select bank country" id="kt_docs_select2_bankCountry">
-														<option></option>
-														{{#each countries}}
-															<option value="{{this.nameFormat}}" data-kt-select2-country="/assets/media/flags/countries/{{this.nameFormat}}.svg">{{this.name}}</option>
-														{{/each}}
-													</select>
-												</div>
-												<!--end::Input group-->
-											</div>
-											<!--end::Input group-->
-											<!--begin::Input group-->
-											<div class="row">
-												<!--begin::Input group-->
-												<div class="mb-5 col-md-6">
-													<div class="fv-row">
-														<input type="text" name="bankName" class="form-control" placeholder="Bank name"/>
-													</div>
-												</div>
-												<!--end::Input group-->
-												<!--begin::Input group-->
-												<div class="mb-5 col-md-6">
-													<div class="fv-row">
-														<input type="text" name="bankAdressLine" class="form-control" placeholder="Adress line"/>
-													</div>
-												</div>
-												<!--end::Input group-->
-											</div>
-											<!--end::Input group-->
-											<!--begin::Input group OTHERS-->
-											<div id="othersStepOne" style="display:none;">
-												<div class="row fv-row">
-													<h5 class="mb-5">What banking information do you have?</h5>
-													<div class="mb-5 fv-row">
-														<input class="form-check-input" type="radio" name="bankInformationOthers" value="SWIFT" id="radioOthers1"/>
-														<label class="form-check-label" for="radioOthers1">
-															SWIFT and account number/IBAN
-														</label>
-													</div>
-													<div class="mb-5 fv-row">
-														<input class="form-check-input" type="radio" name="bankInformationOthers" value="transitCode" id="radioOthers2"/>
-														<label class="form-check-label" for="radioOthers2">
-															Transit code and account number
-														</label>
-													</div>
-												</div>
-												<div id="othersSelectOne" style="display:none;">
-													<div class="row">
-														<div class="mb-5 col-md-6 fv-row">
-															<input type="text" name="othersSwiftOne" class="form-control" placeholder="SWIFT"/>
-														</div>
-														<div class="mb-5 col-md-6 fv-row">
-															<input type="text" name="othersAccountOne" class="form-control" placeholder="Account number/IBAN"/>
-														</div>
-													</div>
-													<div class="row align-items-center">
-														<div class="mb-2 d-flex justify-content-between w-100">
-															<h5 class="text-truncate text-sm mb-0">Sending bank instructions (optional)</h5>
-															<div class="form-check form-switch form-check-custom form-check-solid">
-																<input class="form-check-input" type="checkbox" name="checkbox" id="checkBoxOthersOne" checked="checked" />
-																<label class="form-check-label" for="checkBoxOthersOne"></label>
-															</div>
-														</div>
-													</div>
-													<div class="mb-5 fv-row" id="instructionsSelectOne">
-														<textarea  class="form-control" name="instructionsOtherstOne" placeholder="Write Instructions" id="textSelectOne" style="height: 100px;"></textarea>
-														<span class="fs-8 badge badge-light-primary"><i class="ki-outline ki-information-5 text-primary"></i>
-															Please be specific, eg. “This company is a supplier of leather goods. 
-															Each month we pay this company for wallets and belts”
-														</span>
-													</div>
-												</div>
-												<div id="othersSelectTwo" style="display: none;">
-													<div class="row">
-														<div class="mb-5 col-md-6 fv-row">
-															<input type="text" name="othersTransitTwo" class="form-control" placeholder="Transit code"/>
-														</div>
-														<div class="mb-5 col-md-6 fv-row">
-															<input type="text" name="othersAccountTwo" class="form-control" placeholder="Account number"/>
-														</div>
-													</div>
-													<div class="row align-items-center">
-														<div class="mb-2 d-flex justify-content-between w-100">
-															<h5 class="text-truncate text-sm mb-0">Sending bank instructions (optional)</h5>
-															<div class="form-check form-switch form-check-custom form-check-solid">
-																<input class="form-check-input" name="checkbox" type="checkbox" value="" id="checkBoxOthersTwo" checked="checked" />
-																<label class="form-check-label" for="checkBoxOthersTwo"></label>
-															</div>
-														</div>
-													</div>
-													<div class="mb-5 fv-row" id="instructionsSelectTwo">
-														<textarea  class="form-control" name="instructionsOtherstTwo" placeholder="Write Instructions" id="textSelectTwo" style="height: 100px;"></textarea>
-														<span class="fs-8 badge badge-light-primary"><i class="ki-outline ki-information-5 text-primary"></i>
-															Please be specific, eg. “This company is a supplier of leather goods. 
-															Each month we pay this company for wallets and belts”.
-														</span>
-													</div>
-												</div>
-											</div>
-											<!--end::Input group OTHERS-->
-											<!--begin::Input group UNITED STATE-->
-											<div id="unitedState" style="display:none;">
-												<div class="row">
-													<h5 class="mb-5">What banking information do you have?</h5>
-													<div class="mb-5 fv-row">
-														<input class="form-check-input" type="radio" name="bankInformationUnited" value="ABA" id="radioUnited1"/>
-														<label class="form-check-label" for="radioUnited1">
-															ABA number and account number
-														</label>
-													</div>
-													<div class="mb-5 fv-row">
-														<input class="form-check-input" type="radio" name="bankInformationUnited" value="SWIFT" id="radioUnited2"/>
-														<label class="form-check-label" for="radioUnited2">
-															SWIFT and account number/IBAN
-														</label>
-													</div>
-												</div>
-												<div id="unitedSelectOne" style="display: none;">
-													<div class="row">
-														<div class="mb-5 col-md-6 fv-row">
-															<input type="text" class="form-control" name="ABAunitedOne" placeholder="ABA number"/>
-														</div>
-														<div class="mb-5 col-md-6 fv-row">
-															<input type="text" class="form-control" name="accountUnitedOne" placeholder="Account number"/>
-														</div>
-													</div>
-													<!--end::Input group-->
-													<!--begin::Input group-->
-													<div class="row align-items-center">
-														<div class="mb-2 d-flex justify-content-between w-100">
-															<h5 class="text-truncate text-sm mb-0">Sending bank instructions (optional)</h5>
-															<div class="form-check form-switch form-check-custom form-check-solid">
-																<input class="form-check-input" name="checkbox" type="checkbox" value="" id="checkBoxUnitedOne" checked="checked" />
-																<label class="form-check-label" for="checkBoxUnitedOne"></label>
-															</div>
-														</div>
-													</div>
-													<div class="mb-5" id="instructionsUnitedStateOne" style="">
-														<textarea  class="form-control" placeholder="Write Instructions" name="instructionsUSDOne" id="textAreaUnitedStateOne" style="height: 100px;"></textarea>
-														<span class="fs-8 badge badge-light-primary"><i class="ki-outline ki-information-5 text-primary"></i>
-															Please be specific, eg. “This company is a supplier of leather goods. 
-															Each month we pay this company for wallets and belts”
-														</span>
-													</div>
-												</div>
-												<div id="unitedSelectTwo" style="display: none;">
-													<div class="row">
-														<div class="mb-5 col-md-6 fv-row">
-															<input type="text" name="SWIFTunitedOne" class="form-control" placeholder="SWIFT"/>
-														</div>
-														<div class="mb-5 col-md-6 fv-row">
-															<input type="text" name="accountUnitedTwo" class="form-control" placeholder="Account number/IBAN"/>
-														</div>
-													</div>
-													<!--end::Input group-->
-													<!--begin::Input group-->
-													<div class="row align-items-center">
-														<div class="mb-2 d-flex justify-content-between w-100">
-															<h5 class="text-truncate text-sm mb-0">Sending bank instructions (optional)</h5>
-															<div class="form-check form-switch form-check-custom form-check-solid">
-																<input class="form-check-input" name="checkbox" type="checkbox" id="checkBoxUnitedTwo" checked="checked" />
-																<label class="form-check-label" for="checkBoxUnitedTwo"></label>
-															</div>
-														</div>
-													</div>
-													<div class="mb-5" id="instructionsUnitedStateTwo" style="">
-														<textarea  class="form-control" placeholder="Write Instructions" name="instructionsUSDTwo" id="textAreaUnitedStateTwo" style="height: 100px;"></textarea>
-														<span class="fs-8 badge badge-light-primary"><i class="ki-outline ki-information-5 text-primary"></i>
-															Please be specific, eg. “This company is a supplier of leather goods. 
-															Each month we pay this company for wallets and belts”
-														</span>
-													</div>
-												</div>
-												
-											</div>
-											<!--end::Input group UNITED STATE-->
-											<!--begin::Input group MEXICO-->
-											<div id="mexico" style="display: none;">
-												<!--begin::Input group-->
-												<div class="row">
-													<div class="mb-5 col-md-6 fv-row">
-														<input type="text" name="inputMexico_clabe" class="form-control" placeholder="Clabe"/>
-													</div>
-													<!--end::Input group-->
-													<!--begin::Input group-->
-													<div class="mb-5 col-md-6 fv-row">
-														<input type="text" name="inputMexico_SWIFT" class="form-control" placeholder="SWIFT"/>
+														<input id="mexicoSwift" type="text" name="inputMexico_SWIFT" class="form-control" placeholder="SWIFT"/>
 													</div>
 													<!--end::Input group-->
 													<!--begin::Input group-->
@@ -1377,7 +800,6 @@
 			</div>
 		</div>
 		<!--end::App-->
-		
 		<!--begin::Javascript-->
 		<script>
 		const menuLinks = document.querySelectorAll('.menu-link');
@@ -1411,10 +833,17 @@
 		<!--begin::Custom Javascript-->
 		<!--begin::Validation-->
 		<script>
-			// Define form element
-			const form = document.getElementById('kt_docs_formvalidation_text');
+			
 			// Stepper lement
 			let element = document.querySelector("#kt_stepper_example_basic");
+			// Initialize Stepper
+			let stepper = new KTStepper(element);
+			let index = 0;
+			let buttons = 0;
+			let beneId;
+			// Define form element
+			const form = document.getElementById('kt_docs_formvalidation_text');
+			
 			// Init validartion 1
 			let validatorStep1 = FormValidation.formValidation(
 				form,
@@ -1629,6 +1058,37 @@
 					}
 				}
 			);
+			
+			// Función para limpiar los valores del formulario
+			function limpiarFormulario() {
+				// Obtén todos los elementos del formulario
+				const formulario = document.getElementById('kt_docs_formvalidation_text'); // Reemplaza 'tuFormulario' con el ID de tu formulario
+				const elementosFormulario = formulario.elements;
+
+				// Itera sobre los elementos y establece sus valores a vacíos
+				for (let i = 0; i < elementosFormulario.length; i++) {
+					const elemento = elementosFormulario[i];
+					// Verifica el tipo de elemento y límpialo
+					switch (elemento.type) {
+						case 'text':
+						case 'email':
+							elemento.value = '';
+							break;
+						case 'select-one':
+							// Para Select2, debes usar el método .val(null) y luego .trigger('change')
+							$(elemento).val([]).trigger('change');
+							break;
+						case 'radio':
+							elemento.checked = false;
+							break;
+						case 'textarea':
+							elemento.value = '';
+							break;
+						// Agrega más casos según sea necesario para otros tipos de elementos
+					}
+				}
+			}
+
 			// Revalidate Select2 input when an option is chosen
 			['select2_country', 'select2Purpose', 'select2Bank_currency', 'select2Bank_countries'].forEach(function (select2Name){
 				if(select2Name === "select2_country" || select2Name === "select2Purpose"){
@@ -1644,7 +1104,7 @@
 			
 			// step 1
 			$("input[name='purpose']" ).change(function() {
-				var specificTextarea = document.getElementById('specificTextarea');
+				let specificTextarea = document.getElementById('specificTextarea');
 				if ($(this).val() == 'Others') {
 					specificTextarea.style.display = 'block';
 					validatorStep1.enableValidator('input_textArea');  // Habilita la validación
@@ -1656,16 +1116,50 @@
 			});
 
 			// step 2 first part
-			var blockOthersCurrency = document.getElementById('othersStepOne');
-			var blockUnitedState = document.getElementById('unitedState');
-			var blockMexico = document.getElementById('mexico');
+			let blockOthersCurrency = document.getElementById('othersStepOne');
+			let blockUnitedState = document.getElementById('unitedState');
+			let blockMexico = document.getElementById('mexico');
 
-			var othersSelectOne = document.getElementById('othersSelectOne');
-			var othersSelectTwo = document.getElementById('othersSelectTwo');
+			let othersSelectOne = document.getElementById('othersSelectOne');
+			let othersSelectTwo = document.getElementById('othersSelectTwo');
 
-			var unitedSelectOne = document.getElementById('unitedSelectOne');
-			var unitedSelectTwo = document.getElementById('unitedSelectTwo');
+			let unitedSelectOne = document.getElementById('unitedSelectOne');
+			let unitedSelectTwo = document.getElementById('unitedSelectTwo');
 
+			function handleBankInformationChange(value, selectOne, selectTwo, validatorStep2) {
+				if (value === 'ABA') {
+					selectOne.style.display = 'block';
+					selectTwo.style.display = 'none';
+					validatorStep2.enableValidator('ABAunitedOne');
+					validatorStep2.enableValidator('accountUnitedOne');
+					validatorStep2.disableValidator('SWIFTunitedOne');
+					validatorStep2.disableValidator('accountUnitedTwo');
+				} else if (value === 'SWIFT') {
+					selectOne.style.display = 'none';
+					selectTwo.style.display = 'block';
+					validatorStep2.disableValidator('ABAunitedOne');
+					validatorStep2.disableValidator('accountUnitedOne');
+					validatorStep2.enableValidator('SWIFTunitedOne');
+					validatorStep2.enableValidator('accountUnitedTwo');
+				}
+			}
+			function handleBankInformationOthersChange(value, selectOne, selectTwo, validatorStep2) {
+				if (value === 'SWIFT') {
+					selectOne.style.display = 'block';
+					selectTwo.style.display = 'none';
+					validatorStep2.enableValidator('othersSwiftOne');
+					validatorStep2.enableValidator('othersAccountOne');
+					validatorStep2.disableValidator('othersTransitTwo');
+					validatorStep2.disableValidator('othersAccountTwo');
+				} else if (value === 'transitCode') {
+					selectOne.style.display = 'none';
+					selectTwo.style.display = 'block';
+					validatorStep2.disableValidator('othersSwiftOne');
+					validatorStep2.disableValidator('othersAccountOne');
+					validatorStep2.enableValidator('othersTransitTwo');
+					validatorStep2.enableValidator('othersAccountTwo');
+				}
+			}
 			$("#kt_docs_select2_currency").change(function(){
 				validatorStep2.disableValidator('ABAunitedOne');
 				validatorStep2.disableValidator('accountUnitedOne');
@@ -1691,25 +1185,12 @@
 					blockUnitedState.style.display = 'block';
 					blockMexico.style.display = 'none';
 					blockOthersCurrency.style.display = 'none';
-					
 					// Deseleccionar el radio button antes de que ocurra el evento change
 					validatorStep2.enableValidator('bankInformationUnited');
+					
 					$("input[name='bankInformationUnited']").change(function(){
-						if($(this).val() === 'ABA'){
-							unitedSelectOne.style.display = 'block';
-							unitedSelectTwo.style.display = 'none';
-							validatorStep2.enableValidator('ABAunitedOne');
-							validatorStep2.enableValidator('accountUnitedOne');
-							validatorStep2.disableValidator('SWIFTunitedOne');
-							validatorStep2.disableValidator('accountUnitedTwo');
-						}else if($(this).val() === 'SWIFT'){
-							unitedSelectOne.style.display = 'none';
-							unitedSelectTwo.style.display = 'block';
-							validatorStep2.disableValidator('ABAunitedOne');
-							validatorStep2.disableValidator('accountUnitedOne');
-							validatorStep2.enableValidator('SWIFTunitedOne');
-							validatorStep2.enableValidator('accountUnitedTwo');
-						}
+						const selectedValue = $(this).val();
+    					handleBankInformationChange(selectedValue, unitedSelectOne, unitedSelectTwo, validatorStep2);
 					});
 				}else if($(this).val() === 'MXN'){
 					blockUnitedState.style.display = 'none';
@@ -1724,21 +1205,8 @@
 					validatorStep2.enableValidator('bankInformationOthers');
 					
 					$("input[name='bankInformationOthers']").change(function(){
-						if($(this).val() === 'SWIFT'){
-							othersSelectOne.style.display = 'block';
-							othersSelectTwo.style.display = 'none';
-							validatorStep2.enableValidator('othersSwiftOne');
-							validatorStep2.enableValidator('othersAccountOne');
-							validatorStep2.disableValidator('othersTransitTwo');
-							validatorStep2.disableValidator('othersAccountTwo');
-						}else if($(this).val() === 'transitCode'){
-							othersSelectOne.style.display = 'none';
-							othersSelectTwo.style.display = 'block';
-							validatorStep2.disableValidator('othersSwiftOne');
-							validatorStep2.disableValidator('othersAccountOne');
-							validatorStep2.enableValidator('othersTransitTwo');
-							validatorStep2.enableValidator('othersAccountTwo');
-						}
+						const selectedValue = $(this).val();
+    					handleBankInformationOthersChange(selectedValue, othersSelectOne, othersSelectTwo, validatorStep2);
 					});
 				}
 			});
@@ -1763,7 +1231,6 @@
 					instrUnitedTwo.style.display = "none";
 				}
 			});
-
 
 			//text area option others
 			var checkBoxOthersOne = document.getElementById('checkBoxOthersOne');
@@ -1849,9 +1316,6 @@
 				return step2Data;
 			}
 
-			// Initialize Stepper
-			let stepper = new KTStepper(element);
-			let index = 0;
 			// Function to validate Step 1
 			const validateStep1 = async () => {
 				return new Promise((resolve) => {
@@ -1877,7 +1341,6 @@
 			submitButton.addEventListener('click', async function (e) {
 				// Prevent default button action
 				e.preventDefault();
-				// Get the current stepper index
 				// Validate the form based on the current step
 				if (index === 0) {
 					// Validate the form for step 1
@@ -1897,7 +1360,6 @@
 						step2Data = getStep2Data();
 						stepper.goNext();
 						index += 1;
-						console.log(step1Data, step2Data);
 						// Generate HTML for step 3 and append it to a container
             			generateStep3HTML(step1Data, step2Data);
 					}
@@ -2041,62 +1503,145 @@
 					table2.appendChild(row2);
 				}
 				
-				// Crear el boton:
-				// Crea el elemento button de submmit
-				const button = document.createElement("button");
-
-				// Establece los atributos del botón
-				button.type = "submit";
-				button.id = "formSubmit";
-				button.className = "text-primary btn btn-warning w-200px rounded hover-scale";
-				
-				// Establece el texto del botón
-				button.textContent = "Create beneficiary";
-
-				// Obtén el div con el id 'buttonCreate'
-				const buttonCreateDiv = document.getElementById("buttonCreate");
-				buttonCreateDiv.innerHTML = '';
-				// Agrega el botón al div
-				buttonCreateDiv.appendChild(button);
-				// Agrega la tabla al contenido del paso 3
-				step3Content.appendChild(table);
-				step3ContentBank.appendChild(table2);
-
-				// Previous button handler
-				const formSubmit = document.getElementById('formSubmit');
-				formSubmit.addEventListener('click', async function (e) {
-					e.preventDefault();
-
-					// Populate the page loading element dynamically.
-					// Optionally you can skipt this part and place the HTML
-					// code in the body element by refer to the above HTML code tab.
-					const loadingEl = document.createElement("div");
-					document.body.prepend(loadingEl);
-					loadingEl.classList.add("page-loader");
-					loadingEl.classList.add("flex-column");
-					loadingEl.classList.add("bg-dark");
-					loadingEl.classList.add("bg-opacity-25");
-					loadingEl.innerHTML = `
-						<span class="spinner-border text-primary" role="status"></span>
-						<span class="text-gray-800 fs-6 fw-semibold mt-5">Loading...</span>
-					`;
-
-					// Show page loading
-					KTApp.showPageLoading();
-					const response = await axios.post('/admin/newBeneficiaries',{step1Data, step2Data});
-					KTApp.hidePageLoading();
-					loadingEl.remove();
-					if(response.data === 'success'){
-						//función para ir a la página de success
-						window.location.href = "/admin/beneficiaries/success";
-					}else {
-						//función para ir a la página de error
-						window.location.href = "/admin/beneficiaries/error";
-					}
+				if(buttons === 1){
+					// Crear el boton:
+					// Crea el elemento button de submmit
+					const button = document.createElement("button");
 					
-				});
+					// Establece los atributos del botón
+					button.type = "submit";
+					button.id = "formSubmitCreate";
+					button.className = "text-primary btn btn-warning w-200px rounded hover-scale";
+					
+					// Establece el texto del botón
+					button.textContent = "Create beneficiary";
+
+					// Obtén el div con el id 'buttonCreate'
+					const buttonCreateDiv = document.getElementById("buttonCreate");
+					buttonCreateDiv.innerHTML = '';
+					// Agrega el botón al div
+					buttonCreateDiv.appendChild(button);
+					// Agrega la tabla al contenido del paso 3
+					step3Content.appendChild(table);
+					step3ContentBank.appendChild(table2);
+
+					// Previous button handler
+					const formSubmit = document.getElementById('formSubmitCreate');
+					formSubmit.addEventListener('click', async function (e) {
+						e.preventDefault();
+
+						// Populate the page loading element dynamically.
+						// Optionally you can skipt this part and place the HTML
+						// code in the body element by refer to the above HTML code tab.
+						const loadingEl = document.createElement("div");
+						document.body.prepend(loadingEl);
+						loadingEl.classList.add("page-loader");
+						loadingEl.classList.add("flex-column");
+						loadingEl.classList.add("bg-dark");
+						loadingEl.classList.add("bg-opacity-25");
+						loadingEl.innerHTML = `
+							<span class="spinner-border text-primary" role="status"></span>
+							<span class="text-gray-800 fs-6 fw-semibold mt-5">Loading...</span>
+						`;
+
+						// Show page loading
+						KTApp.showPageLoading();
+						const response = await axios.post('/admin/newBeneficiaries',{step1Data, step2Data});
+						KTApp.hidePageLoading();
+						loadingEl.remove();
+						if(response.data === 'success'){
+							//función para ir a la página de success
+							window.location.href = "/admin/beneficiaries/success";
+						}else {
+							Swal.fire({
+								text: `Beneficiary creation failed!. Please review the entered information and try again`,
+								icon: "error",
+								buttonsStyling: false,
+								confirmButtonText: "Ok, got it!",
+								customClass: {
+									confirmButton: "btn btn-danger"
+								}
+							});
+						}
+						
+					});
+				}else if(buttons === 2){
+					// Crear el boton:
+					// Crea el elemento button de submmit
+					const button = document.createElement("button");
+					
+					// Establece los atributos del botón
+					button.type = "submit";
+					button.id = "formSubmitEdit";
+					button.className = "text-primary btn btn-warning w-200px rounded hover-scale";
+					
+					// Establece el texto del botón
+					button.textContent = "Save changes";
+
+					// Obtén el div con el id 'buttonCreate'
+					const buttonCreateDiv = document.getElementById("buttonCreate");
+					buttonCreateDiv.innerHTML = '';
+					// Agrega el botón al div
+					buttonCreateDiv.appendChild(button);
+					// Agrega la tabla al contenido del paso 3
+					step3Content.appendChild(table);
+					step3ContentBank.appendChild(table2);
+
+					// Previous button handler
+					const formSubmit = document.getElementById('formSubmitEdit');
+					formSubmit.addEventListener('click', async function (e) {
+						e.preventDefault();
+
+						// Populate the page loading element dynamically.
+						// Optionally you can skipt this part and place the HTML
+						// code in the body element by refer to the above HTML code tab.
+						const loadingEl = document.createElement("div");
+						document.body.prepend(loadingEl);
+						loadingEl.classList.add("page-loader");
+						loadingEl.classList.add("flex-column");
+						loadingEl.classList.add("bg-dark");
+						loadingEl.classList.add("bg-opacity-25");
+						loadingEl.innerHTML = `
+							<span class="spinner-border text-primary" role="status"></span>
+							<span class="text-gray-800 fs-6 fw-semibold mt-5">Loading...</span>
+						`;
+
+						// Show page loading
+						KTApp.showPageLoading();
+						const response = await axios.post('/admin/editBeneficiaries',{step1Data, step2Data, beneId});
+						KTApp.hidePageLoading();
+						loadingEl.remove();
+						if(response.data === 'success'){
+							Swal.fire({
+								text: `Beneficiary edit success!.`,
+								icon: "success",
+								buttonsStyling: false,
+								confirmButtonText: "Ok, got it!",
+								customClass: {
+									confirmButton: "btn btn-success"
+								},
+								allowOutsideClick: false,
+							}).then((result) => {
+								if(result.isConfirmed){
+									location.reload();
+								}
+							})
+						}else {
+							Swal.fire({
+								text: `Beneficiary edit failed!. Please review the entered information and try again`,
+								icon: "error",
+								buttonsStyling: false,
+								confirmButtonText: "Ok, got it!",
+								customClass: {
+									confirmButton: "btn btn-danger"
+								}
+							});
+						}
+					});
+				}
+				
 			}
-			
+		
 			const previousButton = document.getElementById('previousButton'); // Asume que tienes un botón con id 'previousButton'
 			previousButton.addEventListener('click', function (e) {
 				// Prevent default button action
@@ -2105,7 +1650,31 @@
 				stepper.goPrevious();
 				index -= 1;
 			});
-			
+
+			function abrirModalBeneficiaries(e) {
+				e.preventDefault();
+				// Limpiar el formulario antes de abrir el modal
+				limpiarFormulario();
+				// Ir al paso 1 del Stepper
+				index = 0;
+				stepper.goTo(1);
+				buttons = 1;
+				blockUnitedState.style.display = 'none';
+				blockMexico.style.display = 'none';
+				blockOthersCurrency.style.display = 'none';
+				let specificTextarea = document.getElementById('specificTextarea');
+				specificTextarea.style.display = 'none';
+				// Abrir el modal
+				$('#kt_create_beneficiaries').modal('show');
+			}
+
+
+			const modalCreate = document.getElementById('create');
+			modalCreate.addEventListener('click', (e) => abrirModalBeneficiaries(e));
+
+			const modalCreateSecond = document.getElementById('createSecond');
+			modalCreateSecond.addEventListener('click', (e) => abrirModalBeneficiaries(e));
+
 		</script>
 		<!--begin::Select2 with flags-->
 		<script>
@@ -2132,14 +1701,9 @@
 				templateSelection: optionFormat,
 				templateResult: optionFormat,
 			});
-			$('#kt_docs_select2_countryTwo').select2({
-				dropdownParent: $("#kt_edit_beneficiaries"),
-				templateSelection: optionFormat,
-				templateResult: optionFormat,
-			});
 			
-			$('#kt_docs_select2_purposeTwo').select2({
-				dropdownParent: $("#kt_edit_beneficiaries"),
+			$('#kt_docs_select2_purpose').select2({
+				dropdownParent: $("#kt_create_beneficiaries"),
 			});
 			$('#kt_docs_select2_currency').select2({
 				templateSelection:optionFormat,
@@ -2225,11 +1789,19 @@
 					]
 				});
 				table = dt.$;
-
 				// Re-init functions on every table re-draw -- more info: https://datatables.net/reference/event/draw
 				dt.on('draw', function () {
 					KTMenu.createInstances();
 					handleDeleteRows();
+				});
+				dt.on('draw.dt', function () {
+					if (dt.page.info().recordsTotal === 0) {
+						$('#kt_datatable_holddingDetail_wrapper').hide();
+						$('#customEmptyMessage').show();
+					} else {
+						$('#kt_datatable_holddingDetail_wrapper').show();
+						$('#customEmptyMessage').hide();
+					}
 				});
 			}
 
@@ -2239,7 +1811,6 @@
 				// Suscribe al evento 'select2:select' en lugar de 'change'
 				filterSearch.on('select2:select', function (e) {
 				const idToSearch = e.params.data.id; // Usar id en lugar de value para select2
-
 				if (dt) { // Asegúrate de que dt esté definido
 					dt.column(1)
 					.search(idToSearch)
@@ -2271,12 +1842,14 @@
 
 			// Delete customer
 			let handleDeleteRows = () => {
+				
 				// Select all delete buttons
 				const detailButtons = document.querySelectorAll('[data-kt-docs-table-filter="details_row"]');
 				const editButtons = document.querySelectorAll('[data-kt-docs-table-filter="edit_row"]');
 				// Función asincrónica para manejar la solicitud POST
 				const handleEditClick = async (e) => {
 					e.preventDefault();
+					limpiarFormulario();
 					const loadingEl = document.createElement("div");
 					document.body.prepend(loadingEl);
 					loadingEl.classList.add("page-loader");
@@ -2291,29 +1864,86 @@
 					// Show page loading
 					KTApp.showPageLoading();
 
-					let beneId = parseInt(e.currentTarget.getAttribute('data-currency-id'));
+					beneId = parseInt(e.currentTarget.getAttribute('data-currency-id'));
 					let response = await axios.post('/admin/getBeneficiariesById', { beneId });
 					let beneData = response.data.bene; 
-					console.log(beneData);
 					//llenar el formulario
 					document.getElementById('nameBeneficiary').value = beneData.name;
 					document.getElementById('nicknameBeneficiary').value = beneData.nickname;
-					//$('#kt_docs_select2_countryTwo').select2().val(beneData.countryName).trigger('change');
+					$('#kt_docs_select2_country').val(beneData.countryName).trigger('change');
 					document.getElementById('addressBeneficiary').value = beneData.address1 !== '' ? beneData.address1 : beneData.address2;
 					document.getElementById('cityBeneficiary').value = beneData.city;
 					document.getElementById('stateBeneficiary').value = beneData.province;
 					document.getElementById('postalCodeBeneficiary').value = beneData.postal;
 					document.getElementById('emailBeneficiary').value = beneData.email;
-					
-					//$('#kt_docs_select2PurposeTwo').val(beneData.purposeNamen).trigger('change');
+					$('#kt_docs_select2_purpose').val(beneData.purposeName).trigger('change');
 					let radioPurpose = document.querySelector('input[name="purpose"][value="'+beneData.purposeDescription+'"]');
+					if(radioPurpose === null){
+						radioPurpose = document.querySelector('input[name="purpose"][value="Others"]');
+						document.getElementById('floatingSpecific').value = beneData.purposeDescription;
+					}
+					if (radioPurpose) {
+						radioPurpose.checked = true;
+						// Muestra el área de texto
+    					document.getElementById('specificTextarea').style.display = 'block';
+					}
+					$('#kt_docs_select2_currency').val(beneData.currencyName).trigger('change');
+					$('#kt_docs_select2_bankCountry').val(beneData.mainBank.countryName).trigger('change');
+					document.getElementById('nameBank').value = beneData.mainBank.name;
+					document.getElementById('addressBank').value = beneData.mainBank.address1 !== '' ? beneData.mainBank.address1 : beneData.mainBank.address2;
 					
-					// Abrir el modal
-        			$('#kt_edit_beneficiaries').modal('show');
+					if(beneData.currencyName === 'MXN'){
+						document.getElementById('mexicoClabe').value = beneData.mainBank.accountNumber;
+						document.getElementById('mexicoSwift').value = beneData.mainBank.routingCode;
+						document.getElementById('textAreaInstructions').value = beneData.mainBank.instructions;
+					}
+					if(beneData.currencyName === 'USD'){
+						let unitedSelectOne = document.getElementById('unitedSelectOne');
+						let unitedSelectTwo = document.getElementById('unitedSelectTwo');
+						if(beneData.mainBank.routingCodeType === 'aba'){
+							let radioPurpose = document.querySelector('input[name="bankInformationUnited"][value="ABA"]');
+							radioPurpose.checked = true;
+							handleBankInformationChange('ABA', unitedSelectOne, unitedSelectTwo, validatorStep2);
+							document.getElementById('abaUsdOne').value = beneData.mainBank.routingCode;
+							document.getElementById('accountUsdOne').value = beneData.mainBank.accountNumber;
+							document.getElementById('textAreaUnitedStateOne').value = beneData.mainBank.instructions;
+						}else if(beneData.mainBank.routingCodeType === 'swift'){
+							let radioPurpose = document.querySelector('input[name="bankInformationUnited"][value="SWIFT"]');
+							radioPurpose.checked = true;
+							handleBankInformationChange('SWIFT', unitedSelectOne, unitedSelectTwo, validatorStep2);
+							document.getElementById('abaUsdTwo').value = beneData.mainBank.routingCode;
+							document.getElementById('accountUsdTwo').value = beneData.mainBank.accountNumber;
+							document.getElementById('textAreaUnitedStateTwo').value = beneData.mainBank.instructions;
+						}
+					}else{
+						let othersSelectOne = document.getElementById('othersSelectOne');
+						let othersSelectTwo = document.getElementById('othersSelectTwo');
+						if(beneData.mainBank.routingCodeType === 'swift' || beneData.mainBank.routingCodeType === 'generic'){
+							let radioPurpose = document.querySelector('input[name="bankInformationOthers"][value="SWIFT"]');
+							radioPurpose.checked = true;
+							handleBankInformationOthersChange('SWIFT', othersSelectOne, othersSelectTwo, validatorStep2);
+							document.getElementById('swiftOtherOne').value = beneData.mainBank.routingCode;
+							document.getElementById('accountOthersOne').value = beneData.mainBank.accountNumber;
+							document.getElementById('textSelectOne').value = beneData.mainBank.instructions;
+						}else if(beneData.mainBank.routingCodeType === 'transitCode'){
+							let radioPurpose = document.querySelector('input[name="bankInformationOthers"][value="transitCode"]');
+							radioPurpose.checked = true;
+							handleBankInformationOthersChange('transitCode', othersSelectOne, othersSelectTwo, validatorStep2);
+							document.getElementById('transitOthersTwo').value = beneData.mainBank.routingCode;
+							document.getElementById('accountOthersTwo').value = beneData.mainBank.accountNumber;
+							document.getElementById('textSelectTwo').value = beneData.mainBank.instructions;
+						}
+					}
+
+					// Ir al paso 1 del Stepper
+        			stepper.goTo(1);
+					index=0;
+					//Abrir el modal
+					buttons = 2;
+        			$('#kt_create_beneficiaries').modal('show');
 					//cerrar el loading
 					KTApp.hidePageLoading();
 					loadingEl.remove();
-
 				};
 
 				// Asigna la función asincrónica al evento click de los botones "Edit"
@@ -2349,10 +1979,7 @@
 		});
 
 		</script>
-		<script>
 		
-			
-		</script>
 		<!--end::Custom Javascript-->
 		<!--end::Javascript-->
 		<!--begin::Vendors Javascript(used for this page only)-->
