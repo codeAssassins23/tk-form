@@ -1,6 +1,5 @@
 import { Controller, Get, Param, Query, Render, Req } from '@nestjs/common';
 import { DetailService } from './details.service';
-import { use } from 'passport';
 @Controller('/admin')
 export class DetailHolddingAccounts {
   constructor(private readonly detailService: DetailService) {}
@@ -16,6 +15,7 @@ export class DetailHolddingAccounts {
       currencyId,
       cookies,
     );
+
     const flagNameCustom = '' + response.currencyCode;
     const user = request['user'];
     return {

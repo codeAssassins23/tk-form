@@ -9,6 +9,8 @@ import { AuthModule } from './auth/auth.module';
 import { AdminModule } from './admin/admin.module';
 import { HoldingModule } from './holding_accounts/holding.module';
 import { ConfigModule } from '@nestjs/config';
+import { BeneficiariesModule } from './beneficiaries/beneficiaries.module';
+import { TransactionsModule } from './transactions/transactions.module';
 
 /* Group different functionalities into one */
 @Module({
@@ -32,6 +34,8 @@ import { ConfigModule } from '@nestjs/config';
     AuthModule,
     AdminModule,
     HoldingModule,
+    BeneficiariesModule,
+    TransactionsModule,
   ],
   controllers: [AppController], //Routes that can have this module
   providers: [AppService], //Service that can have this module

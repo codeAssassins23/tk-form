@@ -1,0 +1,158 @@
+
+{{#> admin}}
+    {{#* inline "content"}}
+                <!--begin::Main-->
+                <div class="app-main d-flex flex-column flex-row-fluid" id="kt_app_main">
+                    <!--begin::Content wrapper-->
+                    <div class="d-flex flex-column flex-column-fluid">
+                        <!--begin::Toolbar-->
+                        <div id="kt_app_toolbar" class="app-toolbar pt-6 pb-2">
+                            <!--begin::Toolbar container-->
+                            <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex align-items-stretch">
+                                <!--begin::Toolbar wrapper-->
+                                <div class="app-toolbar-wrapper d-flex  gap-4 w-100">
+                                    <!--begin::Page title-->
+                                    <div class="page-title d-flex flex-column justify-content-center gap-1 me-3">
+                                        
+                                    </div>
+                                    
+                                </div>
+                            
+                                <!--end::Page title-->
+                            </div>
+                                <!--end::Toolbar wrapper-->
+                        </div>
+                        <!--end::Toolbar-->
+
+                        <div id="kt_app_content" class="app-content flex-column-fluid" >
+                            <!--begin::Content container-->
+                            <div id="kt_app_content_container" class="app-container container-fluid " >
+
+                                <!--begin::Content-->
+                                <div class="d-flex mb-10 mb-lg-0 align-items-center justify-content-center">
+                                    <!--begin::Card-->
+                                    <div class="card card-flush pt-3 mb-5 mb-xl-10 col-lg-6">
+                                        <!--begin::Card body-->
+                                        <div class="card-body pt-3">
+                                            <div class="mt-5 text-center">
+                                                
+                                                <div class="mt-5 text-center">
+                                                <!--begin::Card title-->
+                                                    <div class="card-title">
+                                                        <i class="ki-outline ki-cross-circle fs-3x text-danger"></i>
+                                                    </div>
+                                                    <!--begin::Card title-->
+                                                </div>
+                                                <!--begin::Card title-->
+                                                <div class="card-title">
+                                                    <p class="fs-1">Beneficiary creation failed</p>
+                                                </div>
+                                                <!--begin::Card title-->
+                                            </div>
+                                            <div class="mt-5 mb-10 text-center">
+                                                <!--begin::Card title-->
+                                                <div class="card-title">
+                                                    <p class="fs-5">Please review the entered information and try again. If the issue persists, contact support for assistance.</p>
+                                                </div>
+                                                <!--begin::Card title-->
+                                            </div>
+                                            <!--begin::Actions-->
+                                            <div class="d-flex flex-stack align-items-center justify-content-center">
+                                                <!--begin::Wrapper-->
+                                                <div>
+                                                    <div class="d-flex">
+                                                        <button type="button" id="kt_docs_formvalidation_text_submit" onclick="window.location.href='/admin/beneficiaries'" class="text-primary btn btn-warning w-170px fw-bold rounded hover-scale" data-kt-stepper-action="next">
+                                                        Go to home page
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <!--end::Wrapper-->
+                                            </div>
+                                        </div>
+                                        <!--end::Card body-->
+                                    </div>
+                                    <!--end::Card-->
+                                </div>
+                                <!--end::Content-->
+                            </div>
+                            <!--end::Content container-->
+                        </div>
+
+                    </div>
+                    <!--end::Toolbar-->
+                    <!--begin::Content-->
+                        <!--end::Content-->
+                    </div>
+                    <!--end::Content wrapper-->
+                    <!--begin::Footer-->
+                    <div id="kt_app_footer" class="app-footer">
+                        <!--begin::Footer container-->
+                        <div class="app-container container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3">
+                            <!--begin::Copyright-->
+                            <div class="text-gray-900 order-2 order-md-1">
+                                <span class="text-muted fw-semibold me-1">2023&copy;</span>
+                                <a href="https://tkambio.com/" target="_blank" class="text-gray-800 text-hover-primary">Tkambio</a>
+                            </div>
+                            <!--end::Copyright-->
+                        </div>
+                        <!--end::Footer container-->
+                    </div>
+                    <!--end::Footer-->
+                </div>
+                <!--end:::Main-->
+
+                </div>
+				<!--end::Wrapper-->
+			</div>
+			<!--end::Page-->
+		</div>
+		<!--end::App-->
+		<!--begin::Javascript-->
+		<script>
+		const menuLinks = document.querySelectorAll('.menu-link');
+		const activeLinkIndex = localStorage.getItem('activeLinkIndex');
+		for (let i = 0; i < menuLinks.length; i++) {
+			menuLinks[i].classList.remove('active');
+		}
+		
+		for (let i = 0; i < menuLinks.length; i++) {
+			const link = menuLinks[i];
+
+			link.addEventListener('click', function(event) {
+				for (let j = 0; j < menuLinks.length; j++) {
+					menuLinks[j].classList.remove('active');
+				}
+
+				this.classList.add('active');
+
+				localStorage.setItem('activeLinkIndex', i);
+			});
+
+			if (activeLinkIndex && i.toString() === activeLinkIndex) {
+			link.classList.add('active');
+			}
+		}
+		</script>
+		<!--begin::Global Javascript Bundle(mandatory for all pages)-->
+		<script src="/assets/plugins/global/plugins.bundle.js"></script>
+		<script src="/assets/js/scripts.bundle.js"></script>
+		<!--end::Global Javascript Bundle-->
+		<!--begin::Vendors Javascript(used for this page only)-->
+		<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/geodata/continentsLow.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/geodata/usaLow.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZonesLow.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZoneAreasLow.js"></script>
+		<script src="/assets/plugins/custom/datatables/datatables.bundle.js"></script>
+		<!--end::Vendors Javascript-->  
+	</body>
+	<!--end::Body-->
+</html>
+{{/inline}}
+{{/admin}}
