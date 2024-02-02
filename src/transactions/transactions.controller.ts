@@ -10,10 +10,22 @@ export class TransactionController {
   async getTransactions(@Req() request: Request) {
     const cookies = await this.transactionService.loginAPI();
     const currencies = await this.transactionService.getCurrency(cookies);
-    console.log(currencies);
     const user = request['user'];
     return {
+      currencies: currencies,
       user: user,
+    };
+  }
+
+  @Get('/getTransactions')
+  async transactionsInProgress(@Req() request: Request) {
+    const cookies = await this.transactionService.loginAPI();
+    const transactions = await this.transactionService.getTransactions(cookies);
+    console.log();
+    return {
+      data: [],
+      recordsTotal: 0,
+      recordsFiltered: 0,
     };
   }
 }

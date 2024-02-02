@@ -1,0 +1,524 @@
+
+{{#> admin}}
+    {{#* inline "content"}}
+                <!--begin::Main-->
+                <div class="app-main d-flex flex-column flex-row-fluid" id="kt_app_main">
+                    <!--begin::Content wrapper-->
+                    <div class="d-flex flex-column flex-column-fluid">
+                        <!--begin::Toolbar-->
+                        <div id="kt_app_toolbar" class="app-toolbar pt-6 pb-2">
+                            <!--begin::Toolbar container-->
+                            <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex align-items-stretch">
+                                <!--begin::Toolbar wrapper-->
+                                <div class="app-toolbar-wrapper d-flex flex-stack flex-wrap gap-4 w-100">
+                                    <!--begin::Page title-->
+                                    <div class="page-title d-flex flex-column justify-content-center gap-1 me-3">
+                                        <!--begin::Title-->
+                                        <div class="d-flex align-items-center justify-content-center">
+                                            <h1 class="page-heading d-flex flex-column justify-content-center text-gray-900 fw-bold fs-3 m-0">Transactions Details</h1>
+                                            <!--end::Title-->
+                                            <div class="d-flex align-items-center gap-2 gap-lg-3 ms-4">
+                                                <a href="/admin/transactions" class="btn btn-sm btn-icon btn-light btn-active-light-primary" data-bs-toggle="tooltip" data-bs-dismiss="click" data-bs-placement="top" aria-label="Reload" data-bs-original-title="Reload" data-kt-initialized="1">
+                                                    <i class="ki-outline ki-arrows-circle fs-2"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!--begin::Breadcrumb-->
+                                        <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0">
+                                            <!--begin::Item-->
+                                            <li class="breadcrumb-item text-muted">
+                                                <a href="/admin/dashboard" class="text-muted text-hover-primary">Home</a>
+                                            </li>
+                                            <!--end::Item-->
+                                            <!--begin::Item-->
+                                            <li class="breadcrumb-item">
+                                                <span class="bullet bg-gray-500 w-5px h-2px"></span>
+                                            </li>
+                                            <!--end::Item-->
+                                            <!--begin::Item-->
+                                            <li class="breadcrumb-item text-muted">
+                                                <a href="/admin/transactions" class="text-muted text-hover-primary">Transactions</a>
+                                            </li>
+                                            <!--end::Item-->
+                                            <!--begin::Item-->
+                                            <li class="breadcrumb-item">
+                                                <span class="bullet bg-gray-500 w-5px h-2px"></span>
+                                            </li>
+                                            <!--end::Item-->
+                                            <li class="breadcrumb-item text-muted">
+                                                Details
+                                            </li>
+                                        </ul>
+                                        <!--end::Breadcrumb-->
+                                        <!--end::Title-->
+                                    </div>
+                                </div>
+                                <!--end::Page title-->
+                            </div>
+                                <!--end::Toolbar wrapper-->
+                        </div>
+                        <!--end::Toolbar-->
+                        <div id="kt_app_content" class="app-content flex-column-fluid" >
+                            <!--begin::Content container-->
+                            <div id="kt_app_content_container" class="app-container container-fluid" >
+                                <div class="d-flex flex-wrap flex-stack my-5"></div>
+                                <!--begin::Card-->
+                                <!--begin::Main column-->
+                                <div class="d-flex flex-column flex-row-fluid gap-7 gap-lg-10">
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <!--begin:::Tabs-->
+                                        <ul class="nav nav-custom nav-tabs nav-line-tabs nav-line-tabs-2x border-0 fs-4 fw-semibold mb-n2">
+                                            <!--begin:::Tab item-->
+                                            <li class="nav-item">
+                                                <a class="nav-link text-active-primary pb-4 active" data-bs-toggle="tab" href="#instructions">Instructions</a>
+                                            </li>
+                                            <!--end:::Tab item-->
+                                            <!--begin:::Tab item-->
+                                            <li class="nav-item">
+                                                <a class="nav-link text-active-primary pb-4" data-bs-toggle="tab" href="#summary">Sumary</a>
+                                            </li>
+                                            <!--end:::Tab item-->
+                                        </ul>
+                                        <!--end:::Tabs-->
+                                    </div>
+                                    
+                                    <!--begin::Tab content-->
+                                    <div class="tab-content">
+                                        <!--begin::Tab pane-->
+                                        <div class="tab-pane fade show active" id="instructions" role="tab-panel">
+                                            <div class="d-flex flex-column gap-7 gap-lg-10">
+                                                <!--begin::General options-->
+                                                <div class="card card-flush w-lg-700px mx-auto shadow-sm">
+                                                    <!--begin::Card body-->
+                                                    <div class="card-body">
+                                                        <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
+                                                            <div class="">
+                                                                <div class="d-flex justify-content-between align-items-center mt-10">
+																    <p class="fw-bold">TRANSACTION DETAILS</p>
+                                                                </div>
+                                                                <div class="d-flex justify-content-between align-items-center">
+                                                                    <p class="">You send exactly</p>
+                                                                    <p id="send" class="text-primary">1,000.000 MXN</p>
+                                                                </div>
+                                                                <div class="d-flex justify-content-between align-items-center">
+                                                                    <p class="">Exchange rate</p>
+                                                                    <p id="rate">17.2343</p>
+                                                                </div>
+                                                                <div class="d-flex justify-content-between align-items-center">
+                                                                    <p id="nickname1">Alvarito nickname gets</p>
+                                                                    <p id="recibe" class="text-primary">869.00 USD</p>
+                                                                </div>
+                                                                <div class="separator border-2 my-5"></div>
+                                                                <div class="d-flex justify-content-between align-items-center mb-5 mt-10">
+                                                                    <span class="fw-bold">PAYMENT INSTRUCTION DETAILS</span>
+                                                                </div>
+                                                                <div class="d-flex justify-content-between align-items-center">
+                                                                    <p class="">Account number</p>
+                                                                    <div class="d-flex w-75 align-items-end justify-content-end flex-wrap">
+                                                                        <div class="d-flex align-items-end"> <!-- Nuevo div que envuelve el div y el button -->
+                                                                            <div id="accountNumberSuccess" class="text-end mb-5">9872303814</div>
+                                                                            <button class="btn btn-icon btn-sm btn-active-light-secondary ms-2 mb-2" data-clipboard-target="#accountNumberSuccess">
+                                                                                <i class="ki-outline ki-copy fs-6 text-muted"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex justify-content-between align-items-center">
+                                                                    <p class="">Account name</p>
+                                                                    <div class="d-flex w-75 align-items-end justify-content-end flex-wrap">
+                                                                        <div class="d-flex align-items-end"> <!-- Nuevo div que envuelve el div y el button -->
+                                                                            <div id="accountNameSuccess" class="text-end mb-5">Monex USA</div>
+                                                                            <button class="btn btn-icon btn-sm btn-active-light-secondary ms-2 mb-2" data-clipboard-target="#accountNameSuccess">
+                                                                                <i class="ki-outline ki-copy fs-6 text-muted"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                                                    <p class="">Account address</p>
+                                                                    <div class="d-flex w-75 align-items-end justify-content-end flex-wrap">
+                                                                        <div class="d-flex align-items-end"> <!-- Nuevo div que envuelve el div y el button -->
+                                                                            <div id="accountAdressSuccess" class="text-end">1201 New York Avenue, NW, Suite 300 Washington, DC 20005 USA</div>
+                                                                            <button class="btn btn-icon btn-sm btn-active-light-secondary ms-2 mb-2" data-clipboard-target="#accountAdressSuccess">
+                                                                                <i class="ki-outline ki-copy fs-6 text-muted"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                                                    <p class="">SWIFT/ABA Code</p>
+                                                                    <div class="d-flex w-75 align-items-end justify-content-end flex-wrap">
+                                                                        <div class="d-flex align-items-end"> <!-- Nuevo div que envuelve el div y el button -->
+                                                                            <div id="swiftSuccess" class="text-end">UMKCUS44/ 101000695</div>
+                                                                            <button class="btn btn-icon btn-sm btn-active-light-secondary ms-2 mb-2" data-clipboard-target="#swiftSuccess">
+                                                                                <i class="ki-outline ki-copy fs-6 text-muted"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                                                    <p class="">Bank name</p>
+                                                                    <div class="d-flex w-75 align-items-end justify-content-end flex-wrap">
+                                                                        <div class="d-flex align-items-end"> <!-- Nuevo div que envuelve el div y el button -->
+                                                                            <div id="bankNameSuccess" class="text-end">UMB Bank</div>
+                                                                            <button class="btn btn-icon btn-sm btn-active-light-secondary ms-2" data-clipboard-target="#bankNameSuccess">
+                                                                                <i class="ki-outline ki-copy fs-6 text-muted"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                                                    <p class="">Bank address</p>
+                                                                    <div class="d-flex w-75 align-items-end justify-content-end flex-wrap">
+                                                                        <div class="d-flex align-items-end"> <!-- Nuevo div que envuelve el div y el button -->
+                                                                            <div id="bankAddressSuccess" class="text-end">1010 Grand Boulevard Kansas City, MO64106</div>
+                                                                            <button class="btn btn-icon btn-sm btn-active-light-secondary ms-2" data-clipboard-target="#bankAddressSuccess">
+                                                                                <i class="ki-outline ki-copy fs-6 text-muted"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex justify-content-between align-items-center mb-5">
+                                                                    <p class="">Email address</p>
+                                                                    <div class="d-flex w-75 align-items-end justify-content-end flex-wrap">
+                                                                        <div class="d-flex align-items-end"> <!-- Nuevo div que envuelve el div y el button -->
+                                                                            <div id="emailSuccess" class="text-end">FFCAlvaritosac10232123</div>
+                                                                            <button class="btn btn-icon btn-sm btn-active-light-secondary ms-2" data-clipboard-target="#emailSuccess">
+                                                                                <i class="ki-outline ki-copy fs-6 text-muted"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--end::Card header-->
+                                                </div>
+                                                <!--end::General options-->
+                                            </div>
+                                        </div>
+                                        <!--end::Tab pane-->
+                                        <!--begin::Tab pane-->
+                                        <div class="tab-pane fade" id="summary" role="tab-panel">
+                                            <div class="d-flex flex-column gap-7 gap-lg-10">
+                                                <!--begin::General options-->
+                                                <div class="card card-flush w-lg-700px mx-auto shadow-sm">
+                                                    <!--begin::Card body-->
+                                                    <div class="card-body">
+                                                        <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
+                                                            <div class="mt-10 w-550px">
+                                                                <div class="d-flex justify-content-between align-items-center">
+                                                                    <p class="text-primary">#12345678901</p>
+                                                                    <p>10/10/2023</p>
+                                                                </div>
+                                                                <div class="d-flex justify-content-center align-items-center">
+                                                                    <div class="col-md-6 align-items-center justify-content-center">
+                                                                        <p class="text-center text-gray-600">Send</p>
+                                                                        <p class="text-center">985,869.65 MXN</p>
+                                                                    </div>
+                                                                    <div>
+                                                                        <i class="ki-outline ki-arrow-right fs-1"></i>
+                                                                    </div>
+                                                                    <div class="col-md-6 align-items-center justify-content-center">
+                                                                        <p class="text-center text-gray-600">Receive</p>
+                                                                        <p class="text-center">985,869.65 USD</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center flex-column mt-3 w-100">
+                                                                    <div class="d-flex justify-content-between w-100 mt-auto mb-2">
+                                                                        <span class="fs-6 text-gray-900">Initiated</span>
+                                                                        <div class="d-flex">
+                                                                            <span class="fs-6 text-primary">1/</span>
+                                                                            <span class="fs-6 text-gray-600">4</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="h-8px mx-3 w-100 bg-light-primary rounded">
+                                                                        <div class="bg-primary rounded h-8px" role="progressbar" style="width: 25%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="separator border-2 mb-8 mt-8"></div>
+                                                                <div class="d-flex justify-content-between align-items-center">
+																    <p class="fw-bold">TRANSACTION DETAILS</p>
+                                                                </div>
+                                                                <div class="d-flex justify-content-between align-items-center">
+                                                                    <p class="">You send exactly</p>
+                                                                    <p id="send" class="text-primary">1,000.000 MXN</p>
+                                                                </div>
+                                                                <div class="d-flex justify-content-between align-items-center">
+                                                                    <p class="">Exchange rate</p>
+                                                                    <p id="rate">17.2343</p>
+                                                                </div>
+                                                                <div class="d-flex justify-content-between align-items-center">
+                                                                    <p class="">Fee</p>
+                                                                    <p class="">0.00 MXN</p>
+                                                                </div>
+                                                                <div class="d-flex justify-content-between align-items-center">
+                                                                    <p id="nickname1">Alvarito nickname gets</p>
+                                                                    <p id="recibe" class="text-primary">869.00 USD</p>
+                                                                </div>
+                                                                <div class="d-flex justify-content-between align-items-center">
+                                                                    <p class="">Sent on</p>
+                                                                    <p class="">01/03/2023</p>
+                                                                </div>
+                                                                <div class="d-flex justify-content-between align-items-center">
+                                                                    <p class="">Should arrive on</p>
+                                                                    <p class="">01/06/2023</p>
+                                                                </div>
+                                                                <div class="separator border-2 mb-8 mt-5"></div>
+                                                                <div class="d-flex justify-content-between align-items-center mb-5">
+                                                                    <span class="fw-bold">BENEFICIARY DETAILS</span>
+                                                                </div>
+                                                                <div class="d-flex justify-content-between align-items-center">
+                                                                    <p class="">Nickname</p>
+                                                                    <p class="">Alvarito mayorga</p>
+                                                                </div>
+                                                                <div class="d-flex justify-content-between align-items-center">
+                                                                    <p class="">SWIFT</p>
+                                                                    <p class="">9454BGINF8</p>
+                                                                </div>
+                                                                <div class="d-flex justify-content-between align-items-center mb-5">
+                                                                    <p class="">Account number</p>
+                                                                    <p class="">872738909837289018</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--end::Card header-->
+                                                </div>
+                                                <!--end::General options-->
+                                            </div>
+                                        </div>
+                                        <!--end::Tab pane-->
+                                    </div>
+                                </div>
+                                <!--end::Main column-->
+                                <!--end::Card-->
+                            </div>
+                            <!--end::Content container-->
+                        </div>
+
+                    </div>
+                    <!--end::Toolbar-->
+                    </div>
+                    
+                    <!--end::Content wrapper-->
+                    <!--begin::Footer-->
+                    <div id="kt_app_footer" class="app-footer">
+                        <!--begin::Footer container-->
+                        <div class="app-container container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3">
+                            <!--begin::Copyright-->
+                            <div class="text-gray-900 order-2 order-md-1">
+                                <span class="text-muted fw-semibold me-1">2023&copy;</span>
+                                <a href="https://tkambio.com/" target="_blank" class="text-gray-800 text-hover-primary">Tkambio</a>
+                            </div>
+                            <!--end::Copyright-->
+                        </div>
+                        <!--end::Footer container-->
+                    </div>
+                    <!--end::Footer-->
+                </div>
+                <!--end:::Main-->
+                </div>
+				<!--end::Wrapper-->
+			</div>
+			<!--end::Page-->
+		</div>
+		<!--end::App-->
+		<!--begin::Javascript-->
+		<script>
+		const menuLinks = document.querySelectorAll('.menu-link');
+		const activeLinkIndex = localStorage.getItem('activeLinkIndex');
+		for (let i = 0; i < menuLinks.length; i++) {
+			menuLinks[i].classList.remove('active');
+		}
+		
+		for (let i = 0; i < menuLinks.length; i++) {
+			const link = menuLinks[i];
+
+			link.addEventListener('click', function(event) {
+				for (let j = 0; j < menuLinks.length; j++) {
+					menuLinks[j].classList.remove('active');
+				}
+
+				this.classList.add('active');
+
+				localStorage.setItem('activeLinkIndex', i);
+			});
+
+			if (activeLinkIndex && i.toString() === activeLinkIndex) {
+			link.classList.add('active');
+			}
+		}
+		</script>
+		<!--begin::Global Javascript Bundle(mandatory for all pages)-->
+		<script src="/assets/plugins/global/plugins.bundle.js"></script>
+		<script src="/assets/js/scripts.bundle.js"></script>
+		<!--end::Global Javascript Bundle-->
+		<!--begin::Custom Javascript-->
+        <script>
+            let optionFormat = function(item){
+                if(!item.id){
+                    return item.text;
+                }
+
+                let span = document.createElement('span');
+                let imgUrl = item.element.getAttribute('data-kt-select2-country');
+                let template = '';
+
+                //Usa una imagen predeterminada si no encuentra una
+				template += '<img src="' + (imgUrl || '/assets/media/flags/countries/default-image.svg') + '" class="rounded-circle h-20px me-2" alt="image"/>';
+                template += item.text;
+
+                span.innerHTML = template;
+				return $(span);
+            }
+
+			$('#searchCurrency').select2({
+				templateSelection: optionFormat,
+				templateResult: optionFormat,
+			});
+
+			$('#searchCurrencyFinished').select2({
+				templateSelection: optionFormat,
+				templateResult: optionFormat,
+			});
+			$('#searchCurrencyPendings').select2({
+				templateSelection: optionFormat,
+				templateResult: optionFormat,
+			});
+        </script>
+		<!--end::Custom Javascript-->
+        <script>
+		
+		// copy and paste
+		const target1 = document.getElementById("accountNameSuccess");
+		const button1 = target1.nextElementSibling;
+
+		clipboard1 = new ClipboardJS(button1, {
+			target: target1,
+			text: function () {
+				return target1.innerHTML;
+			}
+		});
+
+		clipboard1.on('success', function (e) {
+			var checkIcon = button1.querySelector('.ki-check');
+			var copyIcon = button1.querySelector('.ki-copy');
+			console.log("check");
+			// Exit check icon when already showing
+			if (checkIcon) {
+				return;
+			}
+
+			// Create check icon
+			checkIcon = document.createElement('i');
+			checkIcon.classList.add('ki-duotone');
+			checkIcon.classList.add('ki-check');
+			checkIcon.classList.add('fs-2x');
+
+			// Append check icon
+			button1.appendChild(checkIcon);
+
+			// Highlight target
+			const classes = ['text-success', 'fw-boldest'];
+			target1.classList.add(...classes);
+
+			// Highlight button
+			button1.classList.add('btn-success');
+
+			// Hide copy icon
+			copyIcon.classList.add('d-none');
+
+			// Revert button label after 3 seconds
+			setTimeout(function () {
+				// Remove check icon
+				copyIcon.classList.remove('d-none');
+
+				// Revert icon
+				button1.removeChild(checkIcon);
+
+				// Remove target highlight
+				target1.classList.remove(...classes);
+
+				// Remove button highlight
+				button1.classList.remove('btn-success');
+			}, 3000)
+		});
+
+		////
+		const target = document.getElementById('accountAdressSuccess');
+		const button = target.nextElementSibling;
+
+		clipboard = new ClipboardJS(button, {
+			target: target,
+			text: function () {
+				return target.innerHTML;
+			}
+		});
+
+		clipboard.on('success', function (e) {
+			var checkIcon = button.querySelector('.ki-check');
+			var copyIcon = button.querySelector('.ki-copy');
+			console.log("check");
+			// Exit check icon when already showing
+			if (checkIcon) {
+				return;
+			}
+
+			// Create check icon
+			checkIcon = document.createElement('i');
+			checkIcon.classList.add('ki-duotone');
+			checkIcon.classList.add('ki-check');
+			checkIcon.classList.add('fs-2x');
+
+			// Append check icon
+			button.appendChild(checkIcon);
+
+			// Highlight target
+			const classes = ['text-success', 'fw-boldest'];
+			target.classList.add(...classes);
+
+			// Highlight button
+			button.classList.add('btn-success');
+
+			// Hide copy icon
+			copyIcon.classList.add('d-none');
+
+			// Revert button label after 3 seconds
+			setTimeout(function () {
+				// Remove check icon
+				copyIcon.classList.remove('d-none');
+
+				// Revert icon
+				button.removeChild(checkIcon);
+
+				// Remove target highlight
+				target.classList.remove(...classes);
+
+				// Remove button highlight
+				button.classList.remove('btn-success');
+			}, 3000)
+		});
+			
+		</script>
+		
+		<!--end::Javascript-->
+		<!--begin::Vendors Javascript(used for this page only)-->
+		<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/geodata/continentsLow.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/geodata/usaLow.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZonesLow.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZoneAreasLow.js"></script>
+		<script src="/assets/plugins/custom/datatables/datatables.bundle.js"></script>
+		<!--end::Vendors Javascript-->  
+	</body>
+	<!--end::Body-->
+</html>
+{{/inline}}
+{{/admin}}
