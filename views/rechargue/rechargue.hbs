@@ -1,0 +1,1436 @@
+{{#> admin}}
+    {{#* inline "content"}}
+                <!--begin::Main-->
+                <div class="app-main d-flex flex-column flex-row-fluid" id="kt_app_main">
+                    <!--begin::Content wrapper-->
+                    <div class="d-flex flex-column flex-column-fluid">
+                        <!--begin::Toolbar-->
+                        <div id="kt_app_toolbar" class="app-toolbar pt-6 pb-2">
+                            <!--begin::Toolbar container-->
+                            <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex align-items-stretch">
+                                <!--begin::Toolbar wrapper-->
+                                <div class="app-toolbar-wrapper d-flex  gap-4 w-100">
+                                    <!--begin::Page title-->
+                                    <div class="page-title d-flex flex-column justify-content-center gap-1 me-3">
+                                    </div>
+                                </div>
+                            
+                                <!--end::Page title-->
+                            </div>
+                                <!--end::Toolbar wrapper-->
+                        </div>
+                        <!--end::Toolbar-->
+                        <div id="kt_app_content" class="app-content flex-column-fluid" >
+                            <!--begin::Content container-->
+                            <div id="kt_app_content_container" class="app-container container-fluid " >
+								
+                                <!--begin::Content-->
+                                <div class="d-flex mb-10 mb-lg-0 align-items-center justify-content-center">
+
+                                    <!--begin::Stepper-->
+                                    <div class="stepper stepper-pills" id="stepperHolding" style="display: block;">
+                                        <!--begin::Nav-->
+                                        <div class="stepper-nav flex-center flex-wrap mb-10">
+                                            <!--begin::Step 1-->
+                                            <div class="stepper-item mx-8 my-4 current" data-kt-stepper-element="nav">
+                                                <!--begin::Wrapper-->
+                                                <div class="stepper-wrapper d-flex align-items-center">
+                                                    <!--begin::Icon-->
+                                                    <div class="stepper-icon w-40px h-40px">
+                                                        <i class="stepper-check fas fa-check"></i>
+                                                        <span class="stepper-number">1</span>
+                                                    </div>
+                                                    <!--end::Icon-->
+
+                                                    <!--begin::Label-->
+                                                    <div class="stepper-label">
+                                                        <h3 class="stepper-title">
+                                                            Select account
+                                                        </h3>
+
+                                                    </div>
+                                                    <!--end::Label-->
+                                                </div>
+                                                <!--end::Wrapper-->
+
+                                                <!--begin::Line-->
+                                                <div class="stepper-line h-40px"></div>
+                                                <!--end::Line-->
+                                            </div>
+                                            <!--end::Step 1-->
+
+                                            <!--begin::Step 2-->
+                                            <div class="stepper-item mx-8 my-4" data-kt-stepper-element="nav">
+                                                <!--begin::Wrapper-->
+                                                <div class="stepper-wrapper d-flex align-items-center">
+                                                    <!--begin::Icon-->
+                                                    <div class="stepper-icon w-40px h-40px">
+                                                        <i class="stepper-check fas fa-check"></i>
+                                                        <span class="stepper-number">2</span>
+                                                    </div>
+                                                    <!--begin::Icon-->
+
+                                                    <!--begin::Label-->
+                                                    <div class="stepper-label">
+                                                        <h3 class="stepper-title">
+                                                            Amount
+                                                        </h3>
+
+                                                    </div>
+                                                    <!--end::Label-->
+                                                </div>
+                                                <!--end::Wrapper-->
+
+                                                <!--begin::Line-->
+                                                <div class="stepper-line h-40px"></div>
+                                                <!--end::Line-->
+                                            </div>
+                                            <!--end::Step 2-->
+
+                                            <!--begin::Step 3-->
+                                            <div class="stepper-item mx-8 my-4" data-kt-stepper-element="nav">
+                                                <!--begin::Wrapper-->
+                                                <div class="stepper-wrapper d-flex align-items-center">
+                                                    <!--begin::Icon-->
+                                                    <div class="stepper-icon w-40px h-40px">
+                                                        <i class="stepper-check fas fa-check"></i>
+                                                        <span class="stepper-number">3</span>
+                                                    </div>
+                                                    <!--begin::Icon-->
+
+                                                    <!--begin::Label-->
+                                                    <div class="stepper-label">
+                                                        <h3 class="stepper-title">
+                                                            Review
+                                                        </h3>
+
+                                                    </div>
+                                                    <!--end::Label-->
+                                                </div>
+                                                <!--end::Wrapper-->
+
+                                                <!--begin::Line-->
+                                                <div class="stepper-line h-40px"></div>
+                                                <!--end::Line-->
+                                            </div>
+                                            <!--end::Step 3-->
+
+                                            <!--begin::Step 4-->
+                                            <div class="stepper-item mx-8 my-4" data-kt-stepper-element="nav">
+                                                <!--begin::Wrapper-->
+                                                <div class="stepper-wrapper d-flex align-items-center">
+                                                    <!--begin::Icon-->
+                                                    <div class="stepper-icon w-40px h-40px">
+                                                        <i class="stepper-check fas fa-check"></i>
+                                                        <span class="stepper-number">4</span>
+                                                    </div>
+                                                    <!--begin::Icon-->
+
+                                                    <!--begin::Label-->
+                                                    <div class="stepper-label">
+                                                        <h3 class="stepper-title">
+                                                            Payment
+                                                        </h3>
+
+                                                    </div>
+                                                    <!--end::Label-->
+                                                </div>
+                                                <!--end::Wrapper-->
+
+                                                <!--begin::Line-->
+                                                <div class="stepper-line h-40px"></div>
+                                                <!--end::Line-->
+                                            </div>
+                                            <!--end::Step 4-->
+                                        </div>
+                                        <!--end::Nav-->
+
+                                        <!--begin::Form-->
+                                        <form class="form w-lg-700px d-flex align-items-center justify-content-center" novalidate="novalidate" id="kt_stepper_example_basic_form">
+                                            <!--begin::Group-->
+                                            <div class="mb-5">
+                                                <!--begin::Step 1-->
+                                                <div class="flex-column current w-lg-650px" id="step1" data-kt-stepper-element="content">
+													 <!--begin::Card-->
+                                                    <div id="cardStep1" class="card card-flush pt-3 mb-5 mb-xl-5 shadow-sm">
+                                                        <div class="mt-5">
+                                                            <!--begin::Card title-->
+                                                            <div class="card-title d-flex justify-content-center align-items-center">
+                                                                <p class="fs-1 mt-1 mb-1">Which account will you recharge?</p>
+                                                            </div>
+                                                            <!--begin::Card title-->
+                                                        </div>
+                                                        <!--begin::Card body-->
+                                                        <div class="card-body mx-3">
+                                                            <div class="d-flex align-items-center justify-content-center mt-2 mb-5 text-center">
+                                                                <!--begin::Search-->
+                                                                <div class="d-flex align-items-center position-relative my-1 w-100">
+                                                                    <i class="ki-outline ki-magnifier fs-1 position-absolute ms-6"><span class="path1"></span><span class="path2"></span></i>
+                                                                    <input id="search" type="text" data-kt-docs-table-filter="search" class="form-control ps-15" placeholder="Currency"/>
+                                                                </div>
+                                                                <!--end::Search-->
+                                                            </div>
+
+                                                            <div class="d-flex align-items-center justify-content-start mt-9 mb-5">
+                                                                <span class="text-dark">FAVORITES</span>
+                                                            </div>
+                                                            <button type="button" class="d-flex align-items-center justify-content-start mt-2 mb-5 p-1 text-center btn btn-next1 w-100 btn-active-secondary" data-id="{{id}}">
+                                                                <a href="#" class="btn btn-icon fs-1 btn-active-icon-gray-600 btn-text-gray-600 btn-bg-secondary btn-active-light-secondary">
+                                                                    <span class="fs-2"><i class="ki-outline ki-wallet fs-1"></i></span><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+                                                                </a>
+                                                                <div class="mx-5 text-start">
+                                                                    <p class="fw-bold mb-0 mt-0 fs-5">MXN</p>
+                                                                    <p class="mb-0 mt-0 text-gray-600 fs-6">MXN 0.00 fee - <span class="ms-2 text-primary">Typically hours</span></p>
+                                                                </div>
+                                                                <div class="ms-auto">
+                                                                    <!--begin::Actions-->
+                                                                    <div class="d-flex flex-stack justify-content-between align-items-center mx-1">
+                                                                        <!--begin::Wrapper-->
+                                                                        <div class="d-flex align-items-center justify-content-between">
+																			<span class="ms-2">1,234,200,000.00 MXN</span>
+                                                                            <i class="ki-outline ki-right fs-2hx ms-2"></i>
+                                                                        </div>
+                                                                        <!--end::Wrapper-->
+                                                                    </div>
+                                                                    <!--end::Actions-->
+                                                                </div>
+                                                            </button>
+
+															<button type="button" class="d-flex align-items-center justify-content-start mt-2 mb-5 p-1 text-center btn btn-next1 w-100 btn-active-secondary" data-id="{{id}}">
+                                                                <a href="#" class="btn btn-icon fs-1 btn-active-icon-gray-600 btn-text-gray-600 btn-bg-secondary btn-active-light-secondary">
+                                                                    <span class="fs-2"><i class="ki-outline ki-wallet fs-1"></i></span><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+                                                                </a>
+                                                                <div class="mx-5 text-start">
+                                                                    <p class="fw-bold mb-0 mt-0 fs-5">USD</p>
+                                                                    <p class="mb-0 mt-0 text-gray-600 fs-6">USD 0.00 fee - <span class="ms-2 text-primary">Typically hours</span></p>
+                                                                </div>
+                                                                <div class="ms-auto">
+                                                                    <!--begin::Actions-->
+                                                                    <div class="d-flex flex-stack justify-content-between align-items-center mx-1">
+                                                                        <!--begin::Wrapper-->
+                                                                        <div class="d-flex align-items-center justify-content-between">
+																			<span class="ms-2">1,234,200,000.00 USD</span>
+                                                                            <i class="ki-outline ki-right fs-2hx"></i>
+                                                                        </div>
+                                                                        <!--end::Wrapper-->
+                                                                    </div>
+                                                                    <!--end::Actions-->
+                                                                </div>
+                                                            </button>
+
+															<div id="holdings" class="scroll h-200px px-5">
+																{{#each holdings}}
+																<button type="button" class="d-flex align-items-center justify-content-start mt-2 mb-5 p-1 text-center btn btn-next1 w-100 btn-active-secondary" data-id="{{id}}">
+																	<a href="#" class="btn btn-icon fs-1 btn-active-icon-gray-600 btn-text-gray-600 btn-bg-secondary btn-active-light-secondary">
+																		<span class="fs-2"><i class="ki-outline ki-wallet fs-1"></i></span><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+																	</a>
+																	<div class="mx-5 text-start">
+																		<p class="fw-bold mb-0 mt-0 fs-5">USD</p>
+																		<p class="mb-0 mt-0 text-gray-600 fs-6">USD 0.00 fee - <span class="ms-2 text-primary">Typically hours</span></p>
+																	</div>
+																	<div class="ms-auto">
+																		<!--begin::Actions-->
+																		<div class="d-flex flex-stack justify-content-between align-items-center mx-1">
+																			<!--begin::Wrapper-->
+																			<div class="d-flex align-items-center justify-content-between">
+																				<span class="ms-2">1,234,200,000.00 USD</span>
+																				<i class="ki-outline ki-right fs-2hx"></i>
+																			</div>
+																			<!--end::Wrapper-->
+																		</div>
+																		<!--end::Actions-->
+																	</div>
+																</button>
+																{{/each}}
+															</div>
+                                                        </div>
+                                                        <!--end::Card body-->
+                                                    </div>
+                                                    <!--end::Card-->
+                                                </div>
+                                                <!--begin::Step 1-->
+
+                                                <!--begin::Step 2-->
+                                                <div class="flex-column w-lg-600px" data-kt-stepper-element="content">
+                                                    <!--begin::Card-->
+                                                    <div id="cardStep2" class="card card-flush pt-3 mb-5 mb-xl-5 shadow-sm">
+                                                        <div class="mt-5">
+                                                            <!--begin::Card title-->
+                                                            <div class="card-title d-flex justify-content-start align-items-center">
+                                                                <!--begin::Actions-->
+                                                                <div class="d-flex flex-stack mx-5">
+                                                                    <!--begin::Wrapper-->
+                                                                    <div class="me-2">
+                                                                        <button type="button" data-id="previusStep1" class="btn bg-body btn-previus">
+                                                                            <i class="ki-outline ki-left fs-2hx"></i>
+                                                                        </button>
+                                                                    </div>
+                                                                    <!--end::Wrapper-->
+                                                                </div>
+                                                                <!--end::Actions-->
+                                                                <p class="fs-1 text-start mt-1 mb-1">How much you want to recharge?</p>
+                                                            </div>
+                                                            <!--begin::Card title-->
+                                                        </div>
+                                                        <!--begin::Card body-->
+                                                        <div class="card-body m-5 mt-0 pt-0">
+                                                            <div class="d-flex align-items-center justify-content-start mt-9 mb-5">
+                                                                <span class="text-dark">Currency to recharge</span>
+                                                            </div>
+															<div class="card shadow-sm">
+																<div class="card-body p-2 m-2 d-flex align-items-center justify-content-center">
+																	<a href="#" class="btn btn-icon fs-1 btn-light-secondary">
+																		<span class="fs-2"><i class="ki-outline ki-wallet fs-1 gray-600"></i></span><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+																	</a>
+																	<div class="mx-5 text-start">
+																		<p id="" class="fw-bold mb-0 mt-0 fs-6">MXN</p>
+																		<p id="" class="mb-0 mt-0 text-gray-600">Funds 1,00,000.00 MXN</p>
+																	</div>
+																	<div class="ms-auto">
+																		<!--begin::Actions-->
+																		<div class="d-flex flex-stack mx-5">
+																			<!--begin::Wrapper-->
+																			<div class="me-2">
+																				<a type="button" id="" data-bs-toggle="modal" data-bs-target="#modalHolding" class="btn bg-body text-primary">
+																					Change
+																				</a>
+																			</div>
+																			<!--end::Wrapper-->
+																		</div>
+																		<!--end::Actions-->
+																	</div>
+																</div>
+															</div>
+															<div class="d-flex align-items-center justify-content-between mt-3 ms-3 mb-0">
+                                                                <span class="text-gray-700 fs-7">Amount to add to holding account</span>
+                                                            </div>
+															<div class="d-flex align-items-center justify-content-between mt-1 ms-3 mb-10">
+																<div class="d-flex">
+                                                             		<span id="currencyCodeCard2_2" class="text-primary fw-bold fs-1">MXN 122,2312,332.00</span>
+																</div>
+                                                        	</div>
+															<div class="d-flex align-items-center justify-content-between mt-3 ms-3 mb-1">
+                                                                <span class="text-gray-700 fs-7">Currency to pay in</span>
+                                                            </div>
+															<div class="card shadow-sm mb-7">
+																<div class="card-body p-2 m-2 d-flex align-items-center justify-content-center">
+																	<a href="#" class="btn btn-icon fs-1 btn-light-secondary">
+																		<span class="fs-2">
+																			<div class="symbol symbol-circle symbol-30px">
+																				<img src="/assets/media/flags/USD.svg" alt=""/>
+																			</div>
+																		</span>
+																		<span class="path1"></span>
+																		<span class="path2"></span>
+																		<span class="path3"></span>
+																		<span class="path4"></span></i>
+																	</a>
+																	<div class="mx-5 text-start">
+																		<p id="" class="fw-bold mb-0 mt-0 fs-6">USD</p>
+																		<p id="" class="mb-0 mt-0 text-gray-600">United States</p>
+																	</div>
+																	<div class="ms-auto">
+																		<!--begin::Actions-->
+																		<div class="d-flex flex-stack mx-5">
+																			<!--begin::Wrapper-->
+																			<div class="me-2">
+																				<a type="button" id="" data-bs-toggle="modal" data-bs-target="#modalCurrencies" class="btn bg-body text-primary" data-id="1">
+																					Change
+																				</a>
+																			</div>
+																			<!--end::Wrapper-->
+																		</div>
+																		<!--end::Actions-->
+																	</div>
+																</div>
+															</div>
+															<div class="d-flex justify-content-between align-items-center ms-3 mb-0">
+																<p class="">You send exactly</p>
+																<p id="send2" class="text-primary">1,000.00 MXN</p>
+															</div>
+															<div class="d-flex justify-content-between align-items-center ms-3 mb-0">
+																<p class="">Rate</p>
+																<div class="d-flex align-items-center justify-content-center">
+																	<span class="value-container text-success ms-2"> 0</span>
+																	<span>
+																		<div class="container">
+																			<div class="circular-progress">
+																			</div>
+																		</div>
+																	</span>
+																	<span>17.560 MXN</span>
+																</div>
+															</div>
+															<div class="d-flex justify-content-between align-items-center ms-3 mb-0">
+																<p class="">Total fees</p>
+																<p>0.00 MXN</p>
+															</div>
+															<div class="d-flex justify-content-between align-items-center ms-3 mb-0">
+																<p class="">Amount to recharge</p>
+																<p class="">1,000.00 USD</p>
+															</div>
+															<div class="align-items-center justify-content-center mt-5">
+															<!--begin::Wrapper-->
+																<div class="mt-5 mb-7 text-center">
+																	<button type="button" id="nextStep2" class="w-50 text-primary btn btn-warning fw-bold rounded hover-scale">
+																	Next
+																	</button>
+																</div>
+																<!--end::Wrapper-->
+															</div>
+                                                        </div>
+                                                        <!--end::Card body-->
+                                                    </div>
+                                                    <!--end::Card-->
+                                                </div>
+                                                <!--begin::Step 2-->
+
+                                                <!--begin::Step 3-->
+                                                <div class="flex-column w-lg-600px" data-kt-stepper-element="content">
+                                                    <!--begin::Card-->
+                                                    <div id="cardStep3" class="card card-flush pt-3 mb-5 mb-xl-5 shadow-sm">
+                                                        <div class="mt-5">
+                                                            <!--begin::Card title-->
+                                                            <div class="card-title d-flex justify-content-start align-items-center">
+                                                                <!--begin::Actions-->
+                                                                <div class="d-flex flex-stack mx-5">
+                                                                    <!--begin::Wrapper-->
+                                                                    <div class="me-2">
+                                                                        <button type="button" class="btn bg-body btn-previus">
+                                                                            <i class="ki-outline ki-left fs-2hx"></i>
+                                                                        </button>
+                                                                    </div>
+                                                                    <!--end::Wrapper-->
+                                                                </div>
+                                                                <!--end::Actions-->
+                                                                <p class="fs-1 text-start mt-1 mb-1">Review the details of your payment</p>
+                                                            </div>
+                                                            <!--begin::Card title-->
+                                                        </div>
+                                                        <!--begin::Card body-->
+                                                        <div class="card-body m-4 mt-5">
+															<div class="d-flex justify-content-between align-items-center mb-5">
+																<span class="fw-bold">PAYMENT DETAILS</span>
+																<!--begin::Underline-->
+																<span class="d-inline-block position-relative ms-2">
+																	<!--begin::Label-->
+																	<span class="d-inline-block">
+																		<a href="#" class="text-primary btn-previus">Edit</a> 
+																	</span>
+																	<!--end::Label-->
+																	<!--begin::Line-->
+																	<span class="d-inline-block position-absolute h-1px bottom-0 end-0 start-0 bg-primary translate rounded"></span>
+																	<!--end::Line-->
+																</span>
+																<!--end::Underline-->
+															</div>
+															<div class="d-flex justify-content-between align-items-center">
+																<p class="">You send exactly</p>
+																<p id="send" class="text-primary">1,000.000 MXN</p>
+															</div>
+															<div class="d-flex justify-content-between align-items-center">
+																<p class="">Exchange rate</p>
+																<p id="rate">17.2343</p>
+															</div>
+															<div class="d-flex justify-content-between align-items-center">
+																<p id="">Holding USD add</p>
+																<p id="" class="text-primary">869.00 USD</p>
+															</div>
+															<div class="separator border-2 my-5"></div>
+															<div class="d-flex justify-content-between align-items-center mb-5">
+																<span class="fw-bold">HOLDING ACCOUNT DETAILS</span>
+																<!--begin::Underline-->
+																<span class="d-inline-block position-relative ms-2">
+																	<!--begin::Label-->
+																	<span class="d-inline-block">
+																		<a href="#" data-bs-toggle="modal" data-bs-target="#modalHoldingReview" class="text-primary">Change</a> 
+																	</span>
+																	<!--end::Label-->
+																	<!--begin::Line-->
+																	<span class="d-inline-block position-absolute h-1px bottom-0 end-0 start-0 bg-primary translate rounded"></span>
+																	<!--end::Line-->
+																</span>
+																<!--end::Underline-->
+															</div>
+															<div class="d-flex justify-content-between align-items-center">
+																<p class="">Currency</p>
+																<p id="" class="w-50" style="text-align: right;">USD</p>
+															</div>
+															<div class="d-flex justify-content-between align-items-center">
+																<p class="">Amount to recharge</p>
+																<p id="" class="w-50" style="text-align: right;">869.00 USD</p>
+															</div>
+															<div class="d-flex justify-content-between align-items-center">
+																<p class="">New balance</p>
+																<p id="">1489.00 USD</p>
+															</div>
+															<div class="separator border-2 my-5"></div>
+															<div class="d-flex justify-content-between align-items-center">
+																<p class="fw-bold">SCHEDULE DETAILS</p>
+															</div>
+															<div class="d-flex justify-content-between align-items-center">
+																<p class="">Sent on</p>
+																<p id="sentOn">01/01/2023</p>
+															</div>
+															<div class="d-flex justify-content-between align-items-center">
+																<p class="">Should arrive on</p>
+																<p id="arrive">01/01/2023</p>
+															</div>
+															<div class="align-items-center justify-content-center mt-5">
+															<!--begin::Wrapper-->
+																<div class="mt-5 mb-7 text-center">
+																	<button type="button" id="step3" class="w-50 text-primary btn btn-warning fw-bold rounded hover-scale">
+																	Next
+																	</button>
+																</div>
+																<!--end::Wrapper-->
+															</div>
+															<!--end::Card body-->
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    <!--end::Card-->
+                                                </div>
+                                                <!--begin::Step 3-->
+
+                                                <!--begin::Step 4-->
+                                                <div class="flex-column w-lg-600px" data-kt-stepper-element="content">
+													<!--begin::Card-->
+													<div id="card2" style="" class="card card-flush pt-3 mb-5 mb-xl-5 shadow-sm">
+														<div class="mt-5">
+															<!--begin::Card title-->
+															<div class="card-title d-flex justify-content-start align-items-center">
+																<!--begin::Actions-->
+																<div class="d-flex flex-stack mx-9">
+																	<!--begin::Wrapper-->
+																	<div class="me-2">
+																		<button type="button" id="" class="btn bg-body btn-previus">
+																			<i class="ki-outline ki-left fs-2hx"></i>
+																		</button>
+																	</div>
+																	<!--end::Wrapper-->
+																</div>
+																<!--end::Actions-->
+																<div class="d-flex align-items-center justify-content-center">
+																	<p class="fs-1 text-start mt-1 mb-1 ms-9">How would you like to pay?</p>
+																</div>
+															</div>
+															<!--begin::Card title-->
+														</div>
+														 <!--begin::Card body-->
+                                                        <div class="card-body pt-0">
+															<div class="d-flex align-items-center justify-content-start mt-9 mb-5">
+                                                                <span class="text-gray-700">METHOD PAYMENT 1</span>
+                                                            </div>
+                                                            <div class="card shadow-sm">
+																<div class="card-body p-2 m-2 d-flex align-items-center justify-content-center">
+																	<a href="#" class="btn btn-icon fs-1 btn-light-secondary">
+																		<span class="fs-2"><i class="ki-outline ki-wallet fs-1 gray-600"></i></span><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+																	</a>
+																	<div class="mx-5 text-start">
+																		<p id="" class="fw-bold mb-0 mt-0 fs-6">Direct debit</p>
+																		<p id="" class="mb-0 mt-0 text-gray-600">Typically same day</p>
+																	</div>
+																	<div class="ms-auto">
+																		<!--begin::Actions-->
+																		<div class="d-flex flex-stack mx-5">
+																			<!--begin::Wrapper-->
+																			<div class="me-2">
+																				<a type="button" id="" data-bs-toggle="modal" data-bs-target="#methodPayment" class="btn bg-body text-primary" data-id="1">
+																					Change
+																				</a>
+																			</div>
+																			<!--end::Wrapper-->
+																		</div>
+																		<!--end::Actions-->
+																	</div>
+																</div>
+															</div>
+															<div class="d-flex align-items-center justify-content-between mt-3 ms-3 mb-0">
+                                                                <span class="text-gray-700">Amount</span>
+                                                                <span class="text-gray-700 mx-4">Auto</span>
+                                                            </div>
+															<div class="d-flex align-items-center justify-content-between mt-1 ms-3 mb-10">
+																<div class="d-flex">
+                                                             		<span id="" class="text-primary fw-bold fs-2qx">MXN 0.00</span>
+																</div>
+																<div class="form-check form-switch form-check-custom form-check-solid ml-2 mb-0">
+																	<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" checked="checked">
+																</div>
+                                                            </div>
+															<div class="d-flex justify-content-between align-items-center mt-7 ms-3 mb-0">
+																<p class="fw-bold">PAYMENT DETAILS</p>
+															</div>
+															<div class="d-flex justify-content-between align-items-center ms-3 mb-0">
+																<p class="">You pay</p>
+																<p id="send2" class="text-primary">1,000.000 MXN</p>
+															</div>
+															<div class="d-flex justify-content-between align-items-center ms-3 mb-0">
+																<p class="">Total fees</p>
+																<p>0.00 MXN</p>
+															</div>
+															<div class="d-flex justify-content-between align-items-center ms-3 mb-0">
+																<p class="">Balance due</p>
+																<p class="">0.00 MXN</p>
+															</div>
+															<div class="d-flex justify-content-between align-items-center ms-3 mb-0">
+																<p class="">Holding USD add</p>
+																<p id="recibe2" class="text-primary">20.000 USD</p>
+															</div>
+															<div class="separator border-2 my-5"></div>
+															<div class="d-flex justify-content-between align-items-center ms-3 mb-0">
+																<p class="fw-bold">SCHEDULE DETAILS</p>
+															</div>
+															<div class="d-flex justify-content-between align-items-center ms-3 mb-0">
+																<p class="">Sent on</p>
+																<p id="sentOn2">01/01/2023</p>
+															</div>
+															<div class="d-flex justify-content-between align-items-center ms-3 mb-0">
+																<p class="">Should arrive on</p>
+																<p id="arrive2">01/01/2023</p>
+															</div>
+															<div class="align-items-center justify-content-center mt-5">
+															<!--begin::Wrapper-->
+																<div class="mt-5 mb-7 text-center">
+																	<button type="button" id="confirmPayment" class="w-50 text-primary btn btn-warning fw-bold rounded hover-scale">
+																	Confirm
+																	</button>
+																</div>
+																<!--end::Wrapper-->
+															</div>
+                                                        </div>
+                                                        <!--end::Card body-->
+													</div>
+													<!--end::Card-->
+                                                </div>
+                                                <!--begin::Step 4-->
+                                                
+                                            </div>
+                                            <!--end::Group-->
+                                            
+                                        </form>
+                                        <!--end::Form-->
+                                    </div>
+                                    <!--end::Stepper-->
+									<!--begin::Card-->
+                                    <div id="succcessPayment" class="card card-flush pt-3 mb-5 mb-xl-10 w-lg-600px shadow-sm" style="display: none;">
+                                        <!--begin::Card body-->
+                                        <div class="card-body pt-3">
+                                            <div class="mt-5 text-center">
+												<div class="mt-5 text-center">
+												<!--begin::Card title-->
+													<div class="card-title">
+														<i class="ki-outline ki-check-circle fs-3x text-primary"></i>
+													</div>
+													<p class="fs-1">Successful operation</p>
+													<!--begin::Card title-->
+												</div>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-center">
+												<p class="fw-bold">Instruction of payment</p>
+											</div>
+											<div class="d-flex justify-content-between align-items-center mb-3">
+												<p class="">In order to complete your payment, from the United States, transfer U.S. dollars (USD) to the following account</p>
+											</div>
+											<div class="d-flex justify-content-between align-items-center">
+												<p class="fw-bold">PAYMENT DETAILS</p>
+											</div>
+											<div class="d-flex justify-content-between align-items-center">
+												<p class="">You send exactly</p>
+												<p id="sendSuccess" class="text-primary">1,000.000 MXN</p>
+											</div>
+											<div class="d-flex justify-content-between align-items-center">
+												<p class="">Exchange rate</p>
+												<p id="rateSuccess" class="">17.2343</p>
+											</div>
+											<div class="d-flex justify-content-between align-items-center">
+												<p id="nickNameSuccess" class="">Alvarito nickname will receive</p>
+												<p id="receiveSuccess" class="text-primary">869.00 USD</p>
+											</div>
+											<div class="separator border-2 my-5"></div>
+											<div class="d-flex justify-content-between align-items-center mb-5">
+												<span class="fw-bold">PAYMENT INSTRUCTIONS DETAILS</span>
+											</div>
+											<div class="d-flex justify-content-between align-items-center">
+												<p class="">Account number</p>
+												<div class="d-flex w-75 align-items-end justify-content-end flex-wrap">
+													<div class="d-flex align-items-end"> <!-- Nuevo div que envuelve el div y el button -->
+														<div id="accountNumberSuccess" class="text-end mb-5">9872303814</div>
+														<button class="btn btn-icon btn-sm btn-active-light-secondary ms-2 mb-2" data-clipboard-target="#accountNumberSuccess">
+															<i class="ki-outline ki-copy fs-6 text-muted"></i>
+														</button>
+													</div>
+												</div>
+											</div>
+											<div class="d-flex justify-content-between align-items-center">
+												<p class="">Account name</p>
+												<div class="d-flex w-75 align-items-end justify-content-end flex-wrap">
+													<div class="d-flex align-items-end"> <!-- Nuevo div que envuelve el div y el button -->
+														<div id="accountNameSuccess" class="text-end mb-5">Monex USA</div>
+														<button class="btn btn-icon btn-sm btn-active-light-secondary ms-2 mb-2" data-clipboard-target="#accountNameSuccess">
+															<i class="ki-outline ki-copy fs-6 text-muted"></i>
+														</button>
+													</div>
+												</div>
+											</div>
+											<div class="d-flex justify-content-between align-items-center mb-2">
+												<p class="">Account address</p>
+												<div class="d-flex w-75 align-items-end justify-content-end flex-wrap">
+													<div class="d-flex align-items-end"> <!-- Nuevo div que envuelve el div y el button -->
+														<div id="accountAdressSuccess" class="text-end">1201 New York Avenue, NW, Suite 300 Washington, DC 20005 USA</div>
+														<button class="btn btn-icon btn-sm btn-active-light-secondary ms-2 mb-2" data-clipboard-target="#accountAdressSuccess">
+															<i class="ki-outline ki-copy fs-6 text-muted"></i>
+														</button>
+													</div>
+												</div>
+											</div>
+											<div class="d-flex justify-content-between align-items-center mb-2">
+												<p class="">SWIFT/ABA Code</p>
+												<div class="d-flex w-75 align-items-end justify-content-end flex-wrap">
+													<div class="d-flex align-items-end"> <!-- Nuevo div que envuelve el div y el button -->
+														<div id="swiftSuccess" class="text-end">UMKCUS44/ 101000695</div>
+														<button class="btn btn-icon btn-sm btn-active-light-secondary ms-2 mb-2" data-clipboard-target="#swiftSuccess">
+															<i class="ki-outline ki-copy fs-6 text-muted"></i>
+														</button>
+													</div>
+												</div>
+											</div>
+											<div class="d-flex justify-content-between align-items-center mb-2">
+												<p class="">Bank name</p>
+												<div class="d-flex w-75 align-items-end justify-content-end flex-wrap">
+													<div class="d-flex align-items-end"> <!-- Nuevo div que envuelve el div y el button -->
+														<div id="bankNameSuccess" class="text-end">UMB Bank</div>
+														<button class="btn btn-icon btn-sm btn-active-light-secondary ms-2" data-clipboard-target="#bankNameSuccess">
+															<i class="ki-outline ki-copy fs-6 text-muted"></i>
+														</button>
+													</div>
+												</div>
+											</div>
+											<div class="d-flex justify-content-between align-items-center mb-2">
+												<p class="">Bank address</p>
+												<div class="d-flex w-75 align-items-end justify-content-end flex-wrap">
+													<div class="d-flex align-items-end"> <!-- Nuevo div que envuelve el div y el button -->
+														<div id="bankAddressSuccess" class="text-end">1010 Grand Boulevard Kansas City, MO64106</div>
+														<button class="btn btn-icon btn-sm btn-active-light-secondary ms-2" data-clipboard-target="#bankAddressSuccess">
+															<i class="ki-outline ki-copy fs-6 text-muted"></i>
+														</button>
+													</div>
+												</div>
+											</div>
+											<div class="d-flex justify-content-between align-items-center mb-2">
+												<p class="">Email address</p>
+												<div class="d-flex w-75 align-items-end justify-content-end flex-wrap">
+													<div class="d-flex align-items-end"> <!-- Nuevo div que envuelve el div y el button -->
+														<div id="emailSuccess" class="text-end">FFCAlvaritosac10232123</div>
+														<button class="btn btn-icon btn-sm btn-active-light-secondary ms-2" data-clipboard-target="#emailSuccess">
+															<i class="ki-outline ki-copy fs-6 text-muted"></i>
+														</button>
+													</div>
+												</div>
+											</div>
+											<div class="align-items-center justify-content-center mt-5">
+											<!--begin::Wrapper-->
+												<div class="mt-5 mb-7 text-center">
+													<a href="/admin/rechargue" type="button" class="mx-2 btn btn-outline btn-outline-dashed btn-outline-primary btn-active-light-primary fw-bold rounded hover-scale">
+                                                        New rechargue 
+													</a>
+													<a href="/admin/transactions" type="button" id="" class="mx-2 text-primary btn btn-warning w-170px fw-bold rounded hover-scale">
+														Go to transactions 
+													</a>
+												</div>
+												<!--end::Wrapper-->
+											</div>
+                                        </div>
+                                        <!--end::Card body-->
+                                    </div>
+                                    <!--end::Card-->
+                                </div>
+                                <!--end::Content-->
+                            </div>
+                            <!--end::Content container-->
+                        </div>
+                    </div>
+                    <!--end::Toolbar-->
+                    <!--begin::Content-->
+                        <!--end::Content-->
+                    </div>
+                    <!--end::Content wrapper-->
+                    <!--begin::Footer-->
+                    <div id="kt_app_footer" class="app-footer">
+                        <!--begin::Footer container-->
+                        <div class="app-container container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3">
+                            <!--begin::Copyright-->
+                            <div class="text-gray-900 order-2 order-md-1">
+                                <span class="text-muted fw-semibold me-1">2023&copy;</span>
+                                <a href="https://tkambio.com/" target="_blank" class="text-gray-800 text-hover-primary">Tkambio</a>
+                            </div>
+                            <!--end::Copyright-->
+                        </div>
+                        <!--end::Footer container-->
+                    </div>
+                    <!--end::Footer-->
+                </div>
+                <!--end:::Main-->
+
+                </div>
+				<!--end::Wrapper-->
+			</div>
+			<!--end::Page-->
+			<div class="modal fade" tabindex="-1" id="modalCurrencies">
+				<div class="modal-dialog">
+					<div class="modal-content w-lg-550px">
+						<div class="modal-body p-2">
+							<!--begin::Close-->
+							<div class="d-flex align-items-center justify-content-end">
+								<div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+									<i class="ki-outline ki-cross fs-1"></i>
+								</div>
+							</div>
+							<!--end::Close-->
+							<div class="d-flex justify-content-center align-items-center m-2">
+								<p class="text-center fs-2">Currency to pay in</p>
+							</div>
+							<div class="mx-9">
+								<div class="d-flex align-items-center justify-content-start mt-5 mb-5">
+									<span class="text-gray-700 ms-4">CHANGE TO</span>
+								</div>
+								<button type="button" class="d-flex align-items-center justify-content-start mt-2 mb-2 text-center btn btn-next w-100 btn-active-secondary">
+									<a href="#" class="btn btn-icon btn-light-secondary">
+										<span class="fs-2">
+											<div class="symbol symbol-circle symbol-20px">
+												<img src="/assets/media/flags/USD.svg" alt="">
+											</div>
+										</span>
+										<span class="path1"></span>
+										<span class="path2"></span>
+										<span class="path3"></span>
+										<span class="path4"></span>
+									</a>
+									<div class="ms-2 text-start">
+										<p class="fw-bold mb-0 mt-0 fs-6">USD</p>
+										<p class="mb-0 mt-0 text-gray-800 fw-normal">United States</p>
+									</div>
+									<div class="ms-auto">
+										<!--begin::Actions-->
+										<div class="d-flex flex-stack ms-auto">
+											<!--begin::Wrapper-->
+											<div class="me-2">
+													<i class="ki-outline ki-right fs-2hx"></i>
+											</div>
+											<!--end::Wrapper-->
+										</div>
+										<!--end::Actions-->
+									</div>
+								</button>
+								<button type="button" class="d-flex align-items-center justify-content-start mt-2 mb-2 text-center btn btn-next w-100 btn-active-secondary">
+									<a href="#" class="btn btn-icon btn-light-secondary">
+										<span class="fs-2">
+											<div class="symbol symbol-circle symbol-20px">
+												<img src="/assets/media/flags/MXN.svg" alt="">
+											</div>
+										</span>
+										<span class="path1"></span>
+										<span class="path2"></span>
+										<span class="path3"></span>
+										<span class="path4"></span>
+									</a>
+									<div class="ms-2 text-start">
+										<p class="fw-bold mb-0 mt-0 fs-6">MXN</p>
+										<p class="mb-0 mt-0 text-gray-800 fw-normal">Mexico</p>
+									</div>
+									<div class="ms-auto">
+										<!--begin::Actions-->
+										<div class="d-flex flex-stack ms-auto">
+											<!--begin::Wrapper-->
+											<div class="me-2">
+													<i class="ki-outline ki-right fs-2hx"></i>
+											</div>
+											<!--end::Wrapper-->
+										</div>
+										<!--end::Actions-->
+									</div>
+								</button>
+								<button type="button" class="d-flex align-items-center justify-content-start mt-2 mb-2 text-center btn btn-next w-100 btn-active-secondary">
+									<a href="#" class="btn btn-icon btn-light-secondary">
+										<span class="fs-2">
+											<div class="symbol symbol-circle symbol-20px">
+												<img src="/assets/media/flags/CAD.svg" alt="">
+											</div>
+										</span>
+										<span class="path1"></span>
+										<span class="path2"></span>
+										<span class="path3"></span>
+										<span class="path4"></span>
+									</a>
+									<div class="ms-2 text-start">
+										<p class="fw-bold mb-0 mt-0 fs-6">CAD</p>
+										<p class="mb-0 mt-0 text-gray-800 fw-normal">Canada</p>
+									</div>
+									<div class="ms-auto">
+										<!--begin::Actions-->
+										<div class="d-flex flex-stack ms-auto">
+											<!--begin::Wrapper-->
+											<div class="me-2">
+													<i class="ki-outline ki-right fs-2hx"></i>
+											</div>
+											<!--end::Wrapper-->
+										</div>
+										<!--end::Actions-->
+									</div>
+								</button>
+								<div class="d-flex align-items-center justify-content-start mt-9 mb-5">
+									<span class="text-gray-700">ALL</span>
+								</div>
+								<button type="button" class="d-flex align-items-center justify-content-start mt-2 mb-2 text-center btn btn-next w-100 btn-active-secondary">
+									<a href="#" class="btn btn-icon btn-light-secondary">
+										<span class="fs-2">
+											<div class="symbol symbol-circle symbol-20px">
+												<img src="/assets/media/flags/GBP.svg" alt="">
+											</div>
+										</span>
+										<span class="path1"></span>
+										<span class="path2"></span>
+										<span class="path3"></span>
+										<span class="path4"></span>
+									</a>
+									<div class="ms-2 text-start">
+										<p class="fw-bold mb-0 mt-0 fs-6">GBP</p>
+										<p class="mb-0 mt-0 text-gray-800 fw-normal">United Kingdom</p>
+									</div>
+									<div class="ms-auto">
+										<!--begin::Actions-->
+										<div class="d-flex flex-stack ms-auto">
+											<!--begin::Wrapper-->
+											<div class="me-2">
+													<i class="ki-outline ki-right fs-2hx"></i>
+											</div>
+											<!--end::Wrapper-->
+										</div>
+										<!--end::Actions-->
+									</div>
+								</button>
+								<button type="button" class="d-flex align-items-center justify-content-start mt-2 mb-9 text-center btn btn-next w-100 btn-active-secondary">
+									<a href="#" class="btn btn-icon btn-light-secondary">
+										<span class="fs-2">
+											<div class="symbol symbol-circle symbol-20px">
+												<img src="/assets/media/flags/CAD.svg" alt="">
+											</div>
+										</span>
+										<span class="path1"></span>
+										<span class="path2"></span>
+										<span class="path3"></span>
+										<span class="path4"></span>
+									</a>
+									<div class="ms-2 text-start">
+										<p class="fw-bold mb-0 mt-0 fs-6">AUD</p>
+										<p class="mb-0 mt-0 text-gray-800 fw-normal">Australia</p>
+									</div>
+									<div class="ms-auto">
+										<!--begin::Actions-->
+										<div class="d-flex flex-stack ms-auto">
+											<!--begin::Wrapper-->
+											<div class="me-2">
+													<i class="ki-outline ki-right fs-2hx"></i>
+											</div>
+											<!--end::Wrapper-->
+										</div>
+										<!--end::Actions-->
+									</div>
+								</button>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+            <div class="modal fade" tabindex="-1" id="modalHolding">
+				<div class="modal-dialog">
+					<div class="modal-content w-lg-600px">
+						<div class="modal-body p-2">
+							<!--begin::Close-->
+							<div class="d-flex align-items-center justify-content-end">
+								<div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+									<i class="ki-outline ki-cross fs-1"></i>
+								</div>
+							</div>
+							<!--end::Close-->
+							<div class="d-flex justify-content-center align-items-center m-2">
+								<p class="text-center fs-2">Which account will you recharge?</p>
+							</div>
+							<div class="mx-9">
+								<div class="d-flex align-items-center justify-content-center mt-2 mb-5 text-center">
+									<!--begin::Search-->
+									<div class="d-flex align-items-center position-relative my-1 w-100">
+										<i class="ki-outline ki-magnifier fs-1 position-absolute ms-6"><span class="path1"></span><span class="path2"></span></i>
+										<input id="searchModal" type="text" data-kt-docs-table-filter="search" class="form-control ps-15" placeholder="Currency"/>
+									</div>
+									<!--end::Search-->
+								</div>
+
+								<div class="d-flex align-items-center justify-content-start mt-9 mb-5">
+									<span class="text-dark">FAVORITES</span>
+								</div>
+								<button type="button" class="d-flex align-items-center justify-content-start mt-2 mb-5 p-1 text-center btn w-100 btn-active-secondary" data-id="{{id}}">
+									<a href="#" class="btn btn-icon fs-1 btn-active-icon-gray-600 btn-text-gray-600 btn-bg-secondary btn-active-light-secondary">
+										<span class="fs-2"><i class="ki-outline ki-wallet fs-1"></i></span><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+									</a>
+									<div class="mx-5 text-start">
+										<p class="fw-bold mb-0 mt-0 fs-5">MXN</p>
+										<p class="mb-0 mt-0 text-gray-600 fs-6">MXN 0.00 fee - <span class="ms-2 text-primary">Typically hours</span></p>
+									</div>
+									<div class="ms-auto">
+										<!--begin::Actions-->
+										<div class="d-flex flex-stack justify-content-between align-items-center mx-1">
+											<!--begin::Wrapper-->
+											<div class="d-flex align-items-center justify-content-between">
+												<span class="ms-2">1,234,200,000.00 MXN</span>
+												<i class="ki-outline ki-right fs-2hx ms-2"></i>
+											</div>
+											<!--end::Wrapper-->
+										</div>
+										<!--end::Actions-->
+									</div>
+								</button>
+
+								<button type="button" class="d-flex align-items-center justify-content-start mt-2 mb-5 p-1 text-center btn w-100 btn-active-secondary" data-id="{{id}}">
+									<a href="#" class="btn btn-icon fs-1 btn-active-icon-gray-600 btn-text-gray-600 btn-bg-secondary btn-active-light-secondary">
+										<span class="fs-2"><i class="ki-outline ki-wallet fs-1"></i></span><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+									</a>
+									<div class="mx-5 text-start">
+										<p class="fw-bold mb-0 mt-0 fs-5">USD</p>
+										<p class="mb-0 mt-0 text-gray-600 fs-6">USD 0.00 fee - <span class="ms-2 text-primary">Typically hours</span></p>
+									</div>
+									<div class="ms-auto">
+										<!--begin::Actions-->
+										<div class="d-flex flex-stack justify-content-between align-items-center mx-1">
+											<!--begin::Wrapper-->
+											<div class="d-flex align-items-center justify-content-between">
+												<span class="ms-2">1,234,200,000.00 USD</span>
+												<i class="ki-outline ki-right fs-2hx"></i>
+											</div>
+											<!--end::Wrapper-->
+										</div>
+										<!--end::Actions-->
+									</div>
+								</button>
+
+								<div id="holdingsModal" class="scroll h-200px px-5">
+									{{#each holdings}}
+									<button type="button" class="d-flex align-items-center justify-content-start mt-2 mb-5 p-1 text-center btn w-100 btn-active-secondary" data-id="{{id}}">
+										<a href="#" class="btn btn-icon fs-1 btn-active-icon-gray-600 btn-text-gray-600 btn-bg-secondary btn-active-light-secondary">
+											<span class="fs-2"><i class="ki-outline ki-wallet fs-1"></i></span><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+										</a>
+										<div class="mx-5 text-start">
+											<p class="fw-bold mb-0 mt-0 fs-5">USD</p>
+											<p class="mb-0 mt-0 text-gray-600 fs-6">USD 0.00 fee - <span class="ms-2 text-primary">Typically hours</span></p>
+										</div>
+										<div class="ms-auto">
+											<!--begin::Actions-->
+											<div class="d-flex flex-stack justify-content-between align-items-center mx-1">
+												<!--begin::Wrapper-->
+												<div class="d-flex align-items-center justify-content-between">
+													<span class="ms-2">1,234,200,000.00 USD</span>
+													<i class="ki-outline ki-right fs-2hx"></i>
+												</div>
+												<!--end::Wrapper-->
+											</div>
+											<!--end::Actions-->
+										</div>
+									</button>
+									{{/each}}
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade" tabindex="-1" id="modalHoldingReview">
+				<div class="modal-dialog">
+					<div class="modal-content w-lg-600px">
+						<div class="modal-body p-2">
+							<!--begin::Close-->
+							<div class="d-flex align-items-center justify-content-end">
+								<div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+									<i class="ki-outline ki-cross fs-1"></i>
+								</div>
+							</div>
+							<!--end::Close-->
+							<div class="d-flex justify-content-center align-items-center m-2">
+								<p class="text-center fs-2">Which account will you recharge?</p>
+							</div>
+							<div class="mx-9">
+								<div class="d-flex align-items-center justify-content-center mt-2 mb-5 text-center">
+									<!--begin::Search-->
+									<div class="d-flex align-items-center position-relative my-1 w-100">
+										<i class="ki-outline ki-magnifier fs-1 position-absolute ms-6"><span class="path1"></span><span class="path2"></span></i>
+										<input id="searchModal" type="text" data-kt-docs-table-filter="search" class="form-control ps-15" placeholder="Currency"/>
+									</div>
+									<!--end::Search-->
+								</div>
+
+								<div class="d-flex align-items-center justify-content-start mt-9 mb-5">
+									<span class="text-dark">FAVORITES</span>
+								</div>
+								<button type="button" class="d-flex align-items-center justify-content-start mt-2 mb-5 p-1 text-center btn w-100 btn-active-secondary" data-id="{{id}}">
+									<a href="#" class="btn btn-icon fs-1 btn-active-icon-gray-600 btn-text-gray-600 btn-bg-secondary btn-active-light-secondary">
+										<span class="fs-2"><i class="ki-outline ki-wallet fs-1"></i></span><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+									</a>
+									<div class="mx-5 text-start">
+										<p class="fw-bold mb-0 mt-0 fs-5">MXN</p>
+										<p class="mb-0 mt-0 text-gray-600 fs-6">MXN 0.00 fee - <span class="ms-2 text-primary">Typically hours</span></p>
+									</div>
+									<div class="ms-auto">
+										<!--begin::Actions-->
+										<div class="d-flex flex-stack justify-content-between align-items-center mx-1">
+											<!--begin::Wrapper-->
+											<div class="d-flex align-items-center justify-content-between">
+												<span class="ms-2">1,234,200,000.00 MXN</span>
+												<i class="ki-outline ki-right fs-2hx ms-2"></i>
+											</div>
+											<!--end::Wrapper-->
+										</div>
+										<!--end::Actions-->
+									</div>
+								</button>
+
+								<button type="button" class="d-flex align-items-center justify-content-start mt-2 mb-5 p-1 text-center btn w-100 btn-active-secondary" data-id="{{id}}">
+									<a href="#" class="btn btn-icon fs-1 btn-active-icon-gray-600 btn-text-gray-600 btn-bg-secondary btn-active-light-secondary">
+										<span class="fs-2"><i class="ki-outline ki-wallet fs-1"></i></span><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+									</a>
+									<div class="mx-5 text-start">
+										<p class="fw-bold mb-0 mt-0 fs-5">USD</p>
+										<p class="mb-0 mt-0 text-gray-600 fs-6">USD 0.00 fee - <span class="ms-2 text-primary">Typically hours</span></p>
+									</div>
+									<div class="ms-auto">
+										<!--begin::Actions-->
+										<div class="d-flex flex-stack justify-content-between align-items-center mx-1">
+											<!--begin::Wrapper-->
+											<div class="d-flex align-items-center justify-content-between">
+												<span class="ms-2">1,234,200,000.00 USD</span>
+												<i class="ki-outline ki-right fs-2hx"></i>
+											</div>
+											<!--end::Wrapper-->
+										</div>
+										<!--end::Actions-->
+									</div>
+								</button>
+
+								<div id="holdingsModal" class="scroll h-200px px-5">
+									{{#each holdings}}
+									<button type="button" class="d-flex align-items-center justify-content-start mt-2 mb-5 p-1 text-center btn w-100 btn-active-secondary" data-id="{{id}}">
+										<a href="#" class="btn btn-icon fs-1 btn-active-icon-gray-600 btn-text-gray-600 btn-bg-secondary btn-active-light-secondary">
+											<span class="fs-2"><i class="ki-outline ki-wallet fs-1"></i></span><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+										</a>
+										<div class="mx-5 text-start">
+											<p class="fw-bold mb-0 mt-0 fs-5">USD</p>
+											<p class="mb-0 mt-0 text-gray-600 fs-6">USD 0.00 fee - <span class="ms-2 text-primary">Typically hours</span></p>
+										</div>
+										<div class="ms-auto">
+											<!--begin::Actions-->
+											<div class="d-flex flex-stack justify-content-between align-items-center mx-1">
+												<!--begin::Wrapper-->
+												<div class="d-flex align-items-center justify-content-between">
+													<span class="ms-2">1,234,200,000.00 USD</span>
+													<i class="ki-outline ki-right fs-2hx"></i>
+												</div>
+												<!--end::Wrapper-->
+											</div>
+											<!--end::Actions-->
+										</div>
+									</button>
+									{{/each}}
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade" tabindex="-1" id="methodPayment">
+				<div class="modal-dialog">
+					<div class="modal-content w-lg-600px">
+						<div class="modal-body p-2">
+							<!--begin::Close-->
+							<div class="d-flex align-items-center justify-content-end">
+								<div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+									<i class="ki-outline ki-cross fs-1"></i>
+								</div>
+							</div>
+							<!--end::Close-->
+							<div class="d-flex justify-content-center align-items-center m-2">
+								<p class="text-center fs-2">Currency to pay in</p>
+							</div>
+							<div class="mx-9">
+								<div class="d-flex align-items-center justify-content-start mt-9 mb-5">
+									<span class="text-gray-700">CHANGE TO</span>
+								</div>
+								<div class="d-flex align-items-center justify-content-start mt-2 mb-5 text-center">
+									<a href="#" class="btn btn-icon-gray-400 btn-text-gray-400">
+										<span class="fs-2"><i class="ki-outline ki-wallet fs-1 gray-600"></i></span><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+									</a>
+									<div class="mx-5 text-start">
+										<p class="fw-bold mb-0 mt-0 fs-6 text-gray-300">Wire transfer</p>
+										<p class="mb-0 mt-0 text-gray-300">USD 0.00 fee - <span class="text-gray-300">Typically hours</span></p>
+									</div>
+									<div class="ms-auto">
+										<!--begin::Actions-->
+										<div class="d-flex flex-stack justify-content-between align-items-center mx-1">
+											<!--begin::Wrapper-->
+											<div class="me-2">
+												<button type="button" id="btn-next-card" class="btn bg-body" data-id="1">
+													<i class="ki-outline ki-right fs-2hx text-gray-300"></i>
+												</button>
+											</div>
+											<!--end::Wrapper-->
+										</div>
+										<!--end::Actions-->
+									</div>
+								</div>
+								<div class="d-flex align-items-center justify-content-start mt-2 mb-5 text-center">
+									<a href="#" class="btn btn-icon-gray-400 btn-text-gray-400">
+										<span class="fs-2"><i class="ki-outline ki-wallet fs-1"></i></span><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+									</a>
+									<div class="mx-5 text-start">
+										<p class="fw-bold mb-0 mt-0 fs-6 text-gray-300">Direct debit</p>
+										<p class="mb-0 mt-0 text-gray-300">USD 0.00 fee - <span class="text-gray-300">Typically hours</span></p>
+									</div>
+									<div class="ms-auto">
+										<!--begin::Actions-->
+										<div class="d-flex flex-stack justify-content-between align-items-center mx-1">
+											<!--begin::Wrapper-->
+											<div class="me-2">
+												<button type="button" class="btn bg-body" data-id="2">
+													<i class="ki-outline ki-right fs-2hx text-gray-300"></i>
+												</button>
+											</div>
+											<!--end::Wrapper-->
+										</div>
+										<!--end::Actions-->
+									</div>
+								</div>
+								<div class="d-flex align-items-center justify-content-start mt-2 mb-5 text-center">
+									<a href="#" class="btn btn-icon-gray-400 btn-text-gray-400">
+										<span class="fs-2"><i class="ki-outline ki-wallet fs-1"></i></span><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+									</a>
+									<div class="mx-5 text-start">
+										<p class="fw-bold mb-0 mt-0 fs-6 text-gray-300">Fax Check</p>
+										<p class="mb-0 mt-0 text-gray-300">USD 0.00 fee - <span class="text-gray-300">Typically hours</span></p>
+									</div>
+									<div class="ms-auto">
+										<!--begin::Actions-->
+										<div class="d-flex flex-stack justify-content-between align-items-center mx-1">
+											<!--begin::Wrapper-->
+											<div class="me-2">
+												<button type="button" class="btn bg-body" data-id="2">
+													<i class="ki-outline ki-right fs-2hx text-gray-300"></i>
+												</button>
+											</div>
+											<!--end::Wrapper-->
+										</div>
+										<!--end::Actions-->
+									</div>
+								</div>
+								<div class="d-flex align-items-center justify-content-start mt-9 mb-5">
+									<span class="text-gray-700">NOT AVAILABLE</span>
+								</div>
+								<div class="d-flex align-items-center justify-content-start mt-2 mb-9 text-center">
+									<a href="#" class="btn btn-icon-gray-400 btn-text-gray-400">
+										<span class="fs-2"><i class="ki-outline ki-wallet fs-1 gray-600"></i></span><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+									</a>
+									<div class="mx-5 text-start">
+										<p class="fw-bold mb-0 mt-0 fs-6 text-gray-400">Fax Check</p>
+										<p class="mb-0 mt-0 text-gray-400">MXN 0.00 fee - <span class="text-gray-400">Typically hours</span></p>
+									</div>
+									<div class="ms-auto">
+										<!--begin::Actions-->
+										<div class="d-flex flex-stack justify-content-between align-items-center mx-1">
+											<!--begin::Wrapper-->
+											<div class="me-2">
+												<button type="button" class="btn bg-body btn-text-gray-300" data-id="2">
+													<i class="ki-outline ki-right fs-2hx text-gray-300"></i>
+												</button>
+											</div>
+											<!--end::Wrapper-->
+										</div>
+										<!--end::Actions-->
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--end::App-->
+		<!--begin::Javascript-->
+		<script>
+		const menuLinks = document.querySelectorAll('.menu-link');
+		const activeLinkIndex = localStorage.getItem('activeLinkIndex');
+		for (let i = 0; i < menuLinks.length; i++) {
+			menuLinks[i].classList.remove('active');
+		}
+		
+		for (let i = 0; i < menuLinks.length; i++) {
+			const link = menuLinks[i];
+
+			link.addEventListener('click', function(event) {
+				for (let j = 0; j < menuLinks.length; j++) {
+					menuLinks[j].classList.remove('active');
+				}
+
+				this.classList.add('active');
+
+				localStorage.setItem('activeLinkIndex', i);
+			});
+
+			if (activeLinkIndex && i.toString() === activeLinkIndex) {
+			link.classList.add('active');
+			}
+		}
+		</script>
+		<!--begin::Global Javascript Bundle(mandatory for all pages)-->
+		<script src="/assets/plugins/global/plugins.bundle.js"></script>
+		<script src="/assets/js/scripts.bundle.js"></script>
+		<!--end::Global Javascript Bundle-->
+		<script>
+			////////////////////////////////
+			var element = document.querySelector("#stepperHolding");
+
+			// Initialize Stepper
+			var stepperPayment = new KTStepper(element);
+
+			const buttonsNext1 = document.querySelectorAll('.btn-next1');
+			buttonsNext1.forEach(button => {
+				button.addEventListener('click', function() {
+					stepperPayment.goNext();
+				});
+			});
+
+			const buttonNext2 = document.querySelector('#nextStep2');
+			buttonNext2.addEventListener('click', function() {
+				stepperPayment.goNext();
+			});
+
+			const buttonNext3 = document.querySelector('#step3');
+			buttonNext3.addEventListener('click', function() {
+				stepperPayment.goNext();
+			});
+
+			const bottonsPrevius = document.querySelectorAll('.btn-previus');
+			bottonsPrevius.forEach(function (button){
+				button.addEventListener('click', function(event) {
+					stepperPayment.goPrevious(); // go next step
+				});
+			})
+
+			const buttonSuccess = $('#confirmPayment');
+			buttonSuccess.on('click', async function(event){
+				$("#stepperHolding").hide();
+				$("#succcessPayment").show();
+				{{!-- let responsePayment = await axios.post('/admin/sendPayment', {dataPayment});
+				if(responsePayment.data.data !== undefined){
+					
+					$("#stepper_payment").hide();
+					hideLoadingInStep("card2");
+					$("#succcessPayment").show();
+				}else{
+					hideLoadingInStep("card2");
+					Swal.fire({
+						text: `${responsePayment.data}`,
+						icon: "error",
+						buttonsStyling: false,
+						confirmButtonText: "Ok, got it!",
+						customClass: {
+							confirmButton: "btn btn-danger"
+						}
+					});
+				} --}}
+				
+			});
+
+			// Recharge Calculator
+			let progressBar = document.querySelector(".circular-progress");
+			let valueContainer = document.querySelector(".value-container");
+
+			let speed = 300; // Velocidad de la animación en milisegundos
+			let progress;
+			let status = true;
+
+			function updateProgress() {
+				let totalSeconds = 30;
+				let progressValue = 100;
+				let progressEndValue = 0;
+
+				progress = setInterval(async () => {
+					if(status === true){
+						progressValue--;
+						// Calcular los segundos restantes
+						let secondsRemaining = (progressValue / 100) * totalSeconds;
+
+						// Cambiar el color según el porcentaje
+						let color = getColorByPercentage(progressValue);
+						valueContainer.textContent = `${secondsRemaining.toFixed(0)} sec`;
+						progressBar.style.background = `conic-gradient(
+							${color} ${progressValue * 3.6}deg,
+							#cadcff ${progressValue * 3.6}deg
+						)`;
+						if (progressValue === progressEndValue) {
+							clearInterval(progress);
+							updateProgress();
+						}
+					}
+				}, speed);
+			}
+
+			function getColorByPercentage(percentage) {
+				if (percentage >= 63) {
+					return '#2ecc71'; // Verde
+				} else if (percentage >= 33.3) {
+					return '#f39c12'; // Naranja
+				} else {
+					return '#e74c3c'; // Rojo
+				}
+			}
+
+			// Llamar a la función para iniciar la animación
+			updateProgress();
+
+			// Función para reanudar la animación
+			function toggleAnimationStart() {
+				status = true;
+				clearInterval(progress);
+				if (status) {
+					// Si la animación estaba pausada, la reanudamos
+					updateProgress();
+				}
+			}
+			// Función para pausarla animación
+			function toggleAnimationStop() {
+				status = false;
+				clearInterval(progress);
+				if (status) {
+					updateProgress();
+				}
+			}
+		</script>
+		<!--begin::Vendors Javascript(used for this page only)-->
+		<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/geodata/continentsLow.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/geodata/usaLow.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZonesLow.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZoneAreasLow.js"></script>
+		<script src="/assets/plugins/custom/datatables/datatables.bundle.js"></script>
+		<!--end::Vendors Javascript-->  
+	</body>
+	<!--end::Body-->
+</html>
+{{/inline}}
+{{/admin}}
