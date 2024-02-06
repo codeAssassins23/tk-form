@@ -1,22 +1,21 @@
-<!DOCTYPE html>
 <html>
 
-<head>
-  <meta charset="utf-8">
-  <title>App</title>
-</head>
+  <head>
+    <meta charset='utf-8' />
+    <title>App</title>
+  </head>
 
-<body>
-  {{message}}
+  <body>
+    {{message}}
     {{#if data.roles}}
-        <ul>
-            {{#each data.roles}}
-                <li>{{this.name}} - {{this.description}}</li>
-            {{/each}}
-        </ul>
+      <ul>
+        {{#each data.roles}}
+          <li>{{this.name}} - {{this.description}}</li>
+        {{/each}}
+      </ul>
     {{else}}
-        <p>No se encontraron roles.</p>
+      <p>No se encontraron roles.</p>
     {{/if}}
-</body>
+  </body>
 
 </html>

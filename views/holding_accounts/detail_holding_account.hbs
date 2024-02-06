@@ -85,7 +85,7 @@
                                     <div class="d-flex align-items-center gap-2 gap-lg-3">
                                         <!-- Primer par de botón y texto -->
                                         <div class="d-flex flex-column align-items-center mx-6">
-                                            <a href="#" class="btn-icon btn btn-warning btn-sm rounded hover-scale" data-bs-toggle="modal" data-bs-target="#kt_modal_create_campaign">
+                                            <a href="/admin/payments" class="btn-icon btn btn-warning btn-sm rounded hover-scale">
                                                 <i class="ki-outline ki-send fs-0 text-primary fs-2"></i>
                                             </a>
                                             <div class="">Send Payment</div>
@@ -93,7 +93,7 @@
 
                                         <!-- Segundo par de botón y texto -->
                                         <div class="d-flex flex-column align-items-center mx-6">
-                                            <a href="#" class="btn-icon btn btn-bg-light btn-color-primary btn-sm rounded hover-scale" data-bs-toggle="modal" data-bs-target="#kt_modal_create_campaign">
+                                            <a href="#" class="btn-icon btn btn-bg-light btn-color-primary btn-sm rounded hover-scale">
                                                 <i class="ki-outline ki-arrows-loop fs-0 text-primary fs-2"></i>
                                             </a>
                                             <div class="">Transfer</div>
@@ -101,7 +101,7 @@
 
                                         <!-- Tercer par de botón y texto -->
                                         <div class="d-flex flex-column align-items-center mx-6">
-                                            <a href="#" class="btn-icon btn btn-bg-light btn-color-primary btn-sm rounded hover-scale" data-bs-toggle="modal" data-bs-target="#kt_modal_create_campaign">
+                                            <a href="#" class="btn-icon btn btn-bg-light btn-color-primary btn-sm rounded hover-scale">
                                                 <i class="ki-outline ki-dollar fs-0 text-primary fs-2"></i>
                                             </a>
                                             <div class="">Buy/sell</div>
@@ -109,7 +109,7 @@
 
                                         <!-- Cuarto par de botón y texto -->
                                         <div class="d-flex flex-column align-items-center mx-6">
-                                            <a href="#" class="btn-icon btn btn-bg-light btn-color-primary btn-sm rounded hover-scale" data-bs-toggle="modal" data-bs-target="#kt_modal_create_campaign">
+                                            <a href="/admin/rechargue" class="btn-icon btn btn-bg-light btn-color-primary btn-sm rounded hover-scale">
                                                 <i class="ki-outline ki-wallet fs-0 text-primary fs-2"></i>
                                             </a>
                                             <div class="">Recharge</div>
@@ -235,146 +235,8 @@
 		<script src="/assets/js/scripts.bundle.js"></script>
 		<!--end::Global Javascript Bundle-->
 		<!--begin::Custom Javascript-->
-		<script>
-		"use strict";
-		
-		// Class definition
-		var KTDatatablesServerDetails = function () {
-			// Shared variables
-			var table;
-			var dt;
-			var filterPayment;
-			var currencyCode = document.getElementById('currencyDetails').value;
-			// Private functions
-			var initDatatableDetails = function () {
-				dt = $("#kt_datatable_holddingDetail").DataTable({
-					searchDelay: 100,
-					processing: true,
-					serverSide: true,
-					ajax: {
-						url: `http://localhost:3200/admin/holdingAccounts/detail/${currencyCode}`,
-					},
-					columns: [
-						{ data: 'dealNumber' },
-						{ data: 'entryDate' },
-						{ data: 'valueDate'},
-						{ data: 'fund'},
-					],
-					columnDefs:[
-						{
-							targets: 3,
-							orderable: false,
-							className: 'text-center',
-							render: function (data, type, row) {
-								// Puedes personalizar el contenido y agregar clases aquí
-								var color = row.color; // Sustituye con tu lógica para determinar el color
-								var symbol = row.symbol; // Sustituye con tu lógica para obtener el símbolo
-								var icon = row.icon; // Sustituye con tu lógica para obtener el icono
-								var flags = row.flag;
-								return '<td><div class="badge badge-light-' + color + '">' + symbol + ' ' + data + ' ' + flags + '<i class="' + icon + '"></i></div></td>';
-							}
-						},
-					],
-				});
-
-				table = dt.$;
-
-				// Re-init functions on every table re-draw -- more info: https://datatables.net/reference/event/draw
-				dt.on('draw', function () {
-					 KTMenu.createInstances();
-				});
-				
-			}
-
-			var handleSearchDatatableDetail = function () {
-				const filterSearch = $('#searchCurrencyDetail'); // Cambiado a jQuery para trabajar con select2
-
-				// Suscribe al evento 'select2:select' en lugar de 'change'
-				filterSearch.on('select2:select', function (e) {
-        		const selectedValue = e.params.data.id;
-				const idColumnIndex = 0; // Reemplaza con el índice real de la columna de ID
-				window.location.href = `http://localhost:3200/admin/getHoldingAccounts/detail/${selectedValue}`;
-				});
-			};
-
-			// Search Datatable --- official docs reference: https://datatables.net/reference/api/search()
-			var handleSearchDatatableDeal = function () {
-				const filterSearch = document.querySelector('[data-kt-docs-table-filter="searchDeal"]');
-
-				filterSearch.addEventListener('keyup', function (e) {
-					if (e.key === 'Enter') {
-						performSearch();
-						filterSearch.blur();
-					}
-				});
-
-				filterSearch.addEventListener('blur', function () {
-					performSearch();
-				});
-
-				function performSearch() {
-					const deal = filterSearch.value;
-					if (dt) {
-						dt.column(0)
-							.search(deal, currencyCode)
-							.draw();
-					}
-				}
-			};
-
-
-			// Función para inicializar el rango de fechas
-			var initDateRangePicker = function () {
-				var start = moment().subtract(29, "days");
-				var end = moment();
-				function cb(start, end) {
-					$("#kt_daterangepicker_4").html(start.format("MMMM D, YYYY") + " - " + end.format("MMMM D, YYYY"));
-					const dateFrom = start.format('DD-MM-YYYY')
-					const dateTo = end.format('DD-MM-YYYY')
-					if (dt) { 
-						dt.column(1)
-						.search(dateFrom,dateTo)
-						.draw();
-					}
-				}
-			
-				$("#kt_daterangepicker_4").daterangepicker({
-					startDate: start,
-					endDate: end,
-					ranges: {
-						"Today": [moment(), moment()],
-						"Yesterday": [moment().subtract(1, "days"), moment().subtract(1, "days")],
-						"Last 7 Days": [moment().subtract(6, "days"), moment()],
-						"Last 30 Days": [moment().subtract(29, "days"), moment()],
-						"This Month": [moment().startOf("month"), moment().endOf("month")],
-						"Last Month": [moment().subtract(1, "month").startOf("month"), moment().subtract(1, "month").endOf("month")]
-					}
-				}, cb);
-
-				cb(start, end);
-			};
-			
-			 // Public methods
-			return {
-				init: function () {
-					initDateRangePicker();
-					initDatatableDetails();
-					handleSearchDatatableDetail();
-					handleSearchDatatableDeal();
-				}
-			}
-		}();
-
-		// On document ready
-		KTUtil.onDOMContentLoaded(function () {
-			KTDatatablesServerDetails.init();
-		});
-
-		</script>
-		
+		<script src="/assets/js/holdingDetails.js"></script>
 		<!--end::Custom Javascript-->
-
-		<!--end::Javascript-->
 		<!--begin::Vendors Javascript(used for this page only)-->
 		<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
 		<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>

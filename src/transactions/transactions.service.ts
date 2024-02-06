@@ -50,4 +50,6 @@ export class TransactionService {
       return allCurrency;
     } catch (error) {}
   }
+
+  async getTransactions(cookies: any): Promise<any> {}
 }

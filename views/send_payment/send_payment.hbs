@@ -1,0 +1,1637 @@
+
+{{#> admin}}
+    {{#* inline "content"}}
+                <!--begin::Main-->
+                <div class="app-main d-flex flex-column flex-row-fluid" id="kt_app_main">
+                    <!--begin::Content wrapper-->
+                    <div class="d-flex flex-column flex-column-fluid">
+                        <!--begin::Toolbar-->
+                        <div id="kt_app_toolbar" class="app-toolbar pt-6 pb-2">
+                            <!--begin::Toolbar container-->
+                            <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex align-items-stretch">
+                                <!--begin::Toolbar wrapper-->
+                                <div class="app-toolbar-wrapper d-flex  gap-4 w-100">
+                                    <!--begin::Page title-->
+                                    <div class="page-title d-flex flex-column justify-content-center gap-1 me-3">
+                                    </div>
+                                </div>
+                            
+                                <!--end::Page title-->
+                            </div>
+                                <!--end::Toolbar wrapper-->
+                        </div>
+                        <!--end::Toolbar-->
+                        <div id="kt_app_content" class="app-content flex-column-fluid" >
+                            <!--begin::Content container-->
+                            <div id="kt_app_content_container" class="app-container container-fluid " >
+								
+                                <!--begin::Content-->
+                                <div class="d-flex mb-10 mb-lg-0 align-items-center justify-content-center">
+
+                                    <!--begin::Stepper-->
+                                    <div class="stepper stepper-pills" id="stepper_payment" style="display: block;">
+                                        <!--begin::Nav-->
+                                        <div class="stepper-nav flex-center flex-wrap mb-10">
+                                            <!--begin::Step 1-->
+                                            <div class="stepper-item mx-8 my-4 current" data-kt-stepper-element="nav">
+                                                <!--begin::Wrapper-->
+                                                <div class="stepper-wrapper d-flex align-items-center">
+                                                    <!--begin::Icon-->
+                                                    <div class="stepper-icon w-40px h-40px">
+                                                        <i class="stepper-check fas fa-check"></i>
+                                                        <span class="stepper-number">1</span>
+                                                    </div>
+                                                    <!--end::Icon-->
+
+                                                    <!--begin::Label-->
+                                                    <div class="stepper-label">
+                                                        <h3 class="stepper-title">
+                                                            Quote
+                                                        </h3>
+
+                                                    </div>
+                                                    <!--end::Label-->
+                                                </div>
+                                                <!--end::Wrapper-->
+
+                                                <!--begin::Line-->
+                                                <div class="stepper-line h-40px"></div>
+                                                <!--end::Line-->
+                                            </div>
+                                            <!--end::Step 1-->
+
+                                            <!--begin::Step 2-->
+                                            <div class="stepper-item mx-8 my-4" data-kt-stepper-element="nav">
+                                                <!--begin::Wrapper-->
+                                                <div class="stepper-wrapper d-flex align-items-center">
+                                                    <!--begin::Icon-->
+                                                    <div class="stepper-icon w-40px h-40px">
+                                                        <i class="stepper-check fas fa-check"></i>
+                                                        <span class="stepper-number">2</span>
+                                                    </div>
+                                                    <!--begin::Icon-->
+
+                                                    <!--begin::Label-->
+                                                    <div class="stepper-label">
+                                                        <h3 class="stepper-title">
+                                                            Beneficiary
+                                                        </h3>
+
+                                                    </div>
+                                                    <!--end::Label-->
+                                                </div>
+                                                <!--end::Wrapper-->
+
+                                                <!--begin::Line-->
+                                                <div class="stepper-line h-40px"></div>
+                                                <!--end::Line-->
+                                            </div>
+                                            <!--end::Step 2-->
+
+                                            <!--begin::Step 3-->
+                                            <div class="stepper-item mx-8 my-4" data-kt-stepper-element="nav">
+                                                <!--begin::Wrapper-->
+                                                <div class="stepper-wrapper d-flex align-items-center">
+                                                    <!--begin::Icon-->
+                                                    <div class="stepper-icon w-40px h-40px">
+                                                        <i class="stepper-check fas fa-check"></i>
+                                                        <span class="stepper-number">3</span>
+                                                    </div>
+                                                    <!--begin::Icon-->
+
+                                                    <!--begin::Label-->
+                                                    <div class="stepper-label">
+                                                        <h3 class="stepper-title">
+                                                            Review
+                                                        </h3>
+
+                                                    </div>
+                                                    <!--end::Label-->
+                                                </div>
+                                                <!--end::Wrapper-->
+
+                                                <!--begin::Line-->
+                                                <div class="stepper-line h-40px"></div>
+                                                <!--end::Line-->
+                                            </div>
+                                            <!--end::Step 3-->
+
+                                            <!--begin::Step 4-->
+                                            <div class="stepper-item mx-8 my-4" data-kt-stepper-element="nav">
+                                                <!--begin::Wrapper-->
+                                                <div class="stepper-wrapper d-flex align-items-center">
+                                                    <!--begin::Icon-->
+                                                    <div class="stepper-icon w-40px h-40px">
+                                                        <i class="stepper-check fas fa-check"></i>
+                                                        <span class="stepper-number">4</span>
+                                                    </div>
+                                                    <!--begin::Icon-->
+
+                                                    <!--begin::Label-->
+                                                    <div class="stepper-label">
+                                                        <h3 class="stepper-title">
+                                                            Payment
+                                                        </h3>
+
+                                                    </div>
+                                                    <!--end::Label-->
+                                                </div>
+                                                <!--end::Wrapper-->
+
+                                                <!--begin::Line-->
+                                                <div class="stepper-line h-40px"></div>
+                                                <!--end::Line-->
+                                            </div>
+                                            <!--end::Step 4-->
+                                        </div>
+                                        <!--end::Nav-->
+
+                                        <!--begin::Form-->
+                                        <form class="form w-lg-700px d-flex align-items-center justify-content-center" novalidate="novalidate" id="kt_stepper_example_basic_form">
+                                            <!--begin::Group-->
+                                            <div class="mb-5">
+                                                <!--begin::Step 1-->
+                                                <div class="flex-column current" id="step1" data-kt-stepper-element="content">
+													<!--begin::Card-->
+                                                    <div id="cardStep1" class="card card-flush pt-3 h-100 mb-5 mb-xl-5 shadow-sm">
+                                                        <div class="mt-5 text-center">
+                                                            <!--begin::Card title-->
+                                                            <div class="card-title">
+                                                                <p class="fs-1">Quote</p>
+                                                            </div>
+                                                            <!--begin::Card title-->
+                                                        </div>
+                                                        <!--begin::Card body-->
+                                                        <div class="card-body pt-0">
+                                                           <div class="d-flex align-items-center justify-content-center mt-2 mb-0 text-center">
+                                                                <div class="btn-group mb-2 w-100">
+                                                                    <button id="buttonBuy" type="button" class="btn target btn-outline btn-outline-primary active px-20 btn-active-light-primary">Buy {{buyFormat}}</button>
+                                                                    <button id="buttonSell" type="button" class="btn target btn-outline btn-outline-primary px-20 btn-active-light-primary">Sell {{sellFormat}}</button>
+                                                                </div>
+																<input type="hidden" value="{{sell}}" id="sell">
+																<input type="hidden" value="{{buy}}" id="buy">
+                                                            </div>
+                                                            <!--begin::Input group-->
+                                                            <div class="d-flex align-items-center justify-content-center mb-5">
+																Rate expires in	<span class="value-container text-success ms-2"> 0</span>
+																<span>
+																	<div class="container">
+																		<div class="circular-progress">
+																		</div>
+																	</div>
+																</span>
+                                                            </div>
+                                                            <!--begin::Input group-->
+                                                            <div class="d-flex align-items-center position-relative my-1 mb-5">
+                                                                <!--begin::Input group-->
+                                                                <div class="form-floating w-100">
+                                                                    <input type="text" class="form-control" id="sendInput" value="100000.00" placeholder="You send" oninput="updateValueSend()"/>
+                                                                    <label for="sendInput">You send</label>
+                                                                </div>
+                                                                <div class="d-flex align-items-center justify-content-end">
+                                                                    <div class="position-absolute pe-5" id="containerCurrencySend">
+                                                                        <select class="form-select form-select-transparent" id="currencySend" data-placeholder="Select an option">
+																			<option selected value="1" data-kt-select2-country="/assets/media/flags/USD.svg">
+																			USD
+																			</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <!--end::Input group-->
+															</div>
+                                                            <div  class="d-flex align-items-center position-relative my-1 mb-5">
+                                                                <!--begin::Input group-->
+                                                                <div class="form-floating w-100">
+                                                                    <input type="text" class="form-control" id="recibeInput" placeholder="You receive" oninput="updateValueRecieve()"/>
+                                                                    <label for="recibeInput">You receive</label>
+                                                                </div>
+                                                                <div class="d-flex align-items-center justify-content-end">
+                                                                    <div id="containerCurrencyRecibe" class="position-absolute pe-5">
+                                                                        <select class="form-select form-select-transparent" id="currencyRecibe" data-placeholder="Select an option">
+																			<option value="90" data-kt-select2-country="/assets/media/flags/MXN.svg">
+																			MXN
+																			</option>
+																			<option value="42" data-kt-select2-country="/assets/media/flags/EUR.svg">
+																			EUR
+																			</option>
+																			<option value="44" data-kt-select2-country="/assets/media/flags/GBP.svg">
+																			GBP
+																			</option>
+																			<option value="137" data-kt-select2-country="/assets/media/flags/CAD.svg">
+																			CAD
+																			</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <!--end::Input group-->
+															</div>
+                                                            <!--end::Input group-->
+                                                            <div class="symbol symbol-circle symbol-45px position-absolute pe-5" style="top: 50%; left: 60%; transform: translate(-50%, -50%);">
+                                                                <div class="symbol-label fw-semibold bg-primary text-inverse-primary align-items-center justify-content-center d-flex">
+                                                                    <button id="swapCurrenciesBtn" class="btn rotate-180 btn-group" type="button"><img src="/assets/media/svg/repeat-solid.svg" alt="rotate" style="transform: rotate(90deg);hight: 24px;width: 24px;"></button>
+                                                                </div>
+                                                            </div>
+                                                            <!--begin::Input group-->
+                                                            <div class="d-flex align-items-center justify-content-center start mb-2">
+                                                                You are saving approximately <span id="saving" class="ms-1 text-primary me-1"> 44 MXN </span> vs other banks
+                                                            </div>
+                                                            <!--end::Input group-->
+                                                            <!--begin::Input group-->
+                                                            <div class="d-flex align-items-center justify-content-between">
+                                                                <div class="text-start">
+                                                                    Fee(s) <i class="ki-outline ki-information-5"></i>
+                                                                </div>
+                                                                <div class="text-end">
+                                                                    0.00 MXN
+                                                                </div>
+                                                            </div>
+                                                            <!--end::Input group-->
+                                                            <!--begin::Actions-->
+                                                            <div class="align-items-center justify-content-center mt-5">
+                                                                <!--begin::Wrapper-->
+                                                                <div class="mt-5 mb-7 text-center">
+                                                                    <button type="button" id="buttonStep1" class="w-100 text-primary btn btn-warning fw-bold rounded hover-scale">
+                                                                    Confirm and continue
+                                                                    </button>
+                                                                </div>
+                                                                <!--end::Wrapper-->
+                                                            </div>
+                                                        </div>
+                                                        <!--end::Card body-->
+                                                    </div>
+                                                    <!--end::Card-->
+                                                </div>
+                                                <!--begin::Step 1-->
+
+                                                <!--begin::Step 2-->
+                                                <div class="flex-column w-lg-600px" data-kt-stepper-element="content">
+                                                    <!--begin::Card-->
+                                                    <div id="cardStep2" class="card card-flush pt-3 mb-5 mb-xl-5 shadow-sm">
+                                                        <div class="mt-5">
+                                                            <!--begin::Card title-->
+                                                            <div class="card-title d-flex justify-content-start align-items-center">
+                                                                <!--begin::Actions-->
+                                                                <div class="d-flex flex-stack mx-5">
+                                                                    <!--begin::Wrapper-->
+                                                                    <div class="me-2">
+                                                                        <button type="button" data-id="previusStep1" class="btn bg-body btn-previus">
+                                                                            <i class="ki-outline ki-left fs-2hx"></i>
+                                                                        </button>
+                                                                    </div>
+                                                                    <!--end::Wrapper-->
+                                                                </div>
+                                                                <!--end::Actions-->
+                                                                <p class="fs-1 text-start mt-1 mb-1">Who will you be sending the funds to?</p>
+                                                            </div>
+                                                            <!--begin::Card title-->
+                                                        </div>
+                                                        <!--begin::Card body-->
+                                                        <div class="card-body pt-0">
+															<input type="hidden" id="response" data-beneficiaries="{{bene}}">
+                                                           <div class="d-flex align-items-center justify-content-center mt-2 mb-5 text-center">
+                                                                <!--begin::Search-->
+                                                                <div class="d-flex align-items-center position-relative my-1 w-100">
+                                                                    <i class="ki-outline ki-magnifier fs-1 position-absolute ms-6"><span class="path1"></span><span class="path2"></span></i>
+                                                                    <input id="search" type="text" data-kt-docs-table-filter="search" class="form-control ps-15" placeholder="Nickname, currency"/>
+                                                                </div>
+                                                                <!--end::Search-->
+                                                            </div>
+
+                                                            <div class="d-flex align-items-center justify-content-start mt-2 mb-9 text-center">
+                                                                <button type="button" class="btn btn-icon btn-light-primary" data-bs-toggle="modal" id="create">
+                                                                    <i class="ki-outline ki-plus fs-1"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+                                                                </button>
+                                                                <span class="text-primary fw-bold mx-5">Add Beneficiarie</span>
+                                                            </div>
+
+                                                            <div class="d-flex align-items-center justify-content-start mt-9 mb-5">
+                                                                <span class="text-dark">ALL</span>
+                                                            </div>
+															<div id="beneficiaries" class="scroll h-200px px-5">
+																{{#each beneficiaries}}
+																<button type="button" class="d-flex align-items-center justify-content-start mt-2 mb-9 text-center btn btn-next w-100 btn-active-secondary" data-id="{{id}}">
+																	<a href="#" class="btn btn-icon fs-1 btn-active-icon-gray-600 btn-text-gray-600 btn-bg-secondary btn-active-light-secondary">
+																		<span class="fs-2">{{twoWords}}</span><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+																	</a>
+																	<div class="mx-5 text-start">
+																		<p class="fw-bold mb-0 mt-0 fs-6">{{nickname}}</p>
+																		<p class="mb-0 mt-0 text-gray-600">{{bankNameFormat}}</p>
+																		<p class="mb-0 mt-0 text-gray-600">{{accountNumber}}<span class="ms-2">{{currencyCode}}, {{bankCountryName}}</span></p>
+																	</div>
+																	<div class="ms-auto">
+																		<!--begin::Actions-->
+																		<div class="d-flex flex-stack mx-5">
+																			<!--begin::Wrapper-->
+																			<div class="me-2">
+																					<i class="ki-outline ki-right fs-2hx"></i>
+																			</div>
+																			<!--end::Wrapper-->
+																		</div>
+																		<!--end::Actions-->
+																	</div>
+																</button>
+																{{/each}}
+															</div>
+                                                        </div>
+                                                        <!--end::Card body-->
+                                                    </div>
+                                                    <!--end::Card-->
+                                                </div>
+                                                <!--begin::Step 2-->
+
+                                                <!--begin::Step 3-->
+                                                <div class="flex-column w-lg-600px" data-kt-stepper-element="content">
+                                                    <!--begin::Card-->
+                                                    <div id="cardStep3" class="card card-flush pt-3 mb-5 mb-xl-5 shadow-sm">
+                                                        <div class="mt-5">
+                                                            <!--begin::Card title-->
+                                                            <div class="card-title d-flex justify-content-start align-items-center">
+                                                                <!--begin::Actions-->
+                                                                <div class="d-flex flex-stack mx-5">
+                                                                    <!--begin::Wrapper-->
+                                                                    <div class="me-2">
+                                                                        <button type="button" class="btn bg-body btn-previus">
+                                                                            <i class="ki-outline ki-left fs-2hx"></i>
+                                                                        </button>
+                                                                    </div>
+                                                                    <!--end::Wrapper-->
+                                                                </div>
+                                                                <!--end::Actions-->
+                                                                <p class="fs-1 text-start mt-1 mb-1">Review the details of your payment</p>
+                                                            </div>
+                                                            <!--begin::Card title-->
+                                                        </div>
+                                                        <!--begin::Card body-->
+                                                        <div class="card-body pt-0 mt-5">
+															<div class="d-flex justify-content-between align-items-center">
+																<p class="fw-bold">PAYMENT DETAILS</p>
+															</div>
+															<div class="d-flex justify-content-between align-items-center">
+																<p class="">You will send exactly</p>
+																<p id="send" class="text-primary"></p>
+															</div>
+															<div class="d-flex justify-content-between align-items-center">
+																<p class="">Exchange rate</p>
+																<p id="rate"></p>
+															</div>
+															<div class="d-flex justify-content-between align-items-center">
+																<p id="nickname1">Alvarito nickname will receive</p>
+																<p id="recibe" class="text-primary"></p>
+															</div>
+															<div class="separator border-2 my-5"></div>
+															<div class="d-flex justify-content-between align-items-center mb-5">
+																<span class="fw-bold">BENEFICIARY DETAILS</span>
+																<!--begin::Underline-->
+																<span class="d-inline-block position-relative ms-2">
+																	<!--begin::Label-->
+																	<span class="d-inline-block">
+																		<a href="#" class="text-primary btn-previus">Change</a> 
+																	</span>
+																	<!--end::Label-->
+																	<!--begin::Line-->
+																	<span class="d-inline-block position-absolute h-1px bottom-0 end-0 start-0 bg-primary translate rounded"></span>
+																	<!--end::Line-->
+																</span>
+																<!--end::Underline-->
+															</div>
+															<div class="d-flex justify-content-between align-items-center">
+																<p class="">Nickname</p>
+																<p id="nickname2" class="w-50" style="text-align: right;"></p>
+															</div>
+															<div class="d-flex justify-content-between align-items-center">
+																<p class="">Bank name </p>
+																<p id="bankname" class="w-50" style="text-align: right;"></p>
+															</div>
+															<div class="d-flex justify-content-between align-items-center">
+																<p class="">Country</p>
+																<p id="bankCountry"></p>
+															</div>
+															<div class="d-flex justify-content-between align-items-center">
+																<p class="">Account number</p>
+																<p id="accountNumber"></p>
+															</div>
+															<div class="d-flex justify-content-between align-items-center">
+																<p class="">Currency</p>
+																<p id="currency"></p>
+															</div>
+															<div class="separator border-2 my-5"></div>
+															<div class="d-flex justify-content-between align-items-center">
+																<p class="fw-bold">SCHEDULE DETAILS</p>
+															</div>
+															<div class="d-flex justify-content-between align-items-center">
+																<p class="">Sent on</p>
+																<p id="sentOn"></p>
+															</div>
+															<div class="d-flex justify-content-between align-items-center">
+																<p class="">Should arrive on</p>
+																<p id="arrive"></p>
+															</div>
+															<div class="align-items-center justify-content-center mt-5">
+															<!--begin::Wrapper-->
+																<div class="mt-5 mb-7 text-center">
+																	<button type="button" id="step3" class="w-50 text-primary btn btn-warning fw-bold rounded hover-scale">
+																	Next
+																	</button>
+																</div>
+																<!--end::Wrapper-->
+															</div>
+															<!--end::Card body-->
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    <!--end::Card-->
+                                                </div>
+                                                <!--begin::Step 3-->
+
+                                                <!--begin::Step 4-->
+                                                <div class="flex-column w-lg-700px" data-kt-stepper-element="content">
+                                                     <!--begin::Card-->
+                                                    <div id="card1" class="card card-flush pt-3 mb-5 mb-xl-5 shadow-sm">
+                                                        <div class="mt-5">
+                                                            <!--begin::Card title-->
+                                                            <div class="card-title d-flex justify-content-start align-items-center">
+                                                                <!--begin::Actions-->
+                                                                <div class="d-flex flex-stack mx-9">
+                                                                    <!--begin::Wrapper-->
+                                                                    <div class="me-2">
+                                                                        <button type="button" class="btn bg-body btn-previus">
+                                                                            <i class="ki-outline ki-left fs-2hx"></i>
+                                                                        </button>
+                                                                    </div>
+                                                                    <!--end::Wrapper-->
+                                                                </div>
+                                                                <!--end::Actions-->
+																<div class="d-flex align-items-center justify-content-center mx-9">
+                                                                	<p class="fs-1 text-start mt-1 mb-1 ms-9">How would you like to pay?</p>
+																</div>
+                                                            </div>
+                                                            <!--begin::Card title-->
+                                                        </div>
+                                                        <!--begin::Card body-->
+                                                        <div class="card-body pt-0">
+                                                            <div class="d-flex align-items-center justify-content-start mt-2 mb-9 text-center">
+                                                                <a href="#" class="btn btn-icon fs-1 btn-light-secondary">
+                                                                    <span class="fs-2"><i class="ki-outline ki-wallet fs-1 gray-600"></i></span><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+                                                                </a>
+                                                                <div class="mx-5 text-start">
+                                                                    <p class="fw-bold mb-0 mt-0 fs-6">Holding Account</p>
+                                                                    <span id="currencyCode" class="mb-0 mt-0 text-gray-600"></span><span class="text-primary">Typically hours</span>
+                                                                </div>
+                                                                <div class="ms-auto">
+                                                                    <!--begin::Actions-->
+                                                                    <div class="d-flex flex-stack mx-5">
+                                                                        <!--begin::Wrapper-->
+                                                                        <div class="me-2">
+																			<span id="balance">1,234,200,000.00 MXN</span>
+                                                                            <button id="btn-next-card" type="button" class="btn bg-body">
+                                                                                <i class="ki-outline ki-right fs-2hx"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                        <!--end::Wrapper-->
+                                                                    </div>
+                                                                    <!--end::Actions-->
+                                                                </div>
+                                                            </div>
+															<div class="d-flex align-items-center justify-content-start mt-9 mb-5">
+                                                                <span class="text-gray-700">CHANGE TO</span>
+                                                            </div>
+                                                            <div class="d-flex align-items-center justify-content-start mt-2 mb-9 text-center">
+                                                                <a href="#" class="btn btn-icon fs-1 btn-icon-gray-400 btn-text-gray-400">
+                                                                    <span class="fs-2"><i class="ki-outline ki-wallet fs-1"></i></span><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+                                                                </a>
+                                                                <div class="mx-5 text-start">
+                                                                    <p class="fw-bold mb-0 mt-0 fs-6 text-gray-400">Wire transfer</p>
+																	<p class="mb-0 mt-0 text-gray-400">MXN 0.00 fee - <span class="text-gray-400">Typically hours</span></p>
+                                                                </div>
+                                                                <div class="ms-auto">
+                                                                    <!--begin::Actions-->
+                                                                    <div class="d-flex flex-stack mx-5">
+                                                                        <!--begin::Wrapper-->
+                                                                        <div class="me-2">
+                                                                            <button type="button" class="btn bg-body" data-id="2">
+                                                                                <i class="ki-outline ki-right fs-2hx text-gray-300"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                        <!--end::Wrapper-->
+                                                                    </div>
+                                                                    <!--end::Actions-->
+                                                                </div>
+                                                            </div>
+															<div class="d-flex align-items-center justify-content-start mt-2 mb-9 text-center">
+                                                                <a href="#" class="btn btn-icon fs-1 btn-icon-gray-400 btn-text-gray-400">
+                                                                    <span class="fs-2"><i class="ki-outline ki-wallet fs-1"></i></span><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+                                                                </a>
+                                                                <div class="mx-5 text-start">
+                                                                    <p class="fw-bold mb-0 mt-0 fs-6 text-gray-400">Fax Check</p>
+																	<p class="mb-0 mt-0 text-gray-400"></p>
+                                                                </div>
+                                                                <div class="ms-auto">
+                                                                    <!--begin::Actions-->
+                                                                    <div class="d-flex flex-stack mx-5">
+                                                                        <!--begin::Wrapper-->
+                                                                        <div class="me-2">
+                                                                            <button type="button" class="btn bg-body" data-id="2">
+                                                                                <i class="ki-outline ki-right fs-2hx text-gray-300"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                        <!--end::Wrapper-->
+                                                                    </div>
+                                                                    <!--end::Actions-->
+                                                                </div>
+                                                            </div>
+															<div class="d-flex align-items-center justify-content-start mt-9 mb-5">
+                                                                <span class="text-gray-700">NOT AVAILABLE</span>
+                                                            </div>
+															<div class="d-flex align-items-center justify-content-start mt-2 mb-9 text-center">
+                                                                <a href="#" class="btn btn-icon-gray-400 btn-text-gray-400">
+                                                                    <span class="fs-2"><i class="ki-outline ki-wallet fs-1 gray-600"></i></span><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+                                                                </a>
+                                                                <div class="mx-5 text-start">
+                                                                    <p class="fw-bold mb-0 mt-0 fs-6 text-gray-400">Fax Check</p>
+																	<p class="mb-0 mt-0 text-gray-400">MXN 0.00 fee - <span class="text-gray-400">Typically hours</span></p>
+                                                                </div>
+                                                                <div class="ms-auto">
+                                                                    <!--begin::Actions-->
+                                                                    <div class="d-flex flex-stack mx-5">
+                                                                        <!--begin::Wrapper-->
+                                                                        <div class="me-2">
+                                                                            <button id="" type="button" class="btn bg-body btn-text-gray-300" data-id="2">
+                                                                                <i class="ki-outline ki-right fs-2hx text-gray-300"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                        <!--end::Wrapper-->
+                                                                    </div>
+                                                                    <!--end::Actions-->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!--end::Card body-->
+                                                    </div>
+                                                    <!--end::Card-->
+													<!--begin::Card-->
+													<div id="card2" style="display: none;" class="card card-flush pt-3 mb-5 mb-xl-5 shadow-sm">
+														<div class="mt-5">
+															<!--begin::Card title-->
+															<div class="card-title d-flex justify-content-start align-items-center">
+																<!--begin::Actions-->
+																<div class="d-flex flex-stack mx-9">
+																	<!--begin::Wrapper-->
+																	<div class="me-2">
+																		<button type="button" id="btn-card-previus" class="btn bg-body ">
+																			<i class="ki-outline ki-left fs-2hx"></i>
+																		</button>
+																	</div>
+																	<!--end::Wrapper-->
+																</div>
+																<!--end::Actions-->
+																<div class="d-flex align-items-center justify-content-center mx-9">
+																	<p class="fs-1 text-start mt-1 mb-1 ms-9">How would you like to pay?</p>
+																</div>
+															</div>
+															<!--begin::Card title-->
+														</div>
+														 <!--begin::Card body-->
+                                                        <div class="card-body pt-0">
+															<div class="d-flex align-items-center justify-content-start mt-9 mb-5">
+                                                                <span class="text-gray-700">METHOD PAYMENT 1</span>
+                                                            </div>
+                                                            <div class="card shadow-sm">
+																<div class="card-body p-2 m-2 d-flex align-items-center justify-content-center">
+																	<a href="#" class="btn btn-icon fs-1 btn-light-secondary">
+																		<span class="fs-2"><i class="ki-outline ki-wallet fs-1 gray-600"></i></span><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+																	</a>
+																	<div class="mx-5 text-start">
+																		<p id="currencyCodeCard2_1" class="fw-bold mb-0 mt-0 fs-6"></p>
+																		<p id="balanceCard2" class="mb-0 mt-0 text-gray-600"></p>
+																	</div>
+																	<div class="ms-auto">
+																		<!--begin::Actions-->
+																		<div class="d-flex flex-stack mx-5">
+																			<!--begin::Wrapper-->
+																			<div class="me-2">
+																				<a type="button" id="" data-bs-toggle="modal" data-bs-target="#kt_modal_1" class="btn bg-body text-primary" data-id="1">
+																					Change
+																				</a>
+																			</div>
+																			<!--end::Wrapper-->
+																		</div>
+																		<!--end::Actions-->
+																	</div>
+																</div>
+															</div>
+															<div class="d-flex align-items-center justify-content-between mt-3 ms-3 mb-0">
+                                                                <span class="text-gray-700">Amount</span>
+                                                                <span class="text-gray-700 mx-4">Auto</span>
+                                                            </div>
+															<div class="d-flex align-items-center justify-content-between mt-1 ms-3 mb-10">
+																<div class="d-flex">
+                                                             		<span id="currencyCodeCard2_2" class="text-primary fw-bold fs-2qx"></span>
+																</div>
+																<div class="form-check form-switch form-check-custom form-check-solid ml-2 mb-0">
+																	<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" checked="checked">
+																</div>
+                                                            </div>
+															<div class="d-flex justify-content-between align-items-center mt-7 ms-3 mb-0">
+																<p class="fw-bold">PAYMENT DETAILS</p>
+															</div>
+															<div class="d-flex justify-content-between align-items-center ms-3 mb-0">
+																<p class="">You pay</p>
+																<p id="send2" class="text-primary"></p>
+															</div>
+															<div class="d-flex justify-content-between align-items-center ms-3 mb-0">
+																<p class="">Total fees</p>
+																<p>0.00 MXN</p>
+															</div>
+															<div class="d-flex justify-content-between align-items-center ms-3 mb-0">
+																<p class="">Balance due</p>
+																<p class="">0.00 MXN</p>
+															</div>
+															<div class="d-flex justify-content-between align-items-center ms-3 mb-0">
+																<p class="">Alvarito gets</p>
+																<p id="recibe2" class="text-primary"></p>
+															</div>
+															<div class="separator border-2 my-5"></div>
+															<div class="d-flex justify-content-between align-items-center ms-3 mb-0">
+																<p class="fw-bold">SCHEDULE DETAILS</p>
+															</div>
+															<div class="d-flex justify-content-between align-items-center ms-3 mb-0">
+																<p class="">Sent on</p>
+																<p id="sentOn2"></p>
+															</div>
+															<div class="d-flex justify-content-between align-items-center ms-3 mb-0">
+																<p class="">Should arrive on</p>
+																<p id="arrive2"></p>
+															</div>
+															<div class="align-items-center justify-content-center mt-5">
+															<!--begin::Wrapper-->
+																<div class="mt-5 mb-7 text-center">
+																	<button type="button" id="confirmPayment" class="w-50 text-primary btn btn-warning fw-bold rounded hover-scale">
+																	Confirm
+																	</button>
+																</div>
+																<!--end::Wrapper-->
+															</div>
+                                                        </div>
+                                                        <!--end::Card body-->
+													</div>
+													<!--end::Card-->
+                                                </div>
+                                                <!--begin::Step 4-->
+                                                
+                                            </div>
+                                            <!--end::Group-->
+                                            
+                                        </form>
+                                        <!--end::Form-->
+                                    </div>
+                                    <!--end::Stepper-->
+									<!--begin::Card-->
+                                    <div id="succcessPayment" class="card card-flush pt-3 mb-5 mb-xl-10 w-lg-600px shadow-sm" style="display: none;">
+                                        <!--begin::Card body-->
+                                        <div class="card-body pt-3">
+                                            <div class="mt-5 text-center">
+												<div class="mt-5 text-center">
+												<!--begin::Card title-->
+													<div class="card-title">
+														<i class="ki-outline ki-check-circle fs-3x text-primary"></i>
+													</div>
+													<p class="fs-1">Successful operation</p>
+													<!--begin::Card title-->
+												</div>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-center">
+												<p class="fw-bold">Instruction of payment</p>
+											</div>
+											<div class="d-flex justify-content-between align-items-center mb-3">
+												<p class="">In order to complete your payment, from the United States, transfer U.S. dollars (USD) to the following account</p>
+											</div>
+											<div class="d-flex justify-content-between align-items-center">
+												<p class="fw-bold">PAYMENT DETAILS</p>
+											</div>
+											<div class="d-flex justify-content-between align-items-center">
+												<p class="">You send exactly</p>
+												<p id="sendSuccess" class="text-primary">1,000.000 MXN</p>
+											</div>
+											<div class="d-flex justify-content-between align-items-center">
+												<p class="">Exchange rate</p>
+												<p id="rateSuccess" class="">17.2343</p>
+											</div>
+											<div class="d-flex justify-content-between align-items-center">
+												<p id="nickNameSuccess" class="">Alvarito nickname will receive</p>
+												<p id="receiveSuccess" class="text-primary">869.00 USD</p>
+											</div>
+											<div class="separator border-2 my-5"></div>
+											<div class="d-flex justify-content-between align-items-center mb-5">
+												<span class="fw-bold">PAYMENT INSTRUCTIONS DETAILS</span>
+											</div>
+											<div class="d-flex justify-content-between align-items-center">
+												<p class="">Account number</p>
+												<div class="d-flex w-75 align-items-end justify-content-end flex-wrap">
+													<div class="d-flex align-items-end"> <!-- Nuevo div que envuelve el div y el button -->
+														<div id="accountNumberSuccess" class="text-end mb-5">9872303814</div>
+														<button class="btn btn-icon btn-sm btn-active-light-secondary ms-2 mb-2" data-clipboard-target="#accountNumberSuccess">
+															<i class="ki-outline ki-copy fs-6 text-muted"></i>
+														</button>
+													</div>
+												</div>
+											</div>
+											<div class="d-flex justify-content-between align-items-center">
+												<p class="">Account name</p>
+												<div class="d-flex w-75 align-items-end justify-content-end flex-wrap">
+													<div class="d-flex align-items-end"> <!-- Nuevo div que envuelve el div y el button -->
+														<div id="accountNameSuccess" class="text-end mb-5">Monex USA</div>
+														<button class="btn btn-icon btn-sm btn-active-light-secondary ms-2 mb-2" data-clipboard-target="#accountNameSuccess">
+															<i class="ki-outline ki-copy fs-6 text-muted"></i>
+														</button>
+													</div>
+												</div>
+											</div>
+											<div class="d-flex justify-content-between align-items-center mb-2">
+												<p class="">Account address</p>
+												<div class="d-flex w-75 align-items-end justify-content-end flex-wrap">
+													<div class="d-flex align-items-end"> <!-- Nuevo div que envuelve el div y el button -->
+														<div id="accountAdressSuccess" class="text-end">1201 New York Avenue, NW, Suite 300 Washington, DC 20005 USA</div>
+														<button class="btn btn-icon btn-sm btn-active-light-secondary ms-2 mb-2" data-clipboard-target="#accountAdressSuccess">
+															<i class="ki-outline ki-copy fs-6 text-muted"></i>
+														</button>
+													</div>
+												</div>
+											</div>
+											<div class="d-flex justify-content-between align-items-center mb-2">
+												<p class="">SWIFT/ABA Code</p>
+												<div class="d-flex w-75 align-items-end justify-content-end flex-wrap">
+													<div class="d-flex align-items-end"> <!-- Nuevo div que envuelve el div y el button -->
+														<div id="swiftSuccess" class="text-end">UMKCUS44/ 101000695</div>
+														<button class="btn btn-icon btn-sm btn-active-light-secondary ms-2 mb-2" data-clipboard-target="#swiftSuccess">
+															<i class="ki-outline ki-copy fs-6 text-muted"></i>
+														</button>
+													</div>
+												</div>
+											</div>
+											<div class="d-flex justify-content-between align-items-center mb-2">
+												<p class="">Bank name</p>
+												<div class="d-flex w-75 align-items-end justify-content-end flex-wrap">
+													<div class="d-flex align-items-end"> <!-- Nuevo div que envuelve el div y el button -->
+														<div id="bankNameSuccess" class="text-end">UMB Bank</div>
+														<button class="btn btn-icon btn-sm btn-active-light-secondary ms-2" data-clipboard-target="#bankNameSuccess">
+															<i class="ki-outline ki-copy fs-6 text-muted"></i>
+														</button>
+													</div>
+												</div>
+											</div>
+											<div class="d-flex justify-content-between align-items-center mb-2">
+												<p class="">Bank address</p>
+												<div class="d-flex w-75 align-items-end justify-content-end flex-wrap">
+													<div class="d-flex align-items-end"> <!-- Nuevo div que envuelve el div y el button -->
+														<div id="bankAddressSuccess" class="text-end">1010 Grand Boulevard Kansas City, MO64106</div>
+														<button class="btn btn-icon btn-sm btn-active-light-secondary ms-2" data-clipboard-target="#bankAddressSuccess">
+															<i class="ki-outline ki-copy fs-6 text-muted"></i>
+														</button>
+													</div>
+												</div>
+											</div>
+											<div class="d-flex justify-content-between align-items-center mb-2">
+												<p class="">Email address</p>
+												<div class="d-flex w-75 align-items-end justify-content-end flex-wrap">
+													<div class="d-flex align-items-end"> <!-- Nuevo div que envuelve el div y el button -->
+														<div id="emailSuccess" class="text-end">FFCAlvaritosac10232123</div>
+														<button class="btn btn-icon btn-sm btn-active-light-secondary ms-2" data-clipboard-target="#emailSuccess">
+															<i class="ki-outline ki-copy fs-6 text-muted"></i>
+														</button>
+													</div>
+												</div>
+											</div>
+											<div class="align-items-center justify-content-center mt-5">
+											<!--begin::Wrapper-->
+												<div class="mt-5 mb-7 text-center">
+													<a href="/admin/payments" type="button" class="mx-2 btn btn-outline btn-outline-dashed btn-outline-primary btn-active-light-primary fw-bold rounded hover-scale">
+                                                        New payment 
+													</a>
+													<a href="/admin/transactions" type="button" id="" class="mx-2 text-primary btn btn-warning w-170px fw-bold rounded hover-scale">
+														Go to transactions 
+													</a>
+												</div>
+												<!--end::Wrapper-->
+											</div>
+                                        </div>
+                                        <!--end::Card body-->
+                                    </div>
+                                    <!--end::Card-->
+                                </div>
+                                <!--end::Content-->
+                            </div>
+                            <!--end::Content container-->
+                        </div>
+                    </div>
+                    <!--end::Toolbar-->
+                    <!--begin::Content-->
+                        <!--end::Content-->
+                    </div>
+                    <!--end::Content wrapper-->
+                    <!--begin::Footer-->
+                    <div id="kt_app_footer" class="app-footer">
+                        <!--begin::Footer container-->
+                        <div class="app-container container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3">
+                            <!--begin::Copyright-->
+                            <div class="text-gray-900 order-2 order-md-1">
+                                <span class="text-muted fw-semibold me-1">2023&copy;</span>
+                                <a href="https://tkambio.com/" target="_blank" class="text-gray-800 text-hover-primary">Tkambio</a>
+                            </div>
+                            <!--end::Copyright-->
+                        </div>
+                        <!--end::Footer container-->
+                    </div>
+                    <!--end::Footer-->
+                </div>
+                <!--end:::Main-->
+
+                </div>
+				<!--end::Wrapper-->
+			</div>
+			<!--end::Page-->
+			<div class="modal fade" tabindex="-1" id="kt_modal_1">
+				<div class="modal-dialog">
+					<div class="modal-content w-lg-700px">
+						<div class="modal-body">
+							
+							<!--begin::Close-->
+							<div class="d-flex align-items-center justify-content-end">
+								<div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+									<i class="ki-outline ki-cross fs-1"></i>
+								</div>
+							</div>
+							<!--end::Close-->
+							<div class="d-flex justify-content-center align-items-center">
+								<p class="text-center fs-2">Currency to pay in</p>
+							</div>
+							<div class="mx-auto ms-7">
+								<div class="d-flex align-items-center justify-content-start mt-9 mb-5">
+									<span class="text-gray-700">CHANGE TO</span>
+								</div>
+								<div class="d-flex align-items-center justify-content-start mt-2 mb-9 text-center">
+									<a href="#" class="btn btn-icon-gray-400 btn-text-gray-400">
+										<span class="fs-2"><i class="ki-outline ki-wallet fs-1 gray-600"></i></span><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+									</a>
+									<div class="mx-5 text-start">
+										<p class="fw-bold mb-0 mt-0 fs-6 text-gray-300">Wire transfer</p>
+										<p class="mb-0 mt-0 text-gray-300">USD 0.00 fee - <span class="text-gray-300">Typically hours</span></p>
+									</div>
+									<div class="ms-auto">
+										<!--begin::Actions-->
+										<div class="d-flex flex-stack mx-5">
+											<!--begin::Wrapper-->
+											<div class="me-2">
+												<button type="button" id="btn-next-card" class="btn bg-body" data-id="1">
+													<i class="ki-outline ki-right fs-2hx text-gray-300"></i>
+												</button>
+											</div>
+											<!--end::Wrapper-->
+										</div>
+										<!--end::Actions-->
+									</div>
+								</div>
+								<div class="d-flex align-items-center justify-content-start mt-2 mb-9 text-center">
+									<a href="#" class="btn btn-icon-gray-400 btn-text-gray-400">
+										<span class="fs-2"><i class="ki-outline ki-wallet fs-1"></i></span><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+									</a>
+									<div class="mx-5 text-start">
+										<p class="fw-bold mb-0 mt-0 fs-6 text-gray-300">Direct debit</p>
+										<p class="mb-0 mt-0 text-gray-300">USD 0.00 fee - <span class="text-gray-300">Typically hours</span></p>
+									</div>
+									<div class="ms-auto">
+										<!--begin::Actions-->
+										<div class="d-flex flex-stack mx-5">
+											<!--begin::Wrapper-->
+											<div class="me-2">
+												<button type="button" class="btn bg-body" data-id="2">
+													<i class="ki-outline ki-right fs-2hx text-gray-300"></i>
+												</button>
+											</div>
+											<!--end::Wrapper-->
+										</div>
+										<!--end::Actions-->
+									</div>
+								</div>
+								<div class="d-flex align-items-center justify-content-start mt-2 mb-9 text-center">
+									<a href="#" class="btn btn-icon-gray-400 btn-text-gray-400">
+										<span class="fs-2"><i class="ki-outline ki-wallet fs-1"></i></span><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+									</a>
+									<div class="mx-5 text-start">
+										<p class="fw-bold mb-0 mt-0 fs-6 text-gray-300">Fax Check</p>
+										<p class="mb-0 mt-0 text-gray-300">USD 0.00 fee - <span class="text-gray-300">Typically hours</span></p>
+									</div>
+									<div class="ms-auto">
+										<!--begin::Actions-->
+										<div class="d-flex flex-stack mx-5">
+											<!--begin::Wrapper-->
+											<div class="me-2">
+												<button type="button" class="btn bg-body" data-id="2">
+													<i class="ki-outline ki-right fs-2hx text-gray-300"></i>
+												</button>
+											</div>
+											<!--end::Wrapper-->
+										</div>
+										<!--end::Actions-->
+									</div>
+								</div>
+								<div class="d-flex align-items-center justify-content-start mt-9 mb-5">
+									<span class="text-gray-700">NOT AVAILABLE</span>
+								</div>
+								<div class="d-flex align-items-center justify-content-start mt-2 mb-9 text-center">
+									<a href="#" class="btn btn-icon-gray-400 btn-text-gray-400">
+										<span class="fs-2"><i class="ki-outline ki-wallet fs-1 gray-600"></i></span><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+									</a>
+									<div class="mx-5 text-start">
+										<p class="fw-bold mb-0 mt-0 fs-6 text-gray-400">Fax Check</p>
+										<p class="mb-0 mt-0 text-gray-400">MXN 0.00 fee - <span class="text-gray-400">Typically hours</span></p>
+									</div>
+									<div class="ms-auto">
+										<!--begin::Actions-->
+										<div class="d-flex flex-stack mx-5">
+											<!--begin::Wrapper-->
+											<div class="me-2">
+												<button type="button" class="btn bg-body btn-text-gray-300" data-id="2">
+													<i class="ki-outline ki-right fs-2hx text-gray-300"></i>
+												</button>
+											</div>
+											<!--end::Wrapper-->
+										</div>
+										<!--end::Actions-->
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+            <div class="modal fade" id="kt_create_beneficiaries">
+				<div class="modal-dialog mw-900px">
+					<div class="modal-content">
+						<div class="stepper stepper-pills" id="kt_stepper_example_basic">
+							<div class="modal-header">
+								<div class="d-flex align-items-center justify-content-center w-100">
+									<!--begin::Nav-->
+									<div class="stepper-nav flex-center flex-wrap mx-auto">
+										<!--begin::Step 1-->
+										<div class="stepper-item mx-8 my-4 current" data-kt-stepper-element="nav">
+											<!--begin::Wrapper-->
+											<div class="stepper-wrapper d-flex align-items-center">
+												<!--begin::Icon-->
+												<div class="stepper-icon w-40px h-40px">
+													<i class="stepper-check fas fa-check"></i>
+													<span class="stepper-number">1</span>
+												</div>
+												<!--end::Icon-->
+
+												<!--begin::Label-->
+												<div class="stepper-label">
+													<h3 class="stepper-title">
+														Beneficiary
+													</h3>
+
+												</div>
+												<!--end::Label-->
+											</div>
+											<!--end::Wrapper-->
+
+											<!--begin::Line-->
+											<div class="stepper-line h-40px"></div>
+											<!--end::Line-->
+										</div>
+										<!--end::Step 1-->
+
+										<!--begin::Step 2-->
+										<div class="stepper-item mx-8 my-4" data-kt-stepper-element="nav">
+											<!--begin::Wrapper-->
+											<div class="stepper-wrapper d-flex align-items-center">
+												<!--begin::Icon-->
+												<div class="stepper-icon w-40px h-40px">
+													<i class="stepper-check fas fa-check"></i>
+													<span class="stepper-number">2</span>
+												</div>
+												<!--begin::Icon-->
+
+												<!--begin::Label-->
+												<div class="stepper-label">
+													<h3 class="stepper-title">
+														Bank information
+													</h3>
+
+													<div class="stepper-desc">
+													</div>
+												</div>
+												<!--end::Label-->
+											</div>
+											<!--end::Wrapper-->
+
+											<!--begin::Line-->
+											<div class="stepper-line h-40px"></div>
+											<!--end::Line-->
+										</div>
+										<!--end::Step 2-->
+
+										<!--begin::Step 3-->
+										<div class="stepper-item mx-8 my-4" data-kt-stepper-element="nav">
+											<!--begin::Wrapper-->
+											<div class="stepper-wrapper d-flex align-items-center">
+												<!--begin::Icon-->
+												<div class="stepper-icon w-40px h-40px">
+													<i class="stepper-check fas fa-check"></i>
+													<span class="stepper-number">3</span>
+												</div>
+												<!--begin::Icon-->
+
+												<!--begin::Label-->
+												<div class="stepper-label">
+													<h3 class="stepper-title">
+														Review
+													</h3>
+
+													<div class="stepper-desc">
+													</div>
+												</div>
+												<!--end::Label-->
+											</div>
+											<!--end::Wrapper-->
+
+											<!--begin::Line-->
+											<div class="stepper-line h-40px"></div>
+											<!--end::Line-->
+										</div>
+										<!--end::Step 3-->
+									</div>
+									<!--end::Nav-->
+									<!--begin::Close-->
+									<div class="btn btn-icon btn-sm btn-active-light-primary p-5" data-bs-dismiss="modal" aria-label="Close">
+										<i class="ki-outline ki-cross-square fs-1"></i>
+									</div>
+									<!--end::Close-->
+								</div>
+							</div>
+							<div class="modal-body">
+								<div class="d-flex text-start mb-0 w-25">
+									<button type="button" class="btn btn-icon btn-active-light" data-kt-stepper-action="previous" id="previousButton">
+										<i class="ki-outline ki-left fs-2qx"></i>
+									</button>
+								</div>
+								<!--begin::Form-->
+								<form class="form w-lg-700px mx-auto" action="#" autocomplete="off" id="kt_docs_formvalidation_text">
+									<!--begin::Group-->
+									<div class="mb-0">
+										<!--begin::Step 1-->
+										<div class="flex-column current" data-kt-stepper-element="content">
+											<div class="d-flex text-start mb-0 w-25">
+												<a href="#" class="disabled btn btn-flush btn-icon"></a>
+											</div>
+											<div class="text-center mb-5 ">
+												<h3>Beneficiary Information</h3>
+											</div>
+											<!--begin::Input group-->
+											<div class="row">
+												<!--begin::Input group-->
+												<div class="mb-5 col-md-6">
+													<div class="fv-row">
+														<input id="nameBeneficiary" type="text" name="text_name" class="form-control" placeholder="Beneficiary name"/>
+													</div>
+												</div>
+												<!--end::Input group-->
+												<!--begin::Input group-->
+												<div class="mb-5 col-md-6">
+													<div class="fv-row">
+														<input id="nicknameBeneficiary" type="text" name="text_nickname" class="form-control" placeholder="Beneficiary Nickname"/>
+													</div>
+												</div>
+												<!--end::Input group-->
+											</div>
+											<!--end::Input group-->
+											<!--begin::Input group-->
+											<div class="row">
+												<!--begin::Input group-->
+												<div class="rounded mb-5 col-md-6">
+													<div class="fv-row">
+														<select class="form-select select2-field" name="select2_country" data-placeholder="Select a country" id="kt_docs_select2_country">
+															<option></option>
+															{{#each countries}}
+																<option value="{{this.nameFormat}}" data-kt-select2-country="/assets/media/flags/countries/{{this.nameFormat}}.svg">{{this.name}}</option>
+															{{/each}}
+														</select>
+													</div>
+													
+												</div>
+												<!--end::Input group-->
+												<!--begin::Input group-->
+												<div class="mb-5 col-md-6">
+													<div class="fv-row">
+														<input id="addressBeneficiary" type="text" name="text_address" class="form-control" placeholder="Address line"/>
+													</div>
+												</div>
+												<!--end::Input group-->
+											</div>
+											<!--end::Input group-->
+											<!--begin::Input group-->
+											<div class="row">
+												<!--begin::Input group-->
+												<div class="mb-5 col-md-6">
+													<div class="fv-row">
+														<input id="cityBeneficiary" type="text" name="text_city" class="form-control" placeholder="City"/>
+													</div>
+												</div>
+												<!--end::Input group-->
+												<!--begin::Input group-->
+												<div class="mb-5 col-md-6">
+													<div class="fv-row">
+														<input id="stateBeneficiary" type="text" name="text_state" class="form-control" placeholder="State/Province"/>
+													</div>
+												</div>
+												<!--end::Input group-->
+											</div>
+											<!--end::Input group-->
+											<!--begin::Input group-->
+											<div class="row">
+												<!--begin::Input group-->
+												<div class="mb-5 col-md-6">
+													<input id="postalCodeBeneficiary" type="text" name="text_postal" class="form-control" placeholder="Postal code (optional)"/>
+												</div>
+												<!--end::Input group-->
+												<!--begin::Input group-->
+												<div class="mb-5 col-md-6 fv-row">
+													<!--begin::Input-->
+													<input id="emailBeneficiary" type="email" name="text_email" class="form-control mb-3 mb-lg-0" placeholder="Email address(optional)" />
+													<!--end::Input-->
+												</div>
+												<!--end::Input group-->
+											</div>
+											<!--end::Input group-->
+											<!--begin::Input group-->
+											<div class="row">
+												<div class=" rounded mb-5">
+													<div class="fv-row">
+														<select class="form-select" name="select2Purpose" data-placeholder="Select Purpose of payment" id="kt_docs_select2_purpose">
+															<option></option>
+															{{#each purpose}}
+																<option value="{{this.name}}">{{this.name}}</option>
+															{{/each}}
+														</select>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<h5 class="mb-5">Purpose of payment description</h5>
+												<div class="fv-row">
+													<div class="mb-5">
+														<input class="form-check-input" type="radio" name="purpose" value="Payment for logistics services" id="flexRadioLg1"/>
+														<label class="form-check-label" for="flexRadioLg1">
+															Payment for logistics services
+														</label>
+													</div>
+													<div class="mb-5">
+														<input class="form-check-input" type="radio" name="purpose" value="Purchase of household goods" id="flexRadioLg2"/>
+														<label class="form-check-label" for="flexRadioLg2">
+															Purchase of household goods
+														</label>
+													</div>
+													<div class="mb-5">
+														<input class="form-check-input" type="radio" name="purpose" value="Payment for accounting services" id="flexRadioLg3"/>
+														<label class="form-check-label" for="flexRadioLg3">
+															Payment for accounting services
+														</label>
+													</div>
+													<div class="mb-5">
+														<input class="form-check-input" type="radio" name="purpose" value="Tourism and travel service" id="flexRadioLg5"/>
+														<label class="form-check-label" for="flexRadioLg5">
+															Tourism and travel service
+														</label>
+													</div>
+													<div class="mb-5">
+														<input class="form-check-input" type="radio" name="purpose" value="Others" id="flexRadioLg6"/>
+														<label class="form-check-label" for="flexRadioLg6">
+															Others
+														</label>
+													</div>
+													</div>
+											</div>
+											<div class="row">
+												<!--begin::Input group-->
+												<div class="mb-5" id="specificTextarea" style="display:none">
+													<div class="fv-row">
+														<textarea  class="form-control" name="input_textArea" placeholder="Specific" id="floatingSpecific" style="height: 100px;"></textarea>
+														<span class="fs-8 badge badge-light-primary"><i class="ki-outline ki-information-5 text-primary"></i>
+															Please be specific, eg. “This company is a supplier of leather goods. 
+															Each month we pay this company for wallets and belts”
+														</span>
+													</div>
+													
+												</div>
+												<!--end::Input group-->
+											</div>
+											<!--end::Input group-->
+										</div>
+										<!--begin::Step 1-->
+										<!--begin::Step 2-->
+										<div class="flex-column " data-kt-stepper-element="content">
+											<div class="text-center mb-5 ">
+												<h3>Bank Information</h3>
+											</div>
+											<!--begin::Input group-->
+											<div class="row">
+												<!--begin::Input group-->
+												<div class="rounded mb-5 fv-row">
+													<select class="form-select" name="select2Bank_currency" data-placeholder="Select currency" id="kt_docs_select2_currency">
+														<option></option>
+														{{#each currencies}}
+															<option value="{{this.code}}"  data-kt-select2-country="/assets/media/flags/{{this.code}}.svg">{{this.code}}</option>
+														{{/each}}
+													</select>
+												</div>
+												<!--end::Input group-->
+											</div>
+											<!--end::Input group-->
+											<!--begin::Input group-->
+											<div class="row">
+												<!--begin::Input group-->
+												<div class="rounded mb-5 fv-row">
+													<select class="form-select" name="select2Bank_countries" data-placeholder="Select bank country" id="kt_docs_select2_bankCountry">
+														<option></option>
+														{{#each countries}}
+															<option value="{{this.nameFormat}}" data-kt-select2-country="/assets/media/flags/countries/{{this.nameFormat}}.svg">{{this.name}}</option>
+														{{/each}}
+													</select>
+												</div>
+												<!--end::Input group-->
+											</div>
+											<!--end::Input group-->
+											<!--begin::Input group-->
+											<div class="row">
+												<!--begin::Input group-->
+												<div class="mb-5 col-md-6">
+													<div class="fv-row">
+														<input id="nameBank" type="text" name="bankName" class="form-control" placeholder="Bank name"/>
+													</div>
+												</div>
+												<!--end::Input group-->
+												<!--begin::Input group-->
+												<div class="mb-5 col-md-6">
+													<div class="fv-row">
+														<input id="addressBank" type="text" name="bankAdressLine" class="form-control" placeholder="Adress line"/>
+													</div>
+												</div>
+												<!--end::Input group-->
+											</div>
+											<!--end::Input group-->
+											<!--begin::Input group OTHERS-->
+											<div id="othersStepOne" style="display:none;">
+												<div class="row fv-row">
+													<h5 class="mb-5">What banking information do you have?</h5>
+													<div class="mb-5 fv-row">
+														<input class="form-check-input" type="radio" name="bankInformationOthers" value="SWIFT" id="radioOthers1"/>
+														<label class="form-check-label" for="radioOthers1">
+															SWIFT and account number/IBAN
+														</label>
+													</div>
+													<div class="mb-5 fv-row">
+														<input class="form-check-input" type="radio" name="bankInformationOthers" value="transitCode" id="radioOthers2"/>
+														<label class="form-check-label" for="radioOthers2">
+															Transit code and account number
+														</label>
+													</div>
+												</div>
+												<div id="othersSelectOne" style="display:none;">
+													<div class="row">
+														<div class="mb-5 col-md-6 fv-row">
+															<input id="swiftOtherOne" type="text" name="othersSwiftOne" class="form-control" placeholder="SWIFT"/>
+														</div>
+														<div class="mb-5 col-md-6 fv-row">
+															<input id="accountOthersOne" type="text" name="othersAccountOne" class="form-control" placeholder="Account number/IBAN"/>
+														</div>
+													</div>
+													<div class="row align-items-center">
+														<div class="mb-2 d-flex justify-content-between w-100">
+															<h5 class="text-truncate text-sm mb-0">Sending bank instructions (optional)</h5>
+															<div class="form-check form-switch form-check-custom form-check-solid">
+																<input class="form-check-input" type="checkbox" name="checkbox" id="checkBoxOthersOne" checked="checked" />
+																<label class="form-check-label" for="checkBoxOthersOne"></label>
+															</div>
+														</div>
+													</div>
+													<div class="mb-5 fv-row" id="instructionsSelectOne">
+														<textarea  class="form-control" name="instructionsOtherstOne" placeholder="Write Instructions" id="textSelectOne" style="height: 100px;"></textarea>
+														<span class="fs-8 badge badge-light-primary"><i class="ki-outline ki-information-5 text-primary"></i>
+															Please be specific, eg. “This company is a supplier of leather goods. 
+															Each month we pay this company for wallets and belts”
+														</span>
+													</div>
+												</div>
+												<div id="othersSelectTwo" style="display: none;">
+													<div class="row">
+														<div class="mb-5 col-md-6 fv-row">
+															<input id="transitOthersTwo" type="text" name="othersTransitTwo" class="form-control" placeholder="Transit code"/>
+														</div>
+														<div class="mb-5 col-md-6 fv-row">
+															<input id="accountOthersTwo" type="text" name="othersAccountTwo" class="form-control" placeholder="Account number"/>
+														</div>
+													</div>
+													<div class="row align-items-center">
+														<div class="mb-2 d-flex justify-content-between w-100">
+															<h5 class="text-truncate text-sm mb-0">Sending bank instructions (optional)</h5>
+															<div class="form-check form-switch form-check-custom form-check-solid">
+																<input class="form-check-input" name="checkbox" type="checkbox" value="" id="checkBoxOthersTwo" checked="checked" />
+																<label class="form-check-label" for="checkBoxOthersTwo"></label>
+															</div>
+														</div>
+													</div>
+													<div class="mb-5 fv-row" id="instructionsSelectTwo">
+														<textarea  class="form-control" name="instructionsOtherstTwo" placeholder="Write Instructions" id="textSelectTwo" style="height: 100px;"></textarea>
+														<span class="fs-8 badge badge-light-primary"><i class="ki-outline ki-information-5 text-primary"></i>
+															Please be specific, eg. “This company is a supplier of leather goods. 
+															Each month we pay this company for wallets and belts”.
+														</span>
+													</div>
+												</div>
+											</div>
+											<!--end::Input group OTHERS-->
+											<!--begin::Input group UNITED STATE-->
+											<div id="unitedState" style="display:none;">
+												<div class="row">
+													<h5 class="mb-5">What banking information do you have?</h5>
+													<div class="mb-5 fv-row">
+														<input class="form-check-input" type="radio" name="bankInformationUnited" value="ABA" id="radioUnited1"/>
+														<label class="form-check-label" for="radioUnited1">
+															ABA number and account number
+														</label>
+													</div>
+													<div class="mb-5 fv-row">
+														<input class="form-check-input" type="radio" name="bankInformationUnited" value="SWIFT" id="radioUnited2"/>
+														<label class="form-check-label" for="radioUnited2">
+															SWIFT and account number/IBAN
+														</label>
+													</div>
+												</div>
+												<div id="unitedSelectOne" style="display: none;">
+													<div class="row">
+														<div class="mb-5 col-md-6 fv-row">
+															<input id="abaUsdOne" type="text" class="form-control" name="ABAunitedOne" placeholder="ABA number"/>
+														</div>
+														<div class="mb-5 col-md-6 fv-row">
+															<input id="accountUsdOne" type="text" class="form-control" name="accountUnitedOne" placeholder="Account number"/>
+														</div>
+													</div>
+													<!--end::Input group-->
+													<!--begin::Input group-->
+													<div class="row align-items-center">
+														<div class="mb-2 d-flex justify-content-between w-100">
+															<h5 class="text-truncate text-sm mb-0">Sending bank instructions (optional)</h5>
+															<div class="form-check form-switch form-check-custom form-check-solid">
+																<input class="form-check-input" name="checkbox" type="checkbox" value="" id="checkBoxUnitedOne" checked="checked" />
+																<label class="form-check-label" for="checkBoxUnitedOne"></label>
+															</div>
+														</div>
+													</div>
+													<div class="mb-5" id="instructionsUnitedStateOne" style="">
+														<textarea  class="form-control" placeholder="Write Instructions" name="instructionsUSDOne" id="textAreaUnitedStateOne" style="height: 100px;"></textarea>
+														<span class="fs-8 badge badge-light-primary"><i class="ki-outline ki-information-5 text-primary"></i>
+															Please be specific, eg. “This company is a supplier of leather goods. 
+															Each month we pay this company for wallets and belts”
+														</span>
+													</div>
+												</div>
+												<div id="unitedSelectTwo" style="display: none;">
+													<div class="row">
+														<div class="mb-5 col-md-6 fv-row">
+															<input id="abaUsdTwo" type="text" name="SWIFTunitedOne" class="form-control" placeholder="SWIFT"/>
+														</div>
+														<div class="mb-5 col-md-6 fv-row">
+															<input id="accountUsdTwo" type="text" name="accountUnitedTwo" class="form-control" placeholder="Account number/IBAN"/>
+														</div>
+													</div>
+													<!--end::Input group-->
+													<!--begin::Input group-->
+													<div class="row align-items-center">
+														<div class="mb-2 d-flex justify-content-between w-100">
+															<h5 class="text-truncate text-sm mb-0">Sending bank instructions (optional)</h5>
+															<div class="form-check form-switch form-check-custom form-check-solid">
+																<input class="form-check-input" name="checkbox" type="checkbox" id="checkBoxUnitedTwo" checked="checked" />
+																<label class="form-check-label" for="checkBoxUnitedTwo"></label>
+															</div>
+														</div>
+													</div>
+													<div class="mb-5" id="instructionsUnitedStateTwo" style="">
+														<textarea  class="form-control" placeholder="Write Instructions" name="instructionsUSDTwo" id="textAreaUnitedStateTwo" style="height: 100px;"></textarea>
+														<span class="fs-8 badge badge-light-primary"><i class="ki-outline ki-information-5 text-primary"></i>
+															Please be specific, eg. “This company is a supplier of leather goods. 
+															Each month we pay this company for wallets and belts”
+														</span>
+													</div>
+												</div>
+												
+											</div>
+											<!--end::Input group UNITED STATE-->
+											<!--begin::Input group MEXICO-->
+											<div id="mexico" style="display: none;">
+												<!--begin::Input group-->
+												<div class="row">
+													<div class="mb-5 col-md-6 fv-row">
+														<input id="mexicoClabe" type="text" name="inputMexico_clabe" class="form-control" placeholder="Clabe"/>
+													</div>
+													<!--end::Input group-->
+													<!--begin::Input group-->
+													<div class="mb-5 col-md-6 fv-row">
+														<input id="mexicoSwift" type="text" name="inputMexico_SWIFT" class="form-control" placeholder="SWIFT"/>
+													</div>
+													<!--end::Input group-->
+													<!--begin::Input group-->
+													<div class="row align-items-center">
+														<div class="mb-2 d-flex justify-content-between w-100">
+															<h5 class="text-truncate text-sm mb-0">Sending bank instructions (optional)</h5>
+															<div class="form-check form-switch form-check-custom form-check-solid">
+																<input class="form-check-input" type="checkbox" name="checkbox" id="checkBoxMexico" checked="checked"/>
+																<label class="form-check-label" for="checkBoxMexico"></label>
+															</div>
+														</div>
+													</div>
+													<div class="mb-5" id="instructions" style="display: block;">
+														<textarea  class="form-control" name="instructionsMXN" placeholder="Write Instructions" id="textAreaInstructions" style="height: 100px;"></textarea>
+														<span class="fs-8 badge badge-light-primary"><i class="ki-outline ki-information-5 text-primary"></i>
+															Please be specific, eg. “This company is a supplier of leather goods. 
+															Each month we pay this company for wallets and belts”
+														</span>
+													</div>
+												</div>
+												<!--end::Input group-->
+											</div>
+											<!--end::Input group MEXICO-->
+										</div>
+										<!--begin::Step 2-->
+										<!--begin::Step 3-->
+										<div class="flex-column" data-kt-stepper-element="content">
+											<div class="text-center mb-5 ">
+												<h3>Review </h3>
+											</div>
+											<!--begin::Content-->
+											<div class="d-flex mb-2 mb-lg-0 align-items-center justify-content-center">
+												<!--begin::Card-->
+												<div class="card card-flush pt-3 mb-5 mb-xl-10" style="width: 650px;">
+													<!--begin::Card header-->
+													<div class="card-header">
+														<!--begin::Card title-->
+														<div class="card-title">
+															<h5 class="fw-bold">BENEFICIARY INFORMATION</h5>
+														</div>
+														<!--begin::Card title-->
+														<!--begin::Card toolbar-->
+														<div class="card-toolbar">
+															<!--begin::Underline-->
+															<span class="d-inline-block position-relative ms-2 me-4">
+																<!--begin::Label-->
+																<span class="d-inline-block mb-2 fs-6 fw-bold ">
+																	<a href="#" class="">Edit</a>
+																</span>
+																<!--end::Label-->
+																<!--begin::Line-->
+																<span class="d-inline-block position-absolute h-2px bottom-0 end-0 start-0 bg-primary translate rounded"></span>
+																<!--end::Line-->
+															</span>
+															<!--end::Underline-->
+														</div>
+														<!--end::Card toolbar-->
+													</div>
+													<!--end::Card header-->
+													<!--begin::Card body-->
+													<div class="card-body pt-3">
+														<!--begin::Section-->
+														<div class="mb-5">
+															<!--begin::Details BENEFICIARY INFORMATION-->
+															<div class="d-flex flex-wrap py-0">
+																<!--begin::Row-->
+																<div class="flex-equal me-5" id="tableBeneficiary">
+																	<!--generate::table-->
+																</div>
+																<!--end::Row-->
+															</div>
+															<!--end::Row-->
+															<!--end::Details HEADER BANK-->
+															<div class="separator my-1"></div>
+															<div class="container">
+																<div class="row">
+																	<div class="col-6 text-start my-6">
+																		<h5>BANK INFORMATION</h5>
+																	</div>
+																	<div class="col-6 text-end my-6">
+																		<!--begin::Underline-->
+																		<span class="d-inline-block position-relative ms-2 me-4">
+																			<!--begin::Label-->
+																			<span class="d-inline-block mb-2 fs-6 fw-bold ">
+																				<a href="#" class="">Edit</a>
+																			</span>
+																			<!--end::Label-->
+																			<!--begin::Line-->
+																			<span class="d-inline-block position-absolute h-2px bottom-0 end-0 start-0 bg-primary translate rounded"></span>
+																			<!--end::Line-->
+																		</span>
+																		<!--end::Underline-->
+																	</div>
+																</div>
+															</div>
+															<!--begin::Details BANK-->
+															<div class="d-flex flex-wrap py-0 mb-5">
+																<!--begin::Row-->
+																<div class="flex-equal me-5" id="tableBank">
+																	<!--begin::Details-->
+																	
+																	<!--end::Details-->
+																</div>
+																<!--end::Row-->
+															</div>
+															<!--end::Row-->
+															<div class="d-flex flex-stack align-items-center justify-content-center">
+																<!--begin::Wrapper-->
+																<div class="d-flex" id="buttonCreate">
+																	{{!-- <button type="submit" id="formSubmit"  class="text-primary btn btn-warning w-200px rounded hover-scale">
+																	Create beneficiary
+																	</button> --}}
+																</div>
+																<!--end::Wrapper-->
+															</div>
+														</div>
+														<!--end::Section-->
+													</div>
+													<!--end::Card body-->
+												</div>
+												<!--end::Card-->
+											</div>
+											<!--end::Content-->
+										</div>
+										<!--begin::Step 3-->
+									</div>
+									<!--end::Group-->
+									<!--begin::Actions-->
+									<div class="d-flex flex-stack align-items-center justify-content-center">
+										<!--begin::Wrapper-->
+										<div>
+											<div class="d-flex ">
+												<button type="button" id="kt_docs_formvalidation_text_submit"  class="text-primary btn btn-warning w-200px rounded hover-scale" data-kt-stepper-action="next">
+												Next
+												</button>
+											</div>
+										</div>
+										<!--end::Wrapper-->
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<!--end::App-->
+		<!--begin::Javascript-->
+		<script>
+		const menuLinks = document.querySelectorAll('.menu-link');
+		const activeLinkIndex = localStorage.getItem('activeLinkIndex');
+		for (let i = 0; i < menuLinks.length; i++) {
+			menuLinks[i].classList.remove('active');
+		}
+		
+		for (let i = 0; i < menuLinks.length; i++) {
+			const link = menuLinks[i];
+
+			link.addEventListener('click', function(event) {
+				for (let j = 0; j < menuLinks.length; j++) {
+					menuLinks[j].classList.remove('active');
+				}
+
+				this.classList.add('active');
+
+				localStorage.setItem('activeLinkIndex', i);
+			});
+
+			if (activeLinkIndex && i.toString() === activeLinkIndex) {
+			link.classList.add('active');
+			}
+		}
+		</script>
+		<!--begin::Global Javascript Bundle(mandatory for all pages)-->
+		<script src="/assets/plugins/global/plugins.bundle.js"></script>
+		<script src="/assets/js/scripts.bundle.js"></script>
+		<!--end::Global Javascript Bundle-->
+		<script src="/assets/js/calculator.js"></script>
+		<!--begin::Vendors Javascript(used for this page only)-->
+		<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/geodata/continentsLow.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/geodata/usaLow.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZonesLow.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZoneAreasLow.js"></script>
+		<script src="/assets/plugins/custom/datatables/datatables.bundle.js"></script>
+		<!--end::Vendors Javascript-->  
+	</body>
+	<!--end::Body-->
+</html>
+{{/inline}}
+{{/admin}}

@@ -27,6 +27,15 @@ async function bootstrap() {
   hbsUtils(hbs).registerWatchedPartials(join(__dirname, '..', 'views/layouts'));
   app.setViewEngine('hbs');
 
+  //Configuraciones para el uso de helpers
+  hbs.registerHelper('ifEquals', function (value, comparator, options) {
+    if (value === comparator) {
+      return options.fn(this);
+    } else {
+      return options.inverse(this);
+    }
+  });
+
   app.use(cookieParser());
   app.enableCors({
     origin: 'http://localhost:3200',
