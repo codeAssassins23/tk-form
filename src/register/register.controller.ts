@@ -55,6 +55,18 @@ export class RegisterController {
     return register;
   }
 
+  @Public()
+  @Get('/register/steps')
+  @Render('register/register_stepper')
+  async registerSteps(@Req() request: Request) {
+    try {
+      const user = request['user'];
+      return user;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   @Get('/Allregister')
   @Roles('SuperAdmin')
   @Render('register/get_registers')
