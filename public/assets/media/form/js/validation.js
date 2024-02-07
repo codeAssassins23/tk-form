@@ -79,7 +79,7 @@ submitButton.addEventListener('click', async function (e) {
   }
 
   if (isValidStep1) {
-    await axios.post('/Allregister', { res });
+    await axios.post('/registerStepOne', { res });
   }
 }
 );
