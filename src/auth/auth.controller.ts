@@ -39,8 +39,13 @@ export class AuthController {
   ) {
     try {
       const authResult = await this.authService.signIn(createAuthDto);
-      response.cookie('jwt', authResult.jwt, { httpOnly: true });
-      response.redirect('/admin/dashboard');
+      if (authResult.payload.role.idRole === 1) {
+        response.cookie('jwt', authResult.jwt, { httpOnly: true });
+        response.redirect('/admin/dashboard');
+      } else if (authResult.payload.role.idRole === 4) {
+        response.cookie('jwt', authResult.jwt, { httpOnly: true });
+        response.redirect('/Allregister');
+      }
     } catch (error) {
       console.log(error);
       response.render('auth/login', {

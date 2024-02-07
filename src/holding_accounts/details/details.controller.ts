@@ -1,9 +1,21 @@
-import { Controller, Get, Param, Query, Render, Req } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Param,
+  Query,
+  Render,
+  Req,
+  UseGuards,
+} from '@nestjs/common';
 import { DetailService } from './details.service';
+import { Roles } from 'src/auth/decorators/public.decorator';
+import { RolesGuard } from 'src/auth/authRole.guard';
 @Controller('/admin')
+@UseGuards(RolesGuard)
 export class DetailHolddingAccounts {
   constructor(private readonly detailService: DetailService) {}
 
+  @Roles('ADMIN')
   @Get('/getHoldingAccounts/detail/:currencyCode')
   @Render('holding_accounts/detail_holding_account')
   async index(
@@ -26,6 +38,7 @@ export class DetailHolddingAccounts {
     };
   }
 
+  @Roles('ADMIN')
   @Get('/holdingAccounts/detail/:currencyCode')
   async holddingAccount(
     @Query() queryParams,

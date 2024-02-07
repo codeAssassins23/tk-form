@@ -1,10 +1,22 @@
-import { Body, Controller, Get, Post, Render, Req } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Post,
+  Render,
+  Req,
+  UseGuards,
+} from '@nestjs/common';
 import { PaymentService } from './payments.service';
+import { RolesGuard } from 'src/auth/authRole.guard';
+import { Roles } from 'src/auth/decorators/public.decorator';
 
 @Controller('/admin')
+@UseGuards(RolesGuard)
 export class PaymentController {
   constructor(private readonly paymentService: PaymentService) {}
 
+  @Roles('ADMIN')
   @Get('/payments')
   @Render('send_payment/send_payment')
   async getPayments(@Req() request: Request) {
@@ -38,6 +50,7 @@ export class PaymentController {
     }
   }
 
+  @Roles('ADMIN')
   @Post('/paymentsCurrency')
   async getPaymentsCurrency(@Body() body: any) {
     try {
@@ -64,6 +77,7 @@ export class PaymentController {
     }
   }
 
+  @Roles('ADMIN')
   @Post('searchBeneficiaries')
   async searchBeneficiaries(@Body() body: any) {
     try {
@@ -80,6 +94,7 @@ export class PaymentController {
     }
   }
 
+  @Roles('ADMIN')
   @Post('getHolding')
   async getHolding(@Body() body: any) {
     try {
@@ -95,6 +110,7 @@ export class PaymentController {
     }
   }
 
+  @Roles('ADMIN')
   @Post('generateWid')
   async generateWid(@Body() body: any) {
     try {
@@ -112,6 +128,7 @@ export class PaymentController {
     }
   }
 
+  @Roles('ADMIN')
   @Post('sendPayment')
   async sendPayment(@Body() body: any) {
     try {
