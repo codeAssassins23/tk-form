@@ -50,6 +50,9 @@ export class RegisterController {
   @Public()
   @Post('/registerStepOne')
   async registerStepOne(@Body() createRegisterDto: registerDto) {
+    console.log('hola desde el controlador registerStepOne');
+    console.log(createRegisterDto);
+
     const register =
       await this.registerService.createRegisterStepOne(createRegisterDto);
     return register;

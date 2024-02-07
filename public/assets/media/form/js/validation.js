@@ -78,8 +78,20 @@ submitButton.addEventListener('click', async function (e) {
     "country": paises
   }
 
+  console.log("Res", res)
+
   if (isValidStep1) {
-    await axios.post('/registerStepOne', { res });
+
+    const response = await axios({
+      method: 'post',
+      url: "/registerStepOne",
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      data: res,
+    });
+    
+    console.log("Response", response)
   }
 }
 );
