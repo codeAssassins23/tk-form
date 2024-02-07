@@ -19,7 +19,7 @@ var optionFormat1 = function (item) {
   return $(span);
 };
 
-$('#Paises').select2({
+$('#paises').select2({
   templateSelection: optionFormat1,
   templateResult: optionFormat1,
 });

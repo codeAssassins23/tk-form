@@ -1,5 +1,7 @@
 /* eslint-disable prettier/prettier */
-const form = document.getElementById('kt_docs_formvalidation_text');
+const form = document.getElementById('kt_sign_up_form');
+
+console.log("Si form", form)
 
 // Init validartion 1
 let validatorStep1 = FormValidation.formValidation(form, {
@@ -57,38 +59,36 @@ let validatorStep1 = FormValidation.formValidation(form, {
 const submitButton = document.getElementById('kt_sign_up_submit');
 
 submitButton.addEventListener('click', async function (e) {
-    // Prevent default button action
-    e.preventDefault();
-    // Validate the form based on the current step
-    if (index === 0) {
-        // Validate the form for step 1
-        let isValidStep1 = await validateStep1();
+  // Prevent default button action
+  e.preventDefault();
+  // Validate the form based on the current step
+  let isValidStep1 = await validateStep1();
 
-        if (isValidStep1) {
-            // Move to the next step if validation is successful
-            step1Data = getStep1Data();
-            stepper.goNext();
-            index += 1;
-        }
-    } else if (index === 1) {
-        // Validate the form for step 2
-        let isValidStep2 = await validateStep2();
-        if (isValidStep2) {
-            // Move to the next step if validation is successful
-            step2Data = getStep2Data();
-            stepper.goNext();
-            index += 1;
-            // Generate HTML for step 3 and append it to a container
-            generateStep3HTML(step1Data, step2Data);
- }
+  let correo_electronico = document.getElementById("correo_electronico").value
+  let nombre_apellidos = document.getElementById("nombre_apellidos").value
+  let empresa = document.getElementById("empresa").value
+  let paises = document.getElementById("paises").value
+  let telefono = document.getElementById("telefono").value
+
+  let res = {
+    "fullName": nombre_apellidos,
+    "email": correo_electronico,
+    "corporate": empresa,
+    "phone": telefono,
+    "country": paises
+  }
+
+  if (isValidStep1) {
+    await axios.post('/Allregister', { res });
+  }
 }
-});
+);
 
 // Function to validate Step 1
 const validateStep1 = async () => {
   return new Promise((resolve) => {
-      validatorStep1.validate().then((status) => {
-          resolve(status === 'Valid');
+    validatorStep1.validate().then((status) => {
+      resolve(status === 'Valid');
     });
-});
+  });
 };
