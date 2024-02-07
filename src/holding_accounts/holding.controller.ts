@@ -1,10 +1,22 @@
-import { Controller, Get, Post, Query, Render, Req } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Query,
+  Render,
+  Req,
+  UseGuards,
+} from '@nestjs/common';
 import { ApiService } from './holding.service';
+import { Roles } from 'src/auth/decorators/public.decorator';
+import { RolesGuard } from 'src/auth/authRole.guard';
 
 @Controller('/admin')
+@UseGuards(RolesGuard)
 export class HoldingAccounts {
   constructor(private readonly apiService: ApiService) {}
 
+  @Roles('ADMIN')
   @Get('/getHoldingAccounts')
   @Render('holding_accounts/holding')
   async index(@Req() request: Request) {
@@ -17,6 +29,7 @@ export class HoldingAccounts {
     };
   }
 
+  @Roles('ADMIN')
   @Get('/getHolddingAccountTest')
   async holddingAccount(@Query() queryParams) {
     const cookies = await this.apiService.loginAPI();

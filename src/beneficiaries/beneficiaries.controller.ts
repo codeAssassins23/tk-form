@@ -6,13 +6,18 @@ import {
   Query,
   Render,
   Req,
+  UseGuards,
 } from '@nestjs/common';
 import { BeneficiariesService } from './beneficiaries.service';
+import { RolesGuard } from 'src/auth/authRole.guard';
+import { Roles } from 'src/auth/decorators/public.decorator';
 
 @Controller('/admin')
+@UseGuards(RolesGuard)
 export class BeneficiariesController {
   constructor(private readonly beneficiariesService: BeneficiariesService) {}
 
+  @Roles('ADMIN')
   @Get('/beneficiaries')
   @Render('beneficiaries/get_beneficiaries')
   async getBeneficiaries(@Req() request: Request) {
@@ -29,6 +34,7 @@ export class BeneficiariesController {
     };
   }
 
+  @Roles('ADMIN')
   @Get('/getListBeneficiaries')
   async getAllBeneficiaries(@Query() queryParams: any) {
     const page = queryParams.start / 10;
@@ -61,6 +67,7 @@ export class BeneficiariesController {
     };
   }
 
+  @Roles('ADMIN')
   @Post('/newBeneficiaries')
   async postBeneficiaries(@Body() body: any) {
     const { step1Data, step2Data } = body;
@@ -86,6 +93,7 @@ export class BeneficiariesController {
     return 'success';
   }
 
+  @Roles('ADMIN')
   @Post('/editBeneficiaries')
   async putBeneficiaries(@Body() body: any) {
     const { step1Data, step2Data, beneId } = body;
@@ -117,6 +125,7 @@ export class BeneficiariesController {
     return 'success';
   }
 
+  @Roles('ADMIN')
   @Get('/beneficiaries/success')
   @Render('beneficiaries/message/successCreate')
   async createBeneficiarySuccess(@Req() request: Request) {
@@ -124,6 +133,7 @@ export class BeneficiariesController {
     return { user: user };
   }
 
+  @Roles('ADMIN')
   @Post('/getBeneficiariesById')
   async getBeneficiariesById(@Body() body: { beneId: number }) {
     const beneId = body.beneId;
@@ -139,7 +149,7 @@ export class BeneficiariesController {
     return beneficiarie;
   }
 
-  //Eliminar metodo
+  @Roles('ADMIN')
   @Get('/beneficiaries/error')
   @Render('beneficiaries/message/errorCreate')
   async createBeneficiaryError(@Req() request: Request) {
