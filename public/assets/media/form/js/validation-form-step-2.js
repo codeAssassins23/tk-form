@@ -1,5 +1,66 @@
 /* eslint-disable prettier/prettier */
-// Stepper lement
+
+
+const form = document.getElementById('kt_sign_up_form');
+
+// Init validartion 1
+let validatorStep2 = FormValidation.formValidation(form, {
+  fields: {
+    purposeOfTransactions: {
+      validators: {
+        notEmpty: {
+          message: 'Este campo es obligatorio',
+        },
+      },
+    },
+    bankCodeNumber: {
+      validators: {
+        notEmpty: {
+          message: 'Este campo es obligatorio',
+        },
+      },
+    },
+    anualVolume: {
+      validators: {
+        notEmpty: {
+          message: 'Este campo es obligatorio',
+        },
+      },
+    },
+    select_country: {
+      validators: {
+        notEmpty: {
+          message: 'Este campo es obligatorio',
+        },
+      },
+    },
+    text_phone: {
+      validators: {
+        notEmpty: {
+          message: 'Telefono es requerido',
+        },
+      },
+    },
+  },
+  plugins: {
+    trigger: new FormValidation.plugins.Trigger(),
+    bootstrap: new FormValidation.plugins.Bootstrap5({
+      rowSelector: '.fv-row',
+      eleInvalidClass: '',
+      eleValidClass: '',
+    }),
+  },
+});
+
+// Function to validate Step 1
+const validateStep2 = async () => {
+  return new Promise((resolve) => {
+    validatorStep2.validate().then((status) => {
+      resolve(status === 'Valid');
+    });
+  });
+};
+
 
 //step 2
 let stepp_2_prev = document.getElementById('stepp_2_prev');
@@ -11,9 +72,10 @@ stepp_2_prev.addEventListener('click', function () {
 let stepp_2 = document.getElementById('stepp_2');
 console.log(stepp_2);
 stepp_2.addEventListener('click', async function () {
-  let isValidStep2 = await validateStep2();
+  /* let isValidStep2 = await validateStep2();
   console.log(isValidStep2);
   if (isValidStep2) {
     stepper.goNext();
-  }
+  } */
+  stepper.goNext();
 });
