@@ -1,12 +1,12 @@
 /* eslint-disable prettier/prettier */
 const form = document.getElementById('kt_sign_up_form');
 
-console.log("Si form", form)
+console.log('Si form', form);
 
 // Init validartion 1
 let validatorStep1 = FormValidation.formValidation(form, {
   fields: {
-    "text_email": {
+    text_email: {
       validators: {
         emailAddress: {
           message: 'El contenido no es válidos',
@@ -16,28 +16,28 @@ let validatorStep1 = FormValidation.formValidation(form, {
         },
       },
     },
-    "text_name": {
+    text_name: {
       validators: {
         notEmpty: {
           message: 'Nombrey apellido es requerido',
         },
       },
     },
-    "text_enterprice": {
+    text_enterprice: {
       validators: {
         notEmpty: {
           message: 'Empresa es requerida',
         },
       },
     },
-    "select_country": {
+    select_country: {
       validators: {
         notEmpty: {
           message: 'País es requerido',
         },
       },
     },
-    "text_phone": {
+    text_phone: {
       validators: {
         notEmpty: {
           message: 'Telefono es requerido',
@@ -55,7 +55,6 @@ let validatorStep1 = FormValidation.formValidation(form, {
   },
 });
 
-
 const submitButton = document.getElementById('kt_sign_up_submit');
 
 submitButton.addEventListener('click', async function (e) {
@@ -64,37 +63,34 @@ submitButton.addEventListener('click', async function (e) {
   // Validate the form based on the current step
   let isValidStep1 = await validateStep1();
 
-  let correo_electronico = document.getElementById("correo_electronico").value
-  let nombre_apellidos = document.getElementById("nombre_apellidos").value
-  let empresa = document.getElementById("empresa").value
-  let paises = document.getElementById("paises").value
-  let telefono = document.getElementById("telefono").value
+  let correo_electronico = document.getElementById('correo_electronico').value;
+  let nombre_apellidos = document.getElementById('nombre_apellidos').value;
+  let empresa = document.getElementById('empresa').value;
+  let paises = document.getElementById('paises').value;
+  let telefono = document.getElementById('telefono').value;
 
   let res = {
-    "fullName": nombre_apellidos,
-    "email": correo_electronico,
-    "corporate": empresa,
-    "phone": telefono,
-    "country": paises
-  }
-
-  console.log("Res", res)
+    fullName: nombre_apellidos,
+    email: correo_electronico,
+    corporate: empresa,
+    phone: telefono,
+    country: paises,
+  };
 
   if (isValidStep1) {
-
     const response = await axios({
       method: 'post',
-      url: "/registerStepOne",
+      url: '/registerStepOne',
       headers: {
         'Content-Type': 'application/json',
       },
       data: res,
     });
-    
-    console.log("Response", response)
+
+    console.log(response);
+    window.location.href = '/register/steps';
   }
-}
-);
+});
 
 // Function to validate Step 1
 const validateStep1 = async () => {

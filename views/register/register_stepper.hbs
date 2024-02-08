@@ -1,1 +1,1435 @@
-<h1>Register Stepper</h1>
+<html lang='es'>
+<!--begin::Head-->
+
+<head>
+    <base href='../../../' />
+    <title>Metronic - The World's #1 Selling Bootstrap Admin Template - Metronic
+        by KeenThemes</title>
+    <meta charset='utf-8' />
+    <meta name='description'
+        content='The most advanced Bootstrap 5 Admin Theme with 40 unique prebuilt layouts on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel versions. Grab your copy now and get life-time updates for free.' />
+    <meta name='keywords'
+        content='metronic, bootstrap, bootstrap 5, angular, VueJs, React, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel starter kits, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <meta property='og:locale' content='en_US' />
+    <meta property='og:type' content='article' />
+    <meta property='og:title'
+        content="Metronic - The World's #1 Selling Bootstrap Admin Template - Metronic by KeenThemes" />
+    <meta property='og:url' content='https://keenthemes.com/metronic' />
+    <meta property='og:site_name' content='Metronic by Keenthemes' />
+    <link rel='canonical' href='https://preview.keenthemes.com/metronic8' />
+    <link rel='shortcut icon' href='/assets/media/logos/favicon.ico' />
+    <!--begin::Fonts(mandatory for all pages)-->
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700' />
+    <!--end::Fonts-->
+    <!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
+    <link href='/assets/plugins/global/plugins.bundle.css' rel='stylesheet' type='text/css' />
+    <link href='/assets/css/style.bundle.css' rel='stylesheet' type='text/css' />
+    <!--end::Global Stylesheets Bundle-->
+    <script>// Frame-busting to prevent site from being loaded within a frame
+      without permission(click - jacking) if (window.top != window.self) {
+            window.top.location.replace(window.self.location.href);
+        }</script>
+</head>
+<!--end::Head-->
+<!--begin::Body-->
+
+<body id='kt_body' class='app-blank bgi-size-cover bgi-attachment-fixed bgi-position-center'>
+    <!--begin::Theme mode setup on page load-->
+    <script>var defaultThemeMode = "light"; var themeMode; if (
+            document.documentElement) {
+            if (
+                document.documentElement.hasAttribute("data-bs-theme-mode")) {
+                themeMode =
+                    document.documentElement.getAttribute("data-bs-theme-mode");
+            } else {
+                if (
+                    localStorage.getItem("data-bs-theme") !== null) {
+                    themeMode =
+                        localStorage.getItem("data-bs-theme");
+                } else {
+                    themeMode =
+                        defaultThemeMode;
+                }
+            } if (themeMode === "system") {
+                themeMode =
+                    window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" :
+                        "light";
+            } document.documentElement.setAttribute("data-bs-theme",
+                themeMode);
+        }</script>
+    <!--end::Theme mode setup on page load-->
+    <!--begin::Root-->
+    <div class='d-flex flex-column flex-root' id='kt_app_root'>
+        <!--begin::Authentication - Sign-up -->
+        <div class='d-flex flex-column flex-lg-row flex-column-fluid row'>
+            <!--begin::Aside-->
+            <div class='d-flex flex-lg-row-fluid col-lg-6 col-sm-12 position-relative z-index-1'>
+                <img src='/assets/media/form/img/RegistroB.webp' class='position-absolute w-100 h-100 z-index-n1'
+                    alt='Image backgroud' />
+                <!--begin::Content-->
+                <div class='d-flex flex-column flex-center pb-0 pb-lg-10 p-10 w-100 h-75 m-auto position-relative'>
+                    <!--begin::Title-->
+                    <h1 class='text-white fs-4x fw-bolder text-center mb-7'>
+                        Registra a tu empresa en TKambio USA
+                    </h1>
+                    <!--end::Title-->
+                    <!--begin::Text-->
+                    <div class='text-white fs-2x text-center fw-semibold'>
+                        La libertad de transaccionar
+                        <br />
+                        <strong>sin comisiones, sin cobros por
+                            <br />
+                            mantenimiento y con</strong>
+                        <br />
+                        <strong class='fw-extrabold' style='color:#1D3392;'>el mejor tipo
+                            de cambio.</strong>
+                    </div>
+                    <!--end::Text-->
+                    <img src='/assets/media/form/img/Registro-Respaldos.webp'
+                        class='position-absolute bottom-0 start-50 translate-middle w-75 z-index-1'
+                        alt='Image backgroud' />
+                </div>
+                <!--end::Content-->
+            </div>
+            <!--begin::Aside-->
+            <!--begin::Body-->
+            <div class='d-flex flex-column justify-beetween-content-center col-lg-6 col-sm-12'>
+                <div class="my-6">
+                    <!--begin::Wrapper-->
+                    <div
+                        class='bg-body d-flex flex-column flex-center rounded-4 p-10 border border-2 col-xxl-7 col-xl-10 col-sm-12 border-gray-400 h-auto m-auto'>
+                        <!--begin::Content-->
+                        <div class='d-flex flex-center flex-column align-items-stretch h-lg-100 w-100'>
+                            <div class="stepper stepper-pills" data-kt-stepper="true" id="kt_stepper_example_basic">
+                                <!--begin::Wrapper-->
+                                <div class="stepper-nav flex-center flex-row mb-10">
+                                    <!--begin::Step 1-->
+                                    <div class="stepper-item mx-8 my-4 current" data-kt-stepper-element="nav">
+                                        <!--begin::Wrapper-->
+                                        <div class="stepper-wrapper d-flex align-items-center">
+                                            <!--begin::Icon-->
+                                            <div class="stepper-icon w-40px h-40px">
+                                                <i class="stepper-check fas fa-check"></i>
+                                                <span class="stepper-number">1</span>
+                                            </div>
+                                            <!--end::Icon-->
+
+                                            <!--begin::Label-->
+                                            <div class="stepper-label">
+                                                <h3 class="stepper-title">Step 1</h3>
+
+                                                <div class="stepper-desc">Description</div>
+                                            </div>
+                                            <!--end::Label-->
+                                        </div>
+                                        <!--end::Wrapper-->
+
+                                        <!--begin::Line-->
+                                        <div class="stepper-line h-40px"></div>
+                                        <!--end::Line-->
+                                    </div>
+                                    <!--end::Step 1-->
+
+                                    <!--begin::Step 2-->
+                                    <div class="stepper-item mx-8 my-4" data-kt-stepper-element="nav">
+                                        <!--begin::Wrapper-->
+                                        <div class="stepper-wrapper d-flex align-items-center">
+                                            <!--begin::Icon-->
+                                            <div class="stepper-icon w-40px h-40px">
+                                                <i class="stepper-check fas fa-check"></i>
+                                                <span class="stepper-number">2</span>
+                                            </div>
+                                            <!--begin::Icon-->
+
+                                            <!--begin::Label-->
+                                            <div class="stepper-label">
+                                                <h3 class="stepper-title">Step 2</h3>
+
+                                                <div class="stepper-desc">Description</div>
+                                            </div>
+                                            <!--end::Label-->
+                                        </div>
+                                        <!--end::Wrapper-->
+
+                                        <!--begin::Line-->
+                                        <div class="stepper-line h-40px"></div>
+                                        <!--end::Line-->
+                                    </div>
+                                    <!--end::Step 2-->
+
+                                    <!--begin::Step 3-->
+                                    <div class="stepper-item mx-8 my-4" data-kt-stepper-element="nav">
+                                        <!--begin::Wrapper-->
+                                        <div class="stepper-wrapper d-flex align-items-center">
+                                            <!--begin::Icon-->
+                                            <div class="stepper-icon w-40px h-40px">
+                                                <i class="stepper-check fas fa-check"></i>
+                                                <span class="stepper-number">3</span>
+                                            </div>
+                                            <!--begin::Icon-->
+
+                                            <!--begin::Label-->
+                                            <div class="stepper-label">
+                                                <h3 class="stepper-title">Step 3</h3>
+
+                                                <div class="stepper-desc">Description</div>
+                                            </div>
+                                            <!--end::Label-->
+                                        </div>
+                                        <!--end::Wrapper-->
+
+                                        <!--begin::Line-->
+                                        <div class="stepper-line h-40px"></div>
+                                        <!--end::Line-->
+                                    </div>
+                                    <!--end::Step 3-->
+
+                                    <!--begin::Step 4-->
+                                    <div class="stepper-item mx-8 my-4" data-kt-stepper-element="nav">
+                                        <!--begin::Wrapper-->
+                                        <div class="stepper-wrapper d-flex align-items-center">
+                                            <!--begin::Icon-->
+                                            <div class="stepper-icon w-40px h-40px">
+                                                <i class="stepper-check fas fa-check"></i>
+                                                <span class="stepper-number">4</span>
+                                            </div>
+                                            <!--begin::Icon-->
+
+                                            <!--begin::Label-->
+                                            <div class="stepper-label">
+                                                <h3 class="stepper-title">Step 4</h3>
+
+                                                <div class="stepper-desc">Description</div>
+                                            </div>
+                                            <!--end::Label-->
+                                        </div>
+                                        <!--end::Wrapper-->
+
+                                        <!--begin::Line-->
+                                        <div class="stepper-line h-40px"></div>
+                                        <!--end::Line-->
+                                    </div>
+                                    <!--end::Step 4-->
+                                    <!--begin::Step 5-->
+                                    <div class="stepper-item mx-8 my-4" data-kt-stepper-element="nav">
+                                        <!--begin::Wrapper-->
+                                        <div class="stepper-wrapper d-flex align-items-center">
+                                            <!--begin::Icon-->
+                                            <div class="stepper-icon w-40px h-40px">
+                                                <i class="stepper-check fas fa-check"></i>
+                                                <span class="stepper-number">5</span>
+                                            </div>
+                                            <!--begin::Icon-->
+
+                                            <!--begin::Label-->
+                                            <div class="stepper-label">
+                                                <h3 class="stepper-title">Step 5</h3>
+
+                                                <div class="stepper-desc">Description</div>
+                                            </div>
+                                            <!--end::Label-->
+                                        </div>
+                                        <!--end::Wrapper-->
+
+                                        <!--begin::Line-->
+                                        <div class="stepper-line h-40px"></div>
+                                        <!--end::Line-->
+                                    </div>
+                                    <!--end::Step 5-->
+                                    <!--begin::Step 6-->
+                                    <div class="stepper-item mx-8 my-4" data-kt-stepper-element="nav">
+                                        <!--begin::Wrapper-->
+                                        <div class="stepper-wrapper d-flex align-items-center">
+                                            <!--begin::Icon-->
+                                            <div class="stepper-icon w-40px h-40px">
+                                                <i class="stepper-check fas fa-check"></i>
+                                                <span class="stepper-number">6</span>
+                                            </div>
+                                            <!--begin::Icon-->
+
+                                            <!--begin::Label-->
+                                            <div class="stepper-label">
+                                                <h3 class="stepper-title">Step 6</h3>
+
+                                                <div class="stepper-desc">Description</div>
+                                            </div>
+                                            <!--end::Label-->
+                                        </div>
+                                        <!--end::Wrapper-->
+
+                                        <!--begin::Line-->
+                                        <div class="stepper-line h-40px"></div>
+                                        <!--end::Line-->
+                                    </div>
+                                    <!--end::Step 6-->
+                                </div>
+                                <!--begin::Heading-->
+                                <div class='text-center'>
+                                    <!--begin::Title-->
+                                    <img src='/assets/media/logos/Logo-TKambio1.svg' alt='TKambioUS' class='mb-10' />
+                                    <!--end::Title-->
+                                </div>
+                                <!--begin::Heading-->
+                                <!--begin::Form-->
+                                <form class='form w-100' novalidate="novalidate" id='kt_sign_up_form'>
+                                    <!--begin::Step 1-->
+                                    <div class="flex-column current" data-kt-stepper-element="content">
+                                        <h2 class="w-100 text-center fs-2x mb-12">Información general</h2>
+                                        <!--begin::Input group=-->
+                                        <div class='mb-4'>
+                                            <!--begin::Nombre de la empresa-->
+                                            <label for='correo_electronico' class='form-label'>
+                                                Nombre de la empresa (Razon social)
+                                            </label>
+                                            <div class='fv-row'>
+                                                <input type='text' name='text_email' autocomplete='off'
+                                                    id='correo_electronico' class='form-control' required />
+                                            </div>
+                                            <!--end::Nombre de la empresa-->
+                                        </div>
+                                        <!--begin::Input group-->
+                                        <!--begin::Input group=-->
+                                        <div class='mb-4'>
+                                            <!--begin::Nombre comercial-->
+                                            <label for='correo_electronico' class='form-label'>
+                                                Nombre comercial (Opcional)
+                                            </label>
+                                            <div class='fv-row'>
+                                                <input type='text' name='text_email' autocomplete='off'
+                                                    id='correo_electronico' class='form-control' required />
+                                            </div>
+                                            <!--end::Nombre comercial-->
+                                        </div>
+                                        <!--end::Input group=-->
+                                        <div class='row mb-4'>
+                                            <!--begin::Estado-->
+                                            <div class='col'>
+                                                <label for='paises' class='form-label'>Estado</label>
+                                                <div class='fv-row'>
+                                                    <select class='form-select' id='paises' name='select_country'
+                                                        data-placeholder='Select an option'>
+                                                        <option>
+                                                        </option>
+                                                        <option data-kt-select2-country='/assets/media/form/svg/us.svg'>
+                                                            Estados Unidos
+                                                        </option>
+                                                        <option data-kt-select2-country='/assets/media/form/svg/mx.svg'>
+                                                            Mexico
+                                                        </option>
+                                                        <option
+                                                            data-kt-select2-country='/assets/media/form/svg/world.svg'>
+                                                            Resto del mundo
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class='col'>
+                                                <label for='paises' class='form-label'>Ciudad</label>
+                                                <div class='fv-row'>
+                                                    <select class='form-select' id='paises' name='select_country'
+                                                        data-placeholder='Select an option'>
+                                                        <option>
+                                                        </option>
+                                                        <option data-kt-select2-country='/assets/media/form/svg/us.svg'>
+                                                            Estados Unidos
+                                                        </option>
+                                                        <option data-kt-select2-country='/assets/media/form/svg/mx.svg'>
+                                                            Mexico
+                                                        </option>
+                                                        <option
+                                                            data-kt-select2-country='/assets/media/form/svg/world.svg'>
+                                                            Resto del mundo
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end::Input group=-->
+                                        <!--end::Input group=-->
+                                        <div class='row mb-4'>
+                                            <!--begin::Estado-->
+                                            <div class='col'>
+                                                <!--begin::Código postal-->
+                                                <label for='correo_electronico' class='form-label'>
+                                                    Código postal
+                                                </label>
+                                                <div class='fv-row'>
+                                                    <input type='text' name='text_email' autocomplete='off'
+                                                        id='correo_electronico' class='form-control' required />
+                                                </div>
+                                                <!--end::Código postal-->
+                                            </div>
+                                            <div class='col'>
+                                                <!--begin::Dirección-->
+                                                <label for='correo_electronico' class='form-label'>
+                                                    Dirección
+                                                </label>
+                                                <div class='fv-row'>
+                                                    <input type='text' name='text_email' autocomplete='off'
+                                                        id='correo_electronico' class='form-control' required />
+                                                </div>
+                                                <!--end::Dirección-->
+                                            </div>
+                                        </div>
+                                        <!--end::Input group=-->
+                                        <!--end::Input group=-->
+                                        <div class='row mb-4'>
+                                            <!--begin::Estado-->
+                                            <div class='col'>
+                                                <!--begin::Correo-->
+                                                <label for='correo_electronico' class='form-label'>
+                                                    Correo (para recibir notificaciones)
+                                                </label>
+                                                <div class='fv-row'>
+                                                    <input type='text' name='text_email' autocomplete='off'
+                                                        id='correo_electronico' class='form-control' required />
+                                                </div>
+                                                <!--end::Correo-->
+                                            </div>
+                                            <div class='col'>
+                                                <!--begin::Teléfono celular-->
+                                                <label for='correo_electronico' class='form-label'>
+                                                    Teléfono celular
+                                                </label>
+                                                <div class='fv-row'>
+                                                    <input type='text' name='text_email' autocomplete='off'
+                                                        id='correo_electronico' class='form-control' required />
+                                                </div>
+                                                <!--end::Teléfono celular-->
+                                            </div>
+                                        </div>
+                                        <!--end::Input group=-->
+                                        <!--begin::Input group=-->
+                                        <div class='mb-4'>
+                                            <!--begin::Sitio Web-->
+                                            <label for='correo_electronico' class='form-label'>
+                                                Sitio Web (Opcional)
+                                            </label>
+                                            <div class='fv-row'>
+                                                <input type='text' name='text_email' autocomplete='off'
+                                                    id='correo_electronico' class='form-control' required />
+                                            </div>
+                                            <!--end::Sitio Web-->
+                                        </div>
+                                        <!--end::Input group=-->
+                                        <!--end::Input group=-->
+                                        <div class='row mb-4'>
+                                            <!--begin::Estado-->
+                                            <div class='col'>
+                                                <!--begin::Número de identificación fiscal-->
+                                                <label for='correo_electronico' class='form-label'>
+                                                    Número de identificación fiscal
+                                                </label>
+                                                <div class='fv-row'>
+                                                    <input type='text' name='text_email' autocomplete='off'
+                                                        id='correo_electronico' class='form-control' required />
+                                                </div>
+                                                <!--end::Número de identificación fiscal-->
+                                            </div>
+                                            <div class='col'>
+                                                <label for='paises' class='form-label'>Industria</label>
+                                                <div class='fv-row'>
+                                                    <select class='form-select' id='paises' name='select_country'
+                                                        data-placeholder='Select an option'>
+                                                        <option>
+                                                        </option>
+                                                        <option data-kt-select2-country='/assets/media/form/svg/us.svg'>
+                                                            Estados Unidos
+                                                        </option>
+                                                        <option data-kt-select2-country='/assets/media/form/svg/mx.svg'>
+                                                            Mexico
+                                                        </option>
+                                                        <option
+                                                            data-kt-select2-country='/assets/media/form/svg/world.svg'>
+                                                            Resto del mundo
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end::Input group=-->
+                                        <!--begin::Input group=-->
+                                        <div class='mb-4'>
+                                            <!--begin::Descripción de la naturaleza del negocio-->
+                                            <label for='correo_electronico' class='form-label'>
+                                                Descripción de la naturaleza del negocio
+                                            </label>
+                                            <div class='fv-row'>
+                                                <input type='text' name='text_email' autocomplete='off'
+                                                    id='correo_electronico' class='form-control' required />
+                                            </div>
+                                            <!--end::Descripción de la naturaleza del negocio-->
+                                        </div>
+                                        <!--end::Input group=-->
+                                        <!--begin::Input group=-->
+                                        <div class='mb-8'>
+                                            <!--begin::Fecha de formación-->
+                                            <label for='correo_electronico' class='form-label'>
+                                                Fecha de formación
+                                            </label>
+                                            <div class="input-group fv-row" id="kt_td_picker_date_only"
+                                                data-td-target-input="nearest" data-td-target-toggle="nearest">
+                                                <input id="kt_td_picker_date_only_input" type="text"
+                                                    class="form-control" data-td-target="#kt_td_picker_date_only" />
+                                                <span class="input-group-text" data-td-target="#kt_td_picker_date_only"
+                                                    data-td-toggle="datetimepicker">
+                                                    <i class="ki-duotone ki-calendar fs-2"><span
+                                                            class="path1"></span><span class="path2"></span></i>
+                                                </span>
+                                            </div>
+                                            <!--end::Fecha de formación-->
+                                        </div>
+                                        <!--end::Input group=-->
+                                        <!--begin::Input group=-->
+                                        <div class='mb-8'>
+                                            <!--begin::Tipo de empresa-->
+                                            <p class='form-label'>
+                                                Tipo de empresa
+                                            </p>
+                                            <!--begin::Row-->
+                                            <div class="mb-4 fv-row" data-kt-buttons="true"
+                                                data-kt-buttons-target=".form-check-input">
+                                                <div>
+                                                    <label>
+                                                        <div
+                                                            class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                                                            <input class="form-check-input" type="radio" value="1"
+                                                                name="option2" />
+                                                            <div class="form-check-label">
+                                                                Persona física
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <label>
+                                                        <div
+                                                            class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                                                            <input class="form-check-input" type="radio" value="1"
+                                                                name="option2" id="text_wow" />
+                                                            <div class="form-check-label">
+                                                                Corporación
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <label>
+                                                        <div
+                                                            class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                                                            <input class="form-check-input" type="radio" value="1"
+                                                                name="option2" />
+                                                            <div class="form-check-label">
+                                                                Sociedad
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <label>
+                                                        <div
+                                                            class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                                                            <input class="form-check-input" type="radio" value="1"
+                                                                name="option2" />
+                                                            <div class="form-check-label">
+                                                                Cooperativa
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <label>
+                                                        <div
+                                                            class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                                                            <input class="form-check-input" type="radio" value="1"
+                                                                name="option2" />
+                                                            <div class="form-check-label">
+                                                                Fideicomiso/Del Estado
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <label>
+                                                        <div
+                                                            class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                                                            <input class="form-check-input" type="radio" value="1"
+                                                                name="option2" />
+                                                            <div class="form-check-label">
+                                                                Otra
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <!--end::Row-->
+                                            <!--end::Tipo de empresa-->
+                                        </div>
+                                        <!--end::Input group=-->
+                                        <!--begin::Input group=-->
+                                        <div class="mb-8">
+                                            <!--begin::Giro de la empresa-->
+                                            <p class='form-label'>
+                                                Giro de la empresa
+                                            </p>
+                                            <p class="fs-sm text-gray-500">
+                                                Marque todo lo que corresponda
+                                            </p>
+                                            <!--begin::Row-->
+                                            <div class="mb-4 fv-row" data-kt-buttons="true"
+                                                data-kt-buttons-target=".form-check-input">
+                                                <div>
+                                                    <label>
+                                                        <div
+                                                            class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                                                            <input class="form-check-input" type="checkbox" value="1"
+                                                                name="option2" />
+                                                            <div class="form-check-label">
+                                                                Venta de piedras precioass
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <label>
+                                                        <div
+                                                            class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                                                            <input class="form-check-input" type="checkbox" value="1"
+                                                                name="option2" id="text_wow" />
+                                                            <div class="form-check-label">
+                                                                Venta de armas
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <label>
+                                                        <div
+                                                            class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                                                            <input class="form-check-input" type="checkbox" value="1"
+                                                                name="option2" />
+                                                            <div class="form-check-label">
+                                                                Venta de criptomonedas
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <label>
+                                                        <div
+                                                            class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                                                            <input class="form-check-input" type="checkbox" value="1"
+                                                                name="option2" />
+                                                            <div class="form-check-label">
+                                                                Relacionado con sustancias controladas
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <label>
+                                                        <div
+                                                            class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                                                            <input class="form-check-input" type="checkbox" value="1"
+                                                                name="option2" />
+                                                            <div class="form-check-label">
+                                                                Institución financiera
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <label>
+                                                        <div
+                                                            class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                                                            <input class="form-check-input" type="checkbox" value="1"
+                                                                name="option2" />
+                                                            <div class="form-check-label">
+                                                                Ninguna opción aplica
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <!--end::Row-->
+                                            <!--end::Giro de la empresa-->
+                                        </div>
+                                        <!--end::Input group=-->
+                                        <!--begin::Submit button-->
+                                        <div class='d-grid col-md-6 col-10 mx-auto'>
+                                            <button type='button' id='stepp_1' class='btn btn-primary'>
+                                                <!--begin::Indicator label-->
+                                                <span class='indicator-label'>Siguiente</span>
+                                                <!--end::Indicator label-->
+                                                <!--begin::Indicator progress-->
+                                                <span class='indicator-progress'>Un monmento por
+                                                    favor...
+                                                    <span
+                                                        class='spinner-border spinner-border-sm align-middle ms-2'></span></span>
+                                                <!--end::Indicator progress-->
+                                            </button>
+                                        </div>
+                                        <!--end::Submit button-->
+                                    </div>
+                                    <!--end::Step 1-->
+                                    <!--begin::Step 2-->
+                                    <div class="flex-column" data-kt-stepper-element="content">
+                                        <h2 class="w-100 text-center fs-2x mb-12">Finalidad de las transacciones</h2>
+                                        <!--begin::Input group=-->
+                                        <div class='mb-4'>
+                                            <!--begin::Objetivo de las transacciones-->
+                                            <label for='correo_electronico' class='form-label'>
+                                                Objetivo de las transacciones (especificar)
+                                            </label>
+                                            <div class='fv-row'>
+                                                <input type='text' name='text_email' autocomplete='off'
+                                                    id='correo_electronico' class='form-control' required />
+                                            </div>
+                                            <!--end::Objetivo de las transacciones-->
+                                        </div>
+                                        <!--end::Input group-->
+                                        <!--begin::Input group-->
+                                        <div class='row mb-4'>
+                                            <!--begin::Número de CLABE bancaria-->
+                                            <div class='col'>
+                                                <label for='paises' class='form-label'>Número de CLABE bancaria</label>
+                                                <div class='fv-row'>
+                                                    <input type='text' name='text_email' autocomplete='off'
+                                                        id='correo_electronico' class='form-control' required />
+                                                </div>
+                                            </div>
+                                            <!--end::Número de CLABE bancaria-->
+                                            <!--begin::Monto estimado por transacción-->
+                                            <div class='col'>
+                                                <label for='paises' class='form-label'>
+                                                    Monto estimado por transacción
+                                                </label>
+                                                <div class='fv-row'>
+                                                    <input type='text' name='text_email' autocomplete='off'
+                                                        id='correo_electronico' class='form-control' required />
+                                                </div>
+                                            </div>
+                                            <!--end::Monto estimado por transacción-->
+                                        </div>
+                                        <!--end::Input group=-->
+                                        <!--begin::Input group=-->
+                                        <div class='mb-4'>
+                                            <!--begin::Número estimado de transacciones al mes-->
+                                            <label for='correo_electronico' class='form-label'>
+                                                Número estimado de transacciones al mes
+                                            </label>
+                                            <div class='fv-row'>
+                                                <input type='text' name='text_email' autocomplete='off'
+                                                    id='correo_electronico' class='form-control' required />
+                                            </div>
+                                            <!--end::Número estimado de transacciones al mes-->
+                                        </div>
+                                        <!--end::Input group=-->
+                                        <!--begin::Input group=-->
+                                        <div class="mb-8">
+                                            <!--begin::Divisas requeridas-->
+                                            <p class='form-label'>
+                                                Divisas requeridas
+                                            </p>
+                                            <p class="fs-sm text-gray-500">
+                                                Marque todo lo que corresponda
+                                            </p>
+                                            <!--begin::Row-->
+                                            <div class="mb-4 fv-row" data-kt-buttons="true"
+                                                data-kt-buttons-target=".form-check-input">
+                                                <div>
+                                                    <label>
+                                                        <div
+                                                            class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                                                            <input class="form-check-input" type="checkbox" value="1"
+                                                                name="option2" />
+                                                            <div class="form-check-label">
+                                                                Euro
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <label>
+                                                        <div
+                                                            class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                                                            <input class="form-check-input" type="checkbox" value="1"
+                                                                name="option2" id="text_wow" />
+                                                            <div class="form-check-label">
+                                                                Libra esterlina
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <label>
+                                                        <div
+                                                            class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                                                            <input class="form-check-input" type="checkbox" value="1"
+                                                                name="option2" />
+                                                            <div class="form-check-label">
+                                                                Yen japones
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <label>
+                                                        <div
+                                                            class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                                                            <input class="form-check-input" type="checkbox" value="1"
+                                                                name="option2" />
+                                                            <div class="form-check-label">
+                                                                Dólar canadiense
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <label>
+                                                        <div
+                                                            class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                                                            <input class="form-check-input" type="checkbox" value="1"
+                                                                name="option2" />
+                                                            <div class="form-check-label">
+                                                                Peso mexicano
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <label>
+                                                        <div
+                                                            class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                                                            <input class="form-check-input" type="checkbox" value="1"
+                                                                name="option2" />
+                                                            <div class="form-check-label">
+                                                                Dólar US
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <label>
+                                                        <div
+                                                            class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                                                            <input class="form-check-input" type="checkbox" value="1"
+                                                                name="option2" />
+                                                            <div class="form-check-label">
+                                                                Otro
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <!--end::Row-->
+                                            <!--end::Divisas requeridas-->
+                                        </div>
+                                        <!--end::Input group=-->
+                                        <!--begin::Submit button-->
+                                        <div class='d-flex w-100 justify-content-between mx-auto'>
+                                            <button type='button' id='stepp_2_prev' class='btn btn-primary'>
+                                                <!--begin::Indicator label-->
+                                                <span class='indicator-label'>Back</span>
+                                                <!--end::Indicator label-->
+                                                <!--begin::Indicator progress-->
+                                                <span class='indicator-progress'>Un monmento por
+                                                    favor...
+                                                    <span
+                                                        class='spinner-border spinner-border-sm align-middle ms-2'></span></span>
+                                                <!--end::Indicator progress-->
+                                            </button>
+                                            <button type='button' id='stepp_2' class='btn btn-primary'>
+                                                <!--begin::Indicator label-->
+                                                <span class='indicator-label'>Siguiente</span>
+                                                <!--end::Indicator label-->
+                                                <!--begin::Indicator progress-->
+                                                <span class='indicator-progress'>Un monmento por
+                                                    favor...
+                                                    <span
+                                                        class='spinner-border spinner-border-sm align-middle ms-2'></span></span>
+                                                <!--end::Indicator progress-->
+                                            </button>
+                                        </div>
+                                        <!--end::Submit button-->
+                                    </div>
+                                    <!--end::Step 2-->
+                                    <!--begin::Step 3-->
+                                    <div class="flex-column" data-kt-stepper-element="content">
+                                        <div class="w-100 text-center mb-12">
+                                            <h2 class="fs-2x">
+                                                Documentación requerida
+                                            </h2>
+                                            <p class="fs-sm text-gray-500">
+                                                Incluya la siguiente documentación o su equivalente
+                                            </p>
+                                        </div>
+                                        <!--begin::Input group=-->
+                                        <div class='mb-4'>
+                                            <!--begin::Acta constitutiva o licencia comercial-->
+                                            <label for='correo_electronico' class='form-label'>
+                                                Acta constitutiva o licencia comercial
+                                            </label>
+                                            <p class="fs-sm text-gray-500">
+                                                Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos son
+                                                .pdf, .jpg y .png.
+                                            </p>
+                                            <div class='fv-row'>
+                                                <!--begin::Dropzone-->
+                                                <div class="dropzone" id="kt_dropzonejs_example_1">
+                                                    <!--begin::Message-->
+                                                    <div
+                                                        class="dz-message needsclick d-flex justify-content-center align-items-center">
+                                                        <i class="ki-duotone ki-file-up fs-3x text-primary"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                        <!--begin::Info-->
+                                                        <div class="ms-4">
+                                                            <h3 class="fs-5 fw-bold text-gray-900">
+                                                                Arrastra o suelta un archivo aquí o has click
+                                                            </h3>
+                                                        </div>
+                                                        <!--end::Info-->
+                                                    </div>
+                                                </div>
+                                                <!--end::Dropzone-->
+                                            </div>
+                                            <!--end::Acta constitutiva o licencia comercial-->
+                                        </div>
+                                        <!--end::Input group-->
+                                        <!--begin::Input group=-->
+                                        <div class='mb-4'>
+                                            <!--begin::Cédula de identificación fiscal-->
+                                            <label for='correo_electronico' class='form-label'>
+                                                Cédula de identificación fiscal
+                                            </label>
+                                            <p class="fs-sm text-gray-500">
+                                                Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos son
+                                                .pdf, .jpg y .png.
+                                            </p>
+                                            <div class='fv-row'>
+                                                <!--begin::Dropzone-->
+                                                <div class="dropzone" id="kt_dropzonejs_example_1">
+                                                    <!--begin::Message-->
+                                                    <div
+                                                        class="dz-message needsclick d-flex justify-content-center align-items-center">
+                                                        <i class="ki-duotone ki-file-up fs-3x text-primary"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                        <!--begin::Info-->
+                                                        <div class="ms-4">
+                                                            <h3 class="fs-5 fw-bold text-gray-900">
+                                                                Arrastra o suelta un archivo aquí o has click
+                                                            </h3>
+                                                        </div>
+                                                        <!--end::Info-->
+                                                    </div>
+                                                </div>
+                                                <!--end::Dropzone-->
+                                            </div>
+                                            <!--end::Cédula de identificación fiscal-->
+                                        </div>
+                                        <!--end::Input group-->
+                                        <!--begin::Input group=-->
+                                        <div class='mb-4'>
+                                            <!--begin::Acta de poderes-->
+                                            <label for='correo_electronico' class='form-label'>
+                                                Acta de poderes
+                                            </label>
+                                            <p class="fs-sm text-gray-500">
+                                                Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos son
+                                                .pdf, .jpg y .png.
+                                            </p>
+                                            <div class='fv-row'>
+                                                <!--begin::Dropzone-->
+                                                <div class="dropzone" id="kt_dropzonejs_example_1">
+                                                    <!--begin::Message-->
+                                                    <div
+                                                        class="dz-message needsclick d-flex justify-content-center align-items-center">
+                                                        <i class="ki-duotone ki-file-up fs-3x text-primary"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                        <!--begin::Info-->
+                                                        <div class="ms-4">
+                                                            <h3 class="fs-5 fw-bold text-gray-900">
+                                                                Arrastra o suelta un archivo aquí o has click
+                                                            </h3>
+                                                        </div>
+                                                        <!--end::Info-->
+                                                    </div>
+                                                </div>
+                                                <!--end::Dropzone-->
+                                            </div>
+                                            <!--end::Acta de poderes-->
+                                        </div>
+                                        <!--end::Input group-->
+                                        <!--begin::Input group=-->
+                                        <div class='mb-4'>
+                                            <!--begin::Identificación oficial de todos los socios y las personas autorizadas-->
+                                            <label for='correo_electronico' class='form-label'>
+                                                Identificación oficial de todos los socios y las personas autorizadas
+                                            </label>
+                                            <p class="fs-sm text-gray-500">
+                                                Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos son
+                                                .pdf, .jpg y .png.
+                                            </p>
+                                            <div class='fv-row'>
+                                                <!--begin::Dropzone-->
+                                                <div class="dropzone" id="kt_dropzonejs_example_1">
+                                                    <!--begin::Message-->
+                                                    <div
+                                                        class="dz-message needsclick d-flex justify-content-center align-items-center">
+                                                        <i class="ki-duotone ki-file-up fs-3x text-primary"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                        <!--begin::Info-->
+                                                        <div class="ms-4">
+                                                            <h3 class="fs-5 fw-bold text-gray-900">
+                                                                Arrastra o suelta un archivo aquí o has click
+                                                            </h3>
+                                                        </div>
+                                                        <!--end::Info-->
+                                                    </div>
+                                                </div>
+                                                <!--end::Dropzone-->
+                                            </div>
+                                            <!--end::Identificación oficial de todos los socios y las personas autorizadas-->
+                                        </div>
+                                        <!--end::Input group-->
+                                        <!--begin::Input group=-->
+                                        <div class='mb-8'>
+                                            <!--begin::Comprobante de domicilio-->
+                                            <label for='correo_electronico' class='form-label'>
+                                                Comprobante de domicilio
+                                            </label>
+                                            <p class="fs-sm text-gray-500">
+                                                Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos son
+                                                .pdf, .jpg y .png.
+                                            </p>
+                                            <div class='fv-row'>
+                                                <!--begin::Dropzone-->
+                                                <div class="dropzone" id="kt_dropzonejs_example_1">
+                                                    <!--begin::Message-->
+                                                    <div
+                                                        class="dz-message needsclick d-flex justify-content-center align-items-center">
+                                                        <i class="ki-duotone ki-file-up fs-3x text-primary"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                        <!--begin::Info-->
+                                                        <div class="ms-4">
+                                                            <h3 class="fs-5 fw-bold text-gray-900">
+                                                                Arrastra o suelta un archivo aquí o has click
+                                                            </h3>
+                                                        </div>
+                                                        <!--end::Info-->
+                                                    </div>
+                                                </div>
+                                                <!--end::Dropzone-->
+                                            </div>
+                                            <!--end::Comprobante de domicilio-->
+                                        </div>
+                                        <!--end::Input group-->
+                                        <!--begin::Submit button-->
+                                        <div class='d-flex w-100 justify-content-between mx-auto'>
+                                            <button type='button' id='stepp_3_prev' class='btn btn-primary'>
+                                                <!--begin::Indicator label-->
+                                                <span class='indicator-label'>Back</span>
+                                                <!--end::Indicator label-->
+                                                <!--begin::Indicator progress-->
+                                                <span class='indicator-progress'>Un monmento por
+                                                    favor...
+                                                    <span
+                                                        class='spinner-border spinner-border-sm align-middle ms-2'></span></span>
+                                                <!--end::Indicator progress-->
+                                            </button>
+                                            <button type='button' id='stepp_3' class='btn btn-primary'>
+                                                <!--begin::Indicator label-->
+                                                <span class='indicator-label'>Siguiente</span>
+                                                <!--end::Indicator label-->
+                                                <!--begin::Indicator progress-->
+                                                <span class='indicator-progress'>Un monmento por
+                                                    favor...
+                                                    <span
+                                                        class='spinner-border spinner-border-sm align-middle ms-2'></span></span>
+                                                <!--end::Indicator progress-->
+                                            </button>
+                                        </div>
+                                        <!--end::Submit button-->
+                                    </div>
+                                    <!--end::Step 3-->
+                                    <!--begin::Step 4-->
+                                    <div class="flex-column" data-kt-stepper-element="content">
+                                        <div class="w-100 text-center mb-12">
+                                            <h2 class="fs-2x">
+                                                Usuario autorizados
+                                            </h2>
+                                            <p class="fs-sm text-gray-500">
+                                                Enumere hasta 2 usuarios autorizados para realizar transacciones en la
+                                                plataforma
+                                            </p>
+                                        </div>
+                                        <!--begin::Input group-->
+                                        <div>
+                                            <p>Datos del usuario autorizado 1</p>
+                                            <div class='row mb-4'>
+                                                <!--begin::Nombres y apellidos-->
+                                                <div class='col'>
+                                                    <label for='paises' class='form-label'>Nombres y apellidos</label>
+                                                    <div class='fv-row'>
+                                                        <input type='text' name='text_email' autocomplete='off'
+                                                            id='correo_electronico' class='form-control' required />
+                                                    </div>
+                                                </div>
+                                                <!--end::Nombres y apellidos-->
+                                                <!--begin::Cargo en la empresa-->
+                                                <div class='col'>
+                                                    <label for='paises' class='form-label'>
+                                                        Cargo en la empresa
+                                                    </label>
+                                                    <div class='fv-row'>
+                                                        <input type='text' name='text_email' autocomplete='off'
+                                                            id='correo_electronico' class='form-control' required />
+                                                    </div>
+                                                </div>
+                                                <!--end::Cargo en la empresa-->
+                                            </div>
+                                            <div class='row mb-4'>
+                                                <!--begin::Teléfono celular-->
+                                                <div class='col'>
+                                                    <label for='paises' class='form-label'>Teléfono celular</label>
+                                                    <div class='fv-row'>
+                                                        <input type='text' name='text_email' autocomplete='off'
+                                                            id='correo_electronico' class='form-control' required />
+                                                    </div>
+                                                </div>
+                                                <!--end::Teléfono celular-->
+                                                <!--begin::Correo electrónico-->
+                                                <div class='col'>
+                                                    <label for='paises' class='form-label'>
+                                                        Correo electrónico
+                                                    </label>
+                                                    <div class='fv-row'>
+                                                        <input type='text' name='text_email' autocomplete='off'
+                                                            id='correo_electronico' class='form-control' required />
+                                                    </div>
+                                                </div>
+                                                <!--end::Correo electrónico-->
+                                            </div>
+                                        </div>
+                                        <!--end::Input group=-->
+                                        <!--begin::Submit button-->
+                                        <div class='d-flex w-100 justify-content-between mx-auto'>
+                                            <button type='button' id='stepp_4_prev' class='btn btn-primary'>
+                                                <!--begin::Indicator label-->
+                                                <span class='indicator-label'>Back</span>
+                                                <!--end::Indicator label-->
+                                                <!--begin::Indicator progress-->
+                                                <span class='indicator-progress'>Un monmento por
+                                                    favor...
+                                                    <span
+                                                        class='spinner-border spinner-border-sm align-middle ms-2'></span></span>
+                                                <!--end::Indicator progress-->
+                                            </button>
+                                            <button type='button' id='stepp_4' class='btn btn-primary'>
+                                                <!--begin::Indicator label-->
+                                                <span class='indicator-label'>Siguiente</span>
+                                                <!--end::Indicator label-->
+                                                <!--begin::Indicator progress-->
+                                                <span class='indicator-progress'>Un monmento por
+                                                    favor...
+                                                    <span
+                                                        class='spinner-border spinner-border-sm align-middle ms-2'></span></span>
+                                                <!--end::Indicator progress-->
+                                            </button>
+                                        </div>
+                                        <!--end::Submit button-->
+                                    </div>
+                                    <!--end::Step 4-->
+                                    <!--begin::Step 5-->
+                                    <div class="flex-column" data-kt-stepper-element="content">
+                                        <h2 class="w-100 text-center fs-2x mb-12">
+                                            Socios de la empresa
+                                        </h2>
+                                        <!--begin::Input group=-->
+                                        <div class='mb-8'>
+                                            <!--begin::Tipo de empresa-->
+                                            <p class='form-label'>
+                                                ¿Cúantos socios tienen el 25% o más de acciones?
+                                            </p>
+                                            <!--begin::Row-->
+                                            <div class="mb-4 fv-row" data-kt-buttons="true"
+                                                data-kt-buttons-target=".form-check-input">
+                                                <div>
+                                                    <label>
+                                                        <div
+                                                            class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                                                            <input class="form-check-input" type="radio" value="1"
+                                                                name="option2" />
+                                                            <div class="form-check-label">
+                                                                1
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <label>
+                                                        <div
+                                                            class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                                                            <input class="form-check-input" type="radio" value="1"
+                                                                name="option2" id="text_wow" />
+                                                            <div class="form-check-label">
+                                                                2
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <label>
+                                                        <div
+                                                            class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                                                            <input class="form-check-input" type="radio" value="1"
+                                                                name="option2" />
+                                                            <div class="form-check-label">
+                                                                3
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <label>
+                                                        <div
+                                                            class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                                                            <input class="form-check-input" type="radio" value="1"
+                                                                name="option2" />
+                                                            <div class="form-check-label">
+                                                                4
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <label>
+                                                        <div
+                                                            class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                                                            <input class="form-check-input" type="radio" value="1"
+                                                                name="option2" />
+                                                            <div class="form-check-label">
+                                                                Ninguno
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <!--end::Row-->
+                                            <!--end::Tipo de empresa-->
+                                        </div>
+                                        <!--end::Input group=-->
+                                        <!--begin::Submit button-->
+                                        <div class='d-flex w-100 justify-content-between mx-auto'>
+                                            <button type='button' id='stepp_5_prev' class='btn btn-primary'>
+                                                <!--begin::Indicator label-->
+                                                <span class='indicator-label'>Back</span>
+                                                <!--end::Indicator label-->
+                                                <!--begin::Indicator progress-->
+                                                <span class='indicator-progress'>Un monmento por
+                                                    favor...
+                                                    <span
+                                                        class='spinner-border spinner-border-sm align-middle ms-2'></span></span>
+                                                <!--end::Indicator progress-->
+                                            </button>
+                                            <button type='button' id='stepp_5' class='btn btn-primary'>
+                                                <!--begin::Indicator label-->
+                                                <span class='indicator-label'>Siguiente</span>
+                                                <!--end::Indicator label-->
+                                                <!--begin::Indicator progress-->
+                                                <span class='indicator-progress'>Un monmento por
+                                                    favor...
+                                                    <span
+                                                        class='spinner-border spinner-border-sm align-middle ms-2'></span></span>
+                                                <!--end::Indicator progress-->
+                                            </button>
+                                        </div>
+                                        <!--end::Submit button-->
+                                    </div>
+                                    <!--end::Step 5-->
+                                    <!--begin::Step 6-->
+                                    <div class="flex-column" data-kt-stepper-element="content">
+                                        <div class="w-100 text-center mb-12">
+                                            <h2 class="fs-2x">
+                                                Autorización
+                                            </h2>
+                                            <p class="fs-sm text-gray-500">
+                                                El Solicitante autoriza a Monex a abrir una cuenta para operaciones de
+                                                cambio de moneda extranjera y Transferencias Internacionales.
+                                            </p>
+                                        </div>
+                                        <!--begin::Input group=-->
+                                        <div class='row mb-4'>
+                                            <div class="col">
+                                                <!--begin::Nombre y apellidos-->
+                                                <label for='correo_electronico' class='form-label'>
+                                                    Nombre y apellidos
+                                                </label>
+                                                <div class='fv-row'>
+                                                    <input type='text' name='text_email' autocomplete='off'
+                                                        id='correo_electronico' class='form-control' required />
+                                                </div>
+                                                <!--end::Nombre y apellidos-->
+                                            </div>
+                                            <div class="col">
+                                                <!--begin::Titulo/Cargo-->
+                                                <label for='correo_electronico' class='form-label'>
+                                                    Titulo/Cargo
+                                                </label>
+                                                <div class='fv-row'>
+                                                    <input type='text' name='text_email' autocomplete='off'
+                                                        id='correo_electronico' class='form-control' required />
+                                                </div>
+                                                <!--end::Titulo/Cargo-->
+                                            </div>
+                                        </div>
+                                        <!--end::Input group-->
+                                        <!--begin::Input group=-->
+                                        <div class="mb-4">
+                                            <!--begin::Fecha (MM/DD/YYYY)-->
+                                            <label for='correo_electronico' class='form-label'>
+                                                Fecha (MM/DD/YYYY)
+                                            </label>
+                                            <div class="input-group fv-row" id="kt_td_picker_date_only"
+                                                data-td-target-input="nearest" data-td-target-toggle="nearest">
+                                                <input id="kt_td_picker_date_only_input" type="text"
+                                                    class="form-control" data-td-target="#kt_td_picker_date_only" />
+                                                <span class="input-group-text" data-td-target="#kt_td_picker_date_only"
+                                                    data-td-toggle="datetimepicker">
+                                                    <i class="ki-duotone ki-calendar fs-2"><span
+                                                            class="path1"></span><span class="path2"></span></i>
+                                                </span>
+                                            </div>
+                                            <!--end::Fecha (MM/DD/YYYY)-->
+                                        </div>
+                                        <!--end::Input group=-->
+                                        <!--begin::Input group=-->
+                                        <div class='mb-8'>
+                                            <!--begin::Sube tu firma-->
+                                            <label for='correo_electronico' class='form-label'>
+                                                Sube tu firma
+                                            </label>
+                                            <p>
+                                                Si no cuenta con una firma digital la puede crear en el siguiente
+                                                enlace:
+                                            </p>
+                                            <a href="">Crear firma digital</a>
+                                            <p class="fs-sm text-gray-500">
+                                                Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos son
+                                                .pdf, .jpg y .png.
+                                            </p>
+                                            <div class='fv-row mb-4'>
+                                                <!--begin::Dropzone-->
+                                                <div class="dropzone" id="kt_dropzonejs_example_1">
+                                                    <!--begin::Message-->
+                                                    <div
+                                                        class="dz-message needsclick d-flex justify-content-center align-items-center">
+                                                        <i class="ki-duotone ki-file-up fs-3x text-primary"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                        <!--begin::Info-->
+                                                        <div class="ms-4">
+                                                            <h3 class="fs-5 fw-bold text-gray-900">
+                                                                Arrastra o suelta un archivo aquí o has click
+                                                            </h3>
+                                                        </div>
+                                                        <!--end::Info-->
+                                                    </div>
+                                                </div>
+                                                <!--end::Dropzone-->
+                                            </div>
+                                            <p>
+                                                El solicitante certifica que la información establecida en esta
+                                                solicitud
+                                                es correcta y completa y que la persona que firma esta solicitud a
+                                                continuación tiene plena capacidad legal y facultades suficientes para
+                                                comprometer a su representada en los términos del presente contrato, por
+                                                lo tanto confirma que:
+                                            </p>
+                                            <!--end::Sube tu firma-->
+                                        </div>
+                                        <!--end::Input group-->
+                                        <!--begin::Row-->
+                                        <div class="mb-4 fv-row" data-kt-buttons="true"
+                                            data-kt-buttons-target=".form-check-input">
+                                            <div>
+                                                <label>
+                                                    <div
+                                                        class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                                                        <input class="form-check-input" type="radio" value="1"
+                                                            name="option2" />
+                                                        <div class="form-check-label">
+                                                            Ha leído, entendido y acepta la Política de privacidad y el
+                                                            Acuerdo de usuario de Monex USA.
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <!--end::Row-->
+                                        <!--begin::Submit button-->
+                                        <div class='d-flex w-100 justify-content-between mx-auto'>
+                                            <button type='button' id='stepp_6_prev' class='btn btn-primary'>
+                                                <!--begin::Indicator label-->
+                                                <span class='indicator-label'>Back</span>
+                                                <!--end::Indicator label-->
+                                                <!--begin::Indicator progress-->
+                                                <span class='indicator-progress'>Un monmento por
+                                                    favor...
+                                                    <span
+                                                        class='spinner-border spinner-border-sm align-middle ms-2'></span></span>
+                                                <!--end::Indicator progress-->
+                                            </button>
+                                            <button type='button' id='stepp_6' class='btn btn-primary'>
+                                                <!--begin::Indicator label-->
+                                                <span class='indicator-label'>Enviar</span>
+                                                <!--end::Indicator label-->
+                                                <!--begin::Indicator progress-->
+                                                <span class='indicator-progress'>Un monmento por
+                                                    favor...
+                                                    <span
+                                                        class='spinner-border spinner-border-sm align-middle ms-2'></span></span>
+                                                <!--end::Indicator progress-->
+                                            </button>
+                                        </div>
+                                        <!--end::Submit button-->
+                                    </div>
+                                    <!--end::Step 6-->
+                                </form>
+                                <!--end::Form-->
+                            </div>
+                        </div>
+                        <!--end::Wrapper-->
+                    </div>
+                    <!--end::Content-->
+                </div>
+                <!--end::Wrapper-->
+            </div>
+            <!--end::Body-->
+        </div>
+    </div>
+    <!--end::Authentication - Sign-up-->
+    </div>
+    <!--end::Root-->
+    <!--begin::Javascript-->
+    <script>var hostUrl = "assets/";</script>
+    <!--begin::Global Javascript Bundle(mandatory for all pages)-->
+    <script src='/assets/plugins/global/plugins.bundle.js'></script>
+    <script src='/assets/js/scripts.bundle.js'></script>
+    <!--end::Global Javascript Bundle-->
+    <!--begin::Custom Javascript(used for this page only)-->
+    <script>
+        Inputmask({ "mask": "(999) 999-9999" }).mask("#Telefono");
+    </script>
+    <script src='/assets/media/form/js/country.js'></script>
+    {{!--
+    <script src='/assets/media/form/js/validation.js'></script> --}}
+    <script src='/assets/media/form/js/date.js'></script>
+    <script src='/assets/media/form/js/dropzone.js'></script>
+    <script src='/assets/media/form/js/stepper.js'></script>
+    <!--end::Custom Javascript-->
+    <!--end::Javascript-->
+</body>
+<!--end::Body-->
+
+</html>
