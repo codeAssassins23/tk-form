@@ -1,44 +1,40 @@
-/* eslint-disable prettier/prettier */
 const form = document.getElementById('kt_sign_up_form');
 
 // Init validartion 1
-let validatorStep1 = FormValidation.formValidation(form, {
+let validatorStep2 = FormValidation.formValidation(form, {
   fields: {
-    text_email: {
+    purposeOfTransactions: {
       validators: {
-        emailAddress: {
-          message: 'El contenido no es válidos',
-        },
         notEmpty: {
-          message: 'Email es requerido',
+          message: 'Este campo es obligatorio',
         },
       },
     },
-    text_name: {
+    bankCodeNumber: {
       validators: {
         notEmpty: {
-          message: 'Nombrey apellido es requerido',
+          message: 'Este campo es obligatorio',
         },
       },
     },
-    text_enterprice: {
+    annualVolume: {
       validators: {
         notEmpty: {
-          message: 'Empresa es requerida',
+          message: 'Este campo es obligatorio',
         },
       },
     },
-    select_country: {
+    estimatedOfTransaction: {
       validators: {
         notEmpty: {
-          message: 'País es requerido',
+          message: 'Este campo es obligatorio',
         },
       },
     },
-    text_phone: {
+    currenciesNeeded: {
       validators: {
         notEmpty: {
-          message: 'Telefono es requerido',
+          message: 'Este campo es obligatorio',
         },
       },
     },
@@ -53,15 +49,82 @@ let validatorStep1 = FormValidation.formValidation(form, {
   },
 });
 
-const submitButton = document.getElementById('kt_sign_up_submit');
-
-submitButton.addEventListener('click', async function () {});
-
 // Function to validate Step 1
-const validateStep1 = async () => {
+const validateStep2 = async () => {
   return new Promise((resolve) => {
-    validatorStep1.validate().then((status) => {
+    validatorStep2.validate().then((status) => {
       resolve(status === 'Valid');
     });
   });
 };
+
+// Stepper lement
+var element = document.querySelector('#kt_stepper_example_basic');
+
+// Initialize Stepper
+var stepper = new KTStepper(element);
+
+//step1
+let stepp_1 = document.getElementById('stepp_1');
+
+stepp_1.addEventListener('click', function () {
+  console.log('Siguiente paso');
+  stepper.goNext(); // go next step
+});
+
+//step 2
+let stepp_2_prev = document.getElementById('stepp_2_prev');
+
+stepp_2_prev.addEventListener('click', function () {
+  stepper.goPrevious(); // go next step
+});
+
+let stepp_2 = document.getElementById('stepp_2');
+console.log(stepp_2);
+stepp_2.addEventListener('click', async function () {
+  let isValidStep2 = await validateStep2();
+  console.log(isValidStep2);
+  if (isValidStep2) {
+    stepper.goNext();
+  }
+});
+
+
+
+
+
+let stepp_4_prev = document.getElementById('stepp_4_prev');
+
+stepp_4_prev.addEventListener('click', function () {
+  stepper.goPrevious(); // go next step
+});
+
+let stepp_4 = document.getElementById('stepp_4');
+
+stepp_4.addEventListener('click', function () {
+  stepper.goNext(); // go next step
+});
+
+let stepp_5_prev = document.getElementById('stepp_5_prev');
+
+stepp_5_prev.addEventListener('click', function () {
+  stepper.goPrevious(); // go next step
+});
+
+let stepp_5 = document.getElementById('stepp_5');
+
+stepp_5.addEventListener('click', function () {
+  stepper.goNext(); // go next step
+});
+
+let stepp_6_prev = document.getElementById('stepp_6_prev');
+
+stepp_6_prev.addEventListener('click', function () {
+  stepper.goPrevious(); // go next step
+});
+
+let stepp_6 = document.getElementById('stepp_6');
+
+stepp_6.addEventListener('click', function () {
+  stepper.goNext(); // go next step
+});

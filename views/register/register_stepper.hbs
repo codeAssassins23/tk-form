@@ -679,12 +679,12 @@
                                         <!--begin::Input group=-->
                                         <div class='mb-4'>
                                             <!--begin::Objetivo de las transacciones-->
-                                            <label for='correo_electronico' class='form-label'>
+                                            <label for='purposeOfTransactions' class='form-label'>
                                                 Objetivo de las transacciones (especificar)
                                             </label>
                                             <div class='fv-row'>
-                                                <input type='text' name='text_email' autocomplete='off'
-                                                    id='correo_electronico' class='form-control' required />
+                                                <input type='text' name='purposeOfTransactions' autocomplete='off'
+                                                    id='purposeOfTransactions' class='form-control' required />
                                             </div>
                                             <!--end::Objetivo de las transacciones-->
                                         </div>
@@ -693,21 +693,21 @@
                                         <div class='row mb-4'>
                                             <!--begin::Número de CLABE bancaria-->
                                             <div class='col'>
-                                                <label for='paises' class='form-label'>Número de CLABE bancaria</label>
+                                                <label for='bankCodeNumber' class='form-label'>Número de CLABE bancaria</label>
                                                 <div class='fv-row'>
-                                                    <input type='text' name='text_email' autocomplete='off'
-                                                        id='correo_electronico' class='form-control' required />
+                                                    <input type='text' name='bankCodeNumber' autocomplete='off'
+                                                        id='bankCodeNumber' class='form-control' required />
                                                 </div>
                                             </div>
                                             <!--end::Número de CLABE bancaria-->
                                             <!--begin::Monto estimado por transacción-->
                                             <div class='col'>
-                                                <label for='paises' class='form-label'>
+                                                <label for='annualVolume' class='form-label'>
                                                     Monto estimado por transacción
                                                 </label>
                                                 <div class='fv-row'>
-                                                    <input type='text' name='text_email' autocomplete='off'
-                                                        id='correo_electronico' class='form-control' required />
+                                                    <input type='number' name='annualVolume' autocomplete='off'
+                                                        id='annualVolume' class='form-control' required />
                                                 </div>
                                             </div>
                                             <!--end::Monto estimado por transacción-->
@@ -716,12 +716,12 @@
                                         <!--begin::Input group=-->
                                         <div class='mb-4'>
                                             <!--begin::Número estimado de transacciones al mes-->
-                                            <label for='correo_electronico' class='form-label'>
+                                            <label for='estimatedOfTransaction' class='form-label'>
                                                 Número estimado de transacciones al mes
                                             </label>
                                             <div class='fv-row'>
-                                                <input type='text' name='text_email' autocomplete='off'
-                                                    id='correo_electronico' class='form-control' required />
+                                                <input type='number' name='estimatedOfTransaction' autocomplete='off'
+                                                    id='estimatedOfTransaction' class='form-control' required />
                                             </div>
                                             <!--end::Número estimado de transacciones al mes-->
                                         </div>
@@ -743,7 +743,7 @@
                                                         <div
                                                             class="form-check form-check-custom form-check-solid form-check-sm my-2">
                                                             <input class="form-check-input" type="checkbox" value="1"
-                                                                name="option2" />
+                                                                name="currenciesNeeded" />
                                                             <div class="form-check-label">
                                                                 Euro
                                                             </div>
@@ -755,7 +755,7 @@
                                                         <div
                                                             class="form-check form-check-custom form-check-solid form-check-sm my-2">
                                                             <input class="form-check-input" type="checkbox" value="1"
-                                                                name="option2" id="text_wow" />
+                                                                name="currenciesNeeded" id="text_wow" />
                                                             <div class="form-check-label">
                                                                 Libra esterlina
                                                             </div>
@@ -767,7 +767,7 @@
                                                         <div
                                                             class="form-check form-check-custom form-check-solid form-check-sm my-2">
                                                             <input class="form-check-input" type="checkbox" value="1"
-                                                                name="option2" />
+                                                                name="currenciesNeeded" />
                                                             <div class="form-check-label">
                                                                 Yen japones
                                                             </div>
@@ -779,7 +779,7 @@
                                                         <div
                                                             class="form-check form-check-custom form-check-solid form-check-sm my-2">
                                                             <input class="form-check-input" type="checkbox" value="1"
-                                                                name="option2" />
+                                                                name="currenciesNeeded" />
                                                             <div class="form-check-label">
                                                                 Dólar canadiense
                                                             </div>
@@ -791,7 +791,7 @@
                                                         <div
                                                             class="form-check form-check-custom form-check-solid form-check-sm my-2">
                                                             <input class="form-check-input" type="checkbox" value="1"
-                                                                name="option2" />
+                                                                name="currenciesNeeded" />
                                                             <div class="form-check-label">
                                                                 Peso mexicano
                                                             </div>
@@ -803,7 +803,7 @@
                                                         <div
                                                             class="form-check form-check-custom form-check-solid form-check-sm my-2">
                                                             <input class="form-check-input" type="checkbox" value="1"
-                                                                name="option2" />
+                                                                name="currenciesNeeded" />
                                                             <div class="form-check-label">
                                                                 Dólar US
                                                             </div>
@@ -815,7 +815,7 @@
                                                         <div
                                                             class="form-check form-check-custom form-check-solid form-check-sm my-2">
                                                             <input class="form-check-input" type="checkbox" value="1"
-                                                                name="option2" />
+                                                                name="currenciesNeeded" />
                                                             <div class="form-check-label">
                                                                 Otro
                                                             </div>
@@ -909,7 +909,7 @@
                                             </p>
                                             <div class='fv-row'>
                                                 <!--begin::Dropzone-->
-                                                <div class="dropzone" id="kt_dropzonejs_example_1">
+                                                <div class="dropzone" id="actaConstitutiva">
                                                     <!--begin::Message-->
                                                     <div
                                                         class="dz-message needsclick d-flex justify-content-center align-items-center">
@@ -923,6 +923,7 @@
                                                         </div>
                                                         <!--end::Info-->
                                                     </div>
+                                                    <input type="hidden" id="archivosSubidos" name="archivosSubidos">
                                                 </div>
                                                 <!--end::Dropzone-->
                                             </div>
@@ -1421,12 +1422,14 @@
     <script>
         Inputmask({ "mask": "(999) 999-9999" }).mask("#Telefono");
     </script>
+    <script src='/assets/media/form/js/validation-form-stepper.js'></script>
+    <script src='/assets/media/form/js/validation-form-step-3.js'></script>
     <script src='/assets/media/form/js/country.js'></script>
     {{!--
     <script src='/assets/media/form/js/validation.js'></script> --}}
     <script src='/assets/media/form/js/date.js'></script>
     <script src='/assets/media/form/js/dropzone.js'></script>
-    <script src='/assets/media/form/js/stepper.js'></script>
+    {{!-- <script src='/assets/media/form/js/stepper.js'></script> --}}
     <!--end::Custom Javascript-->
     <!--end::Javascript-->
 </body>

@@ -14,18 +14,6 @@ stepp_1.addEventListener('click', function () {
   stepper.goNext(); // go next step
 });
 
-let stepp_2_prev = document.getElementById('stepp_2_prev');
-
-stepp_2_prev.addEventListener('click', function () {
-  stepper.goPrevious(); // go next step
-});
-
-let stepp_2 = document.getElementById('stepp_2');
-
-stepp_2.addEventListener('click', function () {
-  stepper.goNext(); // go next step
-});
-
 let stepp_3_prev = document.getElementById('stepp_3_prev');
 
 stepp_3_prev.addEventListener('click', function () {
@@ -73,9 +61,3 @@ let stepp_6 = document.getElementById('stepp_6');
 stepp_6.addEventListener('click', function () {
   stepper.goNext(); // go next step
 });
-
-// Handle previous step
-
-stepper.goPrevious(); // go previous step
-
-// let progressbar = document.getElementById('progressbar');
