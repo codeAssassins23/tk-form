@@ -11,7 +11,8 @@ import { RegisterService } from './register.service';
 import { Public } from 'src/auth/decorators/public.decorator';
 import { Roles } from 'src/auth/decorators/public.decorator';
 import { RolesGuard } from 'src/auth/authRole.guard';
-import { registerDto } from './dto/create-register.dto';
+import { leadsDto } from './dto/create-leads.dto';
+import { create } from 'domain';
 @Controller('/')
 @UseGuards(RolesGuard)
 export class RegisterController {
@@ -31,6 +32,7 @@ export class RegisterController {
     }
   }
 
+  //Para la tabla
   @Public()
   @Get('/AllLeads')
   async getLeads(@Req() request: Request) {
@@ -44,18 +46,6 @@ export class RegisterController {
     } catch (error) {
       console.log(error);
     }
-  }
-
-  //recoger datos del front (post)
-  @Public()
-  @Post('/registerStepOne')
-  async registerStepOne(@Body() createRegisterDto: registerDto) {
-    console.log('hola desde el controlador registerStepOne');
-    console.log(createRegisterDto);
-
-    const register =
-      await this.registerService.createRegisterStepOne(createRegisterDto);
-    return register;
   }
 
   @Public()
@@ -92,5 +82,29 @@ export class RegisterController {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  //recoger datos del front (post) step 1
+  @Public()
+  @Post('/registerStepOne')
+  async registerStepOne(@Body() createListDto: leadsDto) {
+    console.log('hola desde el controlador registerStepOne');
+    console.log(createListDto);
+
+    const register =
+      await this.registerService.createRegisterStepOne(createListDto);
+    return register;
+  }
+
+  //recoger todo los datos del form (post)
+  @Public()
+  @Post('/registerAll')
+  async registerAll(@Body() createRegisterDto: any) {
+    console.log('hola desde el controlador registerAll');
+    console.log(createRegisterDto);
+    const register =
+      await this.registerService.createRegisterAll(createRegisterDto);
+
+    return register;
   }
 }

@@ -3,7 +3,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 @Entity()
 export class Leads {
   @PrimaryGeneratedColumn()
-  idRegister: number;
+  idLead: number;
 
   @Column({ type: 'varchar', length: 40 })
   fullName: string;
@@ -20,6 +20,6 @@ export class Leads {
   @Column({ type: 'varchar', length: 15 })
   country: string;
 
-  @Column({ type: 'varchar', select: true })
+  @Column({ type: 'varchar', select: false })
   status: string;
 }
