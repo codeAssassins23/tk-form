@@ -55,40 +55,7 @@ let validatorStep1 = FormValidation.formValidation(form, {
 
 const submitButton = document.getElementById('kt_sign_up_submit');
 
-submitButton.addEventListener('click', async function (e) {
-  // Prevent default button action
-  e.preventDefault();
-  // Validate the form based on the current step
-  let isValidStep1 = await validateStep1();
-
-  let correo_electronico = document.getElementById('correo_electronico').value;
-  let nombre_apellidos = document.getElementById('nombre_apellidos').value;
-  let empresa = document.getElementById('empresa').value;
-  let paises = document.getElementById('paises').value;
-  let telefono = document.getElementById('telefono').value;
-
-  let res = {
-    fullName: nombre_apellidos,
-    email: correo_electronico,
-    corporate: empresa,
-    phone: telefono,
-    country: paises,
-  };
-
-  if (isValidStep1) {
-    const response = await axios({
-      method: 'post',
-      url: '/registerStepOne',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      data: res,
-    });
-
-    console.log(response);
-    window.location.href = '/register/steps';
-  }
-});
+submitButton.addEventListener('click', async function () {});
 
 // Function to validate Step 1
 const validateStep1 = async () => {
