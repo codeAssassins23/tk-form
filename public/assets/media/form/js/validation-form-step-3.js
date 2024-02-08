@@ -1,7 +1,9 @@
+let maxFiles = 0;
+
 var myDropzone = new Dropzone('#actaConstitutiva', {
-    url: 'http://localhost:3200/admin/getHoldingAccounts', // Set the url for your upload script location
+    url: "http://localhost:3200/admin/getHoldingAccounts", // Set the url for your upload script location
     paramName: 'file', // The name that will be used to transfer the file
-    maxFiles: 10,
+    maxFiles: 4,
     maxFilesize: 7, // MB
     addRemoveLinks: true,
     accept: function (file, done) {
@@ -13,7 +15,6 @@ var myDropzone = new Dropzone('#actaConstitutiva', {
     },
   });
   
-
 // Init validartion 1
 let validatorStep3 = FormValidation.formValidation(form, {
   fields: {
@@ -40,28 +41,38 @@ const validateStep3 = async () => {
   return new Promise((resolve) => {
     validatorStep3.validate().then((status) => {
       // Verificar si hay archivos subidos en el Dropzone
-      var archivosSubidos = myDropzone.getQueuedFiles().length > 0;
-        console.log(archivosSubidos);
+      var archivosSubidos = document.getElementById("archivosSubidos").value;
       // Marcar el campo oculto según si hay archivos subidos o no
-      if (archivosSubidos) {
+      if (archivosSubidos !== "") {
         document.getElementById("archivosSubidos").value = "true";
       } else {
         document.getElementById("archivosSubidos").value = ""; // Vaciar el campo si no hay archivos subidos
       }
-
       // Resolver con el estado de validación del formulario
-      resolve(status === 'Valid' && archivosSubidos);
+      resolve(status === 'Valid' && archivosSubidos === "true");
     });
   });
 };
 
 // Agregar validación de campo Dropzone
 myDropzone.on("addedfile", function() {
+    maxFiles = maxFiles + 1;
     // Marcar el campo oculto como válido cuando se agregue un archivo al Dropzone
     document.getElementById("archivosSubidos").value = "true";
 });
 
-    //step 3
+// Evento cuando se elimina un archivo del Dropzone
+myDropzone.on("removedfile", function() {
+    maxFiles = maxFiles - 1;
+    // Actualizar el valor del campo oculto según si hay archivos subidos o no
+    if (maxFiles > 0) {
+        document.getElementById("archivosSubidos").value = "true";
+    } else {
+        document.getElementById("archivosSubidos").value = ""; // Vaciar el campo si no hay archivos subidos
+    }
+});
+
+//step 3
 let stepp_3_prev = document.getElementById('stepp_3_prev');
 
 stepp_3_prev.addEventListener('click', function () {
