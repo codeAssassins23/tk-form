@@ -2,7 +2,7 @@
 let maxFiles = 0;
 
 var myDropzone = new Dropzone('#actaConstitutiva', {
-  /* url: 'http://localhost:3200/admin/getHoldingAccounts', */ // Set the url for your upload script location
+  url: 'http://localhost:3200/admin/getHoldingAccounts', // Set the url for your upload script location
   autoProcessQueue: false,
   paramName: 'file', // The name that will be used to transfer the file
   maxFiles: 4,
