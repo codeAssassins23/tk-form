@@ -51,6 +51,9 @@ export class RegisterService {
     register.phoneInformation = createRegisterDto.phoneInformation;
     register.website = createRegisterDto.website;
     register.natureOfBusiness = createRegisterDto.natureOfBusiness;
+    register.TaxIdentificationNumber =
+      createRegisterDto.TaxIdentificationNumber;
+    register.industry = createRegisterDto.industry;
     register.DateOfIncorporation = createRegisterDto.DateOfIncorporation;
     register.typeOfBusiness = createRegisterDto.typeOfBusiness;
     register.isTheApplicant = createRegisterDto.isTheApplicant;

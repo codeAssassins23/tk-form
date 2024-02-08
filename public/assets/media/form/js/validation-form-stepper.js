@@ -1,146 +1,130 @@
-/* eslint-disable prettier/prettier */
 const form = document.getElementById('kt_sign_up_form');
 
 // Init validartion 1
-let validatorStep1 = FormValidation.formValidation(form, {
+let validatorStep2 = FormValidation.formValidation(form, {
   fields: {
-    corporateName: {
+    text_email: {
       validators: {
         notEmpty: {
-          message: 'Email es requerido',
+          message: 'Este campo es obligatorio',
         },
       },
     },
-    tradeNameOfDBA: {
+    text_name: {
       validators: {
         notEmpty: {
-          message: 'Nombrey apellido es requerido',
+          message: 'Este campo es obligatorio',
         },
       },
     },
-    state: {
+    text_enterprice: {
       validators: {
         notEmpty: {
-          message: 'Empresa es requerida',
+          message: 'Este campo es obligatorio',
         },
       },
     },
-    city: {
+    select_country: {
       validators: {
         notEmpty: {
-          message: 'País es requerido',
+          message: 'Este campo es obligatorio',
         },
       },
     },
-    postalCode: {
-      validators: {
-        notEmpty: {
-          message: 'Telefono es requerido',
-        },
-      },
-    },
-    address: {
-      validators: {
-        notEmpty: {
-          message: 'Empresa es requerida',
-        },
-      },
-    },
-    emailInfomation: {
-      validators: {
-        notEmpty: {
-          message: 'País es requerido',
-        },
-        emailAddress: {
-          message: 'El contenido no es válidos',
-        },
-      },
-    },
-    phoneInformation: {
+    text_phone: {
       validators: {
         notEmpty: {
           message: 'Telefono es requerido',
         },
       },
     },
-    website: {
-      validators: {
-        notEmpty: {
-          message: 'Empresa es requerida',
-        },
-      },
-    },
-    TaxIdentificationNumber: {
-      validators: {
-        notEmpty: {
-          message: 'País es requerido',
-        },
-      },
-    },
-    industry: {
-      validators: {
-        notEmpty: {
-          message: 'Telefono es requerido',
-        },
-      },
-    },
-    natureOfBusiness: {
-      validators: {
-        notEmpty: {
-          message: 'Telefono es requerido',
-        },
-      },
-    },
-    DateOfIncorporation: {
-      validators: {
-        notEmpty: {
-          message: 'Empresa es requerida',
-        },
-      },
-    },
-    typeOfBusiness: {
-      validators: {
-        notEmpty: {
-          message: 'País es requerido',
-        },
-      },
-      isTheApplicant: {
-        validators: {
-          notEmpty: {
-            message: 'Telefono es requerido',
-          },
-        },
-      },
-    },
-    plugins: {
-      trigger: new FormValidation.plugins.Trigger(),
-      bootstrap: new FormValidation.plugins.Bootstrap5({
-        rowSelector: '.fv-row',
-        eleInvalidClass: '',
-        eleValidClass: '',
-      }),
-    },
+  },
+  plugins: {
+    trigger: new FormValidation.plugins.Trigger(),
+    bootstrap: new FormValidation.plugins.Bootstrap5({
+      rowSelector: '.fv-row',
+      eleInvalidClass: '',
+      eleValidClass: '',
+    }),
   },
 });
 
-const submitButton = document.getElementsByClassName('stepp_1');
+const submitButton = document.getElementById('kt_sign_up_submit');
 
-submitButton.addEventListener('click', async function (e) {
-  // Prevent default button action
-  e.preventDefault();
-  // Validate the form based on the current step
-  let isValidStep1 = await validateStep1();
-
-  if (isValidStep1) {
-    console.log('Work');
-  }
-});
+submitButton.addEventListener('click', async function () {});
 
 // Function to validate Step 1
-const validateStep1 = async () => {
+const validateStep2 = async () => {
   return new Promise((resolve) => {
-    validatorStep1.validate().then((status) => {
+    validatorStep2.validate().then((status) => {
       resolve(status === 'Valid');
     });
   });
 };
+
+// Stepper lement
+var element = document.querySelector('#kt_stepper_example_basic');
+
+// Initialize Stepper
+var stepper = new KTStepper(element);
+
+//step1
+let stepp_1 = document.getElementById('stepp_1');
+
+stepp_1.addEventListener('click', function () {
+  console.log('Siguiente paso');
+  stepper.goNext(); // go next step
+});
+
+//step 2
+let stepp_2_prev = document.getElementById('stepp_2_prev');
+
+stepp_2_prev.addEventListener('click', function () {
+  stepper.goPrevious(); // go next step
+});
+
+let stepp_2 = document.getElementById('stepp_2');
+console.log(stepp_2);
+stepp_2.addEventListener('click', async function () {
+  let isValidStep2 = await validateStep2();
+  console.log(isValidStep2);
+  if (isValidStep2) {
+    stepper.goNext();
+  }
+});
+
+let stepp_4_prev = document.getElementById('stepp_4_prev');
+
+stepp_4_prev.addEventListener('click', function () {
+  stepper.goPrevious(); // go next step
+});
+
+let stepp_4 = document.getElementById('stepp_4');
+
+stepp_4.addEventListener('click', function () {
+  stepper.goNext(); // go next step
+});
+
+let stepp_5_prev = document.getElementById('stepp_5_prev');
+
+stepp_5_prev.addEventListener('click', function () {
+  stepper.goPrevious(); // go next step
+});
+
+let stepp_5 = document.getElementById('stepp_5');
+
+stepp_5.addEventListener('click', function () {
+  stepper.goNext(); // go next step
+});
+
+let stepp_6_prev = document.getElementById('stepp_6_prev');
+
+stepp_6_prev.addEventListener('click', function () {
+  stepper.goPrevious(); // go next step
+});
+
+let stepp_6 = document.getElementById('stepp_6');
+
+stepp_6.addEventListener('click', function () {
+  stepper.goNext(); // go next step
+});

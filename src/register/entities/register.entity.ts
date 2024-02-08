@@ -49,6 +49,12 @@ export class Register {
   @Column({ type: 'varchar', length: 100 })
   website: string;
 
+  @Column({ type: 'varchar', length: 30 })
+  TaxIdentificationNumber: string;
+
+  @Column({ type: 'varchar', length: 20 })
+  industry: string;
+
   @Column({ type: 'varchar', length: 60 })
   natureOfBusiness: string;
 
