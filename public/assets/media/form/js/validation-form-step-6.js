@@ -1,7 +1,6 @@
 /* eslint-disable prettier/prettier */
 var maxFileDigitalSignature = 0;
 
-
 var dropzoneDigitalSignature = new Dropzone('#dropzoneDigitalSignature', {
   url: 'http://localhost:3200/admin/getHoldingAccounts', // Set the url for your upload script location
   paramName: 'file', // The name that will be used to transfer the file
@@ -34,14 +33,14 @@ let validatorStep6 = FormValidation.formValidation(form, {
         },
       },
     },
-    dateAutorization:{
+    dateAutorization: {
       validators: {
         notEmpty: {
           message: 'Este campo es obligatorio',
         },
       },
     },
-    digitalSignature:{
+    digitalSignature: {
       validators: {
         notEmpty: {
           message: 'Este campo es obligatorio',
@@ -105,7 +104,7 @@ stepp_6.addEventListener('click', function () {
   let isValidStep6 = validateStep6();
   isValidStep6.then((value) => {
     if (value) {
-      console.log("siguió al siguiente paso, osea enviar el formulario")
+      console.log('siguió al siguiente paso, osea enviar el formulario');
       stepper.goNext(); // go next step
     }
   });

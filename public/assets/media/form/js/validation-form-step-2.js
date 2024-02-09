@@ -1,8 +1,5 @@
 /* eslint-disable prettier/prettier */
 
-
-const form = document.getElementById('kt_sign_up_form');
-
 // Init validartion 1
 let validatorStep2 = FormValidation.formValidation(form, {
   fields: {
@@ -60,7 +57,6 @@ const validateStep2 = async () => {
     });
   });
 };
-
 
 //step 2
 let stepp_2_prev = document.getElementById('stepp_2_prev');
