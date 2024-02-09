@@ -9,15 +9,30 @@ var dropzoneActaConstitutiva = new Dropzone('#dropzoneActaConstitutiva', {
   url: 'http://localhost:3200/uploadFilesOne', // Set the url for your upload script location
   paramName: 'file', // The name that will be used to transfer the file
   maxFileActaConstitutiva: 4,
-  maxFilesize: 7, // MB
+  maxFilesize: 20, // MB
+  maxThumbnailFilesize: 20, // MB
   addRemoveLinks: true,
+  acceptedFiles: 'application/pdf',
   accept: function (file, done) {
-    if (file.name == 'wow.jpg') {
-      done("Naha, you don't.");
+    // Validar si el archivo es PDF
+    if (file.type !== 'application/pdf') {
+      done("Solo se permiten archivos PDF.");
     } else {
-      done();
+      // Validar si el archivo supera el tamaño máximo
+      if (file.size > (20 * 1024 * 1024)) { // Convertir MB a bytes (1 MB = 1024 * 1024 bytes)
+        done("El tamaño del archivo excede el límite de 20 MB.");
+      } else {
+        done(); // Archivo válido
+      }
     }
   },
+  init: function() {
+    this.on("error", function(file, message) {
+      // Manejar errores de validación
+      alert(message);
+      this.removeFile(file); // Eliminar el archivo que no cumple con las validaciones
+    });
+  }
 });
 
 var dropzoneCedulaFiscal = new Dropzone('#dropzoneCedulaFiscal', {
