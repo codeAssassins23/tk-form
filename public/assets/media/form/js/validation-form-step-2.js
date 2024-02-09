@@ -27,17 +27,17 @@ let validatorStep2 = FormValidation.formValidation(form, {
         },
       },
     },
-    select_country: {
+    estimatedOfTransaction: {
       validators: {
         notEmpty: {
           message: 'Este campo es obligatorio',
         },
       },
     },
-    text_phone: {
+    currenciesNeeded: {
       validators: {
         notEmpty: {
-          message: 'Telefono es requerido',
+          message: 'Este campo es obligatorio',
         },
       },
     },
@@ -72,10 +72,9 @@ stepp_2_prev.addEventListener('click', function () {
 let stepp_2 = document.getElementById('stepp_2');
 console.log(stepp_2);
 stepp_2.addEventListener('click', async function () {
-  /* let isValidStep2 = await validateStep2();
+  let isValidStep2 = await validateStep2();
   console.log(isValidStep2);
   if (isValidStep2) {
     stepper.goNext();
-  } */
-  stepper.goNext();
+  }
 });

@@ -882,7 +882,7 @@
                                             </p>
                                             <div class='fv-row'>
                                                 <!--begin::Dropzone-->
-                                                <div class="dropzone" id="kt_dropzonejs_example_1">
+                                                <div class="dropzone" id="dropzoneActaConstitutiva">
                                                     <!--begin::Message-->
                                                     <div
                                                         class="dz-message needsclick d-flex justify-content-center align-items-center">
@@ -896,6 +896,7 @@
                                                         </div>
                                                         <!--end::Info-->
                                                     </div>
+                                                    <input type="hidden" id="actaConstitutiva" name="actaConstitutiva">
                                                 </div>
                                                 <!--end::Dropzone-->
                                             </div>
@@ -914,7 +915,7 @@
                                             </p>
                                             <div class='fv-row'>
                                                 <!--begin::Dropzone-->
-                                                <div class="dropzone" id="actaConstitutiva">
+                                                <div class="dropzone" id="dropzoneCedulaFiscal">
                                                     <!--begin::Message-->
                                                     <div
                                                         class="dz-message needsclick d-flex justify-content-center align-items-center">
@@ -928,7 +929,7 @@
                                                         </div>
                                                         <!--end::Info-->
                                                     </div>
-                                                    <input type="hidden" id="archivosSubidos" name="archivosSubidos">
+                                                    <input type="hidden" id="cedulaFiscal" name="cedulaFiscal">
                                                 </div>
                                                 <!--end::Dropzone-->
                                             </div>
@@ -947,7 +948,7 @@
                                             </p>
                                             <div class='fv-row'>
                                                 <!--begin::Dropzone-->
-                                                <div class="dropzone" id="kt_dropzonejs_example_1">
+                                                <div class="dropzone" id="dropzoneActaPoderes">
                                                     <!--begin::Message-->
                                                     <div
                                                         class="dz-message needsclick d-flex justify-content-center align-items-center">
@@ -961,6 +962,7 @@
                                                         </div>
                                                         <!--end::Info-->
                                                     </div>
+                                                    <input type="hidden" id="actaPoderes" name="actaPoderes">
                                                 </div>
                                                 <!--end::Dropzone-->
                                             </div>
@@ -979,7 +981,7 @@
                                             </p>
                                             <div class='fv-row'>
                                                 <!--begin::Dropzone-->
-                                                <div class="dropzone" id="kt_dropzonejs_example_1">
+                                                <div class="dropzone" id="dropzoneIdentifiTodosSocios">
                                                     <!--begin::Message-->
                                                     <div
                                                         class="dz-message needsclick d-flex justify-content-center align-items-center">
@@ -993,6 +995,7 @@
                                                         </div>
                                                         <!--end::Info-->
                                                     </div>
+                                                    <input type="hidden" id="identificacionTodosSocios" name="identificacionTodosSocios">
                                                 </div>
                                                 <!--end::Dropzone-->
                                             </div>
@@ -1011,7 +1014,7 @@
                                             </p>
                                             <div class='fv-row'>
                                                 <!--begin::Dropzone-->
-                                                <div class="dropzone" id="kt_dropzonejs_example_1">
+                                                <div class="dropzone" id="dropzoneComprobanteDomicilio">
                                                     <!--begin::Message-->
                                                     <div
                                                         class="dz-message needsclick d-flex justify-content-center align-items-center">
@@ -1025,6 +1028,8 @@
                                                         </div>
                                                         <!--end::Info-->
                                                     </div>
+                                                    <input type="hidden" id="comprobanteDomicilio" name="comprobanteDomicilio">
+
                                                 </div>
                                                 <!--end::Dropzone-->
                                             </div>
@@ -1269,23 +1274,23 @@
                                         <div class='row mb-4'>
                                             <div class="col">
                                                 <!--begin::Nombre y apellidos-->
-                                                <label for='correo_electronico' class='form-label'>
+                                                <label for='fullNameAutorization' class='form-label'>
                                                     Nombre y apellidos
                                                 </label>
                                                 <div class='fv-row'>
-                                                    <input type='text' name='text_email' autocomplete='off'
-                                                        id='correo_electronico' class='form-control' required />
+                                                    <input type='text' name='fullNameAutorization' autocomplete='off'
+                                                        id='fullNameAutorization' class='form-control' required />
                                                 </div>
                                                 <!--end::Nombre y apellidos-->
                                             </div>
                                             <div class="col">
                                                 <!--begin::Titulo/Cargo-->
-                                                <label for='correo_electronico' class='form-label'>
+                                                <label for='titlePositionAutorization' class='form-label'>
                                                     Titulo/Cargo
                                                 </label>
                                                 <div class='fv-row'>
-                                                    <input type='text' name='text_email' autocomplete='off'
-                                                        id='correo_electronico' class='form-control' required />
+                                                    <input type='text' name='titlePositionAutorization' autocomplete='off'
+                                                        id='titlePositionAutorization' class='form-control' required />
                                                 </div>
                                                 <!--end::Titulo/Cargo-->
                                             </div>
@@ -1294,12 +1299,12 @@
                                         <!--begin::Input group=-->
                                         <div class="mb-4">
                                             <!--begin::Fecha (MM/DD/YYYY)-->
-                                            <label for='correo_electronico' class='form-label'>
+                                            <label for='dateAutorization' class='form-label'>
                                                 Fecha (MM/DD/YYYY)
                                             </label>
                                             <div class="input-group fv-row" id="kt_td_picker_date_only"
                                                 data-td-target-input="nearest" data-td-target-toggle="nearest">
-                                                <input id="kt_td_picker_date_only_input" type="text"
+                                                <input id="dateAutorization" name="dateAutorization" type="text"
                                                     class="form-control" data-td-target="#kt_td_picker_date_only" />
                                                 <span class="input-group-text" data-td-target="#kt_td_picker_date_only"
                                                     data-td-toggle="datetimepicker">
@@ -1327,7 +1332,7 @@
                                             </p>
                                             <div class='fv-row mb-4'>
                                                 <!--begin::Dropzone-->
-                                                <div class="dropzone" id="kt_dropzonejs_example_1">
+                                                <div class="dropzone" id="dropzoneDigitalSignature">
                                                     <!--begin::Message-->
                                                     <div
                                                         class="dz-message needsclick d-flex justify-content-center align-items-center">
@@ -1341,6 +1346,7 @@
                                                         </div>
                                                         <!--end::Info-->
                                                     </div>
+                                                    <input type="hidden" name="digitalSignature" id="digitalSignature">
                                                 </div>
                                                 <!--end::Dropzone-->
                                             </div>

@@ -59,9 +59,20 @@ export class RegisterService {
     register.isTheApplicant = createRegisterDto.isTheApplicant;
     register.purposeOfTransactions = createRegisterDto.purposeOfTransactions;
     register.bankCodeNumber = createRegisterDto.bankCodeNumber;
-    register.annualVolume = createRegisterDto.annualVolume;
+    register.anualVolume = createRegisterDto.anualVolume;
     register.estimatedOfTransaction = createRegisterDto.estimatedOfTransaction;
     register.currenciesNeeded = createRegisterDto.currenciesNeeded;
+    //paso 3
+    register.companyRegistrationFile =
+      createRegisterDto.companyRegistrationFile;
+    register.TaxIdentificationVerificationFile =
+      createRegisterDto.TaxIdentificationVerificationFile;
+    register.beneficialOwnershipVerificationFile =
+      createRegisterDto.beneficialOwnershipVerificationFile;
+    register.officialPartnerIdentificationFile =
+      createRegisterDto.officialPartnerIdentificationFile;
+    register.proofOfAddressFile = createRegisterDto.proofOfAddressFile;
+    //paso 3 para USD
     register.preferredMethodOfFunding =
       createRegisterDto.preferredMethodOfFunding;
     register.infoBank = createRegisterDto.infoBank;
