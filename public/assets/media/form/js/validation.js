@@ -86,7 +86,7 @@ submitButton.addEventListener('click', async function (e) {
     });
 
     console.log(response);
-    window.location.href = '/register/steps';
+    window.location.href = `/register/steps/${response.data}`;
   }
 });
 

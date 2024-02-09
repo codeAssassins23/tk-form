@@ -6,7 +6,7 @@ let maxFileIdentificacionTodosSocios = 0;
 let maxFileComprobanteDomicilio = 0;
 
 var dropzoneActaConstitutiva = new Dropzone('#dropzoneActaConstitutiva', {
-  url: 'http://localhost:3200/admin/getHoldingAccounts', // Set the url for your upload script location
+  url: 'http://localhost:3200/uploadFilesOne', // Set the url for your upload script location
   paramName: 'file', // The name that will be used to transfer the file
   maxFileActaConstitutiva: 4,
   maxFilesize: 7, // MB
@@ -21,7 +21,7 @@ var dropzoneActaConstitutiva = new Dropzone('#dropzoneActaConstitutiva', {
 });
 
 var dropzoneCedulaFiscal = new Dropzone('#dropzoneCedulaFiscal', {
-  url: 'http://localhost:3200/admin/getHoldingAccounts', // Set the url for your upload script location
+  url: 'http://localhost:3200/uploadFiles', // Set the url for your upload script location
   paramName: 'file', // The name that will be used to transfer the file
   maxFileCedulaFiscal: 4,
   maxFilesize: 7, // MB
@@ -36,7 +36,7 @@ var dropzoneCedulaFiscal = new Dropzone('#dropzoneCedulaFiscal', {
 });
 
 var dropzoneActaPoderes = new Dropzone('#dropzoneActaPoderes', {
-  url: 'http://localhost:3200/admin/getHoldingAccounts', // Set the url for your upload script location
+  url: 'http://localhost:3200/uploadFiles', // Set the url for your upload script location
   paramName: 'file', // The name that will be used to transfer the file
   maxFileActaPoderes: 4,
   maxFilesize: 7, // MB
@@ -51,7 +51,7 @@ var dropzoneActaPoderes = new Dropzone('#dropzoneActaPoderes', {
 });
 
 var dropezoneIdentifiTodosSocios = new Dropzone('#dropzoneIdentifiTodosSocios', {
-  url: 'http://localhost:3200/admin/getHoldingAccounts', // Set the url for your upload script location
+  url: 'http://localhost:3200/uploadFiles', // Set the url for your upload script location
   paramName: 'file', // The name that will be used to transfer the file
   maxFileIdentificacionTodosSocios: 4,
   maxFilesize: 7, // MB
@@ -66,7 +66,7 @@ var dropezoneIdentifiTodosSocios = new Dropzone('#dropzoneIdentifiTodosSocios', 
 });
 
 var dropzoneComprobanteDomicilio = new Dropzone('#dropzoneComprobanteDomicilio', {
-  url: 'http://localhost:3200/admin/getHoldingAccounts', // Set the url for your upload script location
+  url: 'http://localhost:3200/uploadFiles', // Set the url for your upload script location
   paramName: 'file', // The name that will be used to transfer the file
   maxFileComprobanteDomicilio: 4,
   maxFilesize: 7, // MB

@@ -2,22 +2,30 @@ import {
   Body,
   Controller,
   Get,
+  HttpStatus,
+  Param,
+  ParseFilePipeBuilder,
   Post,
+  Query,
   Render,
   Req,
+  UploadedFile,
   UseGuards,
+  UseInterceptors,
 } from '@nestjs/common';
 import { RegisterService } from './register.service';
 import { Public } from 'src/auth/decorators/public.decorator';
 import { Roles } from 'src/auth/decorators/public.decorator';
 import { RolesGuard } from 'src/auth/authRole.guard';
 import { leadsDto } from './dto/create-leads.dto';
-import { create } from 'domain';
+import { FileInterceptor } from '@nestjs/platform-express';
+import { diskStorage } from 'multer';
 @Controller('/')
 @UseGuards(RolesGuard)
 export class RegisterController {
   constructor(private readonly registerService: RegisterService) {}
 
+  //registro de usuario incial
   @Public()
   @Get('/register')
   @Render('register/register')
@@ -32,7 +40,7 @@ export class RegisterController {
     }
   }
 
-  //Para la tabla
+  //Para la tabla de leads
   @Public()
   @Get('/AllLeads')
   async getLeads(@Req() request: Request) {
@@ -48,8 +56,9 @@ export class RegisterController {
     }
   }
 
+  //registro de usuario si pasa el formulario inicial, se le redirige a este formulario
   @Public()
-  @Get('/register/steps')
+  @Get('/register/steps/:id')
   @Render('register/register_stepper')
   async registerSteps(@Req() request: Request) {
     try {
@@ -60,6 +69,7 @@ export class RegisterController {
     }
   }
 
+  //Vista de registros generales
   @Get('/Allregister')
   @Roles('SuperAdmin')
   @Render('register/get_registers')
@@ -72,13 +82,14 @@ export class RegisterController {
     }
   }
 
+  //vista de registros de leads
   @Get('/leads')
   @Roles('SuperAdmin')
   @Render('register/leads')
-  async registerLeads(@Req() request: Request) {
+  async registerLeads(@Param('id') id: number, @Req() request: Request) {
     try {
       const user = request['user'];
-      return user;
+      return { user: user, id: id };
     } catch (error) {
       console.log(error);
     }
@@ -88,12 +99,42 @@ export class RegisterController {
   @Public()
   @Post('/registerStepOne')
   async registerStepOne(@Body() createListDto: leadsDto) {
-    console.log('hola desde el controlador registerStepOne');
-    console.log(createListDto);
-
     const register =
       await this.registerService.createRegisterStepOne(createListDto);
     return register;
+  }
+
+  //recoger files
+  @Public()
+  @Post('/uploadFilesOne')
+  @UseInterceptors(
+    FileInterceptor('file', {
+      storage: diskStorage({
+        destination: './upload/temp',
+        filename: (req, file, cb) => {
+          const idLeads = Math.floor(Math.random() * 100) + 1;
+          return cb(null, `${idLeads}ActaConstitutiva.pdf`);
+        },
+      }),
+    }),
+  )
+  async uploadFile(
+    @UploadedFile(
+      new ParseFilePipeBuilder()
+        .addFileTypeValidator({
+          fileType: 'pdf',
+        })
+
+        .addMaxSizeValidator({
+          maxSize: 20000000,
+        })
+        .build({
+          errorHttpStatusCode: HttpStatus.UNPROCESSABLE_ENTITY,
+        }),
+    )
+    file: Express.Multer.File,
+  ) {
+    console.log(file.filename);
   }
 
   //recoger todo los datos del form (post)

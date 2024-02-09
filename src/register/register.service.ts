@@ -14,7 +14,7 @@ export class RegisterService {
     private readonly registerRepository: Repository<Register>,
   ) {}
 
-  async createRegisterStepOne(createRegisterDto: any): Promise<Leads> {
+  async createRegisterStepOne(createRegisterDto: any): Promise<number> {
     const register: Leads = new Leads();
     register.fullName = createRegisterDto.fullName;
     register.email = createRegisterDto.email;
@@ -24,7 +24,7 @@ export class RegisterService {
     register.status = '1';
     const save = await this.leadsRepository.save(register);
     console.log(save, 'save');
-    return save;
+    return save.idLead;
   }
 
   async findAllRegisterLeads(): Promise<Leads[]> {
