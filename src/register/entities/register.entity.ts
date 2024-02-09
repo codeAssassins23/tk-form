@@ -76,7 +76,7 @@ export class Register {
   bankCodeNumber: string;
 
   @Column({ type: 'varchar', length: 15 })
-  annualVolume: string;
+  anualVolume: string;
 
   @Column({ type: 'varchar', length: 15 })
   estimatedOfTransaction: string;
@@ -84,7 +84,23 @@ export class Register {
   @Column({ type: 'varchar', length: 15 })
   currenciesNeeded: string;
 
-  //Empieza el tercer paso del registro
+  //inicia el paso 3 del registro
+  @Column({ type: 'varchar', length: 15 })
+  companyRegistrationFile: string;
+
+  @Column({ type: 'varchar', length: 15 })
+  TaxIdentificationVerificationFile: string;
+
+  @Column({ type: 'varchar', length: 45 })
+  beneficialOwnershipVerificationFile: string;
+
+  @Column({ type: 'varchar', length: 45 })
+  officialPartnerIdentificationFile: string;
+
+  @Column({ type: 'varchar', length: 45 })
+  proofOfAddressFile: string;
+
+  //Empieza el tercer paso del registro para usd
   @Column({ type: 'varchar', length: 45 })
   preferredMethodOfFunding: string;
 
