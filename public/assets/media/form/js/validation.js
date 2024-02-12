@@ -6,8 +6,9 @@ let validator1 = FormValidation.formValidation(form1, {
   fields: {
     text_email: {
       validators: {
-        emailAddress: {
-          message: 'El contenido no es válidos',
+        regexp: {
+          regexp: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+          message: 'El contenido no es válido',
         },
         notEmpty: {
           message: 'Email es requerido',
