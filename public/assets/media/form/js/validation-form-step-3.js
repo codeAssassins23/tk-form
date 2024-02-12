@@ -8,7 +8,7 @@ let maxFileComprobanteDomicilio = 0;
 var dropzoneActaConstitutiva = new Dropzone('#dropzoneActaConstitutiva', {
   url: 'http://localhost:3200/uploadFilesOne', // Set the url for your upload script location
   paramName: 'file', // The name that will be used to transfer the file
-  maxFileActaConstitutiva: 4,
+  maxFiles: 1,
   maxFilesize: 20, // MB
   maxThumbnailFilesize: 20, // MB
   addRemoveLinks: true,
@@ -36,63 +36,114 @@ var dropzoneActaConstitutiva = new Dropzone('#dropzoneActaConstitutiva', {
 });
 
 var dropzoneCedulaFiscal = new Dropzone('#dropzoneCedulaFiscal', {
-  url: 'http://localhost:3200/uploadFiles', // Set the url for your upload script location
+  url: 'http://localhost:3200/uploadFilesTwo', // Set the url for your upload script location
   paramName: 'file', // The name that will be used to transfer the file
-  maxFileCedulaFiscal: 4,
-  maxFilesize: 7, // MB
+  maxFiles: 1,
+  maxFilesize: 20, // MB
+  maxThumbnailFilesize: 20, // MB 
   addRemoveLinks: true,
+  acceptedFiles: 'application/pdf',
   accept: function (file, done) {
-    if (file.name == 'wow.jpg') {
-      done("Naha, you don't.");
+    if (file.type !== 'application/pdf') {
+      done("Solo se permite archivos PDF.");
     } else {
+      if(file.size > (20*1024*1024)){
+        done("El tamaño del archivo excede el límite de 20MB")
+      } else {
       done();
+      }
     }
   },
+  init: function(){
+    this.on("error",function(file, message){
+      alert(message);
+      this.removeFile(file);
+    });
+  }
 });
 
 var dropzoneActaPoderes = new Dropzone('#dropzoneActaPoderes', {
-  url: 'http://localhost:3200/uploadFiles', // Set the url for your upload script location
+  url: 'http://localhost:3200/uploadFilesThree', // Set the url for your upload script location
   paramName: 'file', // The name that will be used to transfer the file
-  maxFileActaPoderes: 4,
-  maxFilesize: 7, // MB
+  maxFiles: 1,
+  maxFilesize: 20, // MB
+  maxThumbnailFilesize: 20, // MB
   addRemoveLinks: true,
+  acceptedFiles: 'application/pdf',
   accept: function (file, done) {
-    if (file.name == 'wow.jpg') {
-      done("Naha, you don't.");
+    if (file.type !== 'application/pdf') {
+      done("Solo se permite archivos pdf");
     } else {
-      done();
+      if(file.size > (20*1024*1024)){
+        done("El tamaño del archivo excede el límite de 20MB")
+      } else{
+        done();
+      }
     }
   },
+  init: function() {
+    this.on("error", function(file, message) {
+      // Manejar errores de validación
+      alert(message);
+      this.removeFile(file); // Eliminar el archivo que no cumple con las validaciones
+    });
+  }
 });
 
 var dropezoneIdentifiTodosSocios = new Dropzone('#dropzoneIdentifiTodosSocios', {
-  url: 'http://localhost:3200/uploadFiles', // Set the url for your upload script location
+  url: 'http://localhost:3200/uploadFilesFour', // Set the url for your upload script location
   paramName: 'file', // The name that will be used to transfer the file
-  maxFileIdentificacionTodosSocios: 4,
-  maxFilesize: 7, // MB
+  maxFiles: 1,
+  maxFilesize: 20, // MB
   addRemoveLinks: true,
+  maxThumbnailFilesize: 20, // MB
+  acceptedFiles: 'application/pdf',
   accept: function (file, done) {
-    if (file.name == 'wow.jpg') {
-      done("Naha, you don't.");
+    if (file.type !== 'application/pdf') {
+      done("Solo se permite archivos pdf");
     } else {
-      done();
+      if(file.size > (20*1024*1024)){
+        done("El tamaño del archivo excede el límite de 20MB")
+      } else{
+        done();
+      }
     }
   },
+  init: function() {
+    this.on("error", function(file, message) {
+      // Manejar errores de validación
+      alert(message);
+      this.removeFile(file); // Eliminar el archivo que no cumple con las validaciones
+    });
+  }
 });
 
 var dropzoneComprobanteDomicilio = new Dropzone('#dropzoneComprobanteDomicilio', {
-  url: 'http://localhost:3200/uploadFiles', // Set the url for your upload script location
+  url: 'http://localhost:3200/uploadFilesFive', // Set the url for your upload script location
   paramName: 'file', // The name that will be used to transfer the file
-  maxFileComprobanteDomicilio: 4,
-  maxFilesize: 7, // MB
+  maxFiles: 1,
+  maxFilesize: 20, // MB
   addRemoveLinks: true,
+  maxThumbnailFilesize: 20, // MB
+  acceptedFiles: 'application/pdf',
   accept: function (file, done) {
-    if (file.name == 'wow.jpg') {
-      done("Naha, you don't.");
+    if (file.type !== 'application/pdf') {
+      done("Solo se permite archivos pdf");
     } else {
-      done();
+      if(file.size > (20*1024*1024)){
+        done("El tamaño del archivo excede el límite de 20MB")
+      } else{
+        done();
+      }
     }
   },
+  init: function() {
+    this.on("error", function(file, message) {
+      // Manejar errores de validación
+      alert(message);
+      this.removeFile(file); // Eliminar el archivo que no cumple con las validaciones
+    });
+  }
 });
 
 

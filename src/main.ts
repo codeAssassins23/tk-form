@@ -1,4 +1,4 @@
-import { ValidationPipe } from '@nestjs/common';
+import { BadRequestException, ValidationPipe } from '@nestjs/common';
 
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
@@ -16,7 +16,22 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
   //Validaciones globales de los DTO
-  app.useGlobalPipes(new ValidationPipe());
+  app.useGlobalPipes(
+    new ValidationPipe({
+      whitelist: true,
+      forbidNonWhitelisted: true,
+      transform: true,
+      disableErrorMessages: false,
+      exceptionFactory(errors) {
+        const messages = errors.map(
+          (error) =>
+            `${error.property} - ${Object.values(error.constraints).join(', ')}`,
+        );
+        console.log(messages);
+        return new BadRequestException(messages);
+      },
+    }),
+  );
 
   //Configuraciones para el uso de archivos estaticos y vistas
   app.useStaticAssets(join(__dirname, '..', 'public'));

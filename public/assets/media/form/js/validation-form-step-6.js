@@ -2,18 +2,31 @@
 var maxFileDigitalSignature = 0;
 
 var dropzoneDigitalSignature = new Dropzone('#dropzoneDigitalSignature', {
-  url: 'http://localhost:3200/admin/getHoldingAccounts', // Set the url for your upload script location
+  url: 'http://localhost:3200/uploadFilesSix', // Set the url for your upload script location
   paramName: 'file', // The name that will be used to transfer the file
-  maxFileDigitalSignature: 4,
-  maxFilesize: 7, // MB
+  maxFiles: 1,
+  maxFilesize: 20, // MB
   addRemoveLinks: true,
+  maxThumbnailFilesize: 20, // MB
+  acceptedFiles: 'application/pdf',
   accept: function (file, done) {
-    if (file.name == 'wow.jpg') {
-      done("Naha, you don't.");
+    if (file.type !== 'application/pdf') {
+      done("Solo se permite archivos pdf");
     } else {
-      done();
+      if(file.size > (20*1024*1024)){
+        done("El tamaño del archivo excede el límite de 20MB")
+      } else{
+        done();
+      }
     }
   },
+  init: function() {
+    this.on("error", function(file, message) {
+      // Manejar errores de validación
+      alert(message);
+      this.removeFile(file); // Eliminar el archivo que no cumple con las validaciones
+    });
+  }
 });
 
 // Init validartion 1
@@ -47,6 +60,13 @@ let validatorStep6 = FormValidation.formValidation(form, {
         },
       },
     },
+    acceptTerms:{
+      validators: {
+        notEmpty: {
+          message: 'Este campo es obligatorio'
+        }
+      }
+    }
   },
   plugins: {
     trigger: new FormValidation.plugins.Trigger(),

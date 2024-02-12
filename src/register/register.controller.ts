@@ -6,7 +6,6 @@ import {
   Param,
   ParseFilePipeBuilder,
   Post,
-  Query,
   Render,
   Req,
   UploadedFile,
@@ -18,8 +17,10 @@ import { Public } from 'src/auth/decorators/public.decorator';
 import { Roles } from 'src/auth/decorators/public.decorator';
 import { RolesGuard } from 'src/auth/authRole.guard';
 import { leadsDto } from './dto/create-leads.dto';
+import { createRegisterDto } from './dto/create-register.dto';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
+
 @Controller('/')
 @UseGuards(RolesGuard)
 export class RegisterController {
@@ -82,6 +83,18 @@ export class RegisterController {
     }
   }
 
+  @Get('/details')
+  @Roles('SuperAdmin')
+  @Render('register/detail_leads')
+  async detailsRegisters(@Req() request: Request) {
+    try {
+      const user = request['user'];
+      return user;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   //vista de registros de leads
   @Get('/leads')
   @Roles('SuperAdmin')
@@ -104,7 +117,7 @@ export class RegisterController {
     return register;
   }
 
-  //recoger files
+  //recoger file Acta constitutiva o licencia comercial
   @Public()
   @Post('/uploadFilesOne')
   @UseInterceptors(
@@ -113,7 +126,7 @@ export class RegisterController {
         destination: './upload/temp',
         filename: (req, file, cb) => {
           const idLeads = Math.floor(Math.random() * 100) + 1;
-          return cb(null, `${idLeads}ActaConstitutiva.pdf`);
+          return cb(null, `10-ActaConstitutiva.pdf`);
         },
       }),
     }),
@@ -137,14 +150,213 @@ export class RegisterController {
     console.log(file.filename);
   }
 
+  //recoger files Cédula de identificación fiscal
+  @Public()
+  @Post('/uploadFilesTwo')
+  @UseInterceptors(
+    FileInterceptor('file', {
+      storage: diskStorage({
+        destination: './upload/temp',
+        filename: (req, file, cb) => {
+          const idLeads = Math.floor(Math.random() * 100) + 1;
+          return cb(null, `10-CedulaIdentificacion.pdf`);
+        },
+      }),
+    }),
+  )
+  async uploadFileTwo(
+    @UploadedFile(
+      new ParseFilePipeBuilder()
+        .addFileTypeValidator({
+          fileType: 'pdf',
+        })
+
+        .addMaxSizeValidator({
+          maxSize: 20000000,
+        })
+        .build({
+          errorHttpStatusCode: HttpStatus.UNPROCESSABLE_ENTITY,
+        }),
+    )
+    file: Express.Multer.File,
+  ) {
+    console.log(file.filename);
+  }
+
+  //recoger files Acta de poderes
+  @Public()
+  @Post('/uploadFilesThree')
+  @UseInterceptors(
+    FileInterceptor('file', {
+      storage: diskStorage({
+        destination: './upload/temp',
+        filename: (req, file, cb) => {
+          const idLeads = Math.floor(Math.random() * 100) + 1;
+          return cb(null, `10-actaPoderes.pdf`);
+        },
+      }),
+    }),
+  )
+  async uploadFileThree(
+    @UploadedFile(
+      new ParseFilePipeBuilder()
+        .addFileTypeValidator({
+          fileType: 'pdf',
+        })
+
+        .addMaxSizeValidator({
+          maxSize: 20000000,
+        })
+        .build({
+          errorHttpStatusCode: HttpStatus.UNPROCESSABLE_ENTITY,
+        }),
+    )
+    file: Express.Multer.File,
+  ) {
+    console.log(file.filename);
+  }
+
+  //recoger files Identificación oficial de todos los socios y las personas autorizadas
+  @Public()
+  @Post('/uploadFilesFour')
+  @UseInterceptors(
+    FileInterceptor('file', {
+      storage: diskStorage({
+        destination: './upload/temp',
+        filename: (req, file, cb) => {
+          const idLeads = Math.floor(Math.random() * 100) + 1;
+          return cb(null, `10-IdentificacionSociosPersonasAutorizadas.pdf`);
+        },
+      }),
+    }),
+  )
+  async uploadFileFour(
+    @UploadedFile(
+      new ParseFilePipeBuilder()
+        .addFileTypeValidator({
+          fileType: 'pdf',
+        })
+
+        .addMaxSizeValidator({
+          maxSize: 20000000,
+        })
+        .build({
+          errorHttpStatusCode: HttpStatus.UNPROCESSABLE_ENTITY,
+        }),
+    )
+    file: Express.Multer.File,
+  ) {
+    console.log(file.filename);
+  }
+
+  //recoger files Comprobante de domicilio
+  @Public()
+  @Post('/uploadFilesFive')
+  @UseInterceptors(
+    FileInterceptor('file', {
+      storage: diskStorage({
+        destination: './upload/temp',
+        filename: (req, file, cb) => {
+          const idLeads = Math.floor(Math.random() * 100) + 1;
+          return cb(null, `10-comprobanteDomicilio.pdf`);
+        },
+      }),
+    }),
+  )
+  async uploadFileFive(
+    @UploadedFile(
+      new ParseFilePipeBuilder()
+        .addFileTypeValidator({
+          fileType: 'pdf',
+        })
+
+        .addMaxSizeValidator({
+          maxSize: 20000000,
+        })
+        .build({
+          errorHttpStatusCode: HttpStatus.UNPROCESSABLE_ENTITY,
+        }),
+    )
+    file: Express.Multer.File,
+  ) {
+    console.log(file.filename);
+  }
+
+  //recoger files firma
+  @Public()
+  @Post('/uploadFilesSix')
+  @UseInterceptors(
+    FileInterceptor('file', {
+      storage: diskStorage({
+        destination: './upload/temp',
+        filename: (req, file, cb) => {
+          const idLeads = Math.floor(Math.random() * 100) + 1;
+          return cb(null, `10-firma.pdf`);
+        },
+      }),
+    }),
+  )
+  async uploadFileSix(
+    @UploadedFile(
+      new ParseFilePipeBuilder()
+        .addFileTypeValidator({
+          fileType: 'pdf',
+        })
+
+        .addMaxSizeValidator({
+          maxSize: 20000000,
+        })
+        .build({
+          errorHttpStatusCode: HttpStatus.UNPROCESSABLE_ENTITY,
+        }),
+    )
+    file: Express.Multer.File,
+  ) {
+    console.log(file.filename);
+  }
+
   //recoger todo los datos del form (post)
   @Public()
   @Post('/registerAll')
-  async registerAll(@Body() createRegisterDto: any) {
-    console.log('hola desde el controlador registerAll');
+  async registerAll(@Body() createRegisterDto: createRegisterDto) {
     console.log(createRegisterDto);
-    const register =
-      await this.registerService.createRegisterAll(createRegisterDto);
+    const idLeads = '10';
+    const idActaConstitutiva = `${idLeads}-ActaConstitutiva.pdf`;
+    const idCedulaIdentificacion = `${idLeads}-CedulaIdentificacion.pdf`;
+    const idActaPoderes = `${idLeads}-actaPoderes.pdf`;
+    const idIdentificacionSociosPersonasAutorizadas = `${idLeads}-IdentificacionSociosPersonasAutorizadas.pdf`;
+    const idComprobanteDomicilio = `${idLeads}-comprobanteDomicilio.pdf`;
+    const idFirma = `${idLeads}-firma.pdf`;
+
+    const directory = './upload/temp';
+    const targetDirectory = './upload/files';
+
+    let names = {
+      idActaConstitutiva,
+      idCedulaIdentificacion,
+      idActaPoderes,
+      idIdentificacionSociosPersonasAutorizadas,
+      idComprobanteDomicilio,
+      idFirma,
+    };
+
+    const namesFiles = await this.registerService.findFilesByIdLead(
+      names,
+      directory,
+    );
+
+    console.log(namesFiles, 'namesFiles');
+
+    await this.registerService.moveFilesByIdLead(
+      namesFiles,
+      directory,
+      targetDirectory,
+    );
+
+    const register = await this.registerService.createRegisterAll(
+      createRegisterDto,
+      names,
+    );
 
     return register;
   }
