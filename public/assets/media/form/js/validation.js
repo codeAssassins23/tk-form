@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
-const form = document.getElementById('kt_sign_up_form');
+const form1 = document.getElementById('kt_sign_up_form_first');
 
 // Init validartion 1
-let validatorStep1 = FormValidation.formValidation(form, {
+let validator1 = FormValidation.formValidation(form1, {
   fields: {
     text_email: {
       validators: {
@@ -59,13 +59,17 @@ submitButton.addEventListener('click', async function (e) {
   // Prevent default button action
   e.preventDefault();
   // Validate the form based on the current step
-  let isValidStep1 = await validateStep1();
+  let isValid1 = await validate1();
 
   let correo_electronico = document.getElementById('correo_electronico').value;
   let nombre_apellidos = document.getElementById('nombre_apellidos').value;
   let empresa = document.getElementById('empresa').value;
   let paises = document.getElementById('paises').value;
   let telefono = document.getElementById('telefono').value;
+
+  let form1 = document.getElementById('form1');
+
+  let formStepps = document.getElementById('formStepps');
 
   let res = {
     fullName: nombre_apellidos,
@@ -75,7 +79,7 @@ submitButton.addEventListener('click', async function (e) {
     country: paises,
   };
 
-  if (isValidStep1) {
+  if (isValid1) {
     const response = await axios({
       method: 'post',
       url: '/registerStepOne',
@@ -85,15 +89,23 @@ submitButton.addEventListener('click', async function (e) {
       data: res,
     });
 
-    console.log(response);
-    window.location.href = `/register/steps/${response.data}`;
+    e.preventDefault();
+
+    console.log('Es Valido');
+    console.log(response, isValid1);
+
+    form1.classList.add('d-none');
+    formStepps.classList.remove('d-none');
+    formStepps.classList.add('d-block');
+
+    // window.location.href = `/register/steps/${response.data}`;
   }
 });
 
 // Function to validate Step 1
-const validateStep1 = async () => {
+const validate1 = async () => {
   return new Promise((resolve) => {
-    validatorStep1.validate().then((status) => {
+    validator1.validate().then((status) => {
       resolve(status === 'Valid');
     });
   });
