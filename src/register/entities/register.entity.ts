@@ -132,6 +132,9 @@ export class Register {
   @Column({ type: 'varchar', length: 20 })
   uploadSignatureAuthorizationMonex: string;
 
+  @Column({ type: 'int' })
+  idLead: number;
+
   @Column({ type: 'varchar', select: false })
   status: string;
 }

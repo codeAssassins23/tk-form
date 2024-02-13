@@ -40,159 +40,531 @@
                             <!--begin::Content container-->
                             <div id="kt_app_content_container" class="app-container container-fluid " >
                                 <!--begin::Content-->
-                                <div class="d-flex flex-row bg-primary justify-content-start alignt-items-center mb-2">
-                                    <p class="fs-1 text-light mt-3 mb-3 ms-2 fw-bold">A. DATOS DE LA EMPRESA</p>
-                                </div>
-                                <div class="row mb-2">
-                                    <div class="col-md-6">
+                                 {{#each lead}}
+
+                                    <div class="d-flex flex-row bg-primary justify-content-start alignt-items-center mb-2">
+                                        <p class="fs-1 text-light mt-3 mb-3 ms-2 fw-bold">A. DATOS DE LA EMPRESA</p>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input type="text" value="{{corporateName}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <label for="floatingInput">Nombre de la empresa</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input type="text" value="{{tradeNameOfDBA}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <label for="floatingInput">Nombre comercial</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input type="text" value="{{address}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <label for="floatingInput">Direccion</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input type="text" value="{{city}}, {{state}}, {{country}}, {{postalCode}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <label for="floatingInput">Ciudad, Provincia/Estado, País y Código Postal</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col-md-4">
+                                            <div class="form-floating">
+                                                <input type="text" value="{{emailInfomation}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <label for="floatingInput">Correo Electronico (Para confirmación de transacciones)</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-floating">
+                                                <input type="text" value="{{phoneInformation}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <label for="floatingInput">Teléfono</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-floating">
+                                                <input type="text" value="{{website}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <label for="floatingInput">Sitio Web</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input type="text" value="{{TaxIdentificationNumber}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <label for="floatingInput">Número de identificación fiscal</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input type="text" value="{{DateOfIncorporation}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <label for="floatingInput">Fecha de formación</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <p class="fw-bold fs-5">Tipo de Empresa</p>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col-md-3">
+                                            <div class="form-check mb-4">
+                                                <input class="form-check-input" type="radio" value="" id="tipoEmpresa1" name="tipoEmpresa" checked="">
+                                                <label class="form-check-label" for="tipoEmpresa1">
+                                                    Individual/Sole Propietor or Single-Member LLC
+                                                </label>
+                                            </div>
+                                            <div class="form-check mb-4">
+                                                <input class="form-check-input" type="radio" value="" id="tipoEmpresa2" name="tipoEmpresa" checked="">
+                                                <label class="form-check-label" for="tipoEmpresa2">
+                                                    Trust/Estate
+                                                </label>
+                                            </div>
+                                            <div class="form-check mb-4">
+                                                <input class="form-check-input" type="radio" value="" id="tipoEmpresa3" name="tipoEmpresa" checked="">
+                                                <label class="form-check-label" for="tipoEmpresa3">
+                                                    Individual
+                                                </label>
+                                            </div>
+                                            <div class="form-check mb-4">
+                                                <input class="form-check-input" type="radio" value="" id="tipoEmpresa4" name="tipoEmpresa" checked="">
+                                                <label class="form-check-label" for="tipoEmpresa4">
+                                                    Civil
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-check mb-4">
+                                                <input class="form-check-input" type="radio" value="" id="tipoEmpresa5" name="tipoEmpresa" checked="">
+                                                <label class="form-check-label" for="tipoEmpresa5">
+                                                    C Corporation
+                                                </label>
+                                            </div>
+                                            <div class="form-check mb-4">
+                                                <input class="form-check-input" type="radio" value="" id="tipoEmpresa6" name="tipoEmpresa" checked="">
+                                                <label class="form-check-label" for="tipoEmpresa6">
+                                                    Not Applicable
+                                                </label>
+                                            </div>
+                                            <div class="form-check mb-4">
+                                                <input class="form-check-input" type="radio" value="" id="tipoEmpresa7" name="tipoEmpresa" checked="">
+                                                <label class="form-check-label" for="tipoEmpresa7">
+                                                    Limited Liability Company
+                                                </label>
+                                            </div>
+                                            <div class="form-check mb-4">
+                                                <input class="form-check-input" type="radio" value="" id="tipoEmpresa8" name="tipoEmpresa" checked="">
+                                                <label class="form-check-label" for="tipoEmpresa8">
+                                                    Variable Capital Limited Liability Company
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-check mb-4">
+                                                <input class="form-check-input" type="radio" value="" id="tipoEmpresa9" name="tipoEmpresa" checked="">
+                                                <label class="form-check-label" for="tipoEmpresa9">
+                                                    S Corporation
+                                                </label>
+                                            </div>
+                                            <div class="form-check mb-4">
+                                                <input class="form-check-input" type="radio" value="" id="tipoEmpresa10" name="tipoEmpresa" checked="">
+                                                <label class="form-check-label" for="tipoEmpresa10">
+                                                    Individual/Sole Propietor
+                                                </label>
+                                            </div>
+                                            <div class="form-check mb-4">
+                                                <input class="form-check-input" type="radio" value="" id="tipoEmpresa11" name="tipoEmpresa" checked="">
+                                                <label class="form-check-label" for="tipoEmpresa11">
+                                                    Cooperative
+                                                </label>
+                                            </div>
+                                            <div class="form-floating mb-4">
+                                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 50px"></textarea>
+                                                <label for="floatingTextarea2">Otros</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-check mb-4">
+                                                <input class="form-check-input" type="radio" value="" id="tipoEmpresa12" name="tipoEmpresa" checked="">
+                                                <label class="form-check-label" for="tipoEmpresa12">
+                                                    Partnership
+                                                </label>
+                                            </div>
+                                            <div class="form-check mb-4">
+                                                <input class="form-check-input" type="radio" value="" id="tipoEmpresa13" name="tipoEmpresa" checked="">
+                                                <label class="form-check-label" for="tipoEmpresa13">
+                                                    Corporation
+                                                </label>
+                                            </div>
+                                            <div class="form-check mb-4">
+                                                <input class="form-check-input" type="radio" value="" id="tipoEmpresa14" name="tipoEmpresa" checked="">
+                                                <label class="form-check-label" for="tipoEmpresa14">
+                                                    Variable Capital Corporation
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <p class="fw-bold fs-5">Giro de la Empresa</p>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col-md-4">
+                                            <div class="form-check form-check-custom form-check-solid form-check-sm mb-2">
+                                                <input class="form-check-input" type="checkbox" value="" id="giroEmpresa1"/>
+                                                <label class="form-check-label" for="giroEmpresa1">
+                                                    Dealer of Precious Stones or Metals
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-custom form-check-solid form-check-sm mb-2">
+                                                <input class="form-check-input" type="checkbox" value="" id="giroEmpresa2"/>
+                                                <label class="form-check-label" for="giroEmpresa2">
+                                                    Dealer in Virtual Currency
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-custom form-check-solid form-check-sm mb-2">
+                                                <input class="form-check-input" type="checkbox" value="" id="giroEmpresa3"/>
+                                                <label class="form-check-label" for="giroEmpresa3">
+                                                    Dealer in Real Estate
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-check form-check-custom form-check-solid form-check-sm mb-2">
+                                                <input class="form-check-input" type="checkbox" value="" id="giroEmpresa4"/>
+                                                <label class="form-check-label" for="giroEmpresa4">
+                                                    Dealer of Precious Stones
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-custom form-check-solid form-check-sm mb-2">
+                                                <input class="form-check-input" type="checkbox" value="" id="giroEmpresa5"/>
+                                                <label class="form-check-label" for="giroEmpresa5">
+                                                    Controlled Substances Related
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-custom form-check-solid form-check-sm mb-2">
+                                                <input class="form-check-input" type="checkbox" value="" id="giroEmpresa6"/>
+                                                <label class="form-check-label" for="giroEmpresa6">
+                                                    Non-Profit or NGO
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-check form-check-custom form-check-solid form-check-sm mb-2">
+                                                <input class="form-check-input" type="checkbox" value="" id="giroEmpresa7"/>
+                                                <label class="form-check-label" for="giroEmpresa7">
+                                                    Dealer in Firearms
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-custom form-check-solid form-check-sm mb-2">
+                                                <input class="form-check-input" type="checkbox" value="" id="giroEmpresa8"/>
+                                                <label class="form-check-label" for="giroEmpresa8">
+                                                    Controlled Substances Related
+                                                </label>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="d-flex flex-row bg-primary justify-content-start alignt-items-center mb-2">
+                                        <p class="fs-1 text-light mt-3 mb-3 ms-2 fw-bold">B. OBJETIVO DE LAS TRANSACCIONES</p>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input type="text" value="{{purposeOfTransactions}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <label for="floatingInput">Objetivo de las Transacciones</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input type="text" value="{{estimatedTradeAmount}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <label for="floatingInput">Volumen anual</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col-md-4">
+                                            <div class="form-floating">
+                                                <input type="text" value="{{bankCodeNumber}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <label for="floatingInput">Número de cuenta o IBAN</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-floating">
+                                                <input type="email" value="{{estimatedOfMonthlyTransaction}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <label for="floatingInput">Número Estimado de Transacciones al Mes</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-floating">
+                                                <input type="email" value="{{estimatedTradeAmount}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <label for="floatingInput">Monto Estimado por Trasacción</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-2">
                                         <div class="form-floating">
-                                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
-                                            <label for="floatingInput">Nombre de la empresa</label>
+                                            <input type="email" value="{{currenciesNeeded}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                            <label for="floatingInput" class="ms-2">Monedas</label>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
-                                            <label for="floatingInput">Nombre comercial</label>
+                                    <div class="d-flex flex-row bg-primary justify-content-start alignt-items-center mb-2">
+                                        <p class="fs-1 text-light mt-3 mb-3 ms-2 fw-bold">C. MÉTODO DE PAGO</p>
+                                    </div>
+                                    <div class="row">
+                                        <p class="fw-bold fs-5">Método preferido de financiación</p>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col-md-3">
+                                            <div class="form-check mb-4">
+                                                <input class="form-check-input" type="radio" value="" id="metodoTransaction1" name="metodoTransaction" checked="">
+                                                <label class="form-check-label" for="metodoTransaction1">
+                                                    ACH Direct Debit (Please submit voided check)
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-check mb-4">
+                                                <input class="form-check-input" type="radio" value="" id="metodoTransaction2" name="metodoTransaction" checked="">
+                                                <label class="form-check-label" for="metodoTransaction2">
+                                                    Check
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-check mb-4">
+                                                <input class="form-check-input" type="radio" value="" id="metodoTransaction3" name="metodoTransaction" checked="">
+                                                <label class="form-check-label" for="metodoTransaction3">
+                                                    Wire
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-check mb-4">
+                                                <input class="form-check-input" type="radio" value="" id="metodoTransaction4" name="metodoTransaction" checked="">
+                                                <label class="form-check-label" for="metodoTransaction4">
+                                                    Not Applicable
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row mb-2">
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
-                                            <label for="floatingInput">Direccion</label>
+                                    <div class="row mb-2">
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input type="text" value="{{infoBank.name}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <label for="floatingInput">Nombre del banco</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <label for="floatingInput">Dirección del Banco (Ciudad, Estado)</label>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
-                                            <label for="floatingInput">Ciudad, Provincia/Estado, País y Código Postal</label>
+                                    <div class="row mb-2">
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <label for="floatingInput">Número de cuenta</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <label for="floatingInput">Número ABA/Código de enrutamiento</label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row mb-2">
-                                    <div class="col-md-4">
-                                        <div class="form-floating">
-                                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
-                                            <label for="floatingInput">Correo Electronico (Para confirmación de transacciones)</label>
+                                    <div class="row">
+                                        <p class="fw-bold fs-5">Tipo de cuenta</p>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col-md-6">
+                                            <div class="form-check mb-4">
+                                                <input class="form-check-input" type="radio" value="" id="typeAccount1" name="typeAccount" checked="">
+                                                <label class="form-check-label" for="typeAccount1">
+                                                    Cuenta corriente
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-check mb-4">
+                                                <input class="form-check-input" type="radio" value="" id="typeAccount2" name="typeAccount" checked="">
+                                                <label class="form-check-label" for="typeAccount2">
+                                                    Cuenta de ahorros
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="form-floating">
-                                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
-                                            <label for="floatingInput">Teléfono</label>
+                                    <div class="d-flex flex-row bg-primary justify-content-start alignt-items-center mb-2">
+                                        <p class="fs-1 text-light mt-3 mb-3 ms-2 fw-bold">D. USUARIOS AUTORIZADOS</p>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col-md-3">
+                                            <div class="form-floating">
+                                                <input type="text" value="{{infoAuthorizedUsers.name}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <label for="floatingInput">Nombre</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <label for="floatingInput">Titulo de la empresa</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <label for="floatingInput">Teléfono</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <label for="floatingInput">Correo electrónico</label>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="form-floating">
-                                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
-                                            <label for="floatingInput">Sitio Web</label>
+                                    <div class="d-flex flex-row bg-primary justify-content-start alignt-items-center mb-2">
+                                        <p class="fs-1 text-light mt-3 mb-3 ms-2 fw-bold">E. SOCIOS</p>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col-md-3">
+                                            <div class="form-floating">
+                                                <input type="email" value="{{infoBeneficialOwner.name}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <label for="floatingInput">Nombre</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-floating">
+                                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <label for="floatingInput">Ocupación</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-floating">
+                                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <label for="floatingInput">Fecha de nacimiento</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-floating">
+                                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <label for="floatingInput">% de Propiedad</label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row mb-2">
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
-                                            <label for="floatingInput">Número de identificación fiscal</label>
+                                    <div class="row mb-2">
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <label for="floatingInput">Dirección (Ciudad, Provincia, País)</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <label for="floatingInput">Correo electrónico</label>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
-                                            <label for="floatingInput">Fecha de formación</label>
+                                    <div class="row mb-2">
+                                        <div class="col-md-4">
+                                            <div class="form-check form-check-custom form-check-solid form-check-sm mb-2">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexRadioLg"/>
+                                                <label class="form-check-label" for="flexRadioLg">
+                                                    Información de socios restantes en una hoja anexa
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-check form-check-custom form-check-solid form-check-sm mb-2">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexRadioLg"/>
+                                                <label class="form-check-label" for="flexRadioLg">
+                                                    Ningún Socio posee el 25% o más
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-check form-check-custom form-check-solid form-check-sm mb-2">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexRadioLg"/>
+                                                <label class="form-check-label" for="flexRadioLg">
+                                                    Ninguna otra Persona posee el 25% o más
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <p class="fw-bold fs-5">Tipo de Empresa</p>
-                                </div>
-                                <div class="row mb-2">
-                                    <div class="col-md-3">
-                                        <div class="form-check mb-4">
-                                            <input class="form-check-input" type="radio" value="" id="flexCheckChecked1" name="radio2" checked="">
-                                            <label class="form-check-label" for="flexCheckChecked1">
-                                                Individual/Sole Propietor or Single-Member LLC
-                                            </label>
+                                    <div class="d-flex flex-row bg-primary justify-content-start alignt-items-center mb-2">
+                                        <p class="fs-1 text-light mt-3 mb-3 ms-2 fw-bold">F. AUTORIZACIÓN</p>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col-md-4">
+                                            <div class="form-floating">
+                                                <input type="text" value="{{nameAuthorizationMonex}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <label for="floatingInput">Nombre (Impreso)</label>
+                                            </div>
                                         </div>
-                                        <div class="form-check mb-4">
-                                            <input class="form-check-input" type="radio" value="" id="flexCheckChecked1" name="radio2" checked="">
-                                            <label class="form-check-label" for="flexCheckChecked1">
-                                                Trust/Estate
-                                            </label>
+                                        <div class="col-md-4">
+                                            <div class="form-floating">
+                                                <input type="text" value="{{titlePositionAuthorizationMonex:}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <label for="floatingInput">Titulo/Posición en la Empresa</label>
+                                            </div>
                                         </div>
-                                        <div class="form-check mb-4">
-                                            <input class="form-check-input" type="radio" value="" id="flexCheckChecked1" name="radio2" checked="">
-                                            <label class="form-check-label" for="flexCheckChecked1">
-                                                Individual
-                                            </label>
-                                        </div>
-                                        <div class="form-check mb-4">
-                                            <input class="form-check-input" type="radio" value="" id="flexCheckChecked1" name="radio2" checked="">
-                                            <label class="form-check-label" for="flexCheckChecked1">
-                                                Civil
-                                            </label>
+                                        <div class="col-md-4">
+                                            <div class="form-floating">
+                                                <input type="text" value="{{dateAuthorizationMonex}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <label for="floatingInput">Fecha (MM/DD/YYYY)</label>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
-                                        <div class="form-check mb-4">
-                                            <input class="form-check-input" type="radio" value="" id="flexCheckChecked1" name="radio2" checked="">
-                                            <label class="form-check-label" for="flexCheckChecked1">
-                                                C Corporation
-                                            </label>
+                                    <div class="row mb-3">
+                                        <p class="fw-bold fs-5 mb-2">Firma</p>
+                                        <a href="/download/{{uploadSignatureAuthorizationMonex}}" class="ms-3" target="_blank">
+                                        <i class="ki-outline ki-file-down fs-4x text-primary"></i>
+                                        </a>
+                                    </div>
+                                    <div class="d-flex flex-row bg-primary justify-content-start alignt-items-center mb-2">
+                                        <p class="fs-1 text-light mt-3 mb-3 ms-2 fw-bold">G. DOCUMENTACIÓN REQUERIDA</p>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col-md-4">
+                                            <p class="fw-bold fs-5 mb-2 fw-bold">Acta constitutiva o Licencia Comercial</p>
+                                            <a href="/download/{{companyRegistrationFile}}" class="ms-3" target="_blank">
+                                                <i class="ki-outline ki-file-down fs-4x text-primary"></i>
+                                            </a>
                                         </div>
-                                        <div class="form-check mb-4">
-                                            <input class="form-check-input" type="radio" value="" id="flexCheckChecked1" name="radio2" checked="">
-                                            <label class="form-check-label" for="flexCheckChecked1">
-                                                Not Applicable
-                                            </label>
+                                        <div class="col-md-4">
+                                            <p class="fw-bold fs-5 mb-2 fw-bold">Acta de poderes</p>
+                                            <a href="/download/{{beneficialOwnershipVerificationFile}}" class="ms-3" target="_blank">
+                                                <i class="ki-outline ki-file-down fs-4x text-primary"></i>
+                                            </a>
                                         </div>
-                                        <div class="form-check mb-4">
-                                            <input class="form-check-input" type="radio" value="" id="flexCheckChecked1" name="radio2" checked="">
-                                            <label class="form-check-label" for="flexCheckChecked1">
-                                                Limited Liability Company
-                                            </label>
-                                        </div>
-                                        <div class="form-check mb-4">
-                                            <input class="form-check-input" type="radio" value="" id="flexCheckChecked1" name="radio2" checked="">
-                                            <label class="form-check-label" for="flexCheckChecked1">
-                                                Variable Capital Limited Liability Company
-                                            </label>
+                                        <div class="col-md-4">
+                                            <p class="fw-bold fs-5 mb-2 fw-bold">Identificación oficial de todos los socios y las personas autorizadas</p>
+                                            <a href="/download/{{GovernmentIssuedValidPhotoID}}" class="ms-3" target="_blank">
+                                                <i class="ki-outline ki-file-down fs-4x text-primary"></i>
+                                            </a>
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
-                                        <div class="form-check mb-4">
-                                            <input class="form-check-input" type="radio" value="" id="flexCheckChecked1" name="radio2" checked="">
-                                            <label class="form-check-label" for="flexCheckChecked1">
-                                                S Corporation
-                                            </label>
+                                    <div class="row mb-2">
+                                        <div class="col-md-4">
+                                            <p class="fw-bold fs-5 mb-2 fw-bold">Cédula de identificación fiscal</p>
+                                            <a href="/download/{{TaxIdentificationVerificationFile}}" class="ms-3" target="_blank">
+                                                <i class="ki-outline ki-file-down fs-4x text-primary"></i>
+                                            </a>
                                         </div>
-                                        <div class="form-check mb-4">
-                                            <input class="form-check-input" type="radio" value="" id="flexCheckChecked1" name="radio2" checked="">
-                                            <label class="form-check-label" for="flexCheckChecked1">
-                                                Individual/Sole Propietor
-                                            </label>
-                                        </div>
-                                        <div class="form-check mb-4">
-                                            <input class="form-check-input" type="radio" value="" id="flexCheckChecked1" name="radio2" checked="">
-                                            <label class="form-check-label" for="flexCheckChecked1">
-                                                Cooperative
-                                            </label>
-                                        </div>
-                                        <div class="form-floating mb-4">
-                                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-                                            <label for="floatingTextarea2">Comments</label>
+                                        <div class="col-md-4">
+                                            <p class="fw-bold fs-5 mb-2 fw-bold">Comprobante de domicilio</p>
+                                            <a href="/download/{{proofOfAddressFile}}" class="ms-3" target="_blank">
+                                                <i class="ki-outline ki-file-down fs-4x text-primary"></i>
+                                            </a>
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
-                                        <div class="form-floating">
-                                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
-                                            <label for="floatingInput">Sitio Web</label>
-                                        </div>
-                                    </div>
-                                </div>
-                               
+                                 {{/each}}
                                 <!--end::Content-->
                             </div>
                             <!--end::Content container-->
