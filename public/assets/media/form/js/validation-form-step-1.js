@@ -12,24 +12,24 @@ function Progres(stepp) {
 var stepsData = {};
 function getData() {
   // Recorrer todos los inputs visibles, incluidos textarea y select
-  $("#kt_sign_up_form :input:visible").each(function() {
+  $('#kt_sign_up_form :input:visible').each(function () {
     var type = $(this).attr('type');
     var name = $(this).attr('name');
     var value = $(this).val();
 
     // Manejar checkboxes
     if (type === 'checkbox') {
-        stepsData[name] = $(this).is(':checked');
+      stepsData[name] = $(this).is(':checked');
     }
     // Manejar radio buttons
     else if (type === 'radio') {
-        if ($(this).is(':checked')) {
-            stepsData[name] = value;
-        }
+      if ($(this).is(':checked')) {
+        stepsData[name] = value;
+      }
     }
     // Manejar todos los otros tipos de inputs (incluidos text, textarea, select)
     else {
-        stepsData[name] = value;
+      stepsData[name] = value;
     }
   });
 
@@ -177,7 +177,7 @@ let stepp_1 = document.getElementById('stepp_1');
 console.log(stepp_1);
 stepp_1.addEventListener('click', async function () {
   let isValidStep1 = await validateStep1();
-  
+
   if (isValidStep1) {
     getData();
     console.log(stepsData);
