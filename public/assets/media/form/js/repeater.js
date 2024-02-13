@@ -1,16 +1,20 @@
-/* eslint-disable prettier/prettier */
+let index = 0;
 $('#kt_docs_repeater_basic').repeater({
   initEmpty: false,
 
   defaultValues: {
-    'text-input': 'foo',
+      'text-input': 'foo'
   },
 
   show: function () {
-    $(this).slideDown();
+      if(index < 1){
+        index = ++index;
+        $(this).slideDown();
+      }
   },
 
   hide: function (deleteElement) {
-    $(this).slideUp(deleteElement);
-  },
+    index = --index;
+      $(this).slideUp(deleteElement);
+  }
 });
