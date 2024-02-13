@@ -212,7 +212,7 @@
                                             <label for='paises' class='form-label'>Pais</label>
                                             <div class='fv-row'>
                                                 <select class='form-select' id='paises' name='select_country'
-                                                    data-placeholder='Select an option'>
+                                                    data-placeholder='Selecciona un opción'>
                                                     <option>
                                                     </option>
                                                     <option data-kt-select2-country='/assets/media/form/svg/us.svg'>
@@ -489,18 +489,8 @@
                                                 <label for='state' class='form-label'>Estado</label>
                                                 <div class='fv-row'>
                                                     <select class='form-select' id='state' name='state'
-                                                        data-placeholder='Select an option'>
+                                                        data-placeholder='Selecciona un opción' data-control="select2">
                                                         <option>
-                                                        </option>
-                                                        <option data-kt-select2-country='/assets/media/form/svg/us.svg'>
-                                                            Estados Unidos
-                                                        </option>
-                                                        <option data-kt-select2-country='/assets/media/form/svg/mx.svg'>
-                                                            Mexico
-                                                        </option>
-                                                        <option
-                                                            data-kt-select2-country='/assets/media/form/svg/world.svg'>
-                                                            Resto del mundo
                                                         </option>
                                                     </select>
                                                 </div>
@@ -509,18 +499,8 @@
                                                 <label for='city' class='form-label'>Ciudad</label>
                                                 <div class='fv-row'>
                                                     <select class='form-select' id='city' name='city'
-                                                        data-placeholder='Select an option'>
+                                                        data-placeholder='Selecciona un opción' data-control="select2">
                                                         <option>
-                                                        </option>
-                                                        <option data-kt-select2-country='/assets/media/form/svg/us.svg'>
-                                                            Estados Unidos
-                                                        </option>
-                                                        <option data-kt-select2-country='/assets/media/form/svg/mx.svg'>
-                                                            Mexico
-                                                        </option>
-                                                        <option
-                                                            data-kt-select2-country='/assets/media/form/svg/world.svg'>
-                                                            Resto del mundo
                                                         </option>
                                                     </select>
                                                 </div>
@@ -612,7 +592,7 @@
                                                 <label for='industry' class='form-label'>Industria</label>
                                                 <div class='fv-row'>
                                                     <select class='form-select' id='industry' name='industry'
-                                                        data-placeholder='Select an option'>
+                                                        data-placeholder='Selecciona un opción'>
                                                         <option>
                                                         </option>
                                                         <option data-kt-select2-country='/assets/media/form/svg/us.svg'>
@@ -646,18 +626,18 @@
                                         <!--begin::Input group=-->
                                         <div class='mb-8'>
                                             <!--begin::Fecha de formación-->
-                                            <label for='DateOfIncorporation' class='form-label'>
+                                            <label for='kt_datepicker_1' class='form-label'>
                                                 Fecha de formación
                                             </label>
-                                            <div class="input-group fv-row" id="kt_td_picker_date_only"
-                                                data-td-target-input="nearest" data-td-target-toggle="nearest">
-                                                <input id="kt_td_picker_date_only_input" type="text"
-                                                    name="DateOfIncorporation" class="form-control"
-                                                    data-td-target="#kt_td_picker_date_only" />
-                                                <span class="input-group-text" data-td-target="#kt_td_picker_date_only"
+                                            <div class="input-group">
+                                                <input class="form-control" id="kt_datepicker_1"
+                                                    placeholder="MM/DD/AAAA" />
+                                                <span class="input-group-text" data-td-target="#kt_td_picker_basic"
                                                     data-td-toggle="datetimepicker">
-                                                    <i class="ki-duotone ki-calendar fs-2"><span
-                                                            class="path1"></span><span class="path2"></span></i>
+                                                    <i class="ki-duotone ki-calendar fs-2">
+                                                        <span class="path1"></span>
+                                                        <span class="path2"></span>
+                                                    </i>
                                                 </span>
                                             </div>
                                             <!--end::Fecha de formación-->
@@ -1256,53 +1236,74 @@
                                             </p>
                                         </div>
                                         <!--begin::Input group-->
-                                        <div>
+                                        <div id="kt_docs_repeater_basic">
                                             <p>Datos del usuario autorizado 1</p>
-                                            <div class='row mb-4'>
-                                                <!--begin::Nombres y apellidos-->
-                                                <div class='col'>
-                                                    <label for='nombreApellido' class='form-label'>Nombres y
-                                                        apellidos</label>
-                                                    <div class='fv-row'>
-                                                        <input type='text' name='nombreApellido' autocomplete='off'
-                                                            id='nombreApellido' class='form-control' required />
+                                            <div class="form-group">
+                                                <div data-repeater-list="kt_docs_repeater_basic">
+                                                    <div data-repeater-item>
+                                                        <div class="form-group col">
+                                                            <div class='row mb-4'>
+                                                                <!--begin::Nombres y apellidos-->
+                                                                <div class='col'>
+                                                                    <label for='nombreApellido'
+                                                                        class='form-label'>Nombres y
+                                                                        apellidos</label>
+                                                                    <div class='fv-row'>
+                                                                        <input type='text' name='nombreApellido'
+                                                                            autocomplete='off' id='nombreApellido'
+                                                                            class='form-control' required />
+                                                                    </div>
+                                                                </div>
+                                                                <!--end::Nombres y apellidos-->
+                                                                <!--begin::Cargo en la empresa-->
+                                                                <div class='col'>
+                                                                    <label for='cargoEmpresa' class='form-label'>
+                                                                        Cargo en la empresa
+                                                                    </label>
+                                                                    <div class='fv-row'>
+                                                                        <input type='text' name='cargoEmpresa'
+                                                                            autocomplete='off' id='cargoEmpresa'
+                                                                            class='form-control' required />
+                                                                    </div>
+                                                                </div>
+                                                                <!--end::Cargo en la empresa-->
+                                                            </div>
+                                                            <div class='row mb-4'>
+                                                                <!--begin::Teléfono celular-->
+                                                                <div class='col'>
+                                                                    <label for='telefonoCelular'
+                                                                        class='form-label'>Teléfono
+                                                                        celular</label>
+                                                                    <div class='fv-row'>
+                                                                        <input type='text' name='telefonoCelular'
+                                                                            autocomplete='off' id='telefonoCelular'
+                                                                            class='form-control' required />
+                                                                    </div>
+                                                                </div>
+                                                                <!--end::Teléfono celular-->
+                                                                <!--begin::Correo electrónico-->
+                                                                <div class='col'>
+                                                                    <label for='correoElectronico' class='form-label'>
+                                                                        Correo electrónico
+                                                                    </label>
+                                                                    <div class='fv-row'>
+                                                                        <input type='text' name='correoElectronico'
+                                                                            autocomplete='off' id='correoElectronico'
+                                                                            class='form-control' required />
+                                                                    </div>
+                                                                </div>
+                                                                <!--end::Correo electrónico-->
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <!--end::Nombres y apellidos-->
-                                                <!--begin::Cargo en la empresa-->
-                                                <div class='col'>
-                                                    <label for='cargoEmpresa' class='form-label'>
-                                                        Cargo en la empresa
-                                                    </label>
-                                                    <div class='fv-row'>
-                                                        <input type='text' name='cargoEmpresa' autocomplete='off'
-                                                            id='cargoEmpresa' class='form-control' required />
-                                                    </div>
-                                                </div>
-                                                <!--end::Cargo en la empresa-->
                                             </div>
-                                            <div class='row mb-4'>
-                                                <!--begin::Teléfono celular-->
-                                                <div class='col'>
-                                                    <label for='telefonoCelular' class='form-label'>Teléfono
-                                                        celular</label>
-                                                    <div class='fv-row'>
-                                                        <input type='text' name='telefonoCelular' autocomplete='off'
-                                                            id='telefonoCelular' class='form-control' required />
-                                                    </div>
-                                                </div>
-                                                <!--end::Teléfono celular-->
-                                                <!--begin::Correo electrónico-->
-                                                <div class='col'>
-                                                    <label for='correoElectronico' class='form-label'>
-                                                        Correo electrónico
-                                                    </label>
-                                                    <div class='fv-row'>
-                                                        <input type='text' name='correoElectronico' autocomplete='off'
-                                                            id='correoElectronico' class='form-control' required />
-                                                    </div>
-                                                </div>
-                                                <!--end::Correo electrónico-->
+                                            <div class="form-group mt-4 mb-4 w-100 d-flex justify-content-end">
+                                                <a href="javascript:;" data-repeater-create
+                                                    class="btn btn-light-primary">
+                                                    <i class="ki-duotone ki-plus fs-3"></i>
+                                                    Agregar
+                                                </a>
                                             </div>
                                         </div>
                                         <!--end::Input group=-->
@@ -1480,19 +1481,20 @@
                                         </div>
                                         <!--end::Input group-->
                                         <!--begin::Input group=-->
-                                        <div class="mb-4">
+                                        <div class='mb-8'>
                                             <!--begin::Fecha (MM/DD/YYYY)-->
-                                            <label for='dateAutorization' class='form-label'>
+                                            <label for='kt_datepicker_2' class='form-label'>
                                                 Fecha (MM/DD/YYYY)
                                             </label>
-                                            <div class="input-group fv-row" id="kt_td_picker_date_only"
-                                                data-td-target-input="nearest" data-td-target-toggle="nearest">
-                                                <input id="dateAutorization" name="dateAutorization" type="text"
-                                                    class="form-control" data-td-target="#kt_td_picker_date_only" />
-                                                <span class="input-group-text" data-td-target="#kt_td_picker_date_only"
+                                            <div class="input-group">
+                                                <input class="form-control" id="kt_datepicker_2"
+                                                    placeholder="MM/DD/AAAA" />
+                                                <span class="input-group-text" data-td-target="#kt_td_picker_basic"
                                                     data-td-toggle="datetimepicker">
-                                                    <i class="ki-duotone ki-calendar fs-2"><span
-                                                            class="path1"></span><span class="path2"></span></i>
+                                                    <i class="ki-duotone ki-calendar fs-2">
+                                                        <span class="path1"></span>
+                                                        <span class="path2"></span>
+                                                    </i>
                                                 </span>
                                             </div>
                                             <!--end::Fecha (MM/DD/YYYY)-->
@@ -1616,16 +1618,20 @@
     <script>
         Inputmask({ "mask": "(999) 999-9999" }).mask("#Telefono");
     </script>
+
+    <script src='/assets/media/form/js/validation.js'></script>
     <script src='/assets/media/form/js/validation-form-step-1.js'></script>
     <script src='/assets/media/form/js/validation-form-step-2.js'></script>
     <script src='/assets/media/form/js/validation-form-step-3.js'></script>
     <script src='/assets/media/form/js/validation-form-step-4.js'></script>
     <script src='/assets/media/form/js/validation-form-step-5.js'></script>
     <script src='/assets/media/form/js/validation-form-step-6.js'></script>
+    <script src='/assets/media/form/js/filterStatesCity.js'></script>
     <script src='/assets/media/form/js/country.js'></script>
-    <script src='/assets/media/form/js/validation.js'></script>
     <script src='/assets/media/form/js/date.js'></script>
+    <script src='/assets/media/form/js/repeater.js'></script>
     <script src='/assets/media/form/js/dropzone.js'></script>
+    <script></script>
     <!--end::Custom Javascript-->
     <!--end::Javascript-->
 </body>
