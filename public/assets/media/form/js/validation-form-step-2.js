@@ -17,14 +17,14 @@ let validatorStep2 = FormValidation.formValidation(form, {
         },
       },
     },
-    anualVolume: {
+    estimatedTradeAmount: {
       validators: {
         notEmpty: {
           message: 'Este campo es obligatorio',
         },
       },
     },
-    estimatedOfTransaction: {
+    estimatedOfMonthlyTransaction: {
       validators: {
         notEmpty: {
           message: 'Este campo es obligatorio',

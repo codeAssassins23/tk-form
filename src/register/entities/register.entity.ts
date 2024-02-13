@@ -102,21 +102,21 @@ export class Register {
 
   //Empieza el tercer paso del registro para usd
   //Prueba de campos para USD
-  @Column({ type: 'varchar', length: 45 })
+  @Column({ type: 'varchar', length: 45, nullable: true })
   preferredMethodOfFunding: string;
 
-  @Column({ type: 'varchar' })
+  @Column({ type: 'varchar', nullable: true })
   infoBank: string;
 
   //start four step of register
-  @Column({ type: 'varchar' })
+  @Column({ type: 'varchar', nullable: true })
   infoAuthorizedUsers: string;
 
   //Start five step of register
   @Column({ type: 'varchar', length: 7 })
   ManyShouldersOwn25Percent: string;
 
-  @Column({ type: 'varchar' })
+  @Column({ type: 'varchar', nullable: true })
   infoBeneficialOwner: string;
 
   //Start six step of register

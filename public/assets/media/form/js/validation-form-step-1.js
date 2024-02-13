@@ -10,6 +10,7 @@ function Progres(stepp) {
 }
 
 var stepsData = {};
+
 function getData() {
   // Recorrer todos los inputs visibles, incluidos textarea y select
   $('#kt_sign_up_form :input:visible').each(function () {
@@ -179,6 +180,11 @@ stepp_1.addEventListener('click', async function () {
   let isValidStep1 = await validateStep1();
 
   if (isValidStep1) {
+    stepsData.fullName = document.getElementById('nombre_apellidos').value;
+    stepsData.email = document.getElementById('correo_electronico').value;
+    stepsData.corporate = document.getElementById('empresa').value;
+    stepsData.phone = document.getElementById('telefono').value;
+    stepsData.country = document.getElementById('paises').value;
     getData();
     console.log(stepsData);
     stepper.goNext();
