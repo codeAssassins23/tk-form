@@ -5,13 +5,39 @@ import {
   MinLength,
   IsEmail,
   ValidateNested,
+  IsNumber,
+  IsDate,
+  IsArray,
 } from 'class-validator';
 
 class infoBankDto {
   @IsString()
-  @MinLength(1, { message: 'El name debe tener al menos 1 caracteres' })
-  @IsNotEmpty({ message: 'El name es requerido' })
-  name: string;
+  @MinLength(1, { message: 'El nameBank debe tener al menos 1 caracteres' })
+  nameBank: string;
+
+  @IsString()
+  @MinLength(1, {
+    message: 'El addressBank debe tener al menos 1 caracteres',
+  })
+  addressBank: string;
+
+  @IsString()
+  @MinLength(1, {
+    message: 'El accountNumber debe tener al menos 1 caracteres',
+  })
+  accountNumber: string;
+
+  @IsString()
+  @MinLength(1, {
+    message: 'El routingNumber debe tener al menos 1 caracteres',
+  })
+  routingNumber: string;
+
+  @IsString()
+  @MinLength(1, {
+    message: 'El FileCheque debe tener al menos 1 caracteres',
+  })
+  fileCheque: string;
 }
 
 class InfoBeneficialOwnerDto {
@@ -19,6 +45,28 @@ class InfoBeneficialOwnerDto {
   @MinLength(1, { message: 'El name debe tener al menos 1 caracteres' })
   @IsNotEmpty({ message: 'El name es requerido' })
   name: string;
+
+  @IsString()
+  @MinLength(1, { message: 'El occupation debe tener al menos 1 caracteres' })
+  occupation: string;
+
+  @IsString()
+  @MinLength(1, { message: 'El ownership debe tener al menos 1 caracteres' })
+  @IsNotEmpty({ message: 'El ownership es requerido' })
+  ownership: string;
+
+  @IsDate()
+  @IsNotEmpty({ message: 'El dateOfBirth es requerido' })
+  dateOfBirth: Date;
+
+  @IsString()
+  @MinLength(1, { message: 'El address debe tener al menos 1 caracteres' })
+  address: string;
+
+  @IsString()
+  @IsEmail({}, { message: 'El email debe ser válido' })
+  @MinLength(1, { message: 'El email debe tener al menos 1 caracteres' })
+  email: string;
 }
 
 class InfoAuthorizedUsersDto {
@@ -26,6 +74,22 @@ class InfoAuthorizedUsersDto {
   @MinLength(1, { message: 'El name debe tener al menos 1 caracteres' })
   @IsNotEmpty({ message: 'El name es requerido' })
   name: string;
+
+  @IsString()
+  @MinLength(1, { message: 'El title debe tener al menos 1 caracteres' })
+  @IsNotEmpty({ message: 'El title es requerido' })
+  title: string;
+
+  @IsString()
+  @MinLength(1, { message: 'El phone debe tener al menos 1 caracteres' })
+  @IsNotEmpty({ message: 'El phone es requerido' })
+  phone: string;
+
+  @IsString()
+  @MinLength(1, { message: 'El email debe tener al menos 1 caracteres' })
+  @IsEmail({}, { message: 'El email debe ser válido' })
+  @IsNotEmpty({ message: 'El email es requerido' })
+  email: string;
 }
 
 export class createRegisterDto {
@@ -184,48 +248,6 @@ export class createRegisterDto {
   @IsNotEmpty({ message: 'El estimatedOfTransaction es requerido' })
   currenciesNeeded: string;
 
-  /* @IsString()
-  @MinLength(1, {
-    message: 'El companyRegistrationFile debe tener al menos 1 caracteres',
-  })
-  @IsNotEmpty({ message: 'El companyRegistrationFile es requerido' })
-  companyRegistrationFile: string;
-
-  @IsString()
-  @MinLength(1, {
-    message:
-      'El TaxIdentificationVerificationFile debe tener al menos 1 caracteres',
-  })
-  @IsNotEmpty({ message: 'El TaxIdentificationVerificationFile es requerido' })
-  TaxIdentificationVerificationFile: string;
-
-  @IsString()
-  @MinLength(1, {
-    message:
-      'El beneficialOwnershipVerificationFile debe tener al menos 1 caracteres',
-  })
-  @IsNotEmpty({
-    message: 'El beneficialOwnershipVerificationFile es requerido',
-  })
-  beneficialOwnershipVerificationFile: string;
-
-  @IsString()
-  @MinLength(1, {
-    message: 'El GovernmentIssuedValidPhotoID debe tener al menos 1 caracteres',
-  })
-  @IsNotEmpty({
-    message: 'El GovernmentIssuedValidPhotoID es requerido',
-  })
-  GovernmentIssuedValidPhotoID: string;
-
-  @IsString()
-  @MinLength(1, {
-    message: 'El proofOfAddressFile debe tener al menos 1 caracteres',
-  })
-  @IsNotEmpty({
-    message: 'El proofOfAddressFile es requerido',
-  })
-  proofOfAddressFile: string; */
   //Empieza el tercer paso del registro para usd
   //Prueba de campos para USD
   @IsString()
@@ -237,13 +259,15 @@ export class createRegisterDto {
   })
   preferredMethodOfFunding: string;
 
-  @ValidateNested()
+  @IsArray()
+  @ValidateNested({ each: true })
   @Type(() => infoBankDto)
-  infoBank: infoBankDto;
+  infoBank: infoBankDto[];
 
-  @ValidateNested()
+  @IsArray()
+  @ValidateNested({ each: true })
   @Type(() => InfoAuthorizedUsersDto)
-  infoAuthorizedUsers: InfoAuthorizedUsersDto;
+  infoAuthorizedUsers: InfoAuthorizedUsersDto[];
 
   @IsString()
   @MinLength(1, {
@@ -254,9 +278,10 @@ export class createRegisterDto {
   })
   ManyShouldersOwn25Percent: string;
 
-  @ValidateNested()
+  @IsArray()
+  @ValidateNested({ each: true })
   @Type(() => InfoBeneficialOwnerDto)
-  infoBeneficialOwner: InfoBeneficialOwnerDto;
+  infoBeneficialOwner: InfoBeneficialOwnerDto[];
 
   @IsString()
   @MinLength(1, {
@@ -295,6 +320,10 @@ export class createRegisterDto {
     message: 'El uploadSignatureAuthorizationMonex es requerido',
   })
   uploadSignatureAuthorizationMonex: string;
+
+  @IsNumber()
+  @IsNotEmpty({ message: 'El idLeads es requerido' })
+  idLead: number;
 
   @Exclude()
   status: string;

@@ -96,6 +96,7 @@ export class RegisterService {
       createRegisterDto.titlePositionAuthorizationMonex;
     register.dateAuthorizationMonex = createRegisterDto.dateAuthorizationMonex;
     register.uploadSignatureAuthorizationMonex = names.idFirma;
+    register.idLead = createRegisterDto.idLead;
 
     register.status = '1';
     const save = await this.registerRepository.save(register);
@@ -104,9 +105,9 @@ export class RegisterService {
     return save;
   }
 
-  async findAllRegister(): Promise<Register[]> {
+  async findRegisterById(id: number): Promise<Register[]> {
     return this.registerRepository.find({
-      where: { status: '1' },
+      where: { idLead: id },
     });
   }
 

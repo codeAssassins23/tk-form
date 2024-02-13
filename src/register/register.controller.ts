@@ -3,11 +3,13 @@ import {
   Controller,
   Get,
   HttpStatus,
+  NotFoundException,
   Param,
   ParseFilePipeBuilder,
   Post,
   Render,
   Req,
+  Res,
   UploadedFile,
   UseGuards,
   UseInterceptors,
@@ -20,6 +22,8 @@ import { leadsDto } from './dto/create-leads.dto';
 import { createRegisterDto } from './dto/create-register.dto';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
+import { Response } from 'express';
+import { join } from 'path';
 
 @Controller('/')
 @UseGuards(RolesGuard)
@@ -47,6 +51,7 @@ export class RegisterController {
   async getLeads(@Req() request: Request) {
     try {
       const leads = await this.registerService.findAllRegisterLeads();
+      console.log(leads, 'leads');
       return {
         data: leads,
         recordsTotal: leads.length,
@@ -83,13 +88,31 @@ export class RegisterController {
     }
   }
 
-  @Get('/details')
+  @Get('/details/:id')
   @Roles('SuperAdmin')
   @Render('register/detail_leads')
-  async detailsRegisters(@Req() request: Request) {
+  async detailsRegisters(@Req() request: Request, @Param('id') id: number) {
     try {
+      const lead = await this.registerService.findRegisterById(id);
+      console.log(lead, 'lead');
+      if (!lead) {
+        throw new NotFoundException('No se encontraron registros');
+      }
       const user = request['user'];
-      return user;
+
+      return { user: user, lead: lead };
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  //download pdfs
+  @Get('/download/:file')
+  @Roles('SuperAdmin')
+  async downloadFile(@Param('file') file: string, @Res() res: Response) {
+    try {
+      const filePath = join(__dirname, '..', '..', 'upload', 'files', file);
+      res.download(filePath);
     } catch (error) {
       console.log(error);
     }
