@@ -24,8 +24,7 @@ async function bootstrap() {
       disableErrorMessages: false,
       exceptionFactory(errors) {
         const messages = errors.map(
-          (error) =>
-            `${error.property} - ${Object.values(error.constraints).join(', ')}`,
+          (error) => `${error} - ${Object.values(error).join(', ')}`,
         );
         console.log(messages);
         return new BadRequestException(messages);

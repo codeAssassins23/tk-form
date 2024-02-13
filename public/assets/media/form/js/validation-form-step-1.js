@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
 
+<<<<<<< HEAD
 function Progres(stepp) {
   let progress_bar = document.getElementById('progress_bar');
   let actual_stepp = document.getElementById('actual_stepp');
@@ -7,6 +8,33 @@ function Progres(stepp) {
   progress_bar.style.width = `${porcent}%`;
   actual_stepp.innerHTML = '';
   actual_stepp.innerHTML = stepp;
+=======
+var stepsData = {};
+function getData() {
+  // Recorrer todos los inputs visibles, incluidos textarea y select
+  $("#kt_sign_up_form :input:visible").each(function() {
+    var type = $(this).attr('type');
+    var name = $(this).attr('name');
+    var value = $(this).val();
+
+    // Manejar checkboxes
+    if (type === 'checkbox') {
+        stepsData[name] = $(this).is(':checked');
+    }
+    // Manejar radio buttons
+    else if (type === 'radio') {
+        if ($(this).is(':checked')) {
+            stepsData[name] = value;
+        }
+    }
+    // Manejar todos los otros tipos de inputs (incluidos text, textarea, select)
+    else {
+        stepsData[name] = value;
+    }
+  });
+
+  return stepsData;
+>>>>>>> 90dcce1515e292d45c93e81460c19816c98c5efc
 }
 
 const form = document.getElementById('kt_sign_up_form');
@@ -150,8 +178,9 @@ let stepp_1 = document.getElementById('stepp_1');
 console.log(stepp_1);
 stepp_1.addEventListener('click', async function () {
   let isValidStep1 = await validateStep1();
-  console.log(isValidStep1);
+  
   if (isValidStep1) {
+    console.log(stepsData);
     stepper.goNext();
     Progres(2);
   }

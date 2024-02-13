@@ -125,8 +125,7 @@ stepp_6.addEventListener('click', function () {
   let isValidStep6 = validateStep6();
   isValidStep6.then((value) => {
     if (value) {
-      console.log('siguió al siguiente paso, osea enviar el formulario');
-      stepper.goNext(); // go next step
+      console.log(stepsData);
     }
   });
 });
