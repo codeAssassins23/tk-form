@@ -42,6 +42,8 @@ stepp_5.addEventListener('click', async function () {
   let isValidStep5 = await validateStep5();
   console.log(isValidStep5);
   if (isValidStep5) {
+    getData();
+    console.log(stepsData);
     stepper.goNext();
   }
 });

@@ -105,18 +105,18 @@ export class Register {
   @Column({ type: 'varchar', length: 45 })
   preferredMethodOfFunding: string;
 
-  @Column({ type: 'json' })
+  @Column({ type: 'varchar' })
   infoBank: string;
 
   //start four step of register
-  @Column({ type: 'json' })
+  @Column({ type: 'varchar' })
   infoAuthorizedUsers: string;
 
   //Start five step of register
   @Column({ type: 'varchar', length: 7 })
   ManyShouldersOwn25Percent: string;
 
-  @Column({ type: 'json' })
+  @Column({ type: 'varchar' })
   infoBeneficialOwner: string;
 
   //Start six step of register

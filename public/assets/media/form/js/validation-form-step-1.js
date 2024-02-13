@@ -1,5 +1,32 @@
 /* eslint-disable prettier/prettier */
 
+var stepsData = {};
+function getData() {
+  // Recorrer todos los inputs visibles, incluidos textarea y select
+  $("#kt_sign_up_form :input:visible").each(function() {
+    var type = $(this).attr('type');
+    var name = $(this).attr('name');
+    var value = $(this).val();
+
+    // Manejar checkboxes
+    if (type === 'checkbox') {
+        stepsData[name] = $(this).is(':checked');
+    }
+    // Manejar radio buttons
+    else if (type === 'radio') {
+        if ($(this).is(':checked')) {
+            stepsData[name] = value;
+        }
+    }
+    // Manejar todos los otros tipos de inputs (incluidos text, textarea, select)
+    else {
+        stepsData[name] = value;
+    }
+  });
+
+  return stepsData;
+}
+
 const form = document.getElementById('kt_sign_up_form');
 
 // Stepper lement
@@ -140,8 +167,9 @@ let stepp_1 = document.getElementById('stepp_1');
 console.log(stepp_1);
 stepp_1.addEventListener('click', async function () {
   let isValidStep1 = await validateStep1();
-  console.log(isValidStep1);
+  
   if (isValidStep1) {
+    console.log(stepsData);
     stepper.goNext();
   }
 });

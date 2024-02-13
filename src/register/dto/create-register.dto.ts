@@ -8,6 +8,7 @@ import {
   IsNumber,
   IsDate,
   IsArray,
+  IsOptional,
 } from 'class-validator';
 
 class infoBankDto {
@@ -55,9 +56,8 @@ class InfoBeneficialOwnerDto {
   @IsNotEmpty({ message: 'El ownership es requerido' })
   ownership: string;
 
-  @IsDate()
   @IsNotEmpty({ message: 'El dateOfBirth es requerido' })
-  dateOfBirth: Date;
+  dateOfBirth: string;
 
   @IsString()
   @MinLength(1, { message: 'El address debe tener al menos 1 caracteres' })
@@ -259,11 +259,13 @@ export class createRegisterDto {
   })
   preferredMethodOfFunding: string;
 
+  @IsOptional()
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => infoBankDto)
   infoBank: infoBankDto[];
 
+  @IsOptional()
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => InfoAuthorizedUsersDto)
@@ -278,6 +280,7 @@ export class createRegisterDto {
   })
   ManyShouldersOwn25Percent: string;
 
+  @IsOptional()
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => InfoBeneficialOwnerDto)
