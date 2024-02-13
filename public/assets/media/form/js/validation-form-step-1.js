@@ -1,5 +1,14 @@
 /* eslint-disable prettier/prettier */
 
+function Progres(stepp) {
+  let progress_bar = document.getElementById('progress_bar');
+  let actual_stepp = document.getElementById('actual_stepp');
+  let porcent = stepp * 16.6;
+  progress_bar.style.width = `${porcent}%`;
+  actual_stepp.innerHTML = '';
+  actual_stepp.innerHTML = stepp;
+}
+
 const form = document.getElementById('kt_sign_up_form');
 
 // Stepper lement
@@ -137,11 +146,13 @@ const validateStep1 = async () => {
 };
 
 let stepp_1 = document.getElementById('stepp_1');
+
 console.log(stepp_1);
 stepp_1.addEventListener('click', async function () {
   let isValidStep1 = await validateStep1();
   console.log(isValidStep1);
   if (isValidStep1) {
     stepper.goNext();
+    Progres(2);
   }
 });

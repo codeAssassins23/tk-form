@@ -34,6 +34,7 @@ let stepp_5_prev = document.getElementById('stepp_5_prev');
 
 stepp_5_prev.addEventListener('click', function () {
   stepper.goPrevious(); // go next step
+  Progres(4);
 });
 
 let stepp_5 = document.getElementById('stepp_5');
@@ -43,5 +44,6 @@ stepp_5.addEventListener('click', async function () {
   console.log(isValidStep5);
   if (isValidStep5) {
     stepper.goNext();
+    Progres(6);
   }
 });

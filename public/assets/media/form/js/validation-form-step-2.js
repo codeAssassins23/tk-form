@@ -63,6 +63,7 @@ let stepp_2_prev = document.getElementById('stepp_2_prev');
 
 stepp_2_prev.addEventListener('click', function () {
   stepper.goPrevious(); // go next step
+  Progres(1);
 });
 
 let stepp_2 = document.getElementById('stepp_2');
@@ -72,5 +73,6 @@ stepp_2.addEventListener('click', async function () {
   console.log(isValidStep2);
   if (isValidStep2) {
     stepper.goNext();
+    Progres(3);
   }
 });

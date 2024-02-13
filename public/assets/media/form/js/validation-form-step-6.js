@@ -11,22 +11,22 @@ var dropzoneDigitalSignature = new Dropzone('#dropzoneDigitalSignature', {
   acceptedFiles: 'application/pdf',
   accept: function (file, done) {
     if (file.type !== 'application/pdf') {
-      done("Solo se permite archivos pdf");
+      done('Solo se permite archivos pdf');
     } else {
-      if(file.size > (20*1024*1024)){
-        done("El tamaño del archivo excede el límite de 20MB")
-      } else{
+      if (file.size > 20 * 1024 * 1024) {
+        done('El tamaño del archivo excede el límite de 20MB');
+      } else {
         done();
       }
     }
   },
-  init: function() {
-    this.on("error", function(file, message) {
+  init: function () {
+    this.on('error', function (file, message) {
       // Manejar errores de validación
       alert(message);
       this.removeFile(file); // Eliminar el archivo que no cumple con las validaciones
     });
-  }
+  },
 });
 
 // Init validartion 1
@@ -60,13 +60,13 @@ let validatorStep6 = FormValidation.formValidation(form, {
         },
       },
     },
-    acceptTerms:{
+    acceptTerms: {
       validators: {
         notEmpty: {
-          message: 'Este campo es obligatorio'
-        }
-      }
-    }
+          message: 'Este campo es obligatorio',
+        },
+      },
+    },
   },
   plugins: {
     trigger: new FormValidation.plugins.Trigger(),
@@ -116,6 +116,7 @@ let stepp_6_prev = document.getElementById('stepp_6_prev');
 
 stepp_6_prev.addEventListener('click', function () {
   stepper.goPrevious(); // go next step
+  Progres(5);
 });
 
 let stepp_6 = document.getElementById('stepp_6');
