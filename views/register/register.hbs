@@ -663,7 +663,7 @@
                         <div>
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                              <input class="form-check-input" type="radio" value="1" name="typeOfBusiness"
+                              <input class="form-check-input" type="radio" value="2" name="typeOfBusiness"
                                 id="text_wow" />
                               <div class="form-check-label">
                                 Corporación
@@ -674,7 +674,7 @@
                         <div>
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                              <input class="form-check-input" type="radio" value="1" name="typeOfBusiness" />
+                              <input class="form-check-input" type="radio" value="3" name="typeOfBusiness" />
                               <div class="form-check-label">
                                 Sociedad
                               </div>
@@ -684,7 +684,7 @@
                         <div>
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                              <input class="form-check-input" type="radio" value="1" name="typeOfBusiness" />
+                              <input class="form-check-input" type="radio" value="4" name="typeOfBusiness" />
                               <div class="form-check-label">
                                 Cooperativa
                               </div>
@@ -694,7 +694,7 @@
                         <div>
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                              <input class="form-check-input" type="radio" value="1" name="typeOfBusiness" />
+                              <input class="form-check-input" type="radio" value="5" name="typeOfBusiness" />
                               <div class="form-check-label">
                                 Fideicomiso/Del Estado
                               </div>
@@ -704,7 +704,7 @@
                         <div>
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                              <input class="form-check-input" type="radio" value="1" name="typeOfBusiness" />
+                              <input class="form-check-input" type="radio" value="6" name="typeOfBusiness" />
                               <div class="form-check-label">
                                 Otra
                               </div>
@@ -740,7 +740,7 @@
                         <div>
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                              <input class="form-check-input" type="checkbox" value="1" name="isTheApplicant"
+                              <input class="form-check-input" type="checkbox" value="2" name="isTheApplicant"
                                 id="text_wow" />
                               <div class="form-check-label">
                                 Venta de armas
@@ -751,7 +751,7 @@
                         <div>
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                              <input class="form-check-input" type="checkbox" value="1" name="isTheApplicant" />
+                              <input class="form-check-input" type="checkbox" value="3" name="isTheApplicant" />
                               <div class="form-check-label">
                                 Venta de criptomonedas
                               </div>
@@ -761,7 +761,7 @@
                         <div>
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                              <input class="form-check-input" type="checkbox" value="1" name="isTheApplicant" />
+                              <input class="form-check-input" type="checkbox" value="4" name="isTheApplicant" />
                               <div class="form-check-label">
                                 Relacionado con sustancias controladas
                               </div>
@@ -771,7 +771,7 @@
                         <div>
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                              <input class="form-check-input" type="checkbox" value="1" name="isTheApplicant" />
+                              <input class="form-check-input" type="checkbox" value="5" name="isTheApplicant" />
                               <div class="form-check-label">
                                 Institución financiera
                               </div>
@@ -781,7 +781,7 @@
                         <div>
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                              <input class="form-check-input" type="checkbox" value="1" name="isTheApplicant" />
+                              <input class="form-check-input" type="checkbox" value="6" name="isTheApplicant" />
                               <div class="form-check-label">
                                 Ninguna opción aplica
                               </div>
@@ -839,11 +839,11 @@
                       <!--end::Número de CLABE bancaria-->
                       <!--begin::Monto estimado por transacción-->
                       <div class='col'>
-                        <label for='anualVolume' class='form-label'>
+                        <label for='estimatedTradeAmount' class='form-label'>
                           Monto estimado por transacción
                         </label>
                         <div class='fv-row'>
-                          <input type='number' name='anualVolume' autocomplete='off' id='anualVolume'
+                          <input type='number' name='estimatedTradeAmount' autocomplete='off' id='estimatedTradeAmount'
                             class='form-control' required />
                         </div>
                       </div>
@@ -853,12 +853,12 @@
                     <!--begin::Input group=-->
                     <div class='mb-4'>
                       <!--begin::Número estimado de transacciones al mes-->
-                      <label for='estimatedOfTransaction' class='form-label'>
+                      <label for='estimatedOfMonthlyTransaction' class='form-label'>
                         Número estimado de transacciones al mes
                       </label>
                       <div class='fv-row'>
-                        <input type='number' name='estimatedOfTransaction' autocomplete='off'
-                          id='estimatedOfTransaction' class='form-control' required />
+                        <input type='number' name='estimatedOfMonthlyTransaction' autocomplete='off'
+                          id='estimatedOfMonthlyTransaction' class='form-control' required />
                       </div>
                       <!--end::Número estimado de transacciones al mes-->
                     </div>
@@ -877,7 +877,7 @@
                         <div>
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                              <input class="form-check-input" type="checkbox" value="1" name="currenciesNeeded" />
+                              <input class="form-check-input" type="checkbox" value="Euro" name="currenciesNeeded" />
                               <div class="form-check-label">
                                 Euro
                               </div>
@@ -887,7 +887,7 @@
                         <div>
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                              <input class="form-check-input" type="checkbox" value="1" name="currenciesNeeded"
+                              <input class="form-check-input" type="checkbox" value="Libra esterlina" name="currenciesNeeded"
                                 id="text_wow" />
                               <div class="form-check-label">
                                 Libra esterlina
@@ -898,7 +898,7 @@
                         <div>
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                              <input class="form-check-input" type="checkbox" value="1" name="currenciesNeeded" />
+                              <input class="form-check-input" type="checkbox" value="Yen japones" name="currenciesNeeded" />
                               <div class="form-check-label">
                                 Yen japones
                               </div>
@@ -908,7 +908,7 @@
                         <div>
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                              <input class="form-check-input" type="checkbox" value="1" name="currenciesNeeded" />
+                              <input class="form-check-input" type="checkbox" value="Dólar canadiense" name="currenciesNeeded" />
                               <div class="form-check-label">
                                 Dólar canadiense
                               </div>
@@ -918,7 +918,7 @@
                         <div>
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                              <input class="form-check-input" type="checkbox" value="1" name="currenciesNeeded" />
+                              <input class="form-check-input" type="checkbox" value="Peso mexicano" name="currenciesNeeded" />
                               <div class="form-check-label">
                                 Peso mexicano
                               </div>
@@ -928,7 +928,7 @@
                         <div>
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                              <input class="form-check-input" type="checkbox" value="1" name="currenciesNeeded" />
+                              <input class="form-check-input" type="checkbox" value="Dólar US" name="currenciesNeeded" />
                               <div class="form-check-label">
                                 Dólar US
                               </div>
@@ -938,7 +938,7 @@
                         <div>
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                              <input class="form-check-input" type="checkbox" value="1" name="currenciesNeeded" />
+                              <input class="form-check-input" type="checkbox" value="Otro" name="currenciesNeeded" />
                               <div class="form-check-label">
                                 Otro
                               </div>
@@ -1394,23 +1394,23 @@
                     <div class='row mb-4'>
                       <div class="col">
                         <!--begin::Nombre y apellidos-->
-                        <label for='fullNameAutorization' class='form-label'>
+                        <label for='nameAuthorizationMonex' class='form-label'>
                           Nombre y apellidos
                         </label>
                         <div class='fv-row'>
-                          <input type='text' name='fullNameAutorization' autocomplete='off' id='fullNameAutorization'
+                          <input type='text' name='nameAuthorizationMonex' autocomplete='off' id='nameAuthorizationMonex'
                             class='form-control' required />
                         </div>
                         <!--end::Nombre y apellidos-->
                       </div>
                       <div class="col">
                         <!--begin::Titulo/Cargo-->
-                        <label for='titlePositionAutorization' class='form-label'>
+                        <label for='titlePositionAuthorizationMonex' class='form-label'>
                           Titulo/Cargo
                         </label>
                         <div class='fv-row'>
-                          <input type='text' name='titlePositionAutorization' autocomplete='off'
-                            id='titlePositionAutorization' class='form-control' required />
+                          <input type='text' name='titlePositionAuthorizationMonex' autocomplete='off'
+                            id='titlePositionAuthorizationMonex' class='form-control' required />
                         </div>
                         <!--end::Titulo/Cargo-->
                       </div>
@@ -1419,11 +1419,11 @@
                     <!--begin::Input group=-->
                     <div class='mb-8'>
                       <!--begin::Fecha (MM/DD/YYYY)-->
-                      <label for='kt_datepicker_2' class='form-label'>
+                      <label for='dateAuthorizationMonex' class='form-label'>
                         Fecha (MM/DD/YYYY)
                       </label>
                       <div class="input-group">
-                        <input class="form-control" id="kt_datepicker_2" placeholder="MM/DD/AAAA" />
+                        <input class="form-control" id="dateAuthorizationMonex" placeholder="MM/DD/AAAA" />
                         <span class="input-group-text" data-td-target="#kt_td_picker_basic"
                           data-td-toggle="datetimepicker">
                           <i class="ki-duotone ki-calendar fs-2">
@@ -1548,7 +1548,6 @@
     Inputmask({ "mask": "(999) 999-9999" }).mask("#Telefono");
   </script>
   <script src="/assets/plugins/custom/formrepeater/formrepeater.bundle.js"></script>
-
   <script src='/assets/media/form/js/validation.js'></script>
   <script src='/assets/media/form/js/validation-form-step-1.js'></script>
   <script src='/assets/media/form/js/validation-form-step-2.js'></script>

@@ -1,5 +1,216 @@
 /* eslint-disable prettier/prettier */
 const form1 = document.getElementById('kt_sign_up_form_first');
+function initializeDropzone(idLead) {
+  var dropzoneActaConstitutiva = new Dropzone('#dropzoneActaConstitutiva', {
+    url: `http://localhost:3200/uploadFilesOne/${idLead}`, // Set the url for your upload script location
+    paramName: 'file', // The name that will be used to transfer the file
+    maxFiles: 1,
+    maxFilesize: 20, // MB
+    maxThumbnailFilesize: 20, // MB
+    addRemoveLinks: true,
+    acceptedFiles: 'application/pdf',
+    accept: function (file, done) {
+      // Validar si el archivo es PDF
+      if (file.type !== 'application/pdf') {
+        done('Solo se permiten archivos PDF.');
+      } else {
+        // Validar si el archivo supera el tamaño máximo
+        if (file.size > 20 * 1024 * 1024) {
+          // Convertir MB a bytes (1 MB = 1024 * 1024 bytes)
+          done('El tamaño del archivo excede el límite de 20 MB.');
+        } else {
+        document.getElementById('actaConstitutiva').value = 'true';
+          done(); // Archivo válido
+        }
+      }
+    },
+    init: function () {
+      this.on('error', function (file, message) {
+        // Manejar errores de validación
+        alert(message);
+        this.removeFile(file); // Eliminar el archivo que no cumple con las validaciones
+      });
+      this.on('removedfile', function (file) {
+        // Manejar el evento de eliminación de archivo
+        document.getElementById('actaConstitutiva').value = '';
+      });
+    },
+  });
+
+  
+var dropzoneCedulaFiscal = new Dropzone('#dropzoneCedulaFiscal', {
+  url: `http://localhost:3200/uploadFilesTwo/${idLead}`, // Set the url for your upload script location
+  paramName: 'file', // The name that will be used to transfer the file
+  maxFiles: 1,
+  maxFilesize: 20, // MB
+  maxThumbnailFilesize: 20, // MB
+  addRemoveLinks: true,
+  acceptedFiles: 'application/pdf',
+  accept: function (file, done) {
+    if (file.type !== 'application/pdf') {
+      done('Solo se permite archivos PDF.');
+    } else {
+      if (file.size > 20 * 1024 * 1024) {
+        done('El tamaño del archivo excede el límite de 20MB');
+      } else {
+        document.getElementById('cedulaFiscal').value = 'true';
+        done();
+      }
+    }
+  },
+  init: function () {
+    this.on('error', function (file, message) {
+      alert(message);
+      this.removeFile(file);
+    });
+    this.on('removedfile', function (file) {
+      // Manejar el evento de eliminación de archivo
+      document.getElementById('cedulaFiscal').value = '';
+    });
+  },
+});
+
+var dropzoneActaPoderes = new Dropzone('#dropzoneActaPoderes', {
+  url: `http://localhost:3200/uploadFilesThree/${idLead}`, // Set the url for your upload script location
+  paramName: 'file', // The name that will be used to transfer the file
+  maxFiles: 1,
+  maxFilesize: 20, // MB
+  maxThumbnailFilesize: 20, // MB
+  addRemoveLinks: true,
+  acceptedFiles: 'application/pdf',
+  accept: function (file, done) {
+    if (file.type !== 'application/pdf') {
+      done('Solo se permite archivos pdf');
+    } else {
+      if (file.size > 20 * 1024 * 1024) {
+        done('El tamaño del archivo excede el límite de 20MB');
+      } else {
+        document.getElementById('actaPoderes').value = 'true';
+        done();
+      }
+    }
+  },
+  init: function () {
+    this.on('error', function (file, message) {
+      // Manejar errores de validación
+      alert(message);
+      this.removeFile(file); // Eliminar el archivo que no cumple con las validaciones
+    });
+    this.on('removedfile', function (file) {
+      // Manejar el evento de eliminación de archivo
+      document.getElementById('actaPoderes').value = '';
+    });
+  },
+});
+
+var dropezoneIdentifiTodosSocios = new Dropzone(
+  '#dropzoneIdentifiTodosSocios',
+  {
+    url: `http://localhost:3200/uploadFilesFour/${idLead}`, // Set the url for your upload script location
+    paramName: 'file', // The name that will be used to transfer the file
+    maxFiles: 1,
+    maxFilesize: 20, // MB
+    addRemoveLinks: true,
+    maxThumbnailFilesize: 20, // MB
+    acceptedFiles: 'application/pdf',
+    accept: function (file, done) {
+      if (file.type !== 'application/pdf') {
+        done('Solo se permite archivos pdf');
+      } else {
+        if (file.size > 20 * 1024 * 1024) {
+          done('El tamaño del archivo excede el límite de 20MB');
+        } else {
+        document.getElementById('identificacionTodosSocios').value = 'true';
+          done();
+        }
+      }
+    },
+    init: function () {
+      this.on('error', function (file, message) {
+        // Manejar errores de validación
+        alert(message);
+        this.removeFile(file); // Eliminar el archivo que no cumple con las validaciones
+      });
+      this.on('removedfile', function (file) {
+        // Manejar el evento de eliminación de archivo
+        document.getElementById('identificacionTodosSocios').value = '';
+      });
+    },
+  },
+);
+
+var dropzoneComprobanteDomicilio = new Dropzone(
+  '#dropzoneComprobanteDomicilio',
+  {
+    url: `http://localhost:3200/uploadFilesFive/${idLead}`, // Set the url for your upload script location
+    paramName: 'file', // The name that will be used to transfer the file
+    maxFiles: 1,
+    maxFilesize: 20, // MB
+    addRemoveLinks: true,
+    maxThumbnailFilesize: 20, // MB
+    acceptedFiles: 'application/pdf',
+    accept: function (file, done) {
+      if (file.type !== 'application/pdf') {
+        done('Solo se permite archivos pdf');
+      } else {
+        if (file.size > 20 * 1024 * 1024) {
+          done('El tamaño del archivo excede el límite de 20MB');
+        } else {
+          document.getElementById('comprobanteDomicilio').value = 'true';
+          done();
+        }
+      }
+    },
+    init: function () {
+      this.on('error', function (file, message) {
+        // Manejar errores de validación
+        alert(message);
+        this.removeFile(file); // Eliminar el archivo que no cumple con las validaciones
+      });
+      this.on('removedfile', function (file) {
+        // Manejar el evento de eliminación de archivo
+        document.getElementById('comprobanteDomicilio').value = '';
+      });
+    },
+  },
+);
+
+var dropzoneDigitalSignature = new Dropzone('#dropzoneDigitalSignature', {
+  url: `http://localhost:3200/uploadFilesSix/${idLead}`, // Set the url for your upload script location
+  paramName: 'file', // The name that will be used to transfer the file
+  maxFiles: 1,
+  maxFilesize: 20, // MB
+  addRemoveLinks: true,
+  maxThumbnailFilesize: 20, // MB
+  acceptedFiles: 'application/pdf',
+  accept: function (file, done) {
+    if (file.type !== 'application/pdf') {
+      done('Solo se permite archivos pdf');
+    } else {
+      if (file.size > 20 * 1024 * 1024) {
+        done('El tamaño del archivo excede el límite de 20MB');
+      } else {
+        document.getElementById('digitalSignature').value = 'true';
+        done();
+      }
+    }
+  },
+  init: function () {
+    this.on('error', function (file, message) {
+      // Manejar errores de validación
+      alert(message);
+      this.removeFile(file); // Eliminar el archivo que no cumple con las validaciones
+    });
+    this.on('removedfile', function (file) {
+      // Manejar el evento de eliminación de archivo
+      document.getElementById('digitalSignature').value = '';
+    });
+  },
+});
+
+}
+
+var idLead;
 
 // Init validartion 1
 let validator1 = FormValidation.formValidation(form1, {
@@ -55,7 +266,6 @@ let validator1 = FormValidation.formValidation(form1, {
 });
 
 const submitButton = document.getElementById('kt_sign_up_submit');
-let idLead;
 submitButton.addEventListener('click', async function (e) {
   // Prevent default button action
   e.preventDefault();
@@ -92,13 +302,16 @@ submitButton.addEventListener('click', async function (e) {
 
     e.preventDefault();
     idLead = response.data;
-
+    initializeDropzone(idLead);
+    console.log(idLead, "idlead button");
     form1.classList.add('d-none');
     formStepps.classList.remove('d-none');
     formStepps.classList.add('d-block');
 
   }
 });
+console.log(idLead, "idlead validation");
+
 
 // Function to validate Step 1
 const validate1 = async () => {

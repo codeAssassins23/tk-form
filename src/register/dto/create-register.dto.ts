@@ -250,6 +250,7 @@ export class createRegisterDto {
 
   //Empieza el tercer paso del registro para usd
   //Prueba de campos para USD
+  @IsOptional()
   @IsString()
   @MinLength(1, {
     message: 'El preferredMethodOfFunding debe tener al menos 1 caracteres',

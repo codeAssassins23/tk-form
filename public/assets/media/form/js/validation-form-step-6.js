@@ -1,52 +1,24 @@
 /* eslint-disable prettier/prettier */
 var maxFileDigitalSignature = 0;
 
-var dropzoneDigitalSignature = new Dropzone('#dropzoneDigitalSignature', {
-  url: `http://localhost:3200/uploadFilesSix/${idLead}`, // Set the url for your upload script location
-  paramName: 'file', // The name that will be used to transfer the file
-  maxFiles: 1,
-  maxFilesize: 20, // MB
-  addRemoveLinks: true,
-  maxThumbnailFilesize: 20, // MB
-  acceptedFiles: 'application/pdf',
-  accept: function (file, done) {
-    if (file.type !== 'application/pdf') {
-      done('Solo se permite archivos pdf');
-    } else {
-      if (file.size > 20 * 1024 * 1024) {
-        done('El tamaño del archivo excede el límite de 20MB');
-      } else {
-        done();
-      }
-    }
-  },
-  init: function () {
-    this.on('error', function (file, message) {
-      // Manejar errores de validación
-      alert(message);
-      this.removeFile(file); // Eliminar el archivo que no cumple con las validaciones
-    });
-  },
-});
-
 // Init validartion 1
 let validatorStep6 = FormValidation.formValidation(form, {
   fields: {
-    fullNameAutorization: {
+    nameAuthorizationMonex: {
       validators: {
         notEmpty: {
           message: 'Este campo es obligatorio',
         },
       },
     },
-    titlePositionAutorization: {
+    titlePositionAuthorizationMonex: {
       validators: {
         notEmpty: {
           message: 'Este campo es obligatorio',
         },
       },
     },
-    dateAutorization: {
+    dateAuthorizationMonex: {
       validators: {
         notEmpty: {
           message: 'Este campo es obligatorio',
@@ -95,22 +67,6 @@ const validateStep6 = async () => {
     });
   });
 };
-
-// Agregar validación de campos Dropzone 1
-dropzoneDigitalSignature.on('addedfile', function () {
-  maxFileDigitalSignature = maxFileDigitalSignature + 1;
-  document.getElementById('digitalSignature').value = 'true';
-});
-
-// Evento cuando se elimina un archivo del Dropzone
-dropzoneDigitalSignature.on('removedfile', function () {
-  maxFileDigitalSignature = maxFileDigitalSignature - 1;
-  if (maxFileDigitalSignature > 0) {
-    document.getElementById('digitalSignature').value = 'true';
-  } else {
-    document.getElementById('digitalSignature').value = ''; // Vaciar el campo si no hay archivos subidos
-  }
-});
 
 let stepp_6_prev = document.getElementById('stepp_6_prev');
 
