@@ -1345,12 +1345,284 @@
                         <div>
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                              <input class="form-check-input" type="radio" value="0" name="sociosAcciones" />
+                              <input class="form-check-input" type="radio" value="5" name="sociosAcciones" />
                               <div class="form-check-label">
                                 Ninguno
                               </div>
                             </div>
                           </label>
+                        </div>
+                      </div>
+                      <div class="row" id="optionNinguno" style="display: none;">
+                        <p class="fw-bold mt-1 mb-2">Apoderado Legal</p>
+                        <p class="mb-3">Si no hay ningún individuo que posea el 25% o más, indique el mayor propietario individual o una persona de control.</p>
+                      </div>
+                      <div id="bloque1" style="display: none;">
+                        <div class="row mb-5 mt-7" id="textNinguno">
+                          <p class="fw-bold">Datos de socio 1</p>
+                        </div>
+                        <div class="row">
+                          <label for='nameOwner' class='form-label'>
+                            Nombre legal (sin abreviaciones)
+                          </label>
+                          <div class='fv-row'>
+                            <input type='text' name='nameOwner' autocomplete='off'
+                              id='nombreLegal' class='form-control' required />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <label for='occupation' class='form-label'>
+                            Cargo en la empresa
+                          </label>
+                          <div class='fv-row'>
+                            <input type='text' name='occupation' autocomplete='off'
+                              id='cargoEmpresa' class='form-control' required />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <label for='ownership' class='form-label'>
+                            Porcentaje de propiedad
+                          </label>
+                          <div class='fv-row'>
+                            <input type='number' name='ownership' autocomplete='off'
+                              id='cargoEmpresa' class='form-control' required />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <label for='dateOfBirth' class='form-label'>
+                            Fecha de nacimiento (MM/DD/YYYY)
+                          </label>
+                          <div class="input-group fv-row">
+                            <input class="form-control" name="dateOfBirth" id="dateOfBirth" placeholder="MM/DD/AAAA" />
+                            <span class="input-group-text" data-td-target="#kt_td_picker_basic"
+                              data-td-toggle="datetimepicker">
+                              <i class="ki-duotone ki-calendar fs-2">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                              </i>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label for='addressOwner' class='form-label'>
+                              Dirección (ciudad, provincia, país)
+                            </label>
+                            <div class='fv-row'>
+                              <input type='text' name='addressOwner' autocomplete='off'
+                                id='dirección_ciudad' class='form-control' required />
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <label for='emailOwner' class='form-label'>
+                              Correo electrónico
+                            </label>
+                            <div class='fv-row'>
+                              <input type='email' name='emailOwner' autocomplete='off'
+                                id='dirección_ciudad' class='form-control' required />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="bloque2" style="display: none;">
+                        <div class="row mb-5 mt-7">
+                          <p class="fw-bold">Datos de socio 2</p>
+                        </div>
+                        <div class="row">
+                          <label for='nameOwner2' class='form-label'>
+                            Nombre legal (sin abreviaciones)
+                          </label>
+                          <div class='fv-row'>
+                            <input type='text' name='nameOwner2' autocomplete='off'
+                              id='nombreLegal' class='form-control' required />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <label for='occupation2' class='form-label'>
+                            Cargo en la empresa
+                          </label>
+                          <div class='fv-row'>
+                            <input type='text' name='occupation2' autocomplete='off'
+                              id='cargoEmpresa' class='form-control' required />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <label for='ownership2' class='form-label'>
+                            Porcentaje de propiedad
+                          </label>
+                          <div class='fv-row'>
+                            <input type='number' name='ownership2' autocomplete='off'
+                              id='cargoEmpresa' class='form-control' required />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <label for='dateOfBirth2' class='form-label'>
+                            Fecha de nacimiento (MM/DD/YYYY)
+                          </label>
+                          <div class="input-group fv-row">
+                            <input class="form-control" name="dateOfBirth2" id="dateOfBirth2" placeholder="MM/DD/AAAA" />
+                            <span class="input-group-text" data-td-target="#kt_td_picker_basic"
+                              data-td-toggle="datetimepicker">
+                              <i class="ki-duotone ki-calendar fs-2">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                              </i>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label for='addressOwner2' class='form-label'>
+                              Dirección (ciudad, provincia, país)
+                            </label>
+                            <div class='fv-row'>
+                              <input type='text' name='addressOwner2' autocomplete='off'
+                                id='dirección_ciudad' class='form-control' required />
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <label for='emailOwner2' class='form-label'>
+                              Correo electrónico
+                            </label>
+                            <div class='fv-row'>
+                              <input type='email' name='emailOwner2' autocomplete='off'
+                                id='dirección_ciudad' class='form-control' required />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="bloque3" style="display: none;">
+                        <div class="row mb-5 mt-7">
+                          <p class="fw-bold">Datos de socio 3</p>
+                        </div>
+                        <div class="row">
+                          <label for='nameOwner3' class='form-label'>
+                            Nombre legal (sin abreviaciones)
+                          </label>
+                          <div class='fv-row'>
+                            <input type='text' name='nameOwner3' autocomplete='off'
+                              id='nombreLegal' class='form-control' required />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <label for='occupation3' class='form-label'>
+                            Cargo en la empresa
+                          </label>
+                          <div class='fv-row'>
+                            <input type='text' name='occupation3' autocomplete='off'
+                              id='cargoEmpresa' class='form-control' required />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <label for='ownership3' class='form-label'>
+                            Porcentaje de propiedad
+                          </label>
+                          <div class='fv-row'>
+                            <input type='number' name='ownership3' autocomplete='off'
+                              id='cargoEmpresa' class='form-control' required />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <label for='dateOfBirth3' class='form-label'>
+                            Fecha de nacimiento (MM/DD/YYYY)
+                          </label>
+                          <div class="input-group fv-row">
+                            <input class="form-control" name="dateOfBirth3" id="dateOfBirth3" placeholder="MM/DD/AAAA" />
+                            <span class="input-group-text" data-td-target="#kt_td_picker_basic"
+                              data-td-toggle="datetimepicker">
+                              <i class="ki-duotone ki-calendar fs-2">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                              </i>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label for='addressOwner3' class='form-label'>
+                              Dirección (ciudad, provincia, país)
+                            </label>
+                            <div class='fv-row'>
+                              <input type='text' name='addressOwner3' autocomplete='off'
+                                id='dirección_ciudad' class='form-control' required />
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <label for='emailOwner3' class='form-label'>
+                             Correo electrónico
+                            </label>
+                            <div class='fv-row'>
+                              <input type='email' name='emailOwner3' autocomplete='off'
+                                id='dirección_ciudad' class='form-control' required />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="bloque4" style="display: none;">
+                        <div class="row mb-5 mt-7">
+                          <p class="fw-bold">Datos de socio 4</p>
+                        </div>
+                        <div class="row">
+                          <label for='nameOwner4' class='form-label'>
+                            Nombre legal (sin abreviaciones)
+                          </label>
+                          <div class='fv-row'>
+                            <input type='text' name='nameOwner4' autocomplete='off'
+                              id='nombreLegal' class='form-control' required />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <label for='occupation4' class='form-label'>
+                            Cargo en la empresa
+                          </label>
+                          <div class='fv-row'>
+                            <input type='text' name='occupation4' autocomplete='off'
+                              id='cargoEmpresa' class='form-control' required />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <label for='ownership4' class='form-label'>
+                            Porcentaje de propiedad
+                          </label>
+                          <div class='fv-row'>
+                            <input type='number' name='ownership4' autocomplete='off'
+                              id='cargoEmpresa' class='form-control' required />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <label for='dateOfBirth4' class='form-label'>
+                            Fecha de nacimiento (MM/DD/YYYY)
+                          </label>
+                          <div class="input-group fv-row">
+                            <input class="form-control" name="dateOfBirth4" id="dateOfBirth4" placeholder="MM/DD/AAAA" />
+                            <span class="input-group-text" data-td-target="#kt_td_picker_basic"
+                              data-td-toggle="datetimepicker">
+                              <i class="ki-duotone ki-calendar fs-2">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                              </i>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label for='addressOwner4' class='form-label'>
+                              Dirección (ciudad, provincia, país)
+                            </label>
+                            <div class='fv-row'>
+                              <input type='text' name='addressOwner4' autocomplete='off'
+                                id='dirección_ciudad' class='form-control' required />
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <label for='emailOwner4' class='form-label'>
+                              Correo electrónico
+                            </label>
+                            <div class='fv-row'>
+                              <input type='email' name='emailOwner4' autocomplete='off'
+                                id='dirección_ciudad' class='form-control' required />
+                            </div>
+                          </div>
                         </div>
                       </div>
                       <!--end::Row-->
@@ -1565,6 +1837,7 @@
   <script src='/assets/media/form/js/dropzone.js'></script>
   <script src='/assets/media/form/js/repeater.js'></script>
   <script src="/assets/media/form/js/getData.js"></script>
+  <script src="/assets/media/form/js/showInputs.js"></script>
   <script></script>
   <!--end::Custom Javascript-->
   <!--end::Javascript-->
