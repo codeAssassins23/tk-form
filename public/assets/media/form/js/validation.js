@@ -55,7 +55,7 @@ let validator1 = FormValidation.formValidation(form1, {
 });
 
 const submitButton = document.getElementById('kt_sign_up_submit');
-
+let idLead;
 submitButton.addEventListener('click', async function (e) {
   // Prevent default button action
   e.preventDefault();
@@ -91,15 +91,12 @@ submitButton.addEventListener('click', async function (e) {
     });
 
     e.preventDefault();
-
-    console.log('Es Valido');
-    console.log(response, isValid1);
+    idLead = response.data;
 
     form1.classList.add('d-none');
     formStepps.classList.remove('d-none');
     formStepps.classList.add('d-block');
 
-    // window.location.href = `/register/steps/${response.data}`;
   }
 });
 

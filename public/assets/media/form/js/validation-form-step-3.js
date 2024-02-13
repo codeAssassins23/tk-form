@@ -4,9 +4,9 @@ let maxFileCedulaFiscal = 0;
 let maxFileActaPoderes = 0;
 let maxFileIdentificacionTodosSocios = 0;
 let maxFileComprobanteDomicilio = 0;
-
+console.log(idLead, "idLead");
 var dropzoneActaConstitutiva = new Dropzone('#dropzoneActaConstitutiva', {
-  url: 'http://localhost:3200/uploadFilesOne', // Set the url for your upload script location
+  url: `http://localhost:3200/uploadFilesOne/5`, // Set the url for your upload script location
   paramName: 'file', // The name that will be used to transfer the file
   maxFiles: 1,
   maxFilesize: 20, // MB
@@ -37,7 +37,7 @@ var dropzoneActaConstitutiva = new Dropzone('#dropzoneActaConstitutiva', {
 });
 
 var dropzoneCedulaFiscal = new Dropzone('#dropzoneCedulaFiscal', {
-  url: 'http://localhost:3200/uploadFilesTwo', // Set the url for your upload script location
+  url: `http://localhost:3200/uploadFilesTwo/${idLead}`, // Set the url for your upload script location
   paramName: 'file', // The name that will be used to transfer the file
   maxFiles: 1,
   maxFilesize: 20, // MB
@@ -64,7 +64,7 @@ var dropzoneCedulaFiscal = new Dropzone('#dropzoneCedulaFiscal', {
 });
 
 var dropzoneActaPoderes = new Dropzone('#dropzoneActaPoderes', {
-  url: 'http://localhost:3200/uploadFilesThree', // Set the url for your upload script location
+  url: `http://localhost:3200/uploadFilesThree/${idLead}`, // Set the url for your upload script location
   paramName: 'file', // The name that will be used to transfer the file
   maxFiles: 1,
   maxFilesize: 20, // MB
@@ -94,7 +94,7 @@ var dropzoneActaPoderes = new Dropzone('#dropzoneActaPoderes', {
 var dropezoneIdentifiTodosSocios = new Dropzone(
   '#dropzoneIdentifiTodosSocios',
   {
-    url: 'http://localhost:3200/uploadFilesFour', // Set the url for your upload script location
+    url: `http://localhost:3200/uploadFilesFour/${idLead}`, // Set the url for your upload script location
     paramName: 'file', // The name that will be used to transfer the file
     maxFiles: 1,
     maxFilesize: 20, // MB
@@ -125,7 +125,7 @@ var dropezoneIdentifiTodosSocios = new Dropzone(
 var dropzoneComprobanteDomicilio = new Dropzone(
   '#dropzoneComprobanteDomicilio',
   {
-    url: 'http://localhost:3200/uploadFilesFive', // Set the url for your upload script location
+    url: `http://localhost:3200/uploadFilesFive/${idLead}`, // Set the url for your upload script location
     paramName: 'file', // The name that will be used to transfer the file
     maxFiles: 1,
     maxFilesize: 20, // MB

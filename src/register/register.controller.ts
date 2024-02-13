@@ -142,14 +142,14 @@ export class RegisterController {
 
   //recoger file Acta constitutiva o licencia comercial
   @Public()
-  @Post('/uploadFilesOne')
+  @Post('/uploadFilesOne/:idLead')
   @UseInterceptors(
     FileInterceptor('file', {
       storage: diskStorage({
         destination: './upload/temp',
         filename: (req, file, cb) => {
-          const idLeads = Math.floor(Math.random() * 100) + 1;
-          return cb(null, `10-ActaConstitutiva.pdf`);
+          const idLeads = req.params.idLead;
+          return cb(null, `${idLeads}-ActaConstitutiva.pdf`);
         },
       }),
     }),
@@ -175,14 +175,14 @@ export class RegisterController {
 
   //recoger files Cédula de identificación fiscal
   @Public()
-  @Post('/uploadFilesTwo')
+  @Post('/uploadFilesTwo/:idLead')
   @UseInterceptors(
     FileInterceptor('file', {
       storage: diskStorage({
         destination: './upload/temp',
         filename: (req, file, cb) => {
-          const idLeads = Math.floor(Math.random() * 100) + 1;
-          return cb(null, `10-CedulaIdentificacion.pdf`);
+          const idLeads = req.params.idLead;
+          return cb(null, `${idLeads}-CedulaIdentificacion.pdf`);
         },
       }),
     }),
@@ -208,14 +208,14 @@ export class RegisterController {
 
   //recoger files Acta de poderes
   @Public()
-  @Post('/uploadFilesThree')
+  @Post('/uploadFilesThree/:idLead')
   @UseInterceptors(
     FileInterceptor('file', {
       storage: diskStorage({
         destination: './upload/temp',
         filename: (req, file, cb) => {
-          const idLeads = Math.floor(Math.random() * 100) + 1;
-          return cb(null, `10-actaPoderes.pdf`);
+          const idLeads = req.params.idLead;
+          return cb(null, `${idLeads}-actaPoderes.pdf`);
         },
       }),
     }),
@@ -241,14 +241,17 @@ export class RegisterController {
 
   //recoger files Identificación oficial de todos los socios y las personas autorizadas
   @Public()
-  @Post('/uploadFilesFour')
+  @Post('/uploadFilesFour/:idLead')
   @UseInterceptors(
     FileInterceptor('file', {
       storage: diskStorage({
         destination: './upload/temp',
         filename: (req, file, cb) => {
-          const idLeads = Math.floor(Math.random() * 100) + 1;
-          return cb(null, `10-IdentificacionSociosPersonasAutorizadas.pdf`);
+          const idLeads = req.params.idLead;
+          return cb(
+            null,
+            `${idLeads}-IdentificacionSociosPersonasAutorizadas.pdf`,
+          );
         },
       }),
     }),
@@ -274,14 +277,14 @@ export class RegisterController {
 
   //recoger files Comprobante de domicilio
   @Public()
-  @Post('/uploadFilesFive')
+  @Post('/uploadFilesFive/:idLead')
   @UseInterceptors(
     FileInterceptor('file', {
       storage: diskStorage({
         destination: './upload/temp',
         filename: (req, file, cb) => {
-          const idLeads = Math.floor(Math.random() * 100) + 1;
-          return cb(null, `10-comprobanteDomicilio.pdf`);
+          const idLeads = req.params.idLead;
+          return cb(null, `${idLeads}-comprobanteDomicilio.pdf`);
         },
       }),
     }),
@@ -307,14 +310,14 @@ export class RegisterController {
 
   //recoger files firma
   @Public()
-  @Post('/uploadFilesSix')
+  @Post('/uploadFilesSix/:idLead')
   @UseInterceptors(
     FileInterceptor('file', {
       storage: diskStorage({
         destination: './upload/temp',
         filename: (req, file, cb) => {
-          const idLeads = Math.floor(Math.random() * 100) + 1;
-          return cb(null, `10-firma.pdf`);
+          const idLeads = req.params.idLead;
+          return cb(null, `${idLeads}-firma.pdf`);
         },
       }),
     }),
@@ -340,7 +343,7 @@ export class RegisterController {
 
   //recoger todo los datos del form (post)
   @Public()
-  @Post('/registerAll')
+  @Post('/registerAll/:id')
   async registerAll(@Body() createRegisterDto: createRegisterDto) {
     console.log(createRegisterDto);
     const idLeads = '10';
