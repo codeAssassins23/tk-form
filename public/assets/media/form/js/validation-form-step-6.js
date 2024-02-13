@@ -2,7 +2,7 @@
 var maxFileDigitalSignature = 0;
 
 var dropzoneDigitalSignature = new Dropzone('#dropzoneDigitalSignature', {
-  url: 'http://localhost:3200/uploadFilesSix', // Set the url for your upload script location
+  url: `http://localhost:3200/uploadFilesSix/${idLead}`, // Set the url for your upload script location
   paramName: 'file', // The name that will be used to transfer the file
   maxFiles: 1,
   maxFilesize: 20, // MB
@@ -125,6 +125,7 @@ stepp_6.addEventListener('click', function () {
   let isValidStep6 = validateStep6();
   isValidStep6.then((value) => {
     if (value) {
+      getData();
       console.log(stepsData);
     }
   });
