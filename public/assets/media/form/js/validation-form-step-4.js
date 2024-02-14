@@ -62,11 +62,26 @@ let stepp_4 = document.getElementById('stepp_4');
 console.log(stepp_4);
 stepp_4.addEventListener('click', async function () {
   let isValidStep4 = await validateStep4();
-  
+
   if (isValidStep4) {
     getData();
     console.log(stepsData);
     stepper.goNext();
     Progres(5);
   }
+});
+
+let usuarioAutorizado2 = document.getElementById('usuarioAutorizado2');
+
+let removeButton = document.getElementById('removeButton');
+let addButton = document.getElementById('addButton');
+
+addButton.addEventListener('click', function () {
+  usuarioAutorizado2.classList.toggle('d-none');
+  addButton.classList.toggle('disabled');
+});
+
+removeButton.addEventListener('click', function () {
+  usuarioAutorizado2.classList.toggle('d-none');
+  addButton.classList.toggle('disabled');
 });
