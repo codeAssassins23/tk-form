@@ -56,11 +56,7 @@ let validaterStep1 = FormValidation.formValidation(form, {
       },
     },
     tradeNameOfDBA: {
-      validators: {
-        notEmpty: {
-          message: 'Este campo es obligatorio',
-        },
-      },
+      validators: {},
     },
     state: {
       validators: {

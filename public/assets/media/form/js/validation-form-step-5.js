@@ -47,8 +47,12 @@ let validatorStep5 = FormValidation.formValidation(form, {
     },
     emailOwner: {
       validators: {
+        regexp: {
+          regexp: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+          message: 'El contenido no es válido',
+        },
         notEmpty: {
-          message: 'Este campo es obligatorio',
+          message: 'Email es requerido',
         },
       },
     },
@@ -89,8 +93,12 @@ let validatorStep5 = FormValidation.formValidation(form, {
     },
     emailOwner2: {
       validators: {
+        regexp: {
+          regexp: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+          message: 'El contenido no es válido',
+        },
         notEmpty: {
-          message: 'Este campo es obligatorio',
+          message: 'Email es requerido',
         },
       },
     },
@@ -131,6 +139,10 @@ let validatorStep5 = FormValidation.formValidation(form, {
     },
     emailOwner3: {
       validators: {
+        regexp: {
+          regexp: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+          message: 'El contenido no es válido',
+        },
         notEmpty: {
           message: 'Este campo es obligatorio',
         },
@@ -173,6 +185,10 @@ let validatorStep5 = FormValidation.formValidation(form, {
     },
     emailOwner4: {
       validators: {
+        regexp: {
+          regexp: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+          message: 'El contenido no es válido',
+        },
         notEmpty: {
           message: 'Este campo es obligatorio',
         },
