@@ -60,7 +60,6 @@ const validateStep3 = async () => {
   });
 };
 
-
 // Escucha el evento 'change' en el select
 $('#paises').on('change', function(e) {
   // Obtiene el valor seleccionado
