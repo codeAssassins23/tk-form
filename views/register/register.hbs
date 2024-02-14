@@ -211,13 +211,13 @@
                           data-placeholder='Selecciona un opción'>
                           <option>
                           </option>
-                          <option data-kt-select2-country='/assets/media/form/svg/us.svg'>
+                          <option value="usd" data-kt-select2-country='/assets/media/form/svg/us.svg'>
                             Estados Unidos
                           </option>
-                          <option data-kt-select2-country='/assets/media/form/svg/mx.svg'>
+                          <option value="mxn" data-kt-select2-country='/assets/media/form/svg/mx.svg'>
                             Mexico
                           </option>
-                          <option data-kt-select2-country='/assets/media/form/svg/world.svg'>
+                          <option value="word" data-kt-select2-country='/assets/media/form/svg/world.svg'>
                             Resto del mundo
                           </option>
                         </select>
@@ -993,175 +993,328 @@
                   <!--end::Step 2-->
                   <!--begin::Step 3-->
                   <div class="flex-column m-auto w-100" data-kt-stepper-element="content">
-                    <div class="w-100 text-center mb-12">
-                      <h2 class="fs-2x">
-                        Documentación requerida
-                      </h2>
-                      <p class="fs-sm text-gray-500">
-                        Incluya la siguiente documentación o su equivalente
-                      </p>
-                    </div>
-                    <!--begin::Input group=-->
-                    <div class='mb-4'>
-                      <!--begin::Acta constitutiva o licencia comercial-->
-                      <label for='correo_electronico' class='form-label'>
-                        Acta constitutiva o licencia comercial
-                      </label>
-                      <p class="fs-sm text-gray-500">
-                        Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos son
-                        .pdf, .jpg y .png.
-                      </p>
-                      <div class='fv-row'>
-                        <!--begin::Dropzone-->
-                        <div class="dropzone" id="dropzoneActaConstitutiva">
-                          <!--begin::Message-->
-                          <div class="dz-message needsclick d-flex justify-content-center align-items-center">
-                            <i class="ki-duotone ki-file-up fs-3x text-primary"><span class="path1"></span><span
-                                class="path2"></span></i>
-                            <!--begin::Info-->
-                            <div class="ms-4">
-                              <h3 class="fs-5 fw-bold text-gray-900">
-                                Arrastra o suelta un archivo aquí o has click
-                              </h3>
-                            </div>
-                            <!--end::Info-->
-                          </div>
-                          <input type="hidden" id="actaConstitutiva" name="actaConstitutiva">
-                        </div>
-                        <!--end::Dropzone-->
+                    <div id="mxn" style="display: none;">
+                      <div class="w-100 text-center mb-12">
+                        <h2 class="fs-2x">
+                          Documentación requerida
+                        </h2>
+                        <p class="fs-sm text-gray-500">
+                          Incluya la siguiente documentación o su equivalente
+                        </p>
                       </div>
-                      <!--end::Acta constitutiva o licencia comercial-->
-                    </div>
-                    <!--end::Input group-->
-                    <!--begin::Input group=-->
-                    <div class='mb-4'>
-                      <!--begin::Cédula de identificación fiscal-->
-                      <label for='correo_electronico' class='form-label'>
-                        Cédula de identificación fiscal
-                      </label>
-                      <p class="fs-sm text-gray-500">
-                        Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos son
-                        .pdf, .jpg y .png.
-                      </p>
-                      <div class='fv-row'>
-                        <!--begin::Dropzone-->
-                        <div class="dropzone" id="dropzoneCedulaFiscal">
-                          <!--begin::Message-->
-                          <div class="dz-message needsclick d-flex justify-content-center align-items-center">
-                            <i class="ki-duotone ki-file-up fs-3x text-primary"><span class="path1"></span><span
-                                class="path2"></span></i>
-                            <!--begin::Info-->
-                            <div class="ms-4">
-                              <h3 class="fs-5 fw-bold text-gray-900">
-                                Arrastra o suelta un archivo aquí o has click
-                              </h3>
+                      <!--begin::Input group=-->
+                      <div class='mb-4'>
+                        <!--begin::Acta constitutiva o licencia comercial-->
+                        <label for='correo_electronico' class='form-label'>
+                          Acta constitutiva o licencia comercial
+                        </label>
+                        <p class="fs-sm text-gray-500">
+                          Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos son
+                          .pdf, .jpg y .png.
+                        </p>
+                        <div class='fv-row'>
+                          <!--begin::Dropzone-->
+                          <div class="dropzone" id="dropzoneActaConstitutiva">
+                            <!--begin::Message-->
+                            <div class="dz-message needsclick d-flex justify-content-center align-items-center">
+                              <i class="ki-duotone ki-file-up fs-3x text-primary"><span class="path1"></span><span
+                                  class="path2"></span></i>
+                              <!--begin::Info-->
+                              <div class="ms-4">
+                                <h3 class="fs-5 fw-bold text-gray-900">
+                                  Arrastra o suelta un archivo aquí o has click
+                                </h3>
+                              </div>
+                              <!--end::Info-->
                             </div>
-                            <!--end::Info-->
+                            <input type="hidden" id="actaConstitutiva" name="actaConstitutiva">
                           </div>
-                          <input type="hidden" id="cedulaFiscal" name="cedulaFiscal">
+                          <!--end::Dropzone-->
                         </div>
-                        <!--end::Dropzone-->
+                        <!--end::Acta constitutiva o licencia comercial-->
                       </div>
-                      <!--end::Cédula de identificación fiscal-->
-                    </div>
-                    <!--end::Input group-->
-                    <!--begin::Input group=-->
-                    <div class='mb-4'>
-                      <!--begin::Acta de poderes-->
-                      <label for='correo_electronico' class='form-label'>
-                        Acta de poderes
-                      </label>
-                      <p class="fs-sm text-gray-500">
-                        Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos son
-                        .pdf, .jpg y .png.
-                      </p>
-                      <div class='fv-row'>
-                        <!--begin::Dropzone-->
-                        <div class="dropzone" id="dropzoneActaPoderes">
-                          <!--begin::Message-->
-                          <div class="dz-message needsclick d-flex justify-content-center align-items-center">
-                            <i class="ki-duotone ki-file-up fs-3x text-primary"><span class="path1"></span><span
-                                class="path2"></span></i>
-                            <!--begin::Info-->
-                            <div class="ms-4">
-                              <h3 class="fs-5 fw-bold text-gray-900">
-                                Arrastra o suelta un archivo aquí o has click
-                              </h3>
+                      <!--end::Input group-->
+                      <!--begin::Input group=-->
+                      <div class='mb-4'>
+                        <!--begin::Cédula de identificación fiscal-->
+                        <label for='correo_electronico' class='form-label'>
+                          Cédula de identificación fiscal
+                        </label>
+                        <p class="fs-sm text-gray-500">
+                          Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos son
+                          .pdf, .jpg y .png.
+                        </p>
+                        <div class='fv-row'>
+                          <!--begin::Dropzone-->
+                          <div class="dropzone" id="dropzoneCedulaFiscal">
+                            <!--begin::Message-->
+                            <div class="dz-message needsclick d-flex justify-content-center align-items-center">
+                              <i class="ki-duotone ki-file-up fs-3x text-primary"><span class="path1"></span><span
+                                  class="path2"></span></i>
+                              <!--begin::Info-->
+                              <div class="ms-4">
+                                <h3 class="fs-5 fw-bold text-gray-900">
+                                  Arrastra o suelta un archivo aquí o has click
+                                </h3>
+                              </div>
+                              <!--end::Info-->
                             </div>
-                            <!--end::Info-->
+                            <input type="hidden" id="cedulaFiscal" name="cedulaFiscal">
                           </div>
-                          <input type="hidden" id="actaPoderes" name="actaPoderes">
+                          <!--end::Dropzone-->
                         </div>
-                        <!--end::Dropzone-->
+                        <!--end::Cédula de identificación fiscal-->
                       </div>
-                      <!--end::Acta de poderes-->
-                    </div>
-                    <!--end::Input group-->
-                    <!--begin::Input group=-->
-                    <div class='mb-4'>
-                      <!--begin::Identificación oficial de todos los socios y las personas autorizadas-->
-                      <label for='correo_electronico' class='form-label'>
-                        Identificación oficial de todos los socios y las personas autorizadas
-                      </label>
-                      <p class="fs-sm text-gray-500">
-                        Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos son
-                        .pdf, .jpg y .png.
-                      </p>
-                      <div class='fv-row'>
-                        <!--begin::Dropzone-->
-                        <div class="dropzone" id="dropzoneIdentifiTodosSocios">
-                          <!--begin::Message-->
-                          <div class="dz-message needsclick d-flex justify-content-center align-items-center">
-                            <i class="ki-duotone ki-file-up fs-3x text-primary"><span class="path1"></span><span
-                                class="path2"></span></i>
-                            <!--begin::Info-->
-                            <div class="ms-4">
-                              <h3 class="fs-5 fw-bold text-gray-900">
-                                Arrastra o suelta un archivo aquí o has click
-                              </h3>
+                      <!--end::Input group-->
+                      <!--begin::Input group=-->
+                      <div class='mb-4'>
+                        <!--begin::Acta de poderes-->
+                        <label for='correo_electronico' class='form-label'>
+                          Acta de poderes
+                        </label>
+                        <p class="fs-sm text-gray-500">
+                          Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos son
+                          .pdf, .jpg y .png.
+                        </p>
+                        <div class='fv-row'>
+                          <!--begin::Dropzone-->
+                          <div class="dropzone" id="dropzoneActaPoderes">
+                            <!--begin::Message-->
+                            <div class="dz-message needsclick d-flex justify-content-center align-items-center">
+                              <i class="ki-duotone ki-file-up fs-3x text-primary"><span class="path1"></span><span
+                                  class="path2"></span></i>
+                              <!--begin::Info-->
+                              <div class="ms-4">
+                                <h3 class="fs-5 fw-bold text-gray-900">
+                                  Arrastra o suelta un archivo aquí o has click
+                                </h3>
+                              </div>
+                              <!--end::Info-->
                             </div>
-                            <!--end::Info-->
+                            <input type="hidden" id="actaPoderes" name="actaPoderes">
                           </div>
-                          <input type="hidden" id="identificacionTodosSocios" name="identificacionTodosSocios">
+                          <!--end::Dropzone-->
                         </div>
-                        <!--end::Dropzone-->
+                        <!--end::Acta de poderes-->
                       </div>
-                      <!--end::Identificación oficial de todos los socios y las personas autorizadas-->
-                    </div>
-                    <!--end::Input group-->
-                    <!--begin::Input group=-->
-                    <div class='mb-8'>
-                      <!--begin::Comprobante de domicilio-->
-                      <label for='correo_electronico' class='form-label'>
-                        Comprobante de domicilio
-                      </label>
-                      <p class="fs-sm text-gray-500">
-                        Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos son
-                        .pdf, .jpg y .png.
-                      </p>
-                      <div class='fv-row'>
-                        <!--begin::Dropzone-->
-                        <div class="dropzone" id="dropzoneComprobanteDomicilio">
-                          <!--begin::Message-->
-                          <div class="dz-message needsclick d-flex justify-content-center align-items-center">
-                            <i class="ki-duotone ki-file-up fs-3x text-primary"><span class="path1"></span><span
-                                class="path2"></span></i>
-                            <!--begin::Info-->
-                            <div class="ms-4">
-                              <h3 class="fs-5 fw-bold text-gray-900">
-                                Arrastra o suelta un archivo aquí o has click
-                              </h3>
+                      <!--end::Input group-->
+                      <!--begin::Input group=-->
+                      <div class='mb-4'>
+                        <!--begin::Identificación oficial de todos los socios y las personas autorizadas-->
+                        <label for='correo_electronico' class='form-label'>
+                          Identificación oficial de todos los socios y las personas autorizadas
+                        </label>
+                        <p class="fs-sm text-gray-500">
+                          Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos son
+                          .pdf, .jpg y .png.
+                        </p>
+                        <div class='fv-row'>
+                          <!--begin::Dropzone-->
+                          <div class="dropzone" id="dropzoneIdentifiTodosSocios">
+                            <!--begin::Message-->
+                            <div class="dz-message needsclick d-flex justify-content-center align-items-center">
+                              <i class="ki-duotone ki-file-up fs-3x text-primary"><span class="path1"></span><span
+                                  class="path2"></span></i>
+                              <!--begin::Info-->
+                              <div class="ms-4">
+                                <h3 class="fs-5 fw-bold text-gray-900">
+                                  Arrastra o suelta un archivo aquí o has click
+                                </h3>
+                              </div>
+                              <!--end::Info-->
                             </div>
-                            <!--end::Info-->
+                            <input type="hidden" id="identificacionTodosSocios" name="identificacionTodosSocios">
                           </div>
-                          <input type="hidden" id="comprobanteDomicilio" name="comprobanteDomicilio">
+                          <!--end::Dropzone-->
+                        </div>
+                        <!--end::Identificación oficial de todos los socios y las personas autorizadas-->
+                      </div>
+                      <!--end::Input group-->
+                      <!--begin::Input group=-->
+                      <div class='mb-8'>
+                        <!--begin::Comprobante de domicilio-->
+                        <label for='correo_electronico' class='form-label'>
+                          Comprobante de domicilio
+                        </label>
+                        <p class="fs-sm text-gray-500">
+                          Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos son
+                          .pdf, .jpg y .png.
+                        </p>
+                        <div class='fv-row'>
+                          <!--begin::Dropzone-->
+                          <div class="dropzone" id="dropzoneComprobanteDomicilio">
+                            <!--begin::Message-->
+                            <div class="dz-message needsclick d-flex justify-content-center align-items-center">
+                              <i class="ki-duotone ki-file-up fs-3x text-primary"><span class="path1"></span><span
+                                  class="path2"></span></i>
+                              <!--begin::Info-->
+                              <div class="ms-4">
+                                <h3 class="fs-5 fw-bold text-gray-900">
+                                  Arrastra o suelta un archivo aquí o has click
+                                </h3>
+                              </div>
+                              <!--end::Info-->
+                            </div>
+                            <input type="hidden" id="comprobanteDomicilio" name="comprobanteDomicilio">
 
+                          </div>
+                          <!--end::Dropzone-->
                         </div>
-                        <!--end::Dropzone-->
+                        <!--end::Comprobante de domicilio-->
                       </div>
-                      <!--end::Comprobante de domicilio-->
+                      <!--end::Input group-->
                     </div>
-                    <!--end::Input group-->
+                    <div id="usd" style="display: none;">
+                      <div class="w-100 text-center mb-12">
+                        <h2 class="fs-2x">
+                          Método de pago
+                        </h2>
+                      </div>
+                      <div class="mb-4 fv-row" data-kt-buttons="true" data-kt-buttons-target=".form-check-input">
+                        <div class="row mb-3">
+                          <span class="fw-bold">Método preferido de pago</span>
+                        </div>
+                        <div>
+                          <label>
+                            <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                              <input class="form-check-input" type="radio" value="1" name="metodoPay" />
+                              <div class="form-check-label">
+                                ACH Débito Directo
+                              </div>
+                            </div>
+                          </label>
+                        </div>
+                        <div>
+                          <label>
+                            <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                              <input class="form-check-input" type="radio" value="2" name="metodoPay"
+                                id="text_wow" />
+                              <div class="form-check-label">
+                                Cheque
+                              </div>
+                            </div>
+                          </label>
+                        </div>
+                        <div>
+                          <label>
+                            <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                              <input class="form-check-input" type="radio" value="3" name="metodoPay" />
+                              <div class="form-check-label">
+                                Transferencia
+                              </div>
+                            </div>
+                          </label>
+                        </div>
+                        <div>
+                          <label>
+                            <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                              <input class="form-check-input" type="radio" value="4" name="metodoPay" />
+                              <div class="form-check-label">
+                                No aplicable
+                              </div>
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label for='nameBank' class='form-label'>
+                            Nombre del banco
+                          </label>
+                          <div class='fv-row'>
+                            <input type='text' name='nameBank' autocomplete='off' id='nameBank' class='form-control'
+                              required />
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <label for='addressBank' class='form-label'>
+                            Dirección del banco (ciudad, estado)
+                          </label>
+                          <div class='fv-row'>
+                            <input type='text' name='addressBank' autocomplete='off' id='addressBank' class='form-control'
+                              required />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label for='accountNumber' class='form-label'>
+                            Número de cuenta
+                          </label>
+                          <div class='fv-row'>
+                            <input type='text' name='accountNumber' autocomplete='off' id='accountNumber' class='form-control'
+                              required />
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <label for='routingNumber' class='form-label'>
+                            Número ABA/Código de ruta
+                          </label>
+                          <div class='fv-row'>
+                            <input type='text' name='routingNumber' autocomplete='off' id='routingNumber' class='form-control'
+                              required />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row mb-3 mt-5">
+                        <span class="fw-bold">Tipo de cuenta</span>
+                      </div>
+                      <div class="mb-4 fv-row row d-flex">
+                          <label>
+                            <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                              <input class="form-check-input" type="radio" value="1" name="typeAccount" />
+                              <div class="form-check-label">
+                                Cheques
+                              </div>
+                            </div>
+                          </label>
+
+                          <label>
+                            <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                              <input class="form-check-input" type="radio" value="2" name="typeAccount"
+                                id="text_wow" />
+                              <div class="form-check-label">
+                                Ahorros
+                              </div>
+                            </div>
+                          </label>
+                      </div>
+                      <!--begin::Input group=-->
+                      <div class='mb-4'>
+                        <!--begin::Acta constitutiva o licencia comercial-->
+                        <label for='correo_electronico' class='form-label'>
+                          Adjuntar cheque anulado
+                        </label>
+                        <p class="fs-sm text-gray-500">
+                          Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos son
+                          .pdf, .jpg y .png.
+                        </p>
+                        <div class='fv-row'>
+                          <!--begin::Dropzone-->
+                          <div class="dropzone" id="dropZoneChequeAnulado">
+                            <!--begin::Message-->
+                            <div class="dz-message needsclick d-flex justify-content-center align-items-center">
+                              <i class="ki-duotone ki-file-up fs-3x text-primary"><span class="path1"></span><span
+                                  class="path2"></span></i>
+                              <!--begin::Info-->
+                              <div class="ms-4">
+                                <h3 class="fs-5 fw-bold text-gray-900">
+                                  Arrastra o suelta un archivo aquí o has click
+                                </h3>
+                              </div>
+                              <!--end::Info-->
+                            </div>
+                            <input type="hidden" id="chequeAnulado" name="chequeAnulado">
+                          </div>
+                          <!--end::Dropzone-->
+                        </div>
+                        <p>
+                          Tenga en cuenta que al pagar con los métodos de débito ACH o cheque/cheque por fax, los fondos pueden estar sujetos a un periodo de retención que puede ser evitado pagando por transferencia. Puede discutir sus opciones de pago con su representante de Monex USA.
+                        </p>
+                        <!--end::Acta constitutiva o licencia comercial-->
+                      </div>
+                      <!--end::Input group-->
+                    </div>
                     <!--begin::Submit button-->
                     <div class='d-flex w-100 justify-content-between mx-auto'>
                       <button type='button' id='stepp_3_prev' class='btn btn-primary'>
@@ -1901,7 +2054,6 @@
   <script src='/assets/media/form/js/date.js'></script>
   <script src='/assets/media/form/js/dropzone.js'></script>
   <script src='/assets/media/form/js/repeater.js'></script>
-  <script src="/assets/media/form/js/getData.js"></script>
   <script src="/assets/media/form/js/showInputs.js"></script>
   <script></script>
   <!--end::Custom Javascript-->

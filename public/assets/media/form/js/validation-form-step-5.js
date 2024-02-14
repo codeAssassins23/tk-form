@@ -198,8 +198,6 @@ const validateStep5 = async () => {
   });
 };
 
-
-
 // Obtener referencia al bloque inferior
 var bloqueInferior1 = document.getElementById('bloque1');
 var bloqueInferior2 = document.getElementById('bloque2');
@@ -395,9 +393,6 @@ radioButtons.forEach(function(radioButton) {
     }
   });
 });
-
-
-
 
 let stepp_5_prev = document.getElementById('stepp_5_prev');
 
