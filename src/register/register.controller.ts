@@ -341,6 +341,39 @@ export class RegisterController {
     console.log(file.filename);
   }
 
+  //recoger files Comprobante de domicilio
+  @Public()
+  @Post('/uploadFilethreUSD/:idLead')
+  @UseInterceptors(
+    FileInterceptor('file', {
+      storage: diskStorage({
+        destination: './upload/temp',
+        filename: (req, file, cb) => {
+          const idLeads = req.params.idLead;
+          return cb(null, `${idLeads}-chequeAnulado.pdf`);
+        },
+      }),
+    }),
+  )
+  async uploadFilethreUSD(
+    @UploadedFile(
+      new ParseFilePipeBuilder()
+        .addFileTypeValidator({
+          fileType: 'pdf',
+        })
+
+        .addMaxSizeValidator({
+          maxSize: 20000000,
+        })
+        .build({
+          errorHttpStatusCode: HttpStatus.UNPROCESSABLE_ENTITY,
+        }),
+    )
+    file: Express.Multer.File,
+  ) {
+    console.log(file.filename);
+  }
+
   //recoger todo los datos del form (post)
   @Public()
   @Post('/registerAll/:id')
@@ -353,6 +386,7 @@ export class RegisterController {
     const idIdentificacionSociosPersonasAutorizadas = `${idLeads}-IdentificacionSociosPersonasAutorizadas.pdf`;
     const idComprobanteDomicilio = `${idLeads}-comprobanteDomicilio.pdf`;
     const idFirma = `${idLeads}-firma.pdf`;
+    const idChequeAnuladoUSD = `${idLeads}-chequeAnulado.pdf`;
 
     const directory = './upload/temp';
     const targetDirectory = './upload/files';
@@ -364,6 +398,7 @@ export class RegisterController {
       idIdentificacionSociosPersonasAutorizadas,
       idComprobanteDomicilio,
       idFirma,
+      idChequeAnuladoUSD,
     };
 
     const namesFiles = await this.registerService.findFilesByIdLead(

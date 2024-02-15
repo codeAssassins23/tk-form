@@ -154,6 +154,13 @@ let validaterStep1 = FormValidation.formValidation(form, {
         },
       },
     },
+    country:{
+      validators: {
+        notEmpty: {
+          message: 'Este campo es obligatorio',
+        },
+      },
+    },
   },
   plugins: {
     trigger: new FormValidation.plugins.Trigger(),
@@ -176,7 +183,6 @@ const validateStep1 = async () => {
 
 let stepp_1 = document.getElementById('stepp_1');
 
-console.log(stepp_1);
 stepp_1.addEventListener('click', async function () {
   let isValidStep1 = await validateStep1();
 

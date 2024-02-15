@@ -38,6 +38,13 @@ let validatorStep2 = FormValidation.formValidation(form, {
         },
       },
     },
+    bankIBAN: {
+      validators: {
+        notEmpty: {
+          message: 'Este campo es obligatorio',
+        },
+      },
+    },
   },
   plugins: {
     trigger: new FormValidation.plugins.Trigger(),

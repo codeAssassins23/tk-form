@@ -489,6 +489,19 @@
                     <!--end::Input group=-->
                     <div class='row mb-4'>
                       <!--begin::Estado-->
+                      <div id="country">
+                        <label for='country' class='form-label'>Pais</label>
+                        <div class='fv-row'>
+                          <select class='form-select' id='countryInput' name='country' data-placeholder='Selecciona un opción'
+                            data-control="select2">
+                            <option value="">
+                            </option>
+                            <option value="canada">
+                              canada
+                            </option>
+                          </select>
+                        </div>
+                      </div>
                       <div class='col'>
                         <label id="step_one_state" for='state' class='form-label'>Estado</label>
                         <div class='fv-row'>
@@ -599,13 +612,13 @@
                             data-placeholder='Selecciona un opción'>
                             <option>
                             </option>
-                            <option data-kt-select2-country='/assets/media/form/svg/us.svg'>
+                            <option value="Estados Unidos" data-kt-select2-country='/assets/media/form/svg/us.svg'>
                               Estados Unidos
                             </option>
-                            <option data-kt-select2-country='/assets/media/form/svg/mx.svg'>
+                            <option value="Mexico" data-kt-select2-country='/assets/media/form/svg/mx.svg'>
                               Mexico
                             </option>
-                            <option data-kt-select2-country='/assets/media/form/svg/world.svg'>
+                            <option value="word" data-kt-select2-country='/assets/media/form/svg/world.svg'>
                               Resto del mundo
                             </option>
                           </select>
@@ -663,7 +676,7 @@
                         <div>
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                              <input class="form-check-input" type="radio" value="1" name="typeOfBusiness" />
+                              <input class="form-check-input" id="personaFisica" type="radio" value="1" name="typeOfBusiness" />
                               <div class="form-check-label">
                                 Persona física
                               </div>
@@ -691,7 +704,7 @@
                             </div>
                           </label>
                         </div>
-                        <div>
+                        <div id="typeOfBusiness1">
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
                               <input class="form-check-input" type="radio" value="4" name="typeOfBusiness" />
@@ -843,7 +856,14 @@
                     <!--begin::Input group-->
                     <div class='row mb-4'>
                       <!--begin::Número de CLABE bancaria-->
-                      <div class='col'>
+                      <div class='col' id="bankCodeIBANDIV">
+                        <label for='bankIBAN' class='form-label'>Número de cuenta o IBAN</label>
+                        <div class='fv-row'>
+                          <input type='text' name='bankIBAN' autocomplete='off' id='bankIBAN'
+                            class='form-control' required />
+                        </div>
+                      </div>
+                      <div class='col' id="bankCodeNumberDIV">
                         <label for='bankCodeNumber' class='form-label'>Número de CLABE
                           bancaria</label>
                         <div class='fv-row'>
@@ -1417,21 +1437,21 @@
                             <div class='row mb-4'>
                               <!--begin::Nombres y apellidos-->
                               <div class='col'>
-                                <label for='nombreApellido' class='form-label'>Nombres y
+                                <label for='nombreApellido2' class='form-label'>Nombres y
                                   apellidos</label>
                                 <div class='fv-row'>
-                                  <input type='text' name='nombreApellido' autocomplete='off' id='nombreApellido'
+                                  <input type='text' name='nombreApellido2' autocomplete='off' id='nombreApellido2'
                                     class='form-control' required />
                                 </div>
                               </div>
                               <!--end::Nombres y apellidos-->
                               <!--begin::Cargo en la empresa-->
                               <div class='col'>
-                                <label for='cargoEmpresa' class='form-label'>
+                                <label for='cargoEmpresa2' class='form-label'>
                                   Cargo en la empresa
                                 </label>
                                 <div class='fv-row'>
-                                  <input type='text' name='cargoEmpresa' autocomplete='off' id='cargoEmpresa'
+                                  <input type='text' name='cargoEmpresa2' autocomplete='off' id='cargoEmpresa2'
                                     class='form-control' required />
                                 </div>
                               </div>
@@ -1440,34 +1460,25 @@
                             <div class='row mb-4'>
                               <!--begin::Teléfono celular-->
                               <div class='col'>
-                                <label for='telefonoCelular' class='form-label'>Teléfono
+                                <label for='telefonoCelular2' class='form-label'>Teléfono
                                   celular</label>
                                 <div class='fv-row'>
-                                  <input type='number' name='telefonoCelular' autocomplete='off' id='telefonoCelular'
+                                  <input type='number' name='telefonoCelular2' autocomplete='off' id='telefonoCelular2'
                                     class='form-control' required />
                                 </div>
                               </div>
                               <!--end::Teléfono celular-->
                               <!--begin::Correo electrónico-->
                               <div class='col'>
-                                <label for='correoElectronico' class='form-label'>
+                                <label for='correoElectronico2' class='form-label'>
                                   Correo electrónico
                                 </label>
                                 <div class='fv-row'>
-                                  <input type='text' name='correoElectronico' autocomplete='off' id='correoElectronico'
+                                  <input type='text' name='correoElectronico2' autocomplete='off' id='correoElectronico2'
                                     class='form-control' required />
                                 </div>
                               </div>
                               <!--end::Correo electrónico-->
-                            </div>
-                            <div class="row mb-4">
-                              <a id="removeButton" href="javascript:;" data-repeater-delete
-                                class="btn btn-sm btn-light-danger mt-3 mt-md-8">
-                                <i class="ki-duotone ki-trash fs-5"><span class="path1"></span><span
-                                    class="path2"></span><span class="path3"></span><span class="path4"></span><span
-                                    class="path5"></span></i>
-                                Delete
-                              </a>
                             </div>
                           </div>
                         </div>
@@ -1476,6 +1487,13 @@
                         <a id="addButton" href="javascript:;" data-repeater-create class="btn btn-light-primary">
                           <i class="ki-duotone ki-plus fs-3"></i>
                           Agregar
+                        </a>
+                        <a id="removeButton" style="display: none;" href="javascript:;" data-repeater-delete
+                          class="btn btn-light-danger mt-3">
+                          <i class="ki-duotone ki-trash fs-5"><span class="path1"></span><span
+                              class="path2"></span><span class="path3"></span><span class="path4"></span><span
+                              class="path5"></span></i>
+                          Delete
                         </a>
                       </div>
                     </div>
