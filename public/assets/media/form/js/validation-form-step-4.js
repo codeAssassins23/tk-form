@@ -70,9 +70,9 @@ let validatorStep4 = FormValidation.formValidation(form, {
   },
 });
 validatorStep4.disableValidator('nombreApellido2');
-  validatorStep4.disableValidator('cargoEmpresa2');
-  validatorStep4.disableValidator('telefonoCelular2');
-  validatorStep4.disableValidator('correoElectronico2');
+validatorStep4.disableValidator('cargoEmpresa2');
+validatorStep4.disableValidator('telefonoCelular2');
+validatorStep4.disableValidator('correoElectronico2');
 // Function to validate Step 4
 const validateStep4 = async () => {
   return new Promise((resolve) => {

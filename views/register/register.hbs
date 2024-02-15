@@ -487,6 +487,19 @@
                     <!--end::Input group=-->
                     <div class='row mb-4'>
                       <!--begin::Estado-->
+                      <div id="country">
+                        <label for='country' class='form-label'>Pais</label>
+                        <div class='fv-row'>
+                          <select class='form-select' id='countryInput' name='country' data-placeholder='Selecciona un opción'
+                            data-control="select2">
+                            <option value="">
+                            </option>
+                            <option value="canada">
+                              canada
+                            </option>
+                          </select>
+                        </div>
+                      </div>
                       <div class='col'>
                         <label for='state' class='form-label'>Estado</label>
                         <div class='fv-row'>
@@ -597,13 +610,13 @@
                             data-placeholder='Selecciona un opción'>
                             <option>
                             </option>
-                            <option data-kt-select2-country='/assets/media/form/svg/us.svg'>
+                            <option value="Estados Unidos" data-kt-select2-country='/assets/media/form/svg/us.svg'>
                               Estados Unidos
                             </option>
-                            <option data-kt-select2-country='/assets/media/form/svg/mx.svg'>
+                            <option value="Mexico" data-kt-select2-country='/assets/media/form/svg/mx.svg'>
                               Mexico
                             </option>
-                            <option data-kt-select2-country='/assets/media/form/svg/world.svg'>
+                            <option value="word" data-kt-select2-country='/assets/media/form/svg/world.svg'>
                               Resto del mundo
                             </option>
                           </select>
@@ -659,7 +672,7 @@
                         <div>
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                              <input class="form-check-input" type="radio" value="1" name="typeOfBusiness" />
+                              <input class="form-check-input" id="personaFisica" type="radio" value="1" name="typeOfBusiness" />
                               <div class="form-check-label">
                                 Persona física
                               </div>
@@ -687,7 +700,7 @@
                             </div>
                           </label>
                         </div>
-                        <div>
+                        <div id="typeOfBusiness1">
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
                               <input class="form-check-input" type="radio" value="4" name="typeOfBusiness" />
@@ -839,7 +852,14 @@
                     <!--begin::Input group-->
                     <div class='row mb-4'>
                       <!--begin::Número de CLABE bancaria-->
-                      <div class='col'>
+                      <div class='col' id="bankCodeIBANDIV">
+                        <label for='bankIBAN' class='form-label'>Número de cuenta o IBAN</label>
+                        <div class='fv-row'>
+                          <input type='text' name='bankIBAN' autocomplete='off' id='bankIBAN'
+                            class='form-control' required />
+                        </div>
+                      </div>
+                      <div class='col' id="bankCodeNumberDIV">
                         <label for='bankCodeNumber' class='form-label'>Número de CLABE
                           bancaria</label>
                         <div class='fv-row'>
