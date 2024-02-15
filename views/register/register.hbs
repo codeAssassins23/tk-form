@@ -117,7 +117,7 @@
                 data-kt-menu='true' id='kt_auth_lang_menu'>
                 <!--begin::Menu item-->
                 <div class='menu-item px-3'>
-                  <a href='#' class='menu-link d-flex px-5' data-kt-lang='English'>
+                  <a id="languageES" class='menu-link d-flex px-5' data-kt-lang='Spanish'>
                     <span class='symbol symbol-20px me-4'>
                       <img data-kt-element='lang-flag' class='rounded' src='/assets/media/form/svg/es.svg' alt='' />
                     </span>
@@ -127,7 +127,7 @@
                 <!--end::Menu item-->
                 <!--begin::Menu item-->
                 <div class='menu-item px-3'>
-                  <a href='#' class='menu-link d-flex px-5' data-kt-lang='Spanish'>
+                  <a id="languageEN" class='menu-link d-flex px-5' data-kt-lang='English'>
                     <span class='symbol symbol-20px me-4'>
                       <img data-kt-element='lang-flag' class='rounded' src='/assets/media/form/svg/us.svg' alt='' />
                     </span>
@@ -153,10 +153,10 @@
                     <!--end::Title-->
                     <!--begin::Subtitle-->
                     <div class='text-gray-700 fw-semibold fs-6'>
-                      <p><span class='text-primary'>Déjanos tus datos</span>
+                      <p id="content_send_email"><span class='text-primary'>Déjanos tus datos</span>
                         y escoge cómo iniciar la experiencia del mejor tipo de
-                        cambio. Esta información también servirá para enviarte
-                        <span class='text-primary'>un enlace personalizado</span>a
+                        cambio.<br> Esta información también servirá para enviarte un
+                        <span class='text-primary'> enlace personalizado</span> a
                         tu correo por si no culminas tu registro.
                       </p>
                     </div>
@@ -166,22 +166,21 @@
                   <!--begin::Input group=-->
                   <div class='mb-4'>
                     <!--begin::Correo electrónico-->
-                    <label for='correo_electronico' class='form-label'>Correo
-                      electrónico</label>
+                    <label for='correo_electronico' class='form-label' id="label_send_email">
+                      Correo electrónico
+                    </label>
                     <div class='fv-row'>
                       <input type='text' placeholder='example@...' name='text_email' autocomplete='off'
                         id='correo_electronico' class='form-control' required />
-                    </div>
-                    <div class='invalid-feedback'>
-                      Please select a valid state.
                     </div>
                     <!--end::Correo electrónico-->
                   </div>
                   <!--begin::Input group-->
                   <div class='mb-4'>
                     <!--begin::Nombres y apellidos-->
-                    <label for='nombre_apellidos' class='form-label'>
-                      Nombres y apellidos</label>
+                    <label for='nombre_apellidos' class='form-label' id="label_name">
+                      Nombres y apellidos
+                    </label>
                     <div class='fv-row'>
                       <input type='text' name='text_name' autocomplete='off' id='nombre_apellidos' class='form-control'
                         required />
@@ -192,7 +191,7 @@
                   <!--end::Input group=-->
                   <div class='mb-4'>
                     <!--begin::Empresa-->
-                    <label for='empresa' class='form-label'>
+                    <label for='empresa' class='form-label' id="label_company">
                       Empresa</label>
                     <div class='fv-row'>
                       <input type='text' name='text_enterprice' autocomplete='off' id='empresa' class='form-control'
@@ -205,7 +204,7 @@
                   <div class='row mb-8'>
                     <!--begin::Empresa-->
                     <div class='col'>
-                      <label for='paises' class='form-label'>Pais</label>
+                      <label for='paises' class='form-label' id="step_one_country">Pais</label>
                       <div class='fv-row'>
                         <select class='form-select' id='paises' name='select_country'
                           data-placeholder='Selecciona un opción'>
@@ -224,7 +223,7 @@
                       </div>
                     </div>
                     <div class='col'>
-                      <label for='telefono' class='form-label'>
+                      <label for='telefono' class='form-label' id="label_phone">
                         Teléfono
                       </label>
                       <div class='fv-row'>
@@ -237,7 +236,7 @@
                   <div class='d-grid col-md-6 col-10 mx-auto mb-10'>
                     <button type='button' id='kt_sign_up_submit' class='btn btn-primary'>
                       <!--begin::Indicator label-->
-                      <span class='indicator-label'>
+                      <span class='indicator-label' id="button_send_email">
                         Continuar con el registro
                       </span>
                       <!--end::Indicator label-->
@@ -258,11 +257,14 @@
           </div>
           <!--end::Wrapper-->
           <!--begin::Sign up-->
-          <div class='w-100 text-primary text-center fw-semibold fs-6 mt-4'>¿Quieres hablar con un asesor?
+          <div class='w-100 text-primary text-center fw-semibold fs-6 mt-4'>
+            <span id="label_advisor">
+              ¿Quieres hablar con un asesor?
+            </span>
             <a href='/'>
               <button type='button' class='btn btn-outline-primary mx-4'
                 style='border: 1px solid #999; border-rounded: 8px;'>
-                Agendar cita
+                <span id="button_schedule_date">Agendar cita</span>
               </button>
             </a>
           </div>
@@ -458,11 +460,11 @@
                 <form class='form h-100' novalidate="novalidate" id='kt_sign_up_form'>
                   <!--begin::Step 1-->
                   <div class="flex-column current m-auto" data-kt-stepper-element="content">
-                    <h2 class="w-100 text-center fs-2x mb-12">Información general</h2>
+                    <h2 id="step_one_title" class="w-100 text-center fs-2x mb-12">Información general</h2>
                     <!--begin::Input group=-->
                     <div class='mb-4'>
                       <!--begin::Nombre de la empresa-->
-                      <label for='corporateName' class='form-label'>
+                      <label id="step_one_companyName" for='corporateName' class='form-label'>
                         Nombre de la empresa (Razon social)
                       </label>
                       <div class='fv-row'>
@@ -475,7 +477,7 @@
                     <!--begin::Input group=-->
                     <div class='mb-4'>
                       <!--begin::Nombre comercial-->
-                      <label for='tradeNameOfDBA' class='form-label'>
+                      <label id="step_one_tradeName" for='tradeNameOfDBA' class='form-label'>
                         Nombre comercial (Opcional)
                       </label>
                       <div class='fv-row'>
@@ -488,7 +490,7 @@
                     <div class='row mb-4'>
                       <!--begin::Estado-->
                       <div class='col'>
-                        <label for='state' class='form-label'>Estado</label>
+                        <label id="step_one_state" for='state' class='form-label'>Estado</label>
                         <div class='fv-row'>
                           <select class='form-select' id='state' name='state' data-placeholder='Selecciona un opción'
                             data-control="select2">
@@ -498,7 +500,7 @@
                         </div>
                       </div>
                       <div class='col'>
-                        <label for='city' class='form-label'>Ciudad</label>
+                        <label id="step_one_city" for='city' class='form-label'>Ciudad</label>
                         <div class='fv-row'>
                           <select class='form-select' id='city' name='city' data-placeholder='Selecciona un opción'
                             data-control="select2">
@@ -514,7 +516,7 @@
                       <!--begin::Estado-->
                       <div class='col'>
                         <!--begin::Código postal-->
-                        <label for='postalCode' class='form-label'>
+                        <label id="step_one_postal_code" for='postalCode' class='form-label'>
                           Código postal
                         </label>
                         <div class='fv-row'>
@@ -525,7 +527,7 @@
                       </div>
                       <div class='col'>
                         <!--begin::Dirección-->
-                        <label for='address' class='form-label'>
+                        <label id="step_one_address" for='address' class='form-label'>
                           Dirección
                         </label>
                         <div class='fv-row'>
@@ -541,7 +543,7 @@
                       <!--begin::Estado-->
                       <div class='col'>
                         <!--begin::Correo-->
-                        <label for='emailInfomation' class='form-label'>
+                        <label id="step_one_companyEmail" for='emailInfomation' class='form-label'>
                           Correo (para recibir notificaciones)
                         </label>
                         <div class='fv-row'>
@@ -552,7 +554,7 @@
                       </div>
                       <div class='col'>
                         <!--begin::Teléfono celular-->
-                        <label for='phoneInformation' class='form-label'>
+                        <label id="step_one_outUsa_companyPhone" for='phoneInformation' class='form-label'>
                           Teléfono celular
                         </label>
                         <div class='fv-row'>
@@ -566,7 +568,7 @@
                     <!--begin::Input group=-->
                     <div class='mb-4'>
                       <!--begin::Sitio Web-->
-                      <label for='website' class='form-label'>
+                      <label id="step_one_companyURL" for='website' class='form-label'>
                         Sitio Web (Opcional)
                       </label>
                       <div class='fv-row'>
@@ -581,7 +583,7 @@
                       <!--begin::Estado-->
                       <div class='col'>
                         <!--begin::Número de identificación fiscal-->
-                        <label for='TaxIdentificationNumber' class='form-label'>
+                        <label id="step_one_companyTaxIdentification" for='TaxIdentificationNumber' class='form-label'>
                           Número de identificación fiscal
                         </label>
                         <div class='fv-row'>
@@ -591,7 +593,7 @@
                         <!--end::Número de identificación fiscal-->
                       </div>
                       <div class='col'>
-                        <label for='industry' class='form-label'>Industria</label>
+                        <label id="step_one_industry" for='industry' class='form-label'>Industria</label>
                         <div class='fv-row'>
                           <select class='form-select' id='industry' name='industry'
                             data-placeholder='Selecciona un opción'>
@@ -614,7 +616,7 @@
                     <!--begin::Input group=-->
                     <div class='mb-4'>
                       <!--begin::Descripción de la naturaleza del negocio-->
-                      <label for='natureOfBusiness' class='form-label'>
+                      <label id="step_one_businessName" for='natureOfBusiness' class='form-label'>
                         Descripción de la naturaleza del negocio
                       </label>
                       <div class='fv-row'>
@@ -623,8 +625,10 @@
                       </div>
                       <span class="fs-8 badge badge-light-primary text-wrap">
                         <i class="ki-outline ki-information-5 text-primary"></i>
-                        Si es un agente de carga, la naturaleza de la descripción comercial debe ser transportador de
-                        productos, servicios de carga, transportador intermodal, etc.
+                        <span id="step_one_info_text">
+                          Si es un agente de carga, la naturaleza de la descripción comercial debe ser transportador de
+                          productos, servicios de carga, transportador intermodal, etc.
+                        </span>
                       </span>
                       <!--end::Descripción de la naturaleza del negocio-->
                     </div>
@@ -632,7 +636,7 @@
                     <!--begin::Input group=-->
                     <div class='mb-8'>
                       <!--begin::Fecha de formación-->
-                      <label for='kt_datepicker_1' class='form-label'>
+                      <label id="step_one_creationDate" for='kt_datepicker_1' class='form-label'>
                         Fecha de formación
                       </label>
                       <div class="input-group">
@@ -651,7 +655,7 @@
                     <!--begin::Input group=-->
                     <div class='mb-8'>
                       <!--begin::Tipo de empresa-->
-                      <p class='form-label'>
+                      <p id="step_one_companyType" class='form-label'>
                         Tipo de empresa
                       </p>
                       <!--begin::Row-->
@@ -1187,8 +1191,7 @@
                         <div>
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                              <input class="form-check-input" type="radio" value="2" name="metodoPay"
-                                id="text_wow" />
+                              <input class="form-check-input" type="radio" value="2" name="metodoPay" id="text_wow" />
                               <div class="form-check-label">
                                 Cheque
                               </div>
@@ -1231,8 +1234,8 @@
                             Dirección del banco (ciudad, estado)
                           </label>
                           <div class='fv-row'>
-                            <input type='text' name='addressBank' autocomplete='off' id='addressBank' class='form-control'
-                              required />
+                            <input type='text' name='addressBank' autocomplete='off' id='addressBank'
+                              class='form-control' required />
                           </div>
                         </div>
                       </div>
@@ -1242,8 +1245,8 @@
                             Número de cuenta
                           </label>
                           <div class='fv-row'>
-                            <input type='text' name='accountNumber' autocomplete='off' id='accountNumber' class='form-control'
-                              required />
+                            <input type='text' name='accountNumber' autocomplete='off' id='accountNumber'
+                              class='form-control' required />
                           </div>
                         </div>
                         <div class="col-md-6">
@@ -1251,8 +1254,8 @@
                             Número ABA/Código de ruta
                           </label>
                           <div class='fv-row'>
-                            <input type='text' name='routingNumber' autocomplete='off' id='routingNumber' class='form-control'
-                              required />
+                            <input type='text' name='routingNumber' autocomplete='off' id='routingNumber'
+                              class='form-control' required />
                           </div>
                         </div>
                       </div>
@@ -1260,24 +1263,23 @@
                         <span class="fw-bold">Tipo de cuenta</span>
                       </div>
                       <div class="mb-4 fv-row row d-flex">
-                          <label>
-                            <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                              <input class="form-check-input" type="radio" value="1" name="typeAccount" />
-                              <div class="form-check-label">
-                                Cheques
-                              </div>
+                        <label>
+                          <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                            <input class="form-check-input" type="radio" value="1" name="typeAccount" />
+                            <div class="form-check-label">
+                              Cheques
                             </div>
-                          </label>
+                          </div>
+                        </label>
 
-                          <label>
-                            <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                              <input class="form-check-input" type="radio" value="2" name="typeAccount"
-                                id="text_wow" />
-                              <div class="form-check-label">
-                                Ahorros
-                              </div>
+                        <label>
+                          <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                            <input class="form-check-input" type="radio" value="2" name="typeAccount" id="text_wow" />
+                            <div class="form-check-label">
+                              Ahorros
                             </div>
-                          </label>
+                          </div>
+                        </label>
                       </div>
                       <!--begin::Input group=-->
                       <div class='mb-4'>
@@ -1309,7 +1311,9 @@
                           <!--end::Dropzone-->
                         </div>
                         <p>
-                          Tenga en cuenta que al pagar con los métodos de débito ACH o cheque/cheque por fax, los fondos pueden estar sujetos a un periodo de retención que puede ser evitado pagando por transferencia. Puede discutir sus opciones de pago con su representante de Monex USA.
+                          Tenga en cuenta que al pagar con los métodos de débito ACH o cheque/cheque por fax, los fondos
+                          pueden estar sujetos a un periodo de retención que puede ser evitado pagando por
+                          transferencia. Puede discutir sus opciones de pago con su representante de Monex USA.
                         </p>
                         <!--end::Acta constitutiva o licencia comercial-->
                       </div>
@@ -2042,6 +2046,7 @@
     Inputmask({ "mask": "(999) 999-9999" }).mask("#Telefono");
   </script>
   <script src="/assets/plugins/custom/formrepeater/formrepeater.bundle.js"></script>
+  <script type="module" src="/assets/media/form/js/traducciones.js"></script>
   <script src='/assets/media/form/js/validation.js'></script>
   <script src='/assets/media/form/js/validation-form-step-1.js'></script>
   <script src='/assets/media/form/js/validation-form-step-2.js'></script>
@@ -2049,7 +2054,7 @@
   <script src='/assets/media/form/js/validation-form-step-4.js'></script>
   <script src='/assets/media/form/js/validation-form-step-5.js'></script>
   <script src='/assets/media/form/js/validation-form-step-6.js'></script>
-  <script src='/assets/media/form/js/filterStatesCity.js'></script>
+  <script type="module" src='/assets/media/form/js/filterStatesCity.js'></script>
   <script src='/assets/media/form/js/country.js'></script>
   <script src='/assets/media/form/js/date.js'></script>
   <script src='/assets/media/form/js/dropzone.js'></script>

@@ -1,0 +1,40 @@
+{
+  "es": {
+    "content_send_email": "<span class=\"text-primary\">Déjanos tus datos </span> y escoge cómo iniciar la experiencia del mejor tipo de cambio. <br> Esta información también servirá para enviarte un <span class=\"text-primary\"> enlace personalizado</span> a tu correo por si no culminas tu registro.",
+    "label_send_email": "Correo electrónico",
+    "label_name": "Nombres y apellidos",
+    "label_company": "Empresa",
+    "step_one_country": "País",
+    "label_phone": "Teléfono",
+    "button_send_email": "Continuar con el registro",
+    "label_advisor": "¿Quieres hablar con un asesor?",
+    "button_schedule_date": "Agendar cita ",
+
+    "step_one_title": "Información general",
+    "step_one_companyName": "Nombre de la empresa (Razon social)",
+    "step_one_tradeName": "Nombre comercial (opcional)",
+    "step_one_state": "Estado",
+    "step_one_city": "Cuidad",
+    "step_one_postal_code": "Código postal",
+    "step_one_address": "Dirección "
+  },
+  "en": {
+    "content_send_email": "<span class=\"text-primary\">Leave us your information</span> and choose how to start the,experience of the best exchange rate. <br> This information will also be used to send you a <span class=\"text-primary\">personalized link</span> to your email in case you do not complete your registration.",
+    "label_send_email": "Email",
+    "label_name": "First and last names",
+    "label_company": "Corporate name",
+    "step_one_country": "Country",
+    "label_phone": "Phone",
+    "button_send_email": "Continue with registration",
+    "label_advisor": "¿Do you want to speak with an advisor?",
+    "button_schedule_date": "Schedule appointment",
+
+    "step_one_title": "General information",
+    "step_one_companyName": "Corporate Name",
+    "step_one_tradeName": "Trade Name of DBA (if applicable)",
+    "step_one_state": "State",
+    "step_one_city": "City",
+    "step_one_postal_code": "Postal Code",
+    "step_one_address": "Address "
+  }
+}
