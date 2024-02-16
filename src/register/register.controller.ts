@@ -341,7 +341,7 @@ export class RegisterController {
     console.log(file.filename);
   }
 
-  //recoger files Comprobante de domicilio
+  //recoger files  cheque anulado
   @Public()
   @Post('/uploadFilethreUSD/:idLead')
   @UseInterceptors(
@@ -374,6 +374,39 @@ export class RegisterController {
     console.log(file.filename);
   }
 
+  //recoger files  situacion fiscal
+  @Public()
+  @Post('/uploadFileOneSituacionFiscal/:idLead')
+  @UseInterceptors(
+    FileInterceptor('file', {
+      storage: diskStorage({
+        destination: './upload/temp',
+        filename: (req, file, cb) => {
+          const idLeads = req.params.idLead;
+          return cb(null, `${idLeads}-sitacionFiscal.pdf`);
+        },
+      }),
+    }),
+  )
+  async uploadFileOneSituacionFiscal(
+    @UploadedFile(
+      new ParseFilePipeBuilder()
+        .addFileTypeValidator({
+          fileType: 'pdf',
+        })
+
+        .addMaxSizeValidator({
+          maxSize: 20000000,
+        })
+        .build({
+          errorHttpStatusCode: HttpStatus.UNPROCESSABLE_ENTITY,
+        }),
+    )
+    file: Express.Multer.File,
+  ) {
+    console.log(file.filename);
+  }
+
   //recoger todo los datos del form (post)
   @Public()
   @Post('/registerAll/:id')
@@ -387,6 +420,7 @@ export class RegisterController {
     const idComprobanteDomicilio = `${idLeads}-comprobanteDomicilio.pdf`;
     const idFirma = `${idLeads}-firma.pdf`;
     const idChequeAnuladoUSD = `${idLeads}-chequeAnulado.pdf`;
+    const idSituacionFiscal = `${idLeads}-sitacionFiscal.pdf`;
 
     const directory = './upload/temp';
     const targetDirectory = './upload/files';
@@ -399,6 +433,7 @@ export class RegisterController {
       idComprobanteDomicilio,
       idFirma,
       idChequeAnuladoUSD,
+      idSituacionFiscal,
     };
 
     const namesFiles = await this.registerService.findFilesByIdLead(
