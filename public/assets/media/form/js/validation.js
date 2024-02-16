@@ -207,7 +207,7 @@ function initializeDropzone(idLead) {
     },
   });
 
-  var dropzoneActaConstitutiva = new Dropzone('#dropZoneChequeAnulado', {
+  var dropZoneChequeAnulado = new Dropzone('#dropZoneChequeAnulado', {
     url: `http://localhost:3200/uploadFilethreUSD/${idLead}`, // Set the url for your upload script location
     paramName: 'file', // The name that will be used to transfer the file
     maxFiles: 1,
@@ -225,7 +225,7 @@ function initializeDropzone(idLead) {
           // Convertir MB a bytes (1 MB = 1024 * 1024 bytes)
           done('El tamaño del archivo excede el límite de 20 MB.');
         } else {
-          document.getElementById('chequeAnulado').value = 'true';
+          document.getElementById('chequeAnuladoInput').value = 'true';
           done(); // Archivo válido
         }
       }
@@ -238,38 +238,48 @@ function initializeDropzone(idLead) {
       });
       this.on('removedfile', function (file) {
         // Manejar el evento de eliminación de archivo
-        document.getElementById('chequeAnulado').value = '';
+        document.getElementById('chequeAnuladoInput').value = '';
+      });
+    },
+  });
+
+  var dropzoneSituacionFiscal = new Dropzone('#dropzoneSituacionFiscal', {
+    url: `http://localhost:3200/uploadFileOneSituacionFiscal/${idLead}`, // Set the url for your upload script location
+    paramName: 'file', // The name that will be used to transfer the file
+    maxFiles: 1,
+    maxFilesize: 20, // MB
+    maxThumbnailFilesize: 20, // MB
+    addRemoveLinks: true,
+    acceptedFiles: 'application/pdf',
+    accept: function (file, done) {
+      // Validar si el archivo es PDF
+      if (file.type !== 'application/pdf') {
+        done('Solo se permiten archivos PDF.');
+      } else {
+        // Validar si el archivo supera el tamaño máximo
+        if (file.size > 20 * 1024 * 1024) {
+          // Convertir MB a bytes (1 MB = 1024 * 1024 bytes)
+          done('El tamaño del archivo excede el límite de 20 MB.');
+        } else {
+          document.getElementById('situacionFiscal').value = 'true';
+          done(); // Archivo válido
+        }
+      }
+    },
+    init: function () {
+      this.on('error', function (file, message) {
+        // Manejar errores de validación
+        alert(message);
+        this.removeFile(file); // Eliminar el archivo que no cumple con las validaciones
+      });
+      this.on('removedfile', function (file) {
+        // Manejar el evento de eliminación de archivo
+        document.getElementById('situacionFiscal').value = '';
       });
     },
   });
 }
 
-/* // Selecciona todos los inputs de tipo radio con el nombre 'typeOfBusiness'
-var radios = document.querySelectorAll('input[type="radio"][name="typeOfBusiness"]');
-
-// Función para mostrar/ocultar el div basado en la selección
-function toggleDivPersonaFisica() {
-  // Selecciona el div que quieres mostrar/ocultar
-  var divPersonaFisica = document.getElementById('divPersonaFisica');
-
-  // Verifica si el radio de 'Persona Física' está seleccionado
-  var isPersonaFisicaSelected = document.getElementById('personaFisica').checked;
-
-  // Muestra u oculta el div según si 'Persona Física' está seleccionado o no
-  if (isPersonaFisicaSelected) {
-    divPersonaFisica.style.display = 'block';
-  } else {
-    divPersonaFisica.style.display = 'none';
-  }
-} */
-
-/* // Agrega un event listener a cada radio button
-radios.forEach(function(radio) {
-  radio.addEventListener('change', toggleDivPersonaFisica);
-});
- */
-/* // Llama a la función al cargar para establecer el estado inicial correcto
-toggleDivPersonaFisica(); */
 
 var idLead;
 

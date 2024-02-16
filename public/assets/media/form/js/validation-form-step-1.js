@@ -161,6 +161,13 @@ let validaterStep1 = FormValidation.formValidation(form, {
         },
       },
     },
+    typeOfBusinessUSD:{
+      validators: {
+        notEmpty: {
+          message: 'Este campo es obligatorio',
+        },
+      },
+    },
   },
   plugins: {
     trigger: new FormValidation.plugins.Trigger(),
