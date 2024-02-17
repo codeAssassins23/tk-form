@@ -6,34 +6,45 @@ import {
   IsEmail,
   ValidateNested,
   IsNumber,
-  IsDate,
   IsArray,
   IsOptional,
 } from 'class-validator';
 
 class infoBankDto {
+  @IsOptional()
   @IsString()
   @MinLength(1, { message: 'El nameBank debe tener al menos 1 caracteres' })
   nameBank: string;
 
+  @IsOptional()
   @IsString()
   @MinLength(1, {
     message: 'El addressBank debe tener al menos 1 caracteres',
   })
   addressBank: string;
 
+  @IsOptional()
   @IsString()
   @MinLength(1, {
     message: 'El accountNumber debe tener al menos 1 caracteres',
   })
   accountNumber: string;
 
+  @IsOptional()
   @IsString()
   @MinLength(1, {
     message: 'El routingNumber debe tener al menos 1 caracteres',
   })
   routingNumber: string;
 
+  @IsOptional()
+  @IsString()
+  @MinLength(1, {
+    message: 'El typeOfAccount debe tener al menos 1 caracteres',
+  })
+  typeOfAccount: string;
+
+  @IsOptional()
   @IsString()
   @MinLength(1, {
     message: 'El FileCheque debe tener al menos 1 caracteres',
@@ -45,7 +56,7 @@ class InfoBeneficialOwnerDto {
   @IsString()
   @MinLength(1, { message: 'El name debe tener al menos 1 caracteres' })
   @IsNotEmpty({ message: 'El name es requerido' })
-  name: string;
+  nameOwner: string;
 
   @IsString()
   @MinLength(1, { message: 'El occupation debe tener al menos 1 caracteres' })
@@ -61,12 +72,12 @@ class InfoBeneficialOwnerDto {
 
   @IsString()
   @MinLength(1, { message: 'El address debe tener al menos 1 caracteres' })
-  address: string;
+  addressOwner: string;
 
   @IsString()
   @IsEmail({}, { message: 'El email debe ser válido' })
   @MinLength(1, { message: 'El email debe tener al menos 1 caracteres' })
-  email: string;
+  emailOwner: string;
 }
 
 class InfoAuthorizedUsersDto {

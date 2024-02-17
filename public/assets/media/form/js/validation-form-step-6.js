@@ -81,8 +81,167 @@ stepp_6.addEventListener('click', function () {
   let isValidStep6 = validateStep6();
   isValidStep6.then((value) => {
     if (value) {
-      getData();
-      console.log(stepsData);
+      stepsData= getData();
+      console.log(stepsData, "final");
+
+      var isTheApplicantCheckBoxes = document.querySelectorAll('input[name="isTheApplicant"]:checked');
+
+      // Crea un array para almacenar los valores
+      var selectedIsTheApplicant = "";
+
+      // Itera sobre los elementos marcados y agrega sus valores al array
+      isTheApplicantCheckBoxes.forEach(function(checkbox1) {
+        selectedIsTheApplicant= selectedIsTheApplicant + (checkbox1.value) + ", ";
+      });
+
+      // Selecciona todos los checkboxes marcados que tienen el nombre 'currenciesNeeded'
+      var checkedBoxes = document.querySelectorAll('input[name="currenciesNeeded"]:checked');
+
+      // Crea un array para almacenar los valores
+      var selectedCurrencies = "";
+
+      // Itera sobre los elementos marcados y agrega sus valores al array
+      checkedBoxes.forEach(function(checkbox) {
+        selectedCurrencies= selectedCurrencies + (checkbox.value) + ", ";
+      });
+
+      let bankCodeNumber;
+      if(stepsData.bankCodeNumber !== undefined){
+        bankCodeNumber = stepsData.bankCodeNumber;
+      } else if(stepsData.bankIBAN !== undefined){
+        bankCodeNumber = stepsData.bankIBAN;
+      } else {
+        bankCodeNumber = "";
+      }
+
+      let arrayBankInfo = [];
+
+      // Verifica si hay datos disponibles en stepsData para el banco
+      if(stepsData.nameBank !== undefined){
+        arrayBankInfo.push({
+          nameBank: stepsData.nameBank,
+          addressBank: stepsData.addressBank,
+          accountNumber: stepsData.accountNumber,
+          routingNumber: stepsData.routingNumber,
+          typeAccount: stepsData.typeAccount, // aún no se añade este campo al backend
+        });
+      } else {
+        arrayBankInfo.push({
+          nameBank: "",
+          addressBank: "",
+          accountNumber: "",
+          routingNumber: "",
+          typeAccount: "",
+        });
+      }
+
+      console.log(arrayBankInfo, "arrayBankInfo");
+
+      // Suponiendo que stepsData es un objeto previamente definido con los datos necesarios.
+      let arrayinfoAuthorizedUsers = [];
+
+      // Verifica si el segundo usuario está definido
+      if(stepsData.nombreApellido2 !== undefined){
+        // Primer usuario
+        arrayinfoAuthorizedUsers.push({
+          name: stepsData.nombreApellido,
+          title: stepsData.cargoEmpresa,
+          phone: stepsData.telefonoCelular,
+          email: stepsData.correoElectronico,
+        });
+
+        // Segundo usuario
+        arrayinfoAuthorizedUsers.push({
+          name: stepsData.nombreApellido2,
+          title: stepsData.cargoEmpresa2,
+          phone: stepsData.telefonoCelular2,
+          email: stepsData.correoElectronico2,
+        });
+      } else {
+        // Solo hay datos para un usuario
+        arrayinfoAuthorizedUsers.push({
+          name: stepsData.nombreApellido,
+          title: stepsData.cargoEmpresa,
+          phone: stepsData.telefonoCelular,
+          email: stepsData.correoElectronico,
+        });
+      }
+
+      console.log(arrayinfoAuthorizedUsers, "arrayinfoAuthorizedUsers");
+
+      let arrayinfoBeneficialOwner = [];
+
+      // Ajusta este número según el máximo esperado o dinamiza la detección del límite.
+      const maxBeneficiaries = 4; // Ajusta este valor según sea necesario.
+
+      for (let i = 1; i <= maxBeneficiaries; i++) {
+        // Construye los nombres de las propiedades dinámicamente.
+        let nameKey = `nameOwner${i}`;
+        let occupationKey = `occupation${i}`;
+        let ownershipKey = `ownership${i}`;
+        let dateOfBirthKey = `dateOfBirth${i}`;
+        let addressOwnerKey = `addressOwner${i}`;
+        let emailOwnerKey = `emailOwner${i}`;
+        console.log(stepsData[nameKey], "stepsData[nameKey]");
+        // Verifica si existe el beneficiario actual basado en la disponibilidad del nombre.
+        if (stepsData[nameKey] !== undefined) {
+          // Crea y añade el objeto del beneficiario al arreglo.
+          arrayinfoBeneficialOwner.push({
+            nameOwner: stepsData[nameKey],
+            occupation: stepsData[occupationKey],
+            ownership: stepsData[ownershipKey],
+            dateOfBirth: stepsData[dateOfBirthKey],
+            addressOwner: stepsData[addressOwnerKey],
+            emailOwner: stepsData[emailOwnerKey],
+          });
+        } else {
+          // Si el nombre del beneficiario actual no está definido, rompe el bucle.
+          break;
+        }
+      }
+
+      // Muestra el arreglo para verificar los datos almacenados
+      console.log(arrayinfoBeneficialOwner, "arrayinfoBeneficialOwner");
+
+      let dataSend = {
+        fullName : stepsData.fullName,
+        email : stepsData.email,
+        corporate : stepsData.corporate,
+        phone : stepsData.phone,
+        country :stepsData.country,
+        corporateName : stepsData.corporateName,
+        tradeNameOfDBA : stepsData.tradeNameOfDBA,
+        state: stepsData.state,
+        city: stepsData.city,
+        postalCode: stepsData.postalCode,
+        address: stepsData.address,
+        emailInfomation: stepsData.emailInfomation,
+        phoneInformation: stepsData.phoneInformation,
+        website : stepsData.website,
+        TaxIdentificationNumber : stepsData.TaxIdentificationNumber,
+        industry: stepsData.industry,
+        natureOfBusiness: stepsData.natureOfBusiness,
+        DateOfIncorporation: document.getElementById('kt_datepicker_1').value,
+        typeOfBusiness: typeof stepsData.typeOfBusiness !== 'undefined' ? stepsData.typeOfBusiness : stepsData.typeOfBusinessUSD,
+        isTheApplicant : selectedIsTheApplicant,
+        purposeOfTransactions : stepsData.purposeOfTransactions,
+        bankCodeNumber : bankCodeNumber,
+        estimatedTradeAmount : stepsData.estimatedTradeAmount,
+        estimatedOfMonthlyTransaction : stepsData.estimatedOfMonthlyTransaction,
+        currenciesNeeded : selectedCurrencies,
+        preferredMethodOfFunding : stepsData.metodoPay, 
+        infoBank :arrayBankInfo,
+        infoAuthorizedUsers : arrayinfoAuthorizedUsers,
+        ManyShouldersOwn25Percent: stepsData.sociosAcciones,
+        infoBeneficialOwner:arrayinfoBeneficialOwner,
+        nameAuthorizationMonex : stepsData.nameAuthorizationMonex,
+        titlePositionAuthorizationMonex: stepsData.titlePositionAuthorizationMonex,
+        dateAuthorizationMonex : document.getElementById('dateAuthorizationMonex').value,
+        idLead : idLead,
+      }
+
+      console.log(dataSend, "dataSend");
     }
+
   });
 });
