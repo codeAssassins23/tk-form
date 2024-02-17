@@ -10,42 +10,42 @@ let validatorStep5 = FormValidation.formValidation(form, {
         },
       },
     },
-    nameOwner: {
+    nameOwner1: {
       validators: {
         notEmpty: {
           message: 'Este campo es obligatorio',
         },
       },
     },
-    occupation: {
+    occupation1: {
       validators: {
         notEmpty: {
           message: 'Este campo es obligatorio',
         },
       },
     },
-    ownership: {
+    ownership1: {
       validators: {
         notEmpty: {
           message: 'Este campo es obligatorio',
         },
       },
     },
-    dateOfBirth: {
+    dateOfBirth1: {
       validators: {
         notEmpty: {
           message: 'Este campo es obligatorio',
         },
       },
     },
-    addressOwner: {
+    addressOwner1: {
       validators: {
         notEmpty: {
           message: 'Este campo es obligatorio',
         },
       },
     },
-    emailOwner: {
+    emailOwner1: {
       validators: {
         regexp: {
           regexp: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
