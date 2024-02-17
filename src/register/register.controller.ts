@@ -410,7 +410,10 @@ export class RegisterController {
   //recoger todo los datos del form (post)
   @Public()
   @Post('/registerAll/:id')
-  async registerAll(@Body() createRegisterDto: createRegisterDto) {
+  async registerAll(
+    @Body() createRegisterDto: createRegisterDto,
+    @Param('id') id: number,
+  ) {
     console.log(createRegisterDto);
     const idLeads = '10';
     const idActaConstitutiva = `${idLeads}-ActaConstitutiva.pdf`;

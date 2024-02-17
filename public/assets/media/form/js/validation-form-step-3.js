@@ -1,5 +1,33 @@
 /* eslint-disable prettier/prettier */
+// Función para verificar el valor del radio seleccionado y mostrar/ocultar el div
+function toggleOtherInput() {
+  // Busca si el radio seleccionado es 'Otra'
+  const isOtherSelected = Array.from(radios).some(radio => radio.checked && radio.value === 'Otra');
+  
+  // Muestra u oculta el div basado en si 'Otra' está seleccionado
+  if (isOtherSelected) {
+    othersMXN.style.display = 'block';
+    validaterStep1.enableValidator("typeOfBusinessOthers");
+  } else {
+    othersMXN.style.display = 'none';
+    validaterStep1.disableValidator("typeOfBusinessOthers");
+  }
+}
 
+// Función para verificar si el checkbox 'Otro' está seleccionado y mostrar/ocultar el div
+function toggleOtherCurrenciesDiv() {
+  // Encuentra el checkbox 'Otro'
+  const otherCheckbox = document.querySelector('input[name="currenciesNeeded"][value="Otro"]');
+  
+  // Muestra u oculta el div basado en si el checkbox 'Otro' está marcado
+  if (otherCheckbox.checked) {
+    currenciesGeneral.style.display = 'block';
+    validatorStep2.enableValidator("currenciesGeneral1");
+  } else {
+    currenciesGeneral.style.display = 'none';
+    validatorStep2.disableValidator("currenciesGeneral1");
+  }
+}
 
 // Init validartion 1
 let validatorStep3 = FormValidation.formValidation(form, {
@@ -123,10 +151,31 @@ $('#paises').on('change', function(e) {
   let bankCodeIBANDIV = document.getElementById('bankCodeIBANDIV');
   let typeOfBusinessUSD = document.getElementById('typeOfBusinessUSD');
   let typeofBussinesOTHERS = document.getElementById('typeofBussinesOTHERS');
-
+  let othersMXN = document.getElementById('othersMXN');
+  let currenciesGeneral = document.getElementById('currenciesGeneral');
+  let currenciesCheckDiv = document.getElementById('currenciesCheckDiv');
+  const checkboxes = document.querySelectorAll('input[name="currenciesNeeded"]');
+  const radios = document.querySelectorAll('input[name="typeOfBusiness"]');
+  toggleOtherInput();
+  toggleOtherCurrenciesDiv();
+  document.getElementById('bienesRaices').style.display = 'none';
+  document.getElementById('sinFinesDeLucro').style.display = 'none';
+  document.getElementById('cripto').style.display = 'block';
+  document.getElementById('sustanciasControladas').style.display = 'block';
   if (valorSeleccionado === "mxn") {
+      // Selecciona todos los inputs de tipo radio con el nombre 'typeOfBusiness'
+      document.getElementById('specific').style.display = 'block';
+      // Agrega el evento 'change' a cada radio button
+      radios.forEach(radio => radio.addEventListener('change', toggleOtherInput));
+
+      // Agrega el evento 'change' a cada checkbox
+      checkboxes.forEach(checkbox => checkbox.addEventListener('change', toggleOtherCurrenciesDiv));
+
+      validatorStep2.enableValidator("currenciesNeeded");
+
       mxn.style.display = 'block';
       usd.style.display = 'none';
+      
       typeOfBusinessUSD.style.display = 'none';
       validaterStep1.disableValidator("typeOfBusinessUSD");
 
@@ -164,6 +213,20 @@ $('#paises').on('change', function(e) {
       usd.style.display = 'block';
       typeOfBusinessUSD.style.display = 'block';
       validaterStep1.enableValidator("typeOfBusinessUSD");
+      
+      document.getElementById('bienesRaices').style.display = 'block';
+      document.getElementById('sinFinesDeLucro').style.display = 'block';
+      document.getElementById('cripto').style.display = 'none';
+      document.getElementById('sustanciasControladas').style.display = 'none';
+
+      currenciesCheckDiv.style.display = 'none';
+      currenciesGeneral.style.display = 'block';
+      document.getElementById('specific').style.display = 'none';
+      validatorStep2.enableValidator("currenciesGeneral1");
+      validatorStep2.disableValidator("currenciesNeeded");
+
+      othersMXN.style.display = 'none';
+      validaterStep1.disableValidator("typeOfBusinessOthers");
 
       typeOfBusiness.style.display = 'none';
       typeofBussinesOTHERS.style.display = 'none';
@@ -198,6 +261,16 @@ $('#paises').on('change', function(e) {
       usd.style.display = 'none';
       typeOfBusinessUSD.style.display = 'none';
       validaterStep1.disableValidator("typeOfBusinessUSD");
+
+      document.getElementById('specific').style.display = 'block';
+
+      // Agrega el evento 'change' a cada checkbox
+      checkboxes.forEach(checkbox => checkbox.addEventListener('change', toggleOtherCurrenciesDiv));
+
+      validatorStep2.enableValidator("currenciesNeeded");
+
+      othersMXN.style.display = 'none';
+      validaterStep1.disableValidator("typeOfBusinessOthers");
 
       bankCodeIBANDIV.style.display = 'block';
       validatorStep2.enableValidator('bankIBAN');

@@ -45,6 +45,13 @@ let validatorStep2 = FormValidation.formValidation(form, {
         },
       },
     },
+    currenciesGeneral1: {
+      validators: {
+        notEmpty: {
+          message: 'Este campo es obligatorio',
+        },
+      },
+    },
   },
   plugins: {
     trigger: new FormValidation.plugins.Trigger(),
