@@ -26,6 +26,10 @@ let validatorStep4 = FormValidation.formValidation(form, {
     },
     correoElectronico: {
       validators: {
+        regexp: {
+          regexp: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+          message: 'El contenido no es válido',
+        },
         notEmpty: {
           message: 'Este campo es obligatorio',
         },
