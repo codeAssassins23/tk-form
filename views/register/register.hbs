@@ -859,7 +859,8 @@
                         <div>
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                              <input class="form-check-input" type="checkbox" value="Venta de piedras precioass" name="isTheApplicant" />
+                              <input class="form-check-input" type="checkbox" value="Venta de piedras precioass"
+                                name="isTheApplicant" />
                               <div class="form-check-label">
                                 <span id="step_one_businessSectors_outUsa_te1">
                                   Venta de piedras precioass
@@ -871,8 +872,8 @@
                         <div>
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                              <input class="form-check-input" type="checkbox" value="Venta de armas" name="isTheApplicant"
-                                id="text_wow" />
+                              <input class="form-check-input" type="checkbox" value="Venta de armas"
+                                name="isTheApplicant" id="text_wow" />
                               <div class="form-check-label">
                                 <span id="step_one_businessSectors_outUsa_te2">
                                   Venta de armas
@@ -884,7 +885,8 @@
                         <div>
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                              <input class="form-check-input" type="checkbox" value="Venta de criptomonedas" name="isTheApplicant" />
+                              <input class="form-check-input" type="checkbox" value="Venta de criptomonedas"
+                                name="isTheApplicant" />
                               <div class="form-check-label">
                                 <span id="step_one_businessSectors_outUsa_te3">
                                   Venta de criptomonedas
@@ -896,7 +898,8 @@
                         <div>
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                              <input class="form-check-input" type="checkbox" value="Relacionado con sustancias controladas" name="isTheApplicant" />
+                              <input class="form-check-input" type="checkbox"
+                                value="Relacionado con sustancias controladas" name="isTheApplicant" />
                               <div class="form-check-label">
                                 <span id="step_one_businessSectors_outUsa_te4">
                                   Relacionado con sustancias controladas
@@ -908,7 +911,8 @@
                         <div>
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                              <input class="form-check-input" type="checkbox" value="Institución financiera" name="isTheApplicant" />
+                              <input class="form-check-input" type="checkbox" value="Institución financiera"
+                                name="isTheApplicant" />
                               <div class="form-check-label">
                                 <span id="step_one_businessSectors_outUsa_te5">
                                   Institución financiera
@@ -920,7 +924,8 @@
                         <div>
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                              <input class="form-check-input" type="checkbox" value="Ninguna opción aplica" name="isTheApplicant" />
+                              <input class="form-check-input" type="checkbox" value="Ninguna opción aplica"
+                                name="isTheApplicant" />
                               <div class="form-check-label">
                                 <span id="step_one_businessSectors_outUsa_te6">
                                   Ninguna opción aplica
@@ -956,7 +961,7 @@
                     <!--begin::Input group=-->
                     <div class='mb-4'>
                       <!--begin::Objetivo de las transacciones-->
-                      <label for='purposeOfTransactions' class='form-label'>
+                      <label id="step_two_mexico_transactionPurpose" for='purposeOfTransactions' class='form-label'>
                         Objetivo de las transacciones (especificar)
                       </label>
                       <div class='fv-row'>
@@ -965,8 +970,11 @@
                       </div>
                       <span class="fs-8 badge badge-light-primary text-wrap">
                         <i class="ki-outline ki-information-5 text-primary"></i>
-                        No indique "Pago por bienes" o "Pago por servicios". (Ejemplos: "Estoy comprando iPads" o "Estoy
-                        comprando equipo que se usará para cultivar")
+                        <span id="step_two_mexico_badged">
+                          No indique "Pago por bienes" o "Pago por servicios". (Ejemplos: "Estoy comprando iPads" o
+                          "Estoy
+                          comprando equipo que se usará para cultivar")
+                        </span>
                       </span>
                       <!--end::Objetivo de las transacciones-->
                     </div>
@@ -975,15 +983,17 @@
                     <div class='row mb-4'>
                       <!--begin::Número de CLABE bancaria-->
                       <div class='col' id="bankCodeIBANDIV">
-                        <label for='bankIBAN' class='form-label'>Número de cuenta o IBAN</label>
+                        <label id="step_two_outUsa_bankAccount" for='bankIBAN' class='form-label'>Número de cuenta o
+                          IBAN</label>
                         <div class='fv-row'>
                           <input type='text' name='bankIBAN' autocomplete='off' id='bankIBAN' class='form-control'
                             required />
                         </div>
                       </div>
                       <div class='col' id="bankCodeNumberDIV">
-                        <label for='bankCodeNumber' class='form-label'>Número de CLABE
-                          bancaria</label>
+                        <label id="step_two_mexico_bankAccount" for='bankCodeNumber' class='form-label'>
+                          Número de CLABE bancaria
+                        </label>
                         <div class='fv-row'>
                           <input type='text' name='bankCodeNumber' autocomplete='off' id='bankCodeNumber'
                             class='form-control' required />
@@ -992,7 +1002,7 @@
                       <!--end::Número de CLABE bancaria-->
                       <!--begin::Monto estimado por transacción-->
                       <div class='col'>
-                        <label for='estimatedTradeAmount' class='form-label'>
+                        <label id="step_two_mexico_amountPerMonth" for='estimatedTradeAmount' class='form-label'>
                           Monto estimado por transacción
                         </label>
                         <div class='fv-row'>
@@ -1006,7 +1016,8 @@
                     <!--begin::Input group=-->
                     <div class='mb-4'>
                       <!--begin::Número estimado de transacciones al mes-->
-                      <label for='estimatedOfMonthlyTransaction' class='form-label'>
+                      <label id="step_two_mexico_transactionsPerMonth" for='estimatedOfMonthlyTransaction'
+                        class='form-label'>
                         Número estimado de transacciones al mes
                       </label>
                       <div class='fv-row'>
@@ -1019,10 +1030,10 @@
                     <!--begin::Input group=-->
                     <div class="mb-8">
                       <!--begin::Divisas requeridas-->
-                      <p class='form-label'>
+                      <p id="step_two_mexico_currencies_title" class='form-label'>
                         Divisas requeridas
                       </p>
-                      <p class="fs-sm text-gray-500">
+                      <p id="step_two_mexico_currencies_subtitle" class="fs-sm text-gray-500">
                         Marque todo lo que corresponda
                       </p>
                       <!--begin::Row-->
@@ -1032,7 +1043,9 @@
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
                               <input class="form-check-input" type="checkbox" value="Euro" name="currenciesNeeded" />
                               <div class="form-check-label">
-                                Euro
+                                <span id="step_two_mexico_currencies_te1">
+                                  Euro
+                                </span>
                               </div>
                             </div>
                           </label>
@@ -1043,7 +1056,9 @@
                               <input class="form-check-input" type="checkbox" value="Libra esterlina"
                                 name="currenciesNeeded" id="text_wow" />
                               <div class="form-check-label">
-                                Libra esterlina
+                                <span id="step_two_mexico_currencies_te2">
+                                  Libra esterlina
+                                </span>
                               </div>
                             </div>
                           </label>
@@ -1054,7 +1069,9 @@
                               <input class="form-check-input" type="checkbox" value="Yen japones"
                                 name="currenciesNeeded" />
                               <div class="form-check-label">
-                                Yen japones
+                                <span id="step_two_mexico_currencies_te3">
+                                  Yen japones
+                                </span>
                               </div>
                             </div>
                           </label>
@@ -1065,7 +1082,9 @@
                               <input class="form-check-input" type="checkbox" value="Dólar canadiense"
                                 name="currenciesNeeded" />
                               <div class="form-check-label">
-                                Dólar canadiense
+                                <span id="step_two_mexico_currencies_te4">
+                                  Dólar canadiense
+                                </span>
                               </div>
                             </div>
                           </label>
@@ -1076,7 +1095,9 @@
                               <input class="form-check-input" type="checkbox" value="Peso mexicano"
                                 name="currenciesNeeded" />
                               <div class="form-check-label">
-                                Peso mexicano
+                                <span id="step_two_mexico_currencies_te5">
+                                  Peso mexicano
+                                </span>
                               </div>
                             </div>
                           </label>
@@ -1087,7 +1108,9 @@
                               <input class="form-check-input" type="checkbox" value="Dólar US"
                                 name="currenciesNeeded" />
                               <div class="form-check-label">
-                                Dólar US
+                                <span id="step_two_mexico_currencies_te6">
+                                  Dólar US
+                                </span>
                               </div>
                             </div>
                           </label>
@@ -1097,7 +1120,9 @@
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
                               <input class="form-check-input" type="checkbox" value="Otro" name="currenciesNeeded" />
                               <div class="form-check-label">
-                                Otro
+                                <span id="step_two_mexico_currencies_te7">
+                                  Otro
+                                </span>
                               </div>
                             </div>
                           </label>
@@ -1391,15 +1416,6 @@
                           </label>
                         </div>
                       </div>
-<<<<<<< HEAD
-                      <div class="row">
-                        <div class="col-md-6">
-                          <label for='nameBank' class='form-label'>
-                            Nombre del banco
-                          </label>
-                          <div class='fv-row'>
-                            <input type='text' name='nameBank' autocomplete='off' id='nameBank' class='form-control'
-=======
                       <div id="groupInfoBankPay" style="display: none;">
                         <div class="row">
                           <div class="col-md-6">
@@ -1416,8 +1432,8 @@
                               Dirección del banco (ciudad, estado)
                             </label>
                             <div class='fv-row'>
-                              <input type='text' name='addressBank' autocomplete='off' id='addressBank' class='form-control'
-                                required />
+                              <input type='text' name='addressBank' autocomplete='off' id='addressBank'
+                                class='form-control' required />
                             </div>
                           </div>
                         </div>
@@ -1427,8 +1443,8 @@
                               Número de cuenta
                             </label>
                             <div class='fv-row'>
-                              <input type='text' name='accountNumber' autocomplete='off' id='accountNumber' class='form-control'
-                                required />
+                              <input type='text' name='accountNumber' autocomplete='off' id='accountNumber'
+                                class='form-control' required />
                             </div>
                           </div>
                           <div class="col-md-6">
@@ -1436,8 +1452,8 @@
                               Número ABA/Código de ruta
                             </label>
                             <div class='fv-row'>
-                              <input type='text' name='routingNumber' autocomplete='off' id='routingNumber' class='form-control'
-                                required />
+                              <input type='text' name='routingNumber' autocomplete='off' id='routingNumber'
+                                class='form-control' required />
                             </div>
                           </div>
                         </div>
@@ -1445,23 +1461,23 @@
                           <span class="fw-bold">Tipo de cuenta</span>
                         </div>
                         <div class="mb-4 fv-row row d-flex">
-                            <label>
-                              <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                                <input class="form-check-input" type="radio" value="Cheques" name="typeAccount" />
-                                <div class="form-check-label">
-                                  Cheques
-                                </div>
+                          <label>
+                            <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                              <input class="form-check-input" type="radio" value="Cheques" name="typeAccount" />
+                              <div class="form-check-label">
+                                Cheques
                               </div>
-                            </label>
-                            <label>
-                              <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                                <input class="form-check-input" type="radio" value="Ahorros" name="typeAccount"
-                                  id="text_wow" />
-                                <div class="form-check-label">
-                                  Ahorros
-                                </div>
+                            </div>
+                          </label>
+                          <label>
+                            <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                              <input class="form-check-input" type="radio" value="Ahorros" name="typeAccount"
+                                id="text_wow" />
+                              <div class="form-check-label">
+                                Ahorros
                               </div>
-                            </label>
+                            </div>
+                          </label>
                         </div>
                         <!--begin::Input group=-->
                         <div class='mb-4' id="chequeAnulado" style="display: none;">
@@ -1493,7 +1509,9 @@
                             <!--end::Dropzone-->
                           </div>
                           <p>
-                            Tenga en cuenta que al pagar con los métodos de débito ACH o cheque/cheque por fax, los fondos pueden estar sujetos a un periodo de retención que puede ser evitado pagando por transferencia. Puede discutir sus opciones de pago con su representante de Monex USA.
+                            Tenga en cuenta que al pagar con los métodos de débito ACH o cheque/cheque por fax, los
+                            fondos pueden estar sujetos a un periodo de retención que puede ser evitado pagando por
+                            transferencia. Puede discutir sus opciones de pago con su representante de Monex USA.
                           </p>
                           <!--end::Acta constitutiva o licencia comercial-->
                         </div>
@@ -1635,8 +1653,8 @@
                                   Correo electrónico
                                 </label>
                                 <div class='fv-row'>
-                                  <input type='text' name='correoElectronico2' autocomplete='off' id='correoElectronico2'
-                                    class='form-control' required />
+                                  <input type='text' name='correoElectronico2' autocomplete='off'
+                                    id='correoElectronico2' class='form-control' required />
                                 </div>
                               </div>
                               <!--end::Correo electrónico-->
@@ -1764,9 +1782,8 @@
                             Nombre legal (sin abreviaciones)
                           </label>
                           <div class='fv-row'>
-                            <input type='text' name='nameOwner1' autocomplete='off' id='nombreLegal' class='form-control'
->>>>>>> 07803d5d54e186e531a866d995ad244b7d5596b3
-                              required />
+                            <input type='text' name='nameOwner1' autocomplete='off' id='nombreLegal'
+                              class='form-control' required />
                           </div>
                         </div>
                         <div class="col-md-6">
@@ -1774,12 +1791,6 @@
                             Dirección del banco (ciudad, estado)
                           </label>
                           <div class='fv-row'>
-<<<<<<< HEAD
-                            <input type='text' name='addressBank' autocomplete='off' id='addressBank'
-                              class='form-control' required />
-                          </div>
-                        </div>
-=======
                             <input type='text' name='occupation1' autocomplete='off' id='cargoEmpresa'
                               class='form-control' required />
                           </div>
@@ -1828,7 +1839,6 @@
                             </div>
                           </div>
                         </div>
->>>>>>> 07803d5d54e186e531a866d995ad244b7d5596b3
                       </div>
                       <div class="row">
                         <div class="col-md-6">
