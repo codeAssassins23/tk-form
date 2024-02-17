@@ -1,3 +1,4 @@
+
 /* eslint-disable prettier/prettier */
 var maxFileDigitalSignature = 0;
 
@@ -79,10 +80,28 @@ let stepp_6 = document.getElementById('stepp_6');
 
 stepp_6.addEventListener('click', function () {
   let isValidStep6 = validateStep6();
-  isValidStep6.then((value) => {
+  isValidStep6.then(async (value)  => {
     if (value) {
       stepsData= getData();
       console.log(stepsData, "final");
+      function toggleOtherInputSend() {
+        // Busca si el radio seleccionado es 'Otra'
+        const isOtherSelected = Array.from(radios).some(radio => radio.checked && radio.value === 'Otra');
+        
+        // Muestra u oculta el div basado en si 'Otra' está seleccionado
+        if (isOtherSelected) {
+          stepsData.typeOfBusiness = document.getElementById('typeOfBusinessOthers').value;
+        }
+      }
+
+      // Selecciona todos los inputs de tipo radio con el nombre 'typeOfBusiness'
+      const radiosSend = document.querySelectorAll('input[name="typeOfBusiness"]');
+
+      // Agrega el evento 'change' a cada radio button
+      radiosSend.forEach(radio => radio.addEventListener('change', toggleOtherInput));
+
+      // Llama a toggleOtherInput al cargar para establecer el estado inicial correcto
+      toggleOtherInputSend();
 
       var isTheApplicantCheckBoxes = document.querySelectorAll('input[name="isTheApplicant"]:checked');
 
@@ -239,8 +258,16 @@ stepp_6.addEventListener('click', function () {
         dateAuthorizationMonex : document.getElementById('dateAuthorizationMonex').value,
         idLead : idLead,
       }
-
       console.log(dataSend, "dataSend");
+      const response = await axios({
+        method: 'post',
+        url: `/registerAll/${idLead}`,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        data: dataSend,
+      });
+      console.log(response.data, "response");
     }
 
   });

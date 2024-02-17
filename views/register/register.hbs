@@ -730,13 +730,20 @@
                             </div>
                           </label>
                         </div>
+                        <div id="othersMXN" style="display: none;">
+                          <label for='typeOfBusinessOthers' class='form-label'>
+                            Especifique
+                          </label>
+                          <div class='fv-row'>
+                            <input type='text' name='typeOfBusinessOthers' autocomplete='off' id='typeOfBusinessOthers'
+                              class='form-control' required />
+                          </div>
+                        </div>
                       </div>
                       <!--end::Row-->
                       <!--end::Tipo de empresa-->
                     </div>
                     <!--end::Input group=-->
-
-
                     <!--begin::Input group=-->
                     <div class='mb-8' id="typeOfBusinessUSD" style="display: none;">
                       <!--begin::Tipo de empresa USD-->
@@ -811,9 +818,6 @@
                       <!--end::Tipo de empresa USD-->
                     </div>
                     <!--end::Input group=-->
-
-
-
                     <!--begin::Input group=-->
                     <div class="mb-8">
                       <!--begin::Giro de la empresa-->
@@ -846,7 +850,7 @@
                             </div>
                           </label>
                         </div>
-                        <div>
+                        <div id="cripto" style="display: none;">
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
                               <input class="form-check-input" type="checkbox" value="Venta de criptomonedas" name="isTheApplicant" />
@@ -856,12 +860,32 @@
                             </div>
                           </label>
                         </div>
-                        <div>
+                        <div id="sustanciasControladas" style="display: none;">
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
                               <input class="form-check-input" type="checkbox" value="Relacionado con sustancias controladas" name="isTheApplicant" />
                               <div class="form-check-label">
                                 Relacionado con sustancias controladas
+                              </div>
+                            </div>
+                          </label>
+                        </div>
+                        <div id="bienesRaices" style="display: none;">
+                          <label>
+                            <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                              <input class="form-check-input" type="checkbox" value="Venta de bienes raíces" name="isTheApplicant" />
+                              <div class="form-check-label">
+                                Venta de bienes raíces
+                              </div>
+                            </div>
+                          </label>
+                        </div>
+                        <div id="sinFinesDeLucro" style="display: none;">
+                          <label>
+                            <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                              <input class="form-check-input" type="checkbox" value="Institución sin fines de lucro u ONG" name="isTheApplicant" />
+                              <div class="form-check-label">
+                                Institución sin fines de lucro u ONG
                               </div>
                             </div>
                           </label>
@@ -983,7 +1007,7 @@
                         Marque todo lo que corresponda
                       </p>
                       <!--begin::Row-->
-                      <div class="mb-4 fv-row" data-kt-buttons="true" data-kt-buttons-target=".form-check-input">
+                      <div class="mb-4 fv-row" id="currenciesCheckDiv" data-kt-buttons="true" data-kt-buttons-target=".form-check-input">
                         <div>
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
@@ -1059,6 +1083,42 @@
                             </div>
                           </label>
                         </div>
+                      </div>
+                      <div class="mb-10 fv-row" id="currenciesGeneral" style="display: none;">
+                        <label for="" class="form-label" id="specific">Especifique</label>
+                        <select name="currenciesGeneral1" class="form-select" data-control="select2" data-placeholder="Select an option" data-allow-clear="true" multiple="multiple">
+                            <option></option>
+                            <option value="USD">Estados Unidos de América(USD)</option>
+                            <option value="MXN">México(MXN)</option>
+                            <option value="SAR">Arabia Saudita(SAR)</option>
+                            <option value="AUD">Australia(AUD)</option>
+                            <option value="BHD">Bahrein(BHD)</option>
+                            <option value="BWP">Botsuana(BWP)</option>
+                            <option value="BGN">Bulgaria(BGN)</option>
+                            <option value="CAD">Canadá(CAD)</option>
+                            <option value="AED">Emiratos Árabes Unidos(AED)</option>
+                            <option value="HKD">Hong Kong(HKD)</option>
+                            <option value="HUF">Hungría(HUF)</option>
+                            <option value="ILS">Israel(ILS)</option>
+                            <option value="JPY">Japón(JPY)</option>
+                            <option value="JOD">Jordania(JOD)</option>
+                            <option value="KES">Kenia(KES)</option>
+                            <option value="KWD">Kuwait(KWD)</option>
+                            <option value="MUR">Mauricio(MUR)</option>
+                            <option value="NOK">Noruega(NOK)</option>
+                            <option value="NZD">Nueva Zelanda(NZD)</option>
+                            <option value="PLN">Polonia(PLN)</option>
+                            <option value="QAR">Qatar(QAR)</option>
+                            <option value="GBP">Reino Unido(GBP)</option>
+                            <option value="CZK">República Checa(CZK)</option>
+                            <option value="RON">Rumania(RON)</option>
+                            <option value="SGD">Singapur(SGD)</option>
+                            <option value="SEK">Suecia(SEK)</option>
+                            <option value="ZAR">Sudáfrica(ZAR)</option>
+                            <option value="THB">Thailandia(THB)</option>
+                            <option value="TRY">Turquía(TRY)</option>
+                            <option value="EUR">Zona Euro(EUR)</option>
+                        </select>
                       </div>
                       <!--end::Row-->
                       <!--end::Divisas requeridas-->

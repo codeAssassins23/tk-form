@@ -108,6 +108,9 @@ export class Register {
   @Column({ type: 'varchar', nullable: true })
   infoBank: string;
 
+  @Column({ type: 'varchar', length: 45, nullable: true })
+  chequeAnulado: string;
+
   //start four step of register
   @Column({ type: 'varchar', nullable: true })
   infoAuthorizedUsers: string;
