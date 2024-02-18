@@ -749,7 +749,8 @@
                           </label>
                         </div>
                         <div id="othersMXN" style="display: none;">
-                          <label for='typeOfBusinessOthers' class='form-label'>
+                          <label id="step_two_outUsa_currencies_otherCurrencies" for='typeOfBusinessOthers'
+                            class='form-label'>
                             Especifique
                           </label>
                           <div class='fv-row'>
@@ -920,7 +921,8 @@
                         <div id="bienesRaices" style="display: none;">
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                              <input class="form-check-input" type="checkbox" value="Venta de bienes raíces" name="isTheApplicant" />
+                              <input class="form-check-input" type="checkbox" value="Venta de bienes raíces"
+                                name="isTheApplicant" />
                               <div class="form-check-label">
                                 Venta de bienes raíces
                               </div>
@@ -930,7 +932,8 @@
                         <div id="sinFinesDeLucro" style="display: none;">
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                              <input class="form-check-input" type="checkbox" value="Institución sin fines de lucro u ONG" name="isTheApplicant" />
+                              <input class="form-check-input" type="checkbox"
+                                value="Institución sin fines de lucro u ONG" name="isTheApplicant" />
                               <div class="form-check-label">
                                 Institución sin fines de lucro u ONG
                               </div>
@@ -990,7 +993,7 @@
                     <!--begin::Input group=-->
                     <div class='mb-4'>
                       <!--begin::Objetivo de las transacciones-->
-                      <label id="step_two_mexico_transactionPurpose" for='purposeOfTransactions' class='form-label'>
+                      <label id="step_two_usa_transactionPurpose" for='purposeOfTransactions' class='form-label'>
                         Objetivo de las transacciones (especificar)
                       </label>
                       <div class='fv-row'>
@@ -999,7 +1002,7 @@
                       </div>
                       <span class="fs-8 badge badge-light-primary text-wrap">
                         <i class="ki-outline ki-information-5 text-primary"></i>
-                        <span id="step_two_mexico_badged">
+                        <span id="step_two_usa_baged">
                           No indique "Pago por bienes" o "Pago por servicios". (Ejemplos: "Estoy comprando iPads" o
                           "Estoy
                           comprando equipo que se usará para cultivar")
@@ -1012,8 +1015,9 @@
                     <div class='row mb-4'>
                       <!--begin::Número de CLABE bancaria-->
                       <div class='col' id="bankCodeIBANDIV">
-                        <label id="step_two_outUsa_bankAccount" for='bankIBAN' class='form-label'>Número de cuenta o
-                          IBAN</label>
+                        <label id="step_two_outUsa_bankAccount" for='bankIBAN' class='form-label'>
+                          Número de cuenta o IBAN
+                        </label>
                         <div class='fv-row'>
                           <input type='text' name='bankIBAN' autocomplete='off' id='bankIBAN' class='form-control'
                             required />
@@ -1031,7 +1035,7 @@
                       <!--end::Número de CLABE bancaria-->
                       <!--begin::Monto estimado por transacción-->
                       <div class='col'>
-                        <label id="step_two_mexico_amountPerMonth" for='estimatedTradeAmount' class='form-label'>
+                        <label id="step_two_outUsa_amountPerMonth" for='estimatedTradeAmount' class='form-label'>
                           Monto estimado por transacción
                         </label>
                         <div class='fv-row'>
@@ -1045,7 +1049,7 @@
                     <!--begin::Input group=-->
                     <div class='mb-4'>
                       <!--begin::Número estimado de transacciones al mes-->
-                      <label id="step_two_mexico_transactionsPerMonth" for='estimatedOfMonthlyTransaction'
+                      <label id="step_two_outUsa_transactionsPerMonth" for='estimatedOfMonthlyTransaction'
                         class='form-label'>
                         Número estimado de transacciones al mes
                       </label>
@@ -1059,20 +1063,21 @@
                     <!--begin::Input group=-->
                     <div class="mb-8">
                       <!--begin::Divisas requeridas-->
-                      <p id="step_two_mexico_currencies_title" class='form-label'>
+                      <p id="step_two_outUsa_currencies_title" class='form-label'>
                         Divisas requeridas
                       </p>
-                      <p id="step_two_mexico_currencies_subtitle" class="fs-sm text-gray-500">
+                      <p id="step_two_outUsa_currencies_subtitle" class="fs-sm text-gray-500">
                         Marque todo lo que corresponda
                       </p>
                       <!--begin::Row-->
-                      <div class="mb-4 fv-row" id="currenciesCheckDiv" data-kt-buttons="true" data-kt-buttons-target=".form-check-input">
+                      <div class="mb-4 fv-row" id="currenciesCheckDiv" data-kt-buttons="true"
+                        data-kt-buttons-target=".form-check-input">
                         <div>
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
                               <input class="form-check-input" type="checkbox" value="Euro" name="currenciesNeeded" />
                               <div class="form-check-label">
-                                <span id="step_two_mexico_currencies_te1">
+                                <span id="step_two_outUsa_currencies_te1">
                                   Euro
                                 </span>
                               </div>
@@ -1085,7 +1090,7 @@
                               <input class="form-check-input" type="checkbox" value="Libra esterlina"
                                 name="currenciesNeeded" id="text_wow" />
                               <div class="form-check-label">
-                                <span id="step_two_mexico_currencies_te2">
+                                <span id="step_two_outUsa_currencies_te2">
                                   Libra esterlina
                                 </span>
                               </div>
@@ -1098,7 +1103,7 @@
                               <input class="form-check-input" type="checkbox" value="Yen japones"
                                 name="currenciesNeeded" />
                               <div class="form-check-label">
-                                <span id="step_two_mexico_currencies_te3">
+                                <span id="step_two_outUsa_currencies_te3">
                                   Yen japones
                                 </span>
                               </div>
@@ -1111,7 +1116,7 @@
                               <input class="form-check-input" type="checkbox" value="Dólar canadiense"
                                 name="currenciesNeeded" />
                               <div class="form-check-label">
-                                <span id="step_two_mexico_currencies_te4">
+                                <span id="step_two_outUsa_currencies_te4">
                                   Dólar canadiense
                                 </span>
                               </div>
@@ -1124,7 +1129,7 @@
                               <input class="form-check-input" type="checkbox" value="Peso mexicano"
                                 name="currenciesNeeded" />
                               <div class="form-check-label">
-                                <span id="step_two_mexico_currencies_te5">
+                                <span id="step_two_outUsa_currencies_te5">
                                   Peso mexicano
                                 </span>
                               </div>
@@ -1137,7 +1142,7 @@
                               <input class="form-check-input" type="checkbox" value="Dólar US"
                                 name="currenciesNeeded" />
                               <div class="form-check-label">
-                                <span id="step_two_mexico_currencies_te6">
+                                <span id="step_two_outUsa_currencies_te6">
                                   Dólar US
                                 </span>
                               </div>
@@ -1149,7 +1154,7 @@
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
                               <input class="form-check-input" type="checkbox" value="Otro" name="currenciesNeeded" />
                               <div class="form-check-label">
-                                <span id="step_two_mexico_currencies_te7">
+                                <span id="step_two_outUsa_currencies_te7">
                                   Otro
                                 </span>
                               </div>
@@ -1158,39 +1163,44 @@
                         </div>
                       </div>
                       <div class="mb-10 fv-row" id="currenciesGeneral" style="display: none;">
-                        <label for="" class="form-label" id="specific">Especifique</label>
-                        <select name="currenciesGeneral1" class="form-select" data-control="select2" data-placeholder="Select an option" data-allow-clear="true" multiple="multiple">
-                            <option></option>
-                            <option value="USD">Estados Unidos de América(USD)</option>
-                            <option value="MXN">México(MXN)</option>
-                            <option value="SAR">Arabia Saudita(SAR)</option>
-                            <option value="AUD">Australia(AUD)</option>
-                            <option value="BHD">Bahrein(BHD)</option>
-                            <option value="BWP">Botsuana(BWP)</option>
-                            <option value="BGN">Bulgaria(BGN)</option>
-                            <option value="CAD">Canadá(CAD)</option>
-                            <option value="AED">Emiratos Árabes Unidos(AED)</option>
-                            <option value="HKD">Hong Kong(HKD)</option>
-                            <option value="HUF">Hungría(HUF)</option>
-                            <option value="ILS">Israel(ILS)</option>
-                            <option value="JPY">Japón(JPY)</option>
-                            <option value="JOD">Jordania(JOD)</option>
-                            <option value="KES">Kenia(KES)</option>
-                            <option value="KWD">Kuwait(KWD)</option>
-                            <option value="MUR">Mauricio(MUR)</option>
-                            <option value="NOK">Noruega(NOK)</option>
-                            <option value="NZD">Nueva Zelanda(NZD)</option>
-                            <option value="PLN">Polonia(PLN)</option>
-                            <option value="QAR">Qatar(QAR)</option>
-                            <option value="GBP">Reino Unido(GBP)</option>
-                            <option value="CZK">República Checa(CZK)</option>
-                            <option value="RON">Rumania(RON)</option>
-                            <option value="SGD">Singapur(SGD)</option>
-                            <option value="SEK">Suecia(SEK)</option>
-                            <option value="ZAR">Sudáfrica(ZAR)</option>
-                            <option value="THB">Thailandia(THB)</option>
-                            <option value="TRY">Turquía(TRY)</option>
-                            <option value="EUR">Zona Euro(EUR)</option>
+                        <label for="" class="form-label" id="specific">
+                          <span id="step_two_outUsa_currencies_otherCurrencies">
+                            Especifique
+                          </span>
+                        </label>
+                        <select name="currenciesGeneral1" class="form-select" data-control="select2"
+                          data-placeholder="Select an option" data-allow-clear="true" multiple="multiple">
+                          <option></option>
+                          <option value="USD">Estados Unidos de América(USD)</option>
+                          <option value="MXN">México(MXN)</option>
+                          <option value="SAR">Arabia Saudita(SAR)</option>
+                          <option value="AUD">Australia(AUD)</option>
+                          <option value="BHD">Bahrein(BHD)</option>
+                          <option value="BWP">Botsuana(BWP)</option>
+                          <option value="BGN">Bulgaria(BGN)</option>
+                          <option value="CAD">Canadá(CAD)</option>
+                          <option value="AED">Emiratos Árabes Unidos(AED)</option>
+                          <option value="HKD">Hong Kong(HKD)</option>
+                          <option value="HUF">Hungría(HUF)</option>
+                          <option value="ILS">Israel(ILS)</option>
+                          <option value="JPY">Japón(JPY)</option>
+                          <option value="JOD">Jordania(JOD)</option>
+                          <option value="KES">Kenia(KES)</option>
+                          <option value="KWD">Kuwait(KWD)</option>
+                          <option value="MUR">Mauricio(MUR)</option>
+                          <option value="NOK">Noruega(NOK)</option>
+                          <option value="NZD">Nueva Zelanda(NZD)</option>
+                          <option value="PLN">Polonia(PLN)</option>
+                          <option value="QAR">Qatar(QAR)</option>
+                          <option value="GBP">Reino Unido(GBP)</option>
+                          <option value="CZK">República Checa(CZK)</option>
+                          <option value="RON">Rumania(RON)</option>
+                          <option value="SGD">Singapur(SGD)</option>
+                          <option value="SEK">Suecia(SEK)</option>
+                          <option value="ZAR">Sudáfrica(ZAR)</option>
+                          <option value="THB">Thailandia(THB)</option>
+                          <option value="TRY">Turquía(TRY)</option>
+                          <option value="EUR">Zona Euro(EUR)</option>
                         </select>
                       </div>
                       <!--end::Row-->
@@ -1227,22 +1237,22 @@
                   <div class="flex-column m-auto w-100" data-kt-stepper-element="content">
                     <div id="mxn" style="display: none;">
                       <div class="w-100 text-center mb-12">
-                        <h2 class="fs-2x">
+                        <h2 id="step_three_outUsa_title" class="fs-2x">
                           Documentación requerida
                         </h2>
-                        <p class="fs-sm text-gray-500">
+                        <p id="step_three_outUsa_subTitle" class="fs-sm text-gray-500">
                           Incluya la siguiente documentación o su equivalente
                         </p>
                       </div>
                       <!--begin::Input group=-->
                       <div class='mb-4' id="situacionFiscalDiv" style="display: none;">
                         <!--begin::Constancia de situación fiscal-->
-                        <label for='correo_electronico' class='form-label'>
+                        <label id="step_three_outUsa_businessLicenseFile_Phisic_Person_label" for='correo_electronico'
+                          class='form-label'>
                           Constancia de situación Fiscal (Opcional)
                         </label>
-                        <p class="fs-sm text-gray-500">
-                          Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos son
-                          .pdf, .jpg y .png.
+                        <p id="step_three_usa_voidedCheckFile_legend_1" class="fs-sm text-gray-500">
+                          Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos .pdf, .jpg y .png.
                         </p>
                         <div class='fv-row'>
                           <!--begin::Dropzone-->
@@ -1253,7 +1263,8 @@
                                   class="path2"></span></i>
                               <!--begin::Info-->
                               <div class="ms-4">
-                                <h3 class="fs-5 fw-bold text-gray-900">
+                                <h3 id="step_three_usa_voidedCheckFile_placeholder_1"
+                                  class="fs-5 fw-bold text-gray-900">
                                   Arrastra o suelta un archivo aquí o has click
                                 </h3>
                               </div>
@@ -1269,12 +1280,12 @@
                       <!--begin::Input group=-->
                       <div class='mb-4' id="actaConstitutivaDiv">
                         <!--begin::Acta constitutiva o licencia comercial-->
-                        <label for='correo_electronico' class='form-label'>
+                        <label id="step_three_outUsa_businessLicenseFile_label" for='correo_electronico'
+                          class='form-label'>
                           Acta constitutiva o licencia comercial
                         </label>
-                        <p class="fs-sm text-gray-500">
-                          Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos son
-                          .pdf, .jpg y .png.
+                        <p id="step_three_usa_voidedCheckFile_legend_2" class="fs-sm text-gray-500">
+                          Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos .pdf, .jpg y .png.
                         </p>
                         <div class='fv-row'>
                           <!--begin::Dropzone-->
@@ -1285,7 +1296,8 @@
                                   class="path2"></span></i>
                               <!--begin::Info-->
                               <div class="ms-4">
-                                <h3 class="fs-5 fw-bold text-gray-900">
+                                <h3 id="step_three_usa_voidedCheckFile_placeholder_2"
+                                  class="fs-5 fw-bold text-gray-900">
                                   Arrastra o suelta un archivo aquí o has click
                                 </h3>
                               </div>
@@ -1301,12 +1313,11 @@
                       <!--begin::Input group=-->
                       <div class='mb-4'>
                         <!--begin::Cédula de identificación fiscal-->
-                        <label for='correo_electronico' class='form-label'>
+                        <label id="step_three_outUsa_taxpayerFile_label" for='correo_electronico' class='form-label'>
                           Cédula de identificación fiscal
                         </label>
-                        <p class="fs-sm text-gray-500">
-                          Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos son
-                          .pdf, .jpg y .png.
+                        <p id="step_three_usa_voidedCheckFile_legend_3" class="fs-sm text-gray-500">
+                          Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos .pdf, .jpg y .png.
                         </p>
                         <div class='fv-row'>
                           <!--begin::Dropzone-->
@@ -1317,7 +1328,8 @@
                                   class="path2"></span></i>
                               <!--begin::Info-->
                               <div class="ms-4">
-                                <h3 class="fs-5 fw-bold text-gray-900">
+                                <h3 id="step_three_usa_voidedCheckFile_placeholder_3"
+                                  class="fs-5 fw-bold text-gray-900">
                                   Arrastra o suelta un archivo aquí o has click
                                 </h3>
                               </div>
@@ -1333,12 +1345,11 @@
                       <!--begin::Input group=-->
                       <div class='mb-4' id="actaPoderesDiv">
                         <!--begin::Acta de poderes-->
-                        <label for='correo_electronico' class='form-label'>
+                        <label id="step_three_outUsa_powerActsFile_label" for='correo_electronico' class='form-label'>
                           Acta de poderes
                         </label>
-                        <p class="fs-sm text-gray-500">
-                          Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos son
-                          .pdf, .jpg y .png.
+                        <p id="step_three_usa_voidedCheckFile_legend_4" class="fs-sm text-gray-500">
+                          Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos .pdf, .jpg y .png.
                         </p>
                         <div class='fv-row'>
                           <!--begin::Dropzone-->
@@ -1349,7 +1360,8 @@
                                   class="path2"></span></i>
                               <!--begin::Info-->
                               <div class="ms-4">
-                                <h3 class="fs-5 fw-bold text-gray-900">
+                                <h3 id="step_three_usa_voidedCheckFile_placeholder_4"
+                                  class="fs-5 fw-bold text-gray-900">
                                   Arrastra o suelta un archivo aquí o has click
                                 </h3>
                               </div>
@@ -1365,12 +1377,12 @@
                       <!--begin::Input group=-->
                       <div class='mb-4'>
                         <!--begin::Identificación oficial de todos los socios y las personas autorizadas-->
-                        <label for='correo_electronico' class='form-label'>
+                        <label id="step_three_outUsa_identificationsAuthorized_label" for='correo_electronico'
+                          class='form-label'>
                           Identificación oficial de todos los socios y las personas autorizadas
                         </label>
-                        <p class="fs-sm text-gray-500">
-                          Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos son
-                          .pdf, .jpg y .png.
+                        <p id="step_three_usa_voidedCheckFile_legend_5" class="fs-sm text-gray-500">
+                          Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos .pdf, .jpg y .png.
                         </p>
                         <div class='fv-row'>
                           <!--begin::Dropzone-->
@@ -1381,7 +1393,8 @@
                                   class="path2"></span></i>
                               <!--begin::Info-->
                               <div class="ms-4">
-                                <h3 class="fs-5 fw-bold text-gray-900">
+                                <h3 id="step_three_usa_voidedCheckFile_placeholder_5"
+                                  class="fs-5 fw-bold text-gray-900">
                                   Arrastra o suelta un archivo aquí o has click
                                 </h3>
                               </div>
@@ -1397,12 +1410,11 @@
                       <!--begin::Input group=-->
                       <div class='mb-8'>
                         <!--begin::Comprobante de domicilio-->
-                        <label for='correo_electronico' class='form-label'>
+                        <label id="step_three_outUsa_proofAddress_label" for='correo_electronico' class='form-label'>
                           Comprobante de domicilio
                         </label>
-                        <p class="fs-sm text-gray-500">
-                          Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos son
-                          .pdf, .jpg y .png.
+                        <p id="step_three_usa_voidedCheckFile_legend_6" class="fs-sm text-gray-500">
+                          Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos .pdf, .jpg y .png.
                         </p>
                         <div class='fv-row'>
                           <!--begin::Dropzone-->
@@ -1413,7 +1425,8 @@
                                   class="path2"></span></i>
                               <!--begin::Info-->
                               <div class="ms-4">
-                                <h3 class="fs-5 fw-bold text-gray-900">
+                                <h3 id="step_three_usa_voidedCheckFile_placeholder_6"
+                                  class="fs-5 fw-bold text-gray-900">
                                   Arrastra o suelta un archivo aquí o has click
                                 </h3>
                               </div>
@@ -1430,13 +1443,13 @@
                     </div>
                     <div id="usd" style="display: none;">
                       <div class="w-100 text-center mb-12">
-                        <h2 class="fs-2x">
+                        <h2 id="step_three_usa_title" class="fs-2x">
                           Método de pago
                         </h2>
                       </div>
                       <div class="mb-4 fv-row" data-kt-buttons="true" data-kt-buttons-target=".form-check-input">
                         <div class="row mb-3">
-                          <span class="fw-bold">Método preferido de pago</span>
+                          <span id="step_three_usa_paymentMethod_title" class="fw-bold">Método preferido de pago</span>
                         </div>
                         <div>
                           <label>
@@ -1444,7 +1457,9 @@
                               <input class="form-check-input" type="radio" value="ACH Débito Directo"
                                 name="metodoPay" />
                               <div class="form-check-label">
-                                ACH Débito Directo
+                                <span id="step_three_usa_paymentMethod_te1">
+                                  ACH Débito Directo
+                                </span>
                               </div>
                             </div>
                           </label>
@@ -1455,7 +1470,9 @@
                               <input class="form-check-input" type="radio" value="Cheque" name="metodoPay"
                                 id="text_wow" />
                               <div class="form-check-label">
-                                Cheque
+                                <span id="step_three_usa_paymentMethod_te2">
+                                  Cheque
+                                </span>
                               </div>
                             </div>
                           </label>
@@ -1465,7 +1482,9 @@
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
                               <input class="form-check-input" type="radio" value="Transferencia" name="metodoPay" />
                               <div class="form-check-label">
-                                Transferencia
+                                <span id="step_three_usa_paymentMethod_te3">
+                                  Transferencia
+                                </span>
                               </div>
                             </div>
                           </label>
@@ -1475,7 +1494,9 @@
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
                               <input class="form-check-input" type="radio" value="No aplicable" name="metodoPay" />
                               <div class="form-check-label">
-                                No aplicable
+                                <span id="step_three_usa_paymentMethod_te4">
+                                  No aplicable
+                                </span>
                               </div>
                             </div>
                           </label>
@@ -1484,7 +1505,7 @@
                       <div id="groupInfoBankPay" style="display: none;">
                         <div class="row">
                           <div class="col-md-6">
-                            <label for='nameBank' class='form-label'>
+                            <label id="step_three_usa_bankName_1" for='nameBank' class='form-label'>
                               Nombre del banco
                             </label>
                             <div class='fv-row'>
@@ -1493,7 +1514,7 @@
                             </div>
                           </div>
                           <div class="col-md-6">
-                            <label for='addressBank' class='form-label'>
+                            <label id="step_three_usa_bankDirection_1" for='addressBank' class='form-label'>
                               Dirección del banco (ciudad, estado)
                             </label>
                             <div class='fv-row'>
@@ -1504,7 +1525,7 @@
                         </div>
                         <div class="row">
                           <div class="col-md-6">
-                            <label for='accountNumber' class='form-label'>
+                            <label id="step_three_usa_accountNumber_1" for='accountNumber' class='form-label'>
                               Número de cuenta
                             </label>
                             <div class='fv-row'>
@@ -1513,7 +1534,7 @@
                             </div>
                           </div>
                           <div class="col-md-6">
-                            <label for='routingNumber' class='form-label'>
+                            <label id="step_three_usa_routeCode_1" for='routingNumber' class='form-label'>
                               Número ABA/Código de ruta
                             </label>
                             <div class='fv-row'>
@@ -1523,14 +1544,16 @@
                           </div>
                         </div>
                         <div class="row mb-3 mt-5">
-                          <span class="fw-bold">Tipo de cuenta</span>
+                          <span id="step_three_usa_accountType_title_1" class="fw-bold">Tipo de cuenta</span>
                         </div>
                         <div class="mb-4 fv-row row d-flex">
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
                               <input class="form-check-input" type="radio" value="Cheques" name="typeAccount" />
                               <div class="form-check-label">
-                                Cheques
+                                <span id="step_three_usa_accountType_te1_1">
+                                  Cheques
+                                </span>
                               </div>
                             </div>
                           </label>
@@ -1539,7 +1562,9 @@
                               <input class="form-check-input" type="radio" value="Ahorros" name="typeAccount"
                                 id="text_wow" />
                               <div class="form-check-label">
-                                Ahorros
+                                <span id="step_three_usa_accountType_te2_1">
+                                  Ahorros
+                                </span>
                               </div>
                             </div>
                           </label>
@@ -1547,12 +1572,12 @@
                         <!--begin::Input group=-->
                         <div class='mb-4' id="chequeAnulado" style="display: none;">
                           <!--begin::Acta constitutiva o licencia comercial-->
-                          <label for='correo_electronico' class='form-label'>
+                          <label id="step_three_usa_voidedCheckFile_label_1" for='correo_electronico'
+                            class='form-label'>
                             Adjuntar cheque anulado
                           </label>
-                          <p class="fs-sm text-gray-500">
-                            Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos son
-                            .pdf, .jpg y .png.
+                          <p id="step_three_outUsa_generic_legend_1" class="fs-sm text-gray-500">
+                            Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos .pdf, .jpg y .png.
                           </p>
                           <div class='fv-row'>
                             <!--begin::Dropzone-->
@@ -1563,7 +1588,8 @@
                                     class="path2"></span></i>
                                 <!--begin::Info-->
                                 <div class="ms-4">
-                                  <h3 class="fs-5 fw-bold text-gray-900">
+                                  <h3 id="step_three_usa_voidedCheckFile_placeholder_7"
+                                    class="fs-5 fw-bold text-gray-900">
                                     Arrastra o suelta un archivo aquí o has click
                                   </h3>
                                 </div>
@@ -1573,7 +1599,7 @@
                             </div>
                             <!--end::Dropzone-->
                           </div>
-                          <p>
+                          <p id="step_three_usa_info_text_1">
                             Tenga en cuenta que al pagar con los métodos de débito ACH o cheque/cheque por fax, los
                             fondos pueden estar sujetos a un periodo de retención que puede ser evitado pagando por
                             transferencia. Puede discutir sus opciones de pago con su representante de Monex USA.
@@ -1612,24 +1638,24 @@
                   <!--begin::Step 4-->
                   <div class="flex-column m-auto w-100" data-kt-stepper-element="content">
                     <div class="w-100 text-center mb-6">
-                      <h2 class="fs-2x">
+                      <h2 id="step_four_title" class="fs-2x">
                         Usuario autorizados
                       </h2>
-                      <p class="fs-sm text-gray-500">
+                      <p id="step_four_subtitle" class="fs-sm text-gray-500">
                         Enumere hasta 2 usuarios autorizados para realizar transacciones en la plataforma
                       </p>
                     </div>
                     <!--begin::Input group-->
                     <div id="kt_docs_repeater_basic">
                       <div>
-                        <p>Datos del usuario autorizado 1</p>
+                        <p> <span id="step_four_authorizedUsers_label_1">Datos del usuario autorizado</span> 1</p>
                         <div data-repeater-item>
                           <div class="form-group col">
                             <div class='row mb-4'>
                               <!--begin::Nombres y apellidos-->
                               <div class='col'>
-                                <label for='nombreApellido' class='form-label'>Nombres y
-                                  apellidos</label>
+                                <label id="step_four_authorizedUsers_name_1" for='nombreApellido' class='form-label'>
+                                  Nombres y apellidos</label>
                                 <div class='fv-row'>
                                   <input type='text' name='nombreApellido' autocomplete='off' id='nombreApellido'
                                     class='form-control' required />
@@ -1638,7 +1664,7 @@
                               <!--end::Nombres y apellidos-->
                               <!--begin::Cargo en la empresa-->
                               <div class='col'>
-                                <label for='cargoEmpresa' class='form-label'>
+                                <label id="step_four_authorizedUsers_position_1" for='cargoEmpresa' class='form-label'>
                                   Cargo en la empresa
                                 </label>
                                 <div class='fv-row'>
@@ -1651,8 +1677,8 @@
                             <div class='row mb-4'>
                               <!--begin::Teléfono celular-->
                               <div class='col'>
-                                <label for='telefonoCelular' class='form-label'>Teléfono
-                                  celular</label>
+                                <label id="step_four_authorizedUsers_phone_1" for='telefonoCelular' class='form-label'>
+                                  Teléfono celular</label>
                                 <div class='fv-row'>
                                   <input type='number' name='telefonoCelular' autocomplete='off' id='telefonoCelular'
                                     class='form-control' required />
@@ -1661,7 +1687,8 @@
                               <!--end::Teléfono celular-->
                               <!--begin::Correo electrónico-->
                               <div class='col'>
-                                <label for='correoElectronico' class='form-label'>
+                                <label id="step_four_authorizedUsers_email_1" for='correoElectronico'
+                                  class='form-label'>
                                   Correo electrónico
                                 </label>
                                 <div class='fv-row'>
@@ -1675,14 +1702,15 @@
                         </div>
                       </div>
                       <div id="usuarioAutorizado2" class="d-none">
-                        <p>Datos del usuario autorizado 2</p>
+                        <p> <span id="step_four_authorizedUsers_label_2">Datos del usuario autorizado </span>2</p>
                         <div data-repeater-item>
                           <div class="form-group col">
                             <div class='row mb-4'>
                               <!--begin::Nombres y apellidos-->
                               <div class='col'>
-                                <label for='nombreApellido2' class='form-label'>Nombres y
-                                  apellidos</label>
+                                <label id="step_four_authorizedUsers_name_2" for='nombreApellido2' class='form-label'>
+                                  Nombres y apellidos
+                                </label>
                                 <div class='fv-row'>
                                   <input type='text' name='nombreApellido2' autocomplete='off' id='nombreApellido2'
                                     class='form-control' required />
@@ -1691,7 +1719,7 @@
                               <!--end::Nombres y apellidos-->
                               <!--begin::Cargo en la empresa-->
                               <div class='col'>
-                                <label for='cargoEmpresa2' class='form-label'>
+                                <label id="step_four_authorizedUsers_position_2" for='cargoEmpresa2' class='form-label'>
                                   Cargo en la empresa
                                 </label>
                                 <div class='fv-row'>
@@ -1704,8 +1732,8 @@
                             <div class='row mb-4'>
                               <!--begin::Teléfono celular-->
                               <div class='col'>
-                                <label for='telefonoCelular2' class='form-label'>Teléfono
-                                  celular</label>
+                                <label id="step_four_authorizedUsers_phone_2" for='telefonoCelular2' class='form-label'>
+                                  Teléfono celular</label>
                                 <div class='fv-row'>
                                   <input type='number' name='telefonoCelular2' autocomplete='off' id='telefonoCelular2'
                                     class='form-control' required />
@@ -1714,7 +1742,8 @@
                               <!--end::Teléfono celular-->
                               <!--begin::Correo electrónico-->
                               <div class='col'>
-                                <label for='correoElectronico2' class='form-label'>
+                                <label id="step_four_authorizedUsers_email_2" for='correoElectronico2'
+                                  class='form-label'>
                                   Correo electrónico
                                 </label>
                                 <div class='fv-row'>
@@ -1730,7 +1759,9 @@
                       <div class="form-group mt-4 mb-8 w-100 d-flex justify-content-end">
                         <a id="addButton" href="javascript:;" data-repeater-create class="btn btn-light-primary">
                           <i class="ki-duotone ki-plus fs-3"></i>
-                          Agregar
+                          <span id="step_four_btn_add">
+                            Agregar
+                          </span>
                         </a>
                         <a id="removeButton" style="display: none;" href="javascript:;" data-repeater-delete
                           class="btn btn-light-danger mt-3">
@@ -1843,7 +1874,7 @@
                           <p class="fw-bold">Datos de socio 1</p>
                         </div>
                         <div class="row">
-                          <label for='nameOwner' class='form-label'>
+                          <label id="step_five_outUsa_partnersInfo_legalName_1" for='nameOwner' class='form-label'>
                             Nombre legal (sin abreviaciones)
                           </label>
                           <div class='fv-row'>
@@ -1852,7 +1883,7 @@
                           </div>
                         </div>
                         <div class="col-md-6">
-                          <label for='addressBank' class='form-label'>
+                          <label id="step_three_usa_bankDirection_2" for='addressBank' class='form-label'>
                             Dirección del banco (ciudad, estado)
                           </label>
                           <div class='fv-row'>
@@ -1907,7 +1938,7 @@
                       </div>
                       <div class="row">
                         <div class="col-md-6">
-                          <label for='accountNumber' class='form-label'>
+                          <label id="step_three_usa_accountNumber_2" for='accountNumber' class='form-label'>
                             Número de cuenta
                           </label>
                           <div class='fv-row'>
@@ -1916,7 +1947,7 @@
                           </div>
                         </div>
                         <div class="col-md-6">
-                          <label for='routingNumber' class='form-label'>
+                          <label id="step_three_usa_routeCode_2" for='routingNumber' class='form-label'>
                             Número ABA/Código de ruta
                           </label>
                           <div class='fv-row'>
@@ -1926,14 +1957,16 @@
                         </div>
                       </div>
                       <div class="row mb-3 mt-5">
-                        <span class="fw-bold">Tipo de cuenta</span>
+                        <span id="step_three_usa_accountType_title_2" class="fw-bold">Tipo de cuenta</span>
                       </div>
                       <div class="mb-4 fv-row row d-flex">
                         <label>
                           <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
                             <input class="form-check-input" type="radio" value="1" name="typeAccount" />
                             <div class="form-check-label">
-                              Cheques
+                              <span id="step_three_usa_accountType_te1_2">
+                                Cheques
+                              </span>
                             </div>
                           </div>
                         </label>
@@ -1942,7 +1975,9 @@
                           <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
                             <input class="form-check-input" type="radio" value="2" name="typeAccount" id="text_wow" />
                             <div class="form-check-label">
-                              Ahorros
+                              <span id="step_three_usa_accountType_te2_2">
+                                Ahorros
+                              </span>
                             </div>
                           </div>
                         </label>
@@ -1950,12 +1985,11 @@
                       <!--begin::Input group=-->
                       <div class='mb-4'>
                         <!--begin::Acta constitutiva o licencia comercial-->
-                        <label for='correo_electronico' class='form-label'>
+                        <label id="step_three_usa_voidedCheckFile_label_2" for='correo_electronico' class='form-label'>
                           Adjuntar cheque anulado
                         </label>
-                        <p class="fs-sm text-gray-500">
-                          Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos son
-                          .pdf, .jpg y .png.
+                        <p id="step_three_outUsa_generic_legend_2" class="fs-sm text-gray-500">
+                          Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos .pdf, .jpg y .png.
                         </p>
                         <div class='fv-row'>
                           <!--begin::Dropzone-->
@@ -1966,7 +2000,7 @@
                                   class="path2"></span></i>
                               <!--begin::Info-->
                               <div class="ms-4">
-                                <h3 class="fs-5 fw-bold text-gray-900">
+                                <h3 id="step_three_outUsa_generic_placeholder_1" class="fs-5 fw-bold text-gray-900">
                                   Arrastra o suelta un archivo aquí o has click
                                 </h3>
                               </div>
@@ -1976,7 +2010,7 @@
                             <div id="groupInfoBankPay" style="display: none;">
                               <div class="row">
                                 <div class="col-md-6">
-                                  <label for='nameBank' class='form-label'>
+                                  <label id="step_three_usa_bankName_2" for='nameBank' class='form-label'>
                                     Nombre del banco
                                   </label>
                                   <div class='fv-row'>
@@ -1985,7 +2019,7 @@
                                   </div>
                                 </div>
                                 <div class="col-md-6">
-                                  <label for='addressBank' class='form-label'>
+                                  <label id="step_three_usa_bankDirection_3" for='addressBank' class='form-label'>
                                     Dirección del banco (ciudad, estado)
                                   </label>
                                   <div class='fv-row'>
@@ -1996,7 +2030,7 @@
                               </div>
                               <div class="row">
                                 <div class="col-md-6">
-                                  <label for='accountNumber' class='form-label'>
+                                  <label id="step_three_usa_accountNumber_3" for='accountNumber' class='form-label'>
                                     Número de cuenta
                                   </label>
                                   <div class='fv-row'>
@@ -2005,7 +2039,7 @@
                                   </div>
                                 </div>
                                 <div class="col-md-6">
-                                  <label for='routingNumber' class='form-label'>
+                                  <label id="step_three_usa_routeCode_3" for='routingNumber' class='form-label'>
                                     Número ABA/Código de ruta
                                   </label>
                                   <div class='fv-row'>
@@ -2015,14 +2049,16 @@
                                 </div>
                               </div>
                               <div class="row mb-3 mt-5">
-                                <span class="fw-bold">Tipo de cuenta</span>
+                                <span id="step_three_usa_accountType_title_3" class="fw-bold">Tipo de cuenta</span>
                               </div>
                               <div class="mb-4 fv-row row d-flex">
                                 <label>
                                   <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
                                     <input class="form-check-input" type="radio" value="1" name="typeAccount" />
                                     <div class="form-check-label">
-                                      Cheques
+                                      <span id="step_three_usa_accountType_te1_3">
+                                        Cheques
+                                      </span>
                                     </div>
                                   </div>
                                 </label>
@@ -2031,7 +2067,9 @@
                                     <input class="form-check-input" type="radio" value="2" name="typeAccount"
                                       id="text_wow" />
                                     <div class="form-check-label">
-                                      Ahorros
+                                      <span id="step_three_usa_accountType_te2_3">
+                                        Ahorros
+                                      </span>
                                     </div>
                                   </div>
                                 </label>
@@ -2039,12 +2077,12 @@
                               <!--begin::Input group=-->
                               <div class='mb-4' id="chequeAnulado" style="display: none;">
                                 <!--begin::Acta constitutiva o licencia comercial-->
-                                <label for='correo_electronico' class='form-label'>
+                                <label id="step_three_usa_voidedCheckFile_label_3" for='correo_electronico'
+                                  class='form-label'>
                                   Adjuntar cheque anulado
                                 </label>
-                                <p class="fs-sm text-gray-500">
-                                  Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos son
-                                  .pdf, .jpg y .png.
+                                <p id="step_three_outUsa_generic_legend_3" class="fs-sm text-gray-500">
+                                  Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos .pdf, .jpg y .png.
                                 </p>
                                 <div class='fv-row'>
                                   <!--begin::Dropzone-->
@@ -2055,7 +2093,8 @@
                                           class="path1"></span><span class="path2"></span></i>
                                       <!--begin::Info-->
                                       <div class="ms-4">
-                                        <h3 class="fs-5 fw-bold text-gray-900">
+                                        <h3 id="step_three_outUsa_generic_placeholder_2"
+                                          class="fs-5 fw-bold text-gray-900">
                                           Arrastra o suelta un archivo aquí o has click
                                         </h3>
                                       </div>
@@ -2065,7 +2104,7 @@
                                   </div>
                                   <!--end::Dropzone-->
                                 </div>
-                                <p>
+                                <p id="step_three_usa_info_text_2">
                                   Tenga en cuenta que al pagar con los métodos de débito ACH o cheque/cheque por fax,
                                   los fondos pueden estar sujetos a un periodo de retención que puede ser evitado
                                   pagando por transferencia. Puede discutir sus opciones de pago con su representante de
@@ -2337,7 +2376,8 @@
                                 <p class="fw-bold">Datos de socio 1</p>
                               </div>
                               <div class="row">
-                                <label for='nameOwner' class='form-label'>
+                                <label id="step_five_outUsa_partnersInfo_legalName_2" for='nameOwner'
+                                  class='form-label'>
                                   Nombre legal (sin abreviaciones)
                                 </label>
                                 <div class='fv-row'>
@@ -2405,7 +2445,8 @@
                                 <p class="fw-bold">Datos de socio 2</p>
                               </div>
                               <div class="row">
-                                <label for='nameOwner2' class='form-label'>
+                                <label id="step_five_outUsa_partnersInfo_legalName_3" for='nameOwner2'
+                                  class='form-label'>
                                   Nombre legal (sin abreviaciones)
                                 </label>
                                 <div class='fv-row'>
@@ -2473,7 +2514,8 @@
                                 <p class="fw-bold">Datos de socio 3</p>
                               </div>
                               <div class="row">
-                                <label for='nameOwner3' class='form-label'>
+                                <label id="step_five_outUsa_partnersInfo_legalName_4" for='nameOwner3'
+                                  class='form-label'>
                                   Nombre legal (sin abreviaciones)
                                 </label>
                                 <div class='fv-row'>
@@ -2541,7 +2583,8 @@
                                 <p class="fw-bold">Datos de socio 4</p>
                               </div>
                               <div class="row">
-                                <label for='nameOwner4' class='form-label'>
+                                <label id="step_five_outUsa_partnersInfo_legalName_5" for='nameOwner4'
+                                  class='form-label'>
                                   Nombre legal (sin abreviaciones)
                                 </label>
                                 <div class='fv-row'>
@@ -2701,9 +2744,8 @@
                               enlace:
                             </p>
                             <a href="">Crear firma digital</a>
-                            <p class="fs-sm text-gray-500">
-                              Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos son
-                              .pdf, .jpg y .png.
+                            <p id="step_three_outUsa_generic_legend_4" class="fs-sm text-gray-500">
+                              Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos .pdf, .jpg y .png.
                             </p>
                             <div class='fv-row mb-4'>
                               <!--begin::Dropzone-->
@@ -2714,7 +2756,7 @@
                                       class="path2"></span></i>
                                   <!--begin::Info-->
                                   <div class="ms-4">
-                                    <h3 class="fs-5 fw-bold text-gray-900">
+                                    <h3 id="step_three_outUsa_generic_placeholder_3" class="fs-5 fw-bold text-gray-900">
                                       Arrastra o suelta un archivo aquí o has click
                                     </h3>
                                   </div>
