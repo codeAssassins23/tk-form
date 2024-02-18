@@ -1638,24 +1638,24 @@
                   <!--begin::Step 4-->
                   <div class="flex-column m-auto w-100" data-kt-stepper-element="content">
                     <div class="w-100 text-center mb-6">
-                      <h2 id="step_four_title" class="fs-2x">
+                      <h2 class="fs-2x">
                         Usuario autorizados
                       </h2>
-                      <p id="step_four_subtitle" class="fs-sm text-gray-500">
+                      <p class="fs-sm text-gray-500">
                         Enumere hasta 2 usuarios autorizados para realizar transacciones en la plataforma
                       </p>
                     </div>
                     <!--begin::Input group-->
                     <div id="kt_docs_repeater_basic">
                       <div>
-                        <p> <span id="step_four_authorizedUsers_label_1">Datos del usuario autorizado</span> 1</p>
+                        <p>Datos del usuario autorizado 1</p>
                         <div data-repeater-item>
                           <div class="form-group col">
                             <div class='row mb-4'>
                               <!--begin::Nombres y apellidos-->
                               <div class='col'>
-                                <label id="step_four_authorizedUsers_name_1" for='nombreApellido' class='form-label'>
-                                  Nombres y apellidos</label>
+                                <label for='nombreApellido' class='form-label'>Nombres y
+                                  apellidos</label>
                                 <div class='fv-row'>
                                   <input type='text' name='nombreApellido' autocomplete='off' id='nombreApellido'
                                     class='form-control' required />
@@ -1664,7 +1664,7 @@
                               <!--end::Nombres y apellidos-->
                               <!--begin::Cargo en la empresa-->
                               <div class='col'>
-                                <label id="step_four_authorizedUsers_position_1" for='cargoEmpresa' class='form-label'>
+                                <label for='cargoEmpresa' class='form-label'>
                                   Cargo en la empresa
                                 </label>
                                 <div class='fv-row'>
@@ -1677,8 +1677,8 @@
                             <div class='row mb-4'>
                               <!--begin::Teléfono celular-->
                               <div class='col'>
-                                <label id="step_four_authorizedUsers_phone_1" for='telefonoCelular' class='form-label'>
-                                  Teléfono celular</label>
+                                <label for='telefonoCelular' class='form-label'>Teléfono
+                                  celular</label>
                                 <div class='fv-row'>
                                   <input type='number' name='telefonoCelular' autocomplete='off' id='telefonoCelular'
                                     class='form-control' required />
@@ -1687,8 +1687,7 @@
                               <!--end::Teléfono celular-->
                               <!--begin::Correo electrónico-->
                               <div class='col'>
-                                <label id="step_four_authorizedUsers_email_1" for='correoElectronico'
-                                  class='form-label'>
+                                <label for='correoElectronico' class='form-label'>
                                   Correo electrónico
                                 </label>
                                 <div class='fv-row'>
@@ -1702,15 +1701,14 @@
                         </div>
                       </div>
                       <div id="usuarioAutorizado2" class="d-none">
-                        <p> <span id="step_four_authorizedUsers_label_2">Datos del usuario autorizado </span>2</p>
+                        <p>Datos del usuario autorizado 2</p>
                         <div data-repeater-item>
                           <div class="form-group col">
                             <div class='row mb-4'>
                               <!--begin::Nombres y apellidos-->
                               <div class='col'>
-                                <label id="step_four_authorizedUsers_name_2" for='nombreApellido2' class='form-label'>
-                                  Nombres y apellidos
-                                </label>
+                                <label for='nombreApellido2' class='form-label'>Nombres y
+                                  apellidos</label>
                                 <div class='fv-row'>
                                   <input type='text' name='nombreApellido2' autocomplete='off' id='nombreApellido2'
                                     class='form-control' required />
@@ -1719,7 +1717,7 @@
                               <!--end::Nombres y apellidos-->
                               <!--begin::Cargo en la empresa-->
                               <div class='col'>
-                                <label id="step_four_authorizedUsers_position_2" for='cargoEmpresa2' class='form-label'>
+                                <label for='cargoEmpresa2' class='form-label'>
                                   Cargo en la empresa
                                 </label>
                                 <div class='fv-row'>
@@ -1732,8 +1730,8 @@
                             <div class='row mb-4'>
                               <!--begin::Teléfono celular-->
                               <div class='col'>
-                                <label id="step_four_authorizedUsers_phone_2" for='telefonoCelular2' class='form-label'>
-                                  Teléfono celular</label>
+                                <label for='telefonoCelular2' class='form-label'>Teléfono
+                                  celular</label>
                                 <div class='fv-row'>
                                   <input type='number' name='telefonoCelular2' autocomplete='off' id='telefonoCelular2'
                                     class='form-control' required />
@@ -1742,8 +1740,7 @@
                               <!--end::Teléfono celular-->
                               <!--begin::Correo electrónico-->
                               <div class='col'>
-                                <label id="step_four_authorizedUsers_email_2" for='correoElectronico2'
-                                  class='form-label'>
+                                <label for='correoElectronico2' class='form-label'>
                                   Correo electrónico
                                 </label>
                                 <div class='fv-row'>
@@ -1759,9 +1756,7 @@
                       <div class="form-group mt-4 mb-8 w-100 d-flex justify-content-end">
                         <a id="addButton" href="javascript:;" data-repeater-create class="btn btn-light-primary">
                           <i class="ki-duotone ki-plus fs-3"></i>
-                          <span id="step_four_btn_add">
-                            Agregar
-                          </span>
+                          Agregar
                         </a>
                         <a id="removeButton" style="display: none;" href="javascript:;" data-repeater-delete
                           class="btn btn-light-danger mt-3">
@@ -1866,7 +1861,8 @@
                       </div>
                       <div class="row" id="optionNinguno" style="display: none;">
                         <p class="fw-bold mt-1 mb-2">Apoderado Legal</p>
-                        <p class="mb-3">Si no hay ningún individuo que posea el 25% o más, indique el mayor propietario
+                        <p class="mb-3">Si no hay ningún individuo que posea el 25% o más, indique el mayor
+                          propietario
                           individual o una persona de control.</p>
                       </div>
                       <div id="bloque1" style="display: none;">
@@ -1874,7 +1870,7 @@
                           <p class="fw-bold">Datos de socio 1</p>
                         </div>
                         <div class="row">
-                          <label id="step_five_outUsa_partnersInfo_legalName_1" for='nameOwner' class='form-label'>
+                          <label id="step_five_outUsa_partnersInfo_legalName_2" for='nameOwner1' class='form-label'>
                             Nombre legal (sin abreviaciones)
                           </label>
                           <div class='fv-row'>
@@ -1882,9 +1878,9 @@
                               class='form-control' required />
                           </div>
                         </div>
-                        <div class="col-md-6">
-                          <label id="step_three_usa_bankDirection_2" for='addressBank' class='form-label'>
-                            Dirección del banco (ciudad, estado)
+                        <div class="row">
+                          <label for='occupation1' class='form-label'>
+                            Cargo en la empresa
                           </label>
                           <div class='fv-row'>
                             <input type='text' name='occupation1' autocomplete='off' id='cargoEmpresa'
@@ -1892,7 +1888,7 @@
                           </div>
                         </div>
                         <div class="row">
-                          <label for='ownership' class='form-label'>
+                          <label for='ownership1' class='form-label'>
                             Porcentaje de propiedad
                           </label>
                           <div class='fv-row'>
@@ -1901,7 +1897,7 @@
                           </div>
                         </div>
                         <div class="row">
-                          <label for='dateOfBirth' class='form-label'>
+                          <label for='dateOfBirth1' class='form-label'>
                             Fecha de nacimiento (MM/DD/YYYY)
                           </label>
                           <div class="input-group fv-row">
@@ -1917,7 +1913,7 @@
                         </div>
                         <div class="row">
                           <div class="col-md-6">
-                            <label for='addressOwner' class='form-label'>
+                            <label for='addressOwner1' class='form-label'>
                               Dirección (ciudad, provincia, país)
                             </label>
                             <div class='fv-row'>
@@ -1926,7 +1922,7 @@
                             </div>
                           </div>
                           <div class="col-md-6">
-                            <label for='emailOwner' class='form-label'>
+                            <label for='emailOwner1' class='form-label'>
                               Correo electrónico
                             </label>
                             <div class='fv-row'>
@@ -1936,893 +1932,381 @@
                           </div>
                         </div>
                       </div>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <label id="step_three_usa_accountNumber_2" for='accountNumber' class='form-label'>
-                            Número de cuenta
+                      <div id="bloque2" style="display: none;">
+                        <div class="row mb-5 mt-7">
+                          <p class="fw-bold">Datos de socio 2</p>
+                        </div>
+                        <div class="row">
+                          <label id="step_five_outUsa_partnersInfo_legalName_3" for='nameOwner2' class='form-label'>
+                            Nombre legal (sin abreviaciones)
                           </label>
                           <div class='fv-row'>
-                            <input type='text' name='accountNumber' autocomplete='off' id='accountNumber'
+                            <input type='text' name='nameOwner2' autocomplete='off' id='nombreLegal'
                               class='form-control' required />
                           </div>
                         </div>
-                        <div class="col-md-6">
-                          <label id="step_three_usa_routeCode_2" for='routingNumber' class='form-label'>
-                            Número ABA/Código de ruta
+                        <div class="row">
+                          <label for='occupation2' class='form-label'>
+                            Cargo en la empresa
                           </label>
                           <div class='fv-row'>
-                            <input type='text' name='routingNumber' autocomplete='off' id='routingNumber'
+                            <input type='text' name='occupation2' autocomplete='off' id='cargoEmpresa'
                               class='form-control' required />
                           </div>
                         </div>
-                      </div>
-                      <div class="row mb-3 mt-5">
-                        <span id="step_three_usa_accountType_title_2" class="fw-bold">Tipo de cuenta</span>
-                      </div>
-                      <div class="mb-4 fv-row row d-flex">
-                        <label>
-                          <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                            <input class="form-check-input" type="radio" value="1" name="typeAccount" />
-                            <div class="form-check-label">
-                              <span id="step_three_usa_accountType_te1_2">
-                                Cheques
-                              </span>
+                        <div class="row">
+                          <label for='ownership2' class='form-label'>
+                            Porcentaje de propiedad
+                          </label>
+                          <div class='fv-row'>
+                            <input type='number' name='ownership2' autocomplete='off' id='cargoEmpresa'
+                              class='form-control' required />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <label for='dateOfBirth2' class='form-label'>
+                            Fecha de nacimiento (MM/DD/YYYY)
+                          </label>
+                          <div class="input-group fv-row">
+                            <input class="form-control" name="dateOfBirth2" id="dateOfBirth2"
+                              placeholder="MM/DD/AAAA" />
+                            <span class="input-group-text" data-td-target="#kt_td_picker_basic"
+                              data-td-toggle="datetimepicker">
+                              <i class="ki-duotone ki-calendar fs-2">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                              </i>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label for='addressOwner2' class='form-label'>
+                              Dirección (ciudad, provincia, país)
+                            </label>
+                            <div class='fv-row'>
+                              <input type='text' name='addressOwner2' autocomplete='off' id='dirección_ciudad'
+                                class='form-control' required />
                             </div>
                           </div>
-                        </label>
-
-                        <label>
-                          <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                            <input class="form-check-input" type="radio" value="2" name="typeAccount" id="text_wow" />
-                            <div class="form-check-label">
-                              <span id="step_three_usa_accountType_te2_2">
-                                Ahorros
-                              </span>
+                          <div class="col-md-6">
+                            <label for='emailOwner2' class='form-label'>
+                              Correo electrónico
+                            </label>
+                            <div class='fv-row'>
+                              <input type='email' name='emailOwner2' autocomplete='off' id='dirección_ciudad'
+                                class='form-control' required />
                             </div>
                           </div>
-                        </label>
+                        </div>
                       </div>
-                      <!--begin::Input group=-->
-                      <div class='mb-4'>
-                        <!--begin::Acta constitutiva o licencia comercial-->
-                        <label id="step_three_usa_voidedCheckFile_label_2" for='correo_electronico' class='form-label'>
-                          Adjuntar cheque anulado
+                      <div id="bloque3" style="display: none;">
+                        <div class="row mb-5 mt-7">
+                          <p class="fw-bold">Datos de socio 3</p>
+                        </div>
+                        <div class="row">
+                          <label id="step_five_outUsa_partnersInfo_legalName_4" for='nameOwner3' class='form-label'>
+                            Nombre legal (sin abreviaciones)
+                          </label>
+                          <div class='fv-row'>
+                            <input type='text' name='nameOwner3' autocomplete='off' id='nombreLegal'
+                              class='form-control' required />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <label for='occupation3' class='form-label'>
+                            Cargo en la empresa
+                          </label>
+                          <div class='fv-row'>
+                            <input type='text' name='occupation3' autocomplete='off' id='cargoEmpresa'
+                              class='form-control' required />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <label for='ownership3' class='form-label'>
+                            Porcentaje de propiedad
+                          </label>
+                          <div class='fv-row'>
+                            <input type='number' name='ownership3' autocomplete='off' id='cargoEmpresa'
+                              class='form-control' required />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <label for='dateOfBirth3' class='form-label'>
+                            Fecha de nacimiento (MM/DD/YYYY)
+                          </label>
+                          <div class="input-group fv-row">
+                            <input class="form-control" name="dateOfBirth3" id="dateOfBirth3"
+                              placeholder="MM/DD/AAAA" />
+                            <span class="input-group-text" data-td-target="#kt_td_picker_basic"
+                              data-td-toggle="datetimepicker">
+                              <i class="ki-duotone ki-calendar fs-2">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                              </i>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label for='addressOwner3' class='form-label'>
+                              Dirección (ciudad, provincia, país)
+                            </label>
+                            <div class='fv-row'>
+                              <input type='text' name='addressOwner3' autocomplete='off' id='dirección_ciudad'
+                                class='form-control' required />
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <label for='emailOwner3' class='form-label'>
+                              Correo electrónico
+                            </label>
+                            <div class='fv-row'>
+                              <input type='email' name='emailOwner3' autocomplete='off' id='dirección_ciudad'
+                                class='form-control' required />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="bloque4" style="display: none;">
+                        <div class="row mb-5 mt-7">
+                          <p class="fw-bold">Datos de socio 4</p>
+                        </div>
+                        <div class="row">
+                          <label id="step_five_outUsa_partnersInfo_legalName_5" for='nameOwner4' class='form-label'>
+                            Nombre legal (sin abreviaciones)
+                          </label>
+                          <div class='fv-row'>
+                            <input type='text' name='nameOwner4' autocomplete='off' id='nombreLegal'
+                              class='form-control' required />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <label for='occupation4' class='form-label'>
+                            Cargo en la empresa
+                          </label>
+                          <div class='fv-row'>
+                            <input type='text' name='occupation4' autocomplete='off' id='cargoEmpresa'
+                              class='form-control' required />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <label for='ownership4' class='form-label'>
+                            Porcentaje de propiedad
+                          </label>
+                          <div class='fv-row'>
+                            <input type='number' name='ownership4' autocomplete='off' id='cargoEmpresa'
+                              class='form-control' required />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <label for='dateOfBirth4' class='form-label'>
+                            Fecha de nacimiento (MM/DD/YYYY)
+                          </label>
+                          <div class="input-group fv-row">
+                            <input class="form-control" name="dateOfBirth4" id="dateOfBirth4"
+                              placeholder="MM/DD/AAAA" />
+                            <span class="input-group-text" data-td-target="#kt_td_picker_basic"
+                              data-td-toggle="datetimepicker">
+                              <i class="ki-duotone ki-calendar fs-2">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                              </i>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label for='addressOwner4' class='form-label'>
+                              Dirección (ciudad, provincia, país)
+                            </label>
+                            <div class='fv-row'>
+                              <input type='text' name='addressOwner4' autocomplete='off' id='dirección_ciudad'
+                                class='form-control' required />
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <label for='emailOwner4' class='form-label'>
+                              Correo electrónico
+                            </label>
+                            <div class='fv-row'>
+                              <input type='email' name='emailOwner4' autocomplete='off' id='dirección_ciudad'
+                                class='form-control' required />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!--end::Row-->
+                      <!--end::Tipo de empresa-->
+                    </div>
+                    <!--end::Input group=-->
+                    <!--begin::Submit button-->
+                    <div class='d-flex w-100 justify-content-between mx-auto'>
+                      <button type='button' id='stepp_5_prev' class='btn btn-primary'>
+                        <!--begin::Indicator label-->
+                        <span class='indicator-label'>Back</span>
+                        <!--end::Indicator label-->
+                        <!--begin::Indicator progress-->
+                        <span class='indicator-progress'>Un monmento por
+                          favor...
+                          <span class='spinner-border spinner-border-sm align-middle ms-2'></span></span>
+                        <!--end::Indicator progress-->
+                      </button>
+                      <button type='button' id='stepp_5' class='btn btn-primary'>
+                        <!--begin::Indicator label-->
+                        <span class='indicator-label'>Siguiente</span>
+                        <!--end::Indicator label-->
+                        <!--begin::Indicator progress-->
+                        <span class='indicator-progress'>Un monmento por
+                          favor...
+                          <span class='spinner-border spinner-border-sm align-middle ms-2'></span></span>
+                        <!--end::Indicator progress-->
+                      </button>
+                    </div>
+                    <!--end::Submit button-->
+                  </div>
+                  <!--end::Step 5-->
+                  <!--begin::Step 6-->
+                  <div class="flex-column m-auto" data-kt-stepper-element="content">
+                    <div class="w-100 text-center mb-12">
+                      <h2 class="fs-2x">
+                        Autorización
+                      </h2>
+                      <p class="fs-sm text-gray-500">
+                        El Solicitante autoriza a Monex a abrir una cuenta para operaciones de
+                        cambio de moneda extranjera y Transferencias Internacionales.
+                      </p>
+                    </div>
+                    <!--begin::Input group=-->
+                    <div class='row mb-4'>
+                      <div class="col">
+                        <!--begin::Nombre y apellidos-->
+                        <label for='nameAuthorizationMonex' class='form-label'>
+                          Nombre y apellidos
                         </label>
-                        <p id="step_three_outUsa_generic_legend_2" class="fs-sm text-gray-500">
-                          Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos .pdf, .jpg y .png.
-                        </p>
                         <div class='fv-row'>
-                          <!--begin::Dropzone-->
-                          <div class="dropzone" id="dropZoneChequeAnulado">
-                            <!--begin::Message-->
-                            <div class="dz-message needsclick d-flex justify-content-center align-items-center">
-                              <i class="ki-duotone ki-file-up fs-3x text-primary"><span class="path1"></span><span
-                                  class="path2"></span></i>
-                              <!--begin::Info-->
-                              <div class="ms-4">
-                                <h3 id="step_three_outUsa_generic_placeholder_1" class="fs-5 fw-bold text-gray-900">
-                                  Arrastra o suelta un archivo aquí o has click
-                                </h3>
-                              </div>
-                              <!--end::Info-->
-                            </div>
-                            <input type="hidden" id="chequeAnulado" name="chequeAnulado">
-                            <div id="groupInfoBankPay" style="display: none;">
-                              <div class="row">
-                                <div class="col-md-6">
-                                  <label id="step_three_usa_bankName_2" for='nameBank' class='form-label'>
-                                    Nombre del banco
-                                  </label>
-                                  <div class='fv-row'>
-                                    <input type='text' name='nameBank' autocomplete='off' id='nameBank'
-                                      class='form-control' required />
-                                  </div>
-                                </div>
-                                <div class="col-md-6">
-                                  <label id="step_three_usa_bankDirection_3" for='addressBank' class='form-label'>
-                                    Dirección del banco (ciudad, estado)
-                                  </label>
-                                  <div class='fv-row'>
-                                    <input type='text' name='addressBank' autocomplete='off' id='addressBank'
-                                      class='form-control' required />
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="col-md-6">
-                                  <label id="step_three_usa_accountNumber_3" for='accountNumber' class='form-label'>
-                                    Número de cuenta
-                                  </label>
-                                  <div class='fv-row'>
-                                    <input type='text' name='accountNumber' autocomplete='off' id='accountNumber'
-                                      class='form-control' required />
-                                  </div>
-                                </div>
-                                <div class="col-md-6">
-                                  <label id="step_three_usa_routeCode_3" for='routingNumber' class='form-label'>
-                                    Número ABA/Código de ruta
-                                  </label>
-                                  <div class='fv-row'>
-                                    <input type='text' name='routingNumber' autocomplete='off' id='routingNumber'
-                                      class='form-control' required />
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="row mb-3 mt-5">
-                                <span id="step_three_usa_accountType_title_3" class="fw-bold">Tipo de cuenta</span>
-                              </div>
-                              <div class="mb-4 fv-row row d-flex">
-                                <label>
-                                  <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                                    <input class="form-check-input" type="radio" value="1" name="typeAccount" />
-                                    <div class="form-check-label">
-                                      <span id="step_three_usa_accountType_te1_3">
-                                        Cheques
-                                      </span>
-                                    </div>
-                                  </div>
-                                </label>
-                                <label>
-                                  <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                                    <input class="form-check-input" type="radio" value="2" name="typeAccount"
-                                      id="text_wow" />
-                                    <div class="form-check-label">
-                                      <span id="step_three_usa_accountType_te2_3">
-                                        Ahorros
-                                      </span>
-                                    </div>
-                                  </div>
-                                </label>
-                              </div>
-                              <!--begin::Input group=-->
-                              <div class='mb-4' id="chequeAnulado" style="display: none;">
-                                <!--begin::Acta constitutiva o licencia comercial-->
-                                <label id="step_three_usa_voidedCheckFile_label_3" for='correo_electronico'
-                                  class='form-label'>
-                                  Adjuntar cheque anulado
-                                </label>
-                                <p id="step_three_outUsa_generic_legend_3" class="fs-sm text-gray-500">
-                                  Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos .pdf, .jpg y .png.
-                                </p>
-                                <div class='fv-row'>
-                                  <!--begin::Dropzone-->
-                                  <div class="dropzone" id="dropZoneChequeAnulado">
-                                    <!--begin::Message-->
-                                    <div class="dz-message needsclick d-flex justify-content-center align-items-center">
-                                      <i class="ki-duotone ki-file-up fs-3x text-primary"><span
-                                          class="path1"></span><span class="path2"></span></i>
-                                      <!--begin::Info-->
-                                      <div class="ms-4">
-                                        <h3 id="step_three_outUsa_generic_placeholder_2"
-                                          class="fs-5 fw-bold text-gray-900">
-                                          Arrastra o suelta un archivo aquí o has click
-                                        </h3>
-                                      </div>
-                                      <!--end::Info-->
-                                    </div>
-                                    <input type="hidden" id="chequeAnuladoInput" name="chequeAnulado">
-                                  </div>
-                                  <!--end::Dropzone-->
-                                </div>
-                                <p id="step_three_usa_info_text_2">
-                                  Tenga en cuenta que al pagar con los métodos de débito ACH o cheque/cheque por fax,
-                                  los fondos pueden estar sujetos a un periodo de retención que puede ser evitado
-                                  pagando por transferencia. Puede discutir sus opciones de pago con su representante de
-                                  Monex USA.
-                                </p>
-                                <!--end::Acta constitutiva o licencia comercial-->
-                              </div>
-                              <!--end::Input group-->
-                            </div>
-                          </div>
-                          <!--begin::Submit button-->
-                          <div class='d-flex w-100 justify-content-between mx-auto'>
-                            <button type='button' id='stepp_3_prev' class='btn btn-primary'>
-                              <!--begin::Indicator label-->
-                              <span class='indicator-label'>Back</span>
-                              <!--end::Indicator label-->
-                              <!--begin::Indicator progress-->
-                              <span class='indicator-progress'>Un monmento por
-                                favor...
-                                <span class='spinner-border spinner-border-sm align-middle ms-2'></span></span>
-                              <!--end::Indicator progress-->
-                            </button>
-                            <button type='button' id='stepp_3' class='btn btn-primary'>
-                              <!--begin::Indicator label-->
-                              <span class='indicator-label'>Siguiente</span>
-                              <!--end::Indicator label-->
-                              <!--begin::Indicator progress-->
-                              <span class='indicator-progress'>Un monmento por
-                                favor...
-                                <span class='spinner-border spinner-border-sm align-middle ms-2'></span></span>
-                              <!--end::Indicator progress-->
-                            </button>
-                          </div>
-                          <!--end::Submit button-->
+                          <input type='text' name='nameAuthorizationMonex' autocomplete='off'
+                            id='nameAuthorizationMonex' class='form-control' required />
                         </div>
-                        <!--end::Step 3-->
-                        <!--begin::Step 4-->
-                        <div class="flex-column m-auto w-100" data-kt-stepper-element="content">
-                          <div class="w-100 text-center mb-6">
-                            <h2 class="fs-2x">
-                              Usuario autorizados
-                            </h2>
-                            <p class="fs-sm text-gray-500">
-                              Enumere hasta 2 usuarios autorizados para realizar transacciones en la plataforma
-                            </p>
-                          </div>
-                          <!--begin::Input group-->
-                          <div id="kt_docs_repeater_basic">
-                            <div>
-                              <p>Datos del usuario autorizado 1</p>
-                              <div data-repeater-item>
-                                <div class="form-group col">
-                                  <div class='row mb-4'>
-                                    <!--begin::Nombres y apellidos-->
-                                    <div class='col'>
-                                      <label for='nombreApellido' class='form-label'>Nombres y
-                                        apellidos</label>
-                                      <div class='fv-row'>
-                                        <input type='text' name='nombreApellido' autocomplete='off' id='nombreApellido'
-                                          class='form-control' required />
-                                      </div>
-                                    </div>
-                                    <!--end::Nombres y apellidos-->
-                                    <!--begin::Cargo en la empresa-->
-                                    <div class='col'>
-                                      <label for='cargoEmpresa' class='form-label'>
-                                        Cargo en la empresa
-                                      </label>
-                                      <div class='fv-row'>
-                                        <input type='text' name='cargoEmpresa' autocomplete='off' id='cargoEmpresa'
-                                          class='form-control' required />
-                                      </div>
-                                    </div>
-                                    <!--end::Cargo en la empresa-->
-                                  </div>
-                                  <div class='row mb-4'>
-                                    <!--begin::Teléfono celular-->
-                                    <div class='col'>
-                                      <label for='telefonoCelular' class='form-label'>Teléfono
-                                        celular</label>
-                                      <div class='fv-row'>
-                                        <input type='number' name='telefonoCelular' autocomplete='off'
-                                          id='telefonoCelular' class='form-control' required />
-                                      </div>
-                                    </div>
-                                    <!--end::Teléfono celular-->
-                                    <!--begin::Correo electrónico-->
-                                    <div class='col'>
-                                      <label for='correoElectronico' class='form-label'>
-                                        Correo electrónico
-                                      </label>
-                                      <div class='fv-row'>
-                                        <input type='text' name='correoElectronico' autocomplete='off'
-                                          id='correoElectronico' class='form-control' required />
-                                      </div>
-                                    </div>
-                                    <!--end::Correo electrónico-->
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div id="usuarioAutorizado2" class="d-none">
-                              <p>Datos del usuario autorizado 2</p>
-                              <div data-repeater-item>
-                                <div class="form-group col">
-                                  <div class='row mb-4'>
-                                    <!--begin::Nombres y apellidos-->
-                                    <div class='col'>
-                                      <label for='nombreApellido2' class='form-label'>Nombres y
-                                        apellidos</label>
-                                      <div class='fv-row'>
-                                        <input type='text' name='nombreApellido2' autocomplete='off'
-                                          id='nombreApellido2' class='form-control' required />
-                                      </div>
-                                    </div>
-                                    <!--end::Nombres y apellidos-->
-                                    <!--begin::Cargo en la empresa-->
-                                    <div class='col'>
-                                      <label for='cargoEmpresa2' class='form-label'>
-                                        Cargo en la empresa
-                                      </label>
-                                      <div class='fv-row'>
-                                        <input type='text' name='cargoEmpresa2' autocomplete='off' id='cargoEmpresa2'
-                                          class='form-control' required />
-                                      </div>
-                                    </div>
-                                    <!--end::Cargo en la empresa-->
-                                  </div>
-                                  <div class='row mb-4'>
-                                    <!--begin::Teléfono celular-->
-                                    <div class='col'>
-                                      <label for='telefonoCelular2' class='form-label'>Teléfono
-                                        celular</label>
-                                      <div class='fv-row'>
-                                        <input type='number' name='telefonoCelular2' autocomplete='off'
-                                          id='telefonoCelular2' class='form-control' required />
-                                      </div>
-                                    </div>
-                                    <!--end::Teléfono celular-->
-                                    <!--begin::Correo electrónico-->
-                                    <div class='col'>
-                                      <label for='correoElectronico2' class='form-label'>
-                                        Correo electrónico
-                                      </label>
-                                      <div class='fv-row'>
-                                        <input type='text' name='correoElectronico2' autocomplete='off'
-                                          id='correoElectronico2' class='form-control' required />
-                                      </div>
-                                    </div>
-                                    <!--end::Correo electrónico-->
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="form-group mt-4 mb-8 w-100 d-flex justify-content-end">
-                              <a id="addButton" href="javascript:;" data-repeater-create class="btn btn-light-primary">
-                                <i class="ki-duotone ki-plus fs-3"></i>
-                                Agregar
-                              </a>
-                              <a id="removeButton" style="display: none;" href="javascript:;" data-repeater-delete
-                                class="btn btn-light-danger mt-3">
-                                <i class="ki-duotone ki-trash fs-5"><span class="path1"></span><span
-                                    class="path2"></span><span class="path3"></span><span class="path4"></span><span
-                                    class="path5"></span></i>
-                                Delete
-                              </a>
-                            </div>
-                          </div>
-                          <!--end::Input group=-->
-                          <!--begin::Submit button-->
-                          <div class='d-flex w-100 justify-content-between mx-auto'>
-                            <button type='button' id='stepp_4_prev' class='btn btn-primary'>
-                              <!--begin::Indicator label-->
-                              <span class='indicator-label'>Back</span>
-                              <!--end::Indicator label-->
-                              <!--begin::Indicator progress-->
-                              <span class='indicator-progress'>Un monmento por
-                                favor...
-                                <span class='spinner-border spinner-border-sm align-middle ms-2'></span></span>
-                              <!--end::Indicator progress-->
-                            </button>
-                            <button type='button' id='stepp_4' class='btn btn-primary'>
-                              <!--begin::Indicator label-->
-                              <span class='indicator-label'>Siguiente</span>
-                              <!--end::Indicator label-->
-                              <!--begin::Indicator progress-->
-                              <span class='indicator-progress'>Un monmento por
-                                favor...
-                                <span class='spinner-border spinner-border-sm align-middle ms-2'></span></span>
-                              <!--end::Indicator progress-->
-                            </button>
-                          </div>
-                          <!--end::Submit button-->
+                        <!--end::Nombre y apellidos-->
+                      </div>
+                      <div class="col">
+                        <!--begin::Titulo/Cargo-->
+                        <label for='titlePositionAuthorizationMonex' class='form-label'>
+                          Titulo/Cargo
+                        </label>
+                        <div class='fv-row'>
+                          <input type='text' name='titlePositionAuthorizationMonex' autocomplete='off'
+                            id='titlePositionAuthorizationMonex' class='form-control' required />
                         </div>
-                        <!--end::Step 4-->
-                        <!--begin::Step 5-->
-                        <div class="flex-column m-auto" data-kt-stepper-element="content">
-                          <h2 id="step_five_title" class="w-100 text-center fs-2x mb-12">
-                            Socios de la empresa
-                          </h2>
-                          <!--begin::Input group=-->
-                          <div class='mb-8'>
-                            <!--begin::Tipo de empresa-->
-                            <p id="step_five_companyPartners_label" class='form-label'>
-                              ¿Cúantos socios tienen el 25% o más de acciones?
-                            </p>
-                            <!--begin::Row-->
-                            <div class="mb-4 fv-row" data-kt-buttons="true" data-kt-buttons-target=".form-check-input">
-                              <div>
-                                <label>
-                                  <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                                    <input class="form-check-input" type="radio" value="1" name="sociosAcciones" />
-                                    <div class="form-check-label">
-                                      1
-                                    </div>
-                                  </div>
-                                </label>
-                              </div>
-                              <div>
-                                <label>
-                                  <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                                    <input class="form-check-input" type="radio" value="2" name="sociosAcciones"
-                                      id="text_wow" />
-                                    <div class="form-check-label">
-                                      2
-                                    </div>
-                                  </div>
-                                </label>
-                              </div>
-                              <div>
-                                <label>
-                                  <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                                    <input class="form-check-input" type="radio" value="3" name="sociosAcciones" />
-                                    <div class="form-check-label">
-                                      3
-                                    </div>
-                                  </div>
-                                </label>
-                              </div>
-                              <div>
-                                <label>
-                                  <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                                    <input class="form-check-input" type="radio" value="4" name="sociosAcciones" />
-                                    <div class="form-check-label">
-                                      4
-                                    </div>
-                                  </div>
-                                </label>
-                              </div>
-                              <div>
-                                <label>
-                                  <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                                    <input class="form-check-input" type="radio" value="5" name="sociosAcciones" />
-                                    <div class="form-check-label">
-                                      Ninguno
-                                    </div>
-                                  </div>
-                                </label>
-                              </div>
+                        <!--end::Titulo/Cargo-->
+                      </div>
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Input group=-->
+                    <div class='mb-8'>
+                      <!--begin::Fecha (MM/DD/YYYY)-->
+                      <label for='dateAuthorizationMonex' class='form-label'>
+                        Fecha (MM/DD/YYYY)
+                      </label>
+                      <div class="input-group">
+                        <input class="form-control" id="dateAuthorizationMonex" placeholder="MM/DD/AAAA" />
+                        <span class="input-group-text" data-td-target="#kt_td_picker_basic"
+                          data-td-toggle="datetimepicker">
+                          <i class="ki-duotone ki-calendar fs-2">
+                            <span class="path1"></span>
+                            <span class="path2"></span>
+                          </i>
+                        </span>
+                      </div>
+                      <!--end::Fecha (MM/DD/YYYY)-->
+                    </div>
+                    <!--end::Input group=-->
+                    <!--begin::Input group=-->
+                    <div class='mb-8'>
+                      <!--begin::Sube tu firma-->
+                      <label for='correo_electronico' class='form-label'>
+                        Sube tu firma
+                      </label>
+                      <p>
+                        Si no cuenta con una firma digital la puede crear en el siguiente
+                        enlace:
+                      </p>
+                      <a href="">Crear firma digital</a>
+                      <p id="step_three_outUsa_generic_legend_4" class="fs-sm text-gray-500">
+                        Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos .pdf, .jpg y .png.
+                      </p>
+                      <div class='fv-row mb-4'>
+                        <!--begin::Dropzone-->
+                        <div class="dropzone" id="dropzoneDigitalSignature">
+                          <!--begin::Message-->
+                          <div class="dz-message needsclick d-flex justify-content-center align-items-center">
+                            <i class="ki-duotone ki-file-up fs-3x text-primary"><span class="path1"></span><span
+                                class="path2"></span></i>
+                            <!--begin::Info-->
+                            <div class="ms-4">
+                              <h3 id="step_three_outUsa_generic_placeholder_3" class="fs-5 fw-bold text-gray-900">
+                                Arrastra o suelta un archivo aquí o has click
+                              </h3>
                             </div>
-                            <div class="row" id="optionNinguno" style="display: none;">
-                              <p id="step_five_legal_label" class="fw-bold mt-1 mb-2">Apoderado Legal</p>
-                              <p id="step_five_legal_paragraph" class="mb-3">
-                                Si no hay ningún individuo que posea el 25% o más, indique el mayor propietario
-                                individual o una persona de control.</p>
-                            </div>
-                            <div id="bloque1" style="display: none;">
-                              <div class="row mb-5 mt-7" id="textNinguno">
-                                <p>
-                                  <span id="step_five_partnersInfo_label" class="fw-bold">Datos de socio</span> 1
-                                </p>
-                              </div>
-                              <div class="row">
-                                <label id="step_five_outUsa_partnersInfo_legalName_2" for='nameOwner'
-                                  class='form-label'>
-                                  Nombre legal (sin abreviaciones)
-                                </label>
-                                <div class='fv-row'>
-                                  <input type='text' name='nameOwner' autocomplete='off' id='nombreLegal'
-                                    class='form-control' required />
-                                </div>
-                              </div>
-                              <div class="row">
-                                <label id="step_five_outUsa_partnersInfo_position" for='occupation' class='form-label'>
-                                  Cargo en la empresa
-                                </label>
-                                <div class='fv-row'>
-                                  <input type='text' name='occupation' autocomplete='off' id='cargoEmpresa'
-                                    class='form-control' required />
-                                </div>
-                              </div>
-                              <div class="row">
-                                <label id="step_five_outUsa_partnersInfo_ownershipPercentage" for='ownership'
-                                  class='form-label'>
-                                  Porcentaje de propiedad
-                                </label>
-                                <div class='fv-row'>
-                                  <input type='number' name='ownership' autocomplete='off' id='cargoEmpresa'
-                                    class='form-control' required />
-                                </div>
-                              </div>
-                              <div class="row">
-                                <label id="step_five_outUsa_partnersInfo_birthdate" for='dateOfBirth'
-                                  class='form-label'>
-                                  Fecha de nacimiento (MM/DD/YYYY)
-                                </label>
-                                <div class="input-group fv-row">
-                                  <input class="form-control" name="dateOfBirth" id="dateOfBirth"
-                                    placeholder="MM/DD/AAAA" />
-                                  <span class="input-group-text" data-td-target="#kt_td_picker_basic"
-                                    data-td-toggle="datetimepicker">
-                                    <i class="ki-duotone ki-calendar fs-2">
-                                      <span class="path1"></span>
-                                      <span class="path2"></span>
-                                    </i>
-                                  </span>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="col-md-6">
-                                  <label id="step_five_outUsa_partnersInfo_address" for='addressOwner'
-                                    class='form-label'>
-                                    Dirección (ciudad, provincia, país)
-                                  </label>
-                                  <div class='fv-row'>
-                                    <input type='text' name='addressOwner' autocomplete='off' id='dirección_ciudad'
-                                      class='form-control' required />
-                                  </div>
-                                </div>
-                                <div class="col-md-6">
-                                  <label id="step_five_outUsa_partnersInfo_email" for='emailOwner' class='form-label'>
-                                    Correo electrónico
-                                  </label>
-                                  <div class='fv-row'>
-                                    <input type='email' name='emailOwner' autocomplete='off' id='dirección_ciudad'
-                                      class='form-control' required />
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div id="bloque2" style="display: none;">
-                              <div class="row mb-5 mt-7">
-                                <p class="fw-bold">Datos de socio 2</p>
-                              </div>
-                              <div class="row">
-                                <label id="step_five_outUsa_partnersInfo_legalName_3" for='nameOwner2'
-                                  class='form-label'>
-                                  Nombre legal (sin abreviaciones)
-                                </label>
-                                <div class='fv-row'>
-                                  <input type='text' name='nameOwner2' autocomplete='off' id='nombreLegal'
-                                    class='form-control' required />
-                                </div>
-                              </div>
-                              <div class="row">
-                                <label for='occupation2' class='form-label'>
-                                  Cargo en la empresa
-                                </label>
-                                <div class='fv-row'>
-                                  <input type='text' name='occupation2' autocomplete='off' id='cargoEmpresa'
-                                    class='form-control' required />
-                                </div>
-                              </div>
-                              <div class="row">
-                                <label for='ownership2' class='form-label'>
-                                  Porcentaje de propiedad
-                                </label>
-                                <div class='fv-row'>
-                                  <input type='number' name='ownership2' autocomplete='off' id='cargoEmpresa'
-                                    class='form-control' required />
-                                </div>
-                              </div>
-                              <div class="row">
-                                <label for='dateOfBirth2' class='form-label'>
-                                  Fecha de nacimiento (MM/DD/YYYY)
-                                </label>
-                                <div class="input-group fv-row">
-                                  <input class="form-control" name="dateOfBirth2" id="dateOfBirth2"
-                                    placeholder="MM/DD/AAAA" />
-                                  <span class="input-group-text" data-td-target="#kt_td_picker_basic"
-                                    data-td-toggle="datetimepicker">
-                                    <i class="ki-duotone ki-calendar fs-2">
-                                      <span class="path1"></span>
-                                      <span class="path2"></span>
-                                    </i>
-                                  </span>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="col-md-6">
-                                  <label for='addressOwner2' class='form-label'>
-                                    Dirección (ciudad, provincia, país)
-                                  </label>
-                                  <div class='fv-row'>
-                                    <input type='text' name='addressOwner2' autocomplete='off' id='dirección_ciudad'
-                                      class='form-control' required />
-                                  </div>
-                                </div>
-                                <div class="col-md-6">
-                                  <label for='emailOwner2' class='form-label'>
-                                    Correo electrónico
-                                  </label>
-                                  <div class='fv-row'>
-                                    <input type='email' name='emailOwner2' autocomplete='off' id='dirección_ciudad'
-                                      class='form-control' required />
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div id="bloque3" style="display: none;">
-                              <div class="row mb-5 mt-7">
-                                <p class="fw-bold">Datos de socio 3</p>
-                              </div>
-                              <div class="row">
-                                <label id="step_five_outUsa_partnersInfo_legalName_4" for='nameOwner3'
-                                  class='form-label'>
-                                  Nombre legal (sin abreviaciones)
-                                </label>
-                                <div class='fv-row'>
-                                  <input type='text' name='nameOwner3' autocomplete='off' id='nombreLegal'
-                                    class='form-control' required />
-                                </div>
-                              </div>
-                              <div class="row">
-                                <label for='occupation3' class='form-label'>
-                                  Cargo en la empresa
-                                </label>
-                                <div class='fv-row'>
-                                  <input type='text' name='occupation3' autocomplete='off' id='cargoEmpresa'
-                                    class='form-control' required />
-                                </div>
-                              </div>
-                              <div class="row">
-                                <label for='ownership3' class='form-label'>
-                                  Porcentaje de propiedad
-                                </label>
-                                <div class='fv-row'>
-                                  <input type='number' name='ownership3' autocomplete='off' id='cargoEmpresa'
-                                    class='form-control' required />
-                                </div>
-                              </div>
-                              <div class="row">
-                                <label for='dateOfBirth3' class='form-label'>
-                                  Fecha de nacimiento (MM/DD/YYYY)
-                                </label>
-                                <div class="input-group fv-row">
-                                  <input class="form-control" name="dateOfBirth3" id="dateOfBirth3"
-                                    placeholder="MM/DD/AAAA" />
-                                  <span class="input-group-text" data-td-target="#kt_td_picker_basic"
-                                    data-td-toggle="datetimepicker">
-                                    <i class="ki-duotone ki-calendar fs-2">
-                                      <span class="path1"></span>
-                                      <span class="path2"></span>
-                                    </i>
-                                  </span>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="col-md-6">
-                                  <label for='addressOwner3' class='form-label'>
-                                    Dirección (ciudad, provincia, país)
-                                  </label>
-                                  <div class='fv-row'>
-                                    <input type='text' name='addressOwner3' autocomplete='off' id='dirección_ciudad'
-                                      class='form-control' required />
-                                  </div>
-                                </div>
-                                <div class="col-md-6">
-                                  <label for='emailOwner3' class='form-label'>
-                                    Correo electrónico
-                                  </label>
-                                  <div class='fv-row'>
-                                    <input type='email' name='emailOwner3' autocomplete='off' id='dirección_ciudad'
-                                      class='form-control' required />
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div id="bloque4" style="display: none;">
-                              <div class="row mb-5 mt-7">
-                                <p class="fw-bold">Datos de socio 4</p>
-                              </div>
-                              <div class="row">
-                                <label id="step_five_outUsa_partnersInfo_legalName_5" for='nameOwner4'
-                                  class='form-label'>
-                                  Nombre legal (sin abreviaciones)
-                                </label>
-                                <div class='fv-row'>
-                                  <input type='text' name='nameOwner4' autocomplete='off' id='nombreLegal'
-                                    class='form-control' required />
-                                </div>
-                              </div>
-                              <div class="row">
-                                <label for='occupation4' class='form-label'>
-                                  Cargo en la empresa
-                                </label>
-                                <div class='fv-row'>
-                                  <input type='text' name='occupation4' autocomplete='off' id='cargoEmpresa'
-                                    class='form-control' required />
-                                </div>
-                              </div>
-                              <div class="row">
-                                <label for='ownership4' class='form-label'>
-                                  Porcentaje de propiedad
-                                </label>
-                                <div class='fv-row'>
-                                  <input type='number' name='ownership4' autocomplete='off' id='cargoEmpresa'
-                                    class='form-control' required />
-                                </div>
-                              </div>
-                              <div class="row">
-                                <label for='dateOfBirth4' class='form-label'>
-                                  Fecha de nacimiento (MM/DD/YYYY)
-                                </label>
-                                <div class="input-group fv-row">
-                                  <input class="form-control" name="dateOfBirth4" id="dateOfBirth4"
-                                    placeholder="MM/DD/AAAA" />
-                                  <span class="input-group-text" data-td-target="#kt_td_picker_basic"
-                                    data-td-toggle="datetimepicker">
-                                    <i class="ki-duotone ki-calendar fs-2">
-                                      <span class="path1"></span>
-                                      <span class="path2"></span>
-                                    </i>
-                                  </span>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="col-md-6">
-                                  <label for='addressOwner4' class='form-label'>
-                                    Dirección (ciudad, provincia, país)
-                                  </label>
-                                  <div class='fv-row'>
-                                    <input type='text' name='addressOwner4' autocomplete='off' id='dirección_ciudad'
-                                      class='form-control' required />
-                                  </div>
-                                </div>
-                                <div class="col-md-6">
-                                  <label for='emailOwner4' class='form-label'>
-                                    Correo electrónico
-                                  </label>
-                                  <div class='fv-row'>
-                                    <input type='email' name='emailOwner4' autocomplete='off' id='dirección_ciudad'
-                                      class='form-control' required />
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <!--end::Row-->
-                            <!--end::Tipo de empresa-->
+                            <!--end::Info-->
                           </div>
-                          <!--end::Input group=-->
-                          <!--begin::Submit button-->
-                          <div class='d-flex w-100 justify-content-between mx-auto'>
-                            <button type='button' id='stepp_5_prev' class='btn btn-primary'>
-                              <!--begin::Indicator label-->
-                              <span class='indicator-label'>Back</span>
-                              <!--end::Indicator label-->
-                              <!--begin::Indicator progress-->
-                              <span class='indicator-progress'>Un monmento por
-                                favor...
-                                <span class='spinner-border spinner-border-sm align-middle ms-2'></span></span>
-                              <!--end::Indicator progress-->
-                            </button>
-                            <button type='button' id='stepp_5' class='btn btn-primary'>
-                              <!--begin::Indicator label-->
-                              <span class='indicator-label'>Siguiente</span>
-                              <!--end::Indicator label-->
-                              <!--begin::Indicator progress-->
-                              <span class='indicator-progress'>Un monmento por
-                                favor...
-                                <span class='spinner-border spinner-border-sm align-middle ms-2'></span></span>
-                              <!--end::Indicator progress-->
-                            </button>
-                          </div>
-                          <!--end::Submit button-->
+                          <input type="hidden" name="digitalSignature" id="digitalSignature">
                         </div>
-                        <!--end::Step 5-->
-                        <!--begin::Step 6-->
-                        <div class="flex-column m-auto" data-kt-stepper-element="content">
-                          <div class="w-100 text-center mb-12">
-                            <h2 class="fs-2x">
-                              Autorización
-                            </h2>
-                            <p class="fs-sm text-gray-500">
-                              El Solicitante autoriza a Monex a abrir una cuenta para operaciones de
-                              cambio de moneda extranjera y Transferencias Internacionales.
-                            </p>
-                          </div>
-                          <!--begin::Input group=-->
-                          <div class='row mb-4'>
-                            <div class="col">
-                              <!--begin::Nombre y apellidos-->
-                              <label for='nameAuthorizationMonex' class='form-label'>
-                                Nombre y apellidos
-                              </label>
-                              <div class='fv-row'>
-                                <input type='text' name='nameAuthorizationMonex' autocomplete='off'
-                                  id='nameAuthorizationMonex' class='form-control' required />
-                              </div>
-                              <!--end::Nombre y apellidos-->
-                            </div>
-                            <div class="col">
-                              <!--begin::Titulo/Cargo-->
-                              <label for='titlePositionAuthorizationMonex' class='form-label'>
-                                Titulo/Cargo
-                              </label>
-                              <div class='fv-row'>
-                                <input type='text' name='titlePositionAuthorizationMonex' autocomplete='off'
-                                  id='titlePositionAuthorizationMonex' class='form-control' required />
-                              </div>
-                              <!--end::Titulo/Cargo-->
+                        <!--end::Dropzone-->
+                      </div>
+                      <p>
+                        El solicitante certifica que la información establecida en esta
+                        solicitud
+                        es correcta y completa y que la persona que firma esta solicitud a
+                        continuación tiene plena capacidad legal y facultades suficientes para
+                        comprometer a su representada en los términos del presente contrato, por
+                        lo tanto confirma que:
+                      </p>
+                      <!--end::Sube tu firma-->
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Row-->
+                    <div class="mb-4 fv-row" data-kt-buttons="true" data-kt-buttons-target=".form-check-input">
+                      <div>
+                        <label>
+                          <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
+                            <input class="form-check-input" type="radio" value="1" name="acceptTerms" />
+                            <div class="form-check-label">
+                              Ha leído, entendido y acepta la Política de privacidad y el
+                              Acuerdo de usuario de Monex USA.
                             </div>
                           </div>
-                          <!--end::Input group-->
-                          <!--begin::Input group=-->
-                          <div class='mb-8'>
-                            <!--begin::Fecha (MM/DD/YYYY)-->
-                            <label for='dateAuthorizationMonex' class='form-label'>
-                              Fecha (MM/DD/YYYY)
-                            </label>
-                            <div class="input-group">
-                              <input class="form-control" id="dateAuthorizationMonex" placeholder="MM/DD/AAAA" />
-                              <span class="input-group-text" data-td-target="#kt_td_picker_basic"
-                                data-td-toggle="datetimepicker">
-                                <i class="ki-duotone ki-calendar fs-2">
-                                  <span class="path1"></span>
-                                  <span class="path2"></span>
-                                </i>
-                              </span>
-                            </div>
-                            <!--end::Fecha (MM/DD/YYYY)-->
-                          </div>
-                          <!--end::Input group=-->
-                          <!--begin::Input group=-->
-                          <div class='mb-8'>
-                            <!--begin::Sube tu firma-->
-                            <label for='correo_electronico' class='form-label'>
-                              Sube tu firma
-                            </label>
-                            <p>
-                              Si no cuenta con una firma digital la puede crear en el siguiente
-                              enlace:
-                            </p>
-                            <a href="">Crear firma digital</a>
-                            <p id="step_three_outUsa_generic_legend_4" class="fs-sm text-gray-500">
-                              Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos .pdf, .jpg y .png.
-                            </p>
-                            <div class='fv-row mb-4'>
-                              <!--begin::Dropzone-->
-                              <div class="dropzone" id="dropzoneDigitalSignature">
-                                <!--begin::Message-->
-                                <div class="dz-message needsclick d-flex justify-content-center align-items-center">
-                                  <i class="ki-duotone ki-file-up fs-3x text-primary"><span class="path1"></span><span
-                                      class="path2"></span></i>
-                                  <!--begin::Info-->
-                                  <div class="ms-4">
-                                    <h3 id="step_three_outUsa_generic_placeholder_3" class="fs-5 fw-bold text-gray-900">
-                                      Arrastra o suelta un archivo aquí o has click
-                                    </h3>
-                                  </div>
-                                  <!--end::Info-->
-                                </div>
-                                <input type="hidden" name="digitalSignature" id="digitalSignature">
-                              </div>
-                              <!--end::Dropzone-->
-                            </div>
-                            <p>
-                              El solicitante certifica que la información establecida en esta
-                              solicitud
-                              es correcta y completa y que la persona que firma esta solicitud a
-                              continuación tiene plena capacidad legal y facultades suficientes para
-                              comprometer a su representada en los términos del presente contrato, por
-                              lo tanto confirma que:
-                            </p>
-                            <!--end::Sube tu firma-->
-                          </div>
-                          <!--end::Input group-->
-                          <!--begin::Row-->
-                          <div class="mb-4 fv-row" data-kt-buttons="true" data-kt-buttons-target=".form-check-input">
-                            <div>
-                              <label>
-                                <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
-                                  <input class="form-check-input" type="radio" value="1" name="acceptTerms" />
-                                  <div class="form-check-label">
-                                    Ha leído, entendido y acepta la Política de privacidad y el
-                                    Acuerdo de usuario de Monex USA.
-                                  </div>
-                                </div>
-                              </label>
-                            </div>
-                          </div>
-                          <!--end::Row-->
-                          <!--begin::Submit button-->
-                          <div class='d-flex w-100 justify-content-between mx-auto'>
-                            <button type='button' id='stepp_6_prev' class='btn btn-primary'>
-                              <!--begin::Indicator label-->
-                              <span class='indicator-label'>Back</span>
-                              <!--end::Indicator label-->
-                              <!--begin::Indicator progress-->
-                              <span class='indicator-progress'>Un monmento por
-                                favor...
-                                <span class='spinner-border spinner-border-sm align-middle ms-2'></span></span>
-                              <!--end::Indicator progress-->
-                            </button>
-                            <button type='button' id='stepp_6' class='btn btn-primary'>
-                              <!--begin::Indicator label-->
-                              <span class='indicator-label'>Enviar</span>
-                              <!--end::Indicator label-->
-                              <!--begin::Indicator progress-->
-                              <span class='indicator-progress'>Un monmento por
-                                favor...
-                                <span class='spinner-border spinner-border-sm align-middle ms-2'></span></span>
-                              <!--end::Indicator progress-->
-                            </button>
-                          </div>
-                          <!--end::Submit button-->
-                        </div>
-                        <!--end::Step 6-->
+                        </label>
+                      </div>
+                    </div>
+                    <!--end::Row-->
+                    <!--begin::Submit button-->
+                    <div class='d-flex w-100 justify-content-between mx-auto'>
+                      <button type='button' id='stepp_6_prev' class='btn btn-primary'>
+                        <!--begin::Indicator label-->
+                        <span class='indicator-label'>Back</span>
+                        <!--end::Indicator label-->
+                        <!--begin::Indicator progress-->
+                        <span class='indicator-progress'>Un monmento por
+                          favor...
+                          <span class='spinner-border spinner-border-sm align-middle ms-2'></span></span>
+                        <!--end::Indicator progress-->
+                      </button>
+                      <button type='button' id='stepp_6' class='btn btn-primary'>
+                        <!--begin::Indicator label-->
+                        <span class='indicator-label'>Enviar</span>
+                        <!--end::Indicator label-->
+                        <!--begin::Indicator progress-->
+                        <span class='indicator-progress'>Un monmento por
+                          favor...
+                          <span class='spinner-border spinner-border-sm align-middle ms-2'></span></span>
+                        <!--end::Indicator progress-->
+                      </button>
+                    </div>
+                    <!--end::Submit button-->
+                  </div>
+                  <!--end::Step 6-->
                 </form>
                 <!--end::Form-->
               </div>

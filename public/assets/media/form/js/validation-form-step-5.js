@@ -236,12 +236,12 @@ radioButtons.forEach(function (radioButton) {
       bloqueInferior3.style.display = 'none';
       bloqueInferior4.style.display = 'none';
 
-      validatorStep5.enableValidator('nameOwner');
-      validatorStep5.enableValidator('occupation');
-      validatorStep5.enableValidator('ownership');
-      validatorStep5.enableValidator('dateOfBirth');
-      validatorStep5.enableValidator('addressOwner');
-      validatorStep5.enableValidator('emailOwner');
+      validatorStep5.enableValidator('nameOwner1');
+      validatorStep5.enableValidator('occupation1');
+      validatorStep5.enableValidator('ownership1');
+      validatorStep5.enableValidator('dateOfBirth1');
+      validatorStep5.enableValidator('addressOwner1');
+      validatorStep5.enableValidator('emailOwner1');
 
       validatorStep5.disableValidator('nameOwner2');
       validatorStep5.disableValidator('occupation2');
@@ -271,12 +271,12 @@ radioButtons.forEach(function (radioButton) {
       bloqueInferior3.style.display = 'none';
       bloqueInferior4.style.display = 'none';
 
-      validatorStep5.enableValidator('nameOwner');
-      validatorStep5.enableValidator('occupation');
-      validatorStep5.enableValidator('ownership');
-      validatorStep5.enableValidator('dateOfBirth');
-      validatorStep5.enableValidator('addressOwner');
-      validatorStep5.enableValidator('emailOwner');
+      validatorStep5.enableValidator('nameOwner1');
+      validatorStep5.enableValidator('occupation1');
+      validatorStep5.enableValidator('ownership1');
+      validatorStep5.enableValidator('dateOfBirth1');
+      validatorStep5.enableValidator('addressOwner1');
+      validatorStep5.enableValidator('emailOwner1');
 
       validatorStep5.enableValidator('nameOwner2');
       validatorStep5.enableValidator('occupation2');
@@ -306,12 +306,12 @@ radioButtons.forEach(function (radioButton) {
       bloqueInferior3.style.display = 'block';
       bloqueInferior4.style.display = 'none';
 
-      validatorStep5.enableValidator('nameOwner');
-      validatorStep5.enableValidator('occupation');
-      validatorStep5.enableValidator('ownership');
-      validatorStep5.enableValidator('dateOfBirth');
-      validatorStep5.enableValidator('addressOwner');
-      validatorStep5.enableValidator('emailOwner');
+      validatorStep5.enableValidator('nameOwner1');
+      validatorStep5.enableValidator('occupation1');
+      validatorStep5.enableValidator('ownership1');
+      validatorStep5.enableValidator('dateOfBirth1');
+      validatorStep5.enableValidator('addressOwner1');
+      validatorStep5.enableValidator('emailOwner1');
 
       validatorStep5.enableValidator('nameOwner2');
       validatorStep5.enableValidator('occupation2');
@@ -341,12 +341,12 @@ radioButtons.forEach(function (radioButton) {
       bloqueInferior3.style.display = 'block';
       bloqueInferior4.style.display = 'block';
 
-      validatorStep5.enableValidator('nameOwner');
-      validatorStep5.enableValidator('occupation');
-      validatorStep5.enableValidator('ownership');
-      validatorStep5.enableValidator('dateOfBirth');
-      validatorStep5.enableValidator('addressOwner');
-      validatorStep5.enableValidator('emailOwner');
+      validatorStep5.enableValidator('nameOwner1');
+      validatorStep5.enableValidator('occupation1');
+      validatorStep5.enableValidator('ownership1');
+      validatorStep5.enableValidator('dateOfBirth1');
+      validatorStep5.enableValidator('addressOwner1');
+      validatorStep5.enableValidator('emailOwner1');
 
       validatorStep5.enableValidator('nameOwner2');
       validatorStep5.enableValidator('occupation2');
@@ -376,12 +376,12 @@ radioButtons.forEach(function (radioButton) {
       bloqueInferior3.style.display = 'none';
       bloqueInferior4.style.display = 'none';
 
-      validatorStep5.enableValidator('nameOwner');
-      validatorStep5.enableValidator('occupation');
-      validatorStep5.enableValidator('ownership');
-      validatorStep5.enableValidator('dateOfBirth');
-      validatorStep5.enableValidator('addressOwner');
-      validatorStep5.enableValidator('emailOwner');
+      validatorStep5.enableValidator('nameOwner1');
+      validatorStep5.enableValidator('occupation1');
+      validatorStep5.enableValidator('ownership1');
+      validatorStep5.enableValidator('dateOfBirth1');
+      validatorStep5.enableValidator('addressOwner1');
+      validatorStep5.enableValidator('emailOwner1');
 
       validatorStep5.disableValidator('nameOwner2');
       validatorStep5.disableValidator('occupation2');

@@ -13,42 +13,26 @@ import {
 class infoBankDto {
   @IsOptional()
   @IsString()
-  @MinLength(1, { message: 'El nameBank debe tener al menos 1 caracteres' })
   nameBank: string;
 
   @IsOptional()
   @IsString()
-  @MinLength(1, {
-    message: 'El addressBank debe tener al menos 1 caracteres',
-  })
   addressBank: string;
 
   @IsOptional()
   @IsString()
-  @MinLength(1, {
-    message: 'El accountNumber debe tener al menos 1 caracteres',
-  })
   accountNumber: string;
 
   @IsOptional()
   @IsString()
-  @MinLength(1, {
-    message: 'El routingNumber debe tener al menos 1 caracteres',
-  })
   routingNumber: string;
 
   @IsOptional()
   @IsString()
-  @MinLength(1, {
-    message: 'El typeOfAccount debe tener al menos 1 caracteres',
-  })
   typeOfAccount: string;
 
   @IsOptional()
   @IsString()
-  @MinLength(1, {
-    message: 'El FileCheque debe tener al menos 1 caracteres',
-  })
   fileCheque: string;
 }
 
@@ -231,11 +215,8 @@ export class createRegisterDto {
   @IsNotEmpty({ message: 'El purposeOfTransactions es requerido' })
   purposeOfTransactions: string;
 
+  @IsOptional()
   @IsString()
-  @MinLength(1, {
-    message: 'El bankCodeNumber debe tener al menos 1 caracteres',
-  })
-  @IsNotEmpty({ message: 'El bankCodeNumber es requerido' })
   bankCodeNumber: string;
 
   @IsString()
@@ -325,16 +306,6 @@ export class createRegisterDto {
     message: 'El dateAuthorizationMonex es requerido',
   })
   dateAuthorizationMonex: string;
-
-  @IsString()
-  @MinLength(1, {
-    message:
-      'El uploadSignatureAuthorizationMonex debe tener al menos 1 caracteres',
-  })
-  @IsNotEmpty({
-    message: 'El uploadSignatureAuthorizationMonex es requerido',
-  })
-  uploadSignatureAuthorizationMonex: string;
 
   @IsNumber()
   @IsNotEmpty({ message: 'El idLeads es requerido' })

@@ -5,74 +5,74 @@ export class Register {
   @PrimaryGeneratedColumn()
   idRegister: number;
 
-  @Column({ type: 'varchar', length: 40 })
+  @Column({ type: 'varchar', length: 255 })
   fullName: string;
 
-  @Column({ type: 'varchar', length: 30 })
+  @Column({ type: 'varchar', length: 255 })
   email: string;
 
-  @Column({ type: 'varchar', length: 40 })
+  @Column({ type: 'varchar', length: 255 })
   corporate: string;
 
-  @Column({ type: 'varchar', length: 20 })
+  @Column({ type: 'varchar', length: 40 })
   phone: string;
 
-  @Column({ type: 'varchar', length: 15 })
+  @Column({ type: 'varchar', length: 30 })
   country: string;
 
   //Empieza el primer paso del registro
 
-  @Column({ type: 'varchar', length: 40 })
+  @Column({ type: 'varchar', length: 255 })
   corporateName: string;
 
-  @Column({ type: 'varchar', length: 40 })
+  @Column({ type: 'varchar', length: 255 })
   tradeNameOfDBA: string;
 
-  @Column({ type: 'varchar', length: 40 })
+  @Column({ type: 'varchar', length: 50 })
   state: string;
 
-  @Column({ type: 'varchar', length: 40 })
+  @Column({ type: 'varchar', length: 50 })
   city: string;
 
   @Column({ type: 'varchar', length: 40 })
   postalCode: string;
 
-  @Column({ type: 'varchar', length: 40 })
+  @Column({ type: 'varchar', length: 255 })
   address: string;
 
-  @Column({ type: 'varchar', length: 40 })
+  @Column({ type: 'varchar', length: 255 })
   emailInfomation: string;
 
-  @Column({ type: 'varchar', length: 20 })
+  @Column({ type: 'varchar', length: 40 })
   phoneInformation: string;
 
-  @Column({ type: 'varchar', length: 100 })
+  @Column({ type: 'varchar', length: 255 })
   website: string;
 
-  @Column({ type: 'varchar', length: 30 })
+  @Column({ type: 'varchar', length: 40 })
   TaxIdentificationNumber: string;
 
-  @Column({ type: 'varchar', length: 40 })
+  @Column({ type: 'varchar', length: 255 })
   industry: string;
 
-  @Column({ type: 'varchar', length: 60 })
+  @Column({ type: 'varchar', length: 255 })
   natureOfBusiness: string;
 
-  @Column({ type: 'varchar', length: 10 })
+  @Column({ type: 'varchar', length: 20 })
   DateOfIncorporation: string;
 
-  @Column({ type: 'varchar', length: 50 })
+  @Column({ type: 'varchar', length: 255 })
   typeOfBusiness: string;
 
-  @Column({ type: 'varchar', length: 40 })
+  @Column({ type: 'varchar', length: 255 })
   isTheApplicant: string;
 
   //Empieza el segundo paso del registro
-  @Column({ type: 'varchar', length: 100 })
+  @Column({ type: 'varchar', length: 255 })
   purposeOfTransactions: string;
 
   //Solo para mxn este campo
-  @Column({ type: 'varchar', length: 30 })
+  @Column({ type: 'varchar', length: 40 })
   bankCodeNumber: string;
 
   @Column({ type: 'varchar', length: 20 })
@@ -81,7 +81,7 @@ export class Register {
   @Column({ type: 'varchar', length: 20 })
   estimatedOfMonthlyTransaction: string;
 
-  @Column({ type: 'varchar', length: 25 })
+  @Column({ type: 'varchar', length: 255 })
   currenciesNeeded: string;
 
   //inicia el paso 3 del registro
@@ -123,16 +123,16 @@ export class Register {
   infoBeneficialOwner: string;
 
   //Start six step of register
-  @Column({ type: 'varchar', length: 20 })
+  @Column({ type: 'varchar', length: 255 })
   nameAuthorizationMonex: string;
 
-  @Column({ type: 'varchar', length: 20 })
+  @Column({ type: 'varchar', length: 255 })
   titlePositionAuthorizationMonex: string;
 
   @Column({ type: 'varchar', length: 20 })
   dateAuthorizationMonex: string;
 
-  @Column({ type: 'varchar', length: 20 })
+  @Column({ type: 'varchar', length: 45 })
   uploadSignatureAuthorizationMonex: string;
 
   @Column({ type: 'int' })

@@ -86,26 +86,6 @@ const validateStep4 = async () => {
   });
 };
 
-let stepp_4_prev = document.getElementById('stepp_4_prev');
-
-stepp_4_prev.addEventListener('click', function () {
-  stepper.goPrevious(); // go next step
-  Progres(3);
-});
-
-let stepp_4 = document.getElementById('stepp_4');
-console.log(stepp_4);
-stepp_4.addEventListener('click', async function () {
-  
-  let isValidStep4 = await validateStep4();
-  if (isValidStep4) {
-    getData();
-    console.log(stepsData);
-    stepper.goNext();
-    Progres(5);
-  }
-});
-
 let usuarioAutorizado2 = document.getElementById('usuarioAutorizado2');
 
 let removeButton = document.getElementById('removeButton');
@@ -129,4 +109,25 @@ removeButton.addEventListener('click', function () {
   validatorStep4.disableValidator('correoElectronico2');
   addButton.style.display = 'block';
   removeButton.style.display = 'none';
+});
+
+let stepp_4_prev = document.getElementById('stepp_4_prev');
+
+stepp_4_prev.addEventListener('click', function () {
+  stepper.goPrevious(); // go next step
+  Progres(3);
+});
+
+let stepp_4 = document.getElementById('stepp_4');
+console.log(stepp_4);
+stepp_4.addEventListener('click', async function () {
+  
+  let isValidStep4 = await validateStep4();
+  console.log(isValidStep4);
+  if (isValidStep4) {
+    getData();
+    console.log(stepsData);
+    stepper.goNext();
+    Progres(5);
+  }
 });
