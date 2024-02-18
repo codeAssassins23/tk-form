@@ -2302,13 +2302,13 @@
                         <!--end::Step 4-->
                         <!--begin::Step 5-->
                         <div class="flex-column m-auto" data-kt-stepper-element="content">
-                          <h2 class="w-100 text-center fs-2x mb-12">
+                          <h2 id="step_five_title" class="w-100 text-center fs-2x mb-12">
                             Socios de la empresa
                           </h2>
                           <!--begin::Input group=-->
                           <div class='mb-8'>
                             <!--begin::Tipo de empresa-->
-                            <p class='form-label'>
+                            <p id="step_five_companyPartners_label" class='form-label'>
                               ¿Cúantos socios tienen el 25% o más de acciones?
                             </p>
                             <!--begin::Row-->
@@ -2366,14 +2366,16 @@
                               </div>
                             </div>
                             <div class="row" id="optionNinguno" style="display: none;">
-                              <p class="fw-bold mt-1 mb-2">Apoderado Legal</p>
-                              <p class="mb-3">Si no hay ningún individuo que posea el 25% o más, indique el mayor
-                                propietario
+                              <p id="step_five_legal_label" class="fw-bold mt-1 mb-2">Apoderado Legal</p>
+                              <p id="step_five_legal_paragraph" class="mb-3">
+                                Si no hay ningún individuo que posea el 25% o más, indique el mayor propietario
                                 individual o una persona de control.</p>
                             </div>
                             <div id="bloque1" style="display: none;">
                               <div class="row mb-5 mt-7" id="textNinguno">
-                                <p class="fw-bold">Datos de socio 1</p>
+                                <p>
+                                  <span id="step_five_partnersInfo_label" class="fw-bold">Datos de socio</span> 1
+                                </p>
                               </div>
                               <div class="row">
                                 <label id="step_five_outUsa_partnersInfo_legalName_2" for='nameOwner'
@@ -2386,7 +2388,7 @@
                                 </div>
                               </div>
                               <div class="row">
-                                <label for='occupation' class='form-label'>
+                                <label id="step_five_outUsa_partnersInfo_position" for='occupation' class='form-label'>
                                   Cargo en la empresa
                                 </label>
                                 <div class='fv-row'>
@@ -2395,7 +2397,8 @@
                                 </div>
                               </div>
                               <div class="row">
-                                <label for='ownership' class='form-label'>
+                                <label id="step_five_outUsa_partnersInfo_ownershipPercentage" for='ownership'
+                                  class='form-label'>
                                   Porcentaje de propiedad
                                 </label>
                                 <div class='fv-row'>
@@ -2404,7 +2407,8 @@
                                 </div>
                               </div>
                               <div class="row">
-                                <label for='dateOfBirth' class='form-label'>
+                                <label id="step_five_outUsa_partnersInfo_birthdate" for='dateOfBirth'
+                                  class='form-label'>
                                   Fecha de nacimiento (MM/DD/YYYY)
                                 </label>
                                 <div class="input-group fv-row">
@@ -2421,7 +2425,8 @@
                               </div>
                               <div class="row">
                                 <div class="col-md-6">
-                                  <label for='addressOwner' class='form-label'>
+                                  <label id="step_five_outUsa_partnersInfo_address" for='addressOwner'
+                                    class='form-label'>
                                     Dirección (ciudad, provincia, país)
                                   </label>
                                   <div class='fv-row'>
@@ -2430,7 +2435,7 @@
                                   </div>
                                 </div>
                                 <div class="col-md-6">
-                                  <label for='emailOwner' class='form-label'>
+                                  <label id="step_five_outUsa_partnersInfo_email" for='emailOwner' class='form-label'>
                                     Correo electrónico
                                   </label>
                                   <div class='fv-row'>
