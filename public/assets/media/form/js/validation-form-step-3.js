@@ -1,33 +1,4 @@
 /* eslint-disable prettier/prettier */
-// Función para verificar el valor del radio seleccionado y mostrar/ocultar el div
-function toggleOtherInput() {
-  // Busca si el radio seleccionado es 'Otra'
-  const isOtherSelected = Array.from(radios).some(radio => radio.checked && radio.value === 'Otra');
-  
-  // Muestra u oculta el div basado en si 'Otra' está seleccionado
-  if (isOtherSelected) {
-    othersMXN.style.display = 'block';
-    validaterStep1.enableValidator("typeOfBusinessOthers");
-  } else {
-    othersMXN.style.display = 'none';
-    validaterStep1.disableValidator("typeOfBusinessOthers");
-  }
-}
-
-// Función para verificar si el checkbox 'Otro' está seleccionado y mostrar/ocultar el div
-function toggleOtherCurrenciesDiv() {
-  // Encuentra el checkbox 'Otro'
-  const otherCheckbox = document.querySelector('input[name="currenciesNeeded"][value="Otro"]');
-  
-  // Muestra u oculta el div basado en si el checkbox 'Otro' está marcado
-  if (otherCheckbox.checked) {
-    currenciesGeneral.style.display = 'block';
-    validatorStep2.enableValidator("currenciesGeneral1");
-  } else {
-    currenciesGeneral.style.display = 'none';
-    validatorStep2.disableValidator("currenciesGeneral1");
-  }
-}
 
 // Init validartion 1
 let validatorStep3 = FormValidation.formValidation(form, {
@@ -127,6 +98,32 @@ let validatorStep3 = FormValidation.formValidation(form, {
   },
 });
 
+// Función para verificar el valor del radio seleccionado y mostrar/ocultar el div
+function toggleOtherInput() {
+  const isOtherSelected = Array.from(radios).some(radio => radio.checked && radio.value === 'Otra');
+  
+  if (isOtherSelected) {
+    othersMXN.style.display = 'block';
+    validaterStep1.enableValidator("typeOfBusinessOthers");
+  } else {
+    othersMXN.style.display = 'none';
+    validaterStep1.disableValidator("typeOfBusinessOthers");
+  }
+}
+
+// Función para verificar si el checkbox 'Otro' está seleccionado y mostrar/ocultar el div
+function toggleOtherCurrenciesDiv() {
+  const otherCheckbox = document.querySelector('input[name="currenciesNeeded"][value="Otro"]');
+
+  if (otherCheckbox.checked) {
+    currenciesGeneral.style.display = 'block';
+    validatorStep2.enableValidator("currenciesGeneral1");
+  } else {
+    currenciesGeneral.style.display = 'none';
+    validatorStep2.disableValidator("currenciesGeneral1");
+  }
+}
+
 // Function to validate Step 1
 const validateStep3 = async () => {
   return new Promise((resolve) => {
@@ -156,8 +153,7 @@ $('#paises').on('change', function(e) {
   let currenciesCheckDiv = document.getElementById('currenciesCheckDiv');
   const checkboxes = document.querySelectorAll('input[name="currenciesNeeded"]');
   const radios = document.querySelectorAll('input[name="typeOfBusiness"]');
-  toggleOtherInput();
-  toggleOtherCurrenciesDiv();
+  
   document.getElementById('bienesRaices').style.display = 'none';
   document.getElementById('sinFinesDeLucro').style.display = 'none';
   document.getElementById('cripto').style.display = 'block';
@@ -170,9 +166,12 @@ $('#paises').on('change', function(e) {
 
       // Agrega el evento 'change' a cada checkbox
       checkboxes.forEach(checkbox => checkbox.addEventListener('change', toggleOtherCurrenciesDiv));
-
+      toggleOtherInput();
+      toggleOtherCurrenciesDiv();
       validatorStep2.enableValidator("currenciesNeeded");
 
+
+      currenciesCheckDiv.style.display = 'block';
       mxn.style.display = 'block';
       usd.style.display = 'none';
       
@@ -263,11 +262,12 @@ $('#paises').on('change', function(e) {
       validaterStep1.disableValidator("typeOfBusinessUSD");
 
       document.getElementById('specific').style.display = 'block';
-
+    
       // Agrega el evento 'change' a cada checkbox
       checkboxes.forEach(checkbox => checkbox.addEventListener('change', toggleOtherCurrenciesDiv));
-
+      toggleOtherCurrenciesDiv();
       validatorStep2.enableValidator("currenciesNeeded");
+      currenciesCheckDiv.style.display = 'block';
 
       othersMXN.style.display = 'none';
       validaterStep1.disableValidator("typeOfBusinessOthers");
@@ -301,11 +301,7 @@ $('#paises').on('change', function(e) {
       validatorStep3.enableValidator('identificacionTodosSocios');
       validatorStep3.enableValidator('comprobanteDomicilio');
   }
-  // Aquí puedes añadir lo que desees hacer con el valor seleccionado
-  console.log("País seleccionado: ", valorSeleccionado);
 
-  // Por ejemplo, podrías hacer una solicitud AJAX basada en la selección
-  // o actualizar dinámicamente otros componentes de la UI según la necesidad.
 });
 
 //pay en  pais estados unidos
@@ -395,7 +391,6 @@ let stepp_3 = document.getElementById('stepp_3');
 stepp_3.addEventListener('click', async function () {
   let isValidStep3 = await validateStep3();
   console.log(isValidStep3);
-  console.log("uwu")
   if (isValidStep3) {
     getData();
     console.log(stepsData);
