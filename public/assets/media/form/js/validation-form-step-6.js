@@ -115,7 +115,7 @@ stepp_6.addEventListener('click', function () {
 
       // Selecciona todos los checkboxes marcados que tienen el nombre 'currenciesNeeded'
       var checkedBoxes = document.querySelectorAll('input[name="currenciesNeeded"]:checked');
-
+      
       // Crea un array para almacenar los valores
       var selectedCurrencies = "";
 
@@ -123,6 +123,12 @@ stepp_6.addEventListener('click', function () {
       checkedBoxes.forEach(function(checkbox) {
         selectedCurrencies= selectedCurrencies + (checkbox.value) + ", ";
       });
+
+      console.log(selectedCurrencies, "selectedCurrencies");
+
+      if(selectedCurrencies === "" || stepsData.currenciesGeneral1 !== undefined){
+        selectedCurrencies = stepsData.currenciesGeneral1.join(", ") + ", " + selectedCurrencies;
+      }
 
       let bankCodeNumber;
       if(stepsData.bankCodeNumber !== undefined){
@@ -142,7 +148,7 @@ stepp_6.addEventListener('click', function () {
           addressBank: stepsData.addressBank,
           accountNumber: stepsData.accountNumber,
           routingNumber: stepsData.routingNumber,
-          typeAccount: stepsData.typeAccount, // aún no se añade este campo al backend
+          typeOfAccount: stepsData.typeAccount, // aún no se añade este campo al backend
         });
       } else {
         arrayBankInfo.push({
@@ -150,7 +156,7 @@ stepp_6.addEventListener('click', function () {
           addressBank: "",
           accountNumber: "",
           routingNumber: "",
-          typeAccount: "",
+          typeOfAccount: "",
         });
       }
 

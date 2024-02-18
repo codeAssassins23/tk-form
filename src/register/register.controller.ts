@@ -415,15 +415,14 @@ export class RegisterController {
     @Param('id') id: number,
   ) {
     console.log(createRegisterDto);
-    const idLeads = '10';
-    const idActaConstitutiva = `${idLeads}-ActaConstitutiva.pdf`;
-    const idCedulaIdentificacion = `${idLeads}-CedulaIdentificacion.pdf`;
-    const idActaPoderes = `${idLeads}-actaPoderes.pdf`;
-    const idIdentificacionSociosPersonasAutorizadas = `${idLeads}-IdentificacionSociosPersonasAutorizadas.pdf`;
-    const idComprobanteDomicilio = `${idLeads}-comprobanteDomicilio.pdf`;
-    const idFirma = `${idLeads}-firma.pdf`;
-    const idChequeAnuladoUSD = `${idLeads}-chequeAnulado.pdf`;
-    const idSituacionFiscal = `${idLeads}-sitacionFiscal.pdf`;
+    const idActaConstitutiva = `${id}-ActaConstitutiva.pdf`;
+    const idCedulaIdentificacion = `${id}-CedulaIdentificacion.pdf`;
+    const idActaPoderes = `${id}-actaPoderes.pdf`;
+    const idIdentificacionSociosPersonasAutorizadas = `${id}-IdentificacionSociosPersonasAutorizadas.pdf`;
+    const idComprobanteDomicilio = `${id}-comprobanteDomicilio.pdf`;
+    const idFirma = `${id}-firma.pdf`;
+    const idChequeAnuladoUSD = `${id}-chequeAnulado.pdf`;
+    const idSituacionFiscal = `${id}-sitacionFiscal.pdf`;
 
     const directory = './upload/temp';
     const targetDirectory = './upload/files';
