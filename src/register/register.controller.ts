@@ -51,25 +51,12 @@ export class RegisterController {
   async getLeads(@Req() request: Request) {
     try {
       const leads = await this.registerService.findAllRegisterLeads();
-      console.log(leads, 'leads');
+      console.log(leads.length, 'leads');
       return {
         data: leads,
         recordsTotal: leads.length,
         recordsFiltered: leads.length,
       };
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  //registro de usuario si pasa el formulario inicial, se le redirige a este formulario
-  @Public()
-  @Get('/register/steps/:id')
-  @Render('register/register_stepper')
-  async registerSteps(@Req() request: Request) {
-    try {
-      const user = request['user'];
-      return user;
     } catch (error) {
       console.log(error);
     }
@@ -88,6 +75,18 @@ export class RegisterController {
     }
   }
 
+  //Vista de registros generales
+  @Get('/registerList')
+  @Roles('SuperAdmin')
+  async registerListTable(@Req() request: Request) {
+    try {
+      return { data: [], recordsTotal: 0, recordsFiltered: 0 };
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  //details leads r3gister
   @Get('/details/:id')
   @Roles('SuperAdmin')
   @Render('register/detail_leads')

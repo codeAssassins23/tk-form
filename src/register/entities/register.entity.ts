@@ -94,7 +94,7 @@ export class Register {
   @Column({ type: 'varchar', length: 45 })
   beneficialOwnershipVerificationFile: string;
 
-  @Column({ type: 'varchar', length: 46 })
+  @Column({ type: 'varchar', length: 50 })
   GovernmentIssuedValidPhotoID: string;
 
   @Column({ type: 'varchar', length: 45 })
