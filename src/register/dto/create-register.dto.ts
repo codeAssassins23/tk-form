@@ -313,4 +313,8 @@ export class createRegisterDto {
 
   @Exclude()
   status: string;
+
+  @IsOptional()
+  @IsString()
+  situacionFiscal: string;
 }

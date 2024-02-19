@@ -124,7 +124,6 @@ stepp_6.addEventListener('click', function () {
         selectedCurrencies= selectedCurrencies + (checkbox.value) + ", ";
       });
 
-      console.log(selectedCurrencies, "selectedCurrencies");
 
       if(selectedCurrencies === "" || stepsData.currenciesGeneral1 !== undefined){
         selectedCurrencies = stepsData.currenciesGeneral1.join(", ") + ", " + selectedCurrencies;
@@ -160,8 +159,6 @@ stepp_6.addEventListener('click', function () {
         });
       }
 
-      console.log(arrayBankInfo, "arrayBankInfo");
-
       // Suponiendo que stepsData es un objeto previamente definido con los datos necesarios.
       let arrayinfoAuthorizedUsers = [];
 
@@ -192,8 +189,6 @@ stepp_6.addEventListener('click', function () {
         });
       }
 
-      console.log(arrayinfoAuthorizedUsers, "arrayinfoAuthorizedUsers");
-
       let arrayinfoBeneficialOwner = [];
 
       // Ajusta este número según el máximo esperado o dinamiza la detección del límite.
@@ -207,7 +202,6 @@ stepp_6.addEventListener('click', function () {
         let dateOfBirthKey = `dateOfBirth${i}`;
         let addressOwnerKey = `addressOwner${i}`;
         let emailOwnerKey = `emailOwner${i}`;
-        console.log(stepsData[nameKey], "stepsData[nameKey]");
         // Verifica si existe el beneficiario actual basado en la disponibilidad del nombre.
         if (stepsData[nameKey] !== undefined) {
           // Crea y añade el objeto del beneficiario al arreglo.
@@ -224,9 +218,6 @@ stepp_6.addEventListener('click', function () {
           break;
         }
       }
-
-      // Muestra el arreglo para verificar los datos almacenados
-      console.log(arrayinfoBeneficialOwner, "arrayinfoBeneficialOwner");
 
       let dataSend = {
         fullName : stepsData.fullName,
@@ -273,6 +264,16 @@ stepp_6.addEventListener('click', function () {
         },
         data: dataSend,
       });
+
+      if(response.data === "Success"){
+        window.location.href = "https://tkambio.us/";
+      } else if( response.data === "Error"){
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Algo salió mal!',
+        });
+      }
       console.log(response.data, "response");
     }
 

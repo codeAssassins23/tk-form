@@ -415,13 +415,10 @@ stepp_5_prev.addEventListener('click', function () {
 });
 
 let stepp_5 = document.getElementById('stepp_5');
-console.log(stepp_5);
 stepp_5.addEventListener('click', async function () {
   let isValidStep5 = await validateStep5();
-  console.log(isValidStep5);
   if (isValidStep5) {
     getData();
-    console.log(stepsData);
     stepper.goNext();
     Progres(6);
   }

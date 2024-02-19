@@ -51,7 +51,6 @@ export class RegisterController {
   async getLeads(@Req() request: Request) {
     try {
       const leads = await this.registerService.findAllRegisterLeads();
-      console.log(leads.length, 'leads');
       return {
         data: leads,
         recordsTotal: leads.length,
@@ -97,7 +96,7 @@ export class RegisterController {
         throw new NotFoundException('No se encontraron registros');
       }
       const user = request['user'];
-      return { user: user, lead: lead.leads, leadInfobank: lead.infoBank };
+      return { user: user, lead };
     } catch (error) {
       console.log(error);
     }
@@ -166,9 +165,7 @@ export class RegisterController {
         }),
     )
     file: Express.Multer.File,
-  ) {
-    console.log(file.filename);
-  }
+  ) {}
 
   //recoger files Cédula de identificación fiscal
   @Public()
@@ -199,9 +196,7 @@ export class RegisterController {
         }),
     )
     file: Express.Multer.File,
-  ) {
-    console.log(file.filename);
-  }
+  ) {}
 
   //recoger files Acta de poderes
   @Public()
@@ -232,9 +227,7 @@ export class RegisterController {
         }),
     )
     file: Express.Multer.File,
-  ) {
-    console.log(file.filename);
-  }
+  ) {}
 
   //recoger files Identificación oficial de todos los socios y las personas autorizadas
   @Public()
@@ -268,9 +261,7 @@ export class RegisterController {
         }),
     )
     file: Express.Multer.File,
-  ) {
-    console.log(file.filename);
-  }
+  ) {}
 
   //recoger files Comprobante de domicilio
   @Public()
@@ -301,9 +292,7 @@ export class RegisterController {
         }),
     )
     file: Express.Multer.File,
-  ) {
-    console.log(file.filename);
-  }
+  ) {}
 
   //recoger files firma
   @Public()
@@ -334,9 +323,7 @@ export class RegisterController {
         }),
     )
     file: Express.Multer.File,
-  ) {
-    console.log(file.filename);
-  }
+  ) {}
 
   //recoger files  cheque anulado
   @Public()
@@ -367,9 +354,7 @@ export class RegisterController {
         }),
     )
     file: Express.Multer.File,
-  ) {
-    console.log(file.filename);
-  }
+  ) {}
 
   //recoger files  situacion fiscal
   @Public()
@@ -400,9 +385,7 @@ export class RegisterController {
         }),
     )
     file: Express.Multer.File,
-  ) {
-    console.log(file.filename);
-  }
+  ) {}
 
   //recoger todo los datos del form (post)
   @Public()
@@ -411,48 +394,72 @@ export class RegisterController {
     @Body() createRegisterDto: createRegisterDto,
     @Param('id') id: number,
   ) {
-    console.log(createRegisterDto);
-    const idActaConstitutiva = `${id}-ActaConstitutiva.pdf`;
-    const idCedulaIdentificacion = `${id}-CedulaIdentificacion.pdf`;
-    const idActaPoderes = `${id}-actaPoderes.pdf`;
-    const idIdentificacionSociosPersonasAutorizadas = `${id}-IdentificacionSociosPersonasAutorizadas.pdf`;
-    const idComprobanteDomicilio = `${id}-comprobanteDomicilio.pdf`;
-    const idFirma = `${id}-firma.pdf`;
-    const idChequeAnuladoUSD = `${id}-chequeAnulado.pdf`;
-    const idSituacionFiscal = `${id}-sitacionFiscal.pdf`;
+    try {
+      const idActaConstitutiva = `${id}-ActaConstitutiva.pdf`;
+      const idCedulaIdentificacion = `${id}-CedulaIdentificacion.pdf`;
+      const idActaPoderes = `${id}-actaPoderes.pdf`;
+      const idIdentificacionSociosPersonasAutorizadas = `${id}-IdentificacionSociosPersonasAutorizadas.pdf`;
+      const idComprobanteDomicilio = `${id}-comprobanteDomicilio.pdf`;
+      const idFirma = `${id}-firma.pdf`;
+      const idChequeAnuladoUSD = `${id}-chequeAnulado.pdf`;
+      const idSituacionFiscal = `${id}-sitacionFiscal.pdf`;
 
-    const directory = './upload/temp';
-    const targetDirectory = './upload/files';
+      const directory = './upload/temp';
+      const targetDirectory = './upload/files';
 
-    let names = {
-      idActaConstitutiva,
-      idCedulaIdentificacion,
-      idActaPoderes,
-      idIdentificacionSociosPersonasAutorizadas,
-      idComprobanteDomicilio,
-      idFirma,
-      idChequeAnuladoUSD,
-      idSituacionFiscal,
-    };
+      let names = {
+        idActaConstitutiva,
+        idCedulaIdentificacion,
+        idActaPoderes,
+        idIdentificacionSociosPersonasAutorizadas,
+        idComprobanteDomicilio,
+        idFirma,
+        idChequeAnuladoUSD,
+        idSituacionFiscal,
+      };
 
-    const namesFiles = await this.registerService.findFilesByIdLead(
-      names,
-      directory,
-    );
+      const namesFiles = await this.registerService.findFilesByIdLead(
+        names,
+        directory,
+      );
 
-    console.log(namesFiles, 'namesFiles');
+      await this.registerService.moveFilesByIdLead(
+        namesFiles,
+        directory,
+        targetDirectory,
+      );
 
-    await this.registerService.moveFilesByIdLead(
-      namesFiles,
-      directory,
-      targetDirectory,
-    );
+      function updateNamesWithFoundFiles(names, namesFiles) {
+        const updatedNames = {};
 
-    const register = await this.registerService.createRegisterAll(
-      createRegisterDto,
-      names,
-    );
+        // Itera sobre los archivos encontrados
+        namesFiles.forEach((file) => {
+          // Extrae el ID del archivo del nombre del archivo
+          const fileId = file.split('-')[0]; // Asume que el ID siempre está al inicio seguido de un guion
+          const fileType = file.split('-')[1].split('.')[0]; // Extrae el tipo de archivo basado en el nombre
 
-    return register;
+          // Busca la clave en el objeto `names` que coincide con el tipo de archivo
+          Object.keys(names).forEach((key) => {
+            if (names[key] && names[key].includes(fileType)) {
+              // Actualiza el objeto `updatedNames` con el archivo encontrado
+              updatedNames[key] = file;
+            }
+          });
+        });
+
+        return updatedNames;
+      }
+      // Actualiza el objeto `names` con los archivos realmente encontrados
+      let namesUpdate = updateNamesWithFoundFiles(names, namesFiles);
+      const register = await this.registerService.createRegisterAll(
+        createRegisterDto,
+        namesUpdate,
+      );
+
+      return 'Success';
+    } catch (error) {
+      console.log(error);
+      return 'Error';
+    }
   }
 }

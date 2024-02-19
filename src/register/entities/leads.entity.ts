@@ -5,13 +5,13 @@ export class Leads {
   @PrimaryGeneratedColumn()
   idLead: number;
 
-  @Column({ type: 'varchar', length: 40 })
+  @Column({ type: 'varchar', length: 255 })
   fullName: string;
 
-  @Column({ type: 'varchar', length: 30 })
+  @Column({ type: 'varchar', length: 255 })
   email: string;
 
-  @Column({ type: 'varchar', length: 40 })
+  @Column({ type: 'varchar', length: 255 })
   corporate: string;
 
   @Column({ type: 'varchar', length: 20 })

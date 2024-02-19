@@ -81,13 +81,10 @@ stepp_2_prev.addEventListener('click', function () {
 });
 
 let stepp_2 = document.getElementById('stepp_2');
-console.log(stepp_2);
 stepp_2.addEventListener('click', async function () {
   let isValidStep2 = await validateStep2();
-  console.log(isValidStep2);
   if (isValidStep2) {
     getData();
-    console.log(stepsData);
     stepper.goNext();
     Progres(3);
   }

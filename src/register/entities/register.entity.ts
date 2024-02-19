@@ -85,20 +85,23 @@ export class Register {
   currenciesNeeded: string;
 
   //inicia el paso 3 del registro
-  @Column({ type: 'varchar', length: 45 })
+  @Column({ type: 'varchar', length: 45, nullable: true })
   companyRegistrationFile: string;
 
-  @Column({ type: 'varchar', length: 45 })
+  @Column({ type: 'varchar', length: 45, nullable: true })
   TaxIdentificationVerificationFile: string;
 
-  @Column({ type: 'varchar', length: 45 })
+  @Column({ type: 'varchar', length: 45, nullable: true })
   beneficialOwnershipVerificationFile: string;
 
   @Column({ type: 'varchar', length: 50, nullable: true })
   GovernmentIssuedValidPhotoID: string;
 
-  @Column({ type: 'varchar', length: 45 })
+  @Column({ type: 'varchar', length: 45, nullable: true })
   proofOfAddressFile: string;
+
+  @Column({ type: 'varchar', length: 45, nullable: true })
+  situacionFiscal: string;
 
   //Empieza el tercer paso del registro para usd
   //Prueba de campos para USD
@@ -132,7 +135,7 @@ export class Register {
   @Column({ type: 'varchar', length: 20 })
   dateAuthorizationMonex: string;
 
-  @Column({ type: 'varchar', length: 45 })
+  @Column({ type: 'varchar', length: 45, nullable: true })
   uploadSignatureAuthorizationMonex: string;
 
   @Column({ type: 'int' })

@@ -374,7 +374,6 @@ submitButton.addEventListener('click', async function (e) {
     e.preventDefault();
     idLead = response.data;
     initializeDropzone(idLead);
-    console.log(idLead, 'idlead button');
     form1.classList.add('d-none');
     formStepps.classList.remove('d-none');
     formStepps.classList.add('d-block');

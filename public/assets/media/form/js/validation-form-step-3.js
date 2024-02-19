@@ -390,10 +390,8 @@ let stepp_3 = document.getElementById('stepp_3');
 
 stepp_3.addEventListener('click', async function () {
   let isValidStep3 = await validateStep3();
-  console.log(isValidStep3);
   if (isValidStep3) {
     getData();
-    console.log(stepsData);
     stepper.goNext();
     Progres(4);
   }

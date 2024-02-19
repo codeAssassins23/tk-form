@@ -7,7 +7,6 @@ $(document).ready(function () {
     $('#state').append(new Option(estado.nombre, estado.nombre));
   });
 
-  estado.select2();
 });
 
 $('#state').on('change', function () {

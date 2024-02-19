@@ -58,6 +58,10 @@ async function bootstrap() {
     }
   });
 
+  hbs.registerHelper('isNotNull', function (value, options) {
+    return value !== null ? options.fn(this) : options.inverse(this);
+  });
+
   hbs.registerHelper('ifNotEqualsAny', function (value, options) {
     const knownValues = [
       'Individual/Propietario Único o LLC de un solo miembro',

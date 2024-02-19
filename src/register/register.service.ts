@@ -28,14 +28,25 @@ export class RegisterService {
     register.country = createRegisterDto.country;
     register.status = '1';
     const save = await this.leadsRepository.save(register);
-    console.log(save, 'save');
     return save.idLead;
   }
 
   async findAllRegisterLeads(): Promise<Leads[]> {
-    return this.leadsRepository.find({
+    const leads = await this.leadsRepository.find({
       where: { status: '1' },
     });
+
+    leads.forEach((lead) => {
+      if (lead.country === 'usd') {
+        lead.country = 'Estados Unidos';
+      } else if (lead.country === 'mxn') {
+        lead.country = 'México';
+      } else if (lead.country === 'word') {
+        lead.country = 'Canada';
+      }
+    });
+
+    return leads;
   }
 
   //registers
@@ -43,83 +54,92 @@ export class RegisterService {
     createRegisterDto: any,
     names: any,
   ): Promise<Register> {
-    const register: Register = new Register();
-    register.fullName = createRegisterDto.fullName;
-    register.email = createRegisterDto.email;
-    register.corporate = createRegisterDto.corporate;
-    register.phone = createRegisterDto.phone;
-    register.country = createRegisterDto.country;
-    register.corporateName = createRegisterDto.corporateName;
-    register.tradeNameOfDBA = createRegisterDto.tradeNameOfDBA;
-    register.state = createRegisterDto.state;
-    register.city = createRegisterDto.city;
-    register.postalCode = createRegisterDto.postalCode;
-    register.address = createRegisterDto.address;
-    register.emailInfomation = createRegisterDto.emailInfomation;
-    register.phoneInformation = createRegisterDto.phoneInformation;
-    register.website = createRegisterDto.website;
-    register.TaxIdentificationNumber =
-      createRegisterDto.TaxIdentificationNumber;
-    register.industry = createRegisterDto.industry;
-    register.natureOfBusiness = createRegisterDto.natureOfBusiness;
-    register.DateOfIncorporation = createRegisterDto.DateOfIncorporation;
-    register.typeOfBusiness = createRegisterDto.typeOfBusiness;
-    register.isTheApplicant = createRegisterDto.isTheApplicant;
-    //step 2
-    register.purposeOfTransactions = createRegisterDto.purposeOfTransactions;
-    register.bankCodeNumber = createRegisterDto.bankCodeNumber;
-    register.estimatedTradeAmount = createRegisterDto.estimatedTradeAmount;
-    register.estimatedOfMonthlyTransaction =
-      createRegisterDto.estimatedOfMonthlyTransaction;
-    register.currenciesNeeded = createRegisterDto.currenciesNeeded;
-    //paso 3
-    register.companyRegistrationFile = names.idActaConstitutiva;
-    register.TaxIdentificationVerificationFile = names.idCedulaIdentificacion;
-    register.beneficialOwnershipVerificationFile = names.idActaPoderes;
-    register.GovernmentIssuedValidPhotoID =
-      names.idIdentificacionSociosPersonasAutorizadas;
-    register.proofOfAddressFile = names.idComprobanteDomicilio;
-    //paso 3 para USD
-    register.preferredMethodOfFunding =
-      createRegisterDto.preferredMethodOfFunding;
-    register.infoBank = createRegisterDto.infoBank;
+    try {
+      const register: Register = new Register();
+      register.fullName = createRegisterDto.fullName;
+      register.email = createRegisterDto.email;
+      register.corporate = createRegisterDto.corporate;
+      register.phone = createRegisterDto.phone;
+      register.country = createRegisterDto.country;
+      register.corporateName = createRegisterDto.corporateName;
+      register.tradeNameOfDBA = createRegisterDto.tradeNameOfDBA;
+      register.state = createRegisterDto.state;
+      register.city = createRegisterDto.city;
+      register.postalCode = createRegisterDto.postalCode;
+      register.address = createRegisterDto.address;
+      register.emailInfomation = createRegisterDto.emailInfomation;
+      register.phoneInformation = createRegisterDto.phoneInformation;
+      register.website = createRegisterDto.website;
+      register.TaxIdentificationNumber =
+        createRegisterDto.TaxIdentificationNumber;
+      register.industry = createRegisterDto.industry;
+      register.natureOfBusiness = createRegisterDto.natureOfBusiness;
+      register.DateOfIncorporation = createRegisterDto.DateOfIncorporation;
+      register.typeOfBusiness = createRegisterDto.typeOfBusiness;
+      register.isTheApplicant = createRegisterDto.isTheApplicant;
+      //step 2
+      register.purposeOfTransactions = createRegisterDto.purposeOfTransactions;
+      register.bankCodeNumber = createRegisterDto.bankCodeNumber;
+      register.estimatedTradeAmount = createRegisterDto.estimatedTradeAmount;
+      register.estimatedOfMonthlyTransaction =
+        createRegisterDto.estimatedOfMonthlyTransaction;
+      register.currenciesNeeded = createRegisterDto.currenciesNeeded;
+      //paso 3
+      register.companyRegistrationFile = names.idActaConstitutiva;
+      register.TaxIdentificationVerificationFile = names.idCedulaIdentificacion;
+      register.beneficialOwnershipVerificationFile = names.idActaPoderes;
+      register.GovernmentIssuedValidPhotoID =
+        names.idIdentificacionSociosPersonasAutorizadas;
+      register.proofOfAddressFile = names.idComprobanteDomicilio;
+      //paso 3 para USD
+      register.preferredMethodOfFunding =
+        createRegisterDto.preferredMethodOfFunding;
+      register.infoBank = createRegisterDto.infoBank;
 
-    //step 4
-    register.infoAuthorizedUsers = createRegisterDto.infoAuthorizedUsers;
-    //step 5
-    register.ManyShouldersOwn25Percent =
-      createRegisterDto.ManyShouldersOwn25Percent;
-    register.infoBeneficialOwner = createRegisterDto.infoBeneficialOwner;
-    //step 6
-    register.nameAuthorizationMonex = createRegisterDto.nameAuthorizationMonex;
-    register.titlePositionAuthorizationMonex =
-      createRegisterDto.titlePositionAuthorizationMonex;
-    register.dateAuthorizationMonex = createRegisterDto.dateAuthorizationMonex;
-    register.uploadSignatureAuthorizationMonex = names.idFirma;
-    register.idLead = createRegisterDto.idLead;
+      //step 4
+      register.infoAuthorizedUsers = createRegisterDto.infoAuthorizedUsers;
+      //step 5
+      register.ManyShouldersOwn25Percent =
+        createRegisterDto.ManyShouldersOwn25Percent;
+      register.infoBeneficialOwner = createRegisterDto.infoBeneficialOwner;
+      //step 6
+      register.nameAuthorizationMonex =
+        createRegisterDto.nameAuthorizationMonex;
+      register.titlePositionAuthorizationMonex =
+        createRegisterDto.titlePositionAuthorizationMonex;
+      register.dateAuthorizationMonex =
+        createRegisterDto.dateAuthorizationMonex;
+      register.uploadSignatureAuthorizationMonex = names.idFirma;
+      register.idLead = createRegisterDto.idLead;
+      register.chequeAnulado = names.idChequeAnuladoUSD;
+      register.situacionFiscal = names.idSituacionFiscal;
 
-    register.status = '1';
-    const save = await this.registerRepository.save(register);
-    console.log(save, 'save');
+      register.status = '1';
+      const save = await this.registerRepository.save(register);
 
-    return save;
+      return save;
+    } catch (error) {
+      console.log(error, 'createRegisterAll');
+    }
   }
 
   async findRegisterById(id: number): Promise<any> {
     try {
-      let infoBank = [];
       let leads = await this.registerRepository.find({
         where: { idLead: id },
       });
 
-      leads.forEach((lead) => {
-        if (lead.infoBank) {
-          lead.infoBank = lead.infoBank[0];
-          console.log(lead.infoBank);
-        }
-      });
-      console.log(leads, 'leads');
-      return { leads, infoBank };
+      let lead = leads[0];
+
+      if (lead.country === 'usd') {
+        lead.country = 'Estados Unidos';
+      } else if (lead.country === 'mxn') {
+        lead.country = 'México';
+      } else if (lead.country === 'word') {
+        lead.country = 'Canada';
+      }
+
+      return lead;
     } catch (error) {
       console.log(error, 'findRegisterById');
     }
@@ -131,13 +151,10 @@ export class RegisterService {
   ): Promise<string[]> {
     try {
       const files = await this.readdir(directory);
-      console.log(files, 'files');
       const namesValues = Object.values(namesFiles);
-      console.log(namesValues);
       const filteredFiles = files.filter((file) =>
         namesValues.some((name) => file.startsWith(name)),
       );
-      console.log(filteredFiles, 'filteredFiles');
       return filteredFiles;
     } catch (error) {
       throw new Error(`Error al leer el directorio: ${error.message}`);

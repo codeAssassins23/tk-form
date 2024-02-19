@@ -40,20 +40,19 @@
                             <!--begin::Content container-->
                             <div id="kt_app_content_container" class="app-container container-fluid " >
                                 <!--begin::Content-->
-                                 {{#each lead}}
                                     <div class="d-flex flex-row bg-primary justify-content-start alignt-items-center mb-2">
                                         <p class="fs-1 text-light mt-3 mb-3 ms-2 fw-bold">A. DATOS DE LA EMPRESA</p>
                                     </div>
                                     <div class="row mb-2">
                                         <div class="col-md-6">
                                             <div class="form-floating">
-                                                <input type="text" value="{{corporateName}}" class="form-control" id="floatingInput"/>
+                                                <input type="text" value="{{lead.corporateName}}" class="form-control" id="floatingInput"/>
                                                 <label for="floatingInput">Nombre de la empresa</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-floating">
-                                                <input type="text" value="{{tradeNameOfDBA}}" class="form-control" id="floatingInput"/>
+                                                <input type="text" value="{{lead.tradeNameOfDBA}}" class="form-control" id="floatingInput"/>
                                                 <label for="floatingInput">Nombre comercial</label>
                                             </div>
                                         </div>
@@ -61,13 +60,13 @@
                                     <div class="row mb-2">
                                         <div class="col-md-6">
                                             <div class="form-floating">
-                                                <input type="text" value="{{address}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <input type="text" value="{{lead.address}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
                                                 <label for="floatingInput">Direccion</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-floating">
-                                                <input type="text" value="{{city}}, {{state}}, {{country}}, {{postalCode}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <input type="text" value="{{lead.city}}, {{lead.state}}, {{lead.country}}, {{lead.postalCode}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
                                                 <label for="floatingInput">Ciudad, Provincia/Estado, País y Código Postal</label>
                                             </div>
                                         </div>
@@ -75,19 +74,19 @@
                                     <div class="row mb-2">
                                         <div class="col-md-4">
                                             <div class="form-floating">
-                                                <input type="text" value="{{emailInfomation}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <input type="text" value="{{lead.emailInfomation}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
                                                 <label for="floatingInput">Correo Electronico (Para confirmación de transacciones)</label>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-floating">
-                                                <input type="text" value="{{phoneInformation}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <input type="text" value="{{lead.phoneInformation}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
                                                 <label for="floatingInput">Teléfono</label>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-floating">
-                                                <input type="text" value="{{website}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <input type="text" value="{{lead.website}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
                                                 <label for="floatingInput">Sitio Web</label>
                                             </div>
                                         </div>
@@ -95,13 +94,13 @@
                                     <div class="row mb-2">
                                         <div class="col-md-6">
                                             <div class="form-floating">
-                                                <input type="text" value="{{TaxIdentificationNumber}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <input type="text" value="{{lead.TaxIdentificationNumber}}" class="form-control" id="floatingInput"/>
                                                 <label for="floatingInput">Número de identificación fiscal</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-floating">
-                                                <input type="text" value="{{DateOfIncorporation}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <input type="text" value="{{lead.DateOfIncorporation}}" class="form-control" id="floatingInput"/>
                                                 <label for="floatingInput">Fecha de formación</label>
                                             </div>
                                         </div>
@@ -112,13 +111,13 @@
                                     <div class="row mb-2">
                                         <div class="col-md-3">
                                             <div class="form-check mb-4">
-                                                <input class="form-check-input" type="radio" value="Individual/Propietario Único o LLC de un solo miembro" id="tipoEmpresa1" name="tipoEmpresa" {{#ifCond typeOfBusiness '==' 'Individual/Propietario Único o LLC de un solo miembro'}}checked{{/ifCond}}>
+                                                <input class="form-check-input" type="radio" value="Individual/Propietario Único o LLC de un solo miembro" id="tipoEmpresa1" name="tipoEmpresa" {{#ifCond lead.typeOfBusiness '==' 'Individual/Propietario Único o LLC de un solo miembro'}}checked{{/ifCond}}>
                                                 <label class="form-check-label" for="tipoEmpresa1">
                                                     Individual/Sole Propietor or Single-Member LLC
                                                 </label>
                                             </div>
                                             <div class="form-check mb-4">
-                                                <input class="form-check-input" type="radio" value="Fideicomiso/Patrimonio" id="tipoEmpresa2" name="tipoEmpresa" {{#ifCond typeOfBusiness '==' 'Fideicomiso/Patrimonio'}}checked{{/ifCond}}>
+                                                <input class="form-check-input" type="radio" value="Fideicomiso/Patrimonio" id="tipoEmpresa2" name="tipoEmpresa" {{#ifCond lead.typeOfBusiness '==' 'Fideicomiso/Patrimonio'}}checked{{/ifCond}}>
                                                 <label class="form-check-label" for="tipoEmpresa2">
                                                     Trust/Estate
                                                 </label>
@@ -138,13 +137,13 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-check mb-4">
-                                                <input class="form-check-input" type="radio" value="Corporación C" id="tipoEmpresa5" name="tipoEmpresa" {{#ifCond typeOfBusiness '==' 'Corporación C'}}checked{{/ifCond}}>
+                                                <input class="form-check-input" type="radio" value="Corporación C" id="tipoEmpresa5" name="tipoEmpresa" {{#ifCond lead.typeOfBusiness '==' 'Corporación C'}}checked{{/ifCond}}>
                                                 <label class="form-check-label" for="tipoEmpresa5">
                                                     C Corporation
                                                 </label>
                                             </div>
                                             <div class="form-check mb-4">
-                                                <input class="form-check-input" type="radio" value="Ninguna opción aplica" id="tipoEmpresa6" name="tipoEmpresa" {{#ifCond typeOfBusiness '==' 'Corporación C'}}checked{{/ifCond}}>
+                                                <input class="form-check-input" type="radio" value="Ninguna opción aplica" id="tipoEmpresa6" name="tipoEmpresa" {{#ifCond lead.typeOfBusiness '==' 'Corporación C'}}checked{{/ifCond}}>
                                                 <label class="form-check-label" for="tipoEmpresa6">
                                                     Not Applicable
                                                 </label>
@@ -164,7 +163,7 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-check mb-4">
-                                                <input class="form-check-input" type="radio" value="Corporación S" id="tipoEmpresa9" name="tipoEmpresa" {{#ifCond typeOfBusiness '==' 'Corporación S'}}checked{{/ifCond}}>
+                                                <input class="form-check-input" type="radio" value="Corporación S" id="tipoEmpresa9" name="tipoEmpresa" {{#ifCond lead.typeOfBusiness '==' 'Corporación S'}}checked{{/ifCond}}>
                                                 <label class="form-check-label" for="tipoEmpresa9">
                                                     S Corporation
                                                 </label>
@@ -176,25 +175,25 @@
                                                 </label>
                                             </div>
                                             <div class="form-check mb-4">
-                                                <input class="form-check-input" type="radio" value="Cooperativa" id="tipoEmpresa11" name="tipoEmpresa" {{#ifCond typeOfBusiness '==' 'Cooperativa'}}checked{{/ifCond}}>
+                                                <input class="form-check-input" type="radio" value="Cooperativa" id="tipoEmpresa11" name="tipoEmpresa" {{#ifCond lead.typeOfBusiness '==' 'Cooperativa'}}checked{{/ifCond}}>
                                                 <label class="form-check-label" for="tipoEmpresa11">
                                                     Cooperative
                                                 </label>
                                             </div>
                                             <div class="form-floating mb-4">
-                                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 50px">{{#ifNotEqualsAny typeOfBusiness}}{{typeOfBusiness}}{{/ifNotEqualsAny}}</textarea>
+                                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 50px">{{#ifNotEqualsAny lead.typeOfBusiness}}{{lead.typeOfBusiness}}{{/ifNotEqualsAny}}</textarea>
                                                 <label for="floatingTextarea2">Otros</label>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-check mb-4">
-                                                <input class="form-check-input" type="radio" value="Asociación" id="tipoEmpresa12" name="tipoEmpresa" {{#ifCond typeOfBusiness '==' 'Asociación'}}checked{{/ifCond}}>
+                                                <input class="form-check-input" type="radio" value="Asociación" id="tipoEmpresa12" name="tipoEmpresa" {{#ifCond lead.typeOfBusiness '==' 'Asociación'}}checked{{/ifCond}}>
                                                 <label class="form-check-label" for="tipoEmpresa12">
                                                     Partnership
                                                 </label>
                                             </div>
                                             <div class="form-check mb-4">
-                                                <input class="form-check-input" type="radio" value="Corporación" id="tipoEmpresa13" name="tipoEmpresa" {{#ifCond typeOfBusiness '==' 'Corporación'}}checked{{/ifCond}}>
+                                                <input class="form-check-input" type="radio" value="Corporación" id="tipoEmpresa13" name="tipoEmpresa" {{#ifCond lead.typeOfBusiness '==' 'Corporación'}}checked{{/ifCond}}>
                                                 <label class="form-check-label" for="tipoEmpresa13">
                                                     Corporation
                                                 </label>
@@ -219,13 +218,13 @@
                                                 </label>
                                             </div>
                                             <div class="form-check form-check-custom form-check-solid form-check-sm mb-2">
-                                                <input class="form-check-input" type="checkbox" value="" id="giroEmpresa2" {{isChecked "Venta de criptomonedas" isTheApplicant}}/>
+                                                <input class="form-check-input" type="checkbox" value="" id="giroEmpresa2" {{isChecked "Venta de criptomonedas" lead.isTheApplicant}}/>
                                                 <label class="form-check-label" for="giroEmpresa2">
                                                     Dealer in Virtual Currency
                                                 </label>
                                             </div>
                                             <div class="form-check form-check-custom form-check-solid form-check-sm mb-2">
-                                                <input class="form-check-input" type="checkbox" value="" id="giroEmpresa3" {{isChecked "Venta de bienes raíces" isTheApplicant}}/>
+                                                <input class="form-check-input" type="checkbox" value="" id="giroEmpresa3" {{isChecked "Venta de bienes raíces" lead.isTheApplicant}}/>
                                                 <label class="form-check-label" for="giroEmpresa3">
                                                     Dealer in Real Estate
                                                 </label>
@@ -233,19 +232,19 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-check form-check-custom form-check-solid form-check-sm mb-2">
-                                                <input class="form-check-input" type="checkbox" value="" id="giroEmpresa4" {{isChecked "Venta de piedras precioass" isTheApplicant}}/>
+                                                <input class="form-check-input" type="checkbox" value="" id="giroEmpresa4" {{isChecked "Venta de piedras precioass" lead.isTheApplicant}}/>
                                                 <label class="form-check-label" for="giroEmpresa4">
                                                     Dealer of Precious Stones
                                                 </label>
                                             </div>
                                             <div class="form-check form-check-custom form-check-solid form-check-sm mb-2">
-                                                <input class="form-check-input" type="checkbox" value="" id="giroEmpresa5" {{isChecked "Relacionado con sustancias controladas" isTheApplicant}}/>
+                                                <input class="form-check-input" type="checkbox" value="" id="giroEmpresa5" {{isChecked "Relacionado con sustancias controladas" lead.isTheApplicant}}/>
                                                 <label class="form-check-label" for="giroEmpresa5">
                                                     Controlled Substances Related
                                                 </label>
                                             </div>
                                             <div class="form-check form-check-custom form-check-solid form-check-sm mb-2">
-                                                <input class="form-check-input" type="checkbox" value="" id="giroEmpresa6" {{isChecked "Institución sin fines de lucro u ONG" isTheApplicant}}/>
+                                                <input class="form-check-input" type="checkbox" value="" id="giroEmpresa6" {{isChecked "Institución sin fines de lucro u ONG" lead.isTheApplicant}}/>
                                                 <label class="form-check-label" for="giroEmpresa6">
                                                     Non-Profit or NGO
                                                 </label>
@@ -259,7 +258,7 @@
                                                 </label>
                                             </div>
                                             <div class="form-check form-check-custom form-check-solid form-check-sm mb-2">
-                                                <input class="form-check-input" type="checkbox" value="" id="giroEmpresa8" {{isChecked "Institución financiera" isTheApplicant}}/>
+                                                <input class="form-check-input" type="checkbox" value="" id="giroEmpresa8" {{isChecked "Institución financiera" lead.isTheApplicant}}/>
                                                 <label class="form-check-label" for="giroEmpresa8">
                                                     Financial Institution
                                                 </label>
@@ -267,13 +266,13 @@
                                         </div>
                                          <div class="col-md-3">
                                             <div class="form-check form-check-custom form-check-solid form-check-sm mb-2">
-                                                <input class="form-check-input" type="checkbox" value="" id="giroEmpresa9" {{isChecked "Venta de armas" isTheApplicant}}/>
+                                                <input class="form-check-input" type="checkbox" value="" id="giroEmpresa9" {{isChecked "Venta de armas" lead.isTheApplicant}}/>
                                                 <label class="form-check-label" for="giroEmpresa9">
                                                     Dealer in Weapoms
                                                 </label>
                                             </div>
                                             <div class="form-check form-check-custom form-check-solid form-check-sm mb-2">
-                                                <input class="form-check-input" type="checkbox" value="" id="giroEmpresa10" {{isChecked "Ninguna opción aplica" isTheApplicant}}/>
+                                                <input class="form-check-input" type="checkbox" value="" id="giroEmpresa10" {{isChecked "Ninguna opción aplica" lead.isTheApplicant}}/>
                                                 <label class="form-check-label" for="giroEmpresa10">
                                                     Not Applicable
                                                 </label>
@@ -286,13 +285,13 @@
                                     <div class="row mb-2">
                                         <div class="col-md-6">
                                             <div class="form-floating">
-                                                <input type="text" value="{{purposeOfTransactions}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <input type="text" value="{{lead.purposeOfTransactions}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
                                                 <label for="floatingInput">Objetivo de las Transacciones</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-floating">
-                                                <input type="text" value="{{estimatedTradeAmount}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <input type="text" value="{{lead.estimatedTradeAmount}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
                                                 <label for="floatingInput">Volumen anual</label>
                                             </div>
                                         </div>
@@ -300,26 +299,26 @@
                                     <div class="row mb-2">
                                         <div class="col-md-4">
                                             <div class="form-floating">
-                                                <input type="text" value="{{bankCodeNumber}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <input type="text" value="{{lead.bankCodeNumber}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
                                                 <label for="floatingInput">Número de cuenta o IBAN</label>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-floating">
-                                                <input type="email" value="{{estimatedOfMonthlyTransaction}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <input type="email" value="{{lead.estimatedOfMonthlyTransaction}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
                                                 <label for="floatingInput">Número Estimado de Transacciones al Mes</label>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-floating">
-                                                <input type="email" value="{{estimatedTradeAmount}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                                <input type="email" value="{{lead.estimatedTradeAmount}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
                                                 <label for="floatingInput">Monto Estimado por Trasacción</label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row mb-2">
                                         <div class="form-floating">
-                                            <input type="email" value="{{currenciesNeeded}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                                            <input type="email" value="{{lead.currenciesNeeded}}" class="form-control" id="floatingInput" placeholder="name@example.com"/>
                                             <label for="floatingInput" class="ms-2">Monedas</label>
                                         </div>
                                     </div>
@@ -332,7 +331,7 @@
                                     <div class="row mb-2">
                                         <div class="col-md-3">
                                             <div class="form-check mb-4">
-                                                <input class="form-check-input" type="radio" value="" id="metodoTransaction1" name="metodoTransaction" {{#ifCond preferredMethodOfFunding '==' 'ACH Débito Directo'}}checked{{/ifCond}}>
+                                                <input class="form-check-input" type="radio" value="" id="metodoTransaction1" name="metodoTransaction" {{#ifCond lead.preferredMethodOfFunding '==' 'ACH Débito Directo'}}checked{{/ifCond}}>
                                                 <label class="form-check-label" for="metodoTransaction1">
                                                     ACH Direct Debit (Please submit voided check)
                                                 </label>
@@ -340,7 +339,7 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-check mb-4">
-                                                <input class="form-check-input" type="radio" value="" id="metodoTransaction2" name="metodoTransaction" {{#ifCond preferredMethodOfFunding '==' 'Cheque'}}checked{{/ifCond}}>
+                                                <input class="form-check-input" type="radio" value="" id="metodoTransaction2" name="metodoTransaction" {{#ifCond lead.preferredMethodOfFunding '==' 'Cheque'}}checked{{/ifCond}}>
                                                 <label class="form-check-label" for="metodoTransaction2">
                                                     Check
                                                 </label>
@@ -348,7 +347,7 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-check mb-4">
-                                                <input class="form-check-input" type="radio" value="" id="metodoTransaction3" name="metodoTransaction" {{#ifCond preferredMethodOfFunding '==' 'Transferencia'}}checked{{/ifCond}}>
+                                                <input class="form-check-input" type="radio" value="" id="metodoTransaction3" name="metodoTransaction" {{#ifCond lead.preferredMethodOfFunding '==' 'Transferencia'}}checked{{/ifCond}}>
                                                 <label class="form-check-label" for="metodoTransaction3">
                                                     Wire
                                                 </label>
@@ -356,23 +355,24 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-check mb-4">
-                                                <input class="form-check-input" type="radio" value="" id="metodoTransaction4" name="metodoTransaction" {{#ifCond preferredMethodOfFunding '==' 'No aplicable'}}checked{{/ifCond}}>
+                                                <input class="form-check-input" type="radio" value="" id="metodoTransaction4" name="metodoTransaction" {{#ifCond lead.preferredMethodOfFunding '==' 'No aplicable'}}checked{{/ifCond}}>
                                                 <label class="form-check-label" for="metodoTransaction4">
                                                     Not Applicable
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
+                                    {{#each lead.infoBank}}
                                     <div class="row mb-2">
                                         <div class="col-md-6">
                                             <div class="form-floating">
-                                                <input type="text" value="{{infoBank.nameBank}}" class="form-control" id="floatingInput"/>
+                                                <input type="text" value="{{nameBank}}" class="form-control" id="floatingInput"/>
                                                 <label for="floatingInput">Nombre del banco</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control" value="{{infoBank.addressBank}}" id="floatingInput"/>
+                                                <input type="text" class="form-control" value="{{addressBank}}" id="floatingInput"/>
                                                 <label for="floatingInput">Dirección del Banco (Ciudad, Estado)</label>
                                             </div>
                                         </div>
@@ -380,13 +380,13 @@
                                     <div class="row mb-2">
                                         <div class="col-md-6">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control" value="{{infoBank.accountNumber}}" id="floatingInput"/>
+                                                <input type="text" class="form-control" value="{{accountNumber}}" id="floatingInput"/>
                                                 <label for="floatingInput">Número de cuenta</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control" value="{{infoBank.routingNumber}}" id="floatingInput"/>
+                                                <input type="text" class="form-control" value="{{routingNumber}}" id="floatingInput"/>
                                                 <label for="floatingInput">Número ABA/Código de enrutamiento</label>
                                             </div>
                                         </div>
@@ -397,7 +397,7 @@
                                     <div class="row mb-2">
                                         <div class="col-md-6">
                                             <div class="form-check mb-4">
-                                                <input class="form-check-input" type="radio" value="" id="typeAccount1" name="typeAccount" {{#ifCond infoBank.typeOfAccount '==' 'Cheques'}}checked{{/ifCond}}>
+                                                <input class="form-check-input" type="radio" value="" id="typeAccount1" name="typeAccount" {{#ifCond typeOfAccount '==' 'Cheques'}}checked{{/ifCond}}>
                                                 <label class="form-check-label" for="typeAccount1">
                                                     Cuenta corriente
                                                 </label>
@@ -405,67 +405,72 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-check mb-4">
-                                                <input class="form-check-input" type="radio" value="" id="typeAccount2" name="typeAccount" {{#ifCond infoBank.typeOfAccount '==' 'Ahorros'}}checked{{/ifCond}}>
+                                                <input class="form-check-input" type="radio" value="" id="typeAccount2" name="typeAccount" {{#ifCond typeOfAccount '==' 'Ahorros'}}checked{{/ifCond}}>
                                                 <label class="form-check-label" for="typeAccount2">
                                                     Cuenta de ahorros
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
+                                    {{/each}}
                                     <div class="d-flex flex-row bg-primary justify-content-start alignt-items-center mb-2">
                                         <p class="fs-1 text-light mt-3 mb-3 ms-2 fw-bold">D. USUARIOS AUTORIZADOS</p>
                                     </div>
+                                    {{#each lead.infoAuthorizedUsers}}
                                     <div class="row mb-2">
                                         <div class="col-md-3">
                                             <div class="form-floating">
-                                                <input type="text" value="{{infoAuthorizedUsers.name}}" class="form-control" id="floatingInput"/>
+                                                <input type="text" value="{{name}}" class="form-control" id="floatingInput"/>
                                                 <label for="floatingInput">Nombre</label>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control" id="floatingInput"/>
+                                                <input type="text" value="{{title}}" class="form-control" id="floatingInput"/>
                                                 <label for="floatingInput">Titulo de la empresa</label>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control" id="floatingInput"/>
+                                                <input type="text" value="{{phone}}" class="form-control" id="floatingInput"/>
                                                 <label for="floatingInput">Teléfono</label>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control" id="floatingInput"/>
+                                                <input type="text" value="{{email}}" class="form-control" id="floatingInput"/>
                                                 <label for="floatingInput">Correo electrónico</label>
                                             </div>
                                         </div>
+                                        <hr class="mt-4 mb-2">
                                     </div>
+                                    {{/each}}
                                     <div class="d-flex flex-row bg-primary justify-content-start alignt-items-center mb-2">
                                         <p class="fs-1 text-light mt-3 mb-3 ms-2 fw-bold">E. SOCIOS</p>
                                     </div>
+                                    {{#each lead.infoBeneficialOwner}}
                                     <div class="row mb-2">
                                         <div class="col-md-3">
                                             <div class="form-floating">
-                                                <input type="email" value="{{infoBeneficialOwner.name}}" class="form-control" id="floatingInput"/>
+                                                <input type="email" value="{{nameOwner}}" class="form-control" id="floatingInput"/>
                                                 <label for="floatingInput">Nombre</label>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-floating">
-                                                <input type="email" class="form-control" id="floatingInput"/>
+                                                <input type="email" value="{{occupation}}" class="form-control" id="floatingInput"/>
                                                 <label for="floatingInput">Ocupación</label>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-floating">
-                                                <input type="email" class="form-control" id="floatingInput"/>
+                                                <input type="email" value="{{ownership}}" class="form-control" id="floatingInput"/>
                                                 <label for="floatingInput">Fecha de nacimiento</label>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-floating">
-                                                <input type="email" class="form-control" id="floatingInput"/>
+                                                <input type="email" value="{{dateOfBirth}}" class="form-control" id="floatingInput"/>
                                                 <label for="floatingInput">% de Propiedad</label>
                                             </div>
                                         </div>
@@ -473,21 +478,23 @@
                                     <div class="row mb-2">
                                         <div class="col-md-6">
                                             <div class="form-floating">
-                                                <input type="email" class="form-control" id="floatingInput"/>
+                                                <input type="email" class="form-control" value="{{addressOwner}}" id="floatingInput"/>
                                                 <label for="floatingInput">Dirección (Ciudad, Provincia, País)</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-floating">
-                                                <input type="email" class="form-control" id="floatingInput"/>
+                                                <input type="email" value="{{emailOwner}}" class="form-control" id="floatingInput"/>
                                                 <label for="floatingInput">Correo electrónico</label>
                                             </div>
                                         </div>
                                     </div>
+                                    <hr class="mt-4 mb-2">
+                                    {{/each}}
                                     <div class="row mb-2">
                                         <div class="col-md-4">
                                             <div class="form-check form-check-custom form-check-solid form-check-sm mb-2">
-                                                <input class="form-check-input" type="checkbox" value="" id="flexRadioLg"/>
+                                                <input class="form-check-input" type="checkbox" value="" id="flexRadioLg" {{#ifCond lead.ManyShouldersOwn25Percent '==' '4'}}checked{{/ifCond}}/>
                                                 <label class="form-check-label" for="flexRadioLg">
                                                     Información de socios restantes en una hoja anexa
                                                 </label>
@@ -495,7 +502,7 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-check form-check-custom form-check-solid form-check-sm mb-2">
-                                                <input class="form-check-input" type="checkbox" value="" id="flexRadioLg"/>
+                                                <input class="form-check-input" type="checkbox" value="" id="flexRadioLg" {{#ifCond lead.ManyShouldersOwn25Percent '==' '5'}}checked{{/ifCond}}/>
                                                 <label class="form-check-label" for="flexRadioLg">
                                                     Ningún Socio posee el 25% o más
                                                 </label>
@@ -503,7 +510,7 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-check form-check-custom form-check-solid form-check-sm mb-2">
-                                                <input class="form-check-input" type="checkbox" value="" id="flexRadioLg"/>
+                                                <input class="form-check-input" type="checkbox" value="" id="flexRadioLg" {{#ifCond lead.ManyShouldersOwn25Percent '==' '1'}}checked{{/ifCond}}/>
                                                 <label class="form-check-label" for="flexRadioLg">
                                                     Ninguna otra Persona posee el 25% o más
                                                 </label>
@@ -516,26 +523,27 @@
                                     <div class="row mb-2">
                                         <div class="col-md-4">
                                             <div class="form-floating">
-                                                <input type="text" value="{{nameAuthorizationMonex}}" class="form-control" id="floatingInput"/>
+                                                <input type="text" value="{{lead.nameAuthorizationMonex}}" class="form-control" id="floatingInput"/>
                                                 <label for="floatingInput">Nombre (Impreso)</label>
                                             </div>
                                         </div>
+                                        
                                         <div class="col-md-4">
                                             <div class="form-floating">
-                                                <input type="text" value="{{titlePositionAuthorizationMonex:}}" class="form-control" id="floatingInput"/>
+                                                <input type="text" value="{{lead.titlePositionAuthorizationMonex}}" class="form-control" id="floatingInput"/>
                                                 <label for="floatingInput">Titulo/Posición en la Empresa</label>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-floating">
-                                                <input type="text" value="{{dateAuthorizationMonex}}" class="form-control" id="floatingInput"/>
+                                                <input type="text" value="{{lead.dateAuthorizationMonex}}" class="form-control" id="floatingInput"/>
                                                 <label for="floatingInput">Fecha (MM/DD/YYYY)</label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row mb-3">
                                         <p class="fw-bold fs-5 mb-2">Firma</p>
-                                        <a href="/download/{{uploadSignatureAuthorizationMonex}}" class="ms-3" target="_blank">
+                                        <a href="/download/{{lead.uploadSignatureAuthorizationMonex}}" class="ms-3" target="_blank">
                                         <i class="ki-outline ki-file-down fs-4x text-primary"></i>
                                         </a>
                                     </div>
@@ -543,40 +551,65 @@
                                         <p class="fs-1 text-light mt-3 mb-3 ms-2 fw-bold">G. DOCUMENTACIÓN REQUERIDA</p>
                                     </div>
                                     <div class="row mb-2">
-                                        <div class="col-md-4">
-                                            <p class="fw-bold fs-5 mb-2 fw-bold">Acta constitutiva o Licencia Comercial</p>
-                                            <a href="/download/{{companyRegistrationFile}}" class="ms-3" target="_blank">
-                                                <i class="ki-outline ki-file-down fs-4x text-primary"></i>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <p class="fw-bold fs-5 mb-2 fw-bold">Acta de poderes</p>
-                                            <a href="/download/{{beneficialOwnershipVerificationFile}}" class="ms-3" target="_blank">
-                                                <i class="ki-outline ki-file-down fs-4x text-primary"></i>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <p class="fw-bold fs-5 mb-2 fw-bold">Identificación oficial de todos los socios y las personas autorizadas</p>
-                                            <a href="/download/{{GovernmentIssuedValidPhotoID}}" class="ms-3" target="_blank">
-                                                <i class="ki-outline ki-file-down fs-4x text-primary"></i>
-                                            </a>
-                                        </div>
+                                        {{#isNotNull lead.companyRegistrationFile}}
+                                            <div class="col-md-4">
+                                                <p class="fw-bold fs-5 mb-2 fw-bold">Acta constitutiva o Licencia Comercial</p>
+                                                <a href="/download/{{lead.companyRegistrationFile}}" class="ms-3" target="_blank">
+                                                    <i class="ki-outline ki-file-down fs-4x text-primary"></i>
+                                                </a>
+                                            </div>
+                                        {{/isNotNull}}
+                                        {{#isNotNull lead.beneficialOwnershipVerificationFile}}
+                                            <div class="col-md-4">
+                                                <p class="fw-bold fs-5 mb-2 fw-bold">Acta de poderes</p>
+                                                <a href="/download/{{lead.beneficialOwnershipVerificationFile}}" class="ms-3" target="_blank">
+                                                    <i class="ki-outline ki-file-down fs-4x text-primary"></i>
+                                                </a>
+                                            </div>
+                                        {{/isNotNull}}
+                                        {{#isNotNull lead.GovernmentIssuedValidPhotoID}}
+                                            <div class="col-md-4">
+                                                <p class="fw-bold fs-5 mb-2 fw-bold">Identificación oficial de todos los socios y las personas autorizadas</p>
+                                                <a href="/download/{{lead.GovernmentIssuedValidPhotoID}}" class="ms-3" target="_blank">
+                                                    <i class="ki-outline ki-file-down fs-4x text-primary"></i>
+                                                </a>
+                                            </div>
+                                        {{/isNotNull}}
                                     </div>
                                     <div class="row mb-2">
-                                        <div class="col-md-4">
-                                            <p class="fw-bold fs-5 mb-2 fw-bold">Cédula de identificación fiscal</p>
-                                            <a href="/download/{{TaxIdentificationVerificationFile}}" class="ms-3" target="_blank">
-                                                <i class="ki-outline ki-file-down fs-4x text-primary"></i>
-                                            </a>
-                                        </div>
+                                        {{#isNotNull lead.TaxIdentificationVerificationFile}}
+                                            <div class="col-md-4">
+                                                <p class="fw-bold fs-5 mb-2 fw-bold">Cédula de identificación fiscal</p>
+                                                <a href="/download/{{lead.TaxIdentificationVerificationFile}}" class="ms-3" target="_blank">
+                                                    <i class="ki-outline ki-file-down fs-4x text-primary"></i>
+                                                </a>
+                                            </div>
+                                        {{/isNotNull}}
+                                        {{#isNotNull lead.proofOfAddressFile}}
                                         <div class="col-md-4">
                                             <p class="fw-bold fs-5 mb-2 fw-bold">Comprobante de domicilio</p>
-                                            <a href="/download/{{proofOfAddressFile}}" class="ms-3" target="_blank">
+                                            <a href="/download/{{lead.proofOfAddressFile}}" class="ms-3" target="_blank">
                                                 <i class="ki-outline ki-file-down fs-4x text-primary"></i>
                                             </a>
                                         </div>
+                                        {{/isNotNull}}
+                                        {{#isNotNull lead.chequeAnulado}}
+                                            <div class="col-md-4">
+                                                <p class="fw-bold fs-5 mb-2 fw-bold">Cheque Anulado</p>
+                                                <a href="/download/{{lead.chequeAnulado}}" class="ms-3" target="_blank">
+                                                    <i class="ki-outline ki-file-down fs-4x text-primary"></i>
+                                                </a>
+                                            </div>
+                                        {{/isNotNull}}
+                                        {{#isNotNull lead.situacionFiscal}}
+                                            <div class="col-md-4">
+                                                <p class="fw-bold fs-5 mb-2 fw-bold">Situación Fiscal</p>
+                                                <a href="/download/{{lead.situacionFiscal}}" class="ms-3" target="_blank">
+                                                    <i class="ki-outline ki-file-down fs-4x text-primary"></i>
+                                                </a>
+                                            </div>
+                                        {{/isNotNull}}
                                     </div>
-                                 {{/each}}
                                 <!--end::Content-->
                             </div>
                             <!--end::Content container-->

@@ -207,7 +207,6 @@ stepp_1.addEventListener('click', async function () {
     stepsData.phone = document.getElementById('telefono').value;
     stepsData.country = document.getElementById('paises').value;
     getData();
-    console.log(stepsData);
     stepper.goNext();
     Progres(2);
   }
