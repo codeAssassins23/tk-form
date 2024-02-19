@@ -924,7 +924,9 @@
                               <input class="form-check-input" type="checkbox" value="Venta de bienes raíces"
                                 name="isTheApplicant" />
                               <div class="form-check-label">
-                                Venta de bienes raíces
+                                <span id="step_one_businessSectors_usa_te3">
+                                  Venta de bienes raíces
+                                </span>
                               </div>
                             </div>
                           </label>
@@ -935,7 +937,9 @@
                               <input class="form-check-input" type="checkbox"
                                 value="Institución sin fines de lucro u ONG" name="isTheApplicant" />
                               <div class="form-check-label">
-                                Institución sin fines de lucro u ONG
+                                <span id="step_one_businessSectors_usa_te4">
+                                  Institución sin fines de lucro u ONG
+                                </span>
                               </div>
                             </div>
                           </label>
@@ -1505,7 +1509,7 @@
                       <div id="groupInfoBankPay" style="display: none;">
                         <div class="row">
                           <div class="col-md-6">
-                            <label id="step_three_usa_bankName_1" for='nameBank' class='form-label'>
+                            <label id="step_three_usa_bankName" for='nameBank' class='form-label'>
                               Nombre del banco
                             </label>
                             <div class='fv-row'>
@@ -1514,7 +1518,7 @@
                             </div>
                           </div>
                           <div class="col-md-6">
-                            <label id="step_three_usa_bankDirection_1" for='addressBank' class='form-label'>
+                            <label id="step_three_usa_bankDirection" for='addressBank' class='form-label'>
                               Dirección del banco (ciudad, estado)
                             </label>
                             <div class='fv-row'>
@@ -1525,7 +1529,7 @@
                         </div>
                         <div class="row">
                           <div class="col-md-6">
-                            <label id="step_three_usa_accountNumber_1" for='accountNumber' class='form-label'>
+                            <label id="step_three_usa_accountNumber" for='accountNumber' class='form-label'>
                               Número de cuenta
                             </label>
                             <div class='fv-row'>
@@ -1534,7 +1538,7 @@
                             </div>
                           </div>
                           <div class="col-md-6">
-                            <label id="step_three_usa_routeCode_1" for='routingNumber' class='form-label'>
+                            <label id="step_three_usa_routeCode" for='routingNumber' class='form-label'>
                               Número ABA/Código de ruta
                             </label>
                             <div class='fv-row'>
@@ -1544,14 +1548,14 @@
                           </div>
                         </div>
                         <div class="row mb-3 mt-5">
-                          <span id="step_three_usa_accountType_title_1" class="fw-bold">Tipo de cuenta</span>
+                          <span id="step_three_usa_accountType_title" class="fw-bold">Tipo de cuenta</span>
                         </div>
                         <div class="mb-4 fv-row row d-flex">
                           <label>
                             <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
                               <input class="form-check-input" type="radio" value="Cheques" name="typeAccount" />
                               <div class="form-check-label">
-                                <span id="step_three_usa_accountType_te1_1">
+                                <span id="step_three_usa_accountType_te1">
                                   Cheques
                                 </span>
                               </div>
@@ -1562,7 +1566,7 @@
                               <input class="form-check-input" type="radio" value="Ahorros" name="typeAccount"
                                 id="text_wow" />
                               <div class="form-check-label">
-                                <span id="step_three_usa_accountType_te2_1">
+                                <span id="step_three_usa_accountType_te2">
                                   Ahorros
                                 </span>
                               </div>
@@ -1572,8 +1576,7 @@
                         <!--begin::Input group=-->
                         <div class='mb-4' id="chequeAnulado" style="display: none;">
                           <!--begin::Acta constitutiva o licencia comercial-->
-                          <label id="step_three_usa_voidedCheckFile_label_1" for='correo_electronico'
-                            class='form-label'>
+                          <label id="step_three_usa_voidedCheckFile_label" for='correo_electronico' class='form-label'>
                             Adjuntar cheque anulado
                           </label>
                           <p id="step_three_outUsa_generic_legend_1" class="fs-sm text-gray-500">
@@ -1599,7 +1602,7 @@
                             </div>
                             <!--end::Dropzone-->
                           </div>
-                          <p id="step_three_usa_info_text_1">
+                          <p id="step_three_usa_info_text">
                             Tenga en cuenta que al pagar con los métodos de débito ACH o cheque/cheque por fax, los
                             fondos pueden estar sujetos a un periodo de retención que puede ser evitado pagando por
                             transferencia. Puede discutir sus opciones de pago con su representante de Monex USA.
@@ -1638,24 +1641,25 @@
                   <!--begin::Step 4-->
                   <div class="flex-column m-auto w-100" data-kt-stepper-element="content">
                     <div class="w-100 text-center mb-6">
-                      <h2 class="fs-2x">
+                      <h2 id="step_four_title" class="fs-2x">
                         Usuario autorizados
                       </h2>
-                      <p class="fs-sm text-gray-500">
+                      <p id="step_four_subtitle" class="fs-sm text-gray-500">
                         Enumere hasta 2 usuarios autorizados para realizar transacciones en la plataforma
                       </p>
                     </div>
                     <!--begin::Input group-->
                     <div id="kt_docs_repeater_basic">
                       <div>
-                        <p>Datos del usuario autorizado 1</p>
+                        <p><span id="step_four_authorizedUsers_label_1">Datos del usuario autorizado</span> 1</p>
                         <div data-repeater-item>
                           <div class="form-group col">
                             <div class='row mb-4'>
                               <!--begin::Nombres y apellidos-->
                               <div class='col'>
-                                <label for='nombreApellido' class='form-label'>Nombres y
-                                  apellidos</label>
+                                <label id="step_four_authorizedUsers_name_1" for='nombreApellido' class='form-label'>
+                                  Nombres y apellidos
+                                </label>
                                 <div class='fv-row'>
                                   <input type='text' name='nombreApellido' autocomplete='off' id='nombreApellido'
                                     class='form-control' required />
@@ -1664,7 +1668,7 @@
                               <!--end::Nombres y apellidos-->
                               <!--begin::Cargo en la empresa-->
                               <div class='col'>
-                                <label for='cargoEmpresa' class='form-label'>
+                                <label id="step_four_authorizedUsers_position_1" for='cargoEmpresa' class='form-label'>
                                   Cargo en la empresa
                                 </label>
                                 <div class='fv-row'>
@@ -1677,8 +1681,9 @@
                             <div class='row mb-4'>
                               <!--begin::Teléfono celular-->
                               <div class='col'>
-                                <label for='telefonoCelular' class='form-label'>Teléfono
-                                  celular</label>
+                                <label id="step_four_authorizedUsers_phone_1" for='telefonoCelular' class='form-label'>
+                                  Teléfono celular
+                                </label>
                                 <div class='fv-row'>
                                   <input type='number' name='telefonoCelular' autocomplete='off' id='telefonoCelular'
                                     class='form-control' required />
@@ -1687,7 +1692,8 @@
                               <!--end::Teléfono celular-->
                               <!--begin::Correo electrónico-->
                               <div class='col'>
-                                <label for='correoElectronico' class='form-label'>
+                                <label id="step_four_authorizedUsers_email_1" for='correoElectronico'
+                                  class='form-label'>
                                   Correo electrónico
                                 </label>
                                 <div class='fv-row'>
@@ -1701,14 +1707,15 @@
                         </div>
                       </div>
                       <div id="usuarioAutorizado2" class="d-none">
-                        <p>Datos del usuario autorizado 2</p>
+                        <p><span id="step_four_authorizedUsers_label_2">Datos del usuario autorizado</span> 2</p>
                         <div data-repeater-item>
                           <div class="form-group col">
                             <div class='row mb-4'>
                               <!--begin::Nombres y apellidos-->
                               <div class='col'>
-                                <label for='nombreApellido2' class='form-label'>Nombres y
-                                  apellidos</label>
+                                <label id="step_four_authorizedUsers_name_2" for='nombreApellido2' class='form-label'>
+                                  Nombres y apellidos
+                                </label>
                                 <div class='fv-row'>
                                   <input type='text' name='nombreApellido2' autocomplete='off' id='nombreApellido2'
                                     class='form-control' required />
@@ -1717,7 +1724,7 @@
                               <!--end::Nombres y apellidos-->
                               <!--begin::Cargo en la empresa-->
                               <div class='col'>
-                                <label for='cargoEmpresa2' class='form-label'>
+                                <label id="step_four_authorizedUsers_position_2" for='cargoEmpresa2' class='form-label'>
                                   Cargo en la empresa
                                 </label>
                                 <div class='fv-row'>
@@ -1730,8 +1737,9 @@
                             <div class='row mb-4'>
                               <!--begin::Teléfono celular-->
                               <div class='col'>
-                                <label for='telefonoCelular2' class='form-label'>Teléfono
-                                  celular</label>
+                                <label id="step_four_authorizedUsers_phone_2" for='telefonoCelular2' class='form-label'>
+                                  Teléfono celular
+                                </label>
                                 <div class='fv-row'>
                                   <input type='number' name='telefonoCelular2' autocomplete='off' id='telefonoCelular2'
                                     class='form-control' required />
@@ -1740,7 +1748,8 @@
                               <!--end::Teléfono celular-->
                               <!--begin::Correo electrónico-->
                               <div class='col'>
-                                <label for='correoElectronico2' class='form-label'>
+                                <label id="step_four_authorizedUsers_email_2" for='correoElectronico2'
+                                  class='form-label'>
                                   Correo electrónico
                                 </label>
                                 <div class='fv-row'>
@@ -1756,7 +1765,9 @@
                       <div class="form-group mt-4 mb-8 w-100 d-flex justify-content-end">
                         <a id="addButton" href="javascript:;" data-repeater-create class="btn btn-light-primary">
                           <i class="ki-duotone ki-plus fs-3"></i>
-                          Agregar
+                          <span id="step_four_btn_add">
+                            Agregar
+                          </span>
                         </a>
                         <a id="removeButton" style="display: none;" href="javascript:;" data-repeater-delete
                           class="btn btn-light-danger mt-3">
@@ -1796,13 +1807,13 @@
                   <!--end::Step 4-->
                   <!--begin::Step 5-->
                   <div class="flex-column m-auto" data-kt-stepper-element="content">
-                    <h2 class="w-100 text-center fs-2x mb-12">
+                    <h2 id="step_five_title" class="w-100 text-center fs-2x mb-12">
                       Socios de la empresa
                     </h2>
                     <!--begin::Input group=-->
                     <div class='mb-8'>
                       <!--begin::Tipo de empresa-->
-                      <p class='form-label'>
+                      <p id="step_five_companyPartners_label" class='form-label'>
                         ¿Cúantos socios tienen el 25% o más de acciones?
                       </p>
                       <!--begin::Row-->
@@ -1860,17 +1871,18 @@
                         </div>
                       </div>
                       <div class="row" id="optionNinguno" style="display: none;">
-                        <p class="fw-bold mt-1 mb-2">Apoderado Legal</p>
-                        <p class="mb-3">Si no hay ningún individuo que posea el 25% o más, indique el mayor
-                          propietario
-                          individual o una persona de control.</p>
+                        <p id="step_five_legal_label" class="fw-bold mt-1 mb-2">Apoderado Legal</p>
+                        <p id="step_five_legal_paragraph" class="mb-3">
+                          Si no hay ningún individuo que posea el 25% o más, indique el mayor propietario individual o
+                          una persona de control.
+                        </p>
                       </div>
                       <div id="bloque1" style="display: none;">
                         <div class="row mb-5 mt-7" id="textNinguno">
-                          <p class="fw-bold">Datos de socio 1</p>
+                          <p class="fw-bold"><span id="step_five_partnersInfo_label_1">Datos de socio</span> 1</p>
                         </div>
                         <div class="row">
-                          <label id="step_five_outUsa_partnersInfo_legalName_2" for='nameOwner1' class='form-label'>
+                          <label id="step_five_outUsa_partnersInfo_legalName_1" for='nameOwner1' class='form-label'>
                             Nombre legal (sin abreviaciones)
                           </label>
                           <div class='fv-row'>
@@ -1879,7 +1891,7 @@
                           </div>
                         </div>
                         <div class="row">
-                          <label for='occupation1' class='form-label'>
+                          <label id="step_five_outUsa_partnersInfo_position_1" for='occupation1' class='form-label'>
                             Cargo en la empresa
                           </label>
                           <div class='fv-row'>
@@ -1888,7 +1900,8 @@
                           </div>
                         </div>
                         <div class="row">
-                          <label for='ownership1' class='form-label'>
+                          <label id="step_five_outUsa_partnersInfo_ownershipPercentage_1" for='ownership1'
+                            class='form-label'>
                             Porcentaje de propiedad
                           </label>
                           <div class='fv-row'>
@@ -1897,7 +1910,7 @@
                           </div>
                         </div>
                         <div class="row">
-                          <label for='dateOfBirth1' class='form-label'>
+                          <label id="step_five_outUsa_partnersInfo_birthdate_1" for='dateOfBirth1' class='form-label'>
                             Fecha de nacimiento (MM/DD/YYYY)
                           </label>
                           <div class="input-group fv-row">
@@ -1913,7 +1926,7 @@
                         </div>
                         <div class="row">
                           <div class="col-md-6">
-                            <label for='addressOwner1' class='form-label'>
+                            <label id="step_five_outUsa_partnersInfo_address_1" for='addressOwner1' class='form-label'>
                               Dirección (ciudad, provincia, país)
                             </label>
                             <div class='fv-row'>
@@ -1922,7 +1935,7 @@
                             </div>
                           </div>
                           <div class="col-md-6">
-                            <label for='emailOwner1' class='form-label'>
+                            <label id="step_five_outUsa_partnersInfo_email_1" for='emailOwner1' class='form-label'>
                               Correo electrónico
                             </label>
                             <div class='fv-row'>
@@ -1934,10 +1947,10 @@
                       </div>
                       <div id="bloque2" style="display: none;">
                         <div class="row mb-5 mt-7">
-                          <p class="fw-bold">Datos de socio 2</p>
+                          <p class="fw-bold"><span id="step_five_partnersInfo_label_2">Datos de socio</span> 2</p>
                         </div>
                         <div class="row">
-                          <label id="step_five_outUsa_partnersInfo_legalName_3" for='nameOwner2' class='form-label'>
+                          <label id="step_five_outUsa_partnersInfo_legalName_2" for='nameOwner2' class='form-label'>
                             Nombre legal (sin abreviaciones)
                           </label>
                           <div class='fv-row'>
@@ -1946,7 +1959,7 @@
                           </div>
                         </div>
                         <div class="row">
-                          <label for='occupation2' class='form-label'>
+                          <label id="step_five_outUsa_partnersInfo_position_2" for='occupation2' class='form-label'>
                             Cargo en la empresa
                           </label>
                           <div class='fv-row'>
@@ -1955,7 +1968,8 @@
                           </div>
                         </div>
                         <div class="row">
-                          <label for='ownership2' class='form-label'>
+                          <label id="step_five_outUsa_partnersInfo_ownershipPercentage_2" for='ownership2'
+                            class='form-label'>
                             Porcentaje de propiedad
                           </label>
                           <div class='fv-row'>
@@ -1964,7 +1978,7 @@
                           </div>
                         </div>
                         <div class="row">
-                          <label for='dateOfBirth2' class='form-label'>
+                          <label id="step_five_outUsa_partnersInfo_birthdate_2" for='dateOfBirth2' class='form-label'>
                             Fecha de nacimiento (MM/DD/YYYY)
                           </label>
                           <div class="input-group fv-row">
@@ -1981,16 +1995,16 @@
                         </div>
                         <div class="row">
                           <div class="col-md-6">
-                            <label for='addressOwner2' class='form-label'>
+                            <labe id="step_five_outUsa_partnersInfo_address_2" for='addressOwner2' class='form-label'>
                               Dirección (ciudad, provincia, país)
-                            </label>
-                            <div class='fv-row'>
-                              <input type='text' name='addressOwner2' autocomplete='off' id='dirección_ciudad'
-                                class='form-control' required />
-                            </div>
+                              </label>
+                              <div class='fv-row'>
+                                <input type='text' name='addressOwner2' autocomplete='off' id='dirección_ciudad'
+                                  class='form-control' required />
+                              </div>
                           </div>
                           <div class="col-md-6">
-                            <label for='emailOwner2' class='form-label'>
+                            <label id="step_five_outUsa_partnersInfo_email_2" for='emailOwner2' class='form-label'>
                               Correo electrónico
                             </label>
                             <div class='fv-row'>
@@ -2002,10 +2016,10 @@
                       </div>
                       <div id="bloque3" style="display: none;">
                         <div class="row mb-5 mt-7">
-                          <p class="fw-bold">Datos de socio 3</p>
+                          <p class="fw-bold"><span id="step_five_partnersInfo_label_3">Datos de socio</span> 3</p>
                         </div>
                         <div class="row">
-                          <label id="step_five_outUsa_partnersInfo_legalName_4" for='nameOwner3' class='form-label'>
+                          <label id="step_five_outUsa_partnersInfo_legalName_3" for='nameOwner3' class='form-label'>
                             Nombre legal (sin abreviaciones)
                           </label>
                           <div class='fv-row'>
@@ -2014,7 +2028,7 @@
                           </div>
                         </div>
                         <div class="row">
-                          <label for='occupation3' class='form-label'>
+                          <label id="step_five_outUsa_partnersInfo_position_3" for='occupation3' class='form-label'>
                             Cargo en la empresa
                           </label>
                           <div class='fv-row'>
@@ -2023,7 +2037,8 @@
                           </div>
                         </div>
                         <div class="row">
-                          <label for='ownership3' class='form-label'>
+                          <label id="step_five_outUsa_partnersInfo_ownershipPercentage_3" for='ownership3'
+                            class='form-label'>
                             Porcentaje de propiedad
                           </label>
                           <div class='fv-row'>
@@ -2032,7 +2047,7 @@
                           </div>
                         </div>
                         <div class="row">
-                          <label for='dateOfBirth3' class='form-label'>
+                          <label id="step_five_outUsa_partnersInfo_birthdate_3" for='dateOfBirth3' class='form-label'>
                             Fecha de nacimiento (MM/DD/YYYY)
                           </label>
                           <div class="input-group fv-row">
@@ -2049,7 +2064,7 @@
                         </div>
                         <div class="row">
                           <div class="col-md-6">
-                            <label for='addressOwner3' class='form-label'>
+                            <label id="step_five_outUsa_partnersInfo_address_3" for='addressOwner3' class='form-label'>
                               Dirección (ciudad, provincia, país)
                             </label>
                             <div class='fv-row'>
@@ -2058,7 +2073,7 @@
                             </div>
                           </div>
                           <div class="col-md-6">
-                            <label for='emailOwner3' class='form-label'>
+                            <label id="step_five_outUsa_partnersInfo_email_3" for='emailOwner3' class='form-label'>
                               Correo electrónico
                             </label>
                             <div class='fv-row'>
@@ -2070,10 +2085,10 @@
                       </div>
                       <div id="bloque4" style="display: none;">
                         <div class="row mb-5 mt-7">
-                          <p class="fw-bold">Datos de socio 4</p>
+                          <p class="fw-bold"><span id="step_five_partnersInfo_label_4">Datos de socio</span> 4</p>
                         </div>
                         <div class="row">
-                          <label id="step_five_outUsa_partnersInfo_legalName_5" for='nameOwner4' class='form-label'>
+                          <label id="step_five_outUsa_partnersInfo_legalName_4" for='nameOwner4' class='form-label'>
                             Nombre legal (sin abreviaciones)
                           </label>
                           <div class='fv-row'>
@@ -2082,7 +2097,7 @@
                           </div>
                         </div>
                         <div class="row">
-                          <label for='occupation4' class='form-label'>
+                          <label id="step_five_outUsa_partnersInfo_position_4" for='occupation4' class='form-label'>
                             Cargo en la empresa
                           </label>
                           <div class='fv-row'>
@@ -2091,7 +2106,8 @@
                           </div>
                         </div>
                         <div class="row">
-                          <label for='ownership4' class='form-label'>
+                          <label id="step_five_outUsa_partnersInfo_ownershipPercentage_4" for='ownership4'
+                            class='form-label'>
                             Porcentaje de propiedad
                           </label>
                           <div class='fv-row'>
@@ -2100,7 +2116,7 @@
                           </div>
                         </div>
                         <div class="row">
-                          <label for='dateOfBirth4' class='form-label'>
+                          <label id="step_five_outUsa_partnersInfo_birthdate_4" for='dateOfBirth4' class='form-label'>
                             Fecha de nacimiento (MM/DD/YYYY)
                           </label>
                           <div class="input-group fv-row">
@@ -2117,7 +2133,7 @@
                         </div>
                         <div class="row">
                           <div class="col-md-6">
-                            <label for='addressOwner4' class='form-label'>
+                            <label id="step_five_outUsa_partnersInfo_address_4" for='addressOwner4' class='form-label'>
                               Dirección (ciudad, provincia, país)
                             </label>
                             <div class='fv-row'>
@@ -2126,7 +2142,7 @@
                             </div>
                           </div>
                           <div class="col-md-6">
-                            <label for='emailOwner4' class='form-label'>
+                            <label id="step_five_outUsa_partnersInfo_email_4" for='emailOwner4' class='form-label'>
                               Correo electrónico
                             </label>
                             <div class='fv-row'>
@@ -2169,10 +2185,10 @@
                   <!--begin::Step 6-->
                   <div class="flex-column m-auto" data-kt-stepper-element="content">
                     <div class="w-100 text-center mb-12">
-                      <h2 class="fs-2x">
+                      <h2 id="step_six_title" class="fs-2x">
                         Autorización
                       </h2>
-                      <p class="fs-sm text-gray-500">
+                      <p id="step_six_subTitle" class="fs-sm text-gray-500">
                         El Solicitante autoriza a Monex a abrir una cuenta para operaciones de
                         cambio de moneda extranjera y Transferencias Internacionales.
                       </p>
@@ -2181,7 +2197,7 @@
                     <div class='row mb-4'>
                       <div class="col">
                         <!--begin::Nombre y apellidos-->
-                        <label for='nameAuthorizationMonex' class='form-label'>
+                        <label id="step_six_signatureName" for='nameAuthorizationMonex' class='form-label'>
                           Nombre y apellidos
                         </label>
                         <div class='fv-row'>
@@ -2192,7 +2208,7 @@
                       </div>
                       <div class="col">
                         <!--begin::Titulo/Cargo-->
-                        <label for='titlePositionAuthorizationMonex' class='form-label'>
+                        <label id="step_six_signatureTitle" for='titlePositionAuthorizationMonex' class='form-label'>
                           Titulo/Cargo
                         </label>
                         <div class='fv-row'>
@@ -2206,7 +2222,7 @@
                     <!--begin::Input group=-->
                     <div class='mb-8'>
                       <!--begin::Fecha (MM/DD/YYYY)-->
-                      <label for='dateAuthorizationMonex' class='form-label'>
+                      <label id="step_six_signatureDate" for='dateAuthorizationMonex' class='form-label'>
                         Fecha (MM/DD/YYYY)
                       </label>
                       <div class="input-group">
@@ -2225,15 +2241,15 @@
                     <!--begin::Input group=-->
                     <div class='mb-8'>
                       <!--begin::Sube tu firma-->
-                      <label for='correo_electronico' class='form-label'>
+                      <label id="step_six_signatureFiles_label" for='correo_electronico' class='form-label'>
                         Sube tu firma
                       </label>
-                      <p>
-                        Si no cuenta con una firma digital la puede crear en el siguiente
-                        enlace:
+                      <p id="step_six_signatureFiles_helpInfo">
+                        Si no cuenta con una firma digital la puede crear en el siguiente enlace :
                       </p>
-                      <a href="">Crear firma digital</a>
-                      <p id="step_three_outUsa_generic_legend_4" class="fs-sm text-gray-500">
+                      <a href="https://createmysignature.com"><span id="step_six_signatureFiles_helpInfoLinkText">Crear
+                          firma digital</span></a>
+                      <p id="step_three_outUsa_generic_legend_2" class="fs-sm text-gray-500">
                         Tamaño máximo del archivo es de 7Mb. Los tipos de archivo admitidos .pdf, .jpg y .png.
                       </p>
                       <div class='fv-row mb-4'>
@@ -2245,7 +2261,7 @@
                                 class="path2"></span></i>
                             <!--begin::Info-->
                             <div class="ms-4">
-                              <h3 id="step_three_outUsa_generic_placeholder_3" class="fs-5 fw-bold text-gray-900">
+                              <h3 id="step_three_outUsa_generic_placeholder_1" class="fs-5 fw-bold text-gray-900">
                                 Arrastra o suelta un archivo aquí o has click
                               </h3>
                             </div>
@@ -2255,13 +2271,11 @@
                         </div>
                         <!--end::Dropzone-->
                       </div>
-                      <p>
-                        El solicitante certifica que la información establecida en esta
-                        solicitud
-                        es correcta y completa y que la persona que firma esta solicitud a
-                        continuación tiene plena capacidad legal y facultades suficientes para
-                        comprometer a su representada en los términos del presente contrato, por
-                        lo tanto confirma que:
+                      <p id="step_six_info_text">
+                        El solicitante certifica que la información establecida en esta solicitud es correcta y completa
+                        y que la persona que firma esta solicitud a continuación tiene plena capacidad legal y
+                        facultades suficientes para comprometer a su representada en los términos del presente contrato,
+                        por lo tanto confirma que:
                       </p>
                       <!--end::Sube tu firma-->
                     </div>
@@ -2273,8 +2287,11 @@
                           <div class="form-check form-check-custom form-check-solid form-check-sm my-2">
                             <input class="form-check-input" type="radio" value="1" name="acceptTerms" />
                             <div class="form-check-label">
-                              Ha leído, entendido y acepta la Política de privacidad y el
-                              Acuerdo de usuario de Monex USA.
+                              <span id="step_six_checkPolices_part_one">Ha leído, entendido y acepta la </span><span
+                                id="step_six_checkPolices_policesLink_one"> Política de privacidad</span> <span
+                                id="step_six_checkPolices_part_two">y el</span>
+                              <span id="step_six_checkPolices_policesLink_two">Acuerdo de usuario</span> <span
+                                id="step_six_checkPolices_part_three">de Monex USA.</span>
                             </div>
                           </div>
                         </label>

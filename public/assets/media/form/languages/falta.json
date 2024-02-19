@@ -144,7 +144,10 @@
 
     "step_five_title": "Socios de la empresa",
     "step_five_companyPartners_label": "¿Cúantos socios tienen el 25% o más de acciones?",
-    "step_five_partnersInfo_label": "Datos de socio",
+    "step_five_partnersInfo_label_1": "Datos de socio",
+    "step_five_partnersInfo_label_2": "Datos de socio",
+    "step_five_partnersInfo_label_3": "Datos de socio",
+    "step_five_partnersInfo_label_4": "Datos de socio",
     "step_five_partnersInfo_name": "Nombres y apellidos",
     "step_five_partnersInfo_birthdate": "Fecha de nacimiento (MM/DD/YYYY)",
     "step_five_partnersInfo_ownershipPercentage": "Porcentaje de propiedad",
