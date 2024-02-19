@@ -93,13 +93,11 @@ export class RegisterController {
   async detailsRegisters(@Req() request: Request, @Param('id') id: number) {
     try {
       const lead = await this.registerService.findRegisterById(id);
-      console.log(lead, 'lead');
       if (!lead) {
         throw new NotFoundException('No se encontraron registros');
       }
       const user = request['user'];
-
-      return { user: user, lead: lead };
+      return { user: user, lead: lead.leads, leadInfobank: lead.infoBank };
     } catch (error) {
       console.log(error);
     }

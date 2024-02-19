@@ -105,10 +105,24 @@ export class RegisterService {
     return save;
   }
 
-  async findRegisterById(id: number): Promise<Register[]> {
-    return this.registerRepository.find({
-      where: { idLead: id },
-    });
+  async findRegisterById(id: number): Promise<any> {
+    try {
+      let infoBank = [];
+      let leads = await this.registerRepository.find({
+        where: { idLead: id },
+      });
+
+      leads.forEach((lead) => {
+        if (lead.infoBank) {
+          lead.infoBank = lead.infoBank[0];
+          console.log(lead.infoBank);
+        }
+      });
+      console.log(leads, 'leads');
+      return { leads, infoBank };
+    } catch (error) {
+      console.log(error, 'findRegisterById');
+    }
   }
 
   async findFilesByIdLead(

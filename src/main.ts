@@ -50,6 +50,36 @@ async function bootstrap() {
     }
   });
 
+  hbs.registerHelper('ifCond', function (v1, operator, v2, options) {
+    switch (operator) {
+      case '==':
+        return v1 == v2 ? options.fn(this) : options.inverse(this);
+      // Puedes añadir más operadores aquí si es necesario
+    }
+  });
+
+  hbs.registerHelper('ifNotEqualsAny', function (value, options) {
+    const knownValues = [
+      'Individual/Propietario Único o LLC de un solo miembro',
+      'Fideicomiso/Patrimonio',
+      'Corporación C',
+      'Corporación S',
+      'Cooperativa',
+      'Asociación',
+      'Corporación',
+    ]; // Añade todos los valores conocidos aquí
+    if (!knownValues.includes(value)) {
+      return options.fn(this);
+    } else {
+      return options.inverse(this);
+    }
+  });
+
+  hbs.registerHelper('isChecked', function (value, applicantValues) {
+    const valuesArray = applicantValues.split(', '); // Asegúrate de que el separador coincida con cómo estás separando los valores en la cadena.
+    return valuesArray.includes(value.trim()) ? 'checked' : '';
+  });
+
   app.use(cookieParser());
   app.enableCors({
     origin: 'http://localhost:3200',

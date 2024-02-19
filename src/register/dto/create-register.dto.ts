@@ -256,13 +256,13 @@ export class createRegisterDto {
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => infoBankDto)
-  infoBank: infoBankDto[];
+  infoBank: infoBankDto;
 
   @IsOptional()
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => InfoAuthorizedUsersDto)
-  infoAuthorizedUsers: InfoAuthorizedUsersDto[];
+  infoAuthorizedUsers: InfoAuthorizedUsersDto;
 
   @IsString()
   @MinLength(1, {
@@ -277,7 +277,7 @@ export class createRegisterDto {
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => InfoBeneficialOwnerDto)
-  infoBeneficialOwner: InfoBeneficialOwnerDto[];
+  infoBeneficialOwner: InfoBeneficialOwnerDto;
 
   @IsString()
   @MinLength(1, {

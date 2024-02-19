@@ -94,7 +94,7 @@ export class Register {
   @Column({ type: 'varchar', length: 45 })
   beneficialOwnershipVerificationFile: string;
 
-  @Column({ type: 'varchar', length: 50 })
+  @Column({ type: 'varchar', length: 50, nullable: true })
   GovernmentIssuedValidPhotoID: string;
 
   @Column({ type: 'varchar', length: 45 })
@@ -105,21 +105,21 @@ export class Register {
   @Column({ type: 'varchar', length: 45, nullable: true })
   preferredMethodOfFunding: string;
 
-  @Column({ type: 'varchar', nullable: true })
+  @Column({ type: 'json', nullable: true })
   infoBank: string;
 
   @Column({ type: 'varchar', length: 45, nullable: true })
   chequeAnulado: string;
 
   //start four step of register
-  @Column({ type: 'varchar', nullable: true })
+  @Column({ type: 'json', nullable: true })
   infoAuthorizedUsers: string;
 
   //Start five step of register
   @Column({ type: 'varchar', length: 7 })
   ManyShouldersOwn25Percent: string;
 
-  @Column({ type: 'varchar', nullable: true })
+  @Column({ type: 'json', nullable: true })
   infoBeneficialOwner: string;
 
   //Start six step of register
