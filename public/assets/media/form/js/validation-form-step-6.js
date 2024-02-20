@@ -255,7 +255,7 @@ stepp_6.addEventListener('click', function () {
         dateAuthorizationMonex : document.getElementById('dateAuthorizationMonex').value,
         idLead : idLead,
       }
-      console.log(dataSend, "dataSend");
+      /* console.log(dataSend, "dataSend"); */
       const response = await axios({
         method: 'post',
         url: `/registerAll/${idLead}`,
@@ -274,7 +274,7 @@ stepp_6.addEventListener('click', function () {
           text: 'Algo salió mal!',
         });
       }
-      console.log(response.data, "response");
+      /* console.log(response.data, "response"); */
     }
 
   });

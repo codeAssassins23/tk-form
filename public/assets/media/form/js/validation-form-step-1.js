@@ -168,6 +168,13 @@ let validaterStep1 = FormValidation.formValidation(form, {
         },
       },
     },
+    DateOfIncorporation:{
+      validators: {
+        notEmpty: {
+          message: 'Este campo es obligatorio',
+        },
+      },
+    },
     typeOfBusinessOthers: {
       validators: {
         notEmpty: {
