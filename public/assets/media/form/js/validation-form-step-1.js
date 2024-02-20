@@ -89,7 +89,7 @@ let validaterStep1 = FormValidation.formValidation(form, {
     emailInfomation: {
       validators: {
         regexp: {
-          regexp: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+          regexp: /^[a-zA-Z0-9_.ñÑ+-]+@[a-zA-Z0-9-.ñÑ]+\.[a-zA-Z0-9-.ñÑ]+$/,
           message: 'El contenido no es válido',
         },
         notEmpty: {
@@ -154,21 +154,21 @@ let validaterStep1 = FormValidation.formValidation(form, {
         },
       },
     },
-    country:{
+    country: {
       validators: {
         notEmpty: {
           message: 'Este campo es obligatorio',
         },
       },
     },
-    typeOfBusinessUSD:{
+    typeOfBusinessUSD: {
       validators: {
         notEmpty: {
           message: 'Este campo es obligatorio',
         },
       },
     },
-    DateOfIncorporation:{
+    DateOfIncorporation: {
       validators: {
         notEmpty: {
           message: 'Este campo es obligatorio',

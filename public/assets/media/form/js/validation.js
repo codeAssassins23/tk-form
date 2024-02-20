@@ -280,7 +280,6 @@ function initializeDropzone(idLead) {
   });
 }
 
-
 var idLead;
 
 // Init validartion 1
@@ -289,7 +288,7 @@ let validator1 = FormValidation.formValidation(form1, {
     text_email: {
       validators: {
         regexp: {
-          regexp: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+          regexp: /^[a-zA-Z0-9_.ñÑ+-]+@[a-zA-Z0-9-.ñÑ]+\.[a-zA-Z0-9-.ñÑ]+$/,
           message: 'El contenido no es válido',
         },
         notEmpty: {
