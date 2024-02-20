@@ -238,10 +238,33 @@
 
 					// Handle delete button click
 					detailButtons.forEach((btn) => {
-						btn.addEventListener('click', function (e) {
+						btn.addEventListener('click',async function (e) {
 							e.preventDefault();
-							const idLead = e.target.getAttribute('data-currency-id');
-							window.location.href = `/details/${idLead}`;
+							const idLead = e.currentTarget.getAttribute('data-currency-id');
+							try {
+								const response = await axios.get(`http://localhost:3200/details/${idLead}`);
+								console.log(response);
+								window.location.href = `http://localhost:3200/details/${idLead}`;
+							} catch (error) {
+								// Manejar el error aquí
+								console.error(error);
+								if (error.response && error.response.status === 500) {
+									// Mostrar SweetAlert para errores específicos
+									Swal.fire({
+										icon: 'error',
+										title: 'Oops...',
+										text: 'No hay registros de este lead.',
+										{{!-- footer: '<a href>¿Por qué tengo este problema?</a>' --}}
+									});
+								} else {
+									// Manejar otros tipos de errores o un error genérico
+									Swal.fire({
+										icon: 'error',
+										title: 'Error',
+										text: 'Ocurrió un error inesperado.',
+									});
+								}
+							}
 						});
 					});					
 				}

@@ -7,6 +7,7 @@ import {
   Param,
   ParseFilePipeBuilder,
   Post,
+  Query,
   Render,
   Req,
   Res,
@@ -24,6 +25,7 @@ import { FileInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
 import { Response } from 'express';
 import { join } from 'path';
+import { QueryDto } from './dto/query.dto';
 
 @Controller('/')
 @UseGuards(RolesGuard)
@@ -48,14 +50,29 @@ export class RegisterController {
   //Para la tabla de leads
   @Public()
   @Get('/AllLeads')
-  async getLeads(@Req() request: Request) {
+  async getLeads(@Req() request: Request, @Query() queryParams: any) {
     try {
-      const leads = await this.registerService.findAllRegisterLeads();
-      return {
-        data: leads,
-        recordsTotal: leads.length,
-        recordsFiltered: leads.length,
-      };
+      console.log(queryParams.columns[0].search.value);
+      if (queryParams.columns[0].search.value !== '') {
+        const leads = await this.registerService.findAllRegisterLeadsByEmail(
+          queryParams.columns[0].search.value,
+        );
+        return {
+          data: leads,
+          recordsTotal: 1,
+          recordsFiltered: 1,
+        };
+      } else if (queryParams.columns[0].search.value === '') {
+        const leads = await this.registerService.findAllRegisterLeads(
+          queryParams.start,
+          queryParams.length,
+        );
+        return {
+          data: leads.leads,
+          recordsTotal: leads.total,
+          recordsFiltered: leads.total,
+        };
+      }
     } catch (error) {
       console.log(error);
     }
@@ -91,11 +108,14 @@ export class RegisterController {
   @Render('register/detail_leads')
   async detailsRegisters(@Req() request: Request, @Param('id') id: number) {
     try {
+      const user = request['user'];
       const lead = await this.registerService.findRegisterById(id);
       if (!lead) {
-        throw new NotFoundException('No se encontraron registros');
+        return {
+          message: 'No se encontró el registro con el ID proporcionado',
+          user,
+        };
       }
-      const user = request['user'];
       return { user: user, lead };
     } catch (error) {
       console.log(error);
