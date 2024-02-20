@@ -59,18 +59,18 @@
             "light";
       } document.documentElement.setAttribute("data-bs-theme",
         themeMode);
-    }</script>
+    }
+  </script>
   <!--end::Theme mode setup on page load-->
   <!--begin::Root-->
-  <div class='d-flex flex-column flex-root' id='kt_app_root'>
+  <div class='d-flex flex-lg-column h-100 w-100 p-0 m-0' id='kt_app_root'>
     <!--begin::Authentication - Sign-up -->
-    <div class='d-flex flex-lg-column flex-row h-100 row'>
+    <div class='d-flex flex-lg-column h-lg-100 h-50 w-100 row p-0 m-0'>
       <!--begin::Aside-->
-      <div class='d-flex flex-col col-lg-6 col-sm-12 position-relative z-index-1 h-100'>
-        <img src='/assets/media/form/img/RegistroB.webp' class='position-absolute w-100 h-100 z-index-n1'
-          style="object-fit: cover;" alt='Image backgroud' />
-        <!--begin::Content-->
-        <div class='d-flex flex-column flex-center p-4 position-relative w-100'>
+      <div class='d-flex col-lg-5 col-sm-12 position-relative z-index-1 h-100 p-0 m-0'>
+        <div class="d-flex flex-column flex-center position-relative w-100">
+          <img src='/assets/media/form/img/RegistroB.webp' class='w-100 h-100' style="object-fit: cover;"
+            alt='Image backgroud' />
           <div class="position-absolute">
             <!--begin::Title-->
             <h1 class='text-white fs-4x fw-bolder text-center mb-7'>
@@ -92,13 +92,13 @@
           </div>
         </div>
         <img src='/assets/media/form/img/Registro-Respaldos.webp'
-          class='position-absolute bottom-0 start-50 translate-middle w-75 z-index-1' alt='Image backgroud' />
-        <!--end::Content-->
+          class='position-absolute bottom-0 start-50 translate-middle w-75 z-index-1 d-lg-block d-none'
+          alt='Image backgroud' />
       </div>
       <!--begin::Aside-->
       <!--begin::Body-->
-      <div class='d-flex flex-column col-lg-6 col-sm-12 h-100 my-auto'>
-        <div id="form1" class="my-auto h-auto">
+      <div class='d-flex flex-column col-lg-7 col-sm-12 vh-100 my-auto p-4 m-0 overflow-lg-auto position-relative'>
+        <div id="form1" class="my-auto h-auto w-100">
           <!--begin::Wrapper-->
           <div
             class='bg-body d-flex flex-column flex-center rounded-4 p-10 border border-2 col-xxl-9 col-xl-10 col-sm-11 border-gray-400  m-auto h-100 position-relative m-auto'>
@@ -272,10 +272,10 @@
           <!--end::Sign up-->
         </div>
         <!--end::Body-->
-        <div class="m-auto">
+        <div class="m-auto w-100 p-4">
           <!--begin::Wrapper-->
           <div id="formStepps"
-            class='d-none bg-body d-flex flex-column flex-center rounded-4 p-10 border border-2 col-xxl-10 col-xl-10 col-sm-11 border-gray-400 m-auto'>
+            class='d-none bg-body d-flex flex-column flex-center rounded-4 p-10 border border-2 col-xxl-10 col-xl-10 col-sm-12 border-gray-400 mx-auto'>
             <!--begin::Content-->
             <div class='d-flex flex-center flex-column align-items-stretch'>
               <div class="stepper stepper-pills m-auto" data-kt-stepper="true" id="kt_stepper_example_basic">
@@ -1003,9 +1003,9 @@
                         <input type='text' name='purposeOfTransactions' autocomplete='off' id='purposeOfTransactions'
                           class='form-control' />
                       </div>
-                      <span class="fs-8 badge badge-light-primary text-wrap">
+                      <span class="fs-8 badge badge-light-primary text-wrap d-flex g-4">
                         <i class="ki-outline ki-information-5 text-primary"></i>
-                        <span id="step_two_usa_baged">
+                        <span id="step_two_usa_baged" class="text-start">
                           No indique "Pago por bienes" o "Pago por servicios". (Ejemplos: "Estoy comprando iPads" o
                           "Estoy
                           comprando equipo que se usará para cultivar")
@@ -2331,12 +2331,13 @@
           </div>
           <!--end::Content-->
         </div>
+        <img src='/assets/media/form/img/Registro-Respaldos-Mobile.webp'
+          class='position-absolute mx-auto w-100 h-auto m-0 d-lg-none d-block'
+          style="object-fit: cover; bottom:-610px; left: 0px;" alt='Image backgroud movile' />
         <!--end::Wrapper-->
       </div>
       <!--end::Body-->
     </div>
-  </div>
-  <!--end::Authentication - Sign-up-->
   </div>
   <!--end::Root-->
   <!--begin::Javascript-->
@@ -2365,7 +2366,6 @@
   <script src='/assets/media/form/js/date.js'></script>
   <script src='/assets/media/form/js/repeater.js'></script>
   <script src="/assets/media/form/js/showInputs.js"></script>
-  <script></script>
   <!--end::Custom Javascript-->
   <!--end::Javascript-->
 </body>
