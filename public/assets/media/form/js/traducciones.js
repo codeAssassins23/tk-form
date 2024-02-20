@@ -13,10 +13,12 @@ fetch('/assets/media/form/languages/traducciones.json')
   .then((data) => {
     languageES.addEventListener('click', () => {
       cambiarIdioma('es');
+      fillIndustryEspañol();
     });
 
     languageEN.addEventListener('click', () => {
       cambiarIdioma('en');
+      fillIndustryIngles();
     });
     function cambiarIdioma(idioma) {
       for (let key in data[idioma]) {

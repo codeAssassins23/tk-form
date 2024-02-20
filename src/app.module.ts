@@ -14,6 +14,7 @@ import { TransactionsModule } from './transactions/transactions.module';
 import { PaymentModule } from './payments/payments.module';
 import { RechargueModule } from './rechargue/rechargue.module';
 import { RegisterModule } from './register/register.module';
+import { MailModule } from './mail/email.module';
 
 /* Group different functionalities into one */
 @Module({
@@ -42,6 +43,7 @@ import { RegisterModule } from './register/register.module';
     PaymentModule,
     RechargueModule,
     RegisterModule,
+    MailModule,
   ],
   controllers: [AppController], //Routes that can have this module
   providers: [AppService], //Service that can have this module

@@ -6,6 +6,7 @@ import { Register } from './entities/register.entity';
 import * as util from 'util';
 import * as fs from 'fs';
 import * as path from 'path';
+import { MailService } from 'src/mail/email.service';
 
 @Injectable()
 export class RegisterService {
@@ -15,6 +16,8 @@ export class RegisterService {
 
     @InjectRepository(Register)
     private readonly registerRepository: Repository<Register>,
+
+    private readonly mailService: MailService,
   ) {}
 
   private readonly readdir = util.promisify(fs.readdir);
@@ -28,6 +31,14 @@ export class RegisterService {
     register.country = createRegisterDto.country;
     register.status = '1';
     const save = await this.leadsRepository.save(register);
+
+    /* // Enviar correo de notificación a la dirección específica después de guardar el registro
+    const notificationEmail = 'bravovictorhugo11@gmail.com'; // Definir el correo al que notificar
+    await this.mailService.sendRegistrationNotification(
+      save,
+      notificationEmail,
+    );
+ */
     return save.idLead;
   }
 

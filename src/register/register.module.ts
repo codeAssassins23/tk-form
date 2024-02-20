@@ -4,9 +4,10 @@ import { RegisterService } from './register.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Leads } from './entities/leads.entity';
 import { Register } from './entities/register.entity';
+import { MailModule } from 'src/mail/email.module';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Leads, Register])],
+  imports: [TypeOrmModule.forFeature([Leads, Register]), MailModule],
   controllers: [RegisterController],
   providers: [RegisterService],
   exports: [RegisterService],

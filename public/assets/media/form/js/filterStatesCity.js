@@ -1,6 +1,21 @@
 /* eslint-disable prettier/prettier */
 
-/* eslint-disable prettier/prettier */
+//CAD
+
+function fillEstadoSelectCAD(){
+  provinciasTerritoriosCanada.provinciasTerritorios.forEach(function(estado){
+    $('#state').append(new Option(estado.nombre, estado.nombre));
+  })
+}
+
+function fillCiudadesSelectCAD(estadoSeleccionado){
+  let ciudades = CAD[estadoSeleccionado].ciudades;
+
+  $('#city').empty().append('<option value="">Seleccione una ciudad</option>');
+  ciudades.forEach(function(ciudad){
+    $('#city').append(new Option(ciudad, ciudad));
+  })
+}
 
 //EEUU
 
@@ -10,7 +25,6 @@ function fillEstadoSelectEEUU() {
     $('#state').append(new Option(estado.nombre, estado.nombre)); // Usar el nombre como valor
   });
 }
-
 
 // Función para llenar el select de ciudades basado en el estado seleccionado de EEUU
 function fillCiudadesSelect(estadoSeleccionado) {

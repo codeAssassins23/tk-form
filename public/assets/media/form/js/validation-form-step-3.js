@@ -270,6 +270,14 @@ $('#paises').on('change', function(e) {
       validatorStep3.enableValidator('typeAccount');
       validatorStep3.enableValidator('chequeAnulado');
   } else if (valorSeleccionado === "word"){
+
+      fillEstadoSelectCAD()
+
+      // Manejar el evento de cambio en el select de estados
+      $('#state').on('change', function () {
+        let estadoSeleccionado = $(this).val();
+        fillCiudadesSelectCAD(estadoSeleccionado);
+      });
       mxn.style.display = 'block';
       usd.style.display = 'none';
       typeOfBusinessUSD.style.display = 'none';

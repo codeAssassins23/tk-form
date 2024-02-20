@@ -607,7 +607,7 @@
                       <div class='col'>
                         <label id="step_one_industry" for='industry' class='form-label'>Industria</label>
                         <div class='fv-row'>
-                          <select class='form-select' id='industry' name='industry'
+                          <select class='form-select' id='industry' name='industry' data-control="select2"
                             data-placeholder='Selecciona un opción'>
                             <option>
                             </option>
@@ -2350,11 +2350,13 @@
   <script>
     Inputmask({ "mask": "(999) 999-9999" }).mask("#Telefono");
   </script>
+  <script src='/assets/media/form/js/CAD.js'></script>
   <script src='/assets/media/form/js/MX.js'></script>
   <script src='/assets/media/form/js/USD.js'></script>
   <script src='/assets/media/form/js/filterStatesCity.js'></script>
   <script src="/assets/plugins/custom/formrepeater/formrepeater.bundle.js"></script>
   <script type="module" src="/assets/media/form/js/traducciones.js"></script>
+  <script src='/assets/media/form/js/industry.js'></script>
   <script src='/assets/media/form/js/validation.js'></script>
   <script src='/assets/media/form/js/validation-form-step-1.js'></script>
   <script src='/assets/media/form/js/validation-form-step-2.js'></script>

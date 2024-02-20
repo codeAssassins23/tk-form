@@ -371,6 +371,8 @@ submitButton.addEventListener('click', async function (e) {
       data: res,
     });
 
+    //Crear función para enviar correo
+
     e.preventDefault();
     idLead = response.data;
     initializeDropzone(idLead);
