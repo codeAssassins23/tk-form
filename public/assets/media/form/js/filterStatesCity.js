@@ -1,22 +1,50 @@
 /* eslint-disable prettier/prettier */
 
-import { EstadosMexico, MunicipiosMXN } from '../json/MX.js';
+/* eslint-disable prettier/prettier */
 
-$(document).ready(function () {
+//EEUU
+
+// Función para llenar el select de estados de EEUU
+function fillEstadoSelectEEUU() {
+  estadosEEUU.estados.forEach(function (estado) {
+    $('#state').append(new Option(estado.nombre, estado.nombre)); // Usar el nombre como valor
+  });
+}
+
+
+// Función para llenar el select de ciudades basado en el estado seleccionado de EEUU
+function fillCiudadesSelect(estadoSeleccionado) {
+  // Obtener las ciudades del estado seleccionado
+  let ciudades = EEUU[estadoSeleccionado].ciudades;
+
+  // Limpiar y llenar el select de ciudades
+  $('#city').empty().append('<option value="">Seleccione una ciudad</option>');
+  ciudades.forEach(function (ciudad) {
+    $('#city').append(new Option(ciudad, ciudad)); // Usar el nombre de la ciudad como valor
+  });
+}
+
+//MEXICO
+
+// Función para llenar el select de estados
+function fillEstadoSelect() {
   EstadosMexico.forEach(function (estado) {
-    $('#state').append(new Option(estado.nombre, estado.nombre));
+    $('#state').append(new Option(estado.nombre, estado.id)); // Usar el ID como valor
+  });
+}
+
+// Función para llenar el select de municipios basado en el ID de estado seleccionado
+function fillMunicipioSelect(estado_id) {
+  // Filtrar municipios por estado_id
+  let municipios = MunicipiosMXN.filter(function (municipio) {
+    return municipio.estado_id == estado_id;
   });
 
-});
-
-$('#state').on('change', function () {
-  let value = $(this).val();
-
-  $('#city').empty();
-
-  MunicipiosMXN[value].forEach(function (estado) {
-    $('#city').append(new Option(estado, estado));
+  // Limpiar y llenar el select de ciudades
+  $('#city').empty().append('<option value="">Seleccione una ciudad</option>');
+  municipios.forEach(function (municipio) {
+    $('#city').append(new Option(municipio.nombre, municipio.id)); // Usar el ID como valor
   });
+}
 
-  $('#city').val(null).trigger('change');
-});
+

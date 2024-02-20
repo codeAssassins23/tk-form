@@ -159,6 +159,13 @@ $('#paises').on('change', function(e) {
   document.getElementById('cripto').style.display = 'block';
   document.getElementById('sustanciasControladas').style.display = 'block';
   if (valorSeleccionado === "mxn") {
+      // Llenar el select de estados al cargar la página
+      fillEstadoSelect();
+
+      // Manejar el evento de cambio en el select de estados
+      $('#state').on('change', function () {
+        fillMunicipioSelect($(this).val());
+      });
       // Selecciona todos los inputs de tipo radio con el nombre 'typeOfBusiness'
       document.getElementById('specific').style.display = 'block';
       // Agrega el evento 'change' a cada radio button
@@ -208,6 +215,13 @@ $('#paises').on('change', function(e) {
       validatorStep3.enableValidator('comprobanteDomicilio');
 
   } else if (valorSeleccionado === "usd") {
+      fillEstadoSelectEEUU();
+      // Manejar el evento de cambio en el select de estados
+      $('#state').on('change', function () {
+        let estadoSeleccionado = $(this).val();
+        fillCiudadesSelect(estadoSeleccionado);
+      });
+
       mxn.style.display = 'none';
       usd.style.display = 'block';
       typeOfBusinessUSD.style.display = 'block';
