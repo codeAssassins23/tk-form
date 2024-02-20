@@ -31,9 +31,9 @@ export class RegisterService {
     return save.idLead;
   }
 
-  async findAllRegisterLeads(): Promise<Leads[]> {
+  async findAllRegisterLeadsByEmail(email: string): Promise<any> {
     const leads = await this.leadsRepository.find({
-      where: { status: '1' },
+      where: { status: '1', email: email },
     });
 
     leads.forEach((lead) => {
@@ -47,6 +47,30 @@ export class RegisterService {
     });
 
     return leads;
+  }
+
+  async findAllRegisterLeads(start: number, length: number): Promise<any> {
+    const leads = await this.leadsRepository.find({
+      where: { status: '1' },
+      skip: start, // Cuántos registros se deben saltar
+      take: length, // Cuántos registros se deben tomar
+    });
+
+    const leadsLenght = await this.leadsRepository.find({
+      where: { status: '1' },
+    });
+
+    leads.forEach((lead) => {
+      if (lead.country === 'usd') {
+        lead.country = 'Estados Unidos';
+      } else if (lead.country === 'mxn') {
+        lead.country = 'México';
+      } else if (lead.country === 'word') {
+        lead.country = 'Canada';
+      }
+    });
+
+    return { leads: leads, total: leadsLenght.length };
   }
 
   //registers
