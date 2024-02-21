@@ -168,8 +168,10 @@ $('#paises').on('change', function () {
 
     // Manejar el evento de cambio en el select de estados
     $('#state').on('change', function () {
-      fillMunicipioSelect($(this).val());
+      let estadoSeleccionado = $(this).val();
+      fillMunicipioSelect(estadoSeleccionado);
     });
+    
     // Selecciona todos los inputs de tipo radio con el nombre 'typeOfBusiness'
     document.getElementById('specific').style.display = 'block';
     // Agrega el evento 'change' a cada radio button
