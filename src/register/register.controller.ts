@@ -52,7 +52,6 @@ export class RegisterController {
   @Get('/AllLeads')
   async getLeads(@Req() request: Request, @Query() queryParams: any) {
     try {
-      console.log(queryParams.columns[0].search.value);
       if (queryParams.columns[0].search.value !== '') {
         const leads = await this.registerService.findAllRegisterLeadsByEmail(
           queryParams.columns[0].search.value,
@@ -91,12 +90,31 @@ export class RegisterController {
     }
   }
 
-  //Vista de registros generales
+  //Vista de registros generales tabla
   @Get('/registerList')
   @Roles('SuperAdmin')
-  async registerListTable(@Req() request: Request) {
+  async registerListTable(@Req() request: Request, @Query() queryParams: any) {
     try {
-      return { data: [], recordsTotal: 0, recordsFiltered: 0 };
+      if (queryParams.columns[0].search.value !== '') {
+        const register = await this.registerService.findUserRegisterByEmail(
+          queryParams.columns[0].search.value,
+        );
+        return {
+          data: register,
+          recordsTotal: 1,
+          recordsFiltered: 1,
+        };
+      } else if (queryParams.columns[0].search.value === '') {
+        const register = await this.registerService.findAllRegister(
+          queryParams.start,
+          queryParams.length,
+        );
+        return {
+          data: register.register,
+          recordsTotal: register.total,
+          recordsFiltered: register.total,
+        };
+      }
     } catch (error) {
       console.log(error);
     }

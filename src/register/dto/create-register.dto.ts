@@ -123,10 +123,7 @@ export class createRegisterDto {
   corporateName: string;
 
   @IsString()
-  @MinLength(1, {
-    message: 'El tradeNameOfDBA debe tener al menos 1 caracteres',
-  })
-  @IsNotEmpty({ message: 'El tradeNameOfDBA es requerido' })
+  @IsOptional()
   tradeNameOfDBA: string;
 
   @IsString()

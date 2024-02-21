@@ -48,16 +48,6 @@
 											<input type="text" data-kt-docs-table-filter="searchDeal" class="form-control form-control-solid w-200px ps-15" placeholder="Search"/>
 										</div>
 										<!--end::Search Deal-->
-										<!--begin::Search currencyFlag-->
-										<div class="d-flex align-items-center mx-2">
-											<select class="form-select form-select-solid w-200px ps-5" id="searchCurrency" data-hide-search="true" data-placeholder="Search Currency" data-kt-docs-table-filter="search">
-												<option></option>
-												{{#each currencies}}
-													<option value="{{this.id}}"  data-kt-select2-country="/assets/media/flags/{{this.code}}.svg">{{this.code}}</option>
-												{{/each}}
-											</select>
-										</div>
-										<!--end::Search currencyFlag-->
 									</div>
 									<!--end::Wrapper-->
 									<table id="kt_dataTables_leads" class="table align-middle table-row-dashed fs-6 gy-5">
@@ -153,7 +143,7 @@
 						processing: true,
 						serverSide: true,
 						ajax: {
-							url: "http://localhost:3200/AllLeads",
+							url: "/AllLeads",
 						},
 						columns: [
 							{ data: 'fullName' },
@@ -242,9 +232,9 @@
 							e.preventDefault();
 							const idLead = e.currentTarget.getAttribute('data-currency-id');
 							try {
-								const response = await axios.get(`http://localhost:3200/details/${idLead}`);
+								const response = await axios.get(`/details/${idLead}`);
 								console.log(response);
-								window.location.href = `http://localhost:3200/details/${idLead}`;
+								window.location.href = `/details/${idLead}`;
 							} catch (error) {
 								// Manejar el error aquí
 								console.error(error);

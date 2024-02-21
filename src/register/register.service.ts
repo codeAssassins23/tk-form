@@ -103,6 +103,30 @@ export class RegisterService {
     return { leads: leads, total: leadsLenght.length };
   }
 
+  async findAllRegister(start: number, length: number): Promise<any> {
+    const register = await this.registerRepository.find({
+      where: { status: '1' },
+      skip: start, // Cuántos registros se deben saltar
+      take: length, // Cuántos registros se deben tomar
+    });
+
+    const leadsLenght = await this.registerRepository.find({
+      where: { status: '1' },
+    });
+
+    register.forEach((lead) => {
+      if (lead.country === 'usd') {
+        lead.country = 'Estados Unidos';
+      } else if (lead.country === 'mxn') {
+        lead.country = 'México';
+      } else if (lead.country === 'word') {
+        lead.country = 'Canada';
+      }
+    });
+
+    return { register: register, total: leadsLenght.length };
+  }
+
   //registers
   async createRegisterAll(
     createRegisterDto: any,
