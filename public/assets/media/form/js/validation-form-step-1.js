@@ -89,7 +89,7 @@ let validaterStep1 = FormValidation.formValidation(form, {
     emailInfomation: {
       validators: {
         regexp: {
-          regexp: /^[a-zA-Z0-9_.ñÑ+-]+@[a-zA-Z0-9-.ñÑ]+\.[a-zA-Z0-9-.ñÑ]+$/,
+          regexp: /^[a-zA-Z0-9.ñÑ_%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
           message: 'El contenido no es válido',
         },
         notEmpty: {
@@ -107,7 +107,7 @@ let validaterStep1 = FormValidation.formValidation(form, {
     website: {
       validators: {
         regexp: {
-          regexp: /^[a-zA-Z0-9.-]+.[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+          regexp: /^[a-zA-Z0-9.ñÑ_%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
           message: 'El contenido no es válido',
         },
       },

@@ -27,7 +27,7 @@ let validatorStep4 = FormValidation.formValidation(form, {
     correoElectronico: {
       validators: {
         regexp: {
-          regexp: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+          regexp: /^[a-zA-Z0-9.ñÑ_%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
           message: 'El contenido no es válido',
         },
         notEmpty: {
@@ -59,7 +59,7 @@ let validatorStep4 = FormValidation.formValidation(form, {
     correoElectronico2: {
       validators: {
         regexp: {
-          regexp: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+          regexp: /^[a-zA-Z0-9.ñÑ_%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
           message: 'El contenido no es válido',
         },
         notEmpty: {
@@ -124,7 +124,6 @@ stepp_4_prev.addEventListener('click', function () {
 
 let stepp_4 = document.getElementById('stepp_4');
 stepp_4.addEventListener('click', async function () {
-  
   let isValidStep4 = await validateStep4();
   if (isValidStep4) {
     getData();
