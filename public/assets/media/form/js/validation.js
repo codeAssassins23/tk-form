@@ -350,7 +350,7 @@ submitButton.addEventListener('click', async function (e) {
 
   let form1 = document.getElementById('form1');
 
-  let formStepps = document.getElementById('formStepps');
+  let form2 = document.getElementById('form2');
 
   let res = {
     fullName: nombre_apellidos,
@@ -391,8 +391,8 @@ submitButton.addEventListener('click', async function (e) {
     idLead = response.data;
     initializeDropzone(idLead);
     form1.classList.add('d-none');
-    formStepps.classList.remove('d-none');
-    formStepps.classList.add('d-block');
+    form2.classList.remove('d-none');
+    form2.classList.add('d-block');
   }
 });
 

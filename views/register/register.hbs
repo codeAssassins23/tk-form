@@ -98,7 +98,7 @@
       <!--begin::Aside-->
       <!--begin::Body-->
       <div class='d-flex flex-column col-lg-7 col-sm-12 vh-100 my-auto p-4 m-0 overflow-lg-auto position-relative'>
-        <div id="form1" class="my-auto h-auto w-100">
+        <div id="form1" class="my-auto w-100">
           <!--begin::Wrapper-->
           <div
             class='bg-body d-flex flex-column flex-center rounded-4 p-10 border border-2 col-xxl-9 col-xl-10 col-sm-11 border-gray-400  m-auto h-100 position-relative m-auto'>
@@ -151,7 +151,9 @@
                   <!--begin::Heading-->
                   <div class='text-center mb-11'>
                     <!--begin::Title-->
-                    <img src='/assets/media/logos/Logo-TKambio1.svg' alt='TKambioUS' class='mb-10' />
+                    <a href="https://tkambio.us/" target="_blank">
+                      <img src='/assets/media/logos/Logo-TKambio1.svg' alt='TKambioUS' class='mb-10' />
+                    </a>
                     <!--end::Title-->
                     <!--begin::Subtitle-->
                     <div class='text-gray-700 fw-semibold fs-6'>
@@ -269,13 +271,17 @@
               </button>
             </a>
           </div>
+          <div class="d-flex w-100 mt-4 d-lg-none d-block">
+            <img src='/assets/media/form/img/Registro-Respaldos-Mobile.webp' class='mx-auto w-100 h-auto m-0 '
+              style="object-fit: cover; bottom:-20px; left: 0px;" alt='Image backgroud movile' />
+          </div>
           <!--end::Sign up-->
         </div>
         <!--end::Body-->
-        <div class="m-auto w-100 p-4">
+        <div id="form2" class="m-auto w-100 h-auto p-4 d-none">
           <!--begin::Wrapper-->
           <div id="formStepps"
-            class='d-none bg-body d-flex flex-column flex-center rounded-4 p-10 border border-2 col-xxl-10 col-xl-10 col-sm-12 border-gray-400 mx-auto'>
+            class='bg-body d-flex flex-column flex-center rounded-4 p-10 border border-2 col-xxl-10 col-xl-10 col-sm-12 border-gray-400 mx-auto'>
             <!--begin::Content-->
             <div class='d-flex flex-center flex-column align-items-stretch'>
               <div class="stepper stepper-pills m-auto" data-kt-stepper="true" id="kt_stepper_example_basic">
@@ -453,14 +459,16 @@
                 <!--begin::Heading-->
                 <div class='text-center'>
                   <!--begin::Title-->
-                  <img src='/assets/media/logos/Logo-TKambio1.svg' alt='TKambioUS' class='mb-10' />
+                  <a href="https://tkambio.us/" target="_blank">
+                    <img src='/assets/media/logos/Logo-TKambio1.svg' alt='TKambioUS' class='mb-10' />
+                  </a>
                   <!--end::Title-->
                 </div>
                 <!--begin::Heading-->
                 <!--begin::Form-->
                 <form class='form h-100' novalidate="novalidate" id='kt_sign_up_form'>
                   <!--begin::Step 1-->
-                  <div class="flex-column current m-auto" data-kt-stepper-element="content">
+                  <div class="flex-column current m-auto h-100" data-kt-stepper-element="content">
                     <h2 id="step_one_title" class="w-100 text-center fs-2x mb-12">Información general</h2>
                     <!--begin::Input group=-->
                     <div class='mb-4'>
@@ -503,7 +511,7 @@
                           </select>
                         </div>
                       </div>
-                      <div class='col'>
+                      <div class='col-12 col-lg-6 mb-4 mb-lg-0'>
                         <label id="step_one_state" for='state' class='form-label'>Estado</label>
                         <div class='fv-row'>
                           <select class='form-select' id='state' name='state' data-placeholder='Selecciona un opción'
@@ -513,7 +521,7 @@
                           </select>
                         </div>
                       </div>
-                      <div class='col'>
+                      <div class='col-12 col-lg-6'>
                         <label id="step_one_city" for='city' class='form-label'>Ciudad</label>
                         <div class='fv-row'>
                           <select class='form-select' id='city' name='city' data-placeholder='Selecciona un opción'
@@ -554,7 +562,7 @@
                     <!--end::Input group=-->
                     <div class='row mb-4'>
                       <!--begin::Estado-->
-                      <div class='col'>
+                      <div class='col-12 col-lg-6 mb-4 mb-lg-0'>
                         <!--begin::Correo-->
                         <label id="step_one_companyEmail" for='emailInfomation' class='form-label'>
                           Correo (para recibir notificaciones)
@@ -565,7 +573,7 @@
                         </div>
                         <!--end::Correo-->
                       </div>
-                      <div class='col'>
+                      <div class='col-12 col-lg-6'>
                         <!--begin::Teléfono celular-->
                         <label id="step_one_outUsa_companyPhone" for='phoneInformation' class='form-label'>
                           Teléfono celular
@@ -652,7 +660,8 @@
                         Fecha de formación
                       </label>
                       <div class="input-group fv-row">
-                        <input class="form-control" name="DateOfIncorporation" id="kt_datepicker_1" placeholder="MM/DD/AAAA" />
+                        <input class="form-control" name="DateOfIncorporation" id="kt_datepicker_1"
+                          placeholder="MM/DD/AAAA" />
                         <span class="input-group-text" data-td-target="#kt_td_picker_basic"
                           data-td-toggle="datetimepicker">
                           <i class="ki-duotone ki-calendar fs-2">
@@ -991,7 +1000,7 @@
                   </div>
                   <!--end::Step 1-->
                   <!--begin::Step 2-->
-                  <div class="flex-column m-auto w-100" data-kt-stepper-element="content">
+                  <div class="flex-column m-auto w-100 h-100" data-kt-stepper-element="content">
                     <h2 id="step_two_title" class="w-100 text-center fs-2x mb-12">Finalidad de las transacciones</h2>
                     <!--begin::Input group=-->
                     <div class='mb-4'>
@@ -1017,26 +1026,26 @@
                     <!--begin::Input group-->
                     <div class='row mb-4'>
                       <!--begin::Número de CLABE bancaria-->
-                      <div class='col' id="bankCodeIBANDIV">
+                      <div class='col-12 col-lg-6 mb-4 mb-lg-0' id="bankCodeIBANDIV">
                         <label id="step_two_outUsa_bankAccount" for='bankIBAN' class='form-label'>
                           Número de cuenta o IBAN
                         </label>
                         <div class='fv-row'>
-                          <input type='text' name='bankIBAN' autocomplete='off' id='bankIBAN' class='form-control' />
+                          <input type='number' name='bankIBAN' autocomplete='off' id='bankIBAN' class='form-control' />
                         </div>
                       </div>
-                      <div class='col' id="bankCodeNumberDIV">
+                      <div class='col-12 col-lg-6 mb-4 mb-lg-0' id="bankCodeNumberDIV">
                         <label id="step_two_mexico_bankAccount" for='bankCodeNumber' class='form-label'>
                           Número de CLABE bancaria
                         </label>
                         <div class='fv-row'>
-                          <input type='text' name='bankCodeNumber' autocomplete='off' id='bankCodeNumber'
+                          <input type='number' name='bankCodeNumber' autocomplete='off' id='bankCodeNumber'
                             class='form-control' />
                         </div>
                       </div>
                       <!--end::Número de CLABE bancaria-->
                       <!--begin::Monto estimado por transacción-->
-                      <div class='col'>
+                      <div class='col-12 col-lg-6'>
                         <label id="step_two_outUsa_amountPerMonth" for='estimatedTradeAmount' class='form-label'>
                           Monto estimado por transacción
                         </label>
@@ -1236,7 +1245,7 @@
                   </div>
                   <!--end::Step 2-->
                   <!--begin::Step 3-->
-                  <div class="flex-column m-auto w-100" data-kt-stepper-element="content">
+                  <div class="flex-column m-auto w-100 h-100" data-kt-stepper-element="content">
                     <div id="mxn" style="display: none;">
                       <div class="w-100 text-center mb-12">
                         <h2 id="step_three_outUsa_title" class="fs-2x">
@@ -1637,7 +1646,7 @@
                   </div>
                   <!--end::Step 3-->
                   <!--begin::Step 4-->
-                  <div class="flex-column m-auto w-100" data-kt-stepper-element="content">
+                  <div class="flex-column m-auto w-100 h-100" data-kt-stepper-element="content">
                     <div class="w-100 text-center mb-6">
                       <h2 id="step_four_title" class="fs-2x">
                         Usuario autorizados
@@ -1804,7 +1813,7 @@
                   </div>
                   <!--end::Step 4-->
                   <!--begin::Step 5-->
-                  <div class="flex-column m-auto" data-kt-stepper-element="content">
+                  <div class="flex-column m-auto h-100" data-kt-stepper-element="content">
                     <h2 id="step_five_title" class="w-100 text-center fs-2x mb-12">
                       Socios de la empresa
                     </h2>
@@ -2181,7 +2190,7 @@
                   </div>
                   <!--end::Step 5-->
                   <!--begin::Step 6-->
-                  <div class="flex-column m-auto" data-kt-stepper-element="content">
+                  <div class="flex-column m-auto h-100" data-kt-stepper-element="content">
                     <div class="w-100 text-center mb-12">
                       <h2 id="step_six_title" class="fs-2x">
                         Autorización
@@ -2193,7 +2202,7 @@
                     </div>
                     <!--begin::Input group=-->
                     <div class='row mb-4'>
-                      <div class="col">
+                      <div class="col-12 col-lg-6 mb-4 mb-lg-0">
                         <!--begin::Nombre y apellidos-->
                         <label id="step_six_signatureName" for='nameAuthorizationMonex' class='form-label'>
                           Nombre y apellidos
@@ -2204,7 +2213,7 @@
                         </div>
                         <!--end::Nombre y apellidos-->
                       </div>
-                      <div class="col">
+                      <div class="col-12 col-lg-6">
                         <!--begin::Titulo/Cargo-->
                         <label id="step_six_signatureTitle" for='titlePositionAuthorizationMonex' class='form-label'>
                           Titulo/Cargo
@@ -2329,11 +2338,12 @@
             </div>
             <!--end::Wrapper-->
           </div>
+          <div class="d-flex w-100 mt-4 d-lg-none d-block">
+            <img src='/assets/media/form/img/Registro-Respaldos-Mobile.webp' class='mx-auto w-100 h-auto m-0 '
+              style="object-fit: cover; bottom:-20px; left: 0px;" alt='Image backgroud movile' />
+          </div>
           <!--end::Content-->
         </div>
-        <img src='/assets/media/form/img/Registro-Respaldos-Mobile.webp'
-          class='position-absolute mx-auto w-100 h-auto m-0 d-lg-none d-block'
-          style="object-fit: cover; bottom:-610px; left: 0px;" alt='Image backgroud movile' />
         <!--end::Wrapper-->
       </div>
       <!--end::Body-->
