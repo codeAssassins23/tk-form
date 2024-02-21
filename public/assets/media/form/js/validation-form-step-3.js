@@ -166,11 +166,7 @@ $('#paises').on('change', function () {
     // Llenar el select de estados al cargar la página
     fillEstadoSelect();
 
-    // Manejar el evento de cambio en el select de estados
-    $('#state').on('change', function () {
-      let estadoSeleccionado = $(this).val();
-      fillMunicipioSelect(estadoSeleccionado);
-    });
+    listenEventMXN();
     
     // Selecciona todos los inputs de tipo radio con el nombre 'typeOfBusiness'
     document.getElementById('specific').style.display = 'block';
@@ -225,10 +221,7 @@ $('#paises').on('change', function () {
   } else if (valorSeleccionado === 'usd') {
     fillEstadoSelectEEUU();
     // Manejar el evento de cambio en el select de estados
-    $('#state').on('change', function () {
-      let estadoSeleccionado = $(this).val();
-      fillCiudadesSelect(estadoSeleccionado);
-    });
+    listenEventUSD()
 
     mxn.style.display = 'none';
     usd.style.display = 'block';
@@ -285,6 +278,7 @@ $('#paises').on('change', function () {
       let estadoSeleccionado = $(this).val();
       fillCiudadesSelectCAD(estadoSeleccionado);
     });
+    
     mxn.style.display = 'block';
     usd.style.display = 'none';
     typeOfBusinessUSD.style.display = 'none';

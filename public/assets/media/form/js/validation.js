@@ -383,16 +383,40 @@ submitButton.addEventListener('click', async function (e) {
       },
       data: res,
     });
-    
-    KTApp.hidePageLoading();
-    loadingEl.remove();
-
-    e.preventDefault();
-    idLead = response.data;
-    initializeDropzone(idLead);
-    form1.classList.add('d-none');
-    form2.classList.remove('d-none');
-    form2.classList.add('d-block');
+    console.log(response.data);
+    if(response.data.message === "Usuario ya registrado"){
+      KTApp.hidePageLoading();
+      loadingEl.remove();
+      Swal.fire({
+        icon: 'error',
+        title: '¡Correo electrónico ya registrado!',
+        html: `${response.data.email} ya está registrado en nuestro sistema. Ingresa a tu bandeja de correos y ubica el destinatario: customer-service@tkambio.us para encontrar tu enlace y culmines tu registro en la plataforma. Si deseas atención personalizada haz clic en:`,
+        showCloseButton: true,
+        showCancelButton: true,
+        focusConfirm: false,
+        confirmButtonText: 'Contactar con un Asesor',
+        confirmButtonAriaLabel: 'Contactar con un Asesor',
+        cancelButtonText: 'Cambiar correo',
+        cancelButtonAriaLabel: 'Cambiar correo',
+        customClass: {
+          confirmButton: 'contact-button', // Clase para estilos personalizados
+          cancelButton: 'change-button' // Clase para estilos personalizados
+        }
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.open('https://api.whatsapp.com/send?phone=526564106480&text=Buenos+d%C3%ADas%2C+por+favor+quisiera+m%C3%A1s+informaci%C3%B3n.', '_blank');
+        }
+      });
+    } else {
+      KTApp.hidePageLoading();
+      loadingEl.remove();
+      e.preventDefault();
+      idLead = response.data;
+      initializeDropzone(idLead);
+      form1.classList.add('d-none');
+      form2.classList.remove('d-none');
+      form2.classList.add('d-block');
+    }
   }
 });
 

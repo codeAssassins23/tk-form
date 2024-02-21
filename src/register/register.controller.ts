@@ -151,6 +151,14 @@ export class RegisterController {
   @Public()
   @Post('/registerStepOne')
   async registerStepOne(@Body() createListDto: leadsDto) {
+    const user = await this.registerService.findUserRegisterByEmail(
+      createListDto.email,
+    );
+    console.log(user.length);
+    if (user.length !== 0) {
+      return { message: 'Usuario ya registrado', email: createListDto.email };
+    }
+
     const register =
       await this.registerService.createRegisterStepOne(createListDto);
     return register;
