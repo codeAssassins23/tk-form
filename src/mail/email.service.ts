@@ -7,8 +7,14 @@ export class MailService {
 
   // Método en MailService para enviar confirmación a un correo específico
   async sendRegistrationNotification(save: any, notificationEmail: string) {
-    const url = `http://example.com/user/${save.idLead}`; // URL para ver el usuario en el sistema
-
+    const url = `http://localhost:3200/leads`; // URL para ver el usuario en el sistema
+    if (save.country === 'usd') {
+      save.country = 'Estados Unidos';
+    } else if (save.country === 'mxn') {
+      save.country = 'México';
+    } else if (save.country === 'word') {
+      save.country = 'Canada';
+    }
     await this.mailerService.sendMail({
       to: notificationEmail, // Enviar a la dirección de correo específica
       from: '"FORMULARIO WEB TKAMBIO.US | REGISTRATE" <IT@tkambio.us>', // Opcional: especificar el remitente

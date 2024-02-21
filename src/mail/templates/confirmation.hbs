@@ -8,17 +8,24 @@
       padding: 20px; } .email-footer { padding: 10px; background-color: #f4f4f4;
       text-align: center; border-top: 1px solid #ddd; } .button { display:
       inline-block; padding: 10px 20px; margin: 10px 0; background-color:
-      #007bff; color: white; text-decoration: none; border-radius: 5px; }
+      #007bff; color: white; text-decoration: none; border-radius: 10px; }
     </style>
   </head>
   <body>
     <div class='email-card'>
       <div class='email-header'>
         <h2>Bienvenido a TKAMBIO.US</h2>
+        <img
+          src='/assets/media/logos/Logo-TKambio1.svg'
+          alt='TKambioUS'
+          class='mb-10'
+        />
       </div>
       <div class='email-body'>
         <p>Hola,</p>
-        <p>Un nuevo usuario ha completado el proceso de registro:</p>
+        <p>El cliente esta iniciando el proceso de pre registro. Pueden
+          encontrarlo en la base de datos con la siguiente información:
+        </p>
         <p><strong>Nombre de la empresa:</strong> {{corporate}}</p>
         <p><strong>Nombre completo:</strong> {{fullName}}</p>
         <p><strong>Email:</strong> {{email}}</p>
@@ -29,8 +36,9 @@
       </div>
       <div class='email-footer'>
         <p>Saludos,</p>
-        <p>El equipo de soporte</p>
+        <p>El equipo de IT</p>
       </div>
     </div>
+
   </body>
 </html>
