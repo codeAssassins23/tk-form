@@ -73,12 +73,12 @@
             alt='Image backgroud' />
           <div class="position-absolute">
             <!--begin::Title-->
-            <h1 class='text-white fs-4x fw-bolder text-center mb-7'>
+            <h1 id="principal_1" class='text-white fs-4x fw-bolder text-center mb-7'>
               Registra a tu empresa en TKambio USA
             </h1>
             <!--end::Title-->
             <!--begin::Text-->
-            <p class='text-white fs-2x text-center fw-semibold'>
+            <p id="principal_2" class='text-white fs-2x text-center fw-semibold'>
               La libertad de transaccionar
               <br />
               <strong>sin comisiones, sin cobros por
@@ -107,10 +107,18 @@
               <!--begin::Toggle-->
               <button class='btn btn-flex btn-link btn-color-gray-700 btn-active-color-primary rotate fs-base'
                 data-kt-menu-trigger='click' data-kt-menu-placement='bottom-start' data-kt-menu-offset='0px, 0px'>
-                <img data-kt-element='current-lang-flag' class='w-20px h-20px rounded me-3'
-                  src='/assets/media/form/svg/es.svg' alt='' />
-                <span data-kt-element='current-lang-name' class='me-1'>Español</span>
-                <i class='ki-outline ki-down fs-5 text-muted rotate-180 m-0'></i>
+                <div id="defES" class="d-block">
+                  <img data-kt-element='current-lang-flag' class='w-20px h-20px rounded me-3'
+                    src='/assets/media/form/svg/es.svg' alt='' />
+                  <span data-kt-element='current-lang-name' class='me-1'>Español</span>
+                  <i class='ki-outline ki-down fs-5 text-muted rotate-180 m-0'></i>
+                </div>
+                <div id="defEN" class="d-none">
+                  <img data-kt-element='current-lang-flag' class='w-20px h-20px rounded me-3'
+                    src='/assets/media/form/svg/us.svg' alt='' />
+                  <span data-kt-element='current-lang-name' class='me-1'>English</span>
+                  <i class='ki-outline ki-down fs-5 text-muted rotate-180 m-0'></i>
+                </div>
               </button>
               <!--end::Toggle-->
               <!--begin::Menu-->
@@ -284,7 +292,7 @@
             class='bg-body d-flex flex-column flex-center rounded-4 p-10 border border-2 col-xxl-10 col-xl-10 col-sm-12 border-gray-400 mx-auto'>
             <!--begin::Content-->
             <div class='d-flex flex-center flex-column align-items-stretch w-100'>
-              <div class="stepper stepper-pills m-auto" data-kt-stepper="true" id="kt_stepper_example_basic">
+              <div class="stepper stepper-pills m-auto w-100" data-kt-stepper="true" id="kt_stepper_example_basic">
                 <!--begin::Wrapper-->
                 <div class="stepper-nav flex-center flex-row mb-10 d-none w-100">
                   <!--begin::Step 1-->

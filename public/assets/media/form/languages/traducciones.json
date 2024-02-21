@@ -1,5 +1,7 @@
 {
   "es": {
+    "principal_1": "Registra a tu empresa en TKambio USA",
+    "principal_2": "La libertad de transaccionar <br /> <strong>sin comisiones, sin cobros por <br /> mantenimiento y con</strong> <br /> <strong class='fw-extrabold' style='color:#1D3392;'>el mejor tipo de cambio.</strong>",
     "content_send_email": "<span class=\"text-primary\">Déjanos tus datos </span> y escoge cómo iniciar la experiencia del mejor tipo de cambio. <br> Esta información también servirá para enviarte un <span class=\"text-primary\"> enlace personalizado</span> a tu correo por si no culminas tu registro.",
     "label_send_email": "Correo electrónico",
     "label_name": "Nombres y apellidos",
@@ -177,6 +179,8 @@
     "step_six_checkPolices_policesLink_two": "Acuerdo de usuario"
   },
   "en": {
+    "principal_1": "Register your company in TKambio USA",
+    "principal_2": "The freedom to transact <br /> <strong>no commissions, no charges for <br /> maintenance and with </strong> <br /> <strong class='fw-extrabold' style='color:#1D3392;'>the best exchange rate.</strong>",
     "content_send_email": "<span class=\"text-primary\">Leave us your information</span> and choose how to start the,experience of the best exchange rate. <br> This information will also be used to send you a <span class=\"text-primary\">personalized link</span> to your email in case you do not complete your registration.",
     "label_send_email": "Email",
     "label_name": "First and last names",
