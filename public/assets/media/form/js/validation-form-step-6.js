@@ -82,6 +82,18 @@ stepp_6.addEventListener('click', function () {
   let isValidStep6 = validateStep6();
   isValidStep6.then(async (value)  => {
     if (value) {
+      const loadingEl = document.createElement("div");
+      document.body.prepend(loadingEl);
+      loadingEl.classList.add("page-loader");
+      loadingEl.classList.add("flex-column");
+      loadingEl.classList.add("bg-dark");
+      loadingEl.classList.add("bg-opacity-25");
+      loadingEl.innerHTML = `
+          <span class="spinner-border text-primary" role="status"></span>
+          <span class="text-gray-800 fs-6 fw-semibold mt-5">Loading...</span>
+      `;
+       // Show page loading
+      KTApp.showPageLoading();
       stepsData= getData();
       console.log(stepsData, "final");
       function toggleOtherInputSend() {
@@ -264,10 +276,14 @@ stepp_6.addEventListener('click', function () {
         },
         data: dataSend,
       });
-
+      
       if(response.data === "Success"){
+        KTApp.hidePageLoading();
+        loadingEl.remove();
         window.location.href = "https://tkambio.us/";
       } else if( response.data === "Error"){
+        KTApp.hidePageLoading();
+        loadingEl.remove();
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
