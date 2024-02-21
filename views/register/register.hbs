@@ -283,10 +283,10 @@
           <div id="formStepps"
             class='bg-body d-flex flex-column flex-center rounded-4 p-10 border border-2 col-xxl-10 col-xl-10 col-sm-12 border-gray-400 mx-auto'>
             <!--begin::Content-->
-            <div class='d-flex flex-center flex-column align-items-stretch'>
+            <div class='d-flex flex-center flex-column align-items-stretch w-100'>
               <div class="stepper stepper-pills m-auto" data-kt-stepper="true" id="kt_stepper_example_basic">
                 <!--begin::Wrapper-->
-                <div class="stepper-nav flex-center flex-row mb-10 d-none">
+                <div class="stepper-nav flex-center flex-row mb-10 d-none w-100">
                   <!--begin::Step 1-->
                   <div class="stepper-item mx-8 my-4 current" data-kt-stepper-element="nav">
                     <!--begin::Wrapper-->
@@ -468,7 +468,7 @@
                 <!--begin::Form-->
                 <form class='form h-100' novalidate="novalidate" id='kt_sign_up_form'>
                   <!--begin::Step 1-->
-                  <div class="flex-column current m-auto h-100" data-kt-stepper-element="content">
+                  <div class="flex-column current m-auto h-100 w-100" data-kt-stepper-element="content">
                     <h2 id="step_one_title" class="w-100 text-center fs-2x mb-12">Información general</h2>
                     <!--begin::Input group=-->
                     <div class='mb-4'>
@@ -506,7 +506,7 @@
                             <option value="">
                             </option>
                             <option value="canada">
-                              canada
+                              Canada
                             </option>
                           </select>
                         </div>
@@ -1000,7 +1000,7 @@
                   </div>
                   <!--end::Step 1-->
                   <!--begin::Step 2-->
-                  <div class="flex-column m-auto w-100 h-100" data-kt-stepper-element="content">
+                  <div class="flex-column m-auto w-100 h-100 w-100" data-kt-stepper-element="content">
                     <button type='button' id='stepp_2_prev' class='btn btn-icon btn-primary'>
                       <i class="ki-duotone ki-left fs-2x"></i>
                     </button>
@@ -1238,7 +1238,10 @@
                   </div>
                   <!--end::Step 2-->
                   <!--begin::Step 3-->
-                  <div class="flex-column m-auto w-100 h-100" data-kt-stepper-element="content">
+                  <div class="flex-column m-auto w-100 h-100 w-100" data-kt-stepper-element="content">
+                    <button type='button' id='stepp_3_prev' class='btn btn-icon btn-primary'>
+                      <i class="ki-duotone ki-left fs-2x"></i>
+                    </button>
                     <div id="mxn" style="display: none;">
                       <div class="w-100 text-center mb-12">
                         <h2 id="step_three_outUsa_title" class="fs-2x">
@@ -1613,17 +1616,7 @@
                       </div>
                     </div>
                     <!--begin::Submit button-->
-                    <div class='d-flex w-100 justify-content-between mx-auto'>
-                      <button type='button' id='stepp_3_prev' class='btn btn-primary'>
-                        <!--begin::Indicator label-->
-                        <span class='indicator-label'>Back</span>
-                        <!--end::Indicator label-->
-                        <!--begin::Indicator progress-->
-                        <span class='indicator-progress'>Un monmento por
-                          favor...
-                          <span class='spinner-border spinner-border-sm align-middle ms-2'></span></span>
-                        <!--end::Indicator progress-->
-                      </button>
+                    <div class='d-grid col-md-6 col-10 mx-auto'>
                       <button type='button' id='stepp_3' class='btn btn-primary'>
                         <!--begin::Indicator label-->
                         <span class='indicator-label'>Siguiente</span>
@@ -1640,6 +1633,9 @@
                   <!--end::Step 3-->
                   <!--begin::Step 4-->
                   <div class="flex-column m-auto w-100 h-100" data-kt-stepper-element="content">
+                    <button type='button' id='stepp_4_prev' class='btn btn-icon btn-primary'>
+                      <i class="ki-duotone ki-left fs-2x"></i>
+                    </button>
                     <div class="w-100 text-center mb-6">
                       <h2 id="step_four_title" class="fs-2x">
                         Usuario autorizados
@@ -1780,17 +1776,7 @@
                     </div>
                     <!--end::Input group=-->
                     <!--begin::Submit button-->
-                    <div class='d-flex w-100 justify-content-between mx-auto'>
-                      <button type='button' id='stepp_4_prev' class='btn btn-primary'>
-                        <!--begin::Indicator label-->
-                        <span class='indicator-label'>Back</span>
-                        <!--end::Indicator label-->
-                        <!--begin::Indicator progress-->
-                        <span class='indicator-progress'>Un monmento por
-                          favor...
-                          <span class='spinner-border spinner-border-sm align-middle ms-2'></span></span>
-                        <!--end::Indicator progress-->
-                      </button>
+                    <div class='d-grid col-md-6 col-10 mx-auto'>
                       <button type='button' id='stepp_4' class='btn btn-primary'>
                         <!--begin::Indicator label-->
                         <span class='indicator-label'>Siguiente</span>
@@ -1806,7 +1792,10 @@
                   </div>
                   <!--end::Step 4-->
                   <!--begin::Step 5-->
-                  <div class="flex-column m-auto h-100" data-kt-stepper-element="content">
+                  <div class="flex-column m-auto h-100 w-100" data-kt-stepper-element="content">
+                    <button type='button' id='stepp_5_prev' class='btn btn-icon btn-primary'>
+                      <i class="ki-duotone ki-left fs-2x"></i>
+                    </button>
                     <h2 id="step_five_title" class="w-100 text-center fs-2x mb-12">
                       Socios de la empresa
                     </h2>
@@ -2157,17 +2146,7 @@
                     </div>
                     <!--end::Input group=-->
                     <!--begin::Submit button-->
-                    <div class='d-flex w-100 justify-content-between mx-auto'>
-                      <button type='button' id='stepp_5_prev' class='btn btn-primary'>
-                        <!--begin::Indicator label-->
-                        <span class='indicator-label'>Back</span>
-                        <!--end::Indicator label-->
-                        <!--begin::Indicator progress-->
-                        <span class='indicator-progress'>Un monmento por
-                          favor...
-                          <span class='spinner-border spinner-border-sm align-middle ms-2'></span></span>
-                        <!--end::Indicator progress-->
-                      </button>
+                    <div class='d-grid col-md-6 col-10 mx-auto'>
                       <button type='button' id='stepp_5' class='btn btn-primary'>
                         <!--begin::Indicator label-->
                         <span class='indicator-label'>Siguiente</span>
@@ -2183,7 +2162,10 @@
                   </div>
                   <!--end::Step 5-->
                   <!--begin::Step 6-->
-                  <div class="flex-column m-auto h-100" data-kt-stepper-element="content">
+                  <div class="flex-column m-auto h-100 w-100" data-kt-stepper-element="content">
+                    <button type='button' id='stepp_6_prev' class='btn btn-icon btn-primary'>
+                      <i class="ki-duotone ki-left fs-2x"></i>
+                    </button>
                     <div class="w-100 text-center mb-12">
                       <h2 id="step_six_title" class="fs-2x">
                         Autorización
@@ -2300,7 +2282,7 @@
                     </div>
                     <!--end::Row-->
                     <!--begin::Submit button-->
-                    <div class='d-flex w-100 justify-content-between mx-auto'>
+                    <div class='d-grid col-md-6 col-10 mx-auto'>
                       <button type='button' id='stepp_6_prev' class='btn btn-primary'>
                         <!--begin::Indicator label-->
                         <span class='indicator-label'>Back</span>
