@@ -19,6 +19,10 @@ let validatorStep2 = FormValidation.formValidation(form, {
     },
     estimatedTradeAmount: {
       validators: {
+        regexp: {
+          regexp: /^[0-9]+$/,
+          message: 'El contenido no es válido',
+        },
         notEmpty: {
           message: 'Este campo es obligatorio',
         },
@@ -26,6 +30,10 @@ let validatorStep2 = FormValidation.formValidation(form, {
     },
     estimatedOfMonthlyTransaction: {
       validators: {
+        regexp: {
+          regexp: /^[0-9]+$/,
+          message: 'El contenido no es válido',
+        },
         notEmpty: {
           message: 'Este campo es obligatorio',
         },

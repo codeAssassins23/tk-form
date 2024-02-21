@@ -18,6 +18,10 @@ let validatorStep4 = FormValidation.formValidation(form, {
       },
     },
     telefonoCelular: {
+      regexp: {
+        regexp: /^[0-9]+$/,
+        message: 'El contenido no es válido',
+      },
       validators: {
         notEmpty: {
           message: 'Este campo es obligatorio',
@@ -51,6 +55,10 @@ let validatorStep4 = FormValidation.formValidation(form, {
     },
     telefonoCelular2: {
       validators: {
+        regexp: {
+          regexp: /^[0-9]+$/,
+          message: 'El contenido no es válido',
+        },
         notEmpty: {
           message: 'Este campo es obligatorio',
         },

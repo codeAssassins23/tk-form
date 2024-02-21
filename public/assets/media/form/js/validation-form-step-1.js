@@ -74,6 +74,10 @@ let validaterStep1 = FormValidation.formValidation(form, {
     },
     postalCode: {
       validators: {
+        regexp: {
+          regexp: /^[0-9]+$/,
+          message: 'El contenido no es válido',
+        },
         notEmpty: {
           message: 'Este campo es obligatorio',
         },
@@ -99,6 +103,10 @@ let validaterStep1 = FormValidation.formValidation(form, {
     },
     phoneInformation: {
       validators: {
+        regexp: {
+          regexp: /^[0-9]+$/,
+          message: 'El contenido no es válido',
+        },
         notEmpty: {
           message: 'Este campo es obligatorio',
         },
@@ -114,6 +122,10 @@ let validaterStep1 = FormValidation.formValidation(form, {
     },
     TaxIdentificationNumber: {
       validators: {
+        regexp: {
+          regexp: /^[0-9]+$/,
+          message: 'El contenido no es válido',
+        },
         notEmpty: {
           message: 'Este campo es obligatorio',
         },

@@ -319,6 +319,10 @@ let validator1 = FormValidation.formValidation(form1, {
     },
     text_phone: {
       validators: {
+        regexp: {
+          regexp: /^[0-9]+$/,
+          message: 'El contenido no es válido',
+        },
         notEmpty: {
           message: 'Telefono es requerido',
         },
@@ -384,7 +388,7 @@ submitButton.addEventListener('click', async function (e) {
       data: res,
     });
     console.log(response.data);
-    if(response.data.message === "Usuario ya registrado"){
+    if (response.data.message === 'Usuario ya registrado') {
       KTApp.hidePageLoading();
       loadingEl.remove();
       Swal.fire({
@@ -400,11 +404,14 @@ submitButton.addEventListener('click', async function (e) {
         cancelButtonAriaLabel: 'Cambiar correo',
         customClass: {
           confirmButton: 'contact-button', // Clase para estilos personalizados
-          cancelButton: 'change-button' // Clase para estilos personalizados
-        }
+          cancelButton: 'change-button', // Clase para estilos personalizados
+        },
       }).then((result) => {
         if (result.isConfirmed) {
-          window.open('https://api.whatsapp.com/send?phone=526564106480&text=Buenos+d%C3%ADas%2C+por+favor+quisiera+m%C3%A1s+informaci%C3%B3n.', '_blank');
+          window.open(
+            'https://api.whatsapp.com/send?phone=526564106480&text=Buenos+d%C3%ADas%2C+por+favor+quisiera+m%C3%A1s+informaci%C3%B3n.',
+            '_blank',
+          );
         }
       });
     } else {

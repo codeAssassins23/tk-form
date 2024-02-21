@@ -26,6 +26,10 @@ let validatorStep5 = FormValidation.formValidation(form, {
     },
     ownership1: {
       validators: {
+        regexp: {
+          regexp: /^[0-9]+$/,
+          message: 'El contenido no es válido',
+        },
         notEmpty: {
           message: 'Este campo es obligatorio',
         },
@@ -72,6 +76,10 @@ let validatorStep5 = FormValidation.formValidation(form, {
     },
     ownership2: {
       validators: {
+        regexp: {
+          regexp: /^[0-9]+$/,
+          message: 'El contenido no es válido',
+        },
         notEmpty: {
           message: 'Este campo es obligatorio',
         },
@@ -118,6 +126,10 @@ let validatorStep5 = FormValidation.formValidation(form, {
     },
     ownership3: {
       validators: {
+        regexp: {
+          regexp: /^[0-9]+$/,
+          message: 'El contenido no es válido',
+        },
         notEmpty: {
           message: 'Este campo es obligatorio',
         },
@@ -164,6 +176,10 @@ let validatorStep5 = FormValidation.formValidation(form, {
     },
     ownership4: {
       validators: {
+        regexp: {
+          regexp: /^[0-9]+$/,
+          message: 'El contenido no es válido',
+        },
         notEmpty: {
           message: 'Este campo es obligatorio',
         },
