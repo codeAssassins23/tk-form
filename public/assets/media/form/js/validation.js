@@ -2,7 +2,7 @@
 const form1 = document.getElementById('kt_sign_up_form_first');
 function initializeDropzone(idLead) {
   var dropzoneActaConstitutiva = new Dropzone('#dropzoneActaConstitutiva', {
-    url: `http://localhost:3200/uploadFilesOne/${idLead}`, // Set the url for your upload script location
+    url: `/uploadFilesOne/${idLead}`, // Set the url for your upload script location
     paramName: 'file', // The name that will be used to transfer the file
     maxFiles: 1,
     maxFilesize: 20, // MB
@@ -38,7 +38,7 @@ function initializeDropzone(idLead) {
   });
 
   var dropzoneCedulaFiscal = new Dropzone('#dropzoneCedulaFiscal', {
-    url: `http://localhost:3200/uploadFilesTwo/${idLead}`, // Set the url for your upload script location
+    url: `/uploadFilesTwo/${idLead}`, // Set the url for your upload script location
     paramName: 'file', // The name that will be used to transfer the file
     maxFiles: 1,
     maxFilesize: 20, // MB
@@ -70,7 +70,7 @@ function initializeDropzone(idLead) {
   });
 
   var dropzoneActaPoderes = new Dropzone('#dropzoneActaPoderes', {
-    url: `http://localhost:3200/uploadFilesThree/${idLead}`, // Set the url for your upload script location
+    url: `/uploadFilesThree/${idLead}`, // Set the url for your upload script location
     paramName: 'file', // The name that will be used to transfer the file
     maxFiles: 1,
     maxFilesize: 20, // MB
@@ -105,7 +105,7 @@ function initializeDropzone(idLead) {
   var dropezoneIdentifiTodosSocios = new Dropzone(
     '#dropzoneIdentifiTodosSocios',
     {
-      url: `http://localhost:3200/uploadFilesFour/${idLead}`, // Set the url for your upload script location
+      url: `/uploadFilesFour/${idLead}`, // Set the url for your upload script location
       paramName: 'file', // The name that will be used to transfer the file
       maxFiles: 1,
       maxFilesize: 20, // MB
@@ -141,7 +141,7 @@ function initializeDropzone(idLead) {
   var dropzoneComprobanteDomicilio = new Dropzone(
     '#dropzoneComprobanteDomicilio',
     {
-      url: `http://localhost:3200/uploadFilesFive/${idLead}`, // Set the url for your upload script location
+      url: `/uploadFilesFive/${idLead}`, // Set the url for your upload script location
       paramName: 'file', // The name that will be used to transfer the file
       maxFiles: 1,
       maxFilesize: 20, // MB
@@ -175,7 +175,7 @@ function initializeDropzone(idLead) {
   );
 
   var dropzoneDigitalSignature = new Dropzone('#dropzoneDigitalSignature', {
-    url: `http://localhost:3200/uploadFilesSix/${idLead}`, // Set the url for your upload script location
+    url: `/uploadFilesSix/${idLead}`, // Set the url for your upload script location
     paramName: 'file', // The name that will be used to transfer the file
     maxFiles: 1,
     maxFilesize: 20, // MB
@@ -208,7 +208,7 @@ function initializeDropzone(idLead) {
   });
 
   var dropZoneChequeAnulado = new Dropzone('#dropZoneChequeAnulado', {
-    url: `http://localhost:3200/uploadFilethreUSD/${idLead}`, // Set the url for your upload script location
+    url: `/uploadFilethreUSD/${idLead}`, // Set the url for your upload script location
     paramName: 'file', // The name that will be used to transfer the file
     maxFiles: 1,
     maxFilesize: 20, // MB
@@ -244,7 +244,7 @@ function initializeDropzone(idLead) {
   });
 
   var dropzoneSituacionFiscal = new Dropzone('#dropzoneSituacionFiscal', {
-    url: `http://localhost:3200/uploadFileOneSituacionFiscal/${idLead}`, // Set the url for your upload script location
+    url: `/uploadFileOneSituacionFiscal/${idLead}`, // Set the url for your upload script location
     paramName: 'file', // The name that will be used to transfer the file
     maxFiles: 1,
     maxFilesize: 20, // MB
@@ -394,7 +394,7 @@ submitButton.addEventListener('click', async function (e) {
       Swal.fire({
         icon: 'error',
         title: '¡Correo electrónico ya registrado!',
-        html: `${response.data.email} ya está registrado en nuestro sistema. Ingresa a tu bandeja de correos y ubica el destinatario: customer-service@tkambio.us para encontrar tu enlace y culmines tu registro en la plataforma. Si deseas atención personalizada haz clic en:`,
+        html: `${response.data.email} ya está registrado en nuestro sistema.`,
         showCloseButton: true,
         showCancelButton: true,
         focusConfirm: false,
