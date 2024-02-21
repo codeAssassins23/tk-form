@@ -10,7 +10,7 @@ function fillEstadoSelectCAD(){
 
 function fillCiudadesSelectCAD(estadoSeleccionado){
   let ciudades = CAD[estadoSeleccionado].ciudades;
-
+  console.log(ciudades, "cad");
   $('#city').empty().append('<option value="">Seleccione una ciudad</option>');
   ciudades.forEach(function(ciudad){
     $('#city').append(new Option(ciudad, ciudad));
@@ -30,6 +30,7 @@ function fillEstadoSelectEEUU() {
 function fillCiudadesSelect(estadoSeleccionado) {
   // Obtener las ciudades del estado seleccionado
   let ciudades = EEUU[estadoSeleccionado].ciudades;
+  console.log(ciudades, "EEUU");
 
   // Limpiar y llenar el select de ciudades
   $('#city').empty().append('<option value="">Seleccione una ciudad</option>');
@@ -53,6 +54,7 @@ function fillMunicipioSelect(estado_id) {
   let municipios = MunicipiosMXN.filter(function (municipio) {
     return municipio.estado_id == estado_id;
   });
+  console.log(municipios, "mexico");
 
   // Limpiar y llenar el select de ciudades
   $('#city').empty().append('<option value="">Seleccione una ciudad</option>');

@@ -33,7 +33,8 @@ export class RegisterService {
     const save = await this.leadsRepository.save(register);
 
     // Enviar correo de notificación a la dirección específica después de guardar el registro
-    const notificationEmail = 'customer-service@tkambio.us'; // Definir el correo al que notificar
+    const notificationEmail =
+      /* 'customer-service@tkambio.us' */ 'bravovictorhugo11@gmail.com'; // Definir el correo al que notificar
     await this.mailService.sendRegistrationNotification(
       save,
       notificationEmail,
