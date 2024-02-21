@@ -361,6 +361,20 @@ submitButton.addEventListener('click', async function (e) {
   };
 
   if (isValid1) {
+    //Crear función para enviar correo
+    const loadingEl = document.createElement("div");
+    document.body.prepend(loadingEl);
+    loadingEl.classList.add("page-loader");
+    loadingEl.classList.add("flex-column");
+    loadingEl.classList.add("bg-dark");
+    loadingEl.classList.add("bg-opacity-25");
+    loadingEl.innerHTML = `
+        <span class="spinner-border text-primary" role="status"></span>
+        <span class="text-gray-800 fs-6 fw-semibold mt-5">Loading...</span>
+    `;
+
+    // Show page loading
+    KTApp.showPageLoading();
     const response = await axios({
       method: 'post',
       url: '/registerStepOne',
@@ -369,8 +383,9 @@ submitButton.addEventListener('click', async function (e) {
       },
       data: res,
     });
-
-    //Crear función para enviar correo
+    
+    KTApp.hidePageLoading();
+    loadingEl.remove();
 
     e.preventDefault();
     idLead = response.data;
