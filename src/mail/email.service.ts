@@ -11,9 +11,9 @@ export class MailService {
 
     await this.mailerService.sendMail({
       to: notificationEmail, // Enviar a la dirección de correo específica
-      from: '"Support Team" <support@example.com>', // Opcional: especificar el remitente
-      subject: 'Nuevo registro completado',
-      template: './new-user-notification', // Usar una plantilla específica para notificaciones
+      from: '"FORMULARIO WEB TKAMBIO.US | REGISTRATE" <IT@tkambio.us>', // Opcional: especificar el remitente
+      subject: `El Cliente ${save.email} esta iniciando el proceso de pre registro.`,
+      template: './confirmation', // Usar una plantilla específica para notificaciones
       context: {
         // Enviar la información del usuario en el contexto
         fullName: save.fullName,

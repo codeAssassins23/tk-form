@@ -1,10 +1,36 @@
-<p>Hola,</p>
-<p>Un nuevo usuario ha completado el proceso de registro:</p>
-<p>Nombre de la empresa: {{corporate}}</p>
-<p>Nombre completo: {{fullName}}</p>
-<p>Email: {{email}}</p>
-<p>Teléfono: {{phone}}</p>
-<p>País: {{country}}</p>
-<p>Puedes ver el perfil del usuario aquí: <a href='{{url}}'>{{url}}</a></p>
-<p>Saludos,</p>
-<p>El equipo de soporte</p>
+<html>
+  <head>
+    <style>
+      .email-card { font-family: 'Arial', sans-serif; max-width: 600px; margin:
+      20px auto; padding: 20px; border: 1px solid #ddd; box-shadow: 0 0 10px
+      rgba(0, 0, 0, 0.1); } .email-header { background-color: #f4f4f4; padding:
+      10px; text-align: center; border-bottom: 1px solid #ddd; } .email-body {
+      padding: 20px; } .email-footer { padding: 10px; background-color: #f4f4f4;
+      text-align: center; border-top: 1px solid #ddd; } .button { display:
+      inline-block; padding: 10px 20px; margin: 10px 0; background-color:
+      #007bff; color: white; text-decoration: none; border-radius: 5px; }
+    </style>
+  </head>
+  <body>
+    <div class='email-card'>
+      <div class='email-header'>
+        <h2>Bienvenido a TKAMBIO.US</h2>
+      </div>
+      <div class='email-body'>
+        <p>Hola,</p>
+        <p>Un nuevo usuario ha completado el proceso de registro:</p>
+        <p><strong>Nombre de la empresa:</strong> {{corporate}}</p>
+        <p><strong>Nombre completo:</strong> {{fullName}}</p>
+        <p><strong>Email:</strong> {{email}}</p>
+        <p><strong>Teléfono:</strong> {{phone}}</p>
+        <p><strong>País:</strong> {{country}}</p>
+        <p>Puedes ver el perfil del usuario aquí:
+          <a class='button' href='{{url}}'>Ver Perfil</a></p>
+      </div>
+      <div class='email-footer'>
+        <p>Saludos,</p>
+        <p>El equipo de soporte</p>
+      </div>
+    </div>
+  </body>
+</html>
