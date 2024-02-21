@@ -288,7 +288,7 @@ let validator1 = FormValidation.formValidation(form1, {
     text_email: {
       validators: {
         regexp: {
-          regexp: /^[a-zA-Z0-9_.ñÑ+-]+@[a-zA-Z0-9-.ñÑ]+\.[a-zA-Z0-9-.ñÑ]+$/,
+          regexp: /^[a-zA-Z0-9.ñÑ_%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
           message: 'El contenido no es válido',
         },
         notEmpty: {
@@ -362,12 +362,12 @@ submitButton.addEventListener('click', async function (e) {
 
   if (isValid1) {
     //Crear función para enviar correo
-    const loadingEl = document.createElement("div");
+    const loadingEl = document.createElement('div');
     document.body.prepend(loadingEl);
-    loadingEl.classList.add("page-loader");
-    loadingEl.classList.add("flex-column");
-    loadingEl.classList.add("bg-dark");
-    loadingEl.classList.add("bg-opacity-25");
+    loadingEl.classList.add('page-loader');
+    loadingEl.classList.add('flex-column');
+    loadingEl.classList.add('bg-dark');
+    loadingEl.classList.add('bg-opacity-25');
     loadingEl.innerHTML = `
         <span class="spinner-border text-primary" role="status"></span>
         <span class="text-gray-800 fs-6 fw-semibold mt-5">Loading...</span>
@@ -383,7 +383,7 @@ submitButton.addEventListener('click', async function (e) {
       },
       data: res,
     });
-    
+
     KTApp.hidePageLoading();
     loadingEl.remove();
 
