@@ -238,7 +238,7 @@
                         Teléfono
                       </label>
                       <div class='fv-row'>
-                        <input type='number' name='text_phone' id='telefono' class='form-control' />
+                        <input type='string' name='text_phone' id='telefono' class='form-control' />
                       </div>
                     </div>
                   </div>
@@ -609,7 +609,7 @@
                     <!--end::Input group=-->
                     <div class='row mb-4'>
                       <!--begin::Estado-->
-                      <div class='col'>
+                      <div class='col-12 col-lg-6 mb-4 mb-lg-0'>
                         <!--begin::Número de identificación fiscal-->
                         <label id="step_one_companyTaxIdentification" for='TaxIdentificationNumber' class='form-label'>
                           Número de identificación fiscal
@@ -620,7 +620,7 @@
                         </div>
                         <!--end::Número de identificación fiscal-->
                       </div>
-                      <div class='col'>
+                      <div class='col-12 col-lg-6'>
                         <label id="step_one_industry" for='industry' class='form-label'>Industria</label>
                         <div class='fv-row'>
                           <select class='form-select' id='industry' name='industry' data-control="select2"
@@ -651,9 +651,9 @@
                         <input type='text' name='natureOfBusiness' autocomplete='off' id='natureOfBusiness'
                           class='form-control' />
                       </div>
-                      <span class="fs-8 badge badge-light-primary text-wrap">
+                      <span class="fs-8 badge badge-light-primary text-wrap w-100">
                         <i class="ki-outline ki-information-5 text-primary"></i>
-                        <span id="step_one_info_text">
+                        <span id="step_one_info_text" class="text-start ms-4">
                           Si es un agente de carga, la naturaleza de la descripción comercial debe ser transportador de
                           productos, servicios de carga, transportador intermodal, etc.
                         </span>
@@ -1023,9 +1023,9 @@
                         <input type='text' name='purposeOfTransactions' autocomplete='off' id='purposeOfTransactions'
                           class='form-control' />
                       </div>
-                      <span class="fs-8 badge badge-light-primary text-wrap d-flex g-4">
+                      <span class="fs-8 badge badge-light-primary text-wrap w-100">
                         <i class="ki-outline ki-information-5 text-primary"></i>
-                        <span id="step_two_usa_baged" class="text-start">
+                        <span id="step_two_usa_baged" class="text-start ms-4">
                           No indique "Pago por bienes" o "Pago por servicios". (Ejemplos: "Estoy comprando iPads" o
                           "Estoy
                           comprando equipo que se usará para cultivar")
@@ -2330,10 +2330,10 @@
   <script src='/assets/js/scripts.bundle.js'></script>
   <!--end::Global Javascript Bundle-->
   <!--begin::Custom Javascript(used for this page only)-->
-  {{!--
+
   <script>
-    Inputmask({ "mask": "(999) 999-9999" }).mask("#Telefono");
-  </script> --}}
+    Inputmask({ "mask": "(+99) 999-999-999" }).mask("#Telefono");
+  </script>
   <script src='/assets/media/form/js/CAD.js'></script>
   <script src='/assets/media/form/js/MX.js'></script>
   <script src='/assets/media/form/js/USD.js'></script>

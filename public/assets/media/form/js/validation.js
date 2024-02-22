@@ -298,13 +298,21 @@ let validator1 = FormValidation.formValidation(form1, {
     },
     text_name: {
       validators: {
+        regexp: {
+          regexp: /^[a-zA-Z ]+$/,
+          message: 'El contenido no es válido',
+        },
         notEmpty: {
-          message: 'Nombrey apellido es requerido',
+          message: 'Nombre y apellido es requerido',
         },
       },
     },
     text_enterprice: {
       validators: {
+        regexp: {
+          regexp: /^[a-zA-Z ]+$/,
+          message: 'El contenido no es válido',
+        },
         notEmpty: {
           message: 'Empresa es requerida',
         },
@@ -319,10 +327,10 @@ let validator1 = FormValidation.formValidation(form1, {
     },
     text_phone: {
       validators: {
-        regexp: {
-          regexp: /^[0-9]+$/,
-          message: 'El contenido no es válido',
-        },
+        // regexp: {
+        //   regexp: /^[0-9]+$/,
+        //   message: 'El contenido no es válido',
+        // },
         notEmpty: {
           message: 'Telefono es requerido',
         },
@@ -404,7 +412,8 @@ submitButton.addEventListener('click', async function (e) {
         cancelButtonAriaLabel: 'Cambiar correo',
         customClass: {
           confirmButton: 'btn btn-primary', // Clase para estilos personalizados
-          cancelButton: 'btn btn-outline btn-outline-dashed btn-outline-primary btn-active-light-primary', // Clase para estilos personalizados
+          cancelButton:
+            'btn btn-outline btn-outline-dashed btn-outline-primary btn-active-light-primary', // Clase para estilos personalizados
         },
       }).then((result) => {
         if (result.isConfirmed) {

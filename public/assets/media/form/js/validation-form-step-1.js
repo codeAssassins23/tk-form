@@ -50,13 +50,22 @@ let validaterStep1 = FormValidation.formValidation(form, {
   fields: {
     corporateName: {
       validators: {
+        regexp: {
+          regexp: /^[a-zA-Z ]+$/,
+          message: 'El contenido no es válido',
+        },
         notEmpty: {
           message: 'Este campo es obligatorio',
         },
       },
     },
     tradeNameOfDBA: {
-      validators: {},
+      validators: {
+        regexp: {
+          regexp: /^[a-zA-Z ]+$/,
+          message: 'El contenido no es válido',
+        },
+      },
     },
     state: {
       validators: {
@@ -85,6 +94,10 @@ let validaterStep1 = FormValidation.formValidation(form, {
     },
     address: {
       validators: {
+        regexp: {
+          regexp: /^[a-zA-Z ]+$/,
+          message: 'El contenido no es válido',
+        },
         notEmpty: {
           message: 'Este campo es obligatorio',
         },
@@ -140,6 +153,10 @@ let validaterStep1 = FormValidation.formValidation(form, {
     },
     natureOfBusiness: {
       validators: {
+        regexp: {
+          regexp: /^[a-zA-Z ]+$/,
+          message: 'El contenido no es válido',
+        },
         notEmpty: {
           message: 'Este campo es obligatorio',
         },
