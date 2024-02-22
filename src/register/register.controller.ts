@@ -84,7 +84,7 @@ export class RegisterController {
   async registerList(@Req() request: Request) {
     try {
       const user = request['user'];
-      return user;
+      return { user };
     } catch (error) {
       console.log(error);
     }
