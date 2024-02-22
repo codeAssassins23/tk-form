@@ -327,10 +327,6 @@ let validator1 = FormValidation.formValidation(form1, {
     },
     text_phone: {
       validators: {
-        // regexp: {
-        //   regexp: /^[0-9]+$/,
-        //   message: 'El contenido no es válido',
-        // },
         notEmpty: {
           message: 'Telefono es requerido',
         },
