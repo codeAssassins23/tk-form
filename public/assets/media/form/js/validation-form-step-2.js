@@ -20,7 +20,7 @@ let validatorStep2 = FormValidation.formValidation(form, {
     estimatedTradeAmount: {
       validators: {
         regexp: {
-          regexp: /^[0-9]+$/,
+          regexp: /^\d+(\.\d+)?$/,
           message: 'El contenido no es válido',
         },
         notEmpty: {
@@ -31,7 +31,7 @@ let validatorStep2 = FormValidation.formValidation(form, {
     estimatedOfMonthlyTransaction: {
       validators: {
         regexp: {
-          regexp: /^[0-9]+$/,
+          regexp: /^\d+(\.\d+)?$/,
           message: 'El contenido no es válido',
         },
         notEmpty: {

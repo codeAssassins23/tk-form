@@ -94,10 +94,6 @@ let validaterStep1 = FormValidation.formValidation(form, {
     },
     address: {
       validators: {
-        regexp: {
-          regexp: /^[a-zA-Z ]+$/,
-          message: 'El contenido no es válido',
-        },
         notEmpty: {
           message: 'Este campo es obligatorio',
         },
@@ -136,7 +132,7 @@ let validaterStep1 = FormValidation.formValidation(form, {
     TaxIdentificationNumber: {
       validators: {
         regexp: {
-          regexp: /^[0-9]+$/,
+          regexp: /^[a-zA-Z0-9\s]+$/,
           message: 'El contenido no es válido',
         },
         notEmpty: {
