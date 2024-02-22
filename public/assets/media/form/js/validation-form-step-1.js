@@ -51,7 +51,7 @@ let validaterStep1 = FormValidation.formValidation(form, {
     corporateName: {
       validators: {
         regexp: {
-          regexp: /^[a-zA-Z ]+$/,
+          regexp: /^[a-zA-Z.ñÑ ]+$/,
           message: 'El contenido no es válido',
         },
         notEmpty: {
@@ -62,7 +62,7 @@ let validaterStep1 = FormValidation.formValidation(form, {
     tradeNameOfDBA: {
       validators: {
         regexp: {
-          regexp: /^[a-zA-Z ]+$/,
+          regexp: /^[a-zA-Z.ñÑ ]+$/,
           message: 'El contenido no es válido',
         },
       },
@@ -150,7 +150,7 @@ let validaterStep1 = FormValidation.formValidation(form, {
     natureOfBusiness: {
       validators: {
         regexp: {
-          regexp: /^[a-zA-Z ]+$/,
+          regexp: /^[a-zA-Z.ñÑ ]+$/,
           message: 'El contenido no es válido',
         },
         notEmpty: {
