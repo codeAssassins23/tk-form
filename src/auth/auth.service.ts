@@ -19,7 +19,6 @@ export class AuthService {
     if (!(await bcrypt.compare(createAuthDto.password, user.password))) {
       throw new UnauthorizedException(`Credenciales invalidas`);
     }
-    console.log(user.role, 'authservice');
     const payload = {
       sub: user.idUser,
       email: user.email,
@@ -27,7 +26,6 @@ export class AuthService {
       name: user.name,
       surname: user.surname,
     };
-    console.log(payload, 'authservice');
     const jwt = await this.jwtService.signAsync(payload);
     return {
       message: 'success',

@@ -18,11 +18,9 @@ export class RolesGuard implements CanActivate {
     if (!requiredRoles) {
       return true;
     }
-    console.log(requiredRoles, 'requiredRoles');
     const request = context.switchToHttp().getRequest();
     const user = request.user; // Asegúrate de que tu AuthGuard ya ha asignado el usuario al request
     const hasRole = () => requiredRoles.includes(user.role.name);
-    console.log(hasRole(), 'hasRole');
     if (!user || !user.role || !hasRole()) {
       throw new UnauthorizedException(
         'No tienes permiso para acceder a este recurso',

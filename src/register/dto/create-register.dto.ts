@@ -82,7 +82,6 @@ class InfoAuthorizedUsersDto {
 
   @IsString()
   @MinLength(1, { message: 'El email debe tener al menos 1 caracteres' })
-  @IsEmail({}, { message: 'El email debe ser válido' })
   @IsNotEmpty({ message: 'El email es requerido' })
   email: string;
 }

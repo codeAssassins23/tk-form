@@ -403,8 +403,8 @@ submitButton.addEventListener('click', async function (e) {
         cancelButtonText: 'Cambiar correo',
         cancelButtonAriaLabel: 'Cambiar correo',
         customClass: {
-          confirmButton: 'contact-button', // Clase para estilos personalizados
-          cancelButton: 'change-button', // Clase para estilos personalizados
+          confirmButton: 'btn btn-primary', // Clase para estilos personalizados
+          cancelButton: 'btn btn-outline btn-outline-dashed btn-outline-primary btn-active-light-primary', // Clase para estilos personalizados
         },
       }).then((result) => {
         if (result.isConfirmed) {
