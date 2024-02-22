@@ -25,15 +25,12 @@
   <link href='/assets/plugins/global/plugins.bundle.css' rel='stylesheet' type='text/css' />
   <link href='/assets/css/style.bundle.css' rel='stylesheet' type='text/css' />
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
- 
+
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
   <!--end::Global Stylesheets Bundle-->
 
-  <link
-     rel="stylesheet"
-     href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
-   />
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
   <script>
     // Frame-busting to prevent site from being loaded within a framewithout permission(click - jacking) 
     if (window.top != window.self) {
@@ -246,7 +243,7 @@
                         Teléfono
                       </label>
                       <div class='fv-row'>
-                        <input type='tel' name='text_phone' id='telefono' class='form-control'/>
+                        <input type='tel' name='text_phone' id='telefono' class='form-control' />
                         <span id="valid-msg" style="display: none;" class="text-success">✓ Valid</span>
                         <span id="error-msg" style="display: none;" class="text-danger mt-2"></span>
                       </div>
@@ -595,7 +592,7 @@
                           Teléfono celular
                         </label>
                         <div class='fv-row'>
-                          <input type='tel' name='phoneInformation' id='phoneInformation' class='form-control'/>
+                          <input type='tel' name='phoneInformation' id='phoneInformation' class='form-control' />
                           <span id="valid-msg-information" style="display: none;" class="text-success">✓ Valid</span>
                           <span id="error-msg-information" style="display: none;" class="text-danger mt-2"></span>
                         </div>
@@ -1698,8 +1695,10 @@
                                   Teléfono celular
                                 </label>
                                 <div class='fv-row'>
-                                  <input type='number' name='telefonoCelular' autocomplete='off' id='telefonoCelular'
-                                    class='form-control' />
+                                  <input type='tel' name='telefonoCelular' id='telefonoCelular' class='form-control' />
+                                  <span id="error-msg-stepp4-1" style="display: none;" class="text-success">✓
+                                    Valid</span>
+                                  <span id="error-msg-stepp4-1" style="display: none;" class="text-danger mt-2"></span>
                                 </div>
                               </div>
                               <!--end::Teléfono celular-->
@@ -1754,8 +1753,11 @@
                                   Teléfono celular
                                 </label>
                                 <div class='fv-row'>
-                                  <input type='number' name='telefonoCelular2' autocomplete='off' id='telefonoCelular2'
+                                  <input type='tel' name='telefonoCelular2' id='telefonoCelular2'
                                     class='form-control' />
+                                  <span id="error-msg-stepp4-2" style="display: none;" class="text-success">✓
+                                    Valid</span>
+                                  <span id="error-msg-stepp4-2" style="display: none;" class="text-danger mt-2"></span>
                                 </div>
                               </div>
                               <!--end::Teléfono celular-->
@@ -2335,7 +2337,7 @@
   <!--begin::Javascript-->
   <script>var hostUrl = "assets/";</script>
   <script>
-  
+
   </script>
 
   <!--begin::Global Javascript Bundle(mandatory for all pages)-->

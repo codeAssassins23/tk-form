@@ -132,7 +132,7 @@ let validaterStep1 = FormValidation.formValidation(form, {
     TaxIdentificationNumber: {
       validators: {
         regexp: {
-          regexp: /^[a-zA-Z0-9\s]+$/,
+          regexp: /^[a-zA-Z0-9\sñÑ]+$/,
           message: 'El contenido no es válido',
         },
         notEmpty: {

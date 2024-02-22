@@ -1,33 +1,39 @@
 /* eslint-disable prettier/prettier */
 const form1 = document.getElementById('kt_sign_up_form_first');
 
-const input = document.querySelector("#telefono");
-const errorMsg = document.querySelector("#error-msg");
-const validMsg = document.querySelector("#valid-msg");
+const input = document.querySelector('#telefono');
+const errorMsg = document.querySelector('#error-msg');
+const validMsg = document.querySelector('#valid-msg');
 
 // Mapa de errores
-const errorMap = ["Numero invalido", "Código de pais invalido", "Demasiado corto", "Demasiado largo", "Numero invalido"];
+const errorMap = [
+  'Numero invalido',
+  'Código de pais invalido',
+  'Demasiado corto',
+  'Demasiado largo',
+  'Numero invalido',
+];
 
 // Inicializar intl-tel-input
 const iti = window.intlTelInput(input, {
-  initialCountry: "us",
-  utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+  initialCountry: 'us',
+  utilsScript:
+    'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js',
 });
 
 const reset = () => {
-  input.classList.remove("error");
-  errorMsg.innerHTML = "";
-  errorMsg.style.display = "none"; // Usar display en lugar de classList
-  validMsg.style.display = "none"; // Usar display en lugar de classList
+  input.classList.remove('error');
+  errorMsg.innerHTML = '';
+  errorMsg.style.display = 'none'; // Usar display en lugar de classList
+  validMsg.style.display = 'none'; // Usar display en lugar de classList
 };
 
 // Función showError ajustada para usar display
 const showError = (msg) => {
-  input.classList.add("error");
+  input.classList.add('error');
   errorMsg.innerHTML = msg;
-  errorMsg.style.display = "block"; // Remover display:none para mostrar el mensaje
+  errorMsg.style.display = 'block'; // Remover display:none para mostrar el mensaje
 };
-
 
 function initializeDropzone(idLead) {
   var dropzoneActaConstitutiva = new Dropzone('#dropzoneActaConstitutiva', {
@@ -404,12 +410,13 @@ submitButton.addEventListener('click', async function (e) {
   reset(); // Asegúrate de llamar a reset para limpiar errores previos
   let isValidPhone = false; // Suponemos inicialmente que el teléfono no es válido
   if (!input.value.trim()) {
-    showError("Telefono es requerido");
-  } else if (iti.isValidNumber()) { // Asegúrate de usar isValidNumber() o isValidNumberPrecise() según tu necesidad
+    showError('Telefono es requerido');
+  } else if (iti.isValidNumber()) {
+    // Asegúrate de usar isValidNumber() o isValidNumberPrecise() según tu necesidad
     isValidPhone = true; // El teléfono es válido
   } else {
     const errorCode = iti.getValidationError();
-    const msg = errorMap[errorCode] || "Número Invalido";
+    const msg = errorMap[errorCode] || 'Número Invalido';
     showError(msg);
   }
 
