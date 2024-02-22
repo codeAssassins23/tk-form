@@ -343,6 +343,14 @@ let validator1 = FormValidation.formValidation(form1, {
   },
 });
 
+document.getElementById('openCalendly').addEventListener('click',async function() {
+  let isValid1 = await validate1();
+  if(isValid1){
+    Calendly.initPopupWidget({url: 'https://calendly.com/tkambiousa'});
+    return false;
+  }
+});
+
 const submitButton = document.getElementById('kt_sign_up_submit');
 submitButton.addEventListener('click', async function (e) {
   // Prevent default button action
