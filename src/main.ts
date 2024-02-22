@@ -18,7 +18,7 @@ async function bootstrap() {
   //Validaciones globales de los DTO
   app.useGlobalPipes(
     new ValidationPipe({
-      whitelist: true,
+      whitelist: false,
       forbidNonWhitelisted: true,
       transform: true,
       disableErrorMessages: false,

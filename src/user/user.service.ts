@@ -4,17 +4,19 @@ import { UpdateUserDto } from './dto/update-user.dto';
 
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { User } from './entities/user.entity';
+import { Users } from './entities/user.entity';
 import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class UserService {
   constructor(
-    @InjectRepository(User) private readonly userRepository: Repository<User>,
+    @InjectRepository(Users) private readonly userRepository: Repository<Users>,
   ) {}
 
-  async createUser(createUserDto: CreateUserDto): Promise<User> {
-    const user: User = new User();
+  async createUser(createUserDto: CreateUserDto): Promise<Users> {
+    console.log(createUserDto);
+    const user = this.userRepository.create();
+    console.log(user);
     user.name = createUserDto.name;
     user.surname = createUserDto.surname;
     user.age = createUserDto.age;
@@ -31,14 +33,14 @@ export class UserService {
     return save_;
   }
 
-  async findAllUser(): Promise<User[]> {
+  async findAllUser(): Promise<Users[]> {
     return this.userRepository.find({
       where: { status: '1' },
       relations: ['role'],
     });
   }
 
-  async finOneUserByEmail(email: string): Promise<User> {
+  async finOneUserByEmail(email: string): Promise<Users> {
     const user = await this.userRepository.findOne({
       where: { email: email, status: '1' },
       relations: ['role'],
@@ -59,7 +61,7 @@ export class UserService {
     return !user; // Si user es null, el correo es único
   }
 
-  async findOneUser(id: number): Promise<User> {
+  async findOneUser(id: number): Promise<Users> {
     const user = await this.userRepository.findOne({
       where: { idUser: id, status: '1' },
       relations: ['role'],

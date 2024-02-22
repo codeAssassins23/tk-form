@@ -6,10 +6,10 @@ import { UserController } from './user.controller';
  *and the User entity so we can use it in our user service.
  */
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from './entities/user.entity';
+import { Users } from './entities/user.entity';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([User])],
+  imports: [TypeOrmModule.forFeature([Users])],
   controllers: [UserController],
   providers: [UserService],
   exports: [UserService],

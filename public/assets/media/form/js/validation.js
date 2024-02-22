@@ -1,5 +1,34 @@
 /* eslint-disable prettier/prettier */
 const form1 = document.getElementById('kt_sign_up_form_first');
+
+const input = document.querySelector("#telefono");
+const errorMsg = document.querySelector("#error-msg");
+const validMsg = document.querySelector("#valid-msg");
+
+// Mapa de errores
+const errorMap = ["Numero invalido", "Código de pais invalido", "Demasiado corto", "Demasiado largo", "Numero invalido"];
+
+// Inicializar intl-tel-input
+const iti = window.intlTelInput(input, {
+  initialCountry: "us",
+  utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+});
+
+const reset = () => {
+  input.classList.remove("error");
+  errorMsg.innerHTML = "";
+  errorMsg.style.display = "none"; // Usar display en lugar de classList
+  validMsg.style.display = "none"; // Usar display en lugar de classList
+};
+
+// Función showError ajustada para usar display
+const showError = (msg) => {
+  input.classList.add("error");
+  errorMsg.innerHTML = msg;
+  errorMsg.style.display = "block"; // Remover display:none para mostrar el mensaje
+};
+
+
 function initializeDropzone(idLead) {
   var dropzoneActaConstitutiva = new Dropzone('#dropzoneActaConstitutiva', {
     url: `/uploadFilesOne/${idLead}`, // Set the url for your upload script location
@@ -325,13 +354,6 @@ let validator1 = FormValidation.formValidation(form1, {
         },
       },
     },
-    text_phone: {
-      validators: {
-        notEmpty: {
-          message: 'Telefono es requerido',
-        },
-      },
-    },
   },
   plugins: {
     trigger: new FormValidation.plugins.Trigger(),
@@ -376,7 +398,24 @@ submitButton.addEventListener('click', async function (e) {
     country: paises,
   };
 
-  if (isValid1) {
+  // Inicializa y realiza la validación del teléfono aquí
+  reset(); // Asegúrate de llamar a reset para limpiar errores previos
+  let isValidPhone = false; // Suponemos inicialmente que el teléfono no es válido
+  if (!input.value.trim()) {
+    showError("Telefono es requerido");
+  } else if (iti.isValidNumber()) { // Asegúrate de usar isValidNumber() o isValidNumberPrecise() según tu necesidad
+    isValidPhone = true; // El teléfono es válido
+  } else {
+    const errorCode = iti.getValidationError();
+    const msg = errorMap[errorCode] || "Número Invalido";
+    showError(msg);
+  }
+
+  // on keyup / change flag: reset
+  input.addEventListener('change', reset);
+  input.addEventListener('keyup', reset);
+
+  if (isValid1 && isValidPhone) {
     //Crear función para enviar correo
     const loadingEl = document.createElement('div');
     document.body.prepend(loadingEl);
@@ -399,7 +438,6 @@ submitButton.addEventListener('click', async function (e) {
       },
       data: res,
     });
-    console.log(response.data);
     if (response.data.message === 'Usuario ya registrado') {
       KTApp.hidePageLoading();
       loadingEl.remove();

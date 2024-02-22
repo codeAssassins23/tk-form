@@ -10,11 +10,13 @@ import {
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
+import { Public } from 'src/auth/decorators/public.decorator';
 
 @Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
+  @Public()
   @Post()
   async create(@Body() createUserDto: CreateUserDto) {
     const user = await this.userService.isEmailUnique(createUserDto.email);
@@ -24,6 +26,7 @@ export class UserController {
     return this.userService.createUser(createUserDto);
   }
 
+  @Public()
   @Get()
   findAllUser() {
     return this.userService.findAllUser();
@@ -40,6 +43,7 @@ export class UserController {
     return test;
   }
 
+  @Public()
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.userService.removeUser(+id);

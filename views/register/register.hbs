@@ -28,6 +28,12 @@
  
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
   <!--end::Global Stylesheets Bundle-->
+
+  <link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+   />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
   <script>
     // Frame-busting to prevent site from being loaded within a framewithout permission(click - jacking) 
     if (window.top != window.self) {
@@ -240,8 +246,9 @@
                         Teléfono
                       </label>
                       <div class='fv-row'>
-                        <input type='string' name='text_phone' id='telefono' class='form-control'
-                          placeholder="+51 999 999 999 999" />
+                        <input type='tel' name='text_phone' id='telefono' class='form-control'/>
+                        <span id="valid-msg" style="display: none;" class="text-success">✓ Valid</span>
+                        <span id="error-msg" style="display: none;" class="text-danger mt-2"></span>
                       </div>
                     </div>
                   </div>
@@ -588,8 +595,9 @@
                           Teléfono celular
                         </label>
                         <div class='fv-row'>
-                          <input type='number' name='phoneInformation' autocomplete='off' id='phoneInformation'
-                            class='form-control' />
+                          <input type='tel' name='phoneInformation' id='phoneInformation' class='form-control'/>
+                          <span id="valid-msg-information" style="display: none;" class="text-success">✓ Valid</span>
+                          <span id="error-msg-information" style="display: none;" class="text-danger mt-2"></span>
                         </div>
                         <!--end::Teléfono celular-->
                       </div>

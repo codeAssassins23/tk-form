@@ -39,10 +39,10 @@ export class AuthController {
   ) {
     try {
       const authResult = await this.authService.signIn(createAuthDto);
-      if (authResult.payload.role.idRole === 1) {
+      if (authResult.payload.role.idRole === 2) {
         response.cookie('jwt', authResult.jwt, { httpOnly: true });
         response.redirect('/admin/dashboard');
-      } else if (authResult.payload.role.idRole === 4) {
+      } else if (authResult.payload.role.idRole === 1) {
         response.cookie('jwt', authResult.jwt, { httpOnly: true });
         response.redirect('/Allregister');
       }
