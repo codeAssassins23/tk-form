@@ -299,7 +299,7 @@ let validator1 = FormValidation.formValidation(form1, {
     text_name: {
       validators: {
         regexp: {
-          regexp: /^[a-zA-Z ]+$/,
+          regexp: /^[a-zA-Z.ñÑ ]+$/,
           message: 'El contenido no es válido',
         },
         notEmpty: {
@@ -310,7 +310,7 @@ let validator1 = FormValidation.formValidation(form1, {
     text_enterprice: {
       validators: {
         regexp: {
-          regexp: /^[a-zA-Z ]+$/,
+          regexp: /^[a-zA-Z.ñÑ ]+$/,
           message: 'El contenido no es válido',
         },
         notEmpty: {
