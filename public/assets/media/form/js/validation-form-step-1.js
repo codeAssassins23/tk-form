@@ -1,5 +1,29 @@
 /* eslint-disable prettier/prettier */
 
+const inputInformation = document.querySelector("#phoneInformation");
+const errorMsgInformation = document.querySelector("#errormsginformation");
+const validMsgInformation = document.querySelector("#validmsginformation");
+
+// Inicializar intl-tel-input
+const iti1 = window.intlTelInput(inputInformation, {
+  initialCountry: "us",
+  utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+});
+
+const resetInformation = () => {
+  inputInformation.classList.remove("error");
+  errorMsgInformation.innerHTML = "";
+  errorMsgInformation.style.display = "none"; // Usar display en lugar de classList
+  validMsgInformation.style.display = "none";
+};
+
+// Función showError ajustada para usar display
+const showErrorInformation = (msg) => {
+  inputInformation.classList.add("error");
+  errorMsgInformation.innerHTML = msg;
+  errorMsgInformation.style.display = "block";
+};
+
 function Progres(stepp) {
   let progress_bar = document.getElementById('progress_bar');
   let actual_stepp = document.getElementById('actual_stepp');
@@ -107,17 +131,6 @@ let validaterStep1 = FormValidation.formValidation(form, {
         },
         notEmpty: {
           message: 'Email es requerido',
-        },
-      },
-    },
-    phoneInformation: {
-      validators: {
-        regexp: {
-          regexp: /^[0-9]+$/,
-          message: 'El contenido no es válido',
-        },
-        notEmpty: {
-          message: 'Este campo es obligatorio',
         },
       },
     },
@@ -232,7 +245,24 @@ let stepp_1 = document.getElementById('stepp_1');
 stepp_1.addEventListener('click', async function () {
   let isValidStep1 = await validateStep1();
 
-  if (isValidStep1) {
+  // Inicializa y realiza la validación del teléfono aquí
+  resetInformation(); // Asegúrate de llamar a reset para limpiar errores previos
+  let isValidPhone1 = false; // Suponemos inicialmente que el teléfono no es válido
+  if (!inputInformation.value.trim()) {
+    showErrorInformation("Telefono es requerido");
+  } else if (iti1.isValidNumber()) { // Asegúrate de usar isValidNumber() o isValidNumberPrecise() según tu necesidad
+    isValidPhone1 = true; // El teléfono es válido
+  } else {
+    const errorCode1 = iti1.getValidationError();
+    const msg1 = errorMap[errorCode1] || "Número Invalido";
+    showErrorInformation(msg1);
+  }
+
+  // on keyup / change flag: reset
+  inputInformation.addEventListener('change', resetInformation);
+  inputInformation.addEventListener('keyup', resetInformation);
+
+  if (isValidStep1 && isValidPhone1) {
     stepsData.fullName = document.getElementById('nombre_apellidos').value;
     stepsData.email = document.getElementById('correo_electronico').value;
     stepsData.corporate = document.getElementById('empresa').value;
