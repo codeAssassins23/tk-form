@@ -137,6 +137,10 @@ function fillIndustryEspañol(){
     industryEspañol["step-one-industry-list"].forEach(function(industry){
         $('#industry').append(new Option(industry, industry)) 
     })
+    $('#industry').select2({
+        placeholder: "Seleccione una industria",
+        allowClear: true
+    });
 }
 
 fillIndustryEspañol()
@@ -146,5 +150,9 @@ function fillIndustryIngles(){
     industryIngles["step-one-industry-list"].forEach(function(industry){
         $('#industry').append(new Option(industry, industry)) 
     })
+    $('#industry').select2({
+        placeholder: "Select an industry",
+        allowClear: true
+    });
 }
 
