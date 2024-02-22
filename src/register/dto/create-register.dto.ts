@@ -160,8 +160,7 @@ export class createRegisterDto {
   phoneInformation: string;
 
   @IsString()
-  @MinLength(1, { message: 'El website debe tener al menos 1 caracteres' })
-  @IsNotEmpty({ message: 'El website es requerido' })
+  @IsOptional()
   website: string;
 
   @IsString()
