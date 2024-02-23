@@ -80,38 +80,40 @@ export class RegisterService {
   }
 
   async findAllRegisterLeads(start: number, length: number): Promise<any> {
-    const leads = await this.leadsRepository.find({
+    // Realiza una sola consulta para obtener los leads y la cantidad total en una sola operación
+    const [leads, total] = await this.leadsRepository.findAndCount({
       where: { status: '1' },
-      skip: start, // Cuántos registros se deben saltar
-      take: length, // Cuántos registros se deben tomar
+      order: {
+        idLead: 'DESC', // Asegúrate de cambiar 'createdAt' por el nombre de tu columna de ordenamiento
+      },
+      skip: start,
+      take: length,
     });
 
-    const leadsLenght = await this.leadsRepository.find({
-      where: { status: '1' },
-    });
-
+    // Transforma el país de cada lead según su código
     leads.forEach((lead) => {
-      if (lead.country === 'usd') {
-        lead.country = 'Estados Unidos';
-      } else if (lead.country === 'mxn') {
-        lead.country = 'México';
-      } else if (lead.country === 'word') {
-        lead.country = 'Canada';
+      switch (lead.country) {
+        case 'usd':
+          lead.country = 'Estados Unidos';
+          break;
+        case 'mxn':
+          lead.country = 'México';
+          break;
+        case 'word': // Suponiendo que 'word' fue un error tipográfico y querías decir algo como 'cad' para Canadá
+          lead.country = 'Canadá';
+          break;
       }
     });
 
-    return { leads: leads, total: leadsLenght.length };
+    return { leads, total };
   }
 
   async findAllRegister(start: number, length: number): Promise<any> {
-    const register = await this.registerRepository.find({
+    const [register, total] = await this.registerRepository.findAndCount({
       where: { status: '1' },
+      order: { idRegister: 'DESC' },
       skip: start, // Cuántos registros se deben saltar
       take: length, // Cuántos registros se deben tomar
-    });
-
-    const leadsLenght = await this.registerRepository.find({
-      where: { status: '1' },
     });
 
     register.forEach((lead) => {
@@ -124,7 +126,7 @@ export class RegisterService {
       }
     });
 
-    return { register: register, total: leadsLenght.length };
+    return { register, total };
   }
 
   //registers
