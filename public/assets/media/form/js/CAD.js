@@ -4,7 +4,7 @@ let provinciasTerritoriosCanada = {
       {"nombre": "British Columbia"},
       {"nombre": "Manitoba"},
       {"nombre": "New Brunswick"},
-      {"nombre": "Newfoundland and Labrador"},
+      {"nombre": "Newfoundland"},
       {"nombre": "Nova Scotia"},
       {"nombre": "Ontario"},
       {"nombre": "Prince Edward Island"},

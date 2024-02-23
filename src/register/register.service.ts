@@ -203,7 +203,6 @@ export class RegisterService {
         save,
         notificationEmail,
       );
-      console.log(save, 'save');
       return save;
     } catch (error) {
       console.log(error, 'createRegisterAll');
