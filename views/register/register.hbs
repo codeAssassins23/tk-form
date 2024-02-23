@@ -219,7 +219,7 @@
                   <!--end::Input group=-->
                   <div class='row mb-8'>
                     <!--begin::Empresa-->
-                    <div class='col'>
+                    <div class='col-12 col-lg-6 mb-4 mb-lg-0'>
                       <label for='paises' class='form-label' id="step_one_country">Pais</label>
                       <div class='fv-row'>
                         <select class='form-select' id='paises' name='select_country'
@@ -238,13 +238,12 @@
                         </select>
                       </div>
                     </div>
-                    <div class='col'>
+                    <div class='col-12 col-lg-6'>
                       <label for='telefono' class='form-label' id="label_phone">
                         Teléfono
                       </label>
-                      <div class='fv-row' style="width: 100% !important;">
-                        <input type='tel' name='text_phone' id='telefono' style="width: 100% !important;"
-                          class='form-control' />
+                      <div class='fv-row'>
+                        <input type='tel' name='text_phone' id='telefono' class='form-control iti' />
                         <span id="valid-msg" style="display: none;" class="text-success">✓ Valid</span>
                         <span id="error-msg" style="display: none;" class="text-danger mt-2"></span>
                       </div>
@@ -593,7 +592,7 @@
                           Teléfono celular
                         </label>
                         <div class='fv-row'>
-                          <input type='tel' name='phoneInformation' id='phoneInformation' class='form-control' />
+                          <input type='tel' name='phoneInformation' id='phoneInformation' class='form-control iti' />
                           <span id="validmsginformation" style="display: none;" class="text-success">✓ Valid</span>
                           <span id="errormsginformation" style="display: none;" class="text-danger mt-2"></span>
                         </div>
@@ -1696,9 +1695,11 @@
                                   Teléfono celular
                                 </label>
                                 <div class='fv-row'>
-                                    <input type='tel' name='telefonoCelular' id='telefonoCelular' class='form-control'/>
-                                    <span id="valid-msg-autoriza" style="display: none;" class="text-success">✓ Valid</span>
-                                    <span id="error-msg-autoriza" style="display: none;" class="text-danger mt-2"></span>
+                                  <input type='tel' name='telefonoCelular' id='telefonoCelular'
+                                    class='form-control iti' />
+                                  <span id="valid-msg-autoriza" style="display: none;" class="text-success">✓
+                                    Valid</span>
+                                  <span id="error-msg-autoriza" style="display: none;" class="text-danger mt-2"></span>
                                 </div>
                               </div>
                               <!--end::Teléfono celular-->
@@ -1753,9 +1754,11 @@
                                   Teléfono celular
                                 </label>
                                 <div class='fv-row'>
-                                    <input type='tel' name='telefonoCelular2' id='telefonoCelular2' class='form-control'/>
-                                    <span id="valid-msg-autoriza2" style="display: none;" class="text-success">✓ Valid</span>
-                                    <span id="error-msg-autoriza2" style="display: none;" class="text-danger mt-2"></span>
+                                  <input type='tel' name='telefonoCelular2' id='telefonoCelular2'
+                                    class='form-control iti' />
+                                  <span id="valid-msg-autoriza2" style="display: none;" class="text-success">✓
+                                    Valid</span>
+                                  <span id="error-msg-autoriza2" style="display: none;" class="text-danger mt-2"></span>
                                 </div>
                               </div>
                               <!--end::Teléfono celular-->
@@ -2332,6 +2335,13 @@
     </div>
   </div>
   <!--end::Root-->
+
+  <style>
+    .iti {
+      width: 100%;
+    }
+  </style>
+
   <!--begin::Javascript-->
   <script>var hostUrl = "assets/";</script>
   <script>

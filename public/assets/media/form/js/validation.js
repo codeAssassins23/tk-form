@@ -1,4 +1,5 @@
 /* eslint-disable prettier/prettier */
+
 const form1 = document.getElementById('kt_sign_up_form_first');
 
 const input = document.querySelector('#telefono');
@@ -16,6 +17,7 @@ const errorMap = [
 
 // Inicializar intl-tel-input
 const iti = window.intlTelInput(input, {
+  separateDialCode: true,
   initialCountry: 'us',
   utilsScript:
     'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js',
