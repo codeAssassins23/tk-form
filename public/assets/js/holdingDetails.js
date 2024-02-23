@@ -14,7 +14,7 @@ var KTDatatablesServerDetails = function () {
             processing: true,
             serverSide: true,
             ajax: {
-                url: `http://localhost:3200/admin/holdingAccounts/detail/${currencyCode}`,
+                url: `/admin/holdingAccounts/detail/${currencyCode}`,
             },
             columns: [
                 { data: 'dealNumber' },
@@ -55,7 +55,7 @@ var KTDatatablesServerDetails = function () {
         filterSearch.on('select2:select', function (e) {
         const selectedValue = e.params.data.id;
         const idColumnIndex = 0; // Reemplaza con el índice real de la columna de ID
-        window.location.href = `http://localhost:3200/admin/getHoldingAccounts/detail/${selectedValue}`;
+        window.location.href = `/admin/getHoldingAccounts/detail/${selectedValue}`;
         });
     };
 

@@ -899,7 +899,7 @@ let KTDatatablesServerSide = function () {
             processing: true,
             serverSide: true,
             ajax: {
-                url: "http://localhost:3200/admin/getListBeneficiaries",
+                url: "/admin/getListBeneficiaries",
             },
             columns: [
                 { data: 'nickname' },
@@ -1119,7 +1119,7 @@ let KTDatatablesServerSide = function () {
                 e.preventDefault();
                 const beneId = e.currentTarget.getAttribute('data-currency-id');
                 // Redirect
-                window.location.href = `http://localhost:3200/admin/getBeneficiaries/detail/${beneId}`;
+                window.location.href = `/admin/getBeneficiaries/detail/${beneId}`;
             })
         });
     }

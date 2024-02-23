@@ -160,7 +160,6 @@
 								orderable: false,
 								className: 'text-center',
 								render: function (data, type, row) {
-									console.log(row.idLead);
 									return `
 										<a href="#" class="btn-actions btn btn-sm btn-light btn-flex btn-center btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions 
 										<i class="ki-outline ki-down fs-5 ms-1"></i></a>
@@ -233,7 +232,6 @@
 							const idLead = e.currentTarget.getAttribute('data-currency-id');
 							try {
 								const response = await axios.get(`/details/${idLead}`);
-								console.log(response);
 								window.location.href = `/details/${idLead}`;
 							} catch (error) {
 								// Manejar el error aquí

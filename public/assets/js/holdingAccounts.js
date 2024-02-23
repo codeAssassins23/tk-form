@@ -14,7 +14,7 @@ var KTDatatablesServerSide = function () {
             processing: true,
             serverSide: true,
             ajax: {
-                url: "http://localhost:3200/admin/getHolddingAccountTest",
+                url: "/admin/getHolddingAccountTest",
             },
             columns: [
                 { data: 'currencyCode' },
@@ -113,7 +113,7 @@ var KTDatatablesServerSide = function () {
                 e.preventDefault();
                  const currencyId = e.currentTarget.getAttribute('data-currency-id');
                 // Redirect
-                window.location.href = `http://localhost:3200/admin/getHoldingAccounts/detail/${currencyId}`;
+                window.location.href = `/admin/getHoldingAccounts/detail/${currencyId}`;
             })
         });
     }

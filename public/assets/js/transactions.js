@@ -14,7 +14,7 @@ var DataTableInProgress = function () {
             processing: true,
             serverSide: true,
             ajax: {
-                url: "http://localhost:3200/admin/getTransactions",
+                url: "/admin/getTransactions",
             },
             columns: [
                 { data: 'deal' },
@@ -89,7 +89,7 @@ var DataTableInProgress = function () {
                 e.preventDefault();
                 const currencyId = e.currentTarget.getAttribute('data-currency-id');
                 // Redirect
-                window.location.href = `http://localhost:3200/admin/getHoldingAccounts/detail/${currencyId}`;
+                window.location.href = `/admin/getHoldingAccounts/detail/${currencyId}`;
             })
         });
     }
@@ -101,7 +101,7 @@ var DataTableInProgress = function () {
         filterSearch.on('select2:select', function (e) {
         const selectedValue = e.params.data.id;
         const idColumnIndex = 0; // Reemplaza con el índice real de la columna de ID
-        window.location.href = `http://localhost:3200/admin/getHoldingAccounts/detail/${selectedValue}`;
+        window.location.href = `/admin/getHoldingAccounts/detail/${selectedValue}`;
         });
     };
 
@@ -185,7 +185,7 @@ var DataTableFinished = function () {
             processing: true,
             serverSide: true,
             ajax: {
-                url: "http://localhost:3200/admin/getTransactions",
+                url: "/admin/getTransactions",
             },
             columns: [
                 { data: 'deal' },
@@ -260,7 +260,7 @@ var DataTableFinished = function () {
                 e.preventDefault();
                 const currencyId = e.currentTarget.getAttribute('data-currency-id');
                 // Redirect
-                window.location.href = `http://localhost:3200/admin/getHoldingAccounts/detail/${currencyId}`;
+                window.location.href = `/admin/getHoldingAccounts/detail/${currencyId}`;
             })
         });
     }
@@ -272,7 +272,7 @@ var DataTableFinished = function () {
         filterSearch.on('select2:select', function (e) {
         const selectedValue = e.params.data.id;
         const idColumnIndex = 0; // Reemplaza con el índice real de la columna de ID
-        window.location.href = `http://localhost:3200/admin/getHoldingAccounts/detail/${selectedValue}`;
+        window.location.href = `/admin/getHoldingAccounts/detail/${selectedValue}`;
         });
     };
 
@@ -357,7 +357,7 @@ var DataTablePendings = function () {
             processing: true,
             serverSide: true,
             ajax: {
-                url: "http://localhost:3200/admin/getTransactions",
+                url: "/admin/getTransactions",
             },
             columns: [
                 { data: 'deal' },
@@ -432,7 +432,7 @@ var DataTablePendings = function () {
                 e.preventDefault();
                 const currencyId = e.currentTarget.getAttribute('data-currency-id');
                 // Redirect
-                window.location.href = `http://localhost:3200/admin/getHoldingAccounts/detail/${currencyId}`;
+                window.location.href = `/admin/getHoldingAccounts/detail/${currencyId}`;
             })
         });
     }
@@ -444,7 +444,7 @@ var DataTablePendings = function () {
         filterSearch.on('select2:select', function (e) {
         const selectedValue = e.params.data.id;
         const idColumnIndex = 0; // Reemplaza con el índice real de la columna de ID
-        window.location.href = `http://localhost:3200/admin/getHoldingAccounts/detail/${selectedValue}`;
+        window.location.href = `/admin/getHoldingAccounts/detail/${selectedValue}`;
         });
     };
 

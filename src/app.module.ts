@@ -25,7 +25,7 @@ import { MailModule } from './mail/email.module';
     }),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      host: process.env.HOST_BD,
       port: 5432,
       password: process.env.DATA_BASE_PASSWORD,
       username: process.env.DATA_BASE_USER,
