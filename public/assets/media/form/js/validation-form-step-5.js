@@ -27,7 +27,7 @@ let validatorStep5 = FormValidation.formValidation(form, {
     ownership1: {
       validators: {
         regexp: {
-          regexp: /^[0-9]+$/,
+          regexp: /^\d+(\.\d+)?$/,
           message: 'El contenido no es válido',
         },
         notEmpty: {
@@ -77,7 +77,7 @@ let validatorStep5 = FormValidation.formValidation(form, {
     ownership2: {
       validators: {
         regexp: {
-          regexp: /^[0-9]+$/,
+          regexp: /^\d+(\.\d+)?$/,
           message: 'El contenido no es válido',
         },
         notEmpty: {
