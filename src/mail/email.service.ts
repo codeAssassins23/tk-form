@@ -38,7 +38,8 @@ export class MailService {
     save: any,
     notificationEmail: string,
   ) {
-    const url = `https://tk-form-postgress.onrender.com/details/${save.idLead}`; // URL para ver el usuario en el sistema
+    const url = `https://tk-form-postgress.onrender.com/details/${save.idLead}`;
+    console.log(url); // URL para ver el usuario en el sistema
     if (save.country === 'usd') {
       save.country = 'Estados Unidos';
     } else if (save.country === 'mxn') {
