@@ -33,6 +33,9 @@ import { MailModule } from './mail/email.module';
       database: process.env.DATA_BASE_NAME,
       synchronize: true,
       logging: true,
+      ssl: {
+        rejectUnauthorized: process.env.SSL,
+      },
     }),
     UserModule,
     RolesModule,
