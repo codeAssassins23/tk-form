@@ -137,7 +137,7 @@ let validaterStep1 = FormValidation.formValidation(form, {
     website: {
       validators: {
         regexp: {
-          regexp: /^[a-zA-Z0-9.ñÑ_%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+          regexp: /^(?:https?:\/\/)?(?:www\.)?[\w\-]+(?:\.[\w\-]+)+(?:\/[\w\-\.\/?%&=]*)?$/,
           message: 'El contenido no es válido',
         },
       },
