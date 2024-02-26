@@ -8,7 +8,7 @@ export class MailService {
 
   // Método en MailService para enviar confirmación a un correo específico
   async sendRegistrationNotification(save: any, notificationEmail: string) {
-    const url = `${process.env.BASE_URL}/leads`; // URL para ver el usuario en el sistema
+    const url = `https://tk-form-postgress.onrender.com/leads`; // URL para ver el usuario en el sistema
     console.log(process.env.GMAIL_USER, process.env.GMAIL_PASS);
     if (save.country === 'usd') {
       save.country = 'Estados Unidos';
@@ -38,7 +38,7 @@ export class MailService {
     save: any,
     notificationEmail: string,
   ) {
-    const url = `${process.env.BASE_URL}/details/${save.idLead}`; // URL para ver el usuario en el sistema
+    const url = `https://tk-form-postgress.onrender.com/details/${save.idLead}`; // URL para ver el usuario en el sistema
     if (save.country === 'usd') {
       save.country = 'Estados Unidos';
     } else if (save.country === 'mxn') {
