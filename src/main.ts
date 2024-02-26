@@ -96,7 +96,7 @@ async function bootstrap() {
     new UnauthorizedExceptionFilter(),
   );
 
-  await app.listen(3200);
+  await app.listen(process.env.PORT || 3200);
   console.log(`Application is running on: ${await app.getUrl()}`);
 }
 bootstrap();
