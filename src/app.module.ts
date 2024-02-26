@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -33,8 +34,14 @@ import { MailModule } from './mail/email.module';
       database: process.env.DATA_BASE_NAME,
       synchronize: true,
       logging: true,
-      ssl: {
-        rejectUnauthorized: process.env.SSL,
+      ssl: process.env.POSTGRES_SSL === 'true',
+      extra: {
+        ssl:
+          process.env.POSTGRES_SSL === 'true'
+            ? {
+                rejectUnauthorized: false,
+              }
+            : null,
       },
     }),
     UserModule,
