@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Leads } from './entities/leads.entity';
@@ -34,8 +35,9 @@ export class RegisterService {
 
     // Enviar correo de notificación a la dirección específica después de guardar el registro
     const notificationEmail =
-      'bravovictorhugo11@gmail.com'; /* 'bravovictorhugo11@gmail.com' */ // Definir el correo al que notificar
-    /* 'customer-service@tkambio.us' */ await this.mailService.sendRegistrationNotification(
+      // 'bravovictorhugo11@gmail.com'; /* 'bravovictorhugo11@gmail.com' */ // Definir el correo al que notificar
+      'customer-service@tkambio.us';
+    await this.mailService.sendRegistrationNotification(
       save,
       notificationEmail,
     );
@@ -198,7 +200,8 @@ export class RegisterService {
       const save = await this.registerRepository.save(register);
       // Enviar correo de notificación a la dirección específica después de guardar el registro
       const notificationEmail =
-        'bravovictorhugo11@gmail.com'; /* 'customer-service@tkambio.us' */ // Definir el correo al que notificar
+        /* 'bravovictorhugo11@gmail.com'; */
+        'customer-service@tkambio.us'; // Definir el correo al que notificar
       await this.mailService.sendFinalRegistrationNotification(
         save,
         notificationEmail,
