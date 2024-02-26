@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { BadRequestException, ValidationPipe } from '@nestjs/common';
 
 import { NestFactory } from '@nestjs/core';
@@ -96,7 +97,7 @@ async function bootstrap() {
     new UnauthorizedExceptionFilter(),
   );
 
-  await app.listen(process.env.PORT);
+  await app.listen(process.env.PORT || 3200);
   console.log(`Application is running on: ${await app.getUrl()}`);
 }
 bootstrap();
